@@ -102,9 +102,8 @@ public class FaultLocalizationRunner {
     results = VSMBasedSearchList(true);
     int foundIndex = -1;
     try {
-      //System.out.println(results);
-      ResultRankManager rankFinder = new ResultRankManager(repository,
-              results, goldset);
+      // System.out.println(results);
+      ResultRankManager rankFinder = new ResultRankManager(repository, results, goldset);
       foundIndex = rankFinder.getFirstGoldRank();
     } catch (Exception exc) {
       // handle the exception
@@ -115,19 +114,16 @@ public class FaultLocalizationRunner {
   protected boolean getGoldSet() {
     // collecting gold set results
     boolean gsfound = true;
-    String goldFile = DatasetConfig.GOLDSET_DIR + "/" + repository
-            + "/" + bugID + ".txt";
+    String goldFile = DatasetConfig.GOLDSET_DIR + "/" + repository + "/" + bugID + ".txt";
     // clear the old values
-    if (!this.goldset.isEmpty())
-      this.goldset.clear();
+    if (!this.goldset.isEmpty()) this.goldset.clear();
 
     File f = new File(goldFile);
     if (f.exists()) { // if the solution file exists
       String content = ContentLoader.loadFileContent(goldFile);
       String[] items = content.split("\n");
       for (String item : items) {
-        if (!item.trim().isEmpty())
-          this.goldset.add(item);
+        if (!item.trim().isEmpty()) this.goldset.add(item);
       }
     } else {
       gsfound = false;
@@ -137,13 +133,16 @@ public class FaultLocalizationRunner {
   }
 
   public static void main(String[] args) throws IOException, ParseException {
-    long start = System.currentTimeMillis();
-    int bugID = 55524;
+    int bugID = 51467;
     String repository = "tomcat70";
-    String searchQuery = "write operation writeTextMessage prepareInvokeOnStateChange executeAsyncWrite invokeOnStateChange apache catalina";
+    //    String searchQuery =
+    //        "authenticator digest digestauthenticator helper initialisation lazy incorrect method
+    // field instructions object processor " +
+    //                "compiler reorder initialization threads multiple initialized called
+    // guaranteed unsynchronized correct completely";
+    String searchQuery =
+        "StandardContext Standard Context run runnable start completion remove";
     FaultLocalizationRunner searcher = new FaultLocalizationRunner(bugID, repository, searchQuery);
     System.out.println("First found index:" + searcher.getFirstGoldRankClass());
-    long end = System.currentTimeMillis();
-    System.out.println("Time:" + (end - start) / 1000 + "s");
   }
 }
