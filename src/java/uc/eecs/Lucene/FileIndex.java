@@ -104,9 +104,9 @@ public class FileIndex {
     String repoName="tomcat70";
 
     // String docs = DatasetConfig.HOME_DIR + "/Corpus/" + repoName;
-    String docs = "C:/java-work/IDEA_workspace/ConBugLoc/dataset/BLIZZARD/ecf/code";
+    String docs = "C:/java-work/IDEA_workspace/ConBugLoc/dataset/BLIZZARD/tomcat70/code";
     String index =
-        "C:/java-work/IDEA_workspace/ConBugLoc/src/resources/Lucene_Index/BLIZZARD/ecf";
+        "C:/java-work/IDEA_workspace/ConBugLoc/src/resources/Lucene_Index/BLIZZARD/tomcat70";
 
     FileIndex indexer = new FileIndex(index, docs);
     indexer.indexCorpusFiles();
