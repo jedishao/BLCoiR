@@ -1,0 +1,9 @@
+Bug 151204  [Progress] Blocked status of jobs are not applied/reportedIn the method
+  org.eclipse.ui.internal.progress.ProgressManager.JobMonitor.setBlocked(...)
+line:
+  info.setBlockedStatus(null);
+
+should it not be?:
+  info.setBlockedStatus(reason);
+
+After I changed the line, I see (e.g. in the progress view) the message "Blocked: ..." which I missed otherwise.

@@ -1,0 +1,1 @@
+Bug 114527  [DynamicUI] Race condition in Workbench leads to intermittent crashes (org.eclipse.ui.startup)

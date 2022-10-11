@@ -1,0 +1,1 @@
+Bug 351212  Workspace failed to start due to Problems View getting activated outside SWT Display Thread

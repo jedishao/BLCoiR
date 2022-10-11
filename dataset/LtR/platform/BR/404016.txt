@@ -1,0 +1,1 @@
+Bug 404016  Regression to 4.x: Workbench window as runnable context does not work/block

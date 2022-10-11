@@ -1,0 +1,1 @@
+Bug 284367  org.eclipse.birt.data.engine.executor.DataSourceFactory isn't thread safe

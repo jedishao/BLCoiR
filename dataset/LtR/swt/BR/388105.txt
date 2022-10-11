@@ -1,0 +1,1 @@
+Bug 388105  StyledText#setSelection(..) sets caret at wrong end in block selection mode

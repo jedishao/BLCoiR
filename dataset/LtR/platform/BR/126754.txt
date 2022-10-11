@@ -1,0 +1,1 @@
+Bug 126754  [Progress] Infinit number of Building Workspace jobssWith todays build, the progress dialog for blocked jobs has multiple entries for the same job. I will attach a screenshot.

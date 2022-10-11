@@ -1,0 +1,1 @@
+Bug 165712  Create wrapper Shell around existing handleIn support of the new launcher (bug ) we need to be able to create a shell using an existing handle from a window that was created natively (in the same process and thread)

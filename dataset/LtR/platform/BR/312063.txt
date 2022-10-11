@@ -1,0 +1,1 @@
+Bug 312063  SelectionServiceImpl should use ListenerList instead of a HashSetHashSets are not thread-safe and does not guarantee event order. :(

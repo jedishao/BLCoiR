@@ -1,0 +1,1 @@
+Bug 296800  [GlobalActions] UI build actions should not lock the workspace

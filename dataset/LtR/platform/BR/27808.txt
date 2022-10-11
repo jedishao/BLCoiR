@@ -1,0 +1,4 @@
+Bug 27808  [Preferences] "Notes:" displayed twice on the workbench preference pageBuild 20021204
+
+At the bottom of 'open mode' block in the workbench preference page, "Notes:" is
+display two times.

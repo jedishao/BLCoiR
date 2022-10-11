@@ -1,0 +1,1 @@
+Bug 235038  Exception blocks to leave the Manage JDBC Drivers dialog

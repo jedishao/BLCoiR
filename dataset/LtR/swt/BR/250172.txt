@@ -1,0 +1,1 @@
+Bug 250172  Fix inserting text in block select mode

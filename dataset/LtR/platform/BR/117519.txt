@@ -1,0 +1,8 @@
+Bug 117519  Provide clear() method on ListenerListPlease provide the following method on ListenerList
+
+	/**
+	 * Removes all listeners from this list.
+	 */
+	public synchronized void clear() {
+		listeners = EmptyArray;
+	}

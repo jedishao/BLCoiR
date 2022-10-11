@@ -1,0 +1,1 @@
+Bug 327192  Concurrent access to file while decorating

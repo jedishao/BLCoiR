@@ -1,0 +1,1 @@
+Bug 250178  change the keyboard block selection expansion increment to match average char width

@@ -1,0 +1,1 @@
+Bug 250175  fix DND in block selection mode

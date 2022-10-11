@@ -1,0 +1,1 @@
+Bug 263620  Listeners added to CTabFolder#addTraverseListener(..) cannot block default traversal

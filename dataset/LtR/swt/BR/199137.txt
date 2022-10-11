@@ -1,0 +1,1 @@
+Bug 199137  Debug view scrolls right when thread suspends

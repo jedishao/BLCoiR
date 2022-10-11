@@ -1,0 +1,1 @@
+Bug 78225  [Preferences] Clarify spec w.r.t. threads and change notification

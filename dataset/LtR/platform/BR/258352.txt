@@ -1,0 +1,1 @@
+Bug 258352  [Progress] synchronization in ProgressManager too expensive
