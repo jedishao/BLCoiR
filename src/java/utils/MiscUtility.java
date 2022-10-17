@@ -3,12 +3,21 @@ package utils;
 import java.util.*;
 
 public class MiscUtility {
+
   public static String list2Str(ArrayList<String> list) {
-    String temp = "";
+    StringBuilder temp = new StringBuilder();
     for (String item : list) {
-      temp += item + " ";
+      temp.append(item).append(" ");
     }
-    return temp.trim();
+    return temp.toString().trim();
+  }
+
+  public static String list2StrSent(ArrayList<String> list) {
+    StringBuilder temp = new StringBuilder();
+    for (String item : list) {
+      temp.append(item).append(". ");
+    }
+    return temp.toString().trim();
   }
 
   public static String list2Str(String[] list) {
