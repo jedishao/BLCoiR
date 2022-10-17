@@ -20,10 +20,10 @@ public class BlizzardResults {
             int bugID = bugID_list.get(i);
             String searchQuery = query_list.get(i);
             System.out.println(searchQuery);
-            FaultLocalizationRunner searcher =
-                    new FaultLocalizationRunner(bugID, rep, searchQuery);
-            //System.out.println("First found index:" + searcher.getFirstGoldRankClass());
-            tmp.add(searcher.getFirstGoldRankClass());
+//            FaultLocalizationRunner searcher =
+//                    new FaultLocalizationRunner(bugID, "ss",rep, searchQuery);
+//            //System.out.println("First found index:" + searcher.getFirstGoldRankClass());
+//            tmp.add(searcher.getFirstGoldRankClass());
         }
         System.out.println(tmp);
     }
