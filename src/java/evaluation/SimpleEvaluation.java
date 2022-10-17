@@ -21,9 +21,9 @@ public class SimpleEvaluation {
       int bugID = bugID_list.get(i);
       String searchQuery = query_list.get(i);
       //System.out.println(searchQuery);
-      FaultLocalizationRunner searcher =
-              new FaultLocalizationRunner(bugID, rep, searchQuery);
-      tmp.add(searcher.getFirstGoldRankClass());
+//      FaultLocalizationRunner searcher =
+//              new FaultLocalizationRunner(bugID, "ss", rep, searchQuery);
+//      tmp.add(searcher.getFirstGoldRankClass());
     }
     return tmp;
   }
