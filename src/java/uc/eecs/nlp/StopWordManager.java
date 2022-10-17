@@ -2,6 +2,7 @@ package uc.eecs.nlp;
 
 import utils.ContentLoader;
 import utils.config.DatasetConfig;
+import utils.config.ResConfig;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class StopWordManager {
   protected void loadStopWords() {
     // loading stop words
     try {
-      Scanner scanner = new Scanner(new File(this.stopDir));
+      Scanner scanner = new Scanner(new File(ResConfig.STOP_WORD));
       while (scanner.hasNext()) {
         String word = scanner.nextLine().trim();
         this.stopList.add(word);
@@ -30,7 +31,7 @@ public class StopWordManager {
       scanner.close();
 
       // now add the programming keywords
-      ArrayList<String> keywords = ContentLoader.getAllLinesOptList(javaKeywordFile);
+      ArrayList<String> keywords = ContentLoader.getAllLinesOptList(ResConfig.JAVA_KEYWORDS);
       this.stopList.addAll(keywords);
 
     } catch (Exception e) {
@@ -52,15 +53,25 @@ public class StopWordManager {
     return refined.toString().trim();
   }
 
+  public ArrayList<String> getRefinedList(ArrayList<String> words) {
+    ArrayList<String> refined = new ArrayList<>();
+    for (String word : words) {
+      if (!this.stopList.contains(word.toLowerCase())) {
+        refined.add(word);
+      }
+    }
+    return refined;
+  }
+
   protected String removeSpecialChars(String sentence) {
     // removing special characters
     String regex = "\\p{Punct}+|\\d+|\\s+";
     String[] parts = sentence.split(regex);
-    String refined = new String();
+    StringBuilder refined = new StringBuilder();
     for (String str : parts) {
-      refined += str.trim() + " ";
+      refined.append(str.trim()).append(" ");
     }
     // if(modifiedWord.isEmpty())modifiedWord=word;
-    return refined;
+    return refined.toString();
   }
 }

@@ -13,51 +13,64 @@ import java.io.IOException;
 import java.util.*;
 
 public class ConceptualGraph {
-  public DirectedGraph<String, DefaultEdge> buildGraph(ArrayList<ArrayList<String>> list_2) {
-    DirectedGraph<String, DefaultEdge> conGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
-    HashMap<String, ArrayList<String>> g = new HashMap<>();
-    ArrayList<String> top = list_2.get(0);
-    list_2.remove(0);
-    for (ArrayList<String> list_3 : list_2) {
-      g.put(list_3.get(0), list_3);
-    }
-    //    String[] con = {
-    //      "synchronized", "lock", "block",
-    //    };
+  Map<String, List<List<String>>> itemsMap;
+  ArrayList<String> conItems;
 
-    for (String k : g.keySet()) {
-      if (!conGraph.containsVertex(k)) {
-        conGraph.addVertex(k);
-        ArrayList<String> tmp = g.get(k);
-        for (String w : tmp) {
-          if (!conGraph.containsVertex(w)) {
-            conGraph.addVertex(w);
-            if (!conGraph.containsEdge(k, w)) {
-              conGraph.addEdge(k, w);
+  public ConceptualGraph(Map<String, List<List<String>>> itemsMap, ArrayList<String> conItems) {
+    this.itemsMap = itemsMap;
+    this.conItems = conItems;
+  }
+
+  public DirectedGraph<String, DefaultEdge> buildGraph() {
+    DirectedGraph<String, DefaultEdge> conGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
+    for (String relation : itemsMap.keySet()) {
+      if (!conGraph.containsVertex(relation)) {
+        conGraph.addVertex(relation);
+        List<String> parent = itemsMap.get(relation).get(0);
+        for (String s1 : parent) {
+          if (!conGraph.containsVertex(s1)) {
+            conGraph.addVertex(s1);
+            if (!conGraph.containsEdge(s1, relation)) {
+              conGraph.addEdge(s1, relation);
+            }
+          }
+        }
+        List<String> child = itemsMap.get(relation).get(1);
+        for (String s2 : child) {
+          if (!conGraph.containsVertex(s2)) {
+            conGraph.addVertex(s2);
+            if (!conGraph.containsEdge(relation, s2)) {
+              conGraph.addEdge(relation, s2);
             }
           }
         }
       }
     }
+
+    for (String s3 : conItems) {
+      if (!conGraph.containsVertex(s3)) {
+        conGraph.addVertex(s3);
+      }
+    }
     // concurrent
-    //    for (String k1 : con) {
-    //      for (String k2 : con) {
-    //        if (!conGraph.containsEdge(k1, k2)) {
-    //          conGraph.addEdge(k1, k2);
-    //        }
-    //      }
-    //    }
-    // top
-    for (String t : top) {
-      if (!conGraph.containsVertex(t)) {
-        conGraph.addVertex(t);
-        for (String kk : g.keySet()) {
-          if (!conGraph.containsEdge(t, kk)) {
-            conGraph.addEdge(t, kk);
-          }
+    for (String s4 : conItems) {
+      for (String s5 : conItems) {
+        if (!conGraph.containsEdge(s4, s5)) {
+          conGraph.addEdge(s4, s5);
         }
       }
     }
+    // top
+    //    for (String t : top) {
+    //      if (!conGraph.containsVertex(t)) {
+    //        conGraph.addVertex(t);
+    //        for (String kk : g.keySet()) {
+    //          if (!conGraph.containsEdge(t, kk)) {
+    //            conGraph.addEdge(t, kk);
+    //          }
+    //        }
+    //      }
+    //    }
     return conGraph;
   }
 
@@ -70,7 +83,6 @@ public class ConceptualGraph {
     for (ArrayList<String> list_3 : list_2) {
       g.put(list_3.get(0), list_3);
     }
-
 
     for (String k : g.keySet()) {
       top.add(k);
@@ -143,18 +155,18 @@ public class ConceptualGraph {
 
   public static void main(String[] args) throws IOException {
     //
-    ConceptualGraph cg = new ConceptualGraph();
-    ReadFile rf = new ReadFile();
-    ArrayList<ArrayList<ArrayList<String>>> list_1 =
-        rf.readFormFile("src/main/resources/concurrency/tomcat70_1.txt");
-    for (ArrayList<ArrayList<String>> list_2 : list_1) {
-      PageRankProviderMgr prp = new PageRankProviderMgr(cg.buildGraph_test(list_2));
-      HashMap<String, Double> res = prp.getPageRanks();
-      ArrayList<String> kw = cg.getTopKItems(res);
-      for (String k : kw) {
-        System.out.print(k + "\t");
-      }
-      System.out.println();
-    }
+    //    ConceptualGraph cg = new ConceptualGraph();
+    //    ReadFile rf = new ReadFile();
+    //    ArrayList<ArrayList<ArrayList<String>>> list_1 =
+    //        rf.readFormFile("src/main/resources/concurrency/tomcat70_1.txt");
+    //    for (ArrayList<ArrayList<String>> list_2 : list_1) {
+    //      PageRankProviderMgr prp = new PageRankProviderMgr(cg.buildGraph_test(list_2));
+    //      HashMap<String, Double> res = prp.getPageRanks();
+    //      ArrayList<String> kw = cg.getTopKItems(res);
+    //      for (String k : kw) {
+    //        System.out.print(k + "\t");
+    //      }
+    //      System.out.println();
+    //    }
   }
 }

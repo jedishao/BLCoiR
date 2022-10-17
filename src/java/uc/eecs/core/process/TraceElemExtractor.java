@@ -1,10 +1,10 @@
-package uc.eecs.core.selector;
+package uc.eecs.core.process;
 
 import org.jgraph.graph.DefaultEdge;
 import org.jgrapht.DirectedGraph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import uc.eecs.br.classification.StackTraceLoader;
-import uc.eecs.br.processing.StopWordManager;
+import uc.eecs.nlp.StopWordManager;
 import utils.ContentLoader;
 import utils.MiscUtility;
 import utils.config.DatasetConfig;
@@ -179,7 +179,7 @@ public class TraceElemExtractor {
 
   protected void expandTraceNodes() {
     // expand trace nodes with individual nodes
-    HashSet<String> nodeSet = new HashSet<String>(
+    HashSet<String> nodeSet = new HashSet<>(
             this.classGraph.vertexSet());
     for (String key : nodeSet) {
       ArrayList<String> tokens = MiscUtility.decomposeCamelCase(key);

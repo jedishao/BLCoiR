@@ -1,6 +1,8 @@
 package uc.eecs.br;
 
 import utils.ContentLoader;
+import utils.FileURL;
+import utils.MiscUtility;
 import utils.config.DatasetConfig;
 
 import java.util.ArrayList;
@@ -12,12 +14,29 @@ public class BRLoader {
   }
 
   public static String loadBugReport(String benchName, String repoName, int bugID) {
-    String brFile = DatasetConfig.HOME_DIR + benchName + "/" + repoName + "/" + bugID + ".txt";
+    String brFile = FileURL.brPathAppend(benchName, repoName, bugID);
     return ContentLoader.loadFileContent(brFile);
   }
 
   public static String loadBugReport(String brFile) {
     return ContentLoader.loadFileContent(brFile);
+  }
+
+  public static String loadBugContent(String brFile) {
+    ArrayList<String> lines = ContentLoader.getAllLinesOptList(brFile);
+    if (lines.isEmpty()) {
+      return "";
+    }
+    lines.remove(0);
+    return MiscUtility.list2Str(lines);
+  }
+
+  public static String loadBugContent(ArrayList<String> lines) {
+    if (lines.isEmpty()) {
+      return "";
+    }
+    lines.remove(0);
+    return MiscUtility.list2Str(lines);
   }
 
   public static String loadBRTitle(String repoName, int bugID) {

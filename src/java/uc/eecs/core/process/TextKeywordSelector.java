@@ -1,7 +1,8 @@
-package uc.eecs.core.selector;
+package uc.eecs.core.process;
 
 import acer.coderank.query.expansion.ACERQueryProviderMinimal;
-import uc.eecs.br.processing.TextNormalizer;
+
+import uc.eecs.nlp.TextNormalizer;
 import utils.config.DatasetConfig;
 
 public class TextKeywordSelector {

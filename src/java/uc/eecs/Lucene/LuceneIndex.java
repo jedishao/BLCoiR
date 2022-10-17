@@ -13,14 +13,15 @@ import org.apache.lucene.store.FSDirectory;
 import utils.config.DatasetConfig;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
-public class FileIndex {
+public class LuceneIndex {
   String repoName;
   String index;
   String docs;
   public int totalIndexed = 0;
 
-  public FileIndex(String repoName) {
+  public LuceneIndex(String repoName) {
     // initialization
     this.index = DatasetConfig.INDEX_DIR + "/" + repoName;
     this.docs = DatasetConfig.CORPUS_DIR + "/" + repoName;
@@ -29,7 +30,7 @@ public class FileIndex {
     System.out.println("Docs:" + this.docs);
   }
 
-  public FileIndex(String indexFolder, String docsFolder) {
+  public LuceneIndex(String indexFolder, String docsFolder) {
     this.index = indexFolder;
     this.docs = docsFolder;
   }
@@ -58,8 +59,8 @@ public class FileIndex {
         String[] files = file.list();
         // an IO error could occur
         if (files != null) {
-          for (int i = 0; i < files.length; i++) {
-            indexDocs(writer, new File(file, files[i]));
+          for (String s : files) {
+            indexDocs(writer, new File(file, s));
           }
         }
       } else {
@@ -77,7 +78,7 @@ public class FileIndex {
           doc.add(pathField);
 
           doc.add(
-              new TextField("contents", new BufferedReader(new InputStreamReader(fis, "UTF-8"))));
+              new TextField("contents", new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8))));
           // System.out.println("adding " + file);
 
           writer.addDocument(doc);
@@ -103,12 +104,11 @@ public class FileIndex {
     long start=System.currentTimeMillis();
     String repoName="tomcat70";
 
-    // String docs = DatasetConfig.HOME_DIR + "/Corpus/" + repoName;
     String docs = "C:/java-work/IDEA_workspace/ConBugLoc/dataset/BLIZZARD/tomcat70/code";
     String index =
         "C:/java-work/IDEA_workspace/ConBugLoc/src/resources/Lucene_Index/BLIZZARD/tomcat70";
 
-    FileIndex indexer = new FileIndex(index, docs);
+    LuceneIndex indexer = new LuceneIndex(index, docs);
     indexer.indexCorpusFiles();
     System.out.println("Files indexed:" + indexer.totalIndexed);
     long end=System.currentTimeMillis();

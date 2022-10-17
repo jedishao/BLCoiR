@@ -1,4 +1,4 @@
-package uc.eecs.core.selector;
+package uc.eecs.core.process;
 
 import strict.query.SearchTermProvider;
 import utils.MiscUtility;
