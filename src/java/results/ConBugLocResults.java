@@ -95,9 +95,9 @@ public class ConBugLocResults {
 //    ArrayList<Integer> rankList = results.rankCollection(list);
 //    System.out.println(rankList.toString());
     ArrayList<String> queryList = results.queryCollection(list);
-//    for (String s : queryList){
-//      System.out.println(s);
-//    }
+    for (String s : queryList){
+      System.out.println(s);
+    }
     //System.out.println(list);
 
   }
