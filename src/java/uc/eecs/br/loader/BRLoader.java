@@ -1,4 +1,4 @@
-package uc.eecs.br;
+package uc.eecs.br.loader;
 
 import utils.ContentLoader;
 import utils.FileURL;
@@ -22,6 +22,10 @@ public class BRLoader {
     return ContentLoader.loadFileContent(brFile);
   }
 
+  public static ArrayList<String> loadBugReportList(String brFile) {
+    return ContentLoader.getAllLinesOptList(brFile);
+  }
+
   public static String loadBugContent(String brFile) {
     ArrayList<String> lines = ContentLoader.getAllLinesOptList(brFile);
     if (lines.isEmpty()) {
@@ -31,6 +35,10 @@ public class BRLoader {
     return MiscUtility.list2Str(lines);
   }
 
+  public static ArrayList<String> loadBugContentList(String brFile) {
+    ArrayList<String> lines = ContentLoader.getAllLinesOptList(brFile);
+    return lines;
+  }
   public static String loadBugContent(ArrayList<String> lines) {
     if (lines.isEmpty()) {
       return "";
