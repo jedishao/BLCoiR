@@ -10,5 +10,8 @@ public class QueryConfig {
 
   public static String STACK_REGEX =
       "(.*)?(.+)\\.(.+)(\\((.+)\\.java:\\d+\\)|\\(Unknown Source\\)|\\(Native Method\\))";
+  public static String CODE_REGEX = "(.*)\\((.*)\\);|(.*)=(.*);|public(.*)\\((.*)\\)(.*);";
+  public static String LOG_REGEX = "\\w+(\\.\\w+)+|(.*)line: \\d+|(.*)\\[DEBUG\\](.*)";
+  public static String LOG_REGEX1 = "(.*)\\w+\\.\\w+(\\.\\w+)+(.*)";
   public static String CAMEL_CASE = "(.*)[A-Z](.*)";
 }
