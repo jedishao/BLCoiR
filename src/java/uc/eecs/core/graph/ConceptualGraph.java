@@ -1,12 +1,9 @@
 package uc.eecs.core.graph;
 
-import core.pagerank.PageRankProviderMgr;
 import org.jgraph.graph.DefaultEdge;
-import org.jgrapht.DirectedGraph;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import utils.ItemSorter;
 import utils.MiscUtility;
-import utils.ReadFile;
 import utils.config.DatasetConfig;
 
 import java.io.IOException;
@@ -21,8 +18,8 @@ public class ConceptualGraph {
     this.conItems = conItems;
   }
 
-  public DirectedGraph<String, DefaultEdge> buildGraph() {
-    DirectedGraph<String, DefaultEdge> conGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
+  public DefaultDirectedGraph<String, DefaultEdge> buildGraph() {
+    DefaultDirectedGraph<String, DefaultEdge> conGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
     for (String relation : itemsMap.keySet()) {
       if (!conGraph.containsVertex(relation)) {
         conGraph.addVertex(relation);
@@ -74,8 +71,8 @@ public class ConceptualGraph {
     return conGraph;
   }
 
-  public DirectedGraph<String, DefaultEdge> buildGraph_test(ArrayList<ArrayList<String>> list_2) {
-    DirectedGraph<String, DefaultEdge> conGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
+  public DefaultDirectedGraph<String, DefaultEdge> buildGraph_test(ArrayList<ArrayList<String>> list_2) {
+    DefaultDirectedGraph<String, DefaultEdge> conGraph = new DefaultDirectedGraph<>(DefaultEdge.class);
     HashMap<String, ArrayList<String>> g = new HashMap<>();
     ArrayList<String> con = list_2.get(list_2.size() - 1);
     ArrayList<String> top = new ArrayList<>();
@@ -123,7 +120,7 @@ public class ConceptualGraph {
     return conGraph;
   }
 
-  protected void showGraphEdges(DirectedGraph<String, DefaultEdge> classGraph) {
+  protected void showGraphEdges(DefaultDirectedGraph<String, DefaultEdge> classGraph) {
     // showing the graph
     HashSet<DefaultEdge> edges = new HashSet<>(classGraph.edgeSet());
     HashSet<String> nodes = new HashSet<>();
