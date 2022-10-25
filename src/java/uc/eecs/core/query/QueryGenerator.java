@@ -1,19 +1,17 @@
 package uc.eecs.core.query;
 
 import org.jgraph.graph.DefaultEdge;
-import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.DefaultDirectedGraph;
 import uc.eecs.br.BRClassification;
-import uc.eecs.br.classification.ExceptionLoader;
-import uc.eecs.br.classification.StackTraceLoader;
+import uc.eecs.br.loader.ExceptionLoader;
+import uc.eecs.br.loader.StackTraceLoader;
 import uc.eecs.core.graph.ConceptualGraph;
 import uc.eecs.core.process.StackTraceSelector;
-import uc.eecs.br.BRLoader;
+import uc.eecs.br.loader.BRLoader;
 import uc.eecs.core.process.TextProcess;
 import uc.eecs.nlp.DepManager;
 import uc.eecs.nlp.TextNormalizer;
-import utils.FileURL;
 import utils.MiscUtility;
-import utils.config.DatasetConfig;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -23,6 +21,7 @@ import java.util.logging.Logger;
 
 public class QueryGenerator {
 
+  int bugID;
   Boolean stackTrace;
   String reportContent;
   ArrayList<String> reportContentList;
@@ -42,19 +41,32 @@ public class QueryGenerator {
     this.stackTrace = new BRClassification().classification(reportContentList);
   }
 
-  public QueryGenerator(String bugReportTitle, ArrayList<String> reportContentList, DepManager depManager) {
+  public QueryGenerator(
+      String bugReportTitle, ArrayList<String> reportContentList, DepManager depManager) {
     this.bugReportTitle = bugReportTitle;
     this.reportContent = BRLoader.loadBugContent(reportContentList);
     this.depManager = depManager;
     this.reportContentList = reportContentList;
-    this.stackTrace = new BRClassification().classification(reportContentList);;
+    this.stackTrace = new BRClassification().classification(reportContentList);
+    ;
+  }
+
+  public QueryGenerator(
+      int id, String bugReportTitle, ArrayList<String> reportContentList, DepManager depManager) {
+    this.bugID = id;
+    this.bugReportTitle = bugReportTitle;
+    this.reportContent = BRLoader.loadBugContent(reportContentList);
+    this.depManager = depManager;
+    this.reportContentList = reportContentList;
+    this.stackTrace = new BRClassification().classification(reportContentList);
+    ;
   }
 
   // boolean hasException = false;
   public String generateQuery() {
     ArrayList<String> keywords = new ArrayList<>();
     if (this.stackTrace) {
-      System.out.println("ST");
+      // System.out.println("ST");
       StackTraceLoader stl = new StackTraceLoader();
       ArrayList<String> stack_trace = stl.getStackTrace(this.reportContentList);
       StackTraceSelector sts = new StackTraceSelector(stack_trace);
@@ -80,37 +92,52 @@ public class QueryGenerator {
       return MiscUtility.list2Str(keywords);
     } else {
       // logger.info("NL");
-      System.out.println("NL");
+      // System.out.println(bugID+",");
       TextProcess textProcess;
-      if (depManager == null){
-        textProcess = new TextProcess(reportContent);
+      if (depManager == null) {
+        // textProcess = new TextProcess(reportContent);
+        textProcess = new TextProcess(reportContentList);
       } else {
-        textProcess = new TextProcess(reportContent, depManager);
+        // textProcess = new TextProcess(reportContent, depManager);
+        textProcess = new TextProcess(reportContentList, depManager);
       }
       // get items
       Map<String, List<List<String>>> itemsMap = textProcess.getDomainItems();
+      // List<String> itemsMap = textProcess.getDomainItems1();
       ArrayList<String> conItems = textProcess.getConcurrencyItems();
       // using items to build conceptual graph
       ConceptualGraph cg = new ConceptualGraph(itemsMap, conItems);
-      DirectedGraph<String, DefaultEdge> graph = cg.buildGraph();
+      DefaultDirectedGraph<String, DefaultEdge> graph = cg.buildGraph();
       // if too long, using pageRank
       GraphParser graphParser = new GraphParser(graph);
       return graphParser.getQuery();
+      //      StringBuilder sb = new StringBuilder();
+      //      int j = 0;
+      //      for (String s1 : itemsMap){
+      ////        if (j > 50)
+      ////          break;
+      //        sb.append(s1).append(" ");
+      //        j ++;
+      //      }
+      //      for (String s2 : conItems){
+      //        sb.append(s2).append(" ");
+      //      }
+      //      return sb.toString();
     }
   }
 
   public static void main(String[] args) {
-//    String benchName = DatasetConfig.BLIZZARD;
-//    String repoName = DatasetConfig.DEBUG;
-//    //    for (int bugID : DatasetIndex.DEBUG_ST) {
-//    String brFile = FileURL.brPathAppend(benchName, repoName, 1695);
-//
-//    String title = BRLoader.loadBRTitle(brFile);
-//    String bugReport = BRLoader.loadBugReport(brFile);
-//    String bugReportContent = BRLoader.loadBugContent(brFile);
-//    QueryGenerator queryGenerator = new QueryGenerator(title, bugReportContent);
-//    String query = queryGenerator.generateQuery();
-//    System.out.println(query);
+    //    String benchName = DatasetConfig.BLIZZARD;
+    //    String repoName = DatasetConfig.DEBUG;
+    //    //    for (int bugID : DatasetIndex.DEBUG_ST) {
+    //    String brFile = FileURL.brPathAppend(benchName, repoName, 1695);
+    //
+    //    String title = BRLoader.loadBRTitle(brFile);
+    //    String bugReport = BRLoader.loadBugReport(brFile);
+    //    String bugReportContent = BRLoader.loadBugContent(brFile);
+    //    QueryGenerator queryGenerator = new QueryGenerator(title, bugReportContent);
+    //    String query = queryGenerator.generateQuery();
+    //    System.out.println(query);
     // System.out.println(bugReportContent.replace("\n", " "));
     //    String baselineQuery = new TextNormalizer(title).normalizeText();
     //    String normDesc = new TextNormalizer(bugReportContent).normalizeText();
