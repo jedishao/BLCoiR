@@ -1,4 +1,5 @@
-Bug 15379  WorkingSetManager resource change listener not thread safeResource changes can occur in any thread, and so the resource change listener 
+Bug 15379  WorkingSetManager resource change listener not thread safe
+Resource changes can occur in any thread, and so the resource change listener 
 installed by WorkingSetManager can be called in any thread.  However, the 
 ResourceNavigator listens to working set changes and tries to update its viewer, 
 which can only happen in the UI thread.  The result is an illegal thread access 
