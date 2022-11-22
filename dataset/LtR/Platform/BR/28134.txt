@@ -1,4 +1,5 @@
-Bug 28134  [Decorators] Decorator thread diedThe cause of this may be the CVS decorator but whatever caused the error, it 
+Bug 28134  [Decorators] Decorator thread died
+The cause of this may be the CVS decorator but whatever caused the error, it 
 killed the decorator thread. It looks like an asyncExec is needed.
 
 org.eclipse.swt.SWTException: Invalid thread access
