@@ -1,5 +1,0 @@
-Bug 45460  [Workbench] Disable of autobuild on Workbench#init no longer neededIn the Workbench#init(String[] commandLineArgs, final Display display) method, 
-the disable of the autobuild while editors are opened should no longer be 
-needed since autobuilds are now done in the background. Actually, keeping the 
-disable in is a problem because, on startup, the workbench blocks (busycursor) 
-while the build is taking place, making the user wait needlessly.
