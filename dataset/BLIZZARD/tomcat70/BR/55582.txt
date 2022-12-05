@@ -1,6 +1,6 @@
-55582 â€“ Concurrent issue of TagFileProcessor
+Concurrent issue of TagFileProcessor.
 Created attachment 30871 [details]
-Unsynchronized getting wrapper from RuntimeContext
+Unsynchronized getting wrapper from RuntimeContext.
 The following code has concurrent issue.
 JspRuntimeContext rctxt = ctxt.getRuntimeContext();
 JspServletWrapper wrapper = rctxt.getWrapper(wrapperUri);

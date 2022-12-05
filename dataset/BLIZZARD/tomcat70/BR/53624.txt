@@ -1,4 +1,4 @@
-53624 â€“ sendRedirect doesn't work after a dispatch through the AsyncContext
+sendRedirect doesn't work after a dispatch through the AsyncContext.
 A call to sendRedirect after AsyncContext.dispatch doesn't redirect and returns with a 200 status code instead.
 A project demonstrating the issue:
 https://github.com/rstoyanchev/dispatch-test

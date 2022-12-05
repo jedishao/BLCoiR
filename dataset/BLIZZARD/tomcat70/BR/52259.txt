@@ -1,4 +1,4 @@
-52259 – synchonization issues and dead lock if no realm is presented in configuration
+synchonization issues and dead lock if no realm is presented in configuration.
 Problem:
 Tomcat 7.0.23 startup freezes at "INFO: Deploying web application directory ..."
 Nuances:

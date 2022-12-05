@@ -1,4 +1,4 @@
-55521 â€“ Race Condition in HttpSession#invalidate() / HttpServletRequest#getSession(boolean)
+Race Condition in HttpSession#invalidate() / HttpServletRequest#getSession(boolean).
 Created attachment 30798 [details]
 code flow that exhibits the race condition
 For session fixation protection, we have to discard a user's session and create a new one whenever the user's login state changes.
