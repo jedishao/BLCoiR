@@ -1,4 +1,4 @@
-50138 â€“ Lack of synchronization in org.apache.catalina.security.SecurityUtil
+Lack of synchronization in org.apache.catalina.security.SecurityUtil.
 Symptom: all processor threads spin madly in:
 ==============
 "tomcat-processor-20" daemon prio=10 tid=0x09210800 nid=0x51fb runnable [0x61b76000]

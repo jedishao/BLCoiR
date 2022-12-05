@@ -1,7 +1,7 @@
-49987 â€“ Data race in ApplicationContext
+Data race in ApplicationContext.
 r998053
 http://svn.apache.org/repos/asf/tomcat/tc6.0.x/trunk/java/org/apache/catalina/core/ApplicationContext.java
-Data race on variable
+Data race on variable.
 private Map parameters
 In method
 private void mergeParameters() {

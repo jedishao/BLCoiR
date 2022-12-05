@@ -1,10 +1,9 @@
-49730 â€“ Race condition in StandardThreadExecutor : requests are sometimes enqueued instead of creating new threads
+Race condition in StandardThreadExecutor : requests are sometimes enqueued instead of creating new threads.
 In tomcat 6, I often configure an Executor with minSpareThreads=0 to work around memory leak issues upon redeployment.
 Sometimes (especially in development), when I refresh a page of my webapp with Safari, Chrome or Firefox, some resources of the page take several seconds (>10s) to be served though they are static resources and should come in less than 50ms.
 For instance, over 15 requests for a page (1 for html, the others for resources like js, css, images...), I sometimes have 1 or 2 that take >10s.
 After analysis, I found that in org.apache.catalina.core.StandardThreadExecutor.TaskQueue.offer(Runnable) the statement
-if (parent.getActiveCount()<(parent.getPoolSize()))
-is sometimes true unexpectedly.
+if (parent.getActiveCount()<(parent.getPoolSize())) is sometimes true unexpectedly.
 Here is the scenario :
 - ThreadPoolExecutor is empty
 - the user refreshes the page (or accesses it with an empty cache) in his web browser for a page that uses a more than 10-15 resources

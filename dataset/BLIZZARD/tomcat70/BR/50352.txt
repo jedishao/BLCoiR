@@ -1,4 +1,4 @@
-50352 – AsyncListener.onComplete is not called after AsyncContext.complete() is called
+AsyncListener.onComplete is not called after AsyncContext.complete() is called.
 Using servlet 3 async features, when asyncContext.complete(); is called from an async thread, the AsyncListener onComplete() method is not called though it should be.
 Example Servlet :
 package test;

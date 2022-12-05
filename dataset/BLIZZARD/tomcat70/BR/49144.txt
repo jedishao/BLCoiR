@@ -1,4 +1,4 @@
-49144 â€“ Incorrect lazy initialization and update of static fields?
+Incorrect lazy initialization and update of static fields?
 Incorrect lazy initialization and update of static fields:
 org.apache.catalina.startup.Bootstrap.daemon
 org.apache.catalina.startup.ContextConfig.contextDigester
