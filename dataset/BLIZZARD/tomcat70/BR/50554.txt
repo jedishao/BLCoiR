@@ -1,4 +1,4 @@
-50554 â€“ Bad use of getClass() could potentially lead to concurrency bugs in future
+Bad use of getClass() could potentially lead to concurrency bugs in future.
 The method org.apache.naming.java.javaURLContextFactory.getInitialContext(Hashtable<?,?>) has a synchronized block on getClass().
 Using getClass() as lock is a bug pattern because if some class subclasses javaURLContextFactory and getInitialContext gets called on an instance of such a subclass, getClass() will return a different Class object for that instance.
 Locking different objects for different classes is usually not the expected behavior.

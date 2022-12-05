@@ -1,4 +1,4 @@
-51185 – Performance : DataSourceProxy#createPool should use more fine grained synchronisation
+Performance: DataSourceProxy#createPool should use more fine grained synchronisation
 Hello,
 I don't know if this is the right component.
 My Enhancement concerns new Tomcat JDBC POOL.

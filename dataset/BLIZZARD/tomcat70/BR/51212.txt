@@ -1,4 +1,4 @@
-51212 â€“ QueryStats has synchornisation issues
+QueryStats has synchornisation issues.
 Created attachment 27017 [details]
 Patch with Atomic approach
 Hello,

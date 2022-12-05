@@ -1,4 +1,4 @@
-52091 – TagHandlerPool is slow when high concurrently
+TagHandlerPool is slow when high concurrently.
 TagHandlerPool is slow when I ran stress test my web application using tomcat7.
 It occured in 7.0.19.
 Profiler said that it causes are followings:

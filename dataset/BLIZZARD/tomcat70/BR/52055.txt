@@ -1,4 +1,4 @@
-52055 â€“ ChunkedInputFilter is not recycled for servlet 3.0 asynchronous request
+ChunkedInputFilter is not recycled for servlet 3.0 asynchronous request.
 I'm using the standard servlet 3.0 async APIs with tomcat 7.0.22.
 The server side code is something like the following:
 final AsyncContext asyncContext = request.startAsync();
