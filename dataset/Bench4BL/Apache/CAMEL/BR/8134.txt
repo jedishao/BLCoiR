@@ -1,0 +1,3 @@
+We should not add synchronisation if the CachedOutputStream closedOnCompletion option is falseCachedOutputStream.
+adds synchronization into exchange even the closedOnCompletion option is false, it could cause OOM error with the HttpProducer endpoint does "unlimited/limited" redelivery. 
+Here is the discussion about this issue. 

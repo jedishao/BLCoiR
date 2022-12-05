@@ -1,0 +1,4 @@
+file consumer - Should call abort in case read lock cannot be acquired if exception was thrown.
+See nabble:
+http://camel.465427.n5.nabble.com/Possible-issue-with-FileLockExclusiveReadLockStrategy-leaves-orphaned-camelLock-file-tp5758142.html
+This could cause a.camelLock or phaned file to be there causing the file to not be eligible for consuming on next poll.

@@ -1,0 +1,2 @@
+Address the SchemaFactory thread safe issue.
+SchemaFactory is not thread safe, we need to do addition work in ValidatorProcessor to avoid the threads issue.

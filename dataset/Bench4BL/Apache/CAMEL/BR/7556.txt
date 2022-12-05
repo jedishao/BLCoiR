@@ -1,0 +1,2 @@
+camel-rabbitmq: Multiple concurrent consumer threads.
+Allow multiple concurrent threads listening to a single queue (like the JMS endpoint).

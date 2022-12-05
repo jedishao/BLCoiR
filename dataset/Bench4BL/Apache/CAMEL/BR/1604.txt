@@ -1,0 +1,3 @@
+UnitOfWork synchronization callbacks - add DSL for easy registering custom processor.
+See nabble:
+http://www.nabble.com/-DISCUSS---Camel-2.0---Synchronization-%28UnitOfWork-callbacks%29-and--needed-syntax-DSL-sugar-td23498213s22882.html
