@@ -1,4 +1,4 @@
-42530 – ManagerBase.backgroundProcess throws NullPointerException.
+ManagerBase.backgroundProcess throws NullPointerException.
 ManagerBase.backgroundProcess throws NullPointerException.
 java.lang.NullPointerException
 at org.apache.catalina.session.ManagerBase.processExpires(ManagerBase.java:682)
@@ -30,18 +30,9 @@ results = (Session[]) sessions.values().toArray(results); ----- (B)
 }
 return (results);
 }
-In Tomcat6, sessions of ManagerBase has been changed from HashMap to
-ConcurrentHashMap.
-At the same time, synchronized operations of sessions have been removed from
-the  methods
-such as findSession(String is), add(Session session), and remove(Session
-session).
-However, if the lock of sessions is not acquired by add(Session session) and
-remove(Session session),
-Servlets can execute session.invalidate() between (A) and (B).
-(see above.)
-As a result, NullpointerException is thrown by processing the 682 line of
-ManagerBase.processExpires().
+In Tomcat6, sessions of ManagerBase has been changed from HashMap to ConcurrentHashMap.
+At the same time, synchronized operations of sessions have been removed from the methods such as findSession(String is), add(Session session), and remove(Session session).
+However, if the lock of sessions is not acquired by add(Session session) and remove(Session session), Servlets can execute session.invalidate() between (A) and (B). (see above.)
+As a result, NullpointerException is thrown by processing the 682 line of ManagerBase.processExpires().
 if (!sessions[i].isValid()) {
-I think add(Session session) and remove(Session session) should manipulate
-sessions in synchronized manner like Tomcat5.5.
+I think add(Session session) and remove(Session session) should manipulate sessions in synchronized manner like Tomcat5.5.

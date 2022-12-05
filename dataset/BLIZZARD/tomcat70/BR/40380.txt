@@ -1,4 +1,4 @@
-40380 – Potential syncro problem in StandardSession.expire(boolean)
+Potential syncro problem in StandardSession.expire(boolean).
 public void expire(boolean notify) {
 // Mark this session as "being expired" if needed
 if (expiring)

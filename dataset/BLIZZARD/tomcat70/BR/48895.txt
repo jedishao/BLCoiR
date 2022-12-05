@@ -1,4 +1,4 @@
-48895 â€“ WebAppClassLoader.clearThreadLocalMap() concurrency issues
+WebAppClassLoader.clearThreadLocalMap() concurrency issues.
 I think that the memory leak protection of WebAppClassLoader.clearReferencesThreadLocals() which detects and clears ThreadLocals that would prevent GC the WebAppClassLoader instance has issues regarding concurrency :
 - It enumerates Threads and looks into internal structures of the Thread class, but there are no "memory barrier" that would ensure a consistent state of the ThreadLocalMap being examined.
 So, it is theoretically possible that a ThreadLocal in Thread A was properly cleaned up by the application, but the current thread B (that is undeploying the application) does not see the up to date state because there's no synchronization between those threads.

@@ -1,4 +1,4 @@
-47524â€œ McastServiceImpl executor is not dispatching events.
+McastServiceImpl executor is not dispatching events.
 Created attachment 23977 [details]
 Fix proposal
 The class McastServiceImpl does not dispatch events, because the the executor is not creating threads.

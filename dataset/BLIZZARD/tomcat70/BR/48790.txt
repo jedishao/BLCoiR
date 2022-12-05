@@ -1,4 +1,4 @@
-48790 â€“ Race condition in org.apache.catalina.session.ManagerBase:maxActive
+Race condition in org.apache.catalina.session.ManagerBase:maxActive.
 We are running tomcat 6.0.18 with a race detector (http://www.alphaworks.ibm.com/tech/msdk), and find one race condition in class
 org.apache.catalina.session.ManagerBase field maxActive.
 Data Race 1 : org.apache.catalina.session.ManagerBase : maxActive
@@ -30,4 +30,4 @@ int size = sessions.size();
 }
 }
 Statement 1 and statement 2 should executed in an atomic manner.
- One fix to this problem is to move statement 1 and statement 2 into a synchronized block.
+One fix to this problem is to move statement 1 and statement 2 into a synchronized block.
