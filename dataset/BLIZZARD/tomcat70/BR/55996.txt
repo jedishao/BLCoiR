@@ -1,4 +1,4 @@
-55996 – Async context does not timeout with HTTP NIO connector
+Async context does not timeout with HTTP NIO connector.
 Created attachment 31200 [details]
 Servlet with Async processing and Java Based client
 I created a ProblemServlet which receives request via a Java based client.

@@ -1,4 +1,4 @@
-56082 â€“ ConcurrentModificationException with org.apache.juli.ClassLoaderLogManager
+ConcurrentModificationException with org.apache.juli.ClassLoaderLogManager.
 Created attachment 31267 [details]
 Source to reproduce
 In Tomcat, java.util.logging.LogManager.getLogManager() is in general an instance of org.apache.juli.ClassLoaderLogManager.
