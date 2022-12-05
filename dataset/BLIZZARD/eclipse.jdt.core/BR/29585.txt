@@ -1,6 +1,5 @@
-Bug 29585 – Core Exception as resource tree is locked initializing classpath container
-Java Model Exception: Core Exception [code 4] The resource tree is locked for
-modifications.
+Core Exception as resource tree is locked initializing classpath container.
+Java Model Exception: Core Exception [code 4] The resource tree is locked for modifications.
 at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:2705)
 at org.eclipse.jdt.internal.launching.JREContainerInitializer.initialize
 (JREContainerInitializer.java:59)

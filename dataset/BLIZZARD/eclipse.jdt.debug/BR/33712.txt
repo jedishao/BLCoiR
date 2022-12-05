@@ -1,7 +1,6 @@
-Bug 33712 – "The resource tree is locked for modifications" from JavaDebugOptionsManager
+"The resource tree is locked for modifications" from JavaDebugOptionsManager.
 I found the following in my log.
-I'd recently created a new Java Project and
-then created a new Main method, following the steps in Bug 33612 comment #5.
+I'd recently created a new Java Project and then created a new Main method, following the steps in Bug 33612 comment #5.
 !SESSION Mar 03, 2003 16:40:03.154 ---------------------------------------------
 java.version=1.4.1-rc
 java.vendor=Sun Microsystems Inc.
