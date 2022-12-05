@@ -1,8 +1,8 @@
-Bug 8683 â€“ NPE after suspending VM attempting to step on system thread
+NPE after suspending VM attempting to step on system thread.
 20020124++
-Suspend the VM
-Select the SignalDispatcher thread
-Hit step over
+Suspend the VM.
+Select the SignalDispatcher thread.
+Hit step over.
 Our code assumes that there is a top stack frame.
 java.lang.NullPointerException
 at org.eclipse.jdt.internal.debug.core.model.JDIThread$StepHandler.step(JDIThread.java:1510)

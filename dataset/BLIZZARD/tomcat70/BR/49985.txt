@@ -1,4 +1,4 @@
-49985 â€“ Lazy initialization without any synchronization - data race in AstInteger, AstFloatingPoint, AstString
+Lazy initialization without any synchronization - data race in AstInteger, AstFloatingPoint, AstString.
 r998053
 http://svn.apache.org/repos/asf/tomcat/tc6.0.x/trunk/java/org/apache/el/parser/AstInteger.java
 http://svn.apache.org/repos/asf/tomcat/tc6.0.x/trunk/java/org/apache/el/parser/AstFloatingPoint.java

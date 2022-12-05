@@ -1,4 +1,4 @@
-Bug 29531 – JavaColorManager initialized in non UI thread
+JavaColorManager initialized in non UI thread.
 Build I20030114
 - open Workspace
 - select CU without opening in editor
