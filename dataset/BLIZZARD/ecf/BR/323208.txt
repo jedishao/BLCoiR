@@ -1,10 +1,10 @@
-Bug 323208 – Distribution Provider exceeds startup time limit (5 sec) if existing services are present
+Distribution Provider exceeds startup time limit (5 sec) if existing services are present.
 Created attachment 177060 [details]
 testcase
-I'm using Eclipse 3.6 with ECF 3.3
+I'm using Eclipse 3.6 with ECF 3.3.
 I was trying to reproduce the problem I encountered with multiple hosts on the same machine with zookeeper when I ran into an exception when using jmdns.
- To reproduce, unzip the attached workspace, run the consumer, run the first host, then run the second host.
- You should get the following exception:
+To reproduce, unzip the attached workspace, run the consumer, run the first host, then run the second host.
+You should get the following exception:
 !MESSAGE While loading class "org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl$DiscoveredEndpointEvent", thread "Thread[JMDNS Discovery Thread,5,main]" timed out waiting (5000ms) for thread "Thread[Start Level Event Dispatcher,5,main]" to finish starting bundle "org.eclipse.ecf.osgi.services.distribution_1.2.0.v20100615-1451 [21]".
 To avoid deadlock, thread "Thread[JMDNS Discovery Thread,5,main]" is proceeding but "org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl$DiscoveredEndpointEvent" may not be fully initialized.
 !STACK 0

@@ -1,4 +1,4 @@
-Bug 348487 – JMDNS Discovery Thread is slowing down shutdown
+JMDNS Discovery Thread is slowing down shutdown.
 I noticed that after Eclipse appears to have shutdown it takes a long time for the Java process to exit.
 Looking at a thread dump all remaining threads are daemon threads except for JMDNS Discovery Thread.
 Shouln't this be marked as a daemon thread as well and/or shutdown when the bundle is stopped that started it?

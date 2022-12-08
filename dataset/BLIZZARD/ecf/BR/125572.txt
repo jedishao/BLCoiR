@@ -1,4 +1,4 @@
-Bug 125572 – ECF Generic provider thread interlock
+ECF Generic provider thread interlock.
 We see the following problem while running an ECF-based app that connects to an ECF-based server app using version 0.5 or version 0.6 ECF generic provider.
 From time to time two threads in a client app become interlocked on two mutexes:
 Thread [Thread-2] (Suspended)

@@ -1,4 +1,4 @@
-Bug 273819 – Containers are instantiated every time a wizard opens
+Containers are instantiated every time a wizard opens.
 Somehow, this feels kind of wrong.
 The container is also not disposed when the wizard closes (if the user cancels the dialog).
 Should it?

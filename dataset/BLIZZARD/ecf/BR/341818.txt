@@ -1,4 +1,4 @@
-Bug 341818 – [rosgi] System is out of thread resources when using r_osgi provider
+System is out of thread resources when using r_osgi provider.
 Build Identifier: eclipse 3.6.2 SDK - ECF 3.5
 executing the sample code:
 org.eclipse.ecf.examples.remoteservices.hello.consumer.rs

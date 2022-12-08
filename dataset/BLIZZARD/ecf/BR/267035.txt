@@ -1,7 +1,7 @@
-Bug 267035 – ReplicaSharedObjectDescription#toString() is not thread safe
+ReplicaSharedObjectDescription#toString() is not thread safe.
 Build ID: M20080911-1700
 Steps To Reproduce:
-Primary(GUID[Cq+I8tyQMDnXR9gyzYuCvllUYz4=]; org.acoveo.ecf.monitoringTool.AgentGroupInformation) says Hello java.util.ConcurrentModificationException
+Primary(GUID[Cq+I8tyQMDnXR9gyzYuCvllUYz4=]; org.acoveo.ecf.monitoringTool.AgentGroupInformation) says Hello java.util.ConcurrentModificationException.
 at java.util.LinkedList$ListItr.checkForComodification(LinkedList.java:761)
 at java.util.LinkedList$ListItr.next(LinkedList.java:696)
 at java.util.AbstractCollection.toString(AbstractCollection.java:421)
@@ -24,4 +24,4 @@ at org.eclipse.ecf.provider.generic.SOWrapper$2.run(SOWrapper.java:190)
 at org.eclipse.ecf.provider.generic.SOContainer$SharedObjectJobRunnable.run(SOContainer.java:142)
 at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
 More information:
-toString should be synchronized
+toString should be synchronized.

@@ -1,4 +1,4 @@
-Bug 223484 – Several threads remain though disconnect was done from the XMPP server
+Several threads remain though disconnect was done from the XMPP server.
 Build ID: 2.0.0.v20080310-1643
 Steps To Reproduce:
 1.

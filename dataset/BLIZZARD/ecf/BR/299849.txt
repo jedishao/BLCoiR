@@ -1,4 +1,4 @@
-Bug 299849 – [remotesvcs] RegistrySharedObject#handle* can throw NPE
+RegistrySharedObject#handle* can throw NPE.
 In this code:
 if (remoteContainerID == null || getLocalContainerID().equals(remoteContainerID)) {
 return;
@@ -9,7 +9,7 @@ protected ID getLocalContainerID() {
 // For XMPP, the local container ID is its connected ID.
 return getContext().getConnectedID();
 }
-this code returns XMPPContainer.remoteServerID
+this code returns XMPPContainer.remoteServerID.
 But! If we will invoke method XMPPContainer.disconnect() then we will set remoteServerID to null and getLocalContainerID will return null.
 In RegistrySharedObject#handleAddRegistration we will have NPE.
 This situation can occur because we receive/handle packet in another (not main) thread.

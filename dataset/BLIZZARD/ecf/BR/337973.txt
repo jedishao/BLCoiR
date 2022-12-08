@@ -1,4 +1,4 @@
-Bug 337973 – [zoodiscovery] Remote service undiscovered and not rediscovered due to concurrency bug
+Remote service undiscovered and not rediscovered due to concurrency bug.
 Build Identifier: 3.4
 Hi,
 While using zoodiscovery I got a remote service undiscovered and it was not rediscovered again.

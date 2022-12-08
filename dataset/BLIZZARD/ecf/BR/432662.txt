@@ -1,4 +1,4 @@
-Bug 432662 – ECFRuntimeException: Unable to instantiate schemes for HttpClient
+ECFRuntimeException: Unable to instantiate schemes for HttpClient.
 In my multi-threaded application I get many exceptions like the following for a short period after startup:
 org.eclipse.ecf.core.util.ECFRuntimeException: Unable to instantiate schemes for HttpClient.
 at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.registerSchemes(HttpClientRetrieveFileTransfer.java:200)
@@ -16,7 +16,7 @@ sslSocketFactoryTracker.open();
 }
 return (SSLSocketFactory) sslSocketFactoryTracker.getService();
 }
-The method is *not* thread-safe.
+The method is not thread-safe.
 Adding a "synchronized" modifier solves the problem.
 I noticed that the getLogService() method might suffer from the same problem, but if so it didn't manifest itself for me.
 I used org.eclipse.ecf.provider.filetransfer.httpclient4_1.0.300.v20140228-1838 and found that the bug is still present in the master branch.

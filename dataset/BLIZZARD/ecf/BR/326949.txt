@@ -1,4 +1,4 @@
-Bug 326949 – [remoteservices][api] add getRemoteServiceReferences(ID,ID[],String,String) to remote service container adapter api
+add getRemoteServiceReferences(ID,ID[],String,String) to remote service container adapter api.
 Currently, there are two synchronous getRemoteServiceReferences methods on IRemoteServiceContainerAdapter:
 public IRemoteServiceReference[] getRemoteServiceReferences(ID target, String clazz, String filter) throws InvalidSyntaxException, ContainerConnectException;
 public IRemoteServiceReference[] getRemoteServiceReferences(ID[] idFilter, String clazz, String filter) throws InvalidSyntaxException;
