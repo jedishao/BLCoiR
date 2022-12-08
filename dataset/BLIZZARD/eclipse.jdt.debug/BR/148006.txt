@@ -1,4 +1,4 @@
-Bug 148006 â€“ [console] deadlock in ConsoleDocument during ant execution in autobuild
+deadlock in ConsoleDocument during ant execution in autobuild.
 I20060620-1010
 Got this after starting up with the build, importing plug-ins as binary, and waiting for autobuild to complete:
 Full thread dump Java HotSpot(TM) Client VM (1.4.2_06-b02 mixed mode):

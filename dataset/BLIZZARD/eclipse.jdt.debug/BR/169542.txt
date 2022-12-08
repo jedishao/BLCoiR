@@ -1,4 +1,4 @@
-Bug 169542 â€“ A ThreadGroup (and all its Threads) is not displayed in the Debug view when its parent didn't contain any threads
+A ThreadGroup (and all its Threads) is not displayed in the Debug view when its parent didn't contain any threads.
 Build ID: M20060629-1905
 Steps To Reproduce:
 1.Create new ThreadGroup(first) using the code "new ThreadGroup("<some name>")" - the parent of the newly created thread group will be the "main" thread group

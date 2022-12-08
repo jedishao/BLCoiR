@@ -1,5 +1,5 @@
-Bug 165174 – [viewers] selection is lost in launch view after stepping into sync block
-using the following code, selection in the launch view is lost after stepping into the sync block with show monitors turned on
+selection is lost in launch view after stepping into sync block.
+using the following code, selection in the launch view is lost after stepping into the sync block with show monitors turned on.
 public class Main {
 public static void main(String[] args) {
 System.out.println("bp on this line");

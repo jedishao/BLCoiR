@@ -1,4 +1,4 @@
-Bug 239950 – Debugging Spring app causes ClassCastException
+Debugging Spring app causes ClassCastException.
 Build ID: I20080617-2000
 Steps To Reproduce:
 1.TestCase for spring application extends AbstractTransactionalSpringContextTests

@@ -1,4 +1,4 @@
-Bug 372030 â€“ Cannot resume single thread after VM suspended
+Cannot resume single thread after VM suspended.
 N20120217-2000
 I cannot resume a single thread in a Remote Java Application launch configuration.
 I remote-debugged my workspace to investigate bug 361758, and then suspended the VM.

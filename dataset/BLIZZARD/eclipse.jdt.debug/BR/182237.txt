@@ -1,4 +1,4 @@
-Bug 182237 â€“ Invalid thread access exceptions in Java Variables view.
+Invalid thread access exceptions in Java Variables view.
 Since updating to M6, I have been getting these exceptions when I first open the variables view.
 org.eclipse.swt.SWTException: Invalid thread access
 at org.eclipse.swt.SWT.error(SWT.java:3499)

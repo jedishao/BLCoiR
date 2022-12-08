@@ -1,4 +1,4 @@
-Bug 287834 â€“ JavaLineBreakpoint is not thread-safe and causes 100% CPU
+JavaLineBreakpoint is not thread-safe and causes 100% CPU.
 Build ID: Eclipse 3.5
 Steps To Reproduce:
 I was in a normal debug session.

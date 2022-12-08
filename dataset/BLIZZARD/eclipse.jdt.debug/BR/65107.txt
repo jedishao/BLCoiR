@@ -1,4 +1,4 @@
-Bug 65107 â€“ ClassCastException processing async thread queue
+ClassCastException processing async thread queue.
 Debugging some (horrible) code I got the following exception:
 Error Jun 01, 2004 13:30:30.703 Exception processing async thread queue
 java.lang.ClassCastException
@@ -33,6 +33,5 @@ total+=i;  // <---------- breakpoint here!!
 }
 }
 2.
-In DebugView switch stack frames a few times, alternating between "T1!"
-and "T2!"
+In DebugView switch stack frames a few times, alternating between "T1!" and "T2!"
 Note: I had watches on total and i when I discovered this bug.

@@ -1,7 +1,6 @@
-Bug 78534 – ConcurrentModificationException in ThreadMonitorManager
+ConcurrentModificationException in ThreadMonitorManager.
 I got this exception while debugging a test case.
-Apparently, HashMap#clone() is
-not thread safe.
+Apparently, HashMap#clone() is not thread safe.
 !ENTRY org.eclipse.debug.core 4 120 2004-11-12 09:51:02.64
 !MESSAGE An exception occurred while dispatching debug events.
 !STACK 0

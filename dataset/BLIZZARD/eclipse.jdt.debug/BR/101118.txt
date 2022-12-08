@@ -1,8 +1,7 @@
-Bug 101118 â€“ eclipse-SDK-3.1RC3-win32 - Exception processing async thread queue
+eclipse-SDK-3.1RC3-win32 - Exception processing async thread queue.
 Hi,
 Using eclipse-SDK-3.1RC3-win32 in a multithreaded application.
-Have problem
-when trying debug the source code.
+Have problem when trying debug the source code.
 Have tried with older version of Eclipse (RC1 and M7) but nothing changed.
 !SESSION 2005-06-21 20:52:46.761 -----------------------------------------------
 eclipse.buildId=I20050617-1618

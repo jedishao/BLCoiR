@@ -1,4 +1,4 @@
-Bug 66413 â€“ Illegal thread state when debugging to conditional BP on startup
+Illegal thread state when debugging to conditional BP on startup.
 Further strangeness to bug 64951
 * condition is i == 57
 * change to Java perspective
@@ -22,5 +22,4 @@ at org.eclipse.jdt.internal.debug.core.EventDispatcher.dispatch(EventDispatcher.
 at org.eclipse.jdt.internal.debug.core.EventDispatcher.run(EventDispatcher.java:221)
 at java.lang.Thread.run(Thread.java:806)
 Terminating and restarting the target works OK.
-Seems to be a problem with
-evaluating the condition on startup.
+Seems to be a problem with evaluating the condition on startup.

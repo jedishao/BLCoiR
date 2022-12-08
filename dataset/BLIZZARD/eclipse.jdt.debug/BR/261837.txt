@@ -1,4 +1,4 @@
-Bug 261837 â€“ RuntimeProcess should synchronize access to fTerminated and fExitValue
+RuntimeProcess should synchronize access to fTerminated and fExitValue.
 Access to fTerminated and fExitValue need to be synchronized.
 The following example leads to an endless loop.
 Thread 1:  while( !process.isTerminated()) {}

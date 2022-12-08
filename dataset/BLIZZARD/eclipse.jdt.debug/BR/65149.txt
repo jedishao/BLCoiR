@@ -1,9 +1,7 @@
-Bug 65149 – Resource exception in JavaDebugOptionsManager.initializeProblemHandling
+Resource exception in JavaDebugOptionsManager.initializeProblemHandling.
 3.0 RC1
-Got the following in my log after replacing a local project with a project at
-some other date in CVS.
-org.eclipse.core.internal.resources.ResourceException: The resource tree is
-locked for modifications.
+Got the following in my log after replacing a local project with a project at some other date in CVS.
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
 at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:93)
 at
 org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:1628)

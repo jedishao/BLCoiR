@@ -1,4 +1,4 @@
-Bug 187000 â€“ Debugger looses selection/focus a lot on the thread stack where you debug.
+Debugger looses selection/focus a lot on the thread stack where you debug.
 Build ID:  I20070503-1400
 Steps To Reproduce:
 Just start debugging and press with the mouse the step over constantly.

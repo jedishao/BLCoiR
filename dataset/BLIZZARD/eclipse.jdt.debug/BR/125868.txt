@@ -1,11 +1,11 @@
-Bug 125868 â€“ Invalid Thread Access when launching
+Invalid Thread Access when launching.
 Running HEAD.
 1.
- restart eclipse
+restart eclipse
 2.
- start a jdt debug session and resulted in this exception
+start a jdt debug session and resulted in this exception
 It seems to only happen on the first launch.
- Subsequent launches do not result in exceptions.
+Subsequent launches do not result in exceptions.
 org.eclipse.swt.SWTException: Invalid thread access
 at java.lang.Throwable.<init>(Throwable.java)
 at java.lang.Throwable.<init>(Throwable.java)
