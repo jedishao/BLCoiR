@@ -1,4 +1,4 @@
-Bug 431275 – Deadlock in JavaModelManager$PerProjectInfo and DeltaProcessingState
+Deadlock in JavaModelManager$PerProjectInfo and DeltaProcessingState.
 An adopter product (IBM) than runs in headless mode is hitting a deadlock with monitors org/eclipse/jdt/internal/core/JavaModelManager$PerProjectInfo and org/eclipse/jdt/internal/core/DeltaProcessingState.
 This product started to hit this deadlock with JDT 3.6.50.v_B79_R36x_J7 (org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar).
 They did not see this deadlock when they were using 3.6.4.v_A79_R36x (org.eclipse.jdt.core_3.6.4.v_A79_R36x).

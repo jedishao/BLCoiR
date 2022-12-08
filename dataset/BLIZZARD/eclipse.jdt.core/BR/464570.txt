@@ -1,4 +1,4 @@
-Bug 464570 – [compiler][codegen] race condition on static field CodeStream.noVisibleLocals in method CodeStream.init()
+race condition on static field CodeStream.noVisibleLocals in method CodeStream.init().
 weblogic make use of JDT to compile the translated java source from jsp files to java bytecode with multi-threads, ArrayIndexOutOfBoundsException occurs intermittently as following stack showing (weblogic repackaged the jdt jar for avoiding potential class conflict):
 java.lang.ArrayIndexOutOfBoundsException
 at java.lang.System.arraycopy(Native Method)

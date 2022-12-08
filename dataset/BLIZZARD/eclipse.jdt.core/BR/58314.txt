@@ -1,9 +1,8 @@
-Bug 58314 – Make ASTs thread-safe for multiple readers
+Make ASTs thread-safe for multiple readers.
 20040413
 Found this exception in the console.
 My guess is that came from visiting the AST from multiple threads.
-The cursor
-managment doesn't seem to be thread save.
+The cursor managment doesn't seem to be thread save.
 java.lang.NullPointerException
 at java.lang.Throwable.<init>(Throwable.java)
 at java.lang.Throwable.<init>(Throwable.java)
