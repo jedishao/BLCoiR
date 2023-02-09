@@ -8,20 +8,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ResultRankManager {
+  String bench;
   String repoName;
   ArrayList<String> results;
   ArrayList<String> goldset;
   public static HashMap<String, String> keyMap = new HashMap<>();
   String keyfile;
 
-  public ResultRankManager(String repoName, ArrayList<String> results, ArrayList<String> goldset) {
+  public ResultRankManager(String bench, String repoName, ArrayList<String> results, ArrayList<String> goldset) {
+    this.bench = bench;
     this.repoName = repoName;
     this.results = results;
     this.goldset = goldset;
     // this.keyfile = DatasetConfig.CORPUS_INDEX_KEY_MAPPING + "/" + this.repoName + ".ckeys";
     this.keyfile =
-        "C:/Java/BLIZZARD-Replication-Package-ESEC-FSE2018/Lucene-Index2File-Mapping"
-            + "/" + this.repoName + ".ckeys";
+        "src/resources/Lucene-Index2File-Mapping"
+            + "/" + this.bench + "/" + this.repoName + ".txt";
     if (keyMap.isEmpty()) {
       // load only the HashMap is empty
       loadKeys();
@@ -35,7 +37,7 @@ public class ResultRankManager {
     for (String line : lines) {
       String[] parts = line.split(":");
       String key = parts[0] + ".java";
-      keyMap.put(key, parts[2].trim()); // startled me
+      keyMap.put(key, parts[1].trim()); // startled me
     }
   }
 
@@ -55,6 +57,21 @@ public class ResultRankManager {
       }
     }
     return foundIndex;
+  }
+
+  protected ArrayList<Integer> getCorrectRanks() {
+    ArrayList<Integer> foundIndices = new ArrayList<>();
+    ArrayList<String> results = translateResults();
+    int index = 0;
+    for (String elem : results) {
+      index++;
+      for (String item : goldset) {
+        if (elem.endsWith(item)) {
+          foundIndices.add(index);
+        }
+      }
+    }
+    return foundIndices;
   }
 
   protected ArrayList<String> translateResults() {

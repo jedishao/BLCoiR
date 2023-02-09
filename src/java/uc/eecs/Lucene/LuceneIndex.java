@@ -78,7 +78,9 @@ public class LuceneIndex {
           doc.add(pathField);
 
           doc.add(
-              new TextField("contents", new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8))));
+              new TextField(
+                  "contents",
+                  new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8))));
           // System.out.println("adding " + file);
 
           writer.addDocument(doc);
@@ -101,17 +103,15 @@ public class LuceneIndex {
   }
 
   public static void main(String[] args) {
-    long start=System.currentTimeMillis();
-    String repoName="tomcat70";
+    long start = System.currentTimeMillis();
 
-    String docs = "C:/java-work/IDEA_workspace/ConBugLoc/dataset/BLIZZARD/tomcat70/code";
-    String index =
-        "C:/java-work/IDEA_workspace/ConBugLoc/src/resources/Lucene_Index/BLIZZARD/tomcat70";
+    String docs = "/Users/shuai/Java-projects/trino/";
+    String index = "src/resources/Lucene_Index/GitHub/trino/";
 
     LuceneIndex indexer = new LuceneIndex(index, docs);
     indexer.indexCorpusFiles();
     System.out.println("Files indexed:" + indexer.totalIndexed);
-    long end=System.currentTimeMillis();
-    System.out.println("Time needed:"+(end-start)/1000+" s");
+    long end = System.currentTimeMillis();
+    System.out.println("Time needed:" + (end - start) / 1000 + " s");
   }
 }

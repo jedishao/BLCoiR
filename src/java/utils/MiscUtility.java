@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MiscUtility {
 
-  public static String list2Str(ArrayList<String> list) {
+  public static String list2Str(List<String> list) {
     StringBuilder temp = new StringBuilder();
     for (String item : list) {
       temp.append(item).append(" ");
@@ -12,7 +12,7 @@ public class MiscUtility {
     return temp.toString().trim();
   }
 
-  public static String list2StrSent(ArrayList<String> list) {
+  public static String list2StrSent(List<String> list) {
     StringBuilder temp = new StringBuilder();
     for (String item : list) {
       temp.append(item).append(". ");

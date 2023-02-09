@@ -1,12 +1,13 @@
 package uc.eecs.core.process;
 
 import org.jgraph.graph.DefaultEdge;
-import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.AbstractBaseGraph;
 import org.jgrapht.graph.DefaultDirectedGraph;
-import uc.eecs.br.classification.StackTraceLoader;
+import uc.eecs.br.loader.StackTraceLoader;
 import uc.eecs.nlp.StopWordManager;
 import utils.ContentLoader;
 import utils.MiscUtility;
+import utils.config.BugReportsID;
 import utils.config.DatasetConfig;
 
 import java.util.*;
@@ -18,8 +19,8 @@ public class TraceElemExtractor {
   HashSet<String> classes;
 
   // version of jgrapht
-  DirectedGraph<String, DefaultEdge> methodGraph = null;
-  DirectedGraph<String, DefaultEdge> classGraph = null;
+  AbstractBaseGraph<String, DefaultEdge> methodGraph = null;
+  DefaultDirectedGraph<String, DefaultEdge> classGraph = null;
 
   public TraceElemExtractor(ArrayList<String> traces) {
     this.traces = refineTraces(traces);
@@ -48,11 +49,11 @@ public class TraceElemExtractor {
     return classes;
   }
 
-  public DirectedGraph<String, DefaultEdge> getMethodGraph() {
+  public AbstractBaseGraph<String, DefaultEdge> getMethodGraph() {
     return methodGraph;
   }
 
-  public DirectedGraph<String, DefaultEdge> getClassGraph() {
+  public DefaultDirectedGraph<String, DefaultEdge> getClassGraph() {
     return classGraph;
   }
 
@@ -151,23 +152,23 @@ public class TraceElemExtractor {
         classGraph.addVertex(methodName);
       }
       // new
-//      if (!classGraph.containsEdge(methodName, className)) {
-//        this.classGraph.addEdge(methodName, className);
-//      }
+      if (!classGraph.containsEdge(methodName, className)) {
+        this.classGraph.addEdge(methodName, className);
+      }
       if (!classGraph.containsEdge(className, methodName)) {
         this.classGraph.addEdge(className, methodName);
       }
-      //new
-//      if (!prevMethod.isEmpty()) {
-//        if (!classGraph.containsEdge(methodName, prevMethod)) {
-//          this.classGraph.addEdge(methodName, prevMethod);
-//        }
-//        // doesn't it improve?
-//        /*
-//         * if (!classGraph.containsEdge(methodName, prevClass)) {
-//         * this.classGraph.addEdge(methodName, prevClass); }
-//         */
-//      }
+      // new
+      if (!prevMethod.isEmpty()) {
+        if (!classGraph.containsEdge(methodName, prevMethod)) {
+          this.classGraph.addEdge(methodName, prevMethod);
+        }
+        // doesn't it improve?
+        /*
+         * if (!classGraph.containsEdge(methodName, prevClass)) {
+         * this.classGraph.addEdge(methodName, prevClass); }
+         */
+      }
       prevMethod = methodName;
 
       tcount++;
@@ -177,16 +178,40 @@ public class TraceElemExtractor {
     }
   }
 
+  protected List<String> traces() {
+    List<String> classes = new ArrayList<>();
+    for (String line : this.traces) {
+      String[] parts = line.split("\\.");
+      int length = parts.length;
+
+      String methodName = "";
+      String className = "";
+      String packageName = "";
+
+      if (length >= 2) {
+        methodName = parts[length - 1];
+        methodName = cleanEntity(methodName);
+        className = parts[length - 2];
+        className = cleanEntity(className);
+        // package is always canonical
+        for (int i = 0; i < length - 2; i++) {
+          packageName += "." + parts[i];
+        }
+        packageName = cleanEntity(packageName.trim());
+      }
+      classes.add(className);
+    }
+    return classes;
+  }
+
   protected void expandTraceNodes() {
     // expand trace nodes with individual nodes
-    HashSet<String> nodeSet = new HashSet<>(
-            this.classGraph.vertexSet());
+    HashSet<String> nodeSet = new HashSet<>(this.classGraph.vertexSet());
     for (String key : nodeSet) {
       ArrayList<String> tokens = MiscUtility.decomposeCamelCase(key);
       if (tokens.size() > 1) {
         StopWordManager stopManager = new StopWordManager();
-        ArrayList<String> refinedTokens = stopManager
-                .getRefinedList(tokens);
+        ArrayList<String> refinedTokens = stopManager.getRefinedList(tokens);
         for (String refToken : refinedTokens) {
           if (!this.classGraph.containsVertex(refToken)) {
             this.classGraph.addVertex(refToken);
@@ -203,18 +228,46 @@ public class TraceElemExtractor {
   }
 
   public static void main(String[] args) {
-    String repoName = DatasetConfig.ECF;
-    int bugID = 146622;
-    String brFile = DatasetConfig.HOME_DIR + "/BR-Raw/" + repoName + "/" + bugID + ".txt";
-    //String title = BRLoader.loadBRTitle(repoName, bugID);
-    String reportContent = ContentLoader.loadFileContent(brFile);
-    StackTraceLoader stl = new StackTraceLoader();
-    ArrayList<String> stack_trace = stl.getStackTrace(reportContent);
-    for (String st :stack_trace){
-      System.out.println(st);
+    String repoName = DatasetConfig.W_WFCORE;
+    String path = DatasetConfig.QUERY_DIR + "Bench4BL/" + repoName + "/our.txt";
+    int j = 0;
+    ArrayList<String> results = ContentLoader.getAllLinesList(path);
+    for (int bugID : BugReportsID.WFCORE) {
+      //    String brFile = DatasetConfig.DATASET_DIR + "/BR-Raw/" + repoName + "/" + bugID +
+      // ".txt";
+      String brPath =
+          DatasetConfig.DATASET_DIR
+              + DatasetConfig.BENCH4BL
+              + "/"
+              + repoName
+              + "/BR/"
+              + bugID
+              + ".txt";
+      // String title = BRLoader.loadBRTitle(repoName, bugID);
+      String reportContent = ContentLoader.loadFileContent(brPath);
+      StackTraceLoader stl = new StackTraceLoader();
+      ArrayList<String> stack_trace = stl.getStackTrace(reportContent);
+      //      for (String st : stack_trace) {
+      //        System.out.println(st);
+      //      }
+      //      System.out.println("============================");
+      TraceElemExtractor tee = new TraceElemExtractor(stack_trace);
+      List<String> l = new ArrayList<>();
+      int index = 1;
+      StringBuilder sb = new StringBuilder();
+      if (!tee.traces().isEmpty()) {
+        for (String m : tee.traces()) {
+          if (index < 11) {
+            if (!l.contains(m)) {
+              l.add(m);
+              sb.append(m).append("^").append((float) 1 / index).append(" ");
+            }
+            index++;
+          }
+        }
+      }
+      System.out.println(results.get(j) + " " + sb);
+      j++;
     }
-    System.out.println("============================");
-    TraceElemExtractor tee = new TraceElemExtractor(stack_trace);
-    tee.decodeTraces(false);
   }
 }

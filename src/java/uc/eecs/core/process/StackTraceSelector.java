@@ -1,8 +1,8 @@
 package uc.eecs.core.process;
 
-import core.pagerank.PageRankProviderMgr;
 import org.jgraph.graph.DefaultEdge;
-import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import uc.eecs.core.graph.PageRank;
 import utils.ItemSorter;
 import utils.MiscUtility;
 import utils.config.DatasetConfig;
@@ -26,10 +26,10 @@ public class StackTraceSelector {
     teExtractor.decodeTraces(false);
     // adding extra step
     teExtractor.expandTraceNodes();
-    DirectedGraph<String, DefaultEdge> classGraph = teExtractor.getClassGraph();
+    DefaultDirectedGraph<String, DefaultEdge> classGraph = teExtractor.getClassGraph();
     //        //showGraphEdges(classGraph);;
     //
-    PageRankProviderMgr manager = new PageRankProviderMgr(classGraph);
+    PageRank manager = new PageRank(classGraph);
     return manager.getPageRanks();
   }
 
@@ -52,15 +52,15 @@ public class StackTraceSelector {
     return selected;
   }
 
-  protected void showGraphEdges(DirectedGraph<String, DefaultEdge> classGraph) {
-    // showing the graph
-    HashSet<DefaultEdge> edges = new HashSet<DefaultEdge>(classGraph.edgeSet());
-    HashSet<String> nodes = new HashSet<>();
-    for (DefaultEdge edge : edges) {
-      System.out.println(classGraph.getEdgeSource(edge) + "/" + classGraph.getEdgeTarget(edge));
-      nodes.add(classGraph.getEdgeSource(edge));
-      nodes.add(classGraph.getEdgeTarget(edge));
-    }
-    MiscUtility.showList(nodes);
-  }
+//  protected void showGraphEdges(DirectedGraph<String, DefaultEdge> classGraph) {
+//    // showing the graph
+//    HashSet<DefaultEdge> edges = new HashSet<DefaultEdge>(classGraph.edgeSet());
+//    HashSet<String> nodes = new HashSet<>();
+//    for (DefaultEdge edge : edges) {
+//      System.out.println(classGraph.getEdgeSource(edge) + "/" + classGraph.getEdgeTarget(edge));
+//      nodes.add(classGraph.getEdgeSource(edge));
+//      nodes.add(classGraph.getEdgeTarget(edge));
+//    }
+//    MiscUtility.showList(nodes);
+//  }
 }

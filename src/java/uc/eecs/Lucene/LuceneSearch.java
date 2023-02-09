@@ -53,6 +53,7 @@ public class LuceneSearch {
       TopDocs results = searcher.search(query_, MAX_TOP);
       ScoreDoc[] hits = results.scoreDocs;
       for (ScoreDoc item : hits) {
+//        System.out.println(item.score);
         Document doc = searcher.doc(item.doc);
         String fileURL = doc.get("path");
         fileURL = fileURL.replace('\\', '/');

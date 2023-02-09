@@ -1,10 +1,13 @@
 package uc.eecs.br;
 
-import utils.ContentLoader;
+import uc.eecs.br.loader.BRLoader;
+import utils.config.BugReportsID;
 import utils.config.DatasetConfig;
 import utils.config.QueryConfig;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,74 +28,83 @@ public class BRClassification {
    * @param content has stack traces
    * @return ture
    */
-  public boolean classification(ArrayList<String> content) {
+  public boolean classification(List<String> content) {
     Pattern p = Pattern.compile(QueryConfig.STACK_REGEX);
-    for (String line : content){
+    for (String line : content) {
       Matcher m = p.matcher(line);
-      if (m.matches()) return true;
+      if (m.matches()) {
+        //        System.out.println(line);
+        return true;
+      }
     }
     return false;
   }
 
-  public static void main(String[] args) {
+  public String classify(List<String> content) {
+    Pattern stack = Pattern.compile(QueryConfig.STACK_REGEX);
+    // Pattern p1 = Pattern.compile("(.*)line: \\d+|(.*)=(.*);");
+    Pattern code = Pattern.compile(QueryConfig.CODE_REGEX);
+    Pattern log = Pattern.compile(QueryConfig.LOG_REGEX);
+    Pattern log1 = Pattern.compile(QueryConfig.LOG_REGEX1);
+    for (String line : content) {
+      Matcher m1 = stack.matcher(line);
+      if (m1.matches()) {
+        return "ST";
+      }
+    }
+    //    for (String line : content) {
+    //      Matcher m2 = code.matcher(line);
+    //      if (m2.matches()) {
+    //        return "CODE";
+    //      }
+    //    }
+    //    int j = 0;
+    //    for (String line : content) {
+    //      Matcher m3 = log.matcher(line);
+    //      Matcher m4 = log1.matcher(line);
+    //      if (m3.matches()) {
+    //        return "LOG";
+    //      } else if (m4.matches()) {
+    //        j++;
+    //      }
+    //      if (j > 5) return "LOG";
+    //    }
+    return "NL";
+  }
 
-    // TODO Auto-generated method stub
-//    String repoName = DatasetConfig.ECF;
-//    int bugID = 146622;
-//    String brFile = DatasetConfig.HOME_DIR + "/BR-Raw/" + repoName + "/" + bugID + ".txt";
-//    String title = BRLoader.loadBRTitle(repoName, bugID);
-//    String bugReportContent = ContentLoader.loadFileContent(brFile);
-//    BRClassification brc = new BRClassification();
-//    Boolean trace = brc.classification(bugReportContent);
-//    System.out.println(trace);
-    String content = "Bug 223484 – Several threads remain though disconnect was done from the XMPP server\n" +
-            "Build ID: 2.0.0.v20080310-1643\n" +
-            "Steps To Reproduce:\n" +
-            "1.\n" +
-            "Connect the XMPP server\n" +
-            "2.\n" +
-            "Discoonect\n" +
-            "5 threads do not dispose;\n" +
-            "[org.eclipse.ecf.docshare.DocShare:run]\n" +
-            "[org.eclipse.ecf.presence.collab.ui.url.URLShare:run]\n" +
-            "[org.eclipse.ecf.presence.collab.ui.view.ViewShare:run]\n" +
-            "[org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run]\n" +
-            "[org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run]\n" +
-            "More information:\n" +
-            "Repeat 3 time ( 1, 2, 1, 2, 1 and 2),\n" +
-            "the following threads remained.\n" +
-            "Thread [main] (Running)\n" +
-            "Daemon Thread [State Data Manager] (Running)\n" +
-            "Daemon Thread [Framework Event Dispatcher] (Running)\n" +
-            "Daemon Thread [Start Level Event Dispatcher] (Running)\n" +
-            "Daemon Thread [Bundle File Closer] (Running)\n" +
-            "Thread [Worker-0] (Running)\n" +
-            "Thread [Worker-4] (Running)\n" +
-            "Thread [JMDNS Discovery Thread] (Running)\n" +
-            "Thread [Timer-0] (Running)\n" +
-            "Thread [JmDNS.SocketListener] (Running)\n" +
-            "Thread [org.eclipse.ecf.datashare.IChannelContainerAdapter:run] (Running)\n" +
-            "Daemon Thread [Thread-5] (Running)\n" +
-            "Thread [org.eclipse.ecf.docshare.DocShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.url.URLShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.datashare.IChannelContainerAdapter:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.docshare.DocShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.url.URLShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.datashare.IChannelContainerAdapter:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.docshare.DocShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.url.URLShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run] (Running)\n" +
-            "Thread [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run] (Running)";
-    Pattern p = Pattern.compile(QueryConfig.STACK_REGEX);
-    Matcher m = p.matcher(content);
-    System.out.println(m.find());
+  public static void main(String[] args) {
+    //    String repoName = DatasetConfig.ECF;
+    //    int bugID = 146622;
+    //    String brFile = DatasetConfig.HOME_DIR + "/BR-Raw/" + repoName + "/" + bugID + ".txt";
+    //    String title = BRLoader.loadBRTitle(repoName, bugID);
+    //    String bugReportContent = ContentLoader.loadFileContent(brFile);
+    //    BRClassification brc = new BRClassification();
+    //    Boolean trace = brc.classification(bugReportContent);
+    //    System.out.println(trace);
+    BRClassification bc = new BRClassification();
+    List<Integer> nl = new ArrayList<>();
+    List<Integer> st = new ArrayList<>();
+    List<Integer> pe = new ArrayList<>();
+    for (int id : BugReportsID.VERTX) {
+      String brPath =
+          DatasetConfig.DATASET_DIR
+              + DatasetConfig.GITHUB
+              + "/"
+              + DatasetConfig.VERTX
+              + "/BR/"
+              + id
+              + ".txt";
+      List<String> con = BRLoader.loadBugReportList(brPath);
+      if (Objects.equals(bc.classify(con), "ST")) {
+        st.add(id);
+      }
+      if (Objects.equals(bc.classify(con), "NL")) {
+        nl.add(id);
+      }
+      bc.classification(con);
+    }
+    System.out.println(st);
+    System.out.println(nl);
     //    for (String t :trace){
     //      System.out.println(t);
     //    }

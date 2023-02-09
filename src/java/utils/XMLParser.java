@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
@@ -39,7 +40,7 @@ public class XMLParser {
         }
         Iterator<Element> itt = book.elementIterator();
         while (itt.hasNext()) {
-          Element b = (Element) itt.next();
+          Element b = itt.next();
           //System.out.println(b.elements());
           for (Element element : b.elements()){
             if (Objects.equals(element.getName(), "summary")){
@@ -87,4 +88,7 @@ public class XMLParser {
     return null;
   }
 
+  public static void main(String[] args) {
+
+  }
 }

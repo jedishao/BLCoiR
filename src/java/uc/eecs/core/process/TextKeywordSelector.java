@@ -1,8 +1,6 @@
 package uc.eecs.core.process;
 
-import acer.coderank.query.expansion.ACERQueryProviderMinimal;
 
-import uc.eecs.nlp.TextNormalizer;
 import utils.config.DatasetConfig;
 
 public class TextKeywordSelector {
@@ -27,7 +25,7 @@ public class TextKeywordSelector {
     }
     protected void loadACERConfigs() {
         // loading the required variables for the strict
-        System.setProperty("HOME_DIR", DatasetConfig.HOME_DIR);
+        System.setProperty("HOME_DIR", DatasetConfig.DATASET_DIR);
         System.setProperty("STOPWORD_DIR", "/nlp");
         System.setProperty("SAMURAI_DIR", "/tbdata");
         System.setProperty("MAX_ENT_MODELS_DIR", "/models");
@@ -36,21 +34,6 @@ public class TextKeywordSelector {
         System.setProperty("INDEX_DIR", "/Lucene-Index");
     }
 
-    public String getSearchTermsWithCR(int expansionSize) {
-
-        String indexFolder = DatasetConfig.INDEX_DIR + "/" + repoName;
-        String corpusFolder = DatasetConfig.CORPUS_DIR + "/" + repoName;
-
-        String baselineQuery = new TextNormalizer(this.title).normalizeText();
-        String normDesc = new TextNormalizer(this.bugDesc).normalizeText();
-
-        ACERQueryProviderMinimal acer = new ACERQueryProviderMinimal(repoName, 0, baselineQuery, indexFolder,
-                corpusFolder, null);
-        String sourceTerms = acer.getExtendedQuery(expansionSize);
-
-        return  sourceTerms+"\t"+normDesc;
-
-    }
 //
 
 }
