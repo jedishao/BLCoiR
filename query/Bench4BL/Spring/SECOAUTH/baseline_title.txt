@@ -1,0 +1,1 @@
+311	Class AbstractJaxbMessageConverter is not thread safe

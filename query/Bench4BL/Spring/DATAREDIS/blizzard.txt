@@ -1,0 +1,1 @@
+310	cache redis rediscache lock saferediscache method lock clear safe connection exec thread methods checks inconsistencies multi call start key conditions race check process serialize evict occur deserialize del

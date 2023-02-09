@@ -1,0 +1,18 @@
+125572	ECF Generic provider thread interlock
+223484	Several threads remain though disconnect was done from the XMPP server
+229237	xmpps accounts can appear twice in contacts list
+232530	Session and subclasses needs to handle whitespace and exceptions better
+265413	Intermittent dead lock issues in JMDNSDiscoveryContainer
+265415	Dead lock in javax jmdns impl JmDNSImpl unregisterService ServiceInfo
+267035	ReplicaSharedObjectDescription toString   is not thread safe
+273357	Abstract implementation of datashare APIs using Java 1 4 NIO
+273819	Containers are instantiated every time a wizard opens
+299849	RegistrySharedObject handle  can throw NPE
+321468	RegistrySharedObject should dispatch remote service listener events asynchronously
+321469	improve clean up in DiscoveredServiceTracker
+323208	Distribution Provider exceeds startup time limit  5 sec  if existing services are present
+326949	add getRemoteServiceReferences ID ID   String String  to remote service container adapter api
+337973	Remote service undiscovered and not rediscovered due to concurrency bug
+341818	System is out of thread resources when using r_osgi provider
+348487	JMDNS Discovery Thread is slowing down shutdown
+432662	ECFRuntimeException  Unable to instantiate schemes for HttpClient

@@ -1,0 +1,32 @@
+7392	synch stack jdithread startup show model state frame
+8683	suspend stack npe select nullpointerexception hit system step signaldispatcher assume frame 
+12695	adapter debug list breakpoint top spot get event user order
+16930	invalidthreadstateexception area error message breakpoint evaluation eval provide get step state tostring user 
+21801	datum parent cache command number modify library threadgroupreference name client send group base
+22005	call  runnable performance review asynchexec synchexec Display
+24579	note modalcontext box attempt path lock perspective checkout development preferences control check core plugin someone build step syncexec
+33297	manager  evaluationcomplete log evaluationlistener error formatter evaluation detail place tostring  resolveformatter user 
+33712	JavaDebugOptionsManager modifications
+43197	mirror line listener lineappended get tracker action term event worker termination console init process debug race launch message way call condition plugin logic job thing care 
+52474	note fact pattern project repository attempt platform point switch number dialog scenario perspective lock block workbench checkout cvs work module start check eclipse build 
+57467	stack compare attempt fix flastmethod computestackframe tos lastmethod case info debug jdithread transisent race test issue index label requestor something condition background logic frame 
+64951	condition screen label shot breakpoint debugging tostring stack variables select
+65107	note classcastexception stack jun debug debugview error switch breakpoint reproduce async total watch processing queue frame
+65149	JavaDebugOptionsManager initializeProblemHandling
+66413	log work error target dialog strangeness condition startup state condition
+78534	stack debug test occur message entry core apparently get threadmonitormanager event  clone hashmap case concurrentmodificationexception 
+88923	evaluation ievaluationengine expression processing create evaluate
+101118	debug buildid source message sun eclipse entry async bootloader processing
+125868	access debug restart session start launch head result jdt
+148006	execution stack level monitor autobuild mode consoledocument build lock client plug information worker
+161781	suspendcount idea debugger concept book show waitfordebugger running function connection state order resume query count message call condition socket status
+165174	view selection lose show launch block monitor screenshot sync synchronized
+169542	displayed Debug view parent contain Build ID Create ThreadGroup correct traversable Variables correctly
+178912	access getter fvms type impl safety member block createvminstall race everyone ivminstalltype runtime right list call condition abstractvminstalltype variable name synchronization setter
+182237	view access get variable
+187000	stack release debugger focus lot mouse stick press worker tree start selection stacktrace machine loose step information window collapse
+229394	jface tue buildid program cell error type sun view array bootloader value editor npe var check entry cdt en_us char variable plug location arch
+312038	hang automount automounter pid source directory example lockup isexpandable attachment isfile lock jar zip stat jrecontainer start tree way eclipse performance nfs jdt haschildren 
+343039	race session debugger monitor deadlock turn how default person debugging jdt ability consider option 
+446040	RuntimeClasspathViewer preferenceChange
+506865	AbstractVMInstallType createVMInstall

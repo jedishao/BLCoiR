@@ -1,0 +1,19 @@
+1614	Query hangs due to missed TaskSource update in Driver
+1689	Race condition that fails a query
+3629	TestStateMachine testSetIf   fails non deterministically
+3647	Report a possible race issue
+4869	Potential deadlock when using phased scheduler with broadcast joins
+5005	presto cli  shutdown hook cannot cancel the running query occasionally
+5110	Race condition in array_concat
+5116	Race in TestTaskExecutor testTaskHandle
+5735	OperatorContext is not ThreadSafe
+6196	Deadlock in task info fetching
+6319	Fix thread safety of IndexLookup in AccumuloClient
+6755	Potential deadlock in db backed resource group config  manager
+6923	Performance regression for OUTER JOINs
+7667	db TestQueues testBasic is nondeterministic
+7689	Flaky tests that rely on async counters variables
+8716	Hang in AWS SDK with parallel uploads under load
+9881	Race condition in OuterPositionTracker
+11253	Split scheduling is broken for colocated join
+13142	Backport  Handle race in QueryStateTimer

@@ -1,0 +1,33 @@
+1247	Deadlock if the connection is still being used while HttpClient is closing
+1302	EventLoop thread blocked on Vertx clusteredVertx
+1355	Deadlock between ClientConnection and HttpClientRequestImpl
+1466	Deadlock in ServerConnection   HttpClientRequestImpl
+1469	HttpClientMetrics createEndpoint may be called multiple times for the same endpoint
+1573	Blocked thread warning when opening or closing an AsyncFile
+1598	Asynchronous read write done on wrong thread
+1633	Context executeBlocking does not log blocked threads
+1742	File caching implementation not thread safe
+1834	Don t call HttpServer request ws close handler holding locks
+1892	Race condition in Future setHandler completion between threads
+2012	Race condition in AsyncFileImpl writesOutstanding
+2370	HttpClient pool gets inconsistent on a synchronous connection failure
+2418	Possible deadlock when trying to get multiple locks
+2670	Client connections on GlobalEventExecutor thread that are not propagated to the application
+2684	executeBlocking callback run on the wrong thread for asynchronous future resolution
+2773	HttpClient race condition when getting a connection from the pool being closed
+2916	HTTP event handler should not be called when holding a lock
+2982	HTTP Client   Deadlock
+3064	HttpServerResponse operation should not fail synchronously when the stream is is closed
+3140	Do not lock the handler calls in AsyncFile
+3142	Deadlock when deploying several instances of a verticle a starting net server
+3232	Vertx close Future will not callback the handler
+3335	FileSystemImpl existsInternal can block event loop thread
+3468	Thread blocked in io vertx core net impl clientconnection ConnectionManager getConnection
+3469	HTTP client retry on same host can self deadlock
+3658	Race condition throws an unhandled exception in CompositeFuture all
+4024	Concurrency issue in listener of TCPServerBase listen
+4069	Deadlock when closing Vertx and WorkerExecutor concurrently
+4104	WorkerExecutor executeBlocking sometimes holds a lock on the WorkerExecutor after the blocking call has completed
+4221	Pool can deliver lease with null connection
+4275	ConnectionBase exception handler should not be called within the synchronized block
+4278	ArrayList concurrency error when deploying the verticles

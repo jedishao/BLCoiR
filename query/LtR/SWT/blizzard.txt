@@ -1,0 +1,5 @@
+176792	swt org object application eclipse comobject ole misbehavior multithreaded internal win com addresses vtable exceptions gmem callbacks zeroinit alloc getaddress globalalloc message argcounts arg callbacks counts swt callbacks objectmap length
+183830	reply current xmake glx xlib deadlock async glxmakecurrent unexpected program opengl linux debugger setcurrent thread glcanvas pause open main stderr set printed find deadlocked locks
+188320	context modal jface build deadlock modalcontextbuild thread display async sleep problem asyncexec swt method readanddispatch shell exec thread block getdisplay println event exception wake deadlock contrast task interruptedexception dispatch string
+264399	deadlock occurs automated testing SWT application Linux GTK deadlock occurs automated testing SWT application Linux GTK set proc callback initialize event add handle remove
+338965	Deadlock Hang Thread Deadlock Hang Thread set proc window initialize widget event add data

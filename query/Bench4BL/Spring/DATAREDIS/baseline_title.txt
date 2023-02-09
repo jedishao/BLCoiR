@@ -1,0 +1,1 @@
+310	Lock of RedisCache is not safeRedisCache get lock only in clear   method

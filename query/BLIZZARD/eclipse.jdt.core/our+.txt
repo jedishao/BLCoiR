@@ -1,0 +1,7 @@
+29585	exception container initializeroot resource getresolvedclasspath tree resourcechange run endoperation broadcastchange modification notify core model processresourcedelta initialize JavaCore^1.0 JavaCore 1^0.5 Platform^0.33333334 Workspace^0.16666667 Thread^0.14285715
+58314	cursor console ast reader nullpointerexception managment
+291322	exception test issue pattern windows error call core file tear lock jdt retry
+327143	consequence manager index touch run accept call simulateexit number fail file loop processing jar end indexmanager job simulaterestart case
+421473	argument binding source type local setting patch declaringscope solution array scope parameter lvb client block creation annotation all side race assignment holder handle condition effect getannotation
+431275	stack mode trace perprojectinfo lock addpackagefragmentroot block product addtoparentinfo javamodelmanager monitor adopter deltaprocessingstate^1 PackageFragmentRoot^0.5 DeltaProcessor^1 DeltaProcessingState^0.14285715
+464570	bytecode stack aioobe arrayindexoutofboundsexception source novisiblelocal fix compile case init static race index condition field multi conflict CodeStream^0.5 StackMapFrameCodeStream^0.33333334 TypeAnnotationCodeStream^0.25 AbstractMethodDeclaration^0.16666667 TypeDeclaration^0.125 CompilationUnitDeclaration^0.1

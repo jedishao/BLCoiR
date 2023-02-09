@@ -1,0 +1,18 @@
+125572	SyncSOClientContainer server line SOContainer IConnection  run see problem provider client Client connect app IConnectContext killConnection  ECF  version mutexes Lock TimeSyncTask ClientSOContainer dispose time TimeSyncTask run interlock become
+223484	Several threads remain disconnect XMPP server
+229237	container XMPPS view addContainer existence IPresenceServices deadlock xmpp xmpps view provider Remy block PartInitException MRV addContainer MultiRosterView VIEW_ID side openView retrieveServices workbench getActiveWorkbenchWindow addContainer check list MultiRosterView call effects MRV retrieveServices time accounts contacts account
+232530	MSG exception charset X MMS IM Format UTF session ECF range index  String Exception exceptions  MIME Type plain Content java lang StringIndexOutOfBoundsException messages ChatSession read text subclasses Session
+265413	javax jmdns JmDNS calls JMDNSDiscoveryContainer use objects lock   eclipse ecf provider jmdns container JMDNSDiscoveryContainer issues
+265415	ServiceInfo JMDNS javax jmdns impl JmDNSImpl javax jmdns impl JmDNSImpl unregisterService javax jmdns impl tasks Canceler lock synchronization occurs object
+267035	Build  toString information toString ReplicaSharedObjectDescription
+273357	handshake IChannelListener channel createNIOChannel polls NIOChannel Bob createChannel blocking peer NIOChannels Counterparts datashare channelContainer hand side targetId Alice   message ByteBuffer IChannelConfig port API socket Map
+273819	container feels Containers opened  dialog instantiated bug wizard disposed time user
+299849	RegistrySharedObject handle RegistrySharedObject XMPPContainer disconnect
+321468	dispatch code listeners synchronous listener RegistrySharedObject deadlock IRemoteServiceListener ListenerQueue result call fix service RegistrySharedObject fireRemoteServiceListeners has events
+321469	cleanup improve  eclipse ecf osgi services distribution DiscoveredServiceTracker Group ListenerQueue bundle done
+323208	exception workspace  osgi framework BundleException plugins initial reference Eclipse  eclipse pde core Dispatcher sec file startup limit host jar workspaces bundle bundle_pool consumer  eclipse osgi framework internal core AbstractBundle Root change  osgi State Distribution progress Event Level time
+326949	getRemoteServiceReferences are methods IRemoteServiceContainerAdapter
+337973	reason argument this readKeeper close code readKeeper WatchedEvent Build ReadRoot process zooKeepers state removeZooKeeper process method race zoodiscovery start  watchManager list undiscovery concurrency exit condition bug watchManager removeZooKeeper service effect this readKeeper
+341818	Steps code r_osgi System currentTimeMillis invoke String error System times total avg Consumer provider loop Build end SDK consumer start count ECF  sample int proxy RemoteService response  eclipse ecf examples remoteservices hello consumer rs proxy sayHello
+348487	Task Server TIMED_WAITING nid Periodic tid mode JMDNS ParallelGC dump prio  eclipse ecf internal provider jmdns SimpleFIFOQueue Discovery  monitor   Lock daemon task WAITING java lang  State   commons httpclient util IdleConnectionTimeout shutdown object java lang Shutdown
+432662	ServiceTracker modifier cause getSSLSocketFactory used this context branch SSLSocketFactory class getName sslSocketFactoryTracker open sslSocketFactoryTracker getService problem startup causes sslSocketFactoryTracker SSLSocketFactory  eclipse ecf core util ECFRuntimeException period method schemes  exceptions master application bug HttpClient ECFRuntimeException printStackTrace getLogService return

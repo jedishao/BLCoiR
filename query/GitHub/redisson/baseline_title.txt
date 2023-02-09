@@ -1,0 +1,40 @@
+39	Locking on Jersey
+40	Lock TTL
+67	RedissonList concurrency problem
+83	Deadlock while obtaining lock
+89	RedissonLock locks up
+106	RedissonList s Iterator Race Conditions
+169	ConnectionManager call hangs forever if exception is thrown during Command processing
+199	Concurrency Issues
+254	EOFException when I use RLock with SerializationCodec
+455	Long latency issue while call Redis
+486	Rlock performance issue
+491	Dead Locks Happen in lock   Process
+530	Deadlock on lock   and not only
+533	Exception in using RedissonMultiLock
+543	RLock trylock blocks forever
+757	Unlock does not really unlock
+758	RReadWriteLock is not reentrant
+775	Indefinite lock lost during master failover
+828	URIBuilder seems not to be thread safe
+889	Cache ops taking too long
+891	RReadWriteLock is incompatible with reentry r&w op
+1048	Redisson hang on RBatch execute
+1104	RFairLock dead lock issue
+1268	org redisson RedissonTopic removeAllListeners got blocked on CountDownLatch await
+1433	Concurrent calls to RemoteService should not result in an exception
+1602	unlock fail and expirationRenewal still execute
+1626	Deadlock with RedissonLock used by JCache
+1950	PriorityBlockingQueue doesn t release lock after reconnect on network
+1966	Deadlock after Redis timeout
+2099	RedissonFairLock timeout drift
+2278	RedissonFairLock deadlock
+2355	RedissonLock unlock   hangs infinitely waiting for RedissonPromise
+2575	RedissonLock fails to unsubscribe from channel when a lock is acquired
+2690	RedissonSessionRepository topic listeners initialization has race condition
+2692	RedissonSession changeSessionId expiredKey race condition
+2714	RedissonLock tryLock   interrupted and keep renew lock
+2883	RedissonFairLock deadlock
+3484	There may be concurrency problems in org redisson RedissonLock tryLockInnerAsync
+4033	multilock fail
+4064	Thread safe problem when acquiring locks resulting in a pubsub channel not being unsubscribed

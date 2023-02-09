@@ -1,0 +1,38 @@
+543	A region‘s state is kept in several places in the master opening the possibility for race conditions
+659	HLog cacheFlushLock not cleared; hangs a region
+663	Incorrect sequence number for cache flushAn HRegion asks each HStore to flush its cache with a sequence number X
+699	Fix TestMigrate up on HudsonIts hanging on hudson again
+818	Deadlock running flushSomeRegions
+950	HTable commit no longer works with existing RowLocks though it s still in APIIntroduced by HBASE 748  the RowLock passed into HTable commit is now ignored
+1569	rare race condition can take down a regionserver
+1740	ICV has a subtle race condition only visible under high load
+1840	RowLock fails when used with IndexTableThe following exception is thrown when using RowLock to update a row in an IndexedTable
+1869	IndexedTable delete fails when used in conjunction with RowLock
+2023	Client sync block can cause 1 thread of a multi threaded client to block all othersTake a highly multithreaded client  processing a few thousand requests a second
+6565	Coprocessor exec result Map is not thread safe
+8923	ChaosMonkey test teardown may fail due to race with ChaosMonkey
+13606	AssignmentManager assign   is not sync in both pathfrom the comment and the expected behavior AssignmentManager assign   should be sync
+13662	RSRpcService scan   throws an OutOfOrderScannerNext if the scan has a retriable failurewhile fixing HBASE 13651
+13959	Region splitting uses a single thread in most common cases
+13988	Add exception handler for lease thread
+14178	regionserver blocks because of waiting for offsetLock
+14241	Fix deadlock during cluster shutdown due to concurrent connection closeCaught while testing branch 1 0  shutting down TestMasterMetricsWrapper
+14359	HTable close will hang forever if unchecked error exception thrown in AsyncProcess sendMultiActionCurrently
+14463	Severe performance downgrade when parallel reading a single key from BucketCacheWe store feature data of online items in HBase  do machine learning on these features  and supply the outputs to our online search engine
+14555	Deadlock in MVCC branch 1 2 toString  Just saw this in an IT test
+14812	Fix ResultBoundedCompletionService deadlock
+14926	Hung ThriftServer;
+15001	Thread Safety issues in ReplicationSinkManager and HBaseInterClusterReplicationEndpoint
+15030	Deadlock in master TableNamespaceManager while running IntegrationTestDDLMasterFailoverI was running IntegrationTestDDLMasterFailover on distributed cluster when i notice this
+15093	Replication can report incorrect size of log queue for the global source when multiwal is enabled
+15146	Don t block on Reader threads queueing to a scheduler queueBlocking on the epoll thread is awful
+15650	Remove TimeRangeTracker as point of contention when many threads reading a StoreFile
+15957	RpcClientImpl close never ends in some circumstances
+16081	Replication remove_peer gets stuck and blocks WAL rollingWe use a blocking take from CompletionService in HBaseInterClusterReplicationEndpoint
+16144	Replication queue s lock will live forever if RS acquiring the lock has died prematurelyIn default  we will use multi operation when we claimQueues from ZK
+16304	HRegion RegionScannerImpl handleFileNotFoundException may lead to deadlock when trying to obtain write lock on updatesLockhere is my jvm stack
+16367	Race between master and region server initialization may lead to premature server abort
+16429	FSHLog  deadlock if rollWriter called when ring buffer filled with appendsRecently we experienced an online problem that all handlers are stuck
+16699	Overflows in AverageIntervalRateLimiter&apos;s refill   and getWaitInterval
+16721	Concurrency issue in WAL unflushed seqId tracking
+16788	Race in compacted file deletion between HStore close   and closeAndArchiveCompactedFiles

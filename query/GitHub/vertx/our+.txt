@@ -1,0 +1,33 @@
+1247	httpmethod channelhandlercontext invokechannelinactive contexttask lock multimap httpclient
+1302	clusteredvertx vertx run handle source checker vertxexception blockedthreadchecker warn eventloop stacktrace startup limit block Object^1.0 InvocationFuture^0.5 MapProxySupport^0.16666667 MapProxyImpl^0.125 HAManager^0.1
+1355	ClientConnection HttpClientRequestImpl
+1466	ServerConnection HttpClientRequestImpl HttpServerResponseImpl^1.0 HttpClientRequestImpl^0.5 HttpClientRequestImpl Lambda 249 478457932^0.33333334 HttpClientRequestImpl Lambda 246 1883207809^0.125 VertxImpl InternalTimerHandler^0.11111111
+1469	otherwise ConnectionManager instance resource  createendpoint  getconnqueue constructor  closeendpoint none httpclientmetrics spi connqueue lead call leak endpoint queuemanager http client map queue
+1573	stack issue asyncfile windows opening vertxexception filesystem example network nbd trace provide and able report warning drive user twickle UnixFileSystem^1.0 File^0.33333334 FileResolver^0.25 VertxImpl^0.2 FileSystemImpl 14^0.16666667 FileSystemImpl^0.14285715 HttpServerFileUploadImpl^0.11111111 WindowsAsynchronousFileChannelImpl^0.1
+1598	aaa read address issue vertx checker vertxexception blockedthreadchecker async warn eventloop limit block write WindowsAsynchronousFileChannelImpl^1.0 AsynchronousFileChannelImpl^0.2 AsyncFileImpl^0.16666667
+1633	provide log context description  executeblocking
+1742	datum instance  readfileblocking run caching file payload parallel copying action jar copy case cache resource  resolvefile sample filesystem async size verticle fileresolver
+1834	request handler httpserverrequest motivation change serverwebsocket sockjssocket deadlock tick call reconnect loop websocket httpserver context lock create connection event netty
+1892	FutureImpl CompositeFutureImpl setHandler
+2012	caller condition race atomiclong writesoutstanding context asyncfileimpl counter state write
+2370	jvm resolver dns pool connectionprovider failure get host callback connection assume httpclient case
+2418	hazelcastclustermanager vertxoption clusteredvertx messagestosend settimer setclustermanager acuire deploymentoption test_address  override default_lock_timeout deadlock reproduce supplier verticle lock igniteclustermanager consumer deployverticle
+2670	boostrap vertx bootstrap notify notification expect loop failure context client globaleventexecutor connection event netty
+2684	executeBlocking callback run on wrong thread asynchronous future resolution MongoIterableStream^1.0 FutureImpl^0.5 ErrorHandlingResultCallback^0.2 AsyncQueryBatchCursor^0.16666667 AsyncQueryBatchCursor CommandResultSingleResultCallback^0.125
+2773	allow delivery request re check fact race pool multiple vertx deliver tick moment schedule condition solution context client know connection avoid close situation httpclient
+2916	call handler lock http deadlock event remove
+2982	os_prio httpclientrequestimpl monitor deadlock entry appear eventloop threaddump http lock client reproducer try state prio stuff HttpClientRequestImpl^1.0 Http1xClientConnection^0.5 VertxHandler^0.33333334 VertxHandler Lambda 757 154866834^0.25 ContextImpl^0.2 EventLoopContext^0.16666667 AbstractChannelHandlerContext^0.1
+3064	mistake improvement result fail stream response httpserverresponse behaviour operation user programming case
+3140	call handler file asyncfile lock synchronization block useful
+3142	server instance regression verticle deadlock
+3232	handler shut vertx promise  test output vertxtest blocking executor  close rejectedexecutionexception event debug work pool future sethandler callback complete first SingleThreadEventExecutor^1.0 EventLoopContext^0.2 FutureImpl^0.125
+3335	FileSystemImpl existsInternal
+3468	server test ubuntu getconnection httpclientdoublefail runtime source sharing bit httpclientrequest mode openjdk environment eventloop limit block ConnectionManager^1.0 HttpClientImpl^0.5 HttpClientRequestImpl^0.33333334 HttpClientDoubleFail^0.14285715 HttpClientDoubleFail Lambda 34 1409160703^0.125 AbstractContext^0.11111111
+3469	failure pool host http client self callback deadlock close
+3658	iscomplete promise mac result mode openjdk gap block class execution race test docomplete runtime list tryfail environment unit condition future failure  promise  num_threads CompositeFutureImpl^1.0 FutureImpl^0.33333334
+4024	stumble addlistener listener put predictable get context debugging term issue race tcpserverbase dobind say concurrency field port future  listen effect verticle dependen
+4069	workerexecutor instance backtrace vertx deadlock eventloop lock block copy vertximpl createsharedworkerexecutor workerexecutorimpl issue level start monitor list closefuture callback information WorkerExecutorImpl^1.0 CloseFuture^0.5 VertxImpl^0.33333334 Vertx^0.25 VertxImpl SharedWorkerPool^0.2 WorkerExecutor^0.11111111
+4104	workerexecutor stack instance blockingcodehandler line intellij run deadlock ign asyncresulthandler blocking contextscheduler lock block reproducer order workerexecutorimpl junit test timing requirement breakpoint call executeblocking WorkerExecutorImpl^1.0 WorkerExecutor^0.5 WorkerExecutor Lambda 1166 0x0000000840a2b440^0.25 AsyncResultMaybe^0.2 Maybe^0.16666667 MaybeFlatten FlatMapMaybeObserver InnerObserver^0.14285715 MaybeFilter FilterMaybeObserver^0.125 AsyncResultMaybe Lambda 325 0x0000000840303840^0.1
+4221	happen npe race pool deliver slot meantime lead post action create connection comment lease httpclient
+4275	ConnectionBase handler called within synchronized block
+4278	vertex error attempt thanks openjdk startup deploymentmanager class concurrentmodificationexception arraylist collection analysis concurrency registerverticlefactory deploymentoptions name verticle information option ArrayList^1.0 DeploymentManager^0.5 VertxImpl^0.33333334

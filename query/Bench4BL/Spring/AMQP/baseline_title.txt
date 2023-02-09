@@ -1,0 +1,17 @@
+125	Unreliable lock algorithm in SimpleMessageListenerContainer
+190	CachingConnectionFactory leaks channels when synchronized with a TransactionManager
+223	Too Many Threads Running in SimpleListenerContainerIf doStart   is called twice  we end up with two threads running in each consumer
+243	AmqpAppender and log4j synchronization issues resulting in messages lossThe Log4j AmqpAppender is subject to synchronization issues because of the Log4j PatternLayout
+249	Issues with RabbitTemplate Temporary Reply QueuesTemporary
+260	Hanging thread when using RabbitTransactionManager with a listener container where channelTransacted true
+262	ConcurrentModificationException with publish confirms
+274	Listener Container Local Transactions Not Properly Set Up
+275	Race Condition When Stopping Listener ContainerRace condition where messages can be rejected requeued during container stop before the consumer was canceled
+331	When java lang Error e g OutOfMemory  occurs  threads do not abort
+355	Fix Race Condition in Test CaseThe ErrorHandler is not called unless the container is active;
+365	Fix Race Condition in Consumer Recovery Test CasesAnalysis
+469	Thread safety of ErlangTemplateErlangTemplate executeErlangRpc is not threadsafe when used with SingleConnectionFactory
+506	ConcurrentModificationException on RabbitTemplate getUnconfirmed  Although we re synchronized on pendingConfirms  the values are maps and we fail to synchronize on those while iterating removing
+532	ConcurrentModificationException in PublisherCallbackChannelImpl
+551	Intermittent build failure caused by non thread safe use of MockitoLocalizedQueueConnection
+648	Container Fails to RecoverContainer configured to listen on multiple queues

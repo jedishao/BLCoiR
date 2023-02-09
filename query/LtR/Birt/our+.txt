@@ -1,0 +1,6 @@
+123840	jvm datum request process instance static filterpasscontrollerdata bottom occur query filter field engine dataengine keep report safe filterpasscontroller class corruption nevaluator
+195335	HTMLServerImageHandler synchronized static hashmap
+208512	odaconsumer package multithread issuesclass safe class
+284367	datasourcefactory
+287102	OSGILauncher ChildFirstURLClassLoader
+314645	XML Datasource is not Thread Safe when passing data as InputStream

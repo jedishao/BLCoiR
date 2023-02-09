@@ -1,0 +1,1 @@
+876	Derived finder filter values thread safe CypherFinderQuery filter values shared threads making query execution unpredictable https github spring projects spring data neo issues https github spring projects spring data neo issues Derived finder filter values thread safe type query persistent property simple graph number find

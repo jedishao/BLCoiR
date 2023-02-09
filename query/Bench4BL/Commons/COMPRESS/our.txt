@@ -1,0 +1,3 @@
+302	immutability archivestreamfactorycompress synch add factory deprecate setentryencoding encoding way setting retore patch field constuctor safety safe ctor consider support 
+303	CompressorStreamFactory decompressConcatenated
+357	BZip2CompressorOutputStream

@@ -1,0 +1,32 @@
+7392	synch stack jdithread startup show model state frame
+8683	suspend stack npe select nullpointerexception hit system step signaldispatcher assume frame JDIThread StepHandler^1.0 JDIThread^0.5 StepReturnActionDelegate^0.33333334 StepActionDelegate^0.25 ControlActionDelegate 1^0.2 BusyIndicator^0.16666667 ControlActionDelegate^0.14285715 PluginAction^0.11111111 ActionContributionItem^0.1
+12695	adapter debug list breakpoint top spot get event user order
+16930	invalidthreadstateexception area error message breakpoint evaluation eval provide get step state tostring user
+21801	datum parent cache command number modify library threadgroupreference name client send group base
+22005	call  runnable performance review asynchexec synchexec Display
+24579	note modalcontext box attempt path lock perspective checkout development preferences control check core plugin someone build step syncexec
+33297	manager  evaluationcomplete log evaluationlistener error formatter evaluation detail place tostring  resolveformatter user
+33712	JavaDebugOptionsManager modifications BreakpointsNotifier^0.25 InternalPlatform^0.2 BreakpointManager^0.125
+43197	mirror line listener lineappended get tracker action term event worker termination console init process debug race launch message way call condition plugin logic job thing care
+52474	note fact pattern project repository attempt platform point switch number dialog scenario perspective lock block workbench checkout cvs work module start check eclipse build
+57467	stack compare attempt fix flastmethod computestackframe tos lastmethod case info debug jdithread transisent race test issue index label requestor something condition background logic frame
+64951	condition screen label shot breakpoint debugging tostring stack variables select
+65107	note classcastexception stack jun debug debugview error switch breakpoint reproduce async total watch processing queue frame Instruction^1.0 PushFieldVariable^0.5 Interpreter^0.33333334 ASTEvaluationEngine 1 EvaluationRunnable^0.25 JDIThread^0.2 ASTEvaluationEngine EvalRunnable^0.16666667 JDIThread ThreadJob^0.14285715 Worker^0.125
+65149	JavaDebugOptionsManager initializeProblemHandling WorkManager^1.0 Workspace^0.5 JavaDebugOptionsManager^0.25 LaunchManager LaunchNotifier^0.14285715 InternalPlatform^0.125 Platform^0.11111111
+66413	log work error target dialog strangeness condition startup state condition IncompatibleThreadStateException^1.0 ThreadReferenceImpl^0.5 JDIThread^0.33333334 JavaLineBreakpoint^0.2 JavaBreakpoint^0.14285715 EventDispatcher^0.125 Thread^0.11111111
+78534	stack debug test occur message entry core apparently get threadmonitormanager event  clone hashmap case concurrentmodificationexception HashMap HashIterator^1.0 HashMap EntryIterator^0.5 HashMap^0.25 ThreadMonitorManager^0.16666667 DebugPlugin EventNotifier^0.125 InternalPlatform^0.11111111 Platform^0.1
+88923	evaluation ievaluationengine expression processing create evaluate
+101118	debug buildid source message sun eclipse entry async bootloader processing JavaDetailFormattersManager^1.0 JavaDetailFormattersManager JDIThread ThreadJob^0.16666667
+125868	access debug restart session start launch head result ImageDescriptorRegistry JDIModelPresentation^0.5
+148006	execution stack level monitor autobuild mode consoledocument build lock client plug worker ConsoleDocument^1.0 TaskLinkManager^0.5 AntProcessBuildLogger^0.25
+161781	suspendcount idea debugger concept book show waitfordebugger running function connection state order resume query count message call condition socket status
+165174	view selection lose show launch block monitor screenshot sync synchronized
+169542	displayed Debug view parent contain Build ID Create ThreadGroup correct traversable Variables correctly
+178912	access getter fvms type impl safety member block createvminstall race everyone ivminstalltype runtime right list call condition abstractvminstalltype variable name synchronization setter AbstractVMInstallType^1.0 JREContainerInitializer^0.5 LaunchingPlugin VMChanges^0.25 LaunchingPlugin 1^0.16666667 BatchOperation^0.14285715 JavaModelOperation^0.125 Workspace^0.11111111 JavaCore^0.1
+182237	view access get variable SWT^1.0 Display^0.25 ImageDescriptorRegistry^0.14285715 JavaPlugin^0.1
+187000	stack release debugger focus lot mouse stick press worker tree start selection stacktrace machine loose step information window collapse
+229394	jface tue buildid program cell error type sun view array bootloader value editor npe var check entry cdt en_us char variable plug location arch ColumnViewerEditor^1.0 ColumnViewerEditor 2^0.5 CellEditor 1^0.33333334 SafeRunner^0.25 Platform^0.2 JFaceUtil 1^0.16666667 SafeRunnable^0.14285715 CellEditor^0.125 TextCellEditor 5^0.1
+312038	hang automount automounter pid source directory example lockup isexpandable attachment isfile lock jar zip stat jrecontainer start tree way eclipse performance nfs jdt haschildren UnixFileSystem^1.0 File^0.33333334 StandardVMType^0.25 JavaRuntime^0.16666667 JREContainer^0.14285715
+343039	race session debugger monitor deadlock turn how default person debugging jdt ability consider option
+446040	RuntimeClasspathViewer preferenceChange SWT^1.0 Widget^0.25 Tree^0.16666667 TreeViewer^0.14285715 AbstractTreeViewer^0.11111111 StructuredViewer^0.1
+506865	AbstractVMInstallType createVMInstall

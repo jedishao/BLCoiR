@@ -1,0 +1,7 @@
+29585	Core Exception as resource tree is locked initializing classpath container
+58314	Make ASTs thread safe for multiple readers
+291322	Test errors when running JDT Core tests on Windows 7
+327143	IndexManager should not accept new jobs if the processing thread is null
+421473	Delayed assignment of declaring scope for arguments creates a race condition
+431275	Deadlock in JavaModelManager PerProjectInfo and DeltaProcessingState
+464570	race condition on static field CodeStream noVisibleLocals in method CodeStream init

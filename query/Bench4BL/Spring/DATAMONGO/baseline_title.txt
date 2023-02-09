@@ -1,0 +1,4 @@
+199	Synchronisation during performance tests
+532	Multithreading authentication issue
+622	An unversioned object should be created using insert   instead of save MongoTemplate doSaveVersioned   uses doSave   to store an unversioned object
+737	Extra MongoSynchronizations cause TransactionSynchronizationManager to throw IllegalStateException on transaction completeMultiple Mongo databases are being accessed in a transactional test case

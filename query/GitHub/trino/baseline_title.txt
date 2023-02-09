@@ -1,0 +1,10 @@
+2962	Possible Deadlock Thead starvation between Hive loadPartitionByName and getTable
+6202	Include full stacktraces from LogTestDurationListener test hang monitor
+6389	Sporadic query failures due to a deadlock in SqlServerClient getTableProperties   Transaction was deadlocked     and has been chosen as the deadlock victim
+7454	Join spill to disk race condition
+7872	Flaky TestSqlServerTypeMapping   Transaction was deadlocked     and has been chosen as the deadlock victim
+9741	TestSqlServerConnectorTest testSelectInformationSchemaColumns fail in 2019 CU13 ubuntu 20 04
+11798	Hive locks in waiting state still held indefinitely
+13212	Lock congestion in DirectExchangeClient
+14132	Missing manifest file when releasing Hive Metastore s the lock has failed
+14605	Queries are occasionally getting stuck

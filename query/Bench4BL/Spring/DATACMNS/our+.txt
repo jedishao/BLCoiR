@@ -1,0 +1,4 @@
+65	type point reference dowithproperty mappingcontext scenario property map concurrentmodificationexception algorithm addpersistententity persistentproperty mongotemplate persistententity basicpersistententity concurrency persistentproperties persistententities getpersistententity self entity
+362	repositoryinformation instance issue pass repositoriesgetrepoinfofor repository concurrency variable block lookuprepositoryfactoryinformationfor concurrentmodificationexception iterate
+390	data log remove spring result iterator lock iteration hashmap value possibility map case concurrentmodificationexception issue race persistententity collection look  values  getpersistententities stacktrace resolvetypefrom progress operation abstractmappingcontext
+831	addpersistententity race beginning one persistententity type call condition fix getpersistententity property lock write class entity abstractmappingcontext

@@ -1,0 +1,4 @@
+1986	IndexService getAndCreateLastIndexFile threadsafe issue
+4143	Unnecessary file lock in IndexFile and IndexService
+4686	The lock was released in the wrong position
+5039	localHostName   get stuck when constructing the BrokerIdentity object

@@ -1,0 +1,31 @@
+6623	AbstractUIPlugin refreshPluginActions
+15379	WorkingSetManager
+33942	IDecoratorManager update
+46562	modalcontext periodic deadlock dirtyregionqueue reference runnablelock view referencequeue lock prio dispatcher signal cvs finalizer resource sync task semaphore javareconciler workerpool 
+48382	stack test work pattern recommend deadlock ilock fail trace view build marker job worker 
+54450	request purpose debugger inui uijob error getcode dialog eclipsecon requestinui development race work jobs message call async response getworkbench hint non null logic job choice user fun
+59782	ImplicitJobs ThreadJob IndexManager eventmgr EventThread
+67053	IDEApplication
+74185	uijobtest flag test volatile check while processor remove concurrency boolean fix failure loop testjobran assertion copy testjob job complete 
+76378	uilocklistener request modalcontext notifyjob deadlock patch notification lock include junit test uithread timing occur change background interaction syncexec operation 
+84141	DecorationScheduler
+108162	copyresource package resource line deadlock participant refactoring provide action plug movefilesandfoldersoperation class
+113582	per compilationunit level jobs framework task monoreconciler marker semaphore john javareconciler party
+114527	condition startup workbench lead crash Workbench
+114813	removebundle instance listener getbundle dynamicpluginstestsuite dynamictestcase dosetup solution event mechanism bundle testviewercontribution addition begining registry chain junit process work lead fail provide failure synchronization dynamicplugin 
+118414	AbstractWorkingSetManager
+136855	IDEIdleHelper ThreadingModel Apartment HeapStatus
+164361	handler isvisible happy show dialog setmessage optimization trimming swt show address race one label check suggest message appear begintask condition task milestone configureshell name true progressmonitordialog progress avoid job user 
+168806	Realm ensureWorkerThreadIsRunning
+171452	handler appear trace couple startup get deadlock splash syncexec 
+230472	expression activity list synchronize 
+248908	BusyIndicator
+258352	synchronized progressmanager
+262032	create deadlock deadlockdetector 
+273752	NavigatorContentService getSourceOfContribution
+296056	beginrulethe scheduling rule deadlock syncexec attempt produce case 
+296822	access work usage monitor poll check nullprogressmonitor progress setcanceled
+302536	locking markersupportregistry 
+306738	item toolitem renderer mtoolbar change delta type upon tool radio toolbar button result mtoolitembuild selection state synchronize 
+307405	stack navigator navigatorcontentservicecontentprovider trace event dispatcher
+312063	listenerlist safe hashsethashsets event selectionserviceimpl order

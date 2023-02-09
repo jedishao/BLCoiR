@@ -1,0 +1,8 @@
+59599	pointer test race directory home appear candidate condition environment desktop suite fix compilation contents xml machine linux
+59909	memory production project sum lateproblem error cycle cflowstack remove running lot patch result hashtable varaibles free table case call size getthreadstack
+155148	server argument classloader deadlock licyclassloader httpserver lock policyclassloader hashcode monitor arraylist filehandler workconsumer information tostring SearchPolicy^1.0 PolicyClassLoader^0.5 SearchPolicy^0.33333334 SearchSequence^0.25
+269867	static instance access line show system loop get state prio getajtype clazz weakhashmap WeakHashMap^1.0 AjTypeSystem^0.5 Java15ReflectionBasedReferenceTypeDelegate^0.33333334 ReflectionBasedReferenceTypeDelegateFactory^0.25 ReflectionWorld^0.16666667 World^0.14285715
+318878	synchronizedset foo main gmt mode jan aspect friday ajc ajcmighthaveaspect case pertarget static test runtime trigger target environment obj
+320468	ModifiersPattern getModifierFlag FactoryBeanRegistrySupport 1^1.0 AccessController^0.5 FactoryBeanRegistrySupport^0.33333334 AbstractBeanFactory^0.2 DefaultListableBeanFactory^0.11111111 AbstractApplicationContext^0.1
+340806	JavaLangTypeToResolvedTypeConverter
+408721	weaver arraylist ReferenceType^1 TypeFactory^0.25 ResolvedType^0.2 TypePattern^0.125 ExactTypePattern^0.11111111

@@ -1,0 +1,42 @@
+545	Use ArrayList instead of Vector in single threaded
+3057	metastore HiveMetaStore HMSHandler should set the thread local raw store to null in shutdown
+3408	A race condition is caused within QueryPlan classHive s threads are stopped at HashMap getEntry     that is used within QueryPlan extractCounters   and QueryPlan updateCountersInQueryPlan
+4000	Hive client goes into infinite loop at 100  cpu
+7011	HiveInputFormat s split generation isn t thread safe
+7341	Support for Table replication across HCatalog instances
+8440	Hiveserver block query
+9199	Excessive exclusive lock used in some DDLs with DummyTxnManager
+9598	java lang IllegalMonitorStateException java util concurrent locks ReentrantLock Sync tryRelease
+10483	insert overwrite partition deadlocks on itself with DbTxnManagerinsert overwrite ta partition part xxxx  select xxx from tb join ta where part xxxx
+11036	Race condition in DataNucleus makes Metastore to hangUnder moderate to high concurrent query workload Metastore gets deadlocked in DataNucleus
+11616	DelegationTokenSecretManager reuses the same objectstore  which has concurrency issues
+12238	Vectorization  Thread safety errors in VectorUDFDate
+12248	The rawStore used in DBTokenStore should be thread safe
+12266	When client exists abnormally  it doesn t release ACID locks
+12409	make sure SessionState initTxnMgr   is thread safe
+12529	HiveTxnManager acquireLocks   should not block foreverCurrently  in DbTxnManager this method will block until all competing locks have gone away
+12620	Misc improvement to Acid module
+12768	Thread safety  binary sortable serde decimal deserialization
+12797	Synchronization issues with tez llap session pool in hs2
+12904	LLAP  deadlock in task scheduling
+12926	Another synchronization issue with tez llap session pool in hs2
+12927	HBase metastore  sequences should be one per row  not all in one row
+12996	Temp tables shouldn t be locked
+13013	Further Improve concurrency in TxnHandler
+13213	make DbLockManger work for non acid resources
+13395	Lost Update problem in ACIDACID users can run into Lost Update problem
+13458	Heartbeater doesn&apos;t fail query when heartbeat fails
+13512	Make initializing dag ids in TezWork thread safe for parallel compilationWhen parallel query compilation is enabled  it is possible for concurrent running threads to create TezWork objects that have the same dag id
+13599	LLAP  Incorrect handling of the preemption queue on finishable state updates
+13699	Make JavaDataModel get thread safe for parallel compilation
+13725	ACID  Streaming API should synchronize calls when multiple threads use the same endpointCurrently  the streaming endpoint creates a metastore client which gets used for RPC
+13753	Make metastore client thread safe in DbTxnManager
+13833	Add an initial delay when starting the heartbeat
+13858	LLAP  A preempted task can end up waiting on completeInitialization
+14357	TestDbTxnManager2 testLocksInSubquery failing in branch 2 1
+14400	Handle concurrent insert with dynamic partition
+14463	hcatalog server extensions test cases getting stuck
+14739	Replace runnables directly added to runtime shutdown hooks to avoid deadlock
+14778	document threading model of Streaming APIThe model is not obvious and needs to be documented properly
+14924	MSCK REPAIR table with single threaded is throwing null pointer exception
+15090	Temporary DB failure can stop ExpiredTokenRemover thread

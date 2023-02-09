@@ -1,0 +1,5 @@
+176792	ComObject ObjectMap Callbacks
+183830	glxmakecurrent glx glxmakecurrent debugger deadlock program opengl stderr int async print xlib linux lock reply 
+188320	snippet jface argument run deadlock sleep swt continueEventDispatching readanddispatch fix linux block modalcontextbuild continueeventdispatching event class modalcontextthread case gtk execution look synchronisation asyncexec task
+264399	swt occur linux testing deadlock gtk 
+338965	deadlock UI

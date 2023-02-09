@@ -1,0 +1,81 @@
+39769	Wrong class loader when the myServlet destroy   called if myServlet is in the T5 shared directory
+40380	Potential syncro problem in StandardSession expire boolean
+42530	ManagerBase backgroundProcess throws NullPointerException
+45453	JDBCRealm getRoles bad synchronization causes hangs w  DIGEST authentication
+47158	I think AccessLogValve has race condition problem
+47524	McastServiceImpl executor is not dispatching events
+48172	JspRuntimeContext synch  problems
+48234	org apache catalina core ContainerBase getLogger   not thread safe
+48248	tribes group interceptors MessageDispatchInterceptor run should be volatile
+48249	org apache tomcat util net NioBlockingSelector BlockPoller run    volatile
+48399	Lock fields should be final
+48790	Race condition in org apache catalina session ManagerBase maxActive
+48843	Tomcat Acceptor Thread goes into wait   and it will never come back
+48895	WebAppClassLoader clearThreadLocalMap   concurrency issues
+49129	DigestAuthenticator md5Helper   possible incorrect lazy initialisation
+49144	Incorrect lazy initialization and update of static fields
+49567	when starting a new thread from a startAsync Runnable  an infinite amount of doPosts is generated
+49730	Race condition in StandardThreadExecutor   requests are sometimes enqueued instead of creating new threads
+49905	In cluster  when using DeltaManager memory leak can occur
+49985	Lazy initialization without any synchronization   data race in AstInteger  AstFloatingPoint  AstString
+49987	Data race in ApplicationContext
+50138	Lack of synchronization in org apache catalina security SecurityUtil
+50293	javax el CompositeELResolver synchronization issue
+50352	AsyncListener onComplete is not called after AsyncContext complete   is called
+50353	Calling asyncContext getResponse   returns null after async timeout
+50459	StandardContext bindThread   and unbindThread   are not symmetrical and not limited to current thread
+50547	The CHANGE_SESSION_ID message that received during cluster session synchronization is dropped
+50554	Bad use of getClass   could potentially lead to concurrency bugs in future
+50629	Make the bindThread unbindThread method protected
+51185	Performance  DataSourceProxy createPool should use more fine grained synchronisation
+51197	sendError sendRedirect don t work with AsyncContext
+51212	QueryStats has synchornisation issues
+51467	usage of method run instead of start to start a thread
+51545	make threadname available in ExtendedAccessLogValve
+51688	JreMemoryLeakPreventionListener should protect against AWT thread creation
+52055	ChunkedInputFilter is not recycled for servlet 3 0 asynchronous request
+52091	TagHandlerPool is slow when high concurrently
+52213	Field  org apache catalina tribes transport bio util FastQueue enabled  should be volatile
+52259	synchonization issues and dead lock if no realm is presented in configuration
+52356	Prevent potential data races on  org apache catalina tribes transport bio util FastQueue size
+52777	Automatically shut down old versions in parallel deployment
+52999	Performance issue with locking in ContainerBase fireContainerEvent
+53173	maxConnections feature hangs the system
+53450	Deployment of an application with  ROOT  context hangs forever
+53498	Atomicity violation bugs because of misusing concurrent collections
+53624	sendRedirect doesn t work after a dispatch through the AsyncContext
+53843	isAsyncStarted may return false in thread that started async processing
+54045	ReplicatedMap don t like TcpFailureDetector in static configuration
+54086	ConcurrentModificationException in NioReceiver on shutdown
+54521	DigestAuthenticator  nonceCountValid   fails in case of simultaneous asynchronous requests of the same client
+55267	NIO thread locked
+55309	Concurrent issue of TagPluginManager
+55521	Race Condition in HttpSession invalidate     HttpServletRequest getSession boolean
+55524	Deadlock produced during Websocket write operation  org apache catalina websocket WsOutbound
+55582	Concurrent issue of TagFileProcessor
+55684	WebappClassLoader getThread want an access to root ThreadGroup
+55799	Stability issues when concurrently sending large messages
+55996	Async context does not timeout with HTTP NIO connector
+56042	java lang IllegalStateException  Calling  asyncComplete    is not valid for a request with Async state  MUST_DISPATCH
+56082	ConcurrentModificationException with org apache juli ClassLoaderLogManager
+56518	NIO async servlet limit latch leak
+56577	Inappropriate executor in WsServerContainer
+56653	Concurrency issue with Mapper ContextList when stopping Contexts
+56724	Restart Container background thread if it died unexpectedly
+56746	Webssocket secure client thread cannot access webapp resources
+56857	Thread safety issue in ApplicationContextFacade invokeMethod
+56907	Threads leak
+57265	Tomcat 8 hiden behind NGINX fails to send file when using NIO connector
+57338	SingleSignOnEntry cache of ClusterSingleSignOn valve is not synchronized on Tomcat startup
+57340	NioConnector caches get corrupted on concurrent comet close
+57420	Wrong class names generated since URL_ENCODER in DirContextURLConnection is not thread safe
+57681	Allow parallel class loading in web application class loader by synchronizing on class specific object
+57683	Crash of stockticket async example caused by an aborted client request
+57779	Deadlock if using separate thread to write to ServletOutputStream
+57943	NioEndpoint  one poller thread died
+57959	Deadlock in FileHandler java when log is rotated
+57977	The original class loader isn t re bound to the thread in PersistentValve invoke
+58179	Atomicity violation
+58522	concurrency problem corrupts WARDirContext Entry children
+58946	ApplicationHttpRequest should enforce immutability of ParameterMap
+59138	checkThreadLocalMapForLeaks has false positives

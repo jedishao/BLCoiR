@@ -1,0 +1,32 @@
+7392	JDIThreads show  not responding  at startup
+8683	NPE after suspending VM attempting to step on system thread
+12695	Need to get full set of breakpoints hit from thread
+16930	Eval  incompatible thread state
+21801	ThreadGroupReference related data should be cached
+22005	Review UI runnables
+24579	Deadlock on first checkout of java project
+33297	Unneccessary error logging from detail formatter manager
+33712	The resource tree is locked for modifications  from JavaDebugOptionsManager
+43197	Race condition between console line tracker and debug terminate event
+52474	UI Blocked when opening Java Perspective during CVS check out
+57467	race condition causes invalid stack frames
+64951	suspended thread while evaluating condition   no labels
+65107	ClassCastException processing async thread queue
+65149	Resource exception in JavaDebugOptionsManager initializeProblemHandling
+66413	Illegal thread state when debugging to conditional BP on startup
+78534	ConcurrentModificationException in ThreadMonitorManager
+88923	Evaluations create compiled expression in UI thread
+101118	eclipse SDK 3 1RC3 win32   Exception processing async thread queue
+125868	Invalid Thread Access when launching
+148006	deadlock in ConsoleDocument during ant execution in autobuild
+161781	Suspend status ignored on initial remote debug connection
+165174	selection is lost in launch view after stepping into sync block
+169542	A ThreadGroup  and all its Threads  is not displayed in the Debug view when its parent didn t contain any threads
+178912	IVMInstallType api and AbstractVMInstallType impl are not thread safe
+182237	Invalid thread access exceptions in Java Variables view
+187000	Debugger looses selection focus a lot on the thread stack where you debug
+229394	NPE from JFace when using cell editor in variables view
+312038	JREContainer hasChildren locks up the UI for more than 30s
+343039	Turn on monitors by default
+446040	Invalid thread access in RuntimeClasspathViewer 1 preferenceChange  err_grp  87791828
+506865	Race condition in AbstractVMInstallType createVMInstall

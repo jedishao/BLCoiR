@@ -1,0 +1,64 @@
+140	XsltBuilder instance not threadsafe and can t be used more then once
+510	Intermittent test failure in MultiCastAggregatorTestThere is a race condition in the test that both in out aggregators are aggregating the output
+574	Multicast default excecutor do not create the enough thread for parallel processing
+715	ConcurrentModificationException in ThreadProcessorWhen defining very simple routing with ThreadProcessor
+803	ValidatingProcessor not thread safe
+1199	Throttler appears to  throttle  per thread instead of throttling across multiple threads
+1270	Starting Camel using Main from camel run or Main class   countdown latch is hanging
+1401	JaxbDataFormat is not thread safe
+1510	BatchProcessor interrupt has side effects
+1565	Make camel validation thread safe
+1583	ldap component is not thread safe
+1604	UnitOfWork synchronization callbacks   add DSL for easy registering custom processor
+1641	camel ftp is not thread safe
+1650	Race condition in IdempotentConsumer
+1670	thread   and File Components
+1795	camel jms   wrong defaults causes message listener to use new thread when receiving a messageJmsConfiguratiuon have a bad default
+1930	Synchronized access to XPathExpression resulting in contention for multiple consumers
+1966	CamelNamespaceHandler is not thread safe
+2049	Improper configuration of MINA connector and acceptor instances
+2175	Initialization code of camel cxf is not thread safe
+2496	StreamCache Splitter race condition
+2824	Deadlock in org apache camel util DefaultTimeoutMapAfter running a camel route with a camel Aggregator for a while  I get a deadlock in org apache camel util DefaultTimeoutMap
+2935	Broken failure reporting via DefaultProucerTemplate asyncCallback and Synchronization
+2986	IllegalStateException in CamelContinuationServlet under heavy loadReason is a race between continuation suspend   and continuation resume
+2994	camel cxf   CxfClientCallback is invoked twice when only one was expectedRun the test CXFWsdlOnlyTest
+3216	ScheduledPollConsumer should avoid runnable thread to die to ensure its kept being scheduledscheduled consumers such as file ftp uses ScheduledPollConsumer to poll
+3277	Threading issue which lets converter loading abortThe type converter loading is not threadsafe and fails sometimes
+3349	Race condition found in CxfRsEndpoint while getting the endpoint binding under load and performing sync and async invocation
+3493	ConcurrentModificationException in DefaultCamelContext removeRouteDefinitions
+3528	HybridSourceDataBinding not thread safe
+7116	JettyHttpProducer doStop does not stop client thread poolCase
+7161	camel dozer   Can cause dead lock in init when using springWhen using spring with dozer  and we call init in the ctr  then spring can cause a deadlock when it does its getBean stuff
+7239	Address the SchemaFactory thread safe issue
+7318	Concurrency on HDFS Consumer not working efficiently
+7321	JcrConsumer freezes in some environments
+7364	JpaMessageIdRepository uses EntityManager non thread safe
+7556	camel rabbitmq  Multiple concurrent consumer threads
+7715	SjmsConsumer and SjmsProducer do not remove thread pool when stopSjmsConsumer and SjmsProducer always register a new ThreadPool on Camel context ExecutorServiceManager every time a new instance is created for an endpoint
+7795	Regression  MDC may lose values after when Async Routing Engine is used
+7968	Container has undefined concurrency behaviour
+7973	CircuitBreakerLoadBalancer fails on async processors
+7988	file consumer   Should call abort in case read lock cannot be acquired if exception was thrown
+8088	FTP can wait indefinitely when connection timeout occurs during connect
+8134	We should not add synchronisation if the CachedOutputStream closedOnCompletion option is falseCachedOutputStream
+8146	Starting and stopping routes leak threadsSeems to be identical consequence as with previous issue CAMEL 5677  but perhaps due to a different cause
+8200	Race condition in JmsProducer for request response messaging causing nondeterministic setting body to null
+8241	Exec command failures using Java 8 on Unix
+8268	camel hbase   The scan method is not thread safe when using a filter listThe scan method is not thread safe when using a filter list
+8353	FileLockExclusiveReadLockStrategy   Should defer closing channel till release lock
+8673	ConcurrentModificationException when creating dynamic routesThis ticket refers to CAMEL 7836
+8713	ParallelAggregate option when using parallel mode does not run in parallel
+8885	ConsumeLockEntity without ConsumeDeleteI think that condition at the beginning of the lock function is wrong
+8954	Lock information is not handovered together with Exchange on completion synchronizations
+9199	RabbitMQ Consumer threads crash when sending partially serializable objects
+9311	Concurrency issue with the dynamic router
+9319	SshClient resource leak when used from ProducerTemplate
+9331	Thread leak in Http4Endpoint  doStop   does not close   the httpClientThread leak in Http4Endpoint  doStop   does not close   the httpClient
+9738	Thread leak for camel mina2 consumers
+9951	Setup default values for thread connected properties in WebSocket component
+9970	CamelFileLength header is wrong for long write fileGiven a long write file slowfile dat
+10024	Race condition in Mina2Producer Mina2Consumer when closing connections with disconnect true
+10215	EventDrivenPollingConsumer is not thread safe when used with ConsumerCache For static endpoints  if DefaultConsumerTemplate receive   is used   ConsumerCache will return the cached instance of PollingConsumer for every thread part of parallel processing of split aggregate
+10229	camel rabbitmq   Race condition when stopping context with autoack false
+10273	Jetty  missing jmx object if custom thread pool is used

@@ -1,0 +1,5 @@
+99	FileCleaner thread never ends and cause memory leak in ASFileCleaner opens a thread and Theno solution is given to the user to end it
+136	HexDump s use of static StringBuffers isn t thread safe
+201	CountingInputStream CountingOutputStream only partially synchronized
+207	Race condition in forceMkdir
+216	Delete files quietly when an exception is thrown during initialization

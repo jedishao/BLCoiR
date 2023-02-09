@@ -1,0 +1,31 @@
+582	Race in jar upload during hadoop indexing
+812	RealtimePlumber  Race between server view callback and merge push thread
+1014	real time node lead to wrong result empty result  for the request with regexp filter when real time node is ingesting kafka msg
+1210	race condition in coordinator
+1360	Race condition in autoscaling terminates nodes that were just assigned tasks
+1715	Zombie tasks able to acquire locks after failure
+2793	Duplicate primary key errors cause TaskQueue big lock to be held for way longer than it should
+2842	NPE in RTR with multiple threads for task assignment
+2991	Race condition in IncrementalIndex s facts
+3063	Unloadable lookups can tie up all query threads
+3393	should handle channel disconnected better in NettyHttpClient or Druid
+3459	Deadlock in global lookup cache
+3593	QTL  Deadlock in offheap cache
+3600	Possible race condition while updating DataSource Metadata  Kafka Indexing Service
+3608	IngestSegmentFirehoseFactory race between tasks
+3772	Race condition in KafkaLookupExtractorFactory
+4226	druid lookups cached global race condition when realtime node starts
+4296	HLL BufferUnderflowException querying realtime indexing tasks
+4984	Callback race on start in cachingCost balancer
+5338	Potential bug in HttpPostEmitter causing high CPU usage
+6020	Race in taskMaster when the overlord becomes the leader
+6028	Error in SqlMetadataRuleManagerTest
+6139	Race in testCheckpointForUnknownTaskGroup   of KafkaSupervisorTest
+6201	Deadlock on overlord with HttpRemoteTaskRunner
+6287	Race condition in Kafka Indexing Service
+6826	Concurrency bug in DruidSchema refreshSegmentsForDataSource
+6867	deadlock found in DruidStatement
+7400	Allow users to use a provider for metadata username
+8622	Proposal  concept of supervisor type task slots for resolving parallel task deadlocks
+9292	CoordinatorRuleManager rules doesn t need to store ConcurrentHashMap
+10005	API to verify that published segments are loaded and available for a datasource

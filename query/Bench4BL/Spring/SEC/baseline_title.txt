@@ -1,0 +1,15 @@
+188	SecurityContextHolder JavaDoc errorFrom acegisecurity developer
+192	Concurrent login checking fails with CAS
+197	ConcurrentSessionController should count non expired Sessions only
+328	AbstractUserDetailsAuthenticationProvider makes two hits when no cache is used
+356	Changes to Authentication leak into synchronous requests when using HttpSessionContextIntegrationFilter
+398	HttpSessionContextIntegrationFilter AuthenticationProcessingFilter thread concurrency issue
+423	CLONE  SEC 356 Introduces New Bug  Changes to Authentication leak into synchronous requests when using HttpSessionContextIntegrationFilter
+444	Race condition inside ConcurrentSessionControllerImpl
+618	Authentication details object should be copied to successful Authentication before ConcurrentSessionController checkAuthenticationAllowed is called
+670	Deleting from ACL_OBJECT_IDENTITY can cause deadlocks under  load test While performing load testing  we found concurrent deletes from the ACL_OBJECT_IDENTITY table by the JdbcMutableAclService would cause deadlocks in the database
+809	Concurrent Session Control and OpenID Incompatibility
+1396	Race condition between HttpSessionContextIntegrationFilter and SessionFixationProtectionFilter
+2067	Security context incorrectly removed from session when asynchronous servlet used
+3108	DigestAuthenticationFilter should use SecurityContextHolder createEmptyContext
+3109	Concurrent ThreadPoolTaskScheduler don t work with DelegatingSecurityContextExecutorWe have a setup with Spring Boot with scheduling

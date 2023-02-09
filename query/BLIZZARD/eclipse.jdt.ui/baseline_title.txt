@@ -1,0 +1,20 @@
+12996	open multipage editor causes Invalid thread access when exporting to a jar
+29531	JavaColorManager initialized in non UI thread
+75843	Deadlock arised when calling JDIDebugModel createMethodEntryBreakpoint
+79793	Deadlock in JavaWorkingSetUpdater
+103450	Quick fix to remove synchronized block
+125013	deadlock in PreferencesAdapter firePropertyChangeEvent
+179109	Editor computing AST twice concurrently
+261198	nodes missing in Java Model in Synchronize view
+272742	ImagesOnFileSystemRegistry is not thread safe
+291996	Invalid thread access from JavaMergeViewer during extracting method
+296794	DocumentChange fails if document is not thread safe
+297709	JDT error behavior when  link with editor  option opening
+300536	Invalid thread access while undoing quick fix
+301242	UI locked by 2 dialogs after repeated Undos in Java editor
+319689	Invalid thread access in ProblemMarkerManager
+336841	Show In  doesn t work in Synchronize view for open  java file outside of classpath
+347599	Provide a way to implement refactorings that depend on resources that have to be explicitly released
+411636	Save is very slow  burns cycles in the Package and Project Explorer
+411841	Rerunning a test from JUnit results view is launching the test on UI thread
+417765	ImageDescriptorRegistry hookDisplay   causes SWT Invalid thread access

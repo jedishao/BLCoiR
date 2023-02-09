@@ -1,0 +1,4 @@
+65	BasicPersistentEntity potentially suffers from ConcurrentModificationException
+362	Potential concurrency issues in RepositoriesgetRepoInfoFor   is iterating over the key set of the repositories already cached to eagerly return RepositoryInformation instances found upfront
+390	ConcurrentModificationException in MappingContextTypeInformationMapper resolveTypeFrom
+831	AbstractMappingContext getPersistentEntity sometimes returns an empty entity when called by multiple threads

@@ -1,0 +1,2 @@
+344	Deadlock during refresh properties
+407	HierarchicalINIConfiguration can throw an exception if the global section is accessed concurrently

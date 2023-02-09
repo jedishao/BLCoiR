@@ -1,0 +1,33 @@
+1117	Exception during namespace bundle split
+2141	Race condition in reconnection after managed ledger is fenced
+3768	pulsar function  intermittent test failure due to deadlock
+4447	Broker gets stuck when getting partitioned stats
+4635	Bookie down causes deadlock in broker
+4707	PulsarKafkaProducer is not thread safe
+5585	Non persistent topic s replication has a deadlock
+8050	Replace map with set
+8293	Race condition in updating ManagedCursorImpl readPosition
+9109	pulsar timer thread blocked at redeliverUnacknowledgedMessages
+10170	Optimize the lock in AuthenticationAthenz
+10235	Deadlock on Monitoring thread     LeaderService isLeader
+10767	Java client  Deadlock in Pulsar Client when running ConsumerBatchReceiveTest
+11379	Directory facing race condition on NarUnpacker
+11605	Race condition in concurrent schema deletion
+11689	Java consumer can block forever on batchReceive
+11690	Flaky test  LockManagerTest revalidateLockOnDifferentSession
+11966	Proxy  Proxied  admin endpoint connections might remain blocked forever
+12723	Race condition in PersistentTopic addReplicationCluster
+12885	Bug  Unordered consuming case in  Key_Shared subscription
+12929	Deadlock in internalDeleteSubscription  in metadata store callback thread
+13004	metadata  Race condition in ResourceLockImpl revalidate
+13923	Proxy  Race condition in Pulsar Proxy that causes UnsupportedOperationExceptions in Proxy logs
+13964	Flaky tests  PulsarClientImpl close hangs forever
+13986	Transactiion  Performance bottleneck of TransactionBufferHandler
+14362	Broker Healthcheck Endpoint Exposes Race Conditions
+14413	ConsumerBuilderImpl subscribeAsync blocks calling thread
+14438	sometimes  internalDeleteTopicForcefully  will block forever
+14633	setupTopicPublishRateLimiterMonitor   can block forever  causing deadlock for metadata store operations
+17446	Bug  Producer may be permanently blocked by chunking messages when blockIfQueueFull is enabled
+17913	Bug  Deadlock while reading Schema from BookKeeper
+18196	Bug  locallyAcquiredLocks leak in OwnershipCache
+18988	Bug  Deadlock pulsar io and metadata store if transactions enabled

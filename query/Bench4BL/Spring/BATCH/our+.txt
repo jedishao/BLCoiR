@@ -1,0 +1,18 @@
+170	hibernatejobdao staleobjectstateexception stepexecution operationuse step operation modification
+449	call itemskippolicyitemhandler item reader synchronization skip writer error
+603	JobExecution fields modified another volatile
+782	interruptedexception release abstractstep chunk acquirer error context lock block share processchunk execution peresistence locking itemorientedstep jdk simpleasynctaskexecutor synchronizer semaphore persistence interruption step writer optimisticlockingfailureexception
+912	replace error hit safety implication context initialization hard case think sure issue visibility arraylist collection list way with performance synchronization jobregistrybackgroundjobrunner theory
+1272	work faulttolerantchunkprocessor step strange
+1278	abort batch exceptionsrepeattemplate repeattemplate
+1362	jvm work stepthread nothing count chunk priority scheduler disparity loop effect report step end worker user
+1526	chunkmonitorthe deal detection memory tomcat one threadlocal chunkmonitor leak re deployment null fix web user apos deployment
+1542	execution likely stepexecution batch mapjobrepository protection collectionsthe collection concurrency jobexecution safety effect step copy place job write
+1572	failing springframework transaction transaction timing out read reader step due lock
+1709	beanwrapperfieldsetmapper cache distance race column message caching concurrency setting fail condition limit property name
+1724	limiti chunk doubt sort check way fail failure background processing step outcome case queue
+1725	concurrenthashmap concurrenthashmapsubclassclassifier subclassclassifier modification
+2126	instance usage numberformat fix simplejoboperator mean simpleasynctaskexecutor variable safe jobparametersconverter setup taskexecutor longnumberformat defaultjobparametersconverter dateformat
+2153	static stepsynchronizationmanager maven increment project nullpointerexception hashtable fix solution decrement variable threadsafe teststepsynchronizationmanagermain hashmap
+2156	short_context concurrencyfailureexception update deadlock error updatestepexecution database serialized_context jdbcexecutioncontextdao context jdbcexception jobrepository sqlstate preparedstatementcallback tableneed execution stepexecution teradata tasklet concurrency exit terajdbc failure updateexecutioncontext step transaction status TaskletStep
+2313	flowexecutionexception datum gridsize release line synchronizationmanagersupport error spring loadxmlmaster abstractjob multithreading flow execution npe race batch count nullpointerexception ecijob condition re run decrement step job apos

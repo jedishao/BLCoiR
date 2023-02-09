@@ -1,0 +1,5 @@
+99	thread cleaner leak user memory solution asfilecleaner filecleaner theno file asfile ends opens commons webapp error server memory web outofmemoryerror application app application extended cleans provide api classloader alive undeployed
+136	string hexdump isn thread stringbuffers hex buffers dump safe dump method stringbuffer buffer data stream cbuffer outputstream output bug time threads instances lbuffer methods variable mixed multiple returning result calling
+201	stream counting input countinginputstream countingoutputstream output partially count stream thread synchronization threads sense share functionality loss operations field published updated guaranteed read safe correctly safely reads underlying removed
+207	Race condition forceMkdir processes threads call forceMkdir directory chance IOException directory correctly created process thread Race condition forceMkdir file directory test dir delete handle write create
+216	initialization exception files delete thrown quietly iirc file report failure lock deletion lockablefilewriter returns account check code file times writer lockable lockfile delete calls fails

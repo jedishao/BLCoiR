@@ -1,0 +1,31 @@
+6623	Threading problems on plugin startup
+15379	WorkingSetManager resource change listener not thread safe
+33942	Javadoc for IDecoratorManager update should state threading requirements
+46562	Deadlock in modal cvs dialogI20031111
+48382	Deadlock running automated testsI20031209
+54450	requestInUI seems to have a race condition  fails most times
+59782	Deadlock in reentrant workspace runbuild I20040420 1300
+67053	when locking fails with exception  wrong message is shown3 0 RC2
+74185	UIJobTest has potential concurrency failure
+76378	Deadlock in interaction between ModalContext  UIThread  and background NotifyJob
+84141	DecoratorScheduler should not lock UI Thread20050125
+108162	eadlock using MoveFilesAndFoldersOperation from a refactoring participant
+113582	Deadlock updating marker list during builds
+114527	Race condition in Workbench leads to intermittent crashes  org eclipse ui startup
+114813	Incorrect synchronization will lead to JUnit failure  org eclipse ui tests dynamicplugins DynamicPluginsTestSuite
+118414	Deadlock on each startup caused by AbstractWorkingSetManagerI20051129 0800
+136855	Deadlock caused by IDEIdleHelper and HeapStatus calls to runFinalization from UI thread
+164361	Task name not shown in user job progress dialog3 2
+168806	Realm ensureWorkerThreadIsRunning   doesn t start a new thread
+171452	Deadlock on startup using I20070123 1030
+230472	Expression controlled Activities aren t correctly synchronized with the internal enabled list when they are persisted and reloaded
+248908	BusyIndicator deadlocks UI threadBuild ID  3 4 0
+258352	synchronization in ProgressManager too expensive
+262032	DeadlockDetector may create deadlock
+273752	syncExec in org eclipse ui internal navigator NavigatorContentService getSourceOfContribution Object  causes deadlock in test suite
+296056	Deadlock between syncExec and IJobManager beginRuleThe following case now produces a deadlock  since N20091120 2000
+296822	NullProgressMonitor is not thread safe for expected usage
+302536	Broken double checked locking in MarkerSupportRegistry
+306738	Renderer does not synchronize ToolItem selection state with MToolItemBuild  I20100318 2100
+307405	Deadlock in NavigatorContentServiceContentProvider
+312063	SelectionServiceImpl should use ListenerList instead of a HashSetHashSets are not thread safe and does not guarantee event order

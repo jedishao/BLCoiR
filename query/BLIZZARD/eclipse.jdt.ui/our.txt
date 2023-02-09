@@ -1,0 +1,20 @@
+12996	access select project error type mulitpage example file leave get create jar finish export creation editor happen mpe fill eclipse fail build install
+29531	preview editor move select package nullpointerexception javacolormanager refactoring build activate initialize press 
+75843	createmethodentrybreakpoint iresource deadlock dialog ischedulingrule event dispatcher creation situation chain reaction team jdi int iworkspacerunnable breakpoint javabreakpoint entry component delay gui jdt syncexec snapshot 
+79793	deadlock javaworkingsetupdater 
+103450	fix statement block remove option 
+125013	preferenceforwarder firepropertychangeevent javamodelmanager PreferencesAdapter
+179109	Editor computing AST twice concurrently
+261198	javasynchronizationcontentprovider  business src change project team source repository structure eclipse node view trace folder somebusiness spot model synchronize
+272742	imagesonfilesystemregistry error type swtexception javadoc path view computer get concurrently getnewfile info editor  save png filenotfoundexception imageloader fimagecount input system step 
+291996	javamergeviewer
+296794	DocumentChange fails if document is not thread safe
+297709	editor agent item package resource autocomplete firefox change tree link mozilla control windows opening result swt composite action jdt class option
+300536	access fix get state error swtexception 
+301242	save space dialog undo attachment lock action press workbench add editor test format check searchpattern validatematchrule stacktrace user
+319689	problemmarkermanager
+336841	package test classpath work show head view file attachment fix explorer detail synchronize 
+347599	release createchange none uncertainty cycle life patch performrefactoringhistoryoperation refactoring attachment lock place possibility situation c   checkfinalcondition resource refactoringhistorywizard index rafactoring check way eclipse cdt  dispose checkinitialcondition conditions 
+411636	editor burn stack package large link save project cycle trace file delay attachment build explorer action indigo 
+411841	junit stack process test work project capture launch menu sample rerun eclipse result patch view trace freeze build enable context config 
+417765	newjavaprojectwizardpagetwo mageDescriptorRegistry hookDisplay Bndtool OSGi

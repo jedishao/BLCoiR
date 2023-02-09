@@ -1,0 +1,6 @@
+367	FastDateFormat thread safety
+459	Issue in HashCodeBuilder which only shows up under high load multi threaded usage
+481	Possible race conditions in hashCode of the range classesThe hashCode   methods of the range classes look very suspicious to me
+584	ExceptionUtils uses mutable lock targetExceptionUtils uses a mutable lock target  both the methods removeCauseMethodName   and addCauseMethodName   take out a lock on CAUSE_METHOD_NAMES but then modify it
+1230	Remove unnecessary synchronization from registry lookup in EqualsBuilder and HashCodeBuilder
+1251	SerializationUtils ClassLoaderAwareObjectInputStream should use static initializer to initialize primitiveTypes map

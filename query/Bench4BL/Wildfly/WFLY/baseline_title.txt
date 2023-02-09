@@ -1,0 +1,32 @@
+1810	SFSB tx lock not released in exception was thrown in Synchronization callback
+2016	Security context associated with EJB asynchronous invocations can potentially be corrupted over time by the caller thread
+2065	Update jboss transaction spi
+2458	Re deployment of a clustered application fail due to race condition with infinispan
+2467	Deadlock on startup if configured w 8 transactional Infinispan cachesCacheConfigurationService should be installed using AsynchronousService wrapper
+2954	Transaction Synchronization registration issue with injected JMSContextThe JMSContextProducer registers a tx Synchronization object directly on the Transaction
+3259	Race condition in built in ServletContextListenersWeldComponentIntegrationProcessor properly adds service dependency on the WeldStartService
+3280	Thread locking problem when app server is going to shutdownI face problem that remoting thread and MSC service thread is deadlocked when server is going to shutdown
+3338	JMSContext is not thread safe
+3381	Possible race between remote process  receipt of a cancellation request and its receipt of the initial request
+3396	NPE in TimerResourceDefinitionI am experiencing race conditions when running test remotely from Arquillian to Wildfly 8 1 0 CR2
+3517	DeploymentMountProvider leaks thread poolsDeploymentMountProvider start   calls Executors newScheduledThreadPool but stop   does not shutdown the pool
+3548	JTA synchronization for a distributed transaction called with incorrect TCCLIt seems the RequestProcessor which is processing JTA synchronizations does not have the right TCCL set
+3695	Distributed web session expiration ScheduledExecutorService leaks threads on undeployThe ScheduledExecutorService employed by the SessionExpirationScheduler uses shutdown   to shutdown the thread pool   however  unless we explicitly setExecuteExistingDelayedTasksAfterShutdownPolicy false   all scheduled tasks will attempt to execute after shutdown
+3715	Async servlets cause lock timeouts for distributable sessions
+3727	Race condition during channel create vs start causing NPE on channel startupMy hunch is that this is due to the fact that WildFly creates a channel in one thread but starts it in another
+3731	org jboss as ejb3 component stateful StatefulSessionSynchronizationInterceptor should not register a Synchronization if the transaction was rolled back
+3942	Race condition with clean shutdown and mod_cluster session draining
+4133	Hanging EJB threads because of a persistent timer and failed deployment
+4310	Race condition registering resource adapters at startupUpstream Jira of https   bugzilla redhat com show_bug cgi id 1184610
+4511	CMTTxInterceptor invokeInOurTx contains stale code handling ApplicationDeadlockExceptionDescription of problem
+4844	When Wildfly EJB timer finishes  the transaction is not fully committed
+5186	TimeoutException  Unable to acquire lock after 15 secondsSeen in these scenarios
+5449	Custom socket factory for JGroups subsystem not set correctlyWildfly s JChannelFactory tries to set a custom socket factory on the JGroups transport
+5596	MessageDrivenComponent startDelivery stopDelivery is not thread safeWFLY 4470 made a change to prevent MDBs being activated or deactivated multiple times  but it is not thread safe
+5770	Lock TimeoutException on CacheRegistry close  Just happened on node shutdown when testing locally
+6127	Throw IllegalStateException if JTA tx has an unsynchronized persistence context and the target is synchronized persistence contextSPEC  If a component is called and the JTA transaction is propagated into that component
+6215	SessionSynchronization callbacks allow concurrent access to SFSBIssue first encountered by customer in EAP5  JBPAPP 11239
+6405	Performance  WeldDeployment getBeanDeploymentArchive method is synchronized Wildfly 10 0 0 FINAL
+6776	Unclear error message when creating multiple thread pools of the same type for a workmanagerWhen there is already a long running thread pool for a work manager and you try to create another one
+6877	Fine session attributes  i e  replication granularity   ATTRIBUTE  cause org infinispan util concurrent TimeoutException  ISPN000299  Unable to acquire lock after 15 secondsOur system using the following infinispan configuration for web session cache  i e  an async  non transactional  batch  optimistic locking dustrubutable cache
+7282	Deadlock in BasicAction when jboss remoting and JTA is used

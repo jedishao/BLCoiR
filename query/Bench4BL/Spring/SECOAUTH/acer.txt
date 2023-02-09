@@ -1,0 +1,1 @@
+311	AbstractJaxbMessageConverter thread safe JAXB marshallers unmarshallers thread safe http jaxb java net guide Performance thread safety html created separately thread AbstractJaxbMessageConverter incorrectly caches marshaller unmarshaller ArrayIndexOutofBoundsExceptions AbstractJaxbMessageConverter thread safe set token message encode convert offset bytes decode

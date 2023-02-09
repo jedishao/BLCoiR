@@ -1,0 +1,5 @@
+149900	add process girl dep responsiveness pde expect ton current plugin watch lock
+158326	cursor runnablelock take trace build property lock checkboxtreeviewer plug page beween prio flash child OS^1.0 Tree^0.33333334 Control^0.25 Display^0.16666667 TreeItem^0.1
+186963	schema shift type switch dialog file perspective synchronize addition editor tool Schema^1 EditableSchema^0.25 SchemaInputContext^0.16666667 InputContext^0.14285715 XMLSourcePage^0.11111111 FormEditor^0.1
+281923	line run box platform mode testapplication parameter end workbench junit test sense launch come ide check command target headless nonuithreadtestapplication plug coretestapplication
+291528	Synchronize JDT added ability batch compiler specify instead PDE Build add build properties support exists project specific settings warning error levels msynchronize build properties file

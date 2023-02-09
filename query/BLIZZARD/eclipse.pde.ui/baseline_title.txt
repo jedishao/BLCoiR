@@ -1,0 +1,5 @@
+149900	PDE UI Locks when adding a ton of required plugins  not a sweet time
+158326	Opening build properties for big plug in locks UI for 45s and flashes cursor
+186963	ConcurrentModificationException
+281923	Run in UI thread unchecked doesn t work with Headless Mode application
+291528	Synchronize project warning error settings to build properties

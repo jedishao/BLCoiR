@@ -1,0 +1,3 @@
+334	Calls to lifecycleMonitor notifyAll   in AbstractStandaloneMessageReceiver are superfluous
+613	Jaxp13XPathTemplate uses thread unsafe
+947	race condition breaks dynamic WSDL

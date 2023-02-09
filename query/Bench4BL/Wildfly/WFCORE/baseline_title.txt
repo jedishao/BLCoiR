@@ -1,0 +1,7 @@
+132	BoundedQueueThreadPoolWriteAttributeHandler does not deal with undefined core threads correctly
+196	Hang in HostController shutdown when CTRL C is usedIt is fairly easy to produce a hang in domain mode shutdown by launching domain sh and then soft killing the process with CTRL C
+202	Deadlock when shutdown Wildfly server during CLI client connectionCreating upstream issue as the same deadlock can be found in WFLY
+553	ModelControllerClientOperationHandler doesn t manage the clientRequestExecutor properly ModelControllerClientOperationHandler s constructor creates a ThreadPoolExecutor for handling client requests and then the class doesn t clean it up
+997	Security realm using ldaps hangs forever during SSL handshake  when ldap server is killedDuring failover testing we hit the problem of stuck thread  When ldap server is killed in particular time of ssl handshake EAP hangs and waits forever on response  which will never come
+1002	TransactionalProtocolOperationHandler AbortOperationHandler must initialize the ExecuteRequestContext before responding
+1025	ManagementRequestContext executeAsync hides RejectedExecutionExceptionThe impl of ManagementRequestContext executeAsync catches RejectedExecutionException and doesn t notify the calling thread

@@ -1,0 +1,20 @@
+12996	access select project error type mulitpage example file leave get create jar finish export creation editor happen mpe fill eclipse fail build install
+29531	preview editor move select activate initialize press JavaColorManager^1.0 AbstractJavaScanner^20 JavaCodeScanner^0.2 JavaTextTools^0.16666667 JavaPlugin^0.14285715 CompilationUnitDocumentProvider^0.125 CompilationUnitDocumentProvider BufferFactory^0.1
+75843	createmethodentrybreakpoint iresource deadlock dialog ischedulingrule event dispatcher creation situation chain reaction team jdi int iworkspacerunnable breakpoint javabreakpoint entry component delay gui jdt syncexec snapshot
+79793	deadlock javaworkingsetupdater
+103450	fix statement block remove option
+125013	preferenceforwarder firepropertychangeevent javamodelmanager PreferencesAdapter
+179109	Editor computing AST twice concurrently
+261198	javasynchronizationcontentprovider  business src change project team source repository structure eclipse node view trace folder somebusiness spot model synchronize
+272742	imagesonfilesystemregistry error type swtexception javadoc path view computer get concurrently getnewfile info editor  save png filenotfoundexception imageloader fimagecount input system step SWT^1.0 ImageLoader^0.33333334 ImagesOnFileSystemRegistry^0.25 JavadocView^0.16666667 AbstractInfoView 2^0.11111111 FileOutputStream^0.1
+291996	javamergeviewer PresentationReconciler^0.11111111
+296794	DocumentChange fails if document is not thread safe
+297709	editor agent item package resource autocomplete firefox change tree link mozilla control windows opening result swt composite action jdt class option
+300536	access fix get state error swtexception SWT^1.0 Widget^0.25 StyledText^0.16666667 StyledText 6^0.125 DefaultDocumentAdapter^0.11111111
+301242	save space dialog undo attachment lock action press workbench add editor test format check searchpattern validatematchrule stacktrace user
+319689	problemmarkermanager SWTUtil^0.1
+336841	package test classpath work show head view file attachment fix explorer detail synchronize
+347599	release createchange none uncertainty cycle life patch performrefactoringhistoryoperation refactoring attachment lock place possibility situation c   checkfinalcondition resource refactoringhistorywizard index rafactoring check way eclipse cdt  dispose checkinitialcondition conditions
+411636	editor burn stack package large link save project cycle trace file delay attachment build explorer action indigo
+411841	junit stack process test work project capture launch menu sample rerun eclipse result patch view trace freeze build enable context config UnixFileSystem^1.0 File^0.5 LocalFile^0.25 FileSystemResourceManager^0.2 Folder^0.16666667 AbstractImageBuilder^0.125 AbstractImageBuilder 1^0.11111111 Resource 1^0.1
+417765	newjavaprojectwizardpagetwo mageDescriptorRegistry hookDisplay Bndtool OSGi SWT^1.0 Display^0.25 ImageDescriptorRegistry^0.14285715 JavaPlugin^0.11111111

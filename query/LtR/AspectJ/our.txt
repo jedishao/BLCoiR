@@ -1,0 +1,8 @@
+59599	pointer test race directory andy home appear candidate condition environment desktop suite fix compilation contents xml machine linux 
+59909	memory production project sum lateproblem error cycle cflowstack remove running lot patch result hashtable varaibles free table case call size getthreadstack 
+155148	server argument ctrl classloader deadlock identity licyclassloader httpserver lock class oracle policyclassloader hashcode monitor arraylist filehandler workconsumer system information workexecutorworkerthread tostring 
+269867	static instance access line show system loop get state prio getajtype clazz weakhashmap 
+318878	synchronizedset foo main gmt mode jan aspect friday ajc ajcmighthaveaspect case pertarget static test runtime trigger target environment obj
+320468	ModifiersPattern getModifierFlag
+340806	JavaLangTypeToResolvedTypeConverter
+408721	aspectj checkforcomodification source state weaver

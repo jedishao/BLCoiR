@@ -1,0 +1,18 @@
+125572	clientsocontainer server ecf mutex provider lock client interlock
+223484	ichannelcontaineradapter server data run viewshare xmpp running urlshare timer file repeat docshare state event worker screencaptureshare dispatcher bundle connect consoleshare manager level start jmdns socketlistener daemon framework discovery
+229237	container setuptreeviewer existence deadlock mrv addcontainer xmpp xmpps view openview provider addcontainer contact block side retrieveservice view_id remy check list mrv retrieveservices call performfinish asyncexec effect syncexec account ipresenceservice
+232530	msg exception charset read death session utf mime ecf index range message content stringindexoutofboundsexception plain subclass text behavior whitespace case String^1.0 ChatSession^0.33333334 Session IdleThread^0.25
+265413	call issue lock jmdnsdiscoverycontainer object
+265415	jmdnsimpl occur lock synchronization serviceinfo unregisterservice canceler object
+267035	tostring replicasharedobjectdescription information synchronize LinkedList ListItr^1.0 AbstractCollection^0.33333334 String^0.25 StringBuilder^0.2 AbstractMap^0.16666667 StringBuffer^0.125 ReplicaSharedObjectDescription^0.11111111
+273357	datum handshake sendmessage isopen targetid data channel alice niodatasharecontainer nio blocking map datashare niochannel sendrequest byte bytebuffer newchannelconfig socketchannel serversocketchannel abstract ichannellistener bob socket createchannel channelid
+273819	container instantiate dialog wizard containers dispose user open
+299849	container xmppremoteserviceadapterfactory invoke  handleaddregistrationcan  xmppregistrysharedobject get remoteserverid getlocalcontainerid connection  handleaddregistration situation receive npe occur packet message throw registrysharedobject  getlocalcontainerid
+321468	dispatch iremoteservicelistener synchronous listenerqueue listener deadlock fireremoteservicelistener result call fix service registrysharedobject event
+321469	discoveredservicetracker cleanup listenerqueue threadgroup distribution bundle
+323208	exception workspace discoveredservicetrackerimpl ecf deadlock distribution sec attachment startup root host jar state event dispatcher bundle class bundleexception level change start abstractbundle loading eclipse discovery progress AbstractBundle^1.0 SecureAction^0.33333334 BundleLoader^0.25 EclipseLazyStarter^0.2 ClasspathManager^0.16666667 DefaultClassLoader^0.14285715
+326949	add getRemoteServiceReferences remote service container adapter api
+337973	readkeeper argument watchmanager error major watchedevent removezookeeper state case process zookeeper race zoodiscovery pool list undiscovery concurrency exit addzookeeper build syncconnected service effect nioservercnxn Assert^1.0 WatchManager^0.33333334 ReadRoot 1^0.25 ThreadPoolExecutor Worker^0.2 Thread^0.14285715
+341818	r_osgi ecf invoke error recive reproduce unable provider loop consumer enhance identifier reproducible resource occur sample execute call proxy system build sdk
+348487	memory waiting periodic reference referencequeue lock dump dispatcher signal parallelgc simplefifoqueue finalizer monitor timed_waiting daemon multithreadedhttpconnectionmanager task discovery idleconnectiontimeoutthread
+432662	add modifier getlogservice safe httpclient^1 HttpClientRetrieveFileTransfer^0.5 HttpClientRetrieveFileTransferFactory^0.33333334 Activator^0.25 MultiProtocolRetrieveAdapter^0.2 ECFURIHandlerImpl^0.16666667

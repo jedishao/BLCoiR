@@ -1,0 +1,31 @@
+6623	error SWT Widget Platform run SWTException Threading problems on plugin startup
+15379	thread working manager change listener workingsetmanager resource set safe resource project navigator resourcenavigator exception access set navigator packages viewer swt result java log working update view delete add happen called
+33942	manager idecoratormanager idecorator javadoc requirements threading update restriction thread mention javadoc swtexception call form updated
+46562	Object wait syncExec run OverrideAndUpdateAction CVSSubscriberAction 2 CVSSubscriberAction 1 EclipseSynchronizer ModalContext ModalContextThread Action Semaphore Deadlock in modal cvs dialogI
+48382	Deadlock running automated testsI automated tests build failed deadlock stack trace attached jobs involved marker view work problematic pattern Worker Worker join job owning ILock recommend releasing ILock attempting join job Deadlock running automated testsI test performance exec set rogress runnable runner tests
+54450	request requestinui condition race times fails job uijob dialog user code logic platformui errors fun choice jobs istatus getworkbench api influence platform debugger development technique iprogress info pointer error execution
+59782	wait Object ImplicitJobs ThreadJob setRawClasspath JavaModelOperation ImplicitJobs JobManager WorkManager JavaProject joinRun prepareOperation Deadlock in reentrant workspace runbuild I
+67053	message exception wrong fails locking lock ioexception message location workspace nature shell failure lock instance version writeworkspaceversion instanceloc user error instance title nls workspacecannotlockmessage shell dialog messagedialog error checkinstancelocation ideworkbench
+74185	uijob uijobtest test failure concurrency potential job booleans test finished background job testjobran loop processors copies testing fixes flag thread assertions delay flags dual complete testjob backgroundthreadfinished set main join
+76378	background job modal modalcontext notify notifyjob context interaction uithread deadlock problem test code deadlock thread operation patch junit exec listener eclipse syncexec sync notification uilocklistener uilock workspace org operations locks
+84141	thread scheduler decoratorscheduler decorator lock rule scheduling decorations remove locks running
+108162	participant movefilesandfoldersoperation files operation folders eadlock refactoring move and shell resources resource deadlock org destination copyresources eclipse resources plug container code actions managed active provide copy
+113582	wait Object JobManager Semaphore acquire join Job Manager Deadlock updating marker list during builds
+114527	Race condition Workbench leads intermittent crashes org eclipse startup Race condition Workbench leads intermittent crashes org eclipse startup test window create workbench startup set filter display
+114813	synchronization test org eclipse tests junit dynamic dynamicplugins plugins dynamicpluginstestsuite failure lead suite incorrect listener registry getbundle bundle listeners time events bundles testviewercontributions chain solution viewer mechanism removebundle object test
+118414	wait run JobManager startJob WorkerPool Object Job sleep Thread Worker Manager Deadlock on each startup caused by AbstractWorkingSetManagerI
+136855	finalization thread runfinalization helper ideidlehelper ideidle heapstatus status heap deadlock calls caused run object method eclipse java finalizer dispatch thread behaviour workbench iunknown object event block string message ibm platform
+164361	dialog progress task user job monitor message swt handler isvisible dialog label configureshell message set check condition race label task iprogressmonitor iprogress optimization progress setmessage shell progressmonitordialog begintask messagelabel visible
+168806	ensureworkerthreadisrunning worker realm thread doesn thread ensure running start
+171452	Deadlock startup couple deadlocks startup appears syncExec Splash handler causing deadlock attach trace Deadlock startup test startup create workbench onfiguration rogress exec pref
+230472	Expression controlled Activities correctly internal enabled list persisted reloaded Expression controlled Activities correctly internal enabled list persisted reloaded activity service content test expression listener enablement label
+248908	busy indicator busyindicator thread threadbuild build deadlocks editor test bug day setbusy events prop time eclipse form application freezing sync lock framework syncexec problem rcp form set steps dirty disable
+258352	progress progressmanager synchronization manager expensive
+262032	deadlock detector deadlock deadlockdetector create
+273752	suite test service org getsourceofcontribution navigator object deadlock content sync navigator syncexec exec source eclipse navigatorcontentservice contribution internal flag get event listener listener event tests bundles admin packages tests editortests
+296056	exec sync beginrulethe syncexec ijob manager ijobmanager deadlock rule deadlock produces the begin scheduling rule thread perform owns waiting attempts
+296822	thread nullprogressmonitor safe progress monitor usage expected null field synchronization setcanceled monitor check access work methods polls implementations progress set iscanceled canceled called cancelled
+302536	registry marker markersupportregistry support broken locking checked
+306738	item mtool toolitem build selection renderer mtoolitembuild tool synchronize change item tool type bar toolbar application radio mtoolbar items delta result button written quitting app set defining select running
+307405	content navigator service deadlock navigatorcontentservicecontentprovider provider workspace deadlock lkdeadlockthr navigator lkdeadlockobj lkdeadlockmon mon thread lkdeadlockwtr users product infl dispatcher framework event saveables navigatorsaveablesservice lkdeadlock trace sys lkdeadlockown main adopting starting
+312063	hash guarantee thread event order listenerlist impl listener selection service selectionserviceimpl hashsethashsets safe set list sets

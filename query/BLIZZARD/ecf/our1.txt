@@ -1,0 +1,18 @@
+125572	clientsocontainer app server wait own ecf mutex  version see problem provider lock client time interlock become
+223484	ichannelcontaineradapter server data run viewshare xmpp jmdns running urlshare timer file repeat docshare state event worker screencaptureshare dispatcher bundle connect consoleshare manager level start  jmdns socketlistener daemon framework discovery time
+229237	container setuptreeviewer existence deadlock mrv addcontainer xmpp xmpps view openview provider addcontainer contact block side retrieveservice view_id remy check list mrv retrieveservices call performfinish asyncexec effect time account ipresenceservice
+232530	exception msg charset read string death session utf mime ecf index range  message content stringindexoutofboundsexception problem plain subclass text behavior whitespace case
+265413	call issue use lock jmdnsdiscoverycontainer  jmdns object
+265415	jmdnsimpl occur lock synchronization serviceinfo unregisterservice jmdns canceler object
+267035	 tostring replicasharedobjectdescription information synchronize
+273357	datum isopen alice poll niodatasharecontainer nio blocking property api event class map niochannel ichannelmessageevent method bytebuffer one socketchannel serversocketchannel  store abstract message invocation bob comment socket detail
+273819	container feel  instantiate dialog bug wizard containers dispose time user open
+299849	container but code xmppremoteserviceadapterfactory invoke  handleaddregistrationcan  xmppregistrysharedobject get remoteserverid have connection getlocalcontainerid  handleaddregistration situation receive npe method occur  packet message throw registrysharedobject return  getlocalcontainerid
+321468	dispatch code iremoteservicelistener synchronous listener listenerqueue deadlock fireremoteservicelistener result call fix service registrysharedobject have event
+321469	discoveredservicetracker cleanup improve listenerqueue  threadgroup distribution bundle
+323208	exception discoveredservicetrackerimpl ecf deadlock distribution jmdns attachment startup root host jar state event dispatcher bundle class bundleexception level change start  abstractbundle loading eclipse service discovery progress jmdn
+326949	iremoteservicecontaineradapter container add adapter string method getremoteservicereference service api
+337973	readkeeper argument code watchmanager error major watchedevent removezookeeper state case process zookeeper method race zoodiscovery pool  list undiscovery concurrency exit bug build addzookeeper syncconnected service effect nioservercnxn
+341818	code r_osgi ecf invoke error recive reproduce unable provider loop consumer enhance identifier reproducible resource occur  sample execute call proxy system build sdk time
+348487	wait memory waiting periodic jmdns tid reference shoul referencequeue lock dump dispatcher signal parallelgc simplefifoqueue finalizer monitor  timed_waiting daemon multithreadedhttpconnectionmanager task discovery idleconnectiontimeoutthread shutdown object
+432662	exception ecfruntimeexception add period scheme method use modifier cause difficult branch master problem application getlogservice printstacktrace bug startup get safe activator httpclient notice

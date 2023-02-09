@@ -1,0 +1,8 @@
+59599	Race condition in test suite for incremental
+59909	CFlowStack removesThreads to lateProblem
+155148	jdk14 trace deadlock in oc4j
+269867	Non synchronized access to WeakHashMap causes infinite loop
+318878	Pertarget aspect instantiation is not thread safe
+320468	ModifiersPattern getModifierFlag   is not thread safe
+340806	Race condition in JavaLangTypeToResolvedTypeConverter  potentially exposed through Spring AOP
+408721	java util ConcurrentModificationException when multiple threads enter the weaver

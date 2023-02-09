@@ -1,0 +1,31 @@
+17	Race for Netty between cancel and stream creation
+120	Remove blocking parts from NettyClientTransport
+238	Race in Server handler initialization
+330	OkHttpClientTransport onGoAway   races with startPendingStreams
+583	OkHttp s cancellation is not properly synchronized
+605	BufferingHttp2ConnectionEncoder does not shutdown properly on channelInactive
+696	In process transport deadlock during shutdown
+887	OkHttp  race between sendCancel and sendFrame
+999	Possible race condition ServerImpl between start   and shutdown
+1253	ClientCallImpl operations race with Context cancellation
+1343	Deadline can fire before stream started
+1408	Potential risk of deadlock from calling listeners under locks
+1510	DelayedClientTransport and InProcessTransport means deadlock
+1981	Executor usage in ClientCallImpl races with channel shutdown and termination
+2152	Deadlock found in TransportSet
+2246	Deadlock with TransportSet
+2388	New deadlock in TransportSet and GrpcTimer
+2453	Threading of StatsTraceContext
+2562	Race between pick and transport shutdown
+2865	Rare race condition in Client
+3084	Potential deadlock due to calling callbacks while holding a lock
+3207	Data race in TestServiceImpl
+5015	Revisit LoadBalancer API s threading model
+5450	Data race in NameResolve Listener onError
+6601	Deadlock on start gRPC server
+6641	Deadlock in server transport with multiple ports
+8190	grpc hang due to the ELG thread placement of NameResolver refresh method
+8536	BinderChannel flow control can get stuck under load
+8565	Data race in RetriableStream onReady
+8642	CsdsService not properly synchronized with XdsClient
+8914	binder  Deadlock due to unexpected re entrancy of transactions on process local Binder
