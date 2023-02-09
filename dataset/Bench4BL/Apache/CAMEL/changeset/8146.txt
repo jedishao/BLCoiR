@@ -1,0 +1,3 @@
+org/apache/camel/impl/DefaultScheduledPollConsumerScheduler.java
+org/apache/camel/impl/ScheduledPollConsumer.java
+

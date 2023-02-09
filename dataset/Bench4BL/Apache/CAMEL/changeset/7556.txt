@@ -1,0 +1,4 @@
+org/apache/camel/component/rabbitmq/RabbitMQConsumer.java
+org/apache/camel/component/rabbitmq/RabbitMQLoadIntTest.java
+org/apache/camel/component/rabbitmq/RabbitMQEndpoint.java
+

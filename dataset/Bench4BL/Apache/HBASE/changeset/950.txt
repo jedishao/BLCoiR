@@ -1,0 +1,5 @@
+org/apache/hadoop/hbase/io/BatchUpdate.java
+org/apache/hadoop/hbase/regionserver/HRegionServer.java
+org/apache/hadoop/hbase/regionserver/HRegion.java
+org/apache/hadoop/hbase/client/HTable.java
+

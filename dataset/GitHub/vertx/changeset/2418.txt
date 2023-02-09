@@ -1,0 +1,3 @@
+src/test/java/io/vertx/test/core/AsynchronousLockTest.java
+src/test/java/io/vertx/test/core/ClusteredAsynchronousLockTest.java
+

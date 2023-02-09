@@ -1,0 +1,7 @@
+src/main/java/com/lambdaworks/redis/pubsub/RedisPubSubConnection.java
+src/main/java/org/redisson/RedissonLock.java
+src/main/java/org/redisson/connection/ConnectionManager.java
+src/main/java/org/redisson/connection/MasterSlaveConnectionManager.java
+src/main/java/org/redisson/connection/PubSubConnectionEntry.java
+src/test/java/org/redisson/RedissonLockTest.java
+

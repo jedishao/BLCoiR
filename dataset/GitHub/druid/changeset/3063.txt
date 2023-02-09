@@ -1,0 +1,11 @@
+extensions-core/lookups-cached-global/src/main/java/org/apache/druid/query/lookup/NamespaceLookupExtractorFactory.java
+extensions-core/lookups-cached-global/src/test/java/org/apache/druid/query/lookup/NamespaceLookupExtractorFactoryTest.java
+extensions-core/kafka-extraction-namespace/src/main/java/org/apache/druid/query/lookup/KafkaLookupExtractorFactory.java
+extensions-core/lookups-cached-global/src/main/java/org/apache/druid/query/lookup/NamespaceLookupExtractorFactory.java
+extensions-core/lookups-cached-global/src/main/java/org/apache/druid/server/lookup/namespace/cache/NamespaceExtractionCacheManager.java
+extensions-core/lookups-cached-global/src/main/java/org/apache/druid/server/lookup/namespace/cache/OffHeapNamespaceExtractionCacheManager.java
+extensions-core/lookups-cached-global/src/test/java/org/apache/druid/server/lookup/namespace/cache/OffHeapNamespaceExtractionCacheManagerTest.java
+processing/src/main/java/org/apache/druid/query/lookup/LookupReferencesManager.java
+server/src/main/java/org/apache/druid/query/lookup/LookupModule.java
+server/src/test/java/org/apache/druid/query/lookup/LookupReferencesManagerTest.java
+

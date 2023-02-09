@@ -1,0 +1,4 @@
+Flaky tests that rely on async counters/variables.
+Test cases like AbstractTestDistributedQueries.testQueryLoggingCount assert on a counter that is updated by a query state change listener. There is a race condition between the assertion on the counter and the execution of the listener (similar issue here #7667).
+To reproduce the problem, one can manually add a sleep in the listener callback (e.g. sleep 10ms here).
+      

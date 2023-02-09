@@ -1,0 +1,9 @@
+<changeset>
+    <id>876
+        <files>org/springframework/data/neo4j/repository/query/derived/DerivedQueryDefinition.java
+            org/springframework/data/neo4j/queries/DerivedQueryTest.java
+            org/springframework/data/neo4j/repository/query/derived/DerivedGraphRepositoryQuery.java
+            org/springframework/data/neo4j/repository/query/derived/CypherFinderQuery.java
+        </files>
+    </id>
+</changeset>

@@ -1,0 +1,12 @@
+BinderChannel flow control can get stuck under load
+What version of gRPC-Java are you using?
+head
+What is your environment?
+Linux/Android
+Steps to reproduce the bug
+We're launching a unary "GetTile" gRPC interaction between two Android processes. Response message can be ~100kb and clients request several tiles one after the other. Telemetry from the field shows that after a while some clients start experiencing DEADLINE_EXCEEDED errors even though other calls to the same server process over different Channels continue to succeed.
+By lowering BinderTransport#TRANSACTION_BYTES_WINDOW and requesting tiles in a loop I can reproduce similar symptoms locally. Using the debugger I can see the server's BinderTransport#transmitWindowFull becomes stuck true even though all bytes have been acknowledged by the client. The server is generating response messages but isn't able to put them on the wire. I believe the problem is that BinderTransport#sendTransaction() updates transmitWindowFull based on an unsynchronized read of acknowledgedOutgoingBytes, which may not include concurrent updates by #handleAcknowledgedBytes() on another thread.
+What did you expect to see?
+Binder transactions should pause when flow control kicks in then resume when enough outstanding bytes are acknowledged.
+What did you see instead?
+Outstanding bytes are acknowledged but transmitWindowFull remains true in a way that's inconsistent with acknowledgedOutgoingBytes and numOutgoingBytes.

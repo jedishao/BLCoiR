@@ -1,0 +1,3 @@
+org/springframework/security/providers/ProviderManager.java
+org/springframework/security/AbstractAuthenticationManager.java
+

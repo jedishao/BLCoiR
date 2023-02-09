@@ -1,0 +1,4 @@
+Race condition with clean shutdown and mod_cluster session draining.
+Probably same issue exists in WF as well, I will revalidate the logic for race conditions.
+https://issues.jboss.org/browse/MODCLUSTER-399
+https://bugzilla.redhat.com/show_bug.cgi?id=1083563

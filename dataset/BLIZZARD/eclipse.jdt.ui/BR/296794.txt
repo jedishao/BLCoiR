@@ -1,5 +1,5 @@
-Bug 296794 – [ltk] DocumentChange fails if document is not thread safe
-User-Agent:       Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2
+DocumentChange fails if document is not thread safe.
+User-Agent:Mozilla/5.0 (Windows; U; Windows NT 5.1; ru; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2
 Build Identifier: I20090611-1540
 This code worked in Eclipse 3.4 but throws org.eclipse.swt.SWTException: Invalid thread access in Eclipse 3.5.
 Seems like this is because of you try to run the refactoring changes in non ui thread when possible.

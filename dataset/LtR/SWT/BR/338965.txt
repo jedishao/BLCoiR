@@ -1,1 +1,1 @@
-Bug 338965  Deadlock/Hang on UI Thread
+Deadlock/Hang on UI Thread.

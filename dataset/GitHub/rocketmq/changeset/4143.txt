@@ -1,0 +1,4 @@
+store/src/main/java/org/apache/rocketmq/store/index/IndexFile.java
+store/src/main/java/org/apache/rocketmq/store/index/IndexService.java
+store/src/test/java/org/apache/rocketmq/store/index/IndexFileTest.java
+

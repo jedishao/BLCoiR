@@ -1,0 +1,4 @@
+src/main/java/org/redisson/RedissonList.java
+src/main/java/org/redisson/client/handler/CommandDecoder.java
+src/main/java/org/redisson/connection/ClusterConnectionManager.java
+

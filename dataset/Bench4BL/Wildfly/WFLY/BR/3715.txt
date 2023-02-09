@@ -1,0 +1,4 @@
+Async servlets cause lock timeouts for distributable sessions.
+This happens because Infinispan's BatchContainer relies on thread locals.  
+We need to use the new Batcher capabilities used by ejb clustering for web clustering.  
+These modules should be refactored so they can share these objects.

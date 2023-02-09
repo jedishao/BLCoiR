@@ -1,0 +1,6 @@
+org/apache/hadoop/hbase/replication/ReplicationFactory.java
+org/apache/hadoop/hbase/replication/TestMultiSlaveReplication.java
+org/apache/hadoop/hbase/replication/ReplicationQueuesZKImpl.java
+org/apache/hadoop/hbase/master/HMaster.java
+org/apache/hadoop/hbase/master/cleaner/ReplicationZKLockCleanerChore.java
+

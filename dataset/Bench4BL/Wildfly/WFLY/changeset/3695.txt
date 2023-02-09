@@ -1,0 +1,8 @@
+org/jboss/as/ejb3/cache/simple/SimpleCacheFactoryBuilderService.java
+org/jboss/as/clustering/concurrent/RemoveOnCancelScheduledExecutorService.java
+org/wildfly/clustering/ejb/infinispan/logging/InfinispanEjbLogger.java
+org/wildfly/clustering/web/infinispan/logging/InfinispanWebLogger.java
+org/wildfly/clustering/ejb/infinispan/InfinispanBeanManagerFactoryBuilder.java
+org/wildfly/clustering/ejb/infinispan/BeanExpirationScheduler.java
+org/jboss/as/clustering/concurrent/CachedThreadPoolExecutorService.java
+org/wildfly/clustering/web/infinispan/session/SessionExpirationScheduler.java

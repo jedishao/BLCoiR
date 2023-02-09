@@ -1,4 +1,4 @@
-57977 â€“ The original class loader isn't re-bound to the thread in PersistentValve.invoke()
+The original class loader isn't re-bound to the thread in PersistentValve.invoke().
 Created attachment 32769 [details]
 patch against trunk
 In PersistentValve.invoke(Request, Response) method, The Webapp class loader has been bound to the current thread.

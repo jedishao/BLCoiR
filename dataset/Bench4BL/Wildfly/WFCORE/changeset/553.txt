@@ -1,0 +1,6 @@
+org/jboss/as/controller/remote/ModelControllerClientOperationHandler.java
+org/jboss/as/controller/ModelControllerClientTestCase.java
+org/jboss/as/controller/remote/AbstractModelControllerOperationHandlerFactoryService.java
+org/jboss/as/host/controller/mgmt/MasterDomainControllerOperationHandlerService.java
+org/jboss/as/controller/remote/ModelControllerClientOperationHandlerFactoryService.java
+

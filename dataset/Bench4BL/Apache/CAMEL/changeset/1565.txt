@@ -1,0 +1,3 @@
+org/apache/camel/component/validator/ValidatorComponent.java
+org/apache/camel/processor/validation/ValidatingProcessor.java
+

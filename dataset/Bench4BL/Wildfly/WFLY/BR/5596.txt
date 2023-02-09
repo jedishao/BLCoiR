@@ -1,0 +1,9 @@
+MessageDrivenComponent startDelivery/stopDelivery is not thread safeWFLY-4470 made a change to prevent MDBs being activated or deactivated multiple times, but it is not thread safe. 
+A volatile boolean is used for the flag, but there is no protection against multiple threads invoking the methods simultaneously.
+Possible effects include:
+
+activating the endpoint twice, with (probably) only one deactivation later, leading to not de-registering XA resources from the recovery manager properly.
+activate() and deactivate() running in the wrong order if done by separate threads.
+
+Several simple solutions probably will not work correctly. Using an AtomicBoolean would stop multiple activations/deactivations from concurrent calls, but would mean that startDelivery() could return before the activation was one. 
+Using a synchronized block or other exclusive lock would work, however since it involves invoking non-container code (the resource adapter), there could potentially be a deadlock risk if that invoked some related container functionality.

@@ -1,0 +1,5 @@
+org/apache/hadoop/hbase/regionserver/StoreScanner.java
+org/apache/hadoop/hbase/regionserver/HRegionServer.java
+org/apache/hadoop/hbase/regionserver/Store.java
+org/apache/hadoop/hbase/regionserver/StoreFile.java
+

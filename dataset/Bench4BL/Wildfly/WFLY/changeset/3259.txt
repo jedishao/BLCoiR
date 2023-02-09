@@ -1,0 +1,3 @@
+org/jboss/as/web/common/WarMetaData.java
+org/wildfly/extension/undertow/deployment/UndertowDeploymentProcessor.java
+org/jboss/as/weld/deployment/processors/WebIntegrationProcessor.java

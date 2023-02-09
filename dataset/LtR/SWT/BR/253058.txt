@@ -1,1 +1,0 @@
-Bug 253058  StyledText should handle mouse click sequences in block selection mode

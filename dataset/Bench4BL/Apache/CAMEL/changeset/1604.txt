@@ -1,0 +1,15 @@
+org/apache/camel/model/OnCompletionDefinition.java
+org/apache/camel/builder/RouteBuilder.java
+org/apache/camel/processor/OnCompletionProcessor.java
+org/apache/camel/model/ProcessorDefinition.java
+org/apache/camel/model/RoutesDefinition.java
+org/apache/camel/spring/CamelContextFactoryBean.java
+org/apache/camel/PollingConsumerAware.java
+org/apache/camel/spring/handler/CamelNamespaceHandler.java
+org/apache/camel/spring/processor/onexception/SpringOnExceptionFromChoiceUseOriginalBodyTest.java
+org/apache/camel/processor/DeadLetterChannelHandledPolicyTest.java
+org/apache/camel/processor/OnCompletionTest.java
+org/apache/camel/processor/OnCompletionOnFailureOnlyTest.java
+org/apache/camel/Exchange.java
+org/apache/camel/spi/Synchronization.java
+

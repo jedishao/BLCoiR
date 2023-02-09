@@ -1,0 +1,4 @@
+org/apache/hadoop/hbase/io/hfile/bucket/BucketCache.java
+org/apache/hadoop/hbase/io/hfile/CacheTestUtils.java
+org/apache/hadoop/hbase/io/hfile/bucket/TestBucketCache.java
+

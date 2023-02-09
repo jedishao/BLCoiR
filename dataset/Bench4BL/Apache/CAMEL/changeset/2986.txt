@@ -1,0 +1,3 @@
+org/apache/camel/component/jetty/CamelContinuationServlet.java
+org/apache/camel/component/jetty/JettyHttpComponent.java
+

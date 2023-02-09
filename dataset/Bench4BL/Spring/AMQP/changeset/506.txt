@@ -1,0 +1,4 @@
+org/springframework/amqp/rabbit/support/PublisherCallbackChannelImpl.java
+org/springframework/amqp/rabbit/core/RabbitTemplate.java
+org/springframework/amqp/rabbit/core/RabbitTemplatePublisherCallbacksIntegrationTests.java
+

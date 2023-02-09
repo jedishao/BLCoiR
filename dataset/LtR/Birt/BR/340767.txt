@@ -1,1 +1,0 @@
-Bug 340767  Fail to generate concurrent reports containing CRLF and <BR>

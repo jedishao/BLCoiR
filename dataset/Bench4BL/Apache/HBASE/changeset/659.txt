@@ -1,0 +1,8 @@
+org/apache/hadoop/hbase/master/TableOperation.java
+org/apache/hadoop/hbase/master/TableDelete.java
+org/apache/hadoop/hbase/master/ChangeTableState.java
+org/apache/hadoop/hbase/master/ColumnOperation.java
+org/apache/hadoop/hbase/util/MetaUtils.java
+org/apache/hadoop/hbase/regionserver/HRegion.java
+org/apache/hadoop/hbase/regionserver/StoreFileScanner.java
+

@@ -1,4 +1,4 @@
-Bug 149900 – PDE UI Locks when adding a ton of required plugins (not a sweet time)
+PDE UI Locks when adding a ton of required plugins (not a sweet time).
 CURRENT:
 1) Add a ton of deps
 2) Watch PDE UI lock up and cry like a little girl

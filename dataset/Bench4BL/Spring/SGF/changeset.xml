@@ -1,0 +1,21 @@
+<changeset>
+    <id>231
+        <files>org/springframework/data/gemfire/config/GemfireV7GatewayNamespaceTest.java
+            org/springframework/data/gemfire/wan/GatewaySenderFactoryBean.java
+            org/springframework/data/gemfire/wan/AsyncEventQueueFactoryBeanTest.java
+            org/springframework/data/gemfire/wan/GatewaySenderFactoryBeanTest.java
+            org/springframework/data/gemfire/wan/AbstractWANComponentFactoryBean.java
+            org/springframework/data/gemfire/wan/AsyncEventQueueFactoryBean.java
+        </files>
+    </id>
+    <id>280
+        <files>org/springframework/data/gemfire/fork/CacheServerProcess.java
+            org/springframework/data/gemfire/listener/adapter/ContainerXmlSetupTest.java
+            org/springframework/data/gemfire/listener/ContinuousQueryListener.java
+            org/springframework/data/gemfire/listener/adapter/ContinuousQueryListenerAdapter.java
+            org/springframework/data/gemfire/config/GemfireListenerContainerParser.java
+            org/springframework/data/gemfire/listener/ContinuousQueryListenerContainer.java
+            org/springframework/data/gemfire/listener/ContinuousQueryDefinition.java
+        </files>
+    </id>
+</changeset>

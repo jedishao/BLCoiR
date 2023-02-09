@@ -1,0 +1,3 @@
+org/apache/camel/component/restlet/RestletEndpoint.java
+org/apache/camel/component/cxf/CxfEndpoint.java
+

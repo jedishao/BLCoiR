@@ -1,6 +1,9 @@
-Bug 136855  [IDE] Deadlock caused by IDEIdleHelper and HeapStatus calls to runFinalization from UI threadPlugins that have multi-threaded access to a COM server dll whose ThreadingModel=Apartment are broken in Eclipse 3.2.
+Deadlock caused by IDEIdleHelper and HeapStatus calls to runFinalization from UI thread.
+Plugins that have multi-threaded access to a COM server dll whose ThreadingModel=Apartment are broken in Eclipse 3.2.
 
-COM implements cross-apartment COM calls using Windows messages.  Thus the IUnknown::Release() calls from a thread in the multi-threaded-apartment (MTA) to an object owned by the single-threaded-apartment (STA) actually post a message to the main thread's dispatch loop and then block waiting for a response.  The IUnknown::Release() calls typically happen during finalization of the Java objects that are accessing the COM server via JNI.
+COM implements cross-apartment COM calls using Windows messages.
+Thus the IUnknown::Release() calls from a thread in the multi-threaded-apartment (MTA) to an object owned by the single-threaded-apartment (STA) actually post a message to the main thread's dispatch loop and then block waiting for a response.
+The IUnknown::Release() calls typically happen during finalization of the Java objects that are accessing the COM server via JNI.
 
 The IDEIdleHelper and HeapStatus calls to System.runFinalization() from the UI thread cause it to block, thus its dispatch loop (i.e. Workbench.runEventLoop) is no longer functioning when objects are finalized.
 

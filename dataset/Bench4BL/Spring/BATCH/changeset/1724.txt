@@ -1,0 +1,7 @@
+org/springframework/batch/core/step/tasklet/AsyncTaskletStepTests.java
+org/springframework/batch/core/step/item/ChunkOrientedTasklet.java
+org/springframework/batch/repeat/support/TaskExecutorRepeatTemplate.java
+org/springframework/batch/core/step/tasklet/TestingChunkOrientedTasklet.java
+org/springframework/batch/core/step/item/SimpleChunkProcessor.java
+org/springframework/batch/core/step/item/TaskletStepExceptionTests.java
+

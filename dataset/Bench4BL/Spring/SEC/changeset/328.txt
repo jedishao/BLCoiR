@@ -1,0 +1,2 @@
+org/acegisecurity/providers/dao/AbstractUserDetailsAuthenticationProvider.java
+

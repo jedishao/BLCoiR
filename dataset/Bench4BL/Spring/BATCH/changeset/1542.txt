@@ -1,0 +1,14 @@
+org/springframework/batch/core/StepExecution.java
+org/springframework/batch/core/repository/dao/MapJobExecutionDao.java
+org/springframework/batch/core/repository/dao/MapExecutionContextDaoTests.java
+org/springframework/batch/core/repository/support/SimpleJobRepository.java
+org/springframework/batch/core/job/flow/FlowJobTests.java
+org/springframework/batch/core/job/flow/StateSupport.java
+org/springframework/batch/core/JobExecution.java
+org/springframework/batch/support/SerializationUtils.java
+org/springframework/batch/core/test/step/FaultTolerantStepFactoryBeanRollbackTests.java
+org/springframework/batch/core/repository/dao/MapJobInstanceDao.java
+org/springframework/batch/core/partition/support/SimpleStepExecutionSplitterTests.java
+org/springframework/batch/support/transaction/TransactionAwareProxyFactory.java
+org/springframework/batch/core/repository/dao/MapStepExecutionDao.java
+

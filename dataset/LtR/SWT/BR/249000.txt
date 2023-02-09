@@ -1,1 +1,0 @@
-Bug 249000  implement graphics in non-UI thread

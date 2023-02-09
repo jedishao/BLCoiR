@@ -1,0 +1,10 @@
+Fix Race Condition in Consumer Recovery Test CasesAnalysis.
+The test cases send 10 messages. The consumer uses manual ack and does a double ack on the first message causing the channel to be closed. 
+It is a race between the broker closing the channel and the second message being received by the listener.
+The listener counts down a latch that the test is waiting on.
+If the broker loses the race, the channel is closed AFTER the second message is received by the listener and the message is redelivered after the consumer is recovered.
+This results in 11 messages being received and the final test for a null message fails.
+Solution
+In the listener, only count down the latch if the message is NOT a redelivery (because the latch would have already been counted down for this message). 
+However, we can't just test the redelivered flag - the message might have been sent by the broker but not actually received by the listener.
+Add the message to a Set and only countdown the latch if it's not already received.

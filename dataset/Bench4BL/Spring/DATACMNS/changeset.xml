@@ -1,0 +1,19 @@
+<changeset>
+    <id>362
+        <files>org/springframework/data/repository/support/Repositories.java
+        </files>
+    </id>
+    <id>831
+        <files>org/springframework/data/mapping/context/AbstractMappingContext.java
+        </files>
+    </id>
+    <id>65
+        <files>org/springframework/data/mapping/context/AbstractMappingContext.java
+        </files>
+    </id>
+    <id>390
+        <files>org/springframework/data/mapping/context/AbstractMappingContextUnitTests.java
+            org/springframework/data/mapping/context/AbstractMappingContext.java
+        </files>
+    </id>
+</changeset>

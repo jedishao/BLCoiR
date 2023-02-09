@@ -1,0 +1,7 @@
+org/acegisecurity/ui/digestauth/DigestProcessingFilter.java
+org/acegisecurity/concurrent/ConcurrentSessionControllerImplTests.java
+org/acegisecurity/ui/webapp/AuthenticationProcessingFilter.java
+org/acegisecurity/ui/switchuser/SwitchUserProcessingFilter.java
+org/acegisecurity/ui/cas/CasProcessingFilter.java
+org/acegisecurity/ui/webapp/SiteminderAuthenticationProcessingFilter.java
+

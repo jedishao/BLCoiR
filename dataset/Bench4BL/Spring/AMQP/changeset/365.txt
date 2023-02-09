@@ -1,0 +1,6 @@
+org/springframework/amqp/rabbit/connection/RabbitUtils.java
+org/springframework/amqp/rabbit/listener/MessageListenerContainerLifecycleIntegrationTests.java
+org/springframework/amqp/rabbit/listener/SimpleMessageListenerContainer.java
+org/springframework/amqp/rabbit/listener/BlockingQueueConsumer.java
+org/springframework/amqp/rabbit/listener/MessageListenerRecoveryCachingConnectionIntegrationTests.java
+

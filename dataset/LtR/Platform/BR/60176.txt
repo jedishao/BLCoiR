@@ -1,4 +1,0 @@
-Bug 60176  BlockedJobsDialog has ok and cancel buttonsI20040427
-
-The BlockedJobsDialog now has the default Ok and Cancel buttons in the button
-bar. When clicking either, the dialog closes but the user is still blocked.

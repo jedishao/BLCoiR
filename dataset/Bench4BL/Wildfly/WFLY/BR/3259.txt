@@ -1,0 +1,218 @@
+Race condition in built-in ServletContextListeners.
+WeldComponentIntegrationProcessor properly adds service dependency on the WeldStartService. 
+This however does not happen for built-in components e.g. Mojarra's com.sun.faces.config.ConfigureListener which does use CDI. As a result, the deployment may fail depending on timing of WeldStartService and UndertowDeploymentService.
+
+
+
+
+15:34:53,108 SEVERE [javax.enterprise.resource.webcontainer.jsf.config] (MSC service thread 1-5) Critical error during deployment: : org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition                                                                                                                                                 
+
+
+
+
+
+
+
+
+
+15:34:53,120 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-5) MSC000001: Failed to start service jboss.undertow.deployment.default-server.default-host./test: org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./test: Failed to start service                                                                                                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Caused by: java.lang.RuntimeException: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition    
+
+
+
+
+
+
+
+
+
+        at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.startContext(UndertowDeploymentService.java:86)
+
+
+
+
+        at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.start(UndertowDeploymentService.java:71)
+
+
+
+
+        at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+
+
+
+
+        at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+
+
+
+
+        ... 3 more
+
+
+
+
+Caused by: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+
+
+
+
+        at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:274)
+
+
+
+
+        at io.undertow.servlet.core.ApplicationListeners.contextInitialized(ApplicationListeners.java:173)
+
+
+
+
+        at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:189)
+
+
+
+
+        ... 7 more
+
+
+
+
+Caused by: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+
+
+
+
+        at org.jboss.weld.manager.BeanManagerImpl.getContext(BeanManagerImpl.java:684)
+
+
+
+
+        at org.jboss.weld.util.ForwardingBeanManager.getContext(ForwardingBeanManager.java:181)
+
+
+
+
+        at com.sun.faces.application.ApplicationAssociate$PostConstructApplicationListener.loadFlows(ApplicationAssociate.java:323)
+
+
+
+
+        at com.sun.faces.application.ApplicationAssociate$PostConstructApplicationListener.processEvent(ApplicationAssociate.java:303)
+
+
+
+
+        at javax.faces.event.SystemEvent.processListener(SystemEvent.java:108)
+
+
+
+
+        at com.sun.faces.application.ApplicationImpl.processListeners(ApplicationImpl.java:2187)
+
+
+
+
+        at com.sun.faces.application.ApplicationImpl.invokeListenersFor(ApplicationImpl.java:2163)
+
+
+
+
+        at com.sun.faces.application.ApplicationImpl.publishEvent(ApplicationImpl.java:296)
+
+
+
+
+        at org.jboss.as.jsf.injection.weld.ForwardingApplication.publishEvent(ForwardingApplication.java:294)
+
+
+
+
+        at com.sun.faces.config.ConfigManager.publishPostConfigEvent(ConfigManager.java:692)
+
+
+
+
+        at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:254)
+
+
+
+
+        ... 9 more
+
+
+
+
+
+
+
+
+
+15:34:53,407 ERROR [org.jboss.as.controller.management-operation] (management-handler-thread - 1) JBAS014613: Operation ("deploy") failed - address: ([("deployment" =&gt; "test.ear")]) - failure description: {"JBAS014671: Failed services" =&gt; {"jboss.undertow.deployment.default-server.default-host./test" =&gt; "org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./test: Failed to start service
+
+
+
+
+    Caused by: java.lang.RuntimeException: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+
+
+
+
+    Caused by: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+
+
+
+
+    Caused by: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition"}}
+
+
+
+
+15:34:53,415 ERROR [org.jboss.as.server] (management-handler-thread - 1) JBAS015870: Deploy of deployment "test.ear" was rolled back with the following failure message: 
+
+
+
+
+{"JBAS014671: Failed services" =&gt; {"jboss.undertow.deployment.default-server.default-host./test" =&gt; "org.jboss.msc.service.StartException in service jboss.undertow.deployment.default-server.default-host./test: Failed to start service
+
+
+
+
+    Caused by: java.lang.RuntimeException: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+
+
+
+
+    Caused by: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+
+
+
+
+    Caused by: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition"}}
+
+
+
+
+

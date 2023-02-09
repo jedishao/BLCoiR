@@ -1,0 +1,25 @@
+<changeset>
+    <id>1986
+        <files>broker/src/main/java/org/apache/rocketmq/broker/filter/ConsumerFilterManager.java
+            common/src/main/java/org/apache/rocketmq/common/message/MessageExt.java
+            store/src/main/java/org/apache/rocketmq/store/StoreStatsService.java
+            store/src/main/java/org/apache/rocketmq/store/index/IndexService.java
+            store/src/test/java/org/apache/rocketmq/store/StoreStatsServiceTest.java
+            store/src/test/java/org/apache/rocketmq/store/index/IndexServiceTest.java
+        </files>
+    </id>
+    <id>4143
+        <files>store/src/main/java/org/apache/rocketmq/store/index/IndexFile.java
+            store/src/main/java/org/apache/rocketmq/store/index/IndexService.java
+            store/src/test/java/org/apache/rocketmq/store/index/IndexFileTest.java
+        </files>
+    </id>
+    <id>4686
+        <files>namesrv/src/main/java/org/apache/rocketmq/namesrv/kvconfig/KVConfigManager.java
+        </files>
+    </id>
+    <id>5039
+        <files>common/src/main/java/org/apache/rocketmq/common/BrokerIdentity.java
+        </files>
+    </id>
+</changeset>

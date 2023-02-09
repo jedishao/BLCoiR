@@ -1,1 +1,0 @@
-Bug 122053  [KeyBindings] Shortcut Key Not Working In 3.2M4I have Team->Repeat Last Synchronization mapped to the F9 key.  With M4 it only works from the Team perspective, not the Java perspective.  I've tried removing and re-adding the mapping.

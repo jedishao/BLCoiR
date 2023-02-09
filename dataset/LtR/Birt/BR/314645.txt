@@ -1,4 +1,5 @@
-Bug 314645  XML Datasource is not Thread-Safe when passing data as InputStreamBuild Identifier: Eclipse Build id: 20090920-1017 / BIRT Runtime 2.5.1 + 2.5.2
+XML Datasource is not Thread-Safe when passing data as InputStream.
+Build Identifier: Eclipse Build id: 20090920-1017 / BIRT Runtime 2.5.1 + 2.5.2
 
 When passing XML-data to the IRunTask in a multi-threaded application, some of the resulting .rptdocument files will be corrupted.
 

@@ -1,0 +1,4 @@
+org/jboss/as/clustering/infinispan/ChannelTransport.java
+org/jboss/as/clustering/infinispan/subsystem/CacheContainerAddHandler.java
+org/jboss/as/clustering/infinispan/subsystem/EmbeddedCacheManagerConfigurationService.java
+

@@ -1,0 +1,3 @@
+org/apache/camel/component/file/GenericFileConsumer.java
+org/apache/camel/component/file/strategy/FileLockExclusiveReadLockStrategy.java
+

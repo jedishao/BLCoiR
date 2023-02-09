@@ -1,0 +1,5 @@
+org/apache/hadoop/hive/metastore/txn/TxnDbUtil.java
+org/apache/hive/hcatalog/streaming/HiveEndPoint.java
+org/apache/hadoop/hive/ql/TestTxnCommands.java
+org/apache/hadoop/hive/ql/lockmgr/DbTxnManager.java
+

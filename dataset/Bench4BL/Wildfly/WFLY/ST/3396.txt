@@ -1,0 +1,536 @@
+NPE in TimerResourceDefinition.
+I am experiencing race conditions when running test remotely from Arquillian to Wildfly 8.1.0.CR2. 
+In 2 of 3 Cases i get a NPE in Wildfly in relation to one of my own scheduled EJB.
+Stacktrace:
+
+
+
+
+
+
+10:08:56,169 INFO  [org.jboss.as.server] (management-handler-thread - 1) JBAS018559: Deployed "core-dist-0.6.ear" (runtime-name : "core-dist-0.6.ear")
+
+
+
+
+10:08:58,102 ERROR [org.jboss.as.controller.management-operation] (management-handler-thread - 2) JBAS014612: Operation ("read-attribute") failed - address: ([
+
+
+
+
+    ("deployment" =&gt; "core-dist-0.6.ear"),
+
+
+
+
+    ("subdeployment" =&gt; "core.jar"),
+
+
+
+
+    ("subsystem" =&gt; "ejb3"),
+
+
+
+
+    ("singleton-bean" =&gt; "FileDeploymentScanner"),
+
+
+
+
+    ("service" =&gt; "timer-service"),
+
+
+
+
+    ("timer" =&gt; "53ca8249-b0a1-42ab-810b-abad39cb3d19")
+
+
+
+
+]): java.lang.NullPointerException
+
+
+
+
+	at org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition$10.readAttribute(TimerResourceDefinition.java:268)
+
+
+
+
+	at org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition$AbstractReadAttributeHandler.executeRuntime(TimerResourceDefinition.java:364)
+
+
+
+
+	at org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition$AbstractTimerHandler$1.execute(TimerResourceDefinition.java:330)
+
+
+
+
+	at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:606) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:484) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.AbstractOperationContext.completeStepInternal(AbstractOperationContext.java:281) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.AbstractOperationContext.executeOperation(AbstractOperationContext.java:276) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.ModelControllerImpl.internalExecute(ModelControllerImpl.java:271) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.ModelControllerImpl.execute(ModelControllerImpl.java:145) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler.doExecute(ModelControllerClientOperationHandler.java:199) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler.access$300(ModelControllerClientOperationHandler.java:130) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler$1$1.run(ModelControllerClientOperationHandler.java:150) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler$1$1.run(ModelControllerClientOperationHandler.java:146) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at java.security.AccessController.doPrivileged(Native Method) [rt.jar:1.7.0_55]
+
+
+
+
+	at javax.security.auth.Subject.doAs(Subject.java:415) [rt.jar:1.7.0_55]
+
+
+
+
+	at org.jboss.as.controller.AccessAuditContext.doAs(AccessAuditContext.java:94) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler$1.execute(ModelControllerClientOperationHandler.java:146) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.protocol.mgmt.AbstractMessageHandler$2$1.doExecute(AbstractMessageHandler.java:283) [wildfly-protocol-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at org.jboss.as.protocol.mgmt.AbstractMessageHandler$AsyncTaskRunner.run(AbstractMessageHandler.java:504) [wildfly-protocol-8.1.0.CR2.jar:8.1.0.CR2]
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_55]
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_55]
+
+
+
+
+	at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_55]
+
+
+
+
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122) [jboss-threads-2.1.1.Final.jar:2.1.1.Final]
+
+
+
+
+
+
+The arquillian test prints:
+
+
+
+
+
+
+
+
+
+
+
+com.ieffects.core.integration.ImportTest STANDARD_ERROR
+
+
+
+
+    May 23, 2014 10:08:49 AM org.xnio.Xnio &lt;clinit&gt;
+
+
+
+
+    INFO: XNIO version 3.2.2.Final
+
+
+
+
+    May 23, 2014 10:08:49 AM org.xnio.nio.NioXnio &lt;clinit&gt;
+
+
+
+
+    INFO: XNIO NIO Implementation Version 3.2.2.Final
+
+
+
+
+    May 23, 2014 10:08:49 AM org.jboss.remoting3.EndpointImpl &lt;clinit&gt;
+
+
+
+
+    INFO: JBoss Remoting version 4.0.3.Final
+
+
+
+
+    May 23, 2014 10:08:58 AM org.jboss.as.arquillian.container.ManagementClient checkSuccessful
+
+
+
+
+    ERROR: Operation {
+
+
+
+
+        "operation" =&gt; "read-resource",
+
+
+
+
+        "recursive" =&gt; "true",
+
+
+
+
+        "address" =&gt; undefined
+
+
+
+
+    } did not succeed. Result was {
+
+
+
+
+        "outcome" =&gt; "failed",
+
+
+
+
+        "result" =&gt; {
+
+
+
+
+            "management-major-version" =&gt; 2,
+
+
+
+
+            "management-micro-version" =&gt; 0,
+
+
+
+
+            "management-minor-version" =&gt; 1,
+
+
+
+
+            "name" =&gt; "cust",
+
+
+
+
+            "namespaces" =&gt; [],
+
+
+
+
+            "product-name" =&gt; undefined,
+
+
+
+
+            "product-version" =&gt; undefined,
+
+
+
+
+            "profile-name" =&gt; undefined,
+
+
+
+
+            "release-codename" =&gt; "Kenny",
+
+
+
+
+            "release-version" =&gt; "8.1.0.CR2",
+
+
+
+
+            "schema-locations" =&gt; [],
+
+
+
+
+            "core-service" =&gt; {
+
+
+
+
+                "management" =&gt; {
+
+
+
+
+                    "access" =&gt; {
+
+
+
+
+                        "authorization" =&gt; {
+
+
+
+
+... the complete wildfly configuration...
+
+
+
+
+        },
+
+
+
+
+        "rolled-back" =&gt; true
+
+
+
+
+    }
+
+
+
+
+
+
+My scheduled Service FileDeploymentScanner is somewhat special, it schedules the times itself (No Schedule annotation. Simplified it looks like this:
+
+
+
+
+
+
+@ConcurrencyManagement(ConcurrencyManagementType.BEAN)
+
+
+
+
+@Singleton
+
+
+
+
+@Startup
+
+
+
+
+@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+
+
+
+
+public class FileDeploymentScanner {
+
+
+
+
+
+
+
+
+
+	@Resource
+
+
+
+
+	private TimerService _timerService;
+
+
+
+
+
+
+
+
+
+	/**
+
+
+
+
+	 * Scans and deploys files according to configuration.
+
+
+
+
+	 */
+
+
+
+
+	@Timeout
+
+
+
+
+	public void handleClick() {
+
+
+
+
+		System.out.println("handle click");
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+	/**
+
+
+
+
+	 * Initializes the service.
+
+
+
+
+	 */
+
+
+
+
+	@PostConstruct
+
+
+
+
+	public void startup() {
+
+
+
+
+		System.out.println("Starting timer service");
+
+
+
+
+		_timerService.createSingleActionTimer(10000, new TimerConfig("FileDeploymentScanner", false));
+
+
+
+
+		try {
+
+
+
+
+			Thread.sleep(10000);
+
+
+
+
+		} catch (InterruptedException e) {
+
+
+
+
+			// TODO Auto-generated catch block
+
+
+
+
+			e.printStackTrace();
+
+
+
+
+		}
+
+
+
+
+		System.out.println("Started timer service");
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+What is happening, is, the arquillian client apparently tries to read complete wildfly configuration (dont know why), and during this step it fails to do so. I failed to write reproducer ear/app. I can&amp;apos;t release my closed source though which produces this error. But hopefully, this NPE is easy to fix. 

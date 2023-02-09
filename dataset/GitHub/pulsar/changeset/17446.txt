@@ -1,0 +1,3 @@
+pulsar-broker/src/test/java/org/apache/pulsar/client/impl/MessageChunkingTest.java
+pulsar-client/src/main/java/org/apache/pulsar/client/impl/ProducerImpl.java
+

@@ -1,0 +1,3 @@
+When java.lang.Error(e.g.OutOfMemory) occurs, threads do not abort.
+When an OutOfMemory occurs, threads do not abort.
+But, it is expected that threads will be abort in this situation.

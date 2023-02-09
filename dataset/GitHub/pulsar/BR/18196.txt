@@ -1,0 +1,32 @@
+[Bug] locallyAcquiredLocks leak in OwnershipCache.
+          Search before asking
+
+ I searched in the issues and found nothing similar.
+
+Version
+master
+Minimal reproduce step
+review the code
+
+34M
+What did you expect to see?
+    public CompletableFuture<Void> removeOwnership(NamespaceBundle bundle) {
+        ResourceLock<NamespaceEphemeralData> lock = locallyAcquiredLocks.get(bundle);
+        if (lock == null) {
+            // We don't own the specified bundle anymore
+            return CompletableFuture.completedFuture(null);
+        }
+
+        return lock.release();
+    }
+
+should be locallyAcquiredLocks.remove(bundle)
+What did you see instead?
+leak
+Anything else?
+No response
+Are you willing to submit a PR?
+
+ I'm willing to submit a PR!
+
+      

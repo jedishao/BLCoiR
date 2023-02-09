@@ -1,0 +1,2 @@
+bundles/org.eclipse.ui.navigator/src/org/eclipse/ui/internal/navigator/NavigatorContentService.java
+bundles/org.eclipse.ui.navigator/src/org/eclipse/ui/internal/navigator/NavigatorContentServiceContentProvider.java

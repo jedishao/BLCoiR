@@ -1,0 +1,4 @@
+Possible race between remote process' receipt of a cancellation request and its receipt of the initial request.
+It's possible that if a managed domain operation that sends a request to another process in the domain is cancelled immediately after initiating sending of that request that the cancellation request will be received before the original request. 
+If that occurs, the cancellation request will fail (as there is no ActiveOperation to cancel) and then the original request can hang waiting for a tx commit/rollback that will never arrive.
+See http://brontes.lab.eng.brq.redhat.com/viewLog.html?buildId=15650&amp;tab=buildResultsDiv&amp;buildTypeId=WF_MasterLinux#testNameId2482043836298342768 for a case where this occurred.

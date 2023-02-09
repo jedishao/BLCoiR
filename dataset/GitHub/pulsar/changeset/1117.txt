@@ -1,0 +1,7 @@
+pulsar-broker/src/main/java/org/apache/pulsar/broker/cache/LocalZooKeeperCacheService.java
+pulsar-broker/src/main/java/org/apache/pulsar/broker/namespace/NamespaceService.java
+pulsar-broker/src/main/java/org/apache/pulsar/common/naming/NamespaceBundleFactory.java
+pulsar-broker/src/test/java/org/apache/pulsar/broker/admin/AdminApiTest.java
+pulsar-broker/src/test/java/org/apache/pulsar/broker/namespace/NamespaceServiceTest.java
+pulsar-zookeeper-utils/src/main/java/org/apache/pulsar/zookeeper/ZooKeeperDataCache.java
+

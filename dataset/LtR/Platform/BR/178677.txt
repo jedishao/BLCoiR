@@ -1,1 +1,0 @@
-Bug 178677  [Launcher] "Invalid thread access" if invoked it with -perspective argument

@@ -1,0 +1,1069 @@
+TimeoutException: Unable to acquire lock after 15 secondsSeen in these scenarios:
+ejb-ejbservlet-shutdown-repl-async
+ejb-ejbservlet-jvmkill-repl-async
+http-session-shutdown-repl-async-tcpStack
+http-session-undeploy-dist-sync
+With no obvious connection to failover of the nodes, usually all the 4 servers log this error few times during the testrun (each server different time):
+
+
+
+
+
+
+[JBossINF] [0m[31m17:21:36,562 ERROR [org.infinispan.interceptors.InvocationContextInterceptor] (remote-thread--p4-t1) ISPN000136: Execution error: org.infinispan.util.concurrent.TimeoutException: ISPN000299: Unable to acquire lock after 15 seconds for key D89rThGoUJDT6kuJ-MV7w_4TeNsSpQvBoL2wKi0l and requestor GlobalTransaction:&lt;perf20&gt;:56262:remote. Lock is held by GlobalTransaction:&lt;perf20&gt;:51723:remote, while request came from perf20
+
+
+
+
+[JBossINF] 	at org.infinispan.util.concurrent.locks.LockManagerImpl.lock(LockManagerImpl.java:198)
+
+
+
+
+[JBossINF] 	at org.infinispan.util.concurrent.locks.LockManagerImpl.acquireLock(LockManagerImpl.java:171)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockKeyAndCheckOwnership(AbstractTxLockingInterceptor.java:180)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockAndRegisterBackupLock(AbstractTxLockingInterceptor.java:118)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.visitLockControlCommand(PessimisticLockingInterceptor.java:200)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.TxInterceptor.invokeNextInterceptorAndVerifyTransaction(TxInterceptor.java:141)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.TxInterceptor.visitLockControlCommand(TxInterceptor.java:199)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.TransactionSynchronizerInterceptor.visitLockControlCommand(TransactionSynchronizerInterceptor.java:75)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.handleTxCommand(StateTransferInterceptor.java:196)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.visitLockControlCommand(StateTransferInterceptor.java:99)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InvocationContextInterceptor.visitLockControlCommand(InvocationContextInterceptor.java:76)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.perform(LockControlCommand.java:129)
+
+
+
+
+[JBossINF] 	at org.infinispan.remoting.inboundhandler.BasePerCacheInboundInvocationHandler.invokePerform(BasePerCacheInboundInvocationHandler.java:85)
+
+
+
+
+[JBossINF] 	at org.infinispan.remoting.inboundhandler.BaseBlockingRunnable.run(BaseBlockingRunnable.java:34)
+
+
+
+
+[JBossINF] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+
+
+
+
+[JBossINF] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+
+
+
+
+[JBossINF] 	at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+
+
+The error is usually followed by a warning: 
+
+
+
+
+
+
+[JBossINF] [0m[33m17:21:36,563 WARN  [org.infinispan.remoting.inboundhandler.NonTotalOrderPerCacheInboundInvocationHandler] (remote-thread--p4-t1) ISPN000071: Caught exception when handling command LockControlCommand{cache=clusterbench-ee7.ear.clusterbench-ee7-web-default.war, keys=[D89rThGoUJDT6kuJ-MV7w_4TeNsSpQvBoL2wKi0l], flags=[IGNORE_RETURN_VALUES], unlock=false, gtx=GlobalTransaction:&lt;perf20&gt;:56262:remote}: org.infinispan.util.concurrent.TimeoutException: ISPN000299: Unable to acquire lock after 15 seconds for key D89rThGoUJDT6kuJ-MV7w_4TeNsSpQvBoL2wKi0l and requestor GlobalTransaction:&lt;perf20&gt;:56262:remote. Lock is held by GlobalTransaction:&lt;perf20&gt;:51723:remote, while request came from perf20
+
+
+
+
+[JBossINF] 	at org.infinispan.util.concurrent.locks.LockManagerImpl.lock(LockManagerImpl.java:198)
+
+
+
+
+[JBossINF] 	at org.infinispan.util.concurrent.locks.LockManagerImpl.acquireLock(LockManagerImpl.java:171)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockKeyAndCheckOwnership(AbstractTxLockingInterceptor.java:180)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockAndRegisterBackupLock(AbstractTxLockingInterceptor.java:118)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.visitLockControlCommand(PessimisticLockingInterceptor.java:200)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.TxInterceptor.invokeNextInterceptorAndVerifyTransaction(TxInterceptor.java:141)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.TxInterceptor.visitLockControlCommand(TxInterceptor.java:199)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.TransactionSynchronizerInterceptor.visitLockControlCommand(TransactionSynchronizerInterceptor.java:75)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.handleTxCommand(StateTransferInterceptor.java:196)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.visitLockControlCommand(StateTransferInterceptor.java:99)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InvocationContextInterceptor.visitLockControlCommand(InvocationContextInterceptor.java:76)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.control.LockControlCommand.perform(LockControlCommand.java:129)
+
+
+
+
+[JBossINF] 	at org.infinispan.remoting.inboundhandler.BasePerCacheInboundInvocationHandler.invokePerform(BasePerCacheInboundInvocationHandler.java:85)
+
+
+
+
+[JBossINF] 	at org.infinispan.remoting.inboundhandler.BaseBlockingRunnable.run(BaseBlockingRunnable.java:34)
+
+
+
+
+[JBossINF] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+
+
+
+
+[JBossINF] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+
+
+
+
+[JBossINF] 	at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+
+
+While the error was logged 15 times by all servers in this particular run, the warning message was logged 505 times.
+Server log:
+http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/eap-7x-failover-ejb-ejbservlet-shutdown-repl-async/6/console-perf19/ 
+The same error with different stacktrace:
+
+
+
+
+
+
+[JBossINF] [0m[31m17:21:16,585 ERROR [org.infinispan.interceptors.InvocationContextInterceptor] (default task-45) ISPN000136: Execution error: org.infinispan.util.concurrent.TimeoutException: ISPN000299: Unable to acquire lock after 15 seconds for key UnknownSessionID [5365576765655250685155485253536866686865666767514850676951495057] and requestor GlobalTransaction:&lt;perf20&gt;:52228:local. Lock is held by GlobalTransaction:&lt;perf20&gt;:49990:local, while request came from local
+
+
+
+
+[JBossINF] 	at org.infinispan.util.concurrent.locks.LockManagerImpl.lock(LockManagerImpl.java:198)
+
+
+
+
+[JBossINF] 	at org.infinispan.util.concurrent.locks.LockManagerImpl.acquireLock(LockManagerImpl.java:171)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockKeyAndCheckOwnership(AbstractTxLockingInterceptor.java:180)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.lockAndRegisterBackupLock(PessimisticLockingInterceptor.java:261)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.visitDataWriteCommand(PessimisticLockingInterceptor.java:131)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.locking.AbstractLockingInterceptor.visitReplaceCommand(AbstractLockingInterceptor.java:60)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitReplaceCommand(AbstractVisitor.java:54)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.TxInterceptor.enlistWriteAndInvokeNext(TxInterceptor.java:308)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.TxInterceptor.visitReplaceCommand(TxInterceptor.java:219)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitReplaceCommand(AbstractVisitor.java:54)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.handleTxWriteCommand(StateTransferInterceptor.java:261)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.handleWriteCommand(StateTransferInterceptor.java:243)
+
+
+
+
+[JBossINF] 	at org.infinispan.statetransfer.StateTransferInterceptor.visitReplaceCommand(StateTransferInterceptor.java:124)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.CacheMgmtInterceptor.updateStoreStatistics(CacheMgmtInterceptor.java:191)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.CacheMgmtInterceptor.visitReplaceCommand(CacheMgmtInterceptor.java:182)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InvocationContextInterceptor.handleDefault(InvocationContextInterceptor.java:71)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.AbstractVisitor.visitReplaceCommand(AbstractVisitor.java:54)
+
+
+
+
+[JBossINF] 	at org.infinispan.commands.write.ReplaceCommand.acceptVisitor(ReplaceCommand.java:55)
+
+
+
+
+[JBossINF] 	at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+
+
+
+
+[JBossINF] 	at org.infinispan.cache.impl.CacheImpl.executeCommandAndCommitIfNeeded(CacheImpl.java:1613)
+
+
+
+
+[JBossINF] 	at org.infinispan.cache.impl.CacheImpl.replaceInternal(CacheImpl.java:1158)
+
+
+
+
+[JBossINF] 	at org.infinispan.cache.impl.CacheImpl.replace(CacheImpl.java:1151)
+
+
+
+
+[JBossINF] 	at org.infinispan.cache.impl.DecoratedCache.replace(DecoratedCache.java:502)
+
+
+
+
+[JBossINF] 	at org.infinispan.cache.impl.AbstractDelegatingCache.replace(AbstractDelegatingCache.java:262)
+
+
+
+
+[JBossINF] 	at org.wildfly.clustering.ee.infinispan.CacheEntryMutator.mutate(CacheEntryMutator.java:52)
+
+
+
+
+[JBossINF] 	at org.wildfly.clustering.ejb.infinispan.bean.InfinispanBean.close(InfinispanBean.java:113)
+
+
+
+
+[JBossINF] 	at org.wildfly.clustering.ejb.infinispan.InfinispanBeanManager$SchedulableBean.close(InfinispanBeanManager.java:406)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.cache.distributable.DistributableCache.release(DistributableCache.java:136)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.releaseInstance(StatefulSessionSynchronizationInterceptor.java:168)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor$StatefulSessionSynchronization.afterCompletion(StatefulSessionSynchronizationInterceptor.java:250)
+
+
+
+
+[JBossINF] 	at org.jboss.as.txn.service.internal.tsr.JCAOrderedLastSynchronizationList.afterCompletion(JCAOrderedLastSynchronizationList.java:147)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.internal.jta.resources.arjunacore.SynchronizationImple.afterCompletion(SynchronizationImple.java:96)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.afterCompletion(TwoPhaseCoordinator.java:545)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.arjuna.coordinator.TwoPhaseCoordinator.end(TwoPhaseCoordinator.java:101)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.arjuna.AtomicAction.commit(AtomicAction.java:162)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionImple.commitAndDisassociate(TransactionImple.java:1200)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.internal.jta.transaction.arjunacore.BaseTransaction.commit(BaseTransaction.java:126)
+
+
+
+
+[JBossINF] 	at com.arjuna.ats.jbossatx.BaseTransactionManagerDelegate.commit(BaseTransactionManagerDelegate.java:89)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.tx.CMTTxInterceptor.endTransaction(CMTTxInterceptor.java:91)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.tx.CMTTxInterceptor.invokeInOurTx(CMTTxInterceptor.java:279)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.tx.CMTTxInterceptor.required(CMTTxInterceptor.java:327)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.tx.CMTTxInterceptor.processInvocation(CMTTxInterceptor.java:239)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.interceptors.CurrentInvocationContextInterceptor.processInvocation(CurrentInvocationContextInterceptor.java:41)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.invocationmetrics.WaitTimeInterceptor.processInvocation(WaitTimeInterceptor.java:43)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.security.SecurityContextInterceptor.processInvocation(SecurityContextInterceptor.java:100)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.interceptors.ShutDownInterceptorFactory$1.processInvocation(ShutDownInterceptorFactory.java:64)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.interceptors.LoggingInterceptor.processInvocation(LoggingInterceptor.java:66)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ee.component.NamespaceContextInterceptor.processInvocation(NamespaceContextInterceptor.java:50)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ejb3.component.interceptors.AdditionalSetupInterceptor.processInvocation(AdditionalSetupInterceptor.java:54)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.ContextClassLoaderInterceptor.processInvocation(ContextClassLoaderInterceptor.java:64)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:356)
+
+
+
+
+[JBossINF] 	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:636)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.AccessCheckingInterceptor.processInvocation(AccessCheckingInterceptor.java:61)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:356)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.PrivilegedWithCombinerInterceptor.processInvocation(PrivilegedWithCombinerInterceptor.java:80)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ee.component.ViewService$View.invoke(ViewService.java:195)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ee.component.ViewDescription$1.processInvocation(ViewDescription.java:185)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:340)
+
+
+
+
+[JBossINF] 	at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+
+
+
+
+[JBossINF] 	at org.jboss.as.ee.component.ProxyInvocationHandler.invoke(ProxyInvocationHandler.java:73)
+
+
+
+
+[JBossINF] 	at org.jboss.test.clusterbench.ejb.stateful.LocalStatefulSB$$$view3.getSerialAndIncrement(Unknown Source)
+
+
+
+
+[JBossINF] 	at sun.reflect.GeneratedMethodAccessor22.invoke(Unknown Source)
+
+
+
+
+[JBossINF] 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+[JBossINF] 	at java.lang.reflect.Method.invoke(Method.java:497)
+
+
+
+
+[JBossINF] 	at org.jboss.weld.util.reflection.Reflections.invokeAndUnwrap(Reflections.java:434)
+
+
+
+
+[JBossINF] 	at org.jboss.weld.bean.proxy.EnterpriseBeanProxyMethodHandler.invoke(EnterpriseBeanProxyMethodHandler.java:127)
+
+
+
+
+[JBossINF] 	at org.jboss.weld.bean.proxy.EnterpriseTargetBeanInstance.invoke(EnterpriseTargetBeanInstance.java:56)
+
+
+
+
+[JBossINF] 	at org.jboss.weld.bean.proxy.ProxyMethodHandler.invoke(ProxyMethodHandler.java:100)
+
+
+
+
+[JBossINF] 	at org.jboss.test.clusterbench.ejb.stateful.LocalStatefulSB$Proxy$_$$_Weld$EnterpriseProxy$.getSerialAndIncrement(Unknown Source)
+
+
+
+
+[JBossINF] 	at org.jboss.test.clusterbench.ejb.stateful.LocalStatefulSB$Proxy$_$$_WeldClientProxy.getSerialAndIncrement(Unknown Source)
+
+
+
+
+[JBossINF] 	at org.jboss.test.clusterbench.web.ejb.LocalEjbServlet.doGet(LocalEjbServlet.java:38)
+
+
+
+
+[JBossINF] 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+
+
+
+
+[JBossINF] 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:86)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+
+
+
+
+[JBossINF] 	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+
+
+
+
+[JBossINF] 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+
+
+
+
+[JBossINF] 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+[JBossINF] 	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+
+
+
+
+[JBossINF] 	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:72)
+
+
+
+
+[JBossINF] 	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+
+
+
+
+[JBossINF] 	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+
+
+
+
+[JBossINF] 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+[JBossINF] 	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+
+
+
+
+[JBossINF] 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+[JBossINF] 	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:282)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:261)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:80)
+
+
+
+
+[JBossINF] 	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:172)
+
+
+
+
+[JBossINF] 	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:199)
+
+
+
+
+[JBossINF] 	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:778)
+
+
+
+
+[JBossINF] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+
+
+
+
+[JBossINF] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+
+
+
+
+[JBossINF] 	at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+
+
+Server log:
+http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/eap-7x-failover-ejb-ejbservlet-shutdown-repl-async/6/console-perf20/
+The timeout stated in the exception is sometimes not exactly 15 seconds, so far I have seen these variants: 14.99 seconds, 14.97 seconds, and also only few milliseconds , see this server log:
+http://jenkins.mw.lab.eng.bos.redhat.com/hudson/job/eap-7x-failover-http-session-undeploy-dist-sync/5/console-perf18/

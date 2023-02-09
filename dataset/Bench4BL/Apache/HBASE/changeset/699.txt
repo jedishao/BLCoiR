@@ -1,0 +1,6 @@
+org/apache/hadoop/hbase/client/HConnectionManager.java
+org/apache/hadoop/hbase/util/TestMigrate.java
+org/apache/hadoop/hbase/HBaseClusterTestCase.java
+org/apache/hadoop/hbase/HMerge.java
+org/apache/hadoop/hbase/client/HTable.java
+

@@ -1,1 +1,0 @@
-Bug 299209  [CommonNavigator] Clean up error reporting for pipelined extensionsA catch block was missing for one of them, and the error report does not provide the extension Id that had the problem.

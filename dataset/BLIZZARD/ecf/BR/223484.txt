@@ -12,8 +12,7 @@ Discoonect
 [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run]
 [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run]
 More information:
-Repeat 3 time ( 1, 2, 1, 2, 1 and 2),
-the following threads remained.
+Repeat 3 time ( 1, 2, 1, 2, 1 and 2), the following threads remained.
 Thread [main] (Running)
 Daemon Thread [State Data Manager] (Running)
 Daemon Thread [Framework Event Dispatcher] (Running)

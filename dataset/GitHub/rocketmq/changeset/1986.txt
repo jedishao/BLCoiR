@@ -1,0 +1,7 @@
+broker/src/main/java/org/apache/rocketmq/broker/filter/ConsumerFilterManager.java
+common/src/main/java/org/apache/rocketmq/common/message/MessageExt.java
+store/src/main/java/org/apache/rocketmq/store/StoreStatsService.java
+store/src/main/java/org/apache/rocketmq/store/index/IndexService.java
+store/src/test/java/org/apache/rocketmq/store/StoreStatsServiceTest.java
+store/src/test/java/org/apache/rocketmq/store/index/IndexServiceTest.java
+

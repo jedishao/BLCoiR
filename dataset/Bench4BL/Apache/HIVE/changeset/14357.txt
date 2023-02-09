@@ -1,0 +1,3 @@
+org/apache/hadoop/hive/ql/lockmgr/TestDbTxnManager2.java
+org/apache/hadoop/hive/ql/TestTxnCommands.java
+

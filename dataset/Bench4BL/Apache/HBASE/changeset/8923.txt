@@ -1,0 +1,3 @@
+org/apache/hadoop/hbase/HBaseTestingUtility.java
+org/apache/hadoop/hbase/DistributedHBaseCluster.java
+

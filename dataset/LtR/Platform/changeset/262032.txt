@@ -1,0 +1,2 @@
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/concurrency/Bug_262032.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/concurrency/ConcurrencyTestSuite.java

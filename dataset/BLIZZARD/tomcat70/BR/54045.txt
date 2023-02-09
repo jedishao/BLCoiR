@@ -1,4 +1,4 @@
-54045 â€“ ReplicatedMap don't like TcpFailureDetector in static configuration
+ReplicatedMap don't like TcpFailureDetector in static configuration.
 Tribes stack using:
 * TcpPingInterceptor
 * TcpFailureDetector

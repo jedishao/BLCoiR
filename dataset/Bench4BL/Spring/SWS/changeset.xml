@@ -1,0 +1,16 @@
+<changeset>
+    <id>613
+        <files>org/springframework/xml/xpath/Jaxp13XPathTemplate.java
+            org/springframework/ws/server/endpoint/adapter/XPathParamAnnotationMethodEndpointAdapter.java
+            org/springframework/xml/xpath/Jaxp13XPathExpressionFactory.java
+        </files>
+    </id>
+    <id>947
+        <files>org/springframework/ws/wsdl/wsdl11/Wsdl4jDefinition.java
+        </files>
+    </id>
+    <id>334
+        <files>org/springframework/ws/transport/support/AbstractStandaloneMessageReceiver.java
+        </files>
+    </id>
+</changeset>

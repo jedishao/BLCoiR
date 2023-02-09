@@ -1,0 +1,12 @@
+Concurrent modification of StepExecution when running an asynchrounous step operationUse of a hibernateJobDao eventually results in a StaleObjectStateException when running an asynchrounous step operation:
+  &lt;bean id="myStepExecutor" class="org.springframework.batch.execution.step.simple.SimpleStepExecutor" scope="prototype"&gt;
+    &lt;property name="transactionManager" ref="txManager" /&gt;
+    &lt;property name="repository" ref="simpleJobRepository" /&gt;  
+    &lt;property name="stepOperations"&gt;
+      &lt;bean class="org.springframework.batch.repeat.support.TaskExecutorRepeatTemplate"&gt;
+        &lt;property name="taskExecutor" ref="threadPoolTaskExecutor"/&gt;        
+      &lt;/bean&gt;
+    &lt;/property&gt;    
+  &lt;/bean&gt;
+See:
+http://forum.springframework.org/showthread.php?t=44884

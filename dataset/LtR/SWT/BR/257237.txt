@@ -1,1 +1,0 @@
-Bug 257237  BlockSelection: copy/paste in block selection does not work if beyond line areas are inside

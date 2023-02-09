@@ -1,0 +1,1 @@
+bundles/org.eclipse.e4.ui.workbench/src/org/eclipse/e4/workbench/ui/internal/SelectionServiceImpl.java

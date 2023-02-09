@@ -1,0 +1,11 @@
+src/main/java/io/vertx/core/http/impl/Http1xPool.java
+src/main/java/io/vertx/core/http/impl/Http2ConnectionBase.java
+src/main/java/io/vertx/core/http/impl/Http2ServerResponseImpl.java
+src/main/java/io/vertx/core/http/impl/HttpServerResponseImpl.java
+src/main/java/io/vertx/core/http/impl/ServerConnection.java
+src/main/java/io/vertx/core/http/impl/WebSocketImplBase.java
+src/main/java/io/vertx/core/net/impl/ConnectionBase.java
+src/test/java/io/vertx/test/core/Http2ClientTest.java
+src/test/java/io/vertx/test/core/Http2ServerTest.java
+src/test/java/io/vertx/test/core/HttpTest.java
+

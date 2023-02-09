@@ -1,0 +1,3 @@
+org/apache/camel/converter/stream/CachedOutputStreamTest.java
+org/apache/camel/converter/stream/CachedOutputStream.java
+

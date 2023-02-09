@@ -1,0 +1,20 @@
+<changeset>
+    <id>199
+        <files>org/springframework/data/mongodb/core/mapping/CachingMongoPersistentProperty.java
+        </files>
+    </id>
+    <id>622
+        <files>org/springframework/data/mongodb/core/MongoTemplateTests.java
+            org/springframework/data/mongodb/core/MongoTemplate.java
+        </files>
+    </id>
+    <id>532
+        <files>org/springframework/data/mongodb/core/MongoDbUtils.java
+        </files>
+    </id>
+    <id>737
+        <files>org/springframework/data/mongodb/core/MongoDbUtils.java
+            org/springframework/data/mongodb/core/MongoDbUtilsUnitTests.java
+        </files>
+    </id>
+</changeset>

@@ -1,1 +1,0 @@
-Bug 321995  Application-Context should hold Display-RealmThe application context should hold the databinding realm for the current SWT-Display it can then be used to by code to synchronize with the UI-Thread in a widget-toolkit agnostic way.

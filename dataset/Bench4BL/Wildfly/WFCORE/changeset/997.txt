@@ -1,0 +1,3 @@
+org/jboss/as/domain/management/connections/ldap/ThreadLocalSSLSocketFactory.java
+org/jboss/as/domain/management/security/WrapperSSLContext.java
+

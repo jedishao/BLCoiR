@@ -1,4 +1,4 @@
-Bug 301242 – [refactoring][clean up] UI locked by 2 dialogs after repeated Undos in Java editor
+UI locked by 2 dialogs after repeated Undos in Java editor.
 Created attachment 157616 [details]
 Stacktrace
 I20100128-1731

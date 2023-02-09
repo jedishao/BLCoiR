@@ -1,0 +1,3 @@
+org/apache/camel/processor/Throttler.java
+org/apache/camel/processor/ThrottlerTest.java
+

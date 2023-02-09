@@ -1,0 +1,5 @@
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskLockbox.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskQueue.java
+indexing-service/src/test/java/org/apache/druid/indexing/overlord/TaskLockboxTest.java
+indexing-service/src/test/java/org/apache/druid/indexing/overlord/http/OverlordResourceTest.java
+

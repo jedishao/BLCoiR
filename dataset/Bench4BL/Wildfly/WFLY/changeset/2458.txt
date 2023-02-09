@@ -1,0 +1,3 @@
+org/jboss/as/clustering/jgroups/subsystem/ChannelService.java
+org/jboss/as/clustering/jgroups/MuxChannel.java
+org/jboss/as/clustering/infinispan/subsystem/CacheContainerAdd.java

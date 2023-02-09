@@ -1,0 +1,12 @@
+org/apache/hadoop/hbase/master/MetaScanner.java
+org/apache/hadoop/hbase/master/RegionManager.java
+org/apache/hadoop/hbase/master/ServerManager.java
+org/apache/hadoop/hbase/master/HMaster.java
+org/apache/hadoop/hbase/master/BaseScanner.java
+org/apache/hadoop/hbase/client/ServerConnection.java
+org/apache/hadoop/hbase/master/ChangeTableState.java
+org/apache/hadoop/hbase/master/ProcessRegionClose.java
+org/apache/hadoop/hbase/master/ProcessServerShutdown.java
+org/apache/hadoop/hbase/client/HConnectionManager.java
+org/apache/hadoop/hbase/master/ProcessRegionOpen.java
+

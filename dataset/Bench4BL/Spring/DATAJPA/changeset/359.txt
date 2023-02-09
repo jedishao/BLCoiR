@@ -1,0 +1,4 @@
+org/springframework/data/jpa/repository/LockIntegrationTests.java
+org/springframework/data/jpa/repository/support/SimpleJpaRepository.java
+org/springframework/data/jpa/repository/sample/RoleRepository.java
+

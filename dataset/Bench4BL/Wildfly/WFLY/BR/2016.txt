@@ -1,0 +1,6 @@
+Security context associated with EJB asynchronous invocations can potentially be corrupted over time by the caller thread.
+Consider a servlet "S" which invokes on a asynchronous EJB "A". Let's assume "S" runs with a "foo" run-as role. 
+Now when S invokes on "A", the run-as "foo" role is correctly propagated to the asynchronous EJB invocation. 
+However, when the "S" invocation completes and potentially clears the security context (of any run-as role), the invocation(s) within the asynchronous EJB "A" too lose the corresponding security context role association. 
+This is because the 2 threads (the servlet invocation one and the async EJB invocation one) literally share the same object instance of the SecurityContext.
+The expected behaviour is that the original security context (attributes) are copied over to the async invocation and updates to that security context later on in a separate thread shouldn't affect the ongoing async EJB invocation.

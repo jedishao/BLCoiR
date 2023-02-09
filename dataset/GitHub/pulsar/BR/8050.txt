@@ -1,0 +1,7 @@
+Replace map with set.
+In PulsarClientImpl, we use IdentityHashMap to hold the reference of producers/consumers like below:
+producers.put(producer, Boolean.TRUE);
+
+It's better to use List, for value is never used but stored.
+But Pulsar pursues performance, so looks good to use thread safe set -- Collections.newSetFromMap(new ConcurrentHashMap<>()) .
+      

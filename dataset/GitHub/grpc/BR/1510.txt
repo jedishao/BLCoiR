@@ -1,0 +1,2 @@
+DelayedClientTransport and InProcessTransport means deadlock
+There is a chance of deadlock when DelayedClientTransport is linked with an InProcessTransport. See /pull/1503.

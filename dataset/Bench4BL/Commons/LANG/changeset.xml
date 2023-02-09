@@ -1,0 +1,32 @@
+<changeset>
+    <id>1251
+        <files>org/apache/commons/lang3/SerializationUtils.java
+        </files>
+    </id>
+    <id>459
+        <files>org/apache/commons/lang3/builder/HashCodeBuilder.java
+        </files>
+    </id>
+    <id>1230
+        <files>org/apache/commons/lang3/builder/EqualsBuilder.java
+            org/apache/commons/lang3/builder/HashCodeBuilder.java
+        </files>
+    </id>
+    <id>367
+        <files>org/apache/commons/lang3/time/FastDateFormat.java
+        </files>
+    </id>
+    <id>584
+        <files>org/apache/commons/lang3/exception/ExceptionUtils.java
+        </files>
+    </id>
+    <id>481
+        <files>org/apache/commons/lang3/Range.java
+            org/apache/commons/lang/math/DoubleRange.java
+            org/apache/commons/lang/math/IntRange.java
+            org/apache/commons/lang/math/FloatRange.java
+            org/apache/commons/lang/math/LongRange.java
+            org/apache/commons/lang/math/NumberRange.java
+        </files>
+    </id>
+</changeset>

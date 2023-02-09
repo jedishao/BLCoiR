@@ -1,0 +1,7 @@
+org/apache/hadoop/hive/ql/exec/tez/ReduceRecordProcessor.java
+org/apache/hadoop/hive/ql/exec/tez/TezProcessor.java
+org/apache/hadoop/hive/ql/exec/tez/MapRecordProcessor.java
+org/apache/hadoop/hive/ql/exec/Operator.java
+org/apache/hadoop/hive/ql/exec/tez/RecordProcessor.java
+org/apache/hadoop/hive/ql/exec/tez/MergeFileRecordProcessor.java
+

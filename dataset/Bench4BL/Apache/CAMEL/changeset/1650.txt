@@ -1,0 +1,13 @@
+org/apache/camel/processor/idempotent/IdempotentOnCompletion.java
+org/apache/camel/processor/idempotent/MemoryIdempotentRepository.java
+org/apache/camel/component/file/GenericFileConsumer.java
+org/apache/camel/processor/idempotent/IdempotentConsumer.java
+org/apache/camel/model/IdempotentConsumerDefinition.java
+org/apache/camel/processor/idempotent/FileIdempotentRepository.java
+org/apache/camel/spi/IdempotentRepository.java
+org/apache/camel/component/file/FileConsumerIdempotentRefTest.java
+org/apache/camel/processor/idempotent/jpa/JpaMessageIdRepository.java
+org/apache/camel/management/MultiInstanceProcessorTest.java
+org/apache/camel/component/file/remote/FtpConsumerIdempotentRefTest.java
+org/apache/camel/processor/jpa/JpaIdempotentConsumerTest.java
+

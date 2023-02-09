@@ -1,0 +1,7 @@
+presto-main/src/main/java/com/facebook/presto/operator/JoinHash.java
+presto-main/src/main/java/com/facebook/presto/operator/LookupJoinOperator.java
+presto-main/src/main/java/com/facebook/presto/operator/LookupSource.java
+presto-main/src/main/java/com/facebook/presto/operator/OuterLookupSource.java
+presto-main/src/main/java/com/facebook/presto/operator/PartitionedLookupSource.java
+presto-main/src/main/java/com/facebook/presto/operator/index/IndexLoader.java
+

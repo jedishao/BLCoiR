@@ -1,0 +1,10 @@
+org/wildfly/clustering/server/registry/LocalRegistryFactory.java
+org/jboss/as/test/clustering/cluster/registry/bean/RegistryBean.java
+org/wildfly/clustering/provider/ServiceProviderRegistrationFactory.java
+org/wildfly/clustering/server/registry/CacheRegistry.java
+org/wildfly/clustering/web/infinispan/session/InfinispanRouteLocator.java
+org/wildfly/clustering/ejb/infinispan/InfinispanBeanManager.java
+org/wildfly/clustering/server/registry/LocalRegistry.java
+org/wildfly/clustering/registry/Registry.java
+org/wildfly/clustering/server/provider/ServiceProviderRegistrationFactoryAdapter.java
+

@@ -1,0 +1,12 @@
+core/src/main/java/io/grpc/internal/ClientCallImpl.java
+core/src/main/java/io/grpc/internal/ManagedChannelImpl.java
+core/src/main/java/io/grpc/internal/ManagedChannelImpl2.java
+core/src/main/java/io/grpc/internal/ObjectPool.java
+core/src/main/java/io/grpc/internal/OobChannel.java
+core/src/main/java/io/grpc/internal/SingleTransportChannel.java
+core/src/main/java/io/grpc/internal/TransportSet.java
+core/src/test/java/io/grpc/internal/ClientCallImplTest.java
+core/src/test/java/io/grpc/internal/DelayedClientTransport2Test.java
+core/src/test/java/io/grpc/internal/ManagedChannelImpl2IdlenessTest.java
+core/src/test/java/io/grpc/internal/ManagedChannelImpl2Test.java
+

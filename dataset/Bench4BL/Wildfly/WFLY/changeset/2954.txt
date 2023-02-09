@@ -1,0 +1,3 @@
+org/jboss/as/test/integration/messaging/jms/context/InjectedJMSContextTestCase.java
+org/jboss/as/messaging/deployment/JMSContextProducer.java
+org/jboss/as/messaging/deployment/CDIDeploymentProcessor.java

@@ -1,0 +1,3 @@
+org/springframework/data/hadoop/store/support/OutputStoreObjectSupport.java
+org/springframework/data/hadoop/store/output/AbstractDataStreamWriter.java
+

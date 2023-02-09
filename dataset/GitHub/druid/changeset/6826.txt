@@ -1,0 +1,3 @@
+sql/src/main/java/org/apache/druid/sql/calcite/schema/DruidSchema.java
+sql/src/test/java/org/apache/druid/sql/calcite/schema/DruidSchemaTest.java
+

@@ -1,0 +1,9 @@
+processing/src/main/java/org/apache/druid/query/dimension/ExpressionDimensionSpec.java
+processing/src/test/java/org/apache/druid/query/groupby/GroupByQueryRunnerGenericTest.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/RemoteTaskRunner.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/autoscaling/ResourceManagementScheduler.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/autoscaling/ResourceManagementStrategy.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/autoscaling/SimpleResourceManagementStrategy.java
+indexing-service/src/test/java/org/apache/druid/indexing/overlord/RemoteTaskRunnerTest.java
+indexing-service/src/test/java/org/apache/druid/indexing/overlord/autoscaling/SimpleResourceManagementStrategyTest.java
+

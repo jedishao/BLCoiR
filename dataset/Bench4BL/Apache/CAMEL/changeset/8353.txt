@@ -1,0 +1,4 @@
+org/apache/camel/Exchange.java
+org/apache/camel/component/file/strategy/MarkerFileExclusiveReadLockStrategy.java
+org/apache/camel/component/file/strategy/FileLockExclusiveReadLockStrategy.java
+

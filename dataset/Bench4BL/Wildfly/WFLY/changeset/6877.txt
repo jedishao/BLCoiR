@@ -1,0 +1,3 @@
+org/wildfly/clustering/web/infinispan/session/fine/FineSessionAttributes.java
+org/wildfly/clustering/web/infinispan/session/coarse/CoarseSessionAttributes.java
+

@@ -1,0 +1,3 @@
+org/springframework/amqp/rabbit/listener/BlockingQueueConsumerTests.java
+org/springframework/amqp/rabbit/listener/BlockingQueueConsumer.java
+

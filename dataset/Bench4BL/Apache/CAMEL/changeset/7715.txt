@@ -1,0 +1,2 @@
+org/apache/camel/component/sjms/SjmsProducer.java
+org/apache/camel/component/sjms/SjmsConsumer.java

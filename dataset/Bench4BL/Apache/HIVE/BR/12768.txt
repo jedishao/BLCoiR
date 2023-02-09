@@ -1,0 +1,2 @@
+Thread safety: binary sortable serde decimal deserialization.
+We see thread safety issues due to static decimal buffer in binary sortable serde.

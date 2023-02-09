@@ -1,5 +1,0 @@
-Bug 82989  Compiler error due to a wrong exception check in try blocksCompiler error on correct code when an aspect performs a method introdiction.
-The method introduction contains an invocation to a method from the class and
-such an invocation is inside an appropriate try block.
-The ajc compiler performs a wrong check on the exception types.
-To understand better, please see the attached example

@@ -1,0 +1,2 @@
+org/springframework/amqp/rabbit/log4j/AmqpAppender.java
+

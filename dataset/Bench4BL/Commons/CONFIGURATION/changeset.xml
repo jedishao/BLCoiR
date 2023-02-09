@@ -1,0 +1,13 @@
+<changeset>
+    <id>407
+        <files>org/apache/commons/configuration/HierarchicalINIConfiguration.java
+            org/apache/commons/configuration/TestHierarchicalINIConfiguration.java
+        </files>
+    </id>
+    <id>344
+        <files>org/apache/commons/configuration/AbstractFileConfiguration.java
+            org/apache/commons/configuration/TestCombinedConfiguration.java
+            org/apache/commons/configuration/CombinedConfiguration.java
+        </files>
+    </id>
+</changeset>

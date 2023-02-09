@@ -1,1 +1,0 @@
-Bug 253259  Label in synchronize view is getting cut off.

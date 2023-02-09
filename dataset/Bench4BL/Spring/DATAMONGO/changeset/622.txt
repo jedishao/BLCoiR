@@ -1,0 +1,3 @@
+org/springframework/data/mongodb/core/MongoTemplateTests.java
+org/springframework/data/mongodb/core/MongoTemplate.java
+

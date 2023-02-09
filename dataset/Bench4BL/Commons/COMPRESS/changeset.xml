@@ -1,0 +1,14 @@
+<changeset>
+    <id>302
+        <files>org/apache/commons/compress/archivers/ArchiveStreamFactory.java
+        </files>
+    </id>
+    <id>303
+        <files>org/apache/commons/compress/compressors/CompressorStreamFactory.java
+        </files>
+    </id>
+    <id>357
+        <files>org/apache/commons/compress/compressors/bzip2/BZip2CompressorOutputStream.java
+        </files>
+    </id>
+</changeset>

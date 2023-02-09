@@ -1,1 +1,0 @@
-Bug 298857  Change on the property horizontal of PartSashContainer has no effectThe modification of property horizontal in PartSashContainer by API is not synchronized with SWT/JFace.

@@ -1,0 +1,6 @@
+org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilterTests.java
+org/springframework/security/concurrent/DelegatingSecurityContextCallableTests.java
+org/springframework/security/concurrent/DelegatingSecurityContextRunnable.java
+org/springframework/security/concurrent/DelegatingSecurityContextRunnableTests.java
+org/springframework/security/concurrent/DelegatingSecurityContextCallable.java
+

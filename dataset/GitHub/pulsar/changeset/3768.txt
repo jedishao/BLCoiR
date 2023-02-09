@@ -1,0 +1,3 @@
+pulsar-broker/src/test/java/org/apache/pulsar/client/api/BrokerServiceLookupTest.java
+pulsar-broker/src/test/java/org/apache/pulsar/functions/worker/PulsarWorkerAssignmentTest.java
+

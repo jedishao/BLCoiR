@@ -1,4 +1,4 @@
-Bug 347599 – [refactoring] Provide a way to implement refactorings that depend on resources that have to be explicitly released
+Provide a way to implement refactorings that depend on resources that have to be explicitly released.
 Created attachment 196865 [details]
 Refactoring#dispose() method
 C++ refactorings must hold a lock on C++ index.

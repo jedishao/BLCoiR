@@ -1,0 +1,4 @@
+server/src/main/java/org/apache/druid/metadata/SQLMetadataConnector.java
+server/src/main/java/org/apache/druid/metadata/SQLMetadataStorageActionHandler.java
+server/src/test/java/org/apache/druid/metadata/SQLMetadataStorageActionHandlerTest.java
+

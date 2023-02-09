@@ -1,0 +1,3 @@
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/UILockListener.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/UiTestSuite.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/deadlock/NestedSyncExecDeadlockTest.java

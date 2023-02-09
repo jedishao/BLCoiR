@@ -1,3 +1,0 @@
-Bug 162443  [Undo] DeleteResourcesOperation halts Bug99858Test on linuxI guess with the change to DeleteResourceAction to call the operation this now pops up a dialog and blocks the automated testing.
-
-PW

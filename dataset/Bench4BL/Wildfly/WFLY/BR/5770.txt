@@ -1,0 +1,429 @@
+Lock TimeoutException on CacheRegistry.close()
+Just happened on node shutdown when testing locally.
+
+
+
+
+
+
+19:22:21,114 INFO [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0004: Undertow 1.3.7.Final stopping
+
+
+
+
+19:22:21,114 ERROR [stderr] (ServerService Thread Pool -- 82) Exception in thread "ServerService Thread Pool -- 82" org.infinispan.util.concurrent.TimeoutException: Could not acquire lock on node2 in behalf of transaction GlobalTransaction:&lt;node2&gt;:4223:local. Current owner GlobalTransaction:&lt;node2&gt;:4217:local.
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.util.concurrent.locks.impl.DefaultPendingLockManager.timeout(DefaultPendingLockManager.java:224)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.util.concurrent.locks.impl.DefaultPendingLockManager.checkForPendingLock(DefaultPendingLockManager.java:196)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.util.concurrent.locks.impl.DefaultPendingLockManager.awaitPendingTransactionsForKey(DefaultPendingLockManager.java:115)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.checkPendingAndLockKey(AbstractTxLockingInterceptor.java:190)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockOrRegisterBackupLock(AbstractTxLockingInterceptor.java:115)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.visitDataWriteCommand(PessimisticLockingInterceptor.java:121)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.locking.AbstractLockingInterceptor.visitRemoveCommand(AbstractLockingInterceptor.java:71)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,115 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.TxInterceptor.enlistWriteAndInvokeNext(TxInterceptor.java:366)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.TxInterceptor.visitRemoveCommand(TxInterceptor.java:230)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.statetransfer.StateTransferInterceptor.handleTxWriteCommand(StateTransferInterceptor.java:304)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.statetransfer.StateTransferInterceptor.handleWriteCommand(StateTransferInterceptor.java:286)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.statetransfer.StateTransferInterceptor.visitRemoveCommand(StateTransferInterceptor.java:123)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.InvocationContextInterceptor.handleDefault(InvocationContextInterceptor.java:71)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+
+
+
+
+19:22:21,116 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.CacheImpl.executeCommandAndCommitIfNeeded(CacheImpl.java:1634)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.CacheImpl.removeInternal(CacheImpl.java:558)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.CacheImpl.remove(CacheImpl.java:549)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.DecoratedCache.remove(DecoratedCache.java:452)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.AbstractDelegatingCache.remove(AbstractDelegatingCache.java:296)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.server.registry.CacheRegistry.lambda$close$0(CacheRegistry.java:101)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.service.concurrent.StampedLockServiceExecutor.close(StampedLockServiceExecutor.java:55)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.server.registry.CacheRegistry.close(CacheRegistry.java:96)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.server.registry.CacheRegistryFactory$1.close(CacheRegistryFactory.java:56)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.server.registry.RegistryBuilder.stop(RegistryBuilder.java:88)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.service.AsynchronousServiceBuilder$2.run(AsynchronousServiceBuilder.java:130)
+
+
+
+
+19:22:21,117 ERROR [stderr] (ServerService Thread Pool -- 82) at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) Suppressed: org.infinispan.commons.CacheException: javax.transaction.RollbackException: Transaction marked as rollback only.
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.ee.infinispan.ActiveTransactionBatch.close(ActiveTransactionBatch.java:50)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.server.registry.CacheRegistry.lambda$close$0(CacheRegistry.java:102)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) ... 9 more
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) Caused by: javax.transaction.RollbackException: Transaction marked as rollback only.
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.transaction.tm.DummyTransaction.setRollbackOnly(DummyTransaction.java:146)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.TxInterceptor.enlistWriteAndInvokeNext(TxInterceptor.java:374)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.TxInterceptor.visitRemoveCommand(TxInterceptor.java:230)
+
+
+
+
+19:22:21,118 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.statetransfer.StateTransferInterceptor.handleTxWriteCommand(StateTransferInterceptor.java:304)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.statetransfer.StateTransferInterceptor.handleWriteCommand(StateTransferInterceptor.java:286)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.statetransfer.StateTransferInterceptor.visitRemoveCommand(StateTransferInterceptor.java:123)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.InvocationContextInterceptor.handleDefault(InvocationContextInterceptor.java:71)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.CacheImpl.executeCommandAndCommitIfNeeded(CacheImpl.java:1634)
+
+
+
+
+19:22:21,119 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.CacheImpl.removeInternal(CacheImpl.java:558)
+
+
+
+
+19:22:21,120 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.CacheImpl.remove(CacheImpl.java:549)
+
+
+
+
+19:22:21,120 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.DecoratedCache.remove(DecoratedCache.java:452)
+
+
+
+
+19:22:21,120 ERROR [stderr] (ServerService Thread Pool -- 82) at org.infinispan.cache.impl.AbstractDelegatingCache.remove(AbstractDelegatingCache.java:296)
+
+
+
+
+19:22:21,120 ERROR [stderr] (ServerService Thread Pool -- 82) at org.wildfly.clustering.server.registry.CacheRegistry.lambda$close$0(CacheRegistry.java:101)
+
+
+
+
+19:22:21,120 ERROR [stderr] (ServerService Thread Pool -- 82) ... 9 more
+
+
+
+
+19:22:31,124 WARN [org.infinispan.transaction.impl.TransactionTable] (ServerService Thread Pool -- 88) ISPN000100: Stopping, but there are 1 local transactions and 0 remote transactions that did not finish in time.
+
+
+
+
+19:22:31,125 INFO [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 88) WFLYCLINF0003: Stopped routing cache from web container
+
+
+
+
+19:22:31,128 INFO [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-7) ISPN000080: Disconnecting JGroups channel web
+
+
+
+
+19:22:31,128 INFO [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-7) ISPN000082: Stopping the RpcDispatcher for channel web
+
+
+
+
+19:22:31,141 INFO [org.jboss.as] (MSC service thread 1-5) WFLYSRV0050: WildFly Full 10.0.0.CR5-SNAPSHOT (WildFly Core 2.0.3.Final) stopped in 25086ms
+
+
+
+
+

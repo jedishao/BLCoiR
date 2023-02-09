@@ -1,0 +1,5 @@
+org/apache/camel/component/cxf/GreeterImplWithSleep.java
+org/apache/camel/component/cxf/interceptors/RawMessageContentRedirectInterceptor.java
+org/apache/camel/component/cxf/CxfClientCallback.java
+org/apache/camel/component/cxf/CXFWsdlOnlyTest.java
+

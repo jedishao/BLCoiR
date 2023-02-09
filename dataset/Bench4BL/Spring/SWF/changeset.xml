@@ -1,0 +1,12 @@
+<changeset>
+    <id>1437
+        <files>org/springframework/binding/expression/spel/SpringELExpressionParser.java
+            org/springframework/binding/expression/spel/SpringELExpression.java
+        </files>
+    </id>
+    <id>976
+        <files>org/springframework/faces/expression/ELDelegatingVariableResolver.java
+            org/springframework/faces/expression/ELDelegatingPropertyResolver.java
+        </files>
+    </id>
+</changeset>

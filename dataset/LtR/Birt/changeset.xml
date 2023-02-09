@@ -1,0 +1,33 @@
+<changeset>
+    <id>123840
+        <files>data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/script/FilterPassController.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/script/NEvaluator.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/script/ScriptEvalUtil.java
+        </files>
+    </id>
+    <id>208512
+        <files>data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/ConnectionManager.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/DriverManager.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/LogHelper.java
+        </files>
+    </id>
+    <id>284367
+        <files>data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/executor/DataSourceFactory.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/ConnectionManager.java
+        </files>
+    </id>
+    <id>287102
+        <files>core/org.eclipse.birt.core/src/org/eclipse/birt/core/framework/osgi/OSGILauncher.java
+        </files>
+    </id>
+    <id>314645
+        <files>data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/ConnectionManager.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/Driver.java
+            data/org.eclipse.birt.data/src/org/eclipse/birt/data/engine/odaconsumer/DriverManager.java
+        </files>
+    </id>
+    <id>195335
+        <files>engine/org.eclipse.birt.report.engine/src/org/eclipse/birt/report/engine/api/HTMLServerImageHandler.java
+        </files>
+    </id>
+</changeset>

@@ -1,0 +1,3 @@
+org/jboss/as/ejb3/remote/EJBRemoteTransactionPropagatingInterceptor.java
+org/jboss/as/ejb3/remote/EJBRemoteTransactionsRepository.java
+org/jboss/as/ejb3/subsystem/EJB3RemoteServiceAdd.java

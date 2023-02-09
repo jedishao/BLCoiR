@@ -1,0 +1,3 @@
+org/springframework/batch/item/file/mapping/BeanWrapperFieldSetMapperTests.java
+org/springframework/batch/item/file/mapping/BeanWrapperFieldSetMapper.java
+

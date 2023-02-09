@@ -1,0 +1,7 @@
+presto-hive/src/test/java/com/facebook/presto/hive/TestOrcPageSourceMemoryTracking.java
+presto-main/src/main/java/com/facebook/presto/operator/ScanFilterAndProjectOperator.java
+presto-main/src/main/java/com/facebook/presto/sql/gen/ExpressionCompiler.java
+presto-main/src/main/java/com/facebook/presto/sql/planner/LocalExecutionPlanner.java
+presto-main/src/test/java/com/facebook/presto/operator/TestScanFilterAndProjectOperator.java
+presto-main/src/test/java/com/facebook/presto/operator/scalar/FunctionAssertions.java
+

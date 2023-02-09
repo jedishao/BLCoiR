@@ -1,0 +1,4 @@
+pulsar-broker/src/main/java/org/apache/pulsar/broker/service/AbstractTopic.java
+pulsar-broker/src/main/java/org/apache/pulsar/broker/service/schema/BookkeeperSchemaStorage.java
+pulsar-broker/src/test/java/org/apache/pulsar/broker/service/PersistentTopicE2ETest.java
+

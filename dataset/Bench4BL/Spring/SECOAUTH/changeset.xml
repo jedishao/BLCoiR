@@ -1,0 +1,9 @@
+<changeset>
+    <id>311
+        <files>org/springframework/security/oauth2/http/converter/jaxb/AbstractJaxbMessageConverter.java
+            org/springframework/security/oauth2/http/converter/jaxb/TestJaxbOAuth2AccessTokenMessageConverter.java
+            org/springframework/security/oauth2/http/converter/jaxb/TestJaxbOAuth2ExceptionMessageConverter.java
+            org/springframework/security/oauth2/http/converter/jaxb/BaseJaxbMessageConverterTest.java
+        </files>
+    </id>
+</changeset>

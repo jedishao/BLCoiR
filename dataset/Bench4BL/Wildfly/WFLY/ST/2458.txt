@@ -1,0 +1,102 @@
+Re-deployment of a clustered application fail due to race-condition with infinispan.
+If a clustered application should be redeployed it looks like that infinispan is not able to stop complete until the deployer finish undeployment and start to deploy the new application. See the Exception below.
+The behaviour is the same for managed or unmanged deployments.
+If it is unmanaged the .failed marker file exists.
+After the failure the application is shown in the mgmt console without deployed Beans.
+A second deploy attempt will be successfull
+11:22:36,397 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (Incoming-1,shared=udp) ISPN000094: Received new cluster view: [home/ejb|1] (2) [home/ejb, node2/ejb]
+11:22:52,746 INFO  [org.jboss.weld.deployer] (MSC service thread 1-11) JBAS016009: Stopping weld service for deployment appone.ear
+11:22:52,751 INFO  [org.infinispan.eviction.PassivationManagerImpl] (ServerService Thread Pool  58) ISPN000029: Passivating all entries to disk
+11:22:52,752 INFO  [org.infinispan.eviction.PassivationManagerImpl] (ServerService Thread Pool  58) ISPN000030: Passivated 0 entries in 0 milliseconds
+11:22:52,759 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool  58) JBAS010282: Stopped repl cache from ejb container
+11:22:52,765 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool  60) JBAS010282: Stopped remote-connector-client-mappings cache from ejb container
+11:22:52,768 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-6) ISPN000080: Disconnecting and closing JGroups Channel
+11:22:52,771 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015877: Stopped deployment null (runtime-name: ejb.jar) in 36ms
+11:22:52,772 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-11) JBAS015877: Stopped deployment appone.ear (runtime-name: appone.ear) in 39ms
+11:22:52,773 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-5) JBAS015876: Starting deployment of "appone.ear" (runtime-name: "appone.ear")
+11:22:52,778 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) JBAS015876: Starting deployment of "null" (runtime-name: "ejb.jar")
+11:22:52,792 INFO  [org.jboss.weld.deployer] (MSC service thread 1-12) JBAS016002: Processing weld deployment appone.ear
+11:22:52,803 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) JBAS016002: Processing weld deployment ejb.jar
+11:22:52,805 INFO  [org.jboss.as.ejb3.deployment.processors.EjbJndiBindingsDeploymentUnitProcessor] (MSC service thread 1-5) JNDI bindings for session bean named AppOneBean in deployment unit subdeployment "ejb.jar" of deployment "appone.ear" are as follows:
+	java:global/appone/ejb/AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne
+	java:app/ejb/AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne
+	java:module/AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne
+	java:jboss/exported/appone/ejb/AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne
+	java:global/appone/ejb/AppOneBean
+	java:app/ejb/AppOneBean
+	java:module/AppOneBean
+11:22:52,807 INFO  [org.jboss.weld.deployer] (MSC service thread 1-11) JBAS016005: Starting Services for CDI deployment: appone.ear
+11:22:52,811 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) JBAS016008: Starting weld service for deployment appone.ear
+11:22:53,087 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (MSC service thread 1-6) ISPN000082: Stopping the RpcDispatcher
+11:22:53,118 INFO  [org.infinispan.remoting.transport.jgroups.JGroupsTransport] (ServerService Thread Pool  60) ISPN000078: Starting JGroups Channel
+11:22:53,119 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool  60) MSC000001: Failed to start service jboss.infinispan.ejb.global-component-registry: org.jboss.msc.service.StartException in service jboss.infinispan.ejb.global-component-registry: org.infinispan.manager.EmbeddedCacheManagerStartupException: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type JGroupsTransport
+	at org.jboss.as.clustering.msc.AsynchronousService$1.run(AsynchronousService.java:91) [wildfly-clustering-common-8.0.0.Beta2-SNAPSHOT.jar:8.0.0.Beta2-SNAPSHOT]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_25]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_25]
+	at java.lang.Thread.run(Thread.java:724) [rt.jar:1.7.0_25]
+	at org.jboss.threads.JBossThread.run(JBossThread.java:122) [jboss-threads-2.1.1.Final.jar:2.1.1.Final]
+Caused by: org.infinispan.manager.EmbeddedCacheManagerStartupException: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type JGroupsTransport
+	at org.infinispan.factories.GlobalComponentRegistry.start(GlobalComponentRegistry.java:241)
+	at org.jboss.as.clustering.infinispan.subsystem.GlobalComponentRegistryService.start(GlobalComponentRegistryService.java:33)
+	at org.jboss.as.clustering.msc.AsynchronousService$1.run(AsynchronousService.java:86) [wildfly-clustering-common-8.0.0.Beta2-SNAPSHOT.jar:8.0.0.Beta2-SNAPSHOT]
+	... 4 more
+Caused by: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type JGroupsTransport
+	at org.infinispan.commons.util.ReflectionUtil.invokeAccessibly(ReflectionUtil.java:185)
+	at org.infinispan.factories.AbstractComponentRegistry$PrioritizedMethod.invoke(AbstractComponentRegistry.java:869)
+	at org.infinispan.factories.AbstractComponentRegistry.invokeStartMethods(AbstractComponentRegistry.java:638)
+	at org.infinispan.factories.AbstractComponentRegistry.internalStart(AbstractComponentRegistry.java:627)
+	at org.infinispan.factories.AbstractComponentRegistry.start(AbstractComponentRegistry.java:530)
+	at org.infinispan.factories.GlobalComponentRegistry.start(GlobalComponentRegistry.java:219)
+	... 6 more
+Caused by: org.infinispan.commons.CacheException: Unable to start JGroups Channel
+	at org.infinispan.remoting.transport.jgroups.JGroupsTransport.startJGroupsChannelIfNeeded(JGroupsTransport.java:196)
+	at org.infinispan.remoting.transport.jgroups.JGroupsTransport.start(JGroupsTransport.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.7.0_25]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) [rt.jar:1.7.0_25]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.7.0_25]
+	at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_25]
+	at org.infinispan.commons.util.ReflectionUtil.invokeAccessibly(ReflectionUtil.java:183)
+	... 11 more
+Caused by: java.lang.IllegalStateException: channel is closed
+	at org.jgroups.JChannel.checkClosed(JChannel.java:902)
+	at org.jgroups.JChannel._preConnect(JChannel.java:522)
+	at org.jgroups.JChannel.connect(JChannel.java:284)
+	at org.jgroups.JChannel.connect(JChannel.java:275)
+	at org.infinispan.remoting.transport.jgroups.JGroupsTransport.startJGroupsChannelIfNeeded(JGroupsTransport.java:194)
+	... 17 more
+11:22:53,128 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) JBAS016009: Stopping weld service for deployment appone.ear
+11:22:53,137 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) JBAS015877: Stopped deployment null (runtime-name: ejb.jar) in 11ms
+11:22:53,138 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) JBAS015877: Stopped deployment appone.ear (runtime-name: appone.ear) in 12ms
+11:22:53,143 INFO  [org.jboss.as.controller] (DeploymentScanner-threads - 1) JBAS014774: Service status report
+JBAS014775:    New missing/unsatisfied dependencies:
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.CREATE (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".moduleDeploymentRuntimeInformation, service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START, service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.VIEW."org.jboss.as.quickstarts.ejb.multi.server.app.AppOne".REMOTE] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".deploymentCompleteService, service jboss.deployment.subunit."appone.ear"."ejb.jar".moduleDeploymentRuntimeInformationStart] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.VIEW."org.jboss.as.quickstarts.ejb.multi.server.app.AppOne".REMOTE (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".moduleDeploymentRuntimeInformation, service jboss.naming.context.java.module.appone.ejb."AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne", service jboss.naming.context.java.global.appone.ejb.AppOneBean, service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START, JBAS014799: ... and 5 more ] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.WeldInstantiator (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.ejb.non-functional-timerservice (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".deploymentCompleteService (missing) dependents: [service jboss.deployment.unit."appone.ear".deploymentCompleteService] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START] 
+      service jboss.deployment.subunit."appone.ear"."ejb.jar".moduleDeploymentRuntimeInformation (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START, service jboss.deployment.subunit."appone.ear"."ejb.jar".moduleDeploymentRuntimeInformationStart] 
+      service jboss.naming.context.java.app.appone.ejb.AppOneBean (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.app.appone.ejb."AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne" (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.BeanManager (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.DefaultContextService (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.DefaultDataSource (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.DefaultManagedExecutorService (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.DefaultManagedScheduledExecutorService (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.DefaultManagedThreadFactory (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.EJBContext (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.TimerService (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.TransactionSynchronizationRegistry (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.UserTransaction (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.env (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.comp.appone.ejb.AppOneBean.env."org.jboss.as.quickstarts.ejb.multi.server.app.AppOneBean".context (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService, service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.START] 
+      service jboss.naming.context.java.global.appone.ejb.AppOneBean (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.global.appone.ejb."AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne" (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.module.appone.ejb.AppOneBean (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.module.appone.ejb."AppOneBean!org.jboss.as.quickstarts.ejb.multi.server.app.AppOne" (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".component.AppOneBean.JndiBindingsService] 
+      service jboss.naming.context.java.module.appone.ejb.BeanManager (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService] 
+      service jboss.naming.context.java.module.appone.ejb.env (missing) dependents: [service jboss.deployment.subunit."appone.ear"."ejb.jar".jndiDependencyService] 
+JBAS014777:   Services which failed to start:      service jboss.infinispan.ejb.global-component-registry

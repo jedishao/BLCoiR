@@ -1,1 +1,0 @@
-Bug 223843  [RCP] Session tests to confirm Advisor threadingWe have tests in our RCP suite that verify that all advisor methods are being called from the UI thread.  This only checks the clean startup case, however.  Restoration should be confirmed as well.  We need a session test suite that verifies everything our RCP test does with an existing workspace.

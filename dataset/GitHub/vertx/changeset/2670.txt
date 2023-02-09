@@ -1,0 +1,8 @@
+src/main/java/io/vertx/core/http/impl/HttpChannelConnector.java
+src/main/java/io/vertx/core/impl/VertxImpl.java
+src/main/java/io/vertx/core/net/impl/ChannelProvider.java
+src/main/java/io/vertx/core/net/impl/NetClientImpl.java
+src/main/java/io/vertx/core/net/impl/ProxyChannelProvider.java
+src/main/java/io/vertx/core/net/impl/transport/Transport.java
+src/test/java/io/vertx/core/impl/GlobalEventExecutorNotificationTest.java
+

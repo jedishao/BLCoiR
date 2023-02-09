@@ -1,1 +1,1 @@
-Bug 168806  [DataBinding] Realm.ensureWorkerThreadIsRunning() doesn't start a new thread
+Realm.ensureWorkerThreadIsRunning() doesn't start a new thread.

@@ -1,0 +1,6 @@
+org/jboss/as/ejb3/component/singleton/SingletonComponent.java
+org/jboss/as/ejb3/concurrency/ContainerManagedConcurrencyInterceptorFactory.java
+org/jboss/as/ejb3/concurrency/LockableComponent.java
+org/jboss/as/ejb3/component/singleton/SingletonComponentDescription.java
+org/jboss/as/ee/component/interceptors/InterceptorOrder.java
+

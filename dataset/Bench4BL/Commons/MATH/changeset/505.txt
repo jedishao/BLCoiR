@@ -1,0 +1,4 @@
+org/apache/commons/math/stat/inference/ChiSquareFactoryTest.java
+org/apache/commons/math/stat/inference/TTestFactoryTest.java
+org/apache/commons/math/stat/inference/TestUtils.java
+

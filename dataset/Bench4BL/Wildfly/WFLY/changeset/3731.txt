@@ -1,0 +1,2 @@
+org/jboss/as/ejb3/component/stateful/StatefulSessionSynchronizationInterceptor.java
+

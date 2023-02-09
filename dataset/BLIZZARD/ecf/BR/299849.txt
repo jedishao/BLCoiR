@@ -1,4 +1,4 @@
-RegistrySharedObject#handle* can throw NPE.
+RegistrySharedObject#handleAddRegistrationcan throw NPE.
 In this code:
 if (remoteContainerID == null || getLocalContainerID().equals(remoteContainerID)) {
 return;

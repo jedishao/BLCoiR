@@ -1,0 +1,6 @@
+org/apache/hadoop/hive/ql/session/SessionState.java
+org/apache/hadoop/hive/ql/TestMTQueries.java
+org/apache/hadoop/hive/ql/metadata/Hive.java
+org/apache/hadoop/hive/ql/QTestUtil.java
+org/apache/hadoop/hive/conf/HiveConf.java
+

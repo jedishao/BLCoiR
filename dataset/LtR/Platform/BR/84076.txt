@@ -1,3 +1,0 @@
-Bug 84076  [Viewers][Progress]Refreshing Variables View blocks UI threadThe deferred tree content manager computes a label for each "fetch  children" 
-job as an element's label. In the case of the debugger, this is bad, as it can 
-cause communication with the target.

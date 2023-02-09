@@ -1,0 +1,14 @@
+org/apache/hadoop/hive/ql/exec/spark/session/SparkSessionManagerImpl.java
+org/apache/hive/hcatalog/common/HiveClientCache.java
+org/apache/hadoop/hive/ql/exec/mr/HadoopJobExecHelper.java
+org/apache/hadoop/hive/metastore/HiveMetaStore.java
+org/apache/hadoop/hive/ql/lockmgr/zookeeper/CuratorFrameworkSingleton.java
+org/apache/hadoop/hive/ql/hooks/ATSHook.java
+org/apache/hadoop/hive/ql/exec/tez/TezJobMonitor.java
+org/apache/hive/service/server/HiveServer2.java
+org/apache/hive/beeline/BeeLine.java
+org/apache/hadoop/hive/cli/CliDriver.java
+org/apache/hive/common/util/ShutdownHookManager.java
+org/apache/hive/common/util/TestShutdownHookManager.java
+org/apache/hive/ptest/api/server/ExecutionController.java
+

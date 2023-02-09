@@ -1,1 +1,0 @@
-Bug 307991  IE browser zone elevation blocks standard browser UI

@@ -1,0 +1,9 @@
+org/springframework/amqp/rabbit/core/RabbitAdminTests.java
+org/springframework/amqp/rabbit/connection/AbstractConnectionFactoryTests.java
+org/springframework/amqp/rabbit/core/RabbitTemplateIntegrationTests.java
+org/springframework/amqp/rabbit/listener/SimpleMessageListenerContainerIntegration2Tests.java
+org/springframework/amqp/rabbit/listener/SimpleMessageListenerContainerTests.java
+org/springframework/amqp/rabbit/core/BatchingRabbitTemplateTests.java
+org/springframework/amqp/rabbit/listener/MessageListenerContainerErrorHandlerIntegrationTests.java
+org/springframework/amqp/rabbit/connection/LocalizedQueueConnectionFactoryTests.java
+

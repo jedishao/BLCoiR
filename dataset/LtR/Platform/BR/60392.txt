@@ -1,9 +1,0 @@
-Bug 60392  [Progress] Blocked/Waiting/Running job dialogs should be resizableDialogs and windows with dynamic contents should always be resizable.
-The following dialogs should be updated:
-
-- "User Operation is Waiting"
-The user operation is waiting for background work to complete
-...
-
-- The generic job dialog with the three buttons "Run in Background", "Cancel",
-and "Details >>"

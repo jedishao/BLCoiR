@@ -1,1 +1,1 @@
-Bug 264399  [DND] A deadlock occurs during automated testing of a SWT application on Linux/GTK/x86_64
+A deadlock occurs during automated testing of a SWT application on Linux/GTK/x86_64.

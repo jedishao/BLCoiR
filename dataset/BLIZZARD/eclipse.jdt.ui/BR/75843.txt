@@ -1,33 +1,20 @@
-Bug 75843 – Deadlock arised when calling JDIDebugModel.createMethodEntryBreakpoint
-We are now having quite a few cases where a deadlock occurred when we were
-trying to created an internal breakpoint by calling
-JDIDebugModel.createMethodEntryBreakpoint.
-The deadlock will freeze the entire
-UI.
+Deadlock arised when calling JDIDebugModel.createMethodEntryBreakpoint.
+We are now having quite a few cases where a deadlock occurred when we were trying to created an internal breakpoint by calling JDIDebugModel.createMethodEntryBreakpoint.
+The deadlock will freeze the entire UI.
 The situation can be summarized into the following:
 1.
-The UI thread (main thread) is in the process of displaying a GUI component,
-e.g.
-a dialog
+The UI thread (main thread) is in the process of displaying a GUI component, e.g. a dialog
 2.
-The processing of the UI component triggers our debugger to call
-JDIDebugModel.createMethodEntryBreakpoint to set an internal breakpoint.
+The processing of the UI component triggers our debugger to call JDIDebugModel.createMethodEntryBreakpoint to set an internal breakpoint.
 3.
-The process of creating the method entry breakpoint results in the
-WorkbenchContentProvider.resourceChanged(IResourceChangeEvent) to be executed,
-which calls Display.syncExec(Runnable).
+The process of creating the method entry breakpoint results in the WorkbenchContentProvider.resourceChanged(IResourceChangeEvent) to be executed, which calls Display.syncExec(Runnable).
 4.
 And we have a deadlock.
-Since I have already discussed this issue with folks from both the JDT team and
-UI team, I just want to reemphasize a few points:
+Since I have already discussed this issue with folks from both the JDT team an UI team, I just want to reemphasize a few points:
 1.
-Delay the displaying of the GUI component is not a valid solution, because
-it is the displaying of the GUI component that triggers the rest of the
-reaction chain.
+Delay the displaying of the GUI component is not a valid solution, because it is the displaying of the GUI component that triggers the rest of the reaction chain.
 2.
-The process of displaying the GUI component is pending because the
-information required by the GUI component cannot be completed due to the
-breakpoint creation.
+The process of displaying the GUI component is pending because the information required by the GUI component cannot be completed due to the breakpoint creation.
 I am including the thread snapshots when the deadlock is occurred:
 The main thread shows:
 Thread [main] (Suspended)
@@ -63,13 +50,10 @@ WorkbenchContentProvider.resourceChanged(IResourceChangeEvent) line: 107
 NotificationManager$2.run() line: 283
 InternalPlatform.run(ISafeRunnable) line: 615
 Platform.run(ISafeRunnable) line: 747
-NotificationManager.notify(ResourceChangeListenerList$ListenerEntry[],
-IResourceChangeEvent, boolean) line: 277
-NotificationManager.broadcastChanges(ElementTree, int, boolean) line:
-151
+NotificationManager.notify(ResourceChangeListenerList$ListenerEntry[], IResourceChangeEvent, boolean) line: 277
+NotificationManager.broadcastChanges(ElementTree, int, boolean) line:151
 Workspace.broadcastChanges(int, boolean) line: 172
-Workspace.endOperation(ISchedulingRule, boolean, IProgressMonitor)
-line: 900
+Workspace.endOperation(ISchedulingRule, boolean, IProgressMonitor) line: 900
 Workspace.run(IWorkspaceRunnable, ISchedulingRule, int,
 IProgressMonitor) line: 1682
 JavaMethodEntryBreakpoint(JavaBreakpoint).run(ISchedulingRule,
@@ -78,13 +62,9 @@ JavaMethodEntryBreakpoint.<init>(IResource, String, String, String,
 int, int, int, int, boolean, Map) line: 87
 JDIDebugModel.createMethodEntryBreakpoint(IResource, String, String,
 String, int, int, int, int, boolean, Map) line: 553
-WSAJavaMethodEntryBreakpoint.setBreakpoint(IResource, IDebugTarget)
-line: 35
-WSAJavaMethodEntryBreakpoint
-(WSAJavaMethodBreakpoint).setTemporaryBreakpoint(IResource, IDebugTarget) line:
-35
-WSABreakpointManager.setMethodEntryBreakpoint(String, String, String)
-line: 893
+WSAJavaMethodEntryBreakpoint.setBreakpoint(IResource, IDebugTarget)line: 35
+WSAJavaMethodEntryBreakpoint(WSAJavaMethodBreakpoint).setTemporaryBreakpoint(IResource, IDebugTarget) line:35
+WSABreakpointManager.setMethodEntryBreakpoint(String, String, String) line: 893
 WSAJavaThread.handleBreakpointHit(IBreakpoint) line: 468
 WSAJavaThread.handleDebugEvents(DebugEvent[]) line: 255
 WSAJavaDebugTarget.filterJavaEvents(DebugEvent[]) line: 731

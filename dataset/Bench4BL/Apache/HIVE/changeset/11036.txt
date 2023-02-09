@@ -1,0 +1,7 @@
+org/apache/hadoop/hive/metastore/TestMetastoreVersion.java
+org/apache/hive/jdbc/TestJdbcWithMiniHS2.java
+org/apache/hadoop/hive/conf/HiveConf.java
+org/apache/hadoop/hive/ql/exec/Utilities.java
+org/apache/hive/beeline/cli/TestHiveCli.java
+org/apache/hadoop/hive/metastore/ObjectStore.java
+

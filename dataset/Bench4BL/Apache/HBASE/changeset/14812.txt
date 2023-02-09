@@ -1,0 +1,3 @@
+org/apache/hadoop/hbase/client/ResultBoundedCompletionService.java
+org/apache/hadoop/hbase/client/ScannerCallableWithReplicas.java
+

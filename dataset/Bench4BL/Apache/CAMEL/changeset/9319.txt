@@ -1,0 +1,4 @@
+org/apache/camel/component/ssh/SshConsumer.java
+org/apache/camel/component/ssh/SshProducer.java
+org/apache/camel/component/ssh/SshEndpoint.java
+

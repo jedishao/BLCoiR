@@ -1,1 +1,0 @@
-Bug 64930  [Progress] Strange build behaviour when autobuild is off and workspace locked

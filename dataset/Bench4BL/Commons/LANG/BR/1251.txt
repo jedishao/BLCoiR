@@ -1,0 +1,3 @@
+SerializationUtils.ClassLoaderAwareObjectInputStream should use static initializer to initialize primitiveTypes map.
+SerializationUtils.ClassLoaderAwareObjectInputStream should use static initializer to initialize primitiveTypes map because initializing the map in the constructor of ClassLoaderAwareObjectInputStream would break thread safety. 
+java.util.HashMap is not thread safe.

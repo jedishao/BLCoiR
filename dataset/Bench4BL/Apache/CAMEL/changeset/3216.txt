@@ -1,0 +1,3 @@
+org/apache/camel/impl/ScheduledPollConsumer.java
+org/apache/camel/component/file/FileConsumerPollStrategyRollbackThrowExceptionTest.java
+

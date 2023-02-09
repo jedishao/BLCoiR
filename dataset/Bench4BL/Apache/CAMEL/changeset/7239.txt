@@ -1,0 +1,3 @@
+org/apache/camel/component/validator/ValidatorRouteTest.java
+org/apache/camel/processor/validation/ValidatingProcessor.java
+

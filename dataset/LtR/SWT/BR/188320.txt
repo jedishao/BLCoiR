@@ -1,5 +1,4 @@
-Bug 188320  Possible Deadlock in JFace ModalContextBuild ID: M20070212-1330
-
+Possible Deadlock in JFace ModalContextBuild ID: M20070212-1330.
 The inner class ModalContextThread is not threadsafe and sometimes leads to a deadlock, at least under Linux + GTK.
 
 The problem is, that the block() method not always returns, when the run() method is finished. 

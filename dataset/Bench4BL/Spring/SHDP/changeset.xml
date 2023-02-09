@@ -1,0 +1,7 @@
+<changeset>
+    <id>374
+        <files>org/springframework/data/hadoop/store/support/OutputStoreObjectSupport.java
+            org/springframework/data/hadoop/store/output/AbstractDataStreamWriter.java
+        </files>
+    </id>
+</changeset>

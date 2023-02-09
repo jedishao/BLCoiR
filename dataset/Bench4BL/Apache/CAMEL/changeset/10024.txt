@@ -1,0 +1,11 @@
+org/apache/camel/component/mina2/Mina2Producer.java
+org/apache/camel/component/mina2/Mina2TextLineDelimiter.java
+org/apache/camel/component/mina2/Mina2NoResponseFromServerTest.java
+org/apache/camel/component/mina2/Mina2Consumer.java
+org/apache/camel/component/mina2/Mina2ProducerShutdownMockTest.java
+org/apache/camel/component/mina2/Mina2ExchangeTimeOutTest.java
+org/apache/camel/component/mina2/Mina2ClientModeTcpTextlineDelimiterTest.java
+org/apache/camel/component/mina2/Mina2EncodingTest.java
+org/apache/camel/component/mina2/Mina2TransferExchangeOptionTest.java
+org/apache/camel/component/mina2/Mina2ReverseProtocolHandler.java
+

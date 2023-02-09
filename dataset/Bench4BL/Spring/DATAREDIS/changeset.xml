@@ -1,0 +1,6 @@
+<changeset>
+    <id>310
+        <files>org/springframework/data/redis/cache/RedisCache.java
+        </files>
+    </id>
+</changeset>

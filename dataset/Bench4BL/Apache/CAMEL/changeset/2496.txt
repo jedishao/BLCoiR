@@ -1,0 +1,5 @@
+org/apache/camel/converter/stream/CachedOutputStream.java
+org/apache/camel/converter/stream/CachedOutputStreamTest.java
+org/apache/camel/converter/stream/FileInputStreamCache.java
+org/apache/camel/processor/SplitterStreamCacheTest.java
+

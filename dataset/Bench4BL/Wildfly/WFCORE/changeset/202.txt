@@ -1,0 +1,4 @@
+org/jboss/as/cli/handlers/ConnectionInfoHandler.java
+org/jboss/as/cli/impl/CLIModelControllerClient.java
+org/jboss/as/cli/impl/CommandContextImpl.java
+

@@ -1,0 +1,10 @@
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/decorators/DecorationScheduler.java
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/decorators/DecoratorManager.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/DecoratorTableTreeTest.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/DecoratorTableTreeView.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/DecoratorTableView.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/DecoratorTestPart.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/DecoratorTreeView.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/DecoratorViewerTest.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/FontDecorator.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/decorators/ForegroundColorDecorator.java

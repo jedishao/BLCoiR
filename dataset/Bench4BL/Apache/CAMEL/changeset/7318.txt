@@ -1,0 +1,9 @@
+org/apache/camel/component/hdfs/HdfsConsumerTest.java
+org/apache/camel/component/hdfs/HdfsConsumer.java
+org/apache/camel/component/hdfs2/HdfsConsumerTest.java
+org/apache/camel/component/hdfs2/HdfsInputStream.java
+org/apache/camel/component/hdfs2/integration/HdfsProducerConsumerIntegrationTest.java
+org/apache/camel/component/hdfs2/HdfsConsumer.java
+org/apache/camel/component/hdfs2/integration/HdfsAppendTest.java
+org/apache/camel/component/hdfs/HdfsInputStream.java
+

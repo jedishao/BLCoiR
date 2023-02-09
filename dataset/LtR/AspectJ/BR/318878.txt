@@ -1,4 +1,6 @@
-Bug 318878  Pertarget aspect instantiation is not thread-safeThe way in which pertarget aspects compiled with ajc check if a given target already has an aspect is not thread safe. When two different threads trigger an advice on a target object for the first time at the same time, sometimes the aspect for that target gets created twice.
+Pertarget aspect instantiation is not thread-safe.
+The way in which pertarget aspects compiled with ajc check if a given target already has an aspect is not thread safe.
+When two different threads trigger an advice on a target object for the first time at the same time, sometimes the aspect for that target gets created twice.
 
 The following code demonstrates the problem:
 

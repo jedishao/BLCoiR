@@ -1,0 +1,4 @@
+org/springframework/xml/xpath/Jaxp13XPathTemplate.java
+org/springframework/ws/server/endpoint/adapter/XPathParamAnnotationMethodEndpointAdapter.java
+org/springframework/xml/xpath/Jaxp13XPathExpressionFactory.java
+

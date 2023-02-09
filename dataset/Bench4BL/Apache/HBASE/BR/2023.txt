@@ -1,4 +1,5 @@
-Client sync block can cause 1 thread of a multi-threaded client to block all othersTake a highly multithreaded client, processing a few thousand requests a second. 
+Client sync block can cause 1 thread of a multi-threaded client to block all others.
+Take a highly multithreaded client, processing a few thousand requests a second. 
 If a table goes offline, one thread will get stuck in "locateRegionInMeta" which is located inside the following sync block:
         synchronized(userRegionLock)
 {

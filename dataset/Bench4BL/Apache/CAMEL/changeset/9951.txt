@@ -1,0 +1,4 @@
+org/apache/camel/component/websocket/WebsocketComponent.java
+org/apache/camel/component/websocket/WebsocketEndpointConfigurationTest.java
+org/apache/camel/component/websocket/WebsocketConsumerRouteTest.java
+

@@ -1,0 +1,3 @@
+org/wildfly/mod_cluster/undertow/metric/UndertowBoottimeHandler.java
+org/wildfly/mod_cluster/undertow/metric/MetricDeploymentProcessor.java
+

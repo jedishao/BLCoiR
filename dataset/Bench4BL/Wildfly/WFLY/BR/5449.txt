@@ -1,0 +1,4 @@
+Custom socket factory for JGroups subsystem not set correctlyWildfly's JChannelFactory tries to set a custom socket factory on the JGroups transport.
+This is not the correct API to use, and it gets overwritten when the JGroups channel starts.
+A custom socket factory should be set on the JChannel.
+The only time the custom socket factory is currently used is if there's a race condition where two channels are started at the same time, and the custom factory is set just before the other channel uses it.

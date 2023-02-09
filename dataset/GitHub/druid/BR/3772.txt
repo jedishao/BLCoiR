@@ -1,0 +1,4 @@
+Race condition in KafkaLookupExtractorFactory.
+          #3403 (comment)
+FYI @gvsmirnov: just creating an issue in order not to forget about it
+      

@@ -1,0 +1,12 @@
+org/apache/hadoop/hive/ql/io/rcfile/truncate/ColumnTruncateTask.java
+org/apache/hadoop/hive/ql/exec/mr/ExecDriver.java
+org/apache/hadoop/hive/ql/exec/mr/HadoopJobExecHelper.java
+org/apache/hadoop/hive/ql/io/merge/MergeFileTask.java
+org/apache/hadoop/hive/ql/TestTxnCommands2.java
+org/apache/hadoop/hive/ql/lockmgr/DbTxnManager.java
+org/apache/hadoop/hive/ql/exec/tez/TezJobMonitor.java
+org/apache/hadoop/hive/conf/HiveConf.java
+org/apache/hadoop/hive/ql/Context.java
+org/apache/hadoop/hive/ql/io/rcfile/stats/PartialScanTask.java
+org/apache/hadoop/hive/ql/exec/tez/TezTask.java
+

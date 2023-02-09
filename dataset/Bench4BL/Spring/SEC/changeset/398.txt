@@ -1,0 +1,6 @@
+org/springframework/security/context/HttpSessionContextIntegrationFilterTests.java
+org/acegisecurity/context/HttpSessionContextIntegrationFilter.java
+org/acegisecurity/context/HttpSessionContextIntegrationFilterTests.java
+org/acegisecurity/ui/AbstractProcessingFilter.java
+org/acegisecurity/ui/AbstractProcessingFilterTests.java
+

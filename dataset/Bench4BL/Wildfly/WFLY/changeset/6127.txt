@@ -1,0 +1,6 @@
+org/jboss/as/test/integration/jpa/transaction/TransactionTestCase.java
+org/jboss/as/jpa/transaction/TransactionUtil.java
+org/jboss/as/jpa/messages/JpaLogger.java
+org/jboss/as/jpa/container/TransactionScopedEntityManager.java
+org/jboss/as/test/integration/jpa/transaction/UnsynchronizedSFSB.java
+org/jboss/as/jpa/container/ExtendedEntityManager.java

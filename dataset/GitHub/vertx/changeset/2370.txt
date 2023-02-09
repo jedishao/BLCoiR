@@ -1,0 +1,9 @@
+src/main/java/io/vertx/core/http/impl/ConnectionManager.java
+src/main/java/io/vertx/core/http/impl/HttpChannelConnector.java
+src/main/java/io/vertx/core/http/impl/pool/ConnectionListener.java
+src/main/java/io/vertx/core/http/impl/pool/ConnectionProvider.java
+src/main/java/io/vertx/core/http/impl/pool/Pool.java
+src/test/java/io/vertx/test/core/Http1xTest.java
+src/test/java/io/vertx/test/core/HttpTest.java
+src/test/java/io/vertx/test/core/net/ConnectionPoolTest.java
+

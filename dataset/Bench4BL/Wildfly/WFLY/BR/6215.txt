@@ -1,0 +1,7 @@
+SessionSynchronization callbacks allow concurrent access to SFSBIssue first encountered by customer in EAP5 (JBPAPP-11239).
+Assume a local SFSB, B1, with container managed transactions and a calling SFSB, B2, which has bean managed transactions.  
+B1 implements the SessionSynchronization interface.  
+When B2's bean managed transaction timesout whilst executing B1.exampleMethod(), B2's transaction aborts and the transaction reaper thread calls B1.afterCompletion().  
+However, the original worker thread that was executing B1.exampleMethod() continues to execute B1.exampleMethod() until it has completed.  
+Hence it is possible for the B1 SFSB to be accessed concurrently.  
+It is also possible for B1.afterCompletion() to finish executing before B1.exampleMethod().

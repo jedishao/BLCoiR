@@ -1,0 +1,5 @@
+org/jboss/as/host/controller/ManagedServerProxy.java
+org/jboss/as/test/integration/domain/management/util/DomainTestConnection.java
+org/jboss/as/host/controller/mgmt/ServerToHostOperationHandlerFactoryService.java
+org/jboss/as/host/controller/ManagedServer.java
+

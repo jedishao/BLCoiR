@@ -1,0 +1,10 @@
+org/apache/hadoop/hive/ql/lockmgr/TestDbTxnManager.java
+org/apache/hadoop/hive/ql/lockmgr/DbLockManager.java
+org/apache/hadoop/hive/conf/HiveConf.java
+org/apache/hadoop/hive/ql/lockmgr/TestDbTxnManager2.java
+org/apache/hadoop/hive/ql/exec/DDLTask.java
+org/apache/hadoop/hive/metastore/txn/TxnHandler.java
+org/apache/hadoop/hive/ql/lockmgr/HiveTxnManager.java
+org/apache/hadoop/hive/ql/lockmgr/DbTxnManager.java
+org/apache/hadoop/hive/ql/ErrorMsg.java
+

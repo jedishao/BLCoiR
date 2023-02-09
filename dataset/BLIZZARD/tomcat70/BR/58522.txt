@@ -1,4 +1,4 @@
-58522 â€“ concurrency problem corrupts WARDirContext.Entry children
+concurrency problem corrupts WARDirContext.Entry children.
 We discovered a problem where calling ServletContext.getResourcePaths from a jsp may corrupt WARDirContext.Entry.children.
 The WARDirContext.list(Entry) method performs an Arrays.sort(children) call which is not thread-safe.
 Calling this from multiple request threads may result in the children array losing some entries and duplicating others.

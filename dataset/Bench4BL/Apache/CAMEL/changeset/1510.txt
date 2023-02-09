@@ -1,0 +1,4 @@
+org/apache/camel/processor/BatchProcessor.java
+org/apache/camel/processor/StreamResequencer.java
+org/apache/camel/processor/StreamResequencerTest.java
+

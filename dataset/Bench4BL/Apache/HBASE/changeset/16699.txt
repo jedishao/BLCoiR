@@ -1,0 +1,10 @@
+org/apache/hadoop/hbase/quotas/OperationQuota.java
+org/apache/hadoop/hbase/quotas/RateLimiter.java
+org/apache/hadoop/hbase/quotas/TimeBasedLimiter.java
+org/apache/hadoop/hbase/quotas/QuotaLimiter.java
+org/apache/hadoop/hbase/quotas/TestRateLimiter.java
+org/apache/hadoop/hbase/quotas/AverageIntervalRateLimiter.java
+org/apache/hadoop/hbase/quotas/DefaultOperationQuota.java
+org/apache/hadoop/hbase/quotas/NoopOperationQuota.java
+org/apache/hadoop/hbase/quotas/NoopQuotaLimiter.java
+

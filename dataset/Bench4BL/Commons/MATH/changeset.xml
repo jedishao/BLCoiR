@@ -1,0 +1,22 @@
+<changeset>
+    <id>505
+        <files>org/apache/commons/math/stat/inference/ChiSquareFactoryTest.java
+            org/apache/commons/math/stat/inference/TTestFactoryTest.java
+            src/main/java/org/apache/commons/math3/stat/inference/TestUtils.java
+        </files>
+    </id>
+    <id>1294
+        <files>src/main/java/org/apache/commons/math3/analysis/polynomials/PolynomialsUtils.java
+        </files>
+    </id>
+    <id>1134
+        <files>org/apache/commons/math3/analysis/interpolation/TricubicSplineInterpolator.java
+            org/apache/commons/math3/analysis/interpolation/BicubicSplineInterpolator.java
+            org/apache/commons/math3/analysis/interpolation/BicubicSplineInterpolatingFunction.java
+        </files>
+    </id>
+    <id>899
+        <files>org/apache/commons/math3/random/SynchronizedRandomGenerator.java
+        </files>
+    </id>
+</changeset>

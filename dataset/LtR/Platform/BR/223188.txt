@@ -1,1 +1,0 @@
-Bug 223188  [ErrorHandling] Crash of ModalContext thread freezes UI thread

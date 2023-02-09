@@ -1,0 +1,13 @@
+org/springframework/security/web/servletapi/HttpServlet3RequestFactory.java
+org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilterTests.java
+org/springframework/security/web/FilterInvocation.java
+org/springframework/security/web/context/request/async/WebAsyncManagerIntegrationFilterTests.java
+org/springframework/security/web/context/request/async/SecurityContextCallableProcessingInterceptor.java
+org/springframework/security/web/context/request/async/SecurityContextCallableProcessingInterceptorTests.java
+org/springframework/security/web/context/SaveContextOnUpdateOrErrorResponseWrapper.java
+org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilter.java
+org/springframework/security/config/http/SecurityFilters.java
+org/springframework/security/web/savedrequest/DefaultSavedRequest.java
+org/springframework/security/web/authentication/rememberme/AbstractRememberMeServicesTests.java
+org/springframework/security/config/http/HttpConfigurationBuilder.java
+

@@ -1,3 +1,0 @@
-Bug 267884  Select All does not work in TextEditor Example with block selectionI20090310-0100, same on WinXP, same in 3.5M5/Carbon
-
-Select All (Ctrl+A) does not work in the TextEditor Example with block selection. It just selects column 0.

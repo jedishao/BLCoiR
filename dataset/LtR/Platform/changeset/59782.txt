@@ -1,0 +1,6 @@
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/dialogs/EventLoopProgressMonitor.java
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/progress/BlockedJobsDialog.java
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/progress/ErrorNotificationDialog.java
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/progress/ProgressManager.java
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/progress/ProgressManagerUtil.java
+bundles/org.eclipse.ui.workbench/Eclipse UI/org/eclipse/ui/internal/progress/ProgressMonitorFocusJobDialog.java

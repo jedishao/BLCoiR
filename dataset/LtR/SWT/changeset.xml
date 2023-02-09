@@ -1,0 +1,22 @@
+<changeset>
+    <id>183830
+        <files>org/eclipse/swt/internal/opengl/glx/GLX.java
+        </files>
+    </id>
+    <id>188320
+        <files>org/eclipse/swt/widgets/Synchronizer.java
+        </files>
+    </id>
+    <id>176792
+        <files>org/eclipse/swt/internal/ole/win32/COMObject.java
+        </files>
+    </id>
+    <id>338965
+        <files>bundles/org.eclipse.swt/Eclipse SWT/carbon/org/eclipse/swt/widgets/MessageBox.java
+        </files>
+    </id>
+    <id>264399
+        <files>bundles/org.eclipse.swt/Eclipse SWT/gtk/org/eclipse/swt/widgets/Control.java
+        </files>
+    </id>
+</changeset>

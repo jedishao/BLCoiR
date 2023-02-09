@@ -1,0 +1,6 @@
+org/apache/camel/component/exec/impl/DefaultExecCommandExecutor.java
+org/apache/camel/component/exec/ExecDefaultExecutor.java
+org/apache/camel/component/exec/ExecProducer.java
+org/apache/camel/component/exec/ExecEndpointTest.java
+org/apache/camel/component/exec/ExecEndpoint.java
+

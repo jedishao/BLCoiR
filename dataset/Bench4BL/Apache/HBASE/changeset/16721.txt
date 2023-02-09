@@ -1,0 +1,4 @@
+org/apache/hadoop/hbase/wal/WAL.java
+org/apache/hadoop/hbase/regionserver/wal/TestFSHLog.java
+org/apache/hadoop/hbase/regionserver/wal/AbstractTestFSWAL.java
+

@@ -1,0 +1,43 @@
+<changeset>
+    <id>318878
+        <files>org/aspectj/weaver/AjcMemberMaker.java
+        </files>
+    </id>
+    <id>340806
+        <files>org/aspectj/weaver/reflect/JavaLangTypeToResolvedTypeConverter.java
+
+        </files>
+    </id>
+    <id>59909
+        <files>org/aspectj/runtime/internal/CFlowStack.java
+            org/aspectj/runtime/internal/cflowstack/ThreadStack.java
+            org/aspectj/runtime/internal/cflowstack/ThreadStackFactory.java
+            org/aspectj/runtime/internal/cflowstack/ThreadStackFactoryImpl.java
+            org/aspectj/runtime/internal/cflowstack/ThreadStackFactoryImpl11.java
+            org/aspectj/runtime/internal/cflowstack/ThreadStackImpl11.java
+        </files>
+    </id>
+    <id>408721
+        <files>org/aspectj/weaver/ReferenceType.java
+        </files>
+    </id>
+    <id>155148
+        <files>org/aspectj/weaver/loadtime/DefaultWeavingContext.java
+            org/aspectj/weaver/tools/AbstractTrace.java
+            org/aspectj/weaver/AbstractTraceTest.java
+            org/aspectj/weaver/tools/Jdk14Trace.java
+        </files>
+    </id>
+    <id>320468
+        <files>org/aspectj/weaver/patterns/ModifiersPattern.java
+        </files>
+    </id>
+    <id>59599
+        <files>org/aspectj/testing/harness/bridge/DirChanges.java
+        </files>
+    </id>
+    <id>269867
+        <files>org/aspectj/lang/reflect/AjTypeSystem.java
+        </files>
+    </id>
+</changeset>

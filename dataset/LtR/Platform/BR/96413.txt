@@ -1,1 +1,0 @@
-Bug 96413  [Preferences] articulate why a given editor is locked

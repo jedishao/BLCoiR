@@ -1,4 +1,4 @@
-56653 â€“ Concurrency issue with Mapper$ContextList when stopping Contexts
+Concurrency issue with Mapper$ContextList when stopping Contexts.
 I noticed this issue while reviewing the code of Mapper.removeContextVersion() of the current trunk (@1604217).
 The same code exists in Tomcat 7 and 6.
 In Mapper.removeContextVersion() (Mapper.removeContext() in Tomcat 6) it does the following:

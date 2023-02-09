@@ -1,0 +1,4 @@
+src/main/java/io/vertx/core/eventbus/impl/clustered/ClusteredEventBus.java
+src/main/java/io/vertx/core/impl/HAManager.java
+src/main/java/io/vertx/core/impl/VertxImpl.java
+

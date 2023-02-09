@@ -1,0 +1,22 @@
+CMTTxInterceptor.invokeInOurTx contains stale code handling ApplicationDeadlockExceptionDescription of problem:
+
+git://git.app.eng.bos.redhat.com/jbossas/jboss-as.git
+ejb3/src/main/java/org/jboss/as/ejb3/tx/CMTTxInterceptor.java
+
+There is stale code catching ApplicationDeadlockException and attempting to retry the transaction. 
+This results in a failure if the exception is raised and retry does not occur.
+Version-Release number of selected component (if applicable):
+How reproducible:
+Consistently
+Steps to Reproduce:
+
+Visual Inspection
+OR
+Register a transaction Synchronization object which raises the exception during beforeCompletion().
+
+Note that EAP no longer raises this exception. T
+he catch block code handling ApplicationDeadlockException seems to be an artifact of EAP 4 and should simply be removed.
+Actual results:
+Retry does not occur
+Expected results:
+Retry should not be attempted by this code

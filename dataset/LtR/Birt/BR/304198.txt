@@ -1,1 +1,0 @@
-Bug 304198  In multi thread, Doc Emitter throws java.lang.StringIndexOutOfBoundsException

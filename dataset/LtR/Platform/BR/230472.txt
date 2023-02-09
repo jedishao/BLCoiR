@@ -1,1 +1,1 @@
-Bug 230472  [ActivityMgmt] Expression controlled Activities aren't correctly synchronized with the internal enabled list when they are persisted and reloaded
+Expression controlled Activities aren't correctly synchronized with the internal enabled list when they are persisted and reloaded.

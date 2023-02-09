@@ -1,0 +1,2 @@
+org/springframework/data/mapping/context/AbstractMappingContext.java
+

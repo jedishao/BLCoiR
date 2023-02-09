@@ -1,0 +1,4 @@
+org/jboss/as/connector/subsystems/jca/JcaWorkManagerDefinition.java
+org/jboss/as/connector/logging/ConnectorLogger.java
+org/jboss/as/connector/subsystems/jca/JcaDistributedWorkManagerDefinition.java
+

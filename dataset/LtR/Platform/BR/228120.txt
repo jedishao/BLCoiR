@@ -1,1 +1,0 @@
-Bug 228120  [ActivityMgmt] Expression controlled Activities aren't correctly synchronized with the enabledList if they are enabled directly from the beginning

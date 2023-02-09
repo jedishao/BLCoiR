@@ -1,1 +1,0 @@
-Bug 223790  [Decorators] disappearing incoming decorators in synchronize view

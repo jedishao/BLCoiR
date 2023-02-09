@@ -1,0 +1,2 @@
+HiveInputFormat's split generation isn't thread safe.
+Tez will do split generation in parallel. Need to protect the inputformat cache against concurrent access.

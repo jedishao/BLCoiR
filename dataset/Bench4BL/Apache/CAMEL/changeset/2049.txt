@@ -1,0 +1,6 @@
+org/apache/camel/component/mina/MinaComponent.java
+org/apache/camel/component/mina/MinaProducer.java
+org/apache/camel/component/bean/BeanProcessor.java
+org/apache/camel/component/mina/MinaConsumer.java
+org/apache/camel/util/concurrent/ExecutorServiceHelper.java
+

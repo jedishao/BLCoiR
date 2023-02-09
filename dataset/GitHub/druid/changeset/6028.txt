@@ -1,0 +1,4 @@
+server/src/main/java/org/apache/druid/metadata/SQLMetadataRuleManager.java
+server/src/main/java/org/apache/druid/metadata/SQLMetadataSegmentManager.java
+server/src/test/java/org/apache/druid/metadata/SQLMetadataSegmentManagerTest.java
+

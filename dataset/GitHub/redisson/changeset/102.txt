@@ -1,0 +1,4 @@
+src/main/java/com/lambdaworks/redis/RedisAsyncConnection.java
+src/main/java/com/lambdaworks/redis/output/ValueSetScanOutput.java
+src/test/java/org/redisson/RedissonSetTest.java
+

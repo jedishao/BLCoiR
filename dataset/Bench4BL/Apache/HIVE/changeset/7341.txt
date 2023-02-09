@@ -1,0 +1,8 @@
+org/apache/hive/hcatalog/api/HCatPartition.java
+org/apache/hive/hcatalog/api/TestHCatClient.java
+org/apache/hive/hcatalog/api/HCatClientHMSImpl.java
+org/apache/hive/hcatalog/api/HCatAddPartitionDesc.java
+org/apache/hive/hcatalog/api/HCatCreateTableDesc.java
+org/apache/hive/hcatalog/api/HCatTable.java
+org/apache/hive/hcatalog/api/HCatClient.java
+

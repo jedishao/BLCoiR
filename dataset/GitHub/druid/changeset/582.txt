@@ -1,0 +1,7 @@
+indexing-hadoop/src/main/java/org/apache/druid/indexer/DetermineHashedPartitionsJob.java
+indexing-hadoop/src/main/java/org/apache/druid/indexer/DeterminePartitionsJob.java
+indexing-hadoop/src/main/java/org/apache/druid/indexer/IndexGeneratorJob.java
+indexing-hadoop/src/main/java/org/apache/druid/indexer/JobHelper.java
+indexing-hadoop/src/main/java/org/apache/druid/indexer/updater/HadoopConverterJob.java
+indexing-hadoop/src/test/java/org/apache/druid/indexer/HdfsClasspathSetupTest.java
+

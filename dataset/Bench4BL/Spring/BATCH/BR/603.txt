@@ -1,0 +1,2 @@
+JobExecution fields could be modified in another Thread and are not volatile.
+JobExecution fields could be modified in another Thread and are not volatile.

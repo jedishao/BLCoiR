@@ -1,0 +1,16 @@
+src/main/java/io/vertx/core/http/impl/ConnectionManager.java
+src/main/java/io/vertx/core/http/impl/Http1xClientConnection.java
+src/main/java/io/vertx/core/http/impl/Http2ClientConnection.java
+src/main/java/io/vertx/core/http/impl/Http2ConnectionBase.java
+src/main/java/io/vertx/core/http/impl/HttpChannelConnector.java
+src/main/java/io/vertx/core/http/impl/VertxHttp2ConnectionHandler.java
+src/main/java/io/vertx/core/http/impl/pool/ConnectResult.java
+src/main/java/io/vertx/core/http/impl/pool/ConnectionListener.java
+src/main/java/io/vertx/core/http/impl/pool/ConnectionProvider.java
+src/main/java/io/vertx/core/http/impl/pool/Pool.java
+src/main/java/io/vertx/core/http/impl/pool/Waiter.java
+src/main/java/io/vertx/core/net/impl/ConnectionBase.java
+src/main/java/io/vertx/core/net/impl/VertxHandler.java
+src/test/java/io/vertx/core/http/Http1xTest.java
+src/test/java/io/vertx/core/net/ConnectionPoolTest.java
+

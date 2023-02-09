@@ -1,4 +1,5 @@
-Bug 307405  [CommonNavigator] Deadlock in NavigatorContentServiceContentProviderWe are using an adopting product and one of our users encountered this deadlock when starting up their workspace:
+Deadlock in NavigatorContentServiceContentProvider.
+We are using an adopting product and one of our users encountered this deadlock when starting up their workspace:
 
 1LKDEADLOCK    Deadlock detected !!!
 NULL           ---------------------

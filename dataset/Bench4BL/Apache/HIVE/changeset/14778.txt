@@ -1,0 +1,3 @@
+org/apache/hive/hcatalog/streaming/StreamingConnection.java
+org/apache/hive/hcatalog/streaming/TransactionBatch.java
+

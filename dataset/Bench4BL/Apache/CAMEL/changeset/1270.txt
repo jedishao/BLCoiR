@@ -1,0 +1,3 @@
+org/apache/camel/util/MainSupport.java
+org/apache/camel/spring/Main.java
+

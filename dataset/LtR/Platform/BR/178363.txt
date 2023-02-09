@@ -1,3 +1,0 @@
-Bug 178363  Navigate > Next/Previous and Ctrl+,/. don't work any more in Synchronize viewI20070320-0010, was fine in 3.2
-
-Navigate > Next/Previous and Ctrl+,/. don't work any more in the Synchronize view. They are always disabled.

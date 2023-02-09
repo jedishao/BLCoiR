@@ -1,0 +1,17 @@
+org/apache/camel/component/file/stress/FileAsyncStressTest.java
+org/apache/camel/component/file/strategy/MarkerFileExclusiveReadLockStrategy.java
+org/apache/camel/component/file/strategy/FileProcessStrategyFactory.java
+org/apache/camel/component/file/strategy/GenericFileRenameProcessStrategy.java
+org/apache/camel/component/file/remote/FtpConsumerIdempotentRefTest.java
+org/apache/camel/component/file/strategy/GenericFileProcessStrategySupport.java
+org/apache/camel/component/file/strategy/FileLockExclusiveReadLockStrategy.java
+org/apache/camel/component/file/strategy/GenericFileRenameExclusiveReadLockStrategy.java
+org/apache/camel/component/file/remote/FtpConsumer.java
+org/apache/camel/component/file/GenericFileExclusiveReadLockStrategy.java
+org/apache/camel/component/file/remote/SftpConsumer.java
+org/apache/camel/component/file/strategy/GenericFileProcessStrategyFactory.java
+org/apache/camel/component/file/FileConsumer.java
+org/apache/camel/component/file/GenericFileOnCompletion.java
+org/apache/camel/component/file/GenericFileEndpoint.java
+org/apache/camel/component/file/GenericFileConsumer.java
+

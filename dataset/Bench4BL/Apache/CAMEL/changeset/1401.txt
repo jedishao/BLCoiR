@@ -1,0 +1,5 @@
+org/apache/camel/converter/jaxb/JaxbDataFormat.java
+org/apache/camel/example/JAXBConvertTest.java
+org/apache/camel/converter/jaxb/JaxbConverter.java
+org/apache/camel/converter/jaxb/FallbackTypeConverter.java
+

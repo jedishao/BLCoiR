@@ -1,0 +1,4 @@
+org/apache/hadoop/hbase/replication/regionserver/HBaseInterClusterReplicationEndpoint.java
+org/apache/hadoop/hbase/replication/regionserver/ReplicationSourceManager.java
+org/apache/hadoop/hbase/replication/ReplicationEndpoint.java
+

@@ -1,0 +1,4 @@
+org/apache/commons/math3/analysis/interpolation/TricubicSplineInterpolator.java
+org/apache/commons/math3/analysis/interpolation/BicubicSplineInterpolator.java
+org/apache/commons/math3/analysis/interpolation/BicubicSplineInterpolatingFunction.java
+

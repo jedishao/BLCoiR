@@ -1,4 +1,4 @@
-56907 â€“ Threads leak
+Threads leak.
 Hello.
 While using WebSocket implementation of versions 7.0.55 and 8.0.11 leaking threads were noticed.
 Use method WsWebSocketContainer.connection (endpoint, clientEndpointConfiguration, path) to reproduce this issue.

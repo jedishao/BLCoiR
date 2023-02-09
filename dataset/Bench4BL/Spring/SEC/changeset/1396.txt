@@ -1,0 +1,5 @@
+org/springframework/security/web/session/SessionManagementFilter.java
+org/springframework/security/web/context/SaveContextOnUpdateOrErrorResponseWrapper.java
+org/springframework/security/web/context/HttpSessionSecurityContextRepository.java
+org/springframework/security/config/http/HttpSecurityBeanDefinitionParserTests.java
+

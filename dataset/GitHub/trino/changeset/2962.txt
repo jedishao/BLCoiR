@@ -1,0 +1,4 @@
+presto-hive/src/main/java/io/prestosql/plugin/hive/metastore/cache/CachingHiveMetastoreModule.java
+presto-hive/src/main/java/io/prestosql/plugin/hive/metastore/cache/ReentrantBoundedExecutor.java
+presto-hive/src/test/java/io/prestosql/plugin/hive/metastore/cache/TestReentrantBoundedExecutor.java
+

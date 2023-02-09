@@ -1,4 +1,5 @@
-Severe performance downgrade when parallel reading a single key from BucketCacheWe store feature data of online items in HBase, do machine learning on these features, and supply the outputs to our online search engine. 
+Severe performance downgrade when parallel reading a single key from BucketCache.
+We store feature data of online items in HBase, do machine learning on these features, and supply the outputs to our online search engine. 
 In such scenario we will launch hundreds of yarn workers and each worker will read all features of one item(i.e. single rowkey in HBase), so there'll be heavy parallel reading on a single rowkey.
 We were using LruCache but start to try BucketCache recently to resolve gc issue, and just as titled we have observed severe performance downgrade. After some analytics we found the root cause is the lock in BucketCache#getBlock, as shown below
 

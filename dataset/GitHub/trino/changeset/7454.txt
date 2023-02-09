@@ -1,0 +1,4 @@
+core/trino-main/src/main/java/io/trino/operator/PartitionedLookupSourceFactory.java
+core/trino-main/src/main/java/io/trino/sql/planner/LocalExecutionPlanner.java
+core/trino-main/src/test/java/io/trino/operator/TestHashJoinOperator.java
+

@@ -1,0 +1,5 @@
+org/apache/hadoop/hive/metastore/txn/TestTxnHandlerNegative.java
+org/apache/hadoop/hive/ql/lockmgr/DbTxnManager.java
+org/apache/hadoop/hive/metastore/txn/CompactionTxnHandler.java
+org/apache/hadoop/hive/metastore/txn/TxnHandler.java
+

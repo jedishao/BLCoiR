@@ -1,0 +1,4 @@
+Transaction Synchronization registration issue with injected JMSContext.
+The JMSContextProducer registers a tx Synchronization object directly on the Transaction. 
+That leads to issue when other parts register other Synchronization objects later on (see http://stackoverflow.com/questions/21523534/jboss-wildfly-arjuna016082-synchronizations-are-not-allowed-when-sending-mess).
+The JSMContextProducer must switch to using TransactionSynchronizationRegistry instead to register syncs.

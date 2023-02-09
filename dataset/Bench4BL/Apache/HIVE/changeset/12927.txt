@@ -1,0 +1,3 @@
+org/apache/hadoop/hive/metastore/hbase/TestHBaseSchemaTool.java
+org/apache/hadoop/hive/metastore/hbase/HBaseReadWrite.java
+

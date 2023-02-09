@@ -1,0 +1,6 @@
+org/jboss/as/ejb3/component/stateful/StatefulSessionSynchronizationInterceptor.java
+org/jboss/as/ejb3/component/stateful/StatefulComponentInstanceInterceptor.java
+org/jboss/as/ejb3/component/stateful/StatefulSessionComponentInstance.java
+org/jboss/as/ejb3/component/stateful/StatefulSessionComponent.java
+org/jboss/as/ejb3/logging/EjbLogger.java
+

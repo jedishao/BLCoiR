@@ -1,0 +1,12 @@
+org/apache/hadoop/hive/ql/parse/GenTezProcContext.java
+org/apache/hadoop/hive/ql/Driver.java
+org/apache/hive/service/cli/CLIServiceTest.java
+org/apache/hadoop/hive/ql/optimizer/RemoveDynamicPruningBySize.java
+org/apache/hadoop/hive/ql/parse/GenTezUtils.java
+org/apache/hadoop/hive/ql/parse/GenTezWork.java
+org/apache/hadoop/hive/conf/HiveConf.java
+org/apache/hadoop/hive/ql/session/SessionState.java
+org/apache/hive/service/cli/session/HiveSessionImpl.java
+org/apache/hadoop/hive/ql/parse/TezCompiler.java
+org/apache/hive/service/cli/session/HiveSessionImplwithUGI.java
+

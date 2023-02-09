@@ -1,2 +1,0 @@
-Bug 252642  block selection doesn't work on win2000block selection doesn't work on windows 2000
-or any other configuration that doesn't have advance graphics.

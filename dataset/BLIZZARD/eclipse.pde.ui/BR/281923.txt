@@ -1,4 +1,4 @@
-Bug 281923 – Run in UI thread unchecked doesn't work with Headless Mode application
+Run in UI thread unchecked doesn't work with Headless Mode application.
 Build ID: 3.5 GA
 Steps To Reproduce:
 1.

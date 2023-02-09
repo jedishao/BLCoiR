@@ -1,0 +1,2 @@
+The ContinuousQueryListenerContainer class is not Thread-safe!
+The ContinuousQueryListenerContainer class does not have proper synchronization around the start() and stop() methods in addition to the running instance variable.

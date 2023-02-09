@@ -1,0 +1,51 @@
+The lock was released in the wrong position.
+BUG REPORT
+Please describe the issue you observed:
+What did you do (The steps to reproduce)?
+
+In org.apache.rocketmq.namesrv.kvconfig.KVConfigManager#putKVConfig
+
+
+ try {
+        this.lock.writeLock().lockInterruptibly();
+        try {
+            HashMap<String, String> kvTable = this.configTable.get(namespace);
+            if (null == kvTable) {
+                kvTable = new HashMap<>();
+                this.configTable.put(namespace, kvTable);
+                log.info("putKVConfig create new Namespace {}", namespace);
+            }
+
+            final String prev = kvTable.put(key, value);
+            if (null != prev) {
+                log.info("putKVConfig update config item, Namespace: {} Key: {} Value: {}",
+                    namespace, key, value);
+            } else {
+                log.info("putKVConfig create new config item, Namespace: {} Key: {} Value: {}",
+                    namespace, key, value);
+            }
+        } finally {
+            this.lock.writeLock().unlock();
+        }
+    } catch (InterruptedException e) {
+        log.error("putKVConfig InterruptedException", e);
+    }
+
+The lock should be released in the outermost layer in case the lock cannot be released due to an exception after it is acquired
+
+What is expected to see?
+
+The lock is released in the correct position
+
+What did you see instead?
+
+The lock is released in the wrong position
+
+Please tell us about your environment:
+
+develop
+
+Other information (e.g. detailed explanation, logs, related issues, suggestions on how to fix, etc):
+
+The thread should return to the interrupted state after being interrupted
+      

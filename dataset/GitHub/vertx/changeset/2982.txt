@@ -1,0 +1,15 @@
+src/main/java/io/vertx/core/http/StreamResetException.java
+src/main/java/io/vertx/core/http/impl/ConnectionManager.java
+src/main/java/io/vertx/core/http/impl/Http1xClientConnection.java
+src/main/java/io/vertx/core/http/impl/Http2ClientConnection.java
+src/main/java/io/vertx/core/http/impl/Http2UpgradedClientConnection.java
+src/main/java/io/vertx/core/http/impl/HttpClientRequestBase.java
+src/main/java/io/vertx/core/http/impl/HttpClientRequestImpl.java
+src/main/java/io/vertx/core/http/impl/HttpClientRequestPushPromise.java
+src/main/java/io/vertx/core/http/impl/HttpClientResponseImpl.java
+src/main/java/io/vertx/core/http/impl/HttpClientStream.java
+src/test/java/io/vertx/core/http/Http1xTest.java
+src/test/java/io/vertx/core/http/Http2ClientTest.java
+src/test/java/io/vertx/core/http/Http2Test.java
+src/test/java/io/vertx/test/core/TestUtils.java
+

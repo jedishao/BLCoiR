@@ -1,0 +1,8 @@
+codec-http2/src/main/java/io/netty/handler/codec/http2/Http2ConnectionHandler.java
+codec-http2/src/main/java/io/netty/handler/codec/http2/StreamBufferingEncoder.java
+codec-http2/src/test/java/io/netty/handler/codec/http2/StreamBufferingEncoderTest.java
+netty/src/main/java/io/grpc/transport/netty/BufferingHttp2ConnectionEncoder.java
+netty/src/main/java/io/grpc/transport/netty/GoAwayClosedStreamException.java
+netty/src/main/java/io/grpc/transport/netty/NettyClientHandler.java
+netty/src/test/java/io/grpc/transport/netty/BufferingHttp2ConnectionEncoderTest.java
+

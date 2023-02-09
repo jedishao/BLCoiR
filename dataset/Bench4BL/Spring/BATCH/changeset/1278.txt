@@ -1,0 +1,8 @@
+org/springframework/batch/repeat/support/TaskExecutorRepeatTemplate.java
+org/springframework/batch/repeat/support/TaskExecutorRepeatTemplateAsynchronousTests.java
+org/springframework/batch/repeat/callback/NestedRepeatCallback.java
+org/springframework/batch/repeat/support/RepeatTemplate.java
+org/springframework/batch/repeat/support/SimpleRepeatTemplateTests.java
+org/springframework/batch/item/database/JdbcCursorItemReaderConfigTests.java
+org/springframework/batch/repeat/support/AsynchronousRepeatTests.java
+

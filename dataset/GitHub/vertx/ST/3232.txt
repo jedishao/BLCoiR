@@ -1,0 +1,47 @@
+Vertx#close Future will not callback the handler
+The Future returned by vertx.close() never completes because the thread pool has been shut down.
+The first of these works, the second doesn't:
+  @Test
+  public void testPromise() throws Throwable {
+    Vertx vertx = Vertx.vertx();
+    logger.debug("Shutting down with promise");
+    Promise<Void> promise = Promise.<Void>promise();
+    vertx.close(promise);
+    Sync.await(promise.future());
+    logger.debug("Shut down with promise");
+  }
+  
+  @Test
+  public void testFuture() throws Throwable {
+    
+    Vertx vertx = Vertx.vertx();
+
+    logger.debug("Shutting down with future");
+    Sync.await(vertx.close());
+    logger.debug("Shut down with future");
+  }
+
+Sync.await is just a blocking method that waits for a future to complete using setHandler.
+The output from that is:
+14:11:43.941 [main] DEBUG c.g.shared.minimal.vertx.VertxTest 28 - Shutting down with promise
+14:11:43.980 [main] DEBUG c.g.shared.minimal.vertx.VertxTest 32 - Shut down with promise
+14:11:44.001 [main] DEBUG c.g.shared.minimal.vertx.VertxTest 40 - Shutting down with future
+Exception in thread "vert.x-eventloop-thread-24" java.util.concurrent.RejectedExecutionException: event executor terminated
+	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:981)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:388)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:381)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:880)
+	at io.vertx.core.impl.EventLoopContext.execute(EventLoopContext.java:42)
+	at io.vertx.core.impl.EventLoopContext.dispatch(EventLoopContext.java:77)
+	at io.vertx.core.impl.EventLoopContext.dispatch(EventLoopContext.java:65)
+	at io.vertx.core.impl.FutureImpl.doDispatch(FutureImpl.java:125)
+	at io.vertx.core.impl.FutureImpl.dispatch(FutureImpl.java:119)
+	at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:149)
+	at io.vertx.core.Promise.complete(Promise.java:67)
+	at io.vertx.core.Promise.handle(Promise.java:52)
+	at io.vertx.core.Promise.handle(Promise.java:30)
+	at io.vertx.core.impl.VertxImpl$1$1.lambda$operationComplete$0(VertxImpl.java:919)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:830)
+
+and it never completes.

@@ -1,0 +1,8 @@
+core/src/main/java/org/apache/druid/java/util/emitter/EmittingLogger.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/TaskRunnerWorkItem.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/config/HttpRemoteTaskRunnerConfig.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/hrtr/HttpRemoteTaskRunner.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/hrtr/HttpRemoteTaskRunnerResource.java
+indexing-service/src/main/java/org/apache/druid/indexing/overlord/hrtr/WorkerHolder.java
+indexing-service/src/test/java/org/apache/druid/indexing/overlord/hrtr/HttpRemoteTaskRunnerTest.java
+

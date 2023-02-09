@@ -1,1 +1,0 @@
-Bug 137767  [Progress] UISynchronizer must clear Interrupt Status of the UI thread

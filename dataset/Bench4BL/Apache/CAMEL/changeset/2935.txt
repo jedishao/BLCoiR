@@ -1,0 +1,11 @@
+org/apache/camel/impl/DefaultProducerTemplateAsyncTest.java
+org/apache/camel/impl/DefaultConsumerTemplateTest.java
+org/apache/camel/ProducerTemplate.java
+org/apache/camel/impl/DefaultProducerTemplateTest.java
+org/apache/camel/component/jetty/HttpAuthMethodPriorityTest.java
+org/apache/camel/impl/ProducerCache.java
+org/apache/camel/processor/BeanInvocationThrowsExceptionTest.java
+org/apache/camel/impl/DefaultProducerTemplate.java
+org/apache/camel/impl/DefaultMessage.java
+org/apache/camel/issues/Issue3Test.java
+

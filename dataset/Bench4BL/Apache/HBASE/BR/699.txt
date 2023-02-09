@@ -1,4 +1,5 @@
-Fix TestMigrate up on HudsonIts hanging on hudson again. Caught a threaddump.  
+Fix TestMigrate up on HudsonIts hanging on hudson again.
+Caught a threaddump.
 Its that old waiting on a vanished unix process... no hbase threads hanging out.
 I tried adding relocateRegion just before taking out scan in verify.  
 That was good for fixing the first region in the table.  

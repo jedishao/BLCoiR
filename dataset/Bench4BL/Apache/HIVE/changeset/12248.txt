@@ -1,0 +1,7 @@
+org/apache/hadoop/hive/thrift/ZooKeeperTokenStore.java
+org/apache/hive/service/auth/HiveAuthFactory.java
+org/apache/hadoop/hive/thrift/DBTokenStore.java
+org/apache/hadoop/hive/thrift/TestDBTokenStore.java
+org/apache/hadoop/hive/metastore/HiveMetaStore.java
+org/apache/hadoop/hive/thrift/HadoopThriftAuthBridge.java
+

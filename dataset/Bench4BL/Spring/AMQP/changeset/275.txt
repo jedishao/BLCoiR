@@ -1,0 +1,5 @@
+org/springframework/amqp/rabbit/connection/RabbitUtils.java
+org/springframework/amqp/rabbit/listener/StopStartIntegrationTests.java
+org/springframework/amqp/rabbit/listener/BlockingQueueConsumer.java
+org/springframework/amqp/rabbit/connection/CachingConnectionFactory.java
+

@@ -1,0 +1,6 @@
+Simplify implementation of back-pressure in StreamObserver-based stub
+Pending API changes can allow reactive/async pattern for interacting with flow control and applying back pressure: https://github.com/grpc/grpc-java/pull/1545/files
+In many cases, automatic back-pressure in generated stubs could be very useful -- e.g. having calls to StreamObserve#onNext(T) block instead of queueing.
+It's been pointed out that this could cause deadlock for bidi-streaming operations, so perhaps we can just not expose this functionality for bidi-streaming calls?
+It may also be worth pointing out that most other runtimes (wrapped languages and Go) already expose streams via blocking operations and already require that apps be aware of and work-around possible deadlock issues resulting therefrom. So maybe providing similar mechanisms in Java is fine, with said caveats.
+Another possible alternative could possibly be done in an extension/add-on instead of in GRPC. For example, wrapping streaming requests and responses with RxJava Observables may further simplify the async case enough to make the synchronous (and possibly-deadlock-prone) case unnecessary.

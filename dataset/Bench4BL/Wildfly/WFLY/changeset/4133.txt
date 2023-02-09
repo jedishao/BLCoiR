@@ -1,0 +1,3 @@
+org/jboss/as/ejb3/timerservice/TimerServiceImpl.java
+org/jboss/as/ejb3/component/EJBComponent.java
+

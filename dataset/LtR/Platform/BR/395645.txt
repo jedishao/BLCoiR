@@ -1,1 +1,0 @@
-Bug 395645  Progress view can show finished job as unfinished (race condition introduced by bug 258352)

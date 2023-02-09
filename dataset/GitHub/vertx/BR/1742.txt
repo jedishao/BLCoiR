@@ -1,0 +1,26 @@
+File caching implementation not thread safe
+The FileResolver implementation of caching is not thread safe. The problem occurs when the same file (that is about to be cached) is concurrently being read from multiple verticles. This issue can be reproduced with FileSystem#readFileBlocking, however, I believe that async implementation will yield similar results.
+The problem here is the following. Consider a use case, when a file is read in multiple verticles in parallel. This file does not reside in a local filesystem, and as such Vert.x will try to cache the file by moving it to the .vertx directory.
+
+First verticle that hits FileResolver#resolveFile will trigger the copying action of the resource to the designated .vertx cache directory. Only after this copy action is finished, the file will be read - thus this verticle will read complete data.
+Every other instance that hits FileResolver#resolveFile will find the cached file during resolution - as the file is currently being copied over there - however, it might happen that it will read the cached file before it is copied completely - thus this verticle will read only partial data.
+
+The problem can be reproduced by running supplied verticle in multiple instances. The verticle only reads 10 files from attached jar (all are 1MB in size) and outputs the size of read payload.
+vertx-fileread-bug.zip
+vertx run -cp data.jar --instances 3 FileLengthVerticle.java
+Sample output:
+...
+file data5: 1024000bytes
+file data5: 1024000bytes
+file data6: 1024000bytes
+file data6: 1024000bytes
+file data6: 1024000bytes
+file data7: 1024000bytes
+file data7: 1024000bytes
+file data7: 1024000bytes
+file data8: 65516bytes
+file data8: 73703bytes
+file data8: 1024000bytes
+file data9: 646968bytes
+file data9: 1024000bytes
+file data9: 1024000bytes

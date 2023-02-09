@@ -1,0 +1,6 @@
+src/main/java/com/metamx/http/client/HttpClientConfig.java
+src/main/java/com/metamx/http/client/HttpClientInit.java
+src/main/java/com/metamx/http/client/pool/ResourcePool.java
+src/main/java/com/metamx/http/client/pool/ResourcePoolConfig.java
+src/test/java/com/metamx/http/client/pool/ResourcePoolTest.java
+

@@ -1,0 +1,7 @@
+org/springframework/data/gemfire/config/GemfireV7GatewayNamespaceTest.java
+org/springframework/data/gemfire/wan/GatewaySenderFactoryBean.java
+org/springframework/data/gemfire/wan/AsyncEventQueueFactoryBeanTest.java
+org/springframework/data/gemfire/wan/GatewaySenderFactoryBeanTest.java
+org/springframework/data/gemfire/wan/AbstractWANComponentFactoryBean.java
+org/springframework/data/gemfire/wan/AsyncEventQueueFactoryBean.java
+

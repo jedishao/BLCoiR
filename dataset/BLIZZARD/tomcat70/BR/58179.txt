@@ -1,4 +1,4 @@
-58179 â€“ Atomicity violation
+Atomicity violation.
 My name is Bai Guangdong, a research fellow from National University of Singapore.
 I find an atomicity violation similar to bug 53498.
 The problem occurs in the same file java/org/apache/catalina/core/ApplicationContext.java.

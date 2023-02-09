@@ -1,0 +1,2 @@
+bundles/org.eclipse.ui.ide/extensions/org/eclipse/ui/actions/WorkspaceModifyOperation.java
+tests/org.eclipse.ui.tests/Eclipse UI Tests/org/eclipse/ui/tests/concurrency/ConcurrencyTestSuite.java

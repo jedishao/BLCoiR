@@ -1,2 +1,3 @@
-camel-hbase - The scan method is not thread safe when using a filter listThe scan method is not thread safe when using a filter list. 
+camel-hbase - The scan method is not thread safe when using a filter list.
+The scan method is not thread safe when using a filter list. 
 A concurrent call on the endpoint will produce wrong values because the same FilterList is used between threads. Cloning the passed filter list solve the problem.

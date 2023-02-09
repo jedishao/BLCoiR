@@ -1,0 +1,5 @@
+server/src/main/java/org/apache/druid/metadata/IndexerSQLMetadataStorageCoordinator.java
+server/src/main/java/org/apache/druid/metadata/RetryTransactionException.java
+server/src/main/java/org/apache/druid/metadata/SQLMetadataConnector.java
+server/src/test/java/org/apache/druid/metadata/IndexerSQLMetadataStorageCoordinatorTest.java
+

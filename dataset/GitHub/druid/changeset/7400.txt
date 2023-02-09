@@ -1,0 +1,8 @@
+core/src/main/java/org/apache/druid/metadata/DynamicConfigProvider.java
+core/src/main/java/org/apache/druid/metadata/MapStringDynamicConfigProvider.java
+core/src/main/java/org/apache/druid/metadata/PasswordProvider.java
+core/src/test/java/org/apache/druid/metadata/MapStringDynamicConfigProviderTest.java
+extensions-core/kafka-indexing-service/src/main/java/org/apache/druid/indexing/kafka/KafkaRecordSupplier.java
+extensions-core/kafka-indexing-service/src/main/java/org/apache/druid/indexing/kafka/supervisor/KafkaSupervisorIOConfig.java
+extensions-core/kafka-indexing-service/src/test/java/org/apache/druid/indexing/kafka/KafkaRecordSupplierTest.java
+

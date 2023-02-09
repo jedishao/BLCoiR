@@ -1,0 +1,5 @@
+src/main/java/io/vertx/core/impl/FailedFuture.java
+src/main/java/io/vertx/core/impl/FutureFactoryImpl.java
+src/main/java/io/vertx/core/impl/FutureImpl.java
+src/main/java/io/vertx/core/impl/SucceededFuture.java
+

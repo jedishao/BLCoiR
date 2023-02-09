@@ -1,0 +1,91 @@
+Hanging thread when using RabbitTransactionManager with a listener container where channelTransacted=true.
+When using the following configuration, the message will never be acknowledged:
+
+&lt;bean id="connectionFactory" class="org.springframework.amqp.rabbit.connection.CachingConnectionFactory"&gt;
+
+	    &lt;constructor-arg value="localhost"/&gt;
+
+
+	    &lt;property name="username" value="guest"/&gt;
+
+	    &lt;property name="password" value="guest"/&gt;
+
+	&lt;/bean&gt;	
+
+
+	&lt;bean id="rabbitTransactionManager" class="org.springframework.amqp.rabbit.transaction.RabbitTransactionManager"&gt;
+
+
+
+
+		&lt;property name="connectionFactory" ref="connectionFactory" /&gt;
+
+
+	&lt;/bean&gt;
+
+
+
+
+	&lt;bean class="org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer"&gt;
+
+
+
+
+		&lt;property name="connectionFactory" ref="connectionFactory" /&gt;
+
+
+
+
+		&lt;property name="queueNames" value="Queue" /&gt;
+
+
+
+
+		&lt;property name="messageListener"&gt;
+
+
+
+
+			&lt;bean class="org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter"&gt;
+
+
+
+
+				&lt;property name="delegate" ref="endpoint" /&gt;
+
+
+
+
+			&lt;/bean&gt;
+
+
+
+
+		&lt;/property&gt;
+
+
+
+
+		&lt;property name="transactionManager" ref="rabbitTransactionManager" /&gt;
+
+
+
+
+		&lt;property name="channelTransacted" value="true" /&gt;
+
+
+
+
+	&lt;/bean&gt;
+
+	&lt;bean id="endpoint" class="amqp.Endpoint" /&gt;
+
+
+	&lt;rabbit:admin connection-factory="connectionFactory" /&gt;
+
+	&lt;rabbit:queue name="Queue" /&gt;
+
+
+Attached is a zip file with a sample demo project that reproduces the issue.
+PS: The test was done with both 1.1.1.RELEASE and 1.1.2.BUID-SNAPSHOT.
+This may be related to AMQP-190.

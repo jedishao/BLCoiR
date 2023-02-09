@@ -1,0 +1,1 @@
+bundles/org.eclipse.ui/Eclipse UI/org/eclipse/ui/internal/WorkingSetManager.java

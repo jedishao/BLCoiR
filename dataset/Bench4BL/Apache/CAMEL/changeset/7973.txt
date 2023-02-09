@@ -1,0 +1,3 @@
+org/apache/camel/processor/CircuitBreakerLoadBalancerTest.java
+org/apache/camel/processor/loadbalancer/CircuitBreakerLoadBalancer.java
+

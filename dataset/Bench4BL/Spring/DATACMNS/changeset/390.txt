@@ -1,0 +1,3 @@
+org/springframework/data/mapping/context/AbstractMappingContextUnitTests.java
+org/springframework/data/mapping/context/AbstractMappingContext.java
+

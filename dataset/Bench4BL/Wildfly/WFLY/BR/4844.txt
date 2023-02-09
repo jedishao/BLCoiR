@@ -1,0 +1,8 @@
+When Wildfly EJB timer finishes, the transaction is not fully committed. 
+When a Singleton EJB timer finishes, if the next run has already started but waiting on the write lock of Singleton EJB, the next run won't see the changes committed by the current run. 
+So I assume when the EJB timers finishes, the transaction is not fully committed, or it's the next run that starts too early.
+Here is a test case that should be able to reproduce the issue we are facing. 
+https://github.com/xiaodong-xie/wildfly-singleton-timer
+Here is my analysis of this issue: 
+The CMTTxInterceptor is applied before ContainerManagedConcurrencyInterceptor. 
+So when waiting for the write lock of EJBReadWriteLock, we've already started the transaction, which IMHO is earlier than necessary. 

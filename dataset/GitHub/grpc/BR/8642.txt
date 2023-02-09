@@ -1,0 +1,120 @@
+CsdsService not properly synchronized with XdsClient
+Consider this code from CsdsService:
+
+  
+    
+      grpc-java/xds/src/main/java/io/grpc/xds/CsdsService.java
+    
+    
+        Lines 152 to 155
+      in
+      a46560e
+    
+  
+  
+    
+
+        
+          
+           static ClientConfig getClientConfigForXdsClient(XdsClient xdsClient) { 
+        
+
+        
+          
+             ListenersConfigDump ldsConfig = dumpLdsConfig( 
+        
+
+        
+          
+                 xdsClient.getSubscribedResourcesMetadata(ResourceType.LDS), 
+        
+
+        
+          
+                 xdsClient.getCurrentVersion(ResourceType.LDS)); 
+        
+    
+  
+
+
+The initial issue is that getSubscribedResourcesMetadata() and getCurrentVersion() have no synchronization:
+
+  
+    
+      grpc-java/xds/src/main/java/io/grpc/xds/ClientXdsClient.java
+    
+    
+        Lines 1842 to 1848
+      in
+      14eb3b2
+    
+  
+  
+    
+
+        
+          
+           Map<String, ResourceMetadata> getSubscribedResourcesMetadata(ResourceType type) { 
+        
+
+        
+          
+             Map<String, ResourceMetadata> metadataMap = new HashMap<>(); 
+        
+
+        
+          
+             for (Map.Entry<String, ResourceSubscriber> entry : getSubscribedResourcesMap(type).entrySet()) { 
+        
+
+        
+          
+               metadataMap.put(entry.getKey(), entry.getValue().metadata); 
+        
+
+        
+          
+             } 
+        
+
+        
+          
+             return metadataMap; 
+        
+
+        
+          
+           } 
+        
+    
+  
+
+
+
+  
+    
+      grpc-java/xds/src/main/java/io/grpc/xds/AbstractXdsClient.java
+    
+    
+        Lines 257 to 258
+      in
+      a46560e
+    
+  
+  
+    
+
+        
+          
+           // Must be synchronized. 
+        
+
+        
+          
+           String getCurrentVersion(ResourceType type) { 
+        
+    
+  
+
+
+That is bad. However, the xdsClient API itself is insufficient for CSDS because those two method calls need to be atomic; even if each of those methods were thread-safe the version needs to match the resources returned.

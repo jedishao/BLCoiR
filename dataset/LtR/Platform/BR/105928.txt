@@ -1,9 +1,0 @@
-Bug 105928  [Progress] Blocked jobs dialog showing empty messageBuild: 3.1 final
-
-Steve often gets into a state where the blocked jobs dialog appears (probably
-due to slow builder performance from running with a workspace on a network
-drive). Sometimes this dialog comes up with a task with an empty name (see
-screenshot). The blocked task name is taken from the parent shell's text (see
-BlockedJobsDialog#createBlockedDialog).  I think if this text is an empty
-string, the default "User Operation" text should be used
-(BlockedJobsDialog#getDisplayString).

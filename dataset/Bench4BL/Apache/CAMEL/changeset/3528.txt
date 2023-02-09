@@ -1,0 +1,5 @@
+org/apache/camel/component/jms/JmsSuspendResumeTest.java
+org/apache/camel/component/jms/CamelJmsTestHelper.java
+org/apache/camel/component/cxf/HybridSourceDataBinding.java
+org/apache/camel/maven/HtmlToPdfMojo.java
+

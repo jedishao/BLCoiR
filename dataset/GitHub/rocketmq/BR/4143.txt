@@ -1,0 +1,2 @@
+Unnecessary file lock in IndexFile and IndexService.
+The FileLock used in IndexFile and IndexService is unnecessary, so we can remove it.

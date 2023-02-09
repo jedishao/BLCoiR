@@ -1,0 +1,218 @@
+org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor should not register a Synchronization if the transaction was rolled back.
+http://fpaste.org/125252/ shows what happens when the transaction has already been rolled back ().  
+
+WFLYEJB0458: Failure in caller transaction.: java.lang.IllegalStateException: No transaction is running
+        at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.getTransactionImple(TransactionSynchronizationRegistryImple.java:228)
+
+09:02:13,666 INFO  [stdout] (default task-1) about to create entity 3253
+09:02:13,666 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 0
+09:02:13,666 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper) ARJUNA012117: TransactionReaper::check timeout for TX 0:ffff7f000001:11d28655:53eb58d3:87 in state  RUN
+09:02:13,666 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 0
+09:02:13,667 INFO  [stdout] (default task-1) repeating invocation, count=3253
+09:02:13,667 INFO  [stdout] (default task-1) about to create entity 3254
+09:02:13,667 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012095: Abort of action id 0:ffff7f000001:11d28655:53eb58d3:87 invoked while multiple threads active within it.
+09:02:13,667 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012108: CheckedAction::check - atomic action 0:ffff7f000001:11d28655:53eb58d3:87 aborting with 1 threads active!
+09:02:13,667 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 0
+09:02:13,668 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,668 INFO  [stdout] (default task-1) repeating invocation, count=3254
+09:02:13,668 INFO  [stdout] (default task-1) about to create entity 3255
+09:02:13,668 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,668 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,668 INFO  [stdout] (default task-1) repeating invocation, count=3255
+09:02:13,668 INFO  [stdout] (default task-1) about to create entity 3256
+09:02:13,669 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,669 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,669 INFO  [stdout] (default task-1) repeating invocation, count=3256
+09:02:13,669 INFO  [stdout] (default task-1) about to create entity 3257
+09:02:13,669 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,669 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,669 INFO  [stdout] (default task-1) repeating invocation, count=3257
+09:02:13,669 INFO  [stdout] (default task-1) about to create entity 3258
+09:02:13,670 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,670 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,670 INFO  [stdout] (default task-1) repeating invocation, count=3258
+09:02:13,670 INFO  [stdout] (default task-1) about to create entity 3259
+09:02:13,670 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,670 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,670 INFO  [stdout] (default task-1) repeating invocation, count=3259
+09:02:13,670 INFO  [stdout] (default task-1) about to create entity 3260
+09:02:13,671 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,671 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,671 INFO  [stdout] (default task-1) repeating invocation, count=3260
+09:02:13,671 INFO  [stdout] (default task-1) about to create entity 3261
+09:02:13,671 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,671 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,671 INFO  [stdout] (default task-1) repeating invocation, count=3261
+09:02:13,671 INFO  [stdout] (default task-1) about to create entity 3262
+09:02:13,672 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,672 WARN  [com.arjuna.ats.arjuna] (Transaction Reaper Worker 0) ARJUNA012121: TransactionReaper::doCancellations worker Thread[Transaction Reaper Worker 0,5,main] successfully canceled TX 0:ffff7f000001:11d28655:53eb58d3:87
+09:02:13,672 INFO  [org.jboss.as.jpa] (default task-1) tx.status = 4
+09:02:13,673 INFO  [stdout] (default task-1) repeating invocation, count=3262
+09:02:13,673 INFO  [stdout] (default task-1) about to create entity 3263
+09:02:13,675 ERROR [org.jboss.as.ejb3] (default task-1) WFLYEJB0458: Failure in caller transaction.: java.lang.IllegalStateException: No transaction is running
+        at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.getTransactionImple(TransactionSynchronizationRegistryImple.java:228)
+        at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.registerInterposedSynchronization(TransactionSynchronizationRegistryImple.java:136)
+        at org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.processInvocation(StatefulSessionSynchronizationInterceptor.java:111) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InterceptorContext$Invocation.proceed(InterceptorContext.java:407)
+        at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:46) [weld-core-impl-2.2.3.Final.jar:2014-07-07 07:39]
+        at org.jboss.as.weld.ejb.EjbRequestScopeActivationInterceptor.processInvocation(EjbRequestScopeActivationInterceptor.java:83) [wildfly-weld-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ee.concurrent.ConcurrentContextInterceptor.processInvocation(ConcurrentContextInterceptor.java:45) [wildfly-ee-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InitialInterceptor.processInvocation(InitialInterceptor.java:21)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+        at org.jboss.as.ee.component.interceptors.ComponentDispatcherInterceptor.processInvocation(ComponentDispatcherInterceptor.java:52)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.stateful.StatefulComponentInstanceInterceptor.processInvocation(StatefulComponentInstanceInterceptor.java:65) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.invokeInCallerTx(CMTTxInterceptor.java:252) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.required(CMTTxInterceptor.java:343) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.processInvocation(CMTTxInterceptor.java:240) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.CurrentInvocationContextInterceptor.processInvocation(CurrentInvocationContextInterceptor.java:41) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.invocationmetrics.WaitTimeInterceptor.processInvocation(WaitTimeInterceptor.java:43) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.security.SecurityContextInterceptor.processInvocation(SecurityContextInterceptor.java:100) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.ShutDownInterceptorFactory$1.processInvocation(ShutDownInterceptorFactory.java:64) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.LoggingInterceptor.processInvocation(LoggingInterceptor.java:59) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ee.component.NamespaceContextInterceptor.processInvocation(NamespaceContextInterceptor.java:50)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.AdditionalSetupInterceptor.processInvocation(AdditionalSetupInterceptor.java:55) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ContextClassLoaderInterceptor.processInvocation(ContextClassLoaderInterceptor.java:64)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:326)
+        at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:448) [wildfly-security-manager-1.0.0.Final.jar:1.0.0.Final]
+        at org.jboss.invocation.AccessCheckingInterceptor.processInvocation(AccessCheckingInterceptor.java:61)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:326)
+        at org.jboss.invocation.PrivilegedWithCombinerInterceptor.processInvocation(PrivilegedWithCombinerInterceptor.java:80)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+        at org.jboss.as.ee.component.ViewService$View.invoke(ViewService.java:185)
+        at org.jboss.as.ee.component.ViewDescription$1.processInvocation(ViewDescription.java:182)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+        at org.jboss.as.ee.component.ProxyInvocationHandler.invoke(ProxyInvocationHandler.java:73)
+        at org.jboss.as.test.integration.jpa.txtimeout.SFSB1$$$view1.createEmployee(Unknown Source) [classes:]
+        at org.jboss.as.test.integration.jpa.txtimeout.SimpleServlet.doGet(SimpleServlet.java:72) [classes:]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) [jboss-servlet-api_3.1_spec-1.0.0.Final.jar:1.0.0.Final]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) [jboss-servlet-api_3.1_spec-1.0.0.Final.jar:1.0.0.Final]
+        at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:56) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:58) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:247) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:234) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:76) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:153) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.Connectors.executeRootHandler(Connectors.java:197) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:737) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_60]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_60]
+        at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_60]
+09:02:13,681 ERROR [org.jboss.as.ejb3.invocation] (default task-1) WFLYEJB0034: EJB Invocation failed on component SFSB1 for method public void org.jboss.as.test.integration.jpa.txtimeout.SFSB1.createEmployee(java.lang.String,java.lang.String,int): javax.ejb.EJBTransactionRolledbackException: No transaction is running
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.handleInCallerTx(CMTTxInterceptor.java:161) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.invokeInCallerTx(CMTTxInterceptor.java:254) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.required(CMTTxInterceptor.java:343) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.processInvocation(CMTTxInterceptor.java:240) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.CurrentInvocationContextInterceptor.processInvocation(CurrentInvocationContextInterceptor.java:41) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.invocationmetrics.WaitTimeInterceptor.processInvocation(WaitTimeInterceptor.java:43) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.security.SecurityContextInterceptor.processInvocation(SecurityContextInterceptor.java:100) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.ShutDownInterceptorFactory$1.processInvocation(ShutDownInterceptorFactory.java:64) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.LoggingInterceptor.processInvocation(LoggingInterceptor.java:59) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ee.component.NamespaceContextInterceptor.processInvocation(NamespaceContextInterceptor.java:50)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.interceptors.AdditionalSetupInterceptor.processInvocation(AdditionalSetupInterceptor.java:55) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ContextClassLoaderInterceptor.processInvocation(ContextClassLoaderInterceptor.java:64)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:326)
+        at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:448) [wildfly-security-manager-1.0.0.Final.jar:1.0.0.Final]
+        at org.jboss.invocation.AccessCheckingInterceptor.processInvocation(AccessCheckingInterceptor.java:61)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:326)
+        at org.jboss.invocation.PrivilegedWithCombinerInterceptor.processInvocation(PrivilegedWithCombinerInterceptor.java:80)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+        at org.jboss.as.ee.component.ViewService$View.invoke(ViewService.java:185)
+        at org.jboss.as.ee.component.ViewDescription$1.processInvocation(ViewDescription.java:182)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+        at org.jboss.as.ee.component.ProxyInvocationHandler.invoke(ProxyInvocationHandler.java:73)
+        at org.jboss.as.test.integration.jpa.txtimeout.SFSB1$$$view1.createEmployee(Unknown Source) [classes:]
+        at org.jboss.as.test.integration.jpa.txtimeout.SimpleServlet.doGet(SimpleServlet.java:72) [classes:]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:687) [jboss-servlet-api_3.1_spec-1.0.0.Final.jar:1.0.0.Final]
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) [jboss-servlet-api_3.1_spec-1.0.0.Final.jar:1.0.0.Final]
+        at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:56) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:58) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:247) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:234) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:76) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:153) [undertow-servlet-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.Connectors.executeRootHandler(Connectors.java:197) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:737) [undertow-core-1.1.0.Beta5.jar:1.1.0.Beta5]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_60]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_60]
+        at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_60]
+Caused by: java.lang.IllegalStateException: No transaction is running
+        at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.getTransactionImple(TransactionSynchronizationRegistryImple.java:228)
+        at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.registerInterposedSynchronization(TransactionSynchronizationRegistryImple.java:136)
+        at org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.processInvocation(StatefulSessionSynchronizationInterceptor.java:111) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InterceptorContext$Invocation.proceed(InterceptorContext.java:407)
+        at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:46) [weld-core-impl-2.2.3.Final.jar:2014-07-07 07:39]
+        at org.jboss.as.weld.ejb.EjbRequestScopeActivationInterceptor.processInvocation(EjbRequestScopeActivationInterceptor.java:83) [wildfly-weld-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ee.concurrent.ConcurrentContextInterceptor.processInvocation(ConcurrentContextInterceptor.java:45) [wildfly-ee-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.InitialInterceptor.processInvocation(InitialInterceptor.java:21)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+        at org.jboss.as.ee.component.interceptors.ComponentDispatcherInterceptor.processInvocation(ComponentDispatcherInterceptor.java:52)
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.component.stateful.StatefulComponentInstanceInterceptor.processInvocation(StatefulComponentInstanceInterceptor.java:65) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+        at org.jboss.as.ejb3.tx.CMTTxInterceptor.invokeInCallerTx(CMTTxInterceptor.java:252) [wildfly-ejb3-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+        ... 62 more
+Test case is available via https://github.com/scottmarlow/wildfly/tree/transactiontimeout_clientut

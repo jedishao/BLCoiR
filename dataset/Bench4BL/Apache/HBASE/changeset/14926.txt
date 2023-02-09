@@ -1,0 +1,4 @@
+org/apache/hadoop/hbase/thrift/ThriftServer.java
+org/apache/hadoop/hbase/thrift2/ThriftServer.java
+org/apache/hadoop/hbase/thrift/ThriftServerRunner.java
+

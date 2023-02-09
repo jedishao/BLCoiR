@@ -1,0 +1,4 @@
+org/apache/hadoop/hive/ql/history/HiveHistory.java
+org/apache/hadoop/hive/ql/QueryPlan.java
+org/apache/hadoop/hive/serde2/typeinfo/TypeInfoUtils.java
+

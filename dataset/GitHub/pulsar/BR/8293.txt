@@ -1,0 +1,96 @@
+Race condition in updating ManagedCursorImpl.readPosition.
+Describe the bug
+#8229 seems to have been caused by a race condition in updating ManagedCursorImpl.readPosition
+To Reproduce
+Since this is a concurrency issue, it's hard to reproduce and there isn't yet a publicly shared way to reproduce.
+Expected behavior
+Updates to ManagedCursorImpl.readPosition field should not lead to inconsistent state. It's not clear without understanding the code how concurrent updates should be handled.
+Additional context
+Please refer to #8229 for additional context. There's a link to a Slack thread for more discussions.
+There's a fix for #8229 which prevents the infinite loop: #8284 . This fix doesn't specifically address the race condition that happens in updating the ManagedCursorImpl.readPosition field.
+There seems to be quite a few past issues where a race condition in updating readPosition has been an issue. For example #1478 , #3015 & #287 .
+There is also a change #6606 which adds READ_POSITION_UPDATER for ManagedCursorImpl.readPosition.
+Regarding the race condition in #8229, it seems that ManagedCursorImpl.readPosition could get out of sync from OpReadEntry.readPosition if ManagedCursorImpl.readPosition gets updated after the OpReadEntry has been created since OpReadEntry's readPosition gets initialized from ManagedCursorImpl.readPosition.
+The race condition seems to happen in this code in the setAcknowledgePosition method:
+
+  
+    
+      pulsar/managed-ledger/src/main/java/org/apache/bookkeeper/mledger/impl/ManagedCursorImpl.java
+    
+    
+        Lines 1512 to 1523
+      in
+      825fdd4
+    
+  
+  
+    
+
+        
+          
+           if (readPosition.compareTo(newMarkDeletePosition) <= 0) { 
+        
+
+        
+          
+               // If the position that is mark-deleted is past the read position, it 
+        
+
+        
+          
+               // means that the client has skipped some entries. We need to move 
+        
+
+        
+          
+               // read position forward 
+        
+
+        
+          
+               PositionImpl oldReadPosition = readPosition; 
+        
+
+        
+          
+               readPosition = ledger.getNextValidPosition(newMarkDeletePosition); 
+        
+
+        
+          
+            
+        
+
+        
+          
+               if (log.isDebugEnabled()) { 
+        
+
+        
+          
+                   log.debug("[{}] Moved read position from: {} to: {}, and new mark-delete position {}", ledger.getName(), 
+        
+
+        
+          
+                           oldReadPosition, readPosition, markDeletePosition); 
+        
+
+        
+          
+               } 
+        
+
+        
+          
+           } 
+        
+    
+  
+
+
+Clarification, possible solution
+The problem isn't about synchronization or a missing lock. It's a race condition which cannot be resolved by simply adding a lock or synchronization.
+It should be possible to detect if another thread has modified the state and then have some code to do "conflict resolution". For example, when readPosition gets updated in setAcknowledgePosition method, it most likely shouldn't move the readPosition "backwards".
+There's already code in setReadPosition to take the markDeletePosition into account when updating readPosition. Similarly in setAcknowledgePosition, it should most likely take the previous state of readPosition into account when updating the value so that readPosition doesn't "jump backwards" in a race condition.
+      

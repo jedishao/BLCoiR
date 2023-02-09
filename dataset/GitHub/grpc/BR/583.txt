@@ -1,0 +1,3 @@
+OkHttp's cancellation is not properly synchronized
+OkHttpClientStream.sendCancel() calls finishStream() from an application thread. But finishStream() calls transportReportStatus() without any lock held. That is not synchronized correctly, as transportReportStatus() may only be called from the transport thread (i.e., while lock is held).
+It seems that all usages of streams is done while lock is held except for within finishStream() and data(). data() can actually race with finishStream() and end up sending DATA frames after the RST_STREAM. It seems it would be best to just have stream protected by lock, because it having its own synchronization isn't providing much benefit and isn't leading to correct code.

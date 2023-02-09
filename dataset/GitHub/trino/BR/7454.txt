@@ -1,0 +1,23 @@
+Join spill to disk race condition.
+Join spill (from join side) operates as follows:
+Last join operator instance calls io.trino.operator.PartitionedLookupSourceFactory#finishProbeOperator.
+New io.trino.operator.PartitionedConsumption is created with spilledPartitions.
+Spilled partitions are released by join in order using io.trino.operator.PartitionedConsumption.Partition#release.
+Each SpilledLookupSourceHandle is disposed io.trino.operator.SpilledLookupSourceHandle#dispose when all joins call PartitionedConsumption.Partition#release on particular partition
+Dispose sets io.trino.operator.SpilledLookupSourceHandle#disposeRequested, which was also returned in io.trino.operator.HashBuilderOperator#isBlocked.
+This unblocks HashBuilderOperator which now can finish gracefully.
+Join spill (from build side) operates as follows:
+
+io.trino.operator.HashBuilderOperator#startMemoryRevoke is called on HashBuilderOperator.
+Revoke future finishes
+HashBuilderOperator gets blocked on io.trino.operator.SpilledLookupSourceHandle#disposeRequested or unspillingRequested.
+SpilledLookupSourceHandle is disposed when it's no longer used by join. This sets io.trino.operator.SpilledLookupSourceHandle#disposeRequested which unblocks HashBuilderOperator. HashBuilderOperator finishes gracefully
+
+Race condition:
+
+io.trino.operator.PartitionedLookupSourceFactory#finishProbeOperator. New io.trino.operator.PartitionedConsumption is created with spilledPartitions.
+io.trino.operator.HashBuilderOperator#startMemoryRevoke is called on HashBuilderOperator.
+It calls io.trino.operator.PartitionedLookupSourceFactory#setPartitionSpilledLookupSourceHandle which registers spilled partition in io.trino.operator.PartitionedLookupSourceFactory#spilledPartitions. However, PartitionedConsumption is already created, so newly spilled partition will never be released by join operators.
+HashBuilderOperator#isBlocked never finishes because dispose is never called on spilled partition.
+
+      

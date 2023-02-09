@@ -1,5 +1,0 @@
-Bug 61713  MessageDialog can't be created in non UI thread anymoreI20040511
-
-In the past it was possible to create a MessageDialog from non UI threads. 
-This is not possible with I20040511 anymore. Doing so now results in an 
-invalid thread access to due the fact that the images are now managed by SWT.

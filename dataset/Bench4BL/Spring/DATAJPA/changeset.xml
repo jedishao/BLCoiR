@@ -1,0 +1,16 @@
+<changeset>
+    <id>359
+        <files>org/springframework/data/jpa/repository/LockIntegrationTests.java
+            org/springframework/data/jpa/repository/support/SimpleJpaRepository.java
+            org/springframework/data/jpa/repository/sample/RoleRepository.java
+        </files>
+    </id>
+    <id>620
+        <files>org/springframework/data/jpa/repository/support/CrudMethodMetadataPostProcessor.java
+        </files>
+    </id>
+    <id>268
+        <files>org/springframework/data/jpa/repository/support/LockModeRepositoryPostProcessor.java
+        </files>
+    </id>
+</changeset>

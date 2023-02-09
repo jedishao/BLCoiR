@@ -1,0 +1,4 @@
+org/apache/camel/component/xquery/XQueryURLBasedConcurrencyTest.java
+org/apache/camel/component/xquery/XQueryConcurrencyTest.java
+org/apache/camel/component/xquery/XQueryBuilder.java
+

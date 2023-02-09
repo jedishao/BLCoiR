@@ -1,0 +1,319 @@
+Race condition registering resource adapters at startupUpstream Jira of https://bugzilla.redhat.com/show_bug.cgi?id=1184610
+Please see bugzilla description for details and reproducer.
+
+
+
+
+
+
+Description of problem:
+
+
+
+
+During startup of JBoss, the following occurs randomly (not on every start):
+
+
+
+
+
+
+
+
+
+java.lang.IllegalStateException: JBAS014666: Duplicate resource resource-adapters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Version-Release number of selected component (if applicable):
+
+
+
+
+jboss-as-connector-7.4.2.Final-redhat-2.jar:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How reproducible:
+
+
+
+
+Random - it&amp;apos;s a race condition but adding Byteman which slows execution (due to synchronous logging) of the code in which the race takes place seems to increase the frequency at which the failure occurs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Steps to Reproduce:
+
+
+
+
+1. Copy a resource adapter archive to standalone/deployments
+
+
+
+
+2. Configure the standalone.xml with two adapter configs specified (single RAR)
+
+
+
+
+3. Start JBoss (a few restarts may be required as it doesn&amp;apos;t always happen)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Actual results:
+
+
+
+
+The server.log shows the exception below (and I suspect at least one of the adapter configs is not deployed - though I didn&amp;apos;t confirm the latter).
+
+
+
+
+
+
+
+
+
+12:40:44,463 ERROR [org.jboss.msc.service] (MSC service thread 1-12) MSC000002: Invocation of listener "org.jboss.as.connector.util.RaServicesFactory$1@5fc7026f" failed: java.lang.IllegalStateException: JBAS014666: Duplicate
+
+
+
+
+resource resource-adapters
+
+
+
+
+        at org.jboss.as.controller.registry.AbstractModelResource$DefaultResourceProvider.register(AbstractModelResource.java:225) [jboss-as-controller-7.4.2.Final-redhat-2.jar:7.4.2.Final-redhat-2]
+
+
+
+
+        at org.jboss.as.controller.registry.AbstractModelResource.registerChild(AbstractModelResource.java:135) [jboss-as-controller-7.4.2.Final-redhat-2.jar:7.4.2.Final-redhat-2]
+
+
+
+
+        at org.jboss.as.connector.deployers.ra.processors.AbstractResourceAdapterDeploymentServiceListener.transition(AbstractResourceAdapterDeploymentServiceListener.java:122) [jboss-as-connector-7.4.2.Final-redhat-2.jar:7.4
+
+
+
+
+.2.Final-redhat-2]
+
+
+
+
+        at org.jboss.msc.service.ServiceControllerImpl.invokeListener(ServiceControllerImpl.java:1565) [jboss-msc-1.1.5.Final-redhat-1.jar:1.1.5.Final-redhat-1]
+
+
+
+
+        at org.jboss.msc.service.ServiceControllerImpl.access$2800(ServiceControllerImpl.java:52) [jboss-msc-1.1.5.Final-redhat-1.jar:1.1.5.Final-redhat-1]
+
+
+
+
+        at org.jboss.msc.service.ServiceControllerImpl$ListenerTask.run(ServiceControllerImpl.java:2131) [jboss-msc-1.1.5.Final-redhat-1.jar:1.1.5.Final-redhat-1]
+
+
+
+
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_71]
+
+
+
+
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_71]
+
+
+
+
+        at java.lang.Thread.run(Thread.java:745) [rt.jar:1.7.0_71]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Expected results:
+
+
+
+
+No exception should be raised
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Additional info:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Document URL: 
+
+
+
+
+
+
+
+
+
+Section Number and Name: 
+
+
+
+
+
+
+
+
+
+Describe the issue: 
+
+
+
+
+It appears that where there are multiple adapter configurations, registering of the adapters is done on different threads and sometimes two threads check to see if the resource-adapters "subsystem" (I think that is what is being created) exists ... it is possible for two threads to be told it doesn&amp;apos;t exist - in which case both threads will try to create it.
+
+
+
+
+
+
+
+
+
+I think the code at issue is found in lines 120 and 122 of ./connector/src/main/java/org/jboss/as/connector/deployers/ra/processors/AbstractResourceAdapterDeploymentServiceListener.java
+
+
+
+
+
+
+
+
+
+At line 120, we check if the path exists ... and if it does not try to create it at line 122 ... but it possible that between the two lines one thread is executing, another thread may do the same - one will "win the race" and the other will fail with the exception.
+
+
+
+
+
+
+
+
+
+I did note that the entire block is wrapped in a synchronization block - synchronized on &amp;apos;this&amp;apos; - so there must be multiple instances of the AbstractResourceAdapterDeploymentServiceListener class since the logging shows interleaved execution of the check and register calls across multiple threads.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Suggestions for improvement: 
+
+
+
+
+
+
+
+
+
+Additional information:
+
+
+
+
+Attached an archive containing a simple adapter (generated using the Ironjacamar generation tool), an excerpt of the standalone.xml configuration used as well as an excerpt of the log file and a byteman script used to produce the stack traces in the log excerpt.
+
+
+
+
+

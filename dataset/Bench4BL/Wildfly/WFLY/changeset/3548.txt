@@ -1,0 +1,3 @@
+org/jboss/as/weld/WeldSubsystemAdd.java
+org/jboss/as/weld/services/bootstrap/WeldTransactionServices.java
+org/jboss/as/weld/deployment/processors/WeldDeploymentProcessor.java

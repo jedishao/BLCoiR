@@ -1,0 +1,3 @@
+org/apache/hadoop/hbase/regionserver/TestHRegion.java
+org/apache/hadoop/hbase/regionserver/wal/FSHLog.java
+

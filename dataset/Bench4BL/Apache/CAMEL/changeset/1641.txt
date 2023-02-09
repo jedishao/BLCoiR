@@ -1,0 +1,13 @@
+org/apache/camel/component/file/remote/FtpProducerConcurrentTest.java
+org/apache/camel/component/file/FileComponent.java
+org/apache/camel/component/file/GenericFileEndpoint.java
+org/apache/camel/component/file/remote/FtpOperations.java
+org/apache/camel/component/file/remote/RemoteFileProducer.java
+org/apache/camel/component/file/FileEndpoint.java
+org/apache/camel/component/file/remote/FtpComponent.java
+org/apache/camel/component/file/remote/SftpEndpoint.java
+org/apache/camel/component/file/remote/SftpComponent.java
+org/apache/camel/component/file/remote/FtpEndpoint.java
+org/apache/camel/component/file/remote/RemoteFileEndpoint.java
+org/apache/camel/component/file/FileConsumerMoveExpressionTest.java
+

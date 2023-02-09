@@ -1,1 +1,1 @@
-Bug 340806  Race condition in JavaLangTypeToResolvedTypeConverter (potentially exposed through Spring AOP)
+Race condition in JavaLangTypeToResolvedTypeConverter (potentially exposed through Spring AOP).

@@ -1,0 +1,6 @@
+org/jboss/as/controller/remote/ModelControllerClientOperationHandler.java
+org/jboss/as/protocol/mgmt/ManagementRequestContext.java
+org/jboss/as/protocol/mgmt/AbstractMessageHandler.java
+org/jboss/as/controller/remote/TransactionalProtocolOperationHandler.java
+org/jboss/as/controller/remote/ResponseAttachmentInputStreamSupportTestCase.java
+

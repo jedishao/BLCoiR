@@ -1,0 +1,3 @@
+org/apache/hadoop/hive/ql/exec/tez/TezJobMonitor.java
+org/apache/hadoop/hive/ql/exec/tez/TezSessionPoolManager.java
+

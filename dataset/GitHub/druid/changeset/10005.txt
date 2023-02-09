@@ -1,0 +1,8 @@
+server/src/main/java/org/apache/druid/client/CoordinatorServerView.java
+server/src/main/java/org/apache/druid/metadata/SegmentsMetadataManager.java
+server/src/main/java/org/apache/druid/metadata/SqlSegmentsMetadataManager.java
+server/src/main/java/org/apache/druid/server/coordinator/DruidCoordinator.java
+server/src/main/java/org/apache/druid/server/http/DataSourcesResource.java
+server/src/test/java/org/apache/druid/metadata/SqlSegmentsMetadataManagerTest.java
+server/src/test/java/org/apache/druid/server/http/DataSourcesResourceTest.java
+

@@ -1,1 +1,0 @@
-Bug 344727  [Workbench] Deadlock in of workbench use of synchronization

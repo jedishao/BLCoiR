@@ -1,0 +1,4 @@
+org/jboss/as/clustering/jgroups/JChannelFactory.java
+org/jboss/as/clustering/jgroups/ManagedSocketFactoryTest.java
+org/jboss/as/clustering/jgroups/ManagedSocketFactory.java
+

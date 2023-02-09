@@ -1,0 +1,9 @@
+pulsar-client/src/main/java/org/apache/pulsar/client/impl/ConsumerBase.java
+pulsar-client/src/main/java/org/apache/pulsar/client/impl/ConsumerImpl.java
+pulsar-client/src/main/java/org/apache/pulsar/client/impl/MultiTopicsConsumerImpl.java
+pulsar-client/src/main/java/org/apache/pulsar/client/impl/ZeroQueueConsumerImpl.java
+pulsar-client/src/test/java/org/apache/pulsar/client/impl/ClientTestFixtures.java
+pulsar-client/src/test/java/org/apache/pulsar/client/impl/ConsumerImplTest.java
+pulsar-client/src/test/java/org/apache/pulsar/client/impl/MultiTopicsConsumerImplTest.java
+pulsar-client/src/test/java/org/apache/pulsar/client/impl/ReaderImplTest.java
+

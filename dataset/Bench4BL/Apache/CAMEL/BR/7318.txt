@@ -1,5 +1,6 @@
 Concurrency on HDFS Consumer not working efficiently.
-If we have two HDFS consumers the files are being processed twice (once by each consumer, waiting one after the other), so the consumers are not working in parallel. If we add this the consumers will work as a team and the transfer will go faster.
+If we have two HDFS consumers the files are being processed twice (once by each consumer, waiting one after the other), so the consumers are not working in parallel. 
+If we add this the consumers will work as a team and the transfer will go faster.
 This happens because there is no exception thrown the rename method just returns true or false and everything carries on as nothing would have happened.
 In order to fix this we could add in the HdfsInputStream: 49
 boolean tf = info.getFileSystem().rename(new Path(ret.actualPath), new Path(ret.suffixedPath));

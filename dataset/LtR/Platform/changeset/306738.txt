@@ -1,0 +1,4 @@
+bundles/org.eclipse.e4.ui.workbench.renderers.swt/src/org/eclipse/e4/workbench/ui/renderers/swt/MenuItemRenderer.java
+bundles/org.eclipse.e4.ui.workbench.renderers.swt/src/org/eclipse/e4/workbench/ui/renderers/swt/ToolItemRenderer.java
+tests/org.eclipse.e4.ui.tests/src/org/eclipse/e4/ui/tests/workbench/MMenuItemTest.java
+tests/org.eclipse.e4.ui.tests/src/org/eclipse/e4/ui/tests/workbench/MToolItemTest.java

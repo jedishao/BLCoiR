@@ -1,0 +1,5 @@
+org/jboss/as/protocol/mgmt/ManagementRequestHandlerFactory.java
+org/jboss/as/controller/logging/ControllerLogger.java
+org/jboss/as/controller/remote/TransactionalProtocolOperationHandler.java
+org/jboss/as/protocol/mgmt/ActiveOperationSupport.java
+

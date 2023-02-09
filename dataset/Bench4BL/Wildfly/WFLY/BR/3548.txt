@@ -1,0 +1,6 @@
+JTA synchronization for a distributed transaction called with incorrect TCCL.
+It seems the RequestProcessor which is processing JTA synchronizations does not have the right TCCL set.
+As a result, during synchronization invocation:
+NameNotFoundException is thrown for a JNDI lookup of "java:comp/UserTransaction"
+if we try to acccess org.jboss.weld.Container by means of org.jboss.as.weld.services.ModuleGroupSingletonProvider.TCCLSingleton, we get ISE: "Singleton not set....This means that you are trying to access a weld deployment with a Thread Context ClassLoader that is not associated with the deployment."
+

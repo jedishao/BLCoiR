@@ -1,4 +1,4 @@
-56724 â€“ Restart Container background thread if it died unexpectedly
+Restart Container background thread if it died unexpectedly.
 To address the issue that has been raised several times on the mailing lists, e.g.
 http://tomcat.markmail.org/thread/xooxcq56ehki63dh
 "ContainerBackgroundProcessor and compounding OOMEs"

@@ -1,0 +1,8 @@
+org/apache/commons/codec/binary/BaseNCodecOutputStream.java
+org/apache/commons/codec/binary/BaseNCodecInputStream.java
+org/apache/commons/codec/binary/BaseNCodecTest.java
+org/apache/commons/codec/binary/Base32.java
+org/apache/commons/codec/binary/BaseNCodec.java
+org/apache/commons/codec/binary/Base64.java
+org/apache/commons/codec/binary/Base32Test.java
+

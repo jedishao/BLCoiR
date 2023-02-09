@@ -1,0 +1,4 @@
+plugin/trino-iceberg/src/main/java/io/trino/plugin/iceberg/catalog/hms/HiveMetastoreTableOperations.java
+plugin/trino-iceberg/src/test/java/io/trino/plugin/iceberg/catalog/hms/TestIcebergHiveMetastoreTableOperationsReleaseLockFailure.java
+plugin/trino-iceberg/src/test/java/io/trino/plugin/iceberg/catalog/hms/TestingIcebergHiveMetastoreCatalogModule.java
+

@@ -1,0 +1,6 @@
+org/apache/hadoop/hbase/regionserver/TestHRegion.java
+org/apache/hadoop/hbase/regionserver/TestStore.java
+org/apache/hadoop/hbase/regionserver/MemStore.java
+org/apache/hadoop/hbase/regionserver/HRegion.java
+org/apache/hadoop/hbase/regionserver/Store.java
+

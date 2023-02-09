@@ -1,1 +1,0 @@
-Bug 215543  [WorkbenchLauncher] WorkenchWindowAdvisor.postWindowRestore invoked in non-UI thread

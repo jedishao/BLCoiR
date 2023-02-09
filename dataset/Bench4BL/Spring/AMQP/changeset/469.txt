@@ -1,0 +1,5 @@
+org/springframework/amqp/rabbit/admin/JInterfaceIntegrationTests.java
+org/springframework/erlang/core/ErlangTemplate.java
+org/springframework/erlang/connection/Connection.java
+org/springframework/erlang/connection/DefaultConnection.java
+

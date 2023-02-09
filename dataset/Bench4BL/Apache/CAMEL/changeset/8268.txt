@@ -1,0 +1,8 @@
+org/apache/camel/component/hbase/HBaseProducerTest.java
+org/apache/camel/component/hbase/HBaseEndpoint.java
+org/apache/camel/component/hbase/HBaseProducer.java
+org/apache/camel/component/hbase/mapping/HeaderMappingStrategy.java
+org/apache/camel/component/hbase/model/HBaseRow.java
+org/apache/camel/component/hbase/HBaseConstants.java
+org/apache/camel/component/hbase/model/HBaseCell.java
+

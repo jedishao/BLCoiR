@@ -1,0 +1,3 @@
+sql/src/main/java/org/apache/druid/sql/avatica/DruidConnection.java
+sql/src/main/java/org/apache/druid/sql/avatica/DruidStatement.java
+

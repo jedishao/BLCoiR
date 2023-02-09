@@ -1,1 +1,0 @@
-Bug 191834  [JFace] class PopupDialog cannot be loaded in a non-UI thread

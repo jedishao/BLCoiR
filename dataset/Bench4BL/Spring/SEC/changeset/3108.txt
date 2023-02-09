@@ -1,0 +1,3 @@
+org/springframework/security/web/authentication/www/DigestAuthenticationFilter.java
+org/springframework/security/web/authentication/www/DigestAuthenticationFilterTests.java
+

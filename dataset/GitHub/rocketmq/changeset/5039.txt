@@ -1,0 +1,2 @@
+common/src/main/java/org/apache/rocketmq/common/BrokerIdentity.java
+
