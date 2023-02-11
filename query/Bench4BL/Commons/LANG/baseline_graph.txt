@@ -1,0 +1,6 @@
+367	all assumes static provided this several HashMaps why FastDateFormat the that same are documented safe attributes class SimpleDateFormat Patch 
+459	other suspicion HashCodeBuilder about this loads Kindest the The with high load and multi threaded unique than under 
+481	Affected very Possible classes false range the The parallel hashCode and now unlucky hash assign 
+584	That removeCauseMethodName n t targetExceptionUtils methods addCauseMethodName ExceptionUtils then locks out target modify take immutable and does mutable lock uses CAUSE_METHOD_NAMES 
+1230	re reading lookup access HashCodeBuilder unnecessary registered possible contention recursive the The nor ThreadLocals into are and identity synchronization This value 
+1251	static ClassLoaderAwareObjectInputStream HashMap break constructor initializing initializer the would safety safe initialize because map primitiveTypes 

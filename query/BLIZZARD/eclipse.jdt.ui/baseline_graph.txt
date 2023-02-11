@@ -1,0 +1,20 @@
+12996	editor Creation project Error when click mulitpage example the into file multipage and Export Jar JAR jar finish File open Invalid 
+29531	editor select package Preview JavaColorManager non opening without refactoring Move Build NullPointerException activate initialized Caused different press open 
+75843	pending createMethodEntryBreakpoint our syncExec required breakpoint the The into dialog component IResourceChangeEvent following Runnable few displaying IResource 
+79793	Deadlock will deadlocked JavaWorkingSetUpdater 
+103450	surrounding synchronized remove with would Fix fix statement block just option 
+125013	localhost waits for threads main target the JavaModelManager trace firePropertyChangeEvent came from Suspended workbench RunnableLock 
+179109	editor AST stack was threads while two the that twice computing times same are and there creating concurrently finish after 
+261198	CVS using Synchronize changes project the with view Repository and missing Model This Team 
+272742	over editor called getNewFile more FileNotFoundException threads had real type steps the The path view ImageLoader 
+291996	some access JavaMergeViewer extracting during source error dialog SWTException and presented disappeared from after Invalid was Error the with shell compilation closed errors 
+296794	Steps new this run DocumentChange when wizard_title SAVE_ALL the refactoring This try wizard Always because 
+297709	some other before link when newly same after JDT class synchronize editor new item package autocomplete resource change opened opening the with Always actions option 
+300536	access previous this dead used then error while Got undo SWTException fix and fixed state undoing Invalid 
+301242	editor test beginning more Ctrl Created hold out the The attachment and validateMatchRule spaces Save press workbench class open 
+319689	access shuting this while down solely really  ve the that stacktrace ProblemMarkerManager          from SDK just Invalid 
+336841	n t test classpath work for Synchronize Created the that view file attachment does Show Package Explorer open 
+347599	pretty C   refactorings virtually methods createChange multiple life way out Created The the that places attachment RefactoringHistoryWizard calls and dispose Refactoring case 
+411636	maybe about for main With Created the Project that same attachment and action Package Explorer 
+411841	process stack test launch during menu launching rerun the view When JUnit build delegating context from happening config results selecting 
+417765	here new using access Access the The SWT that There Bndtools causes perspective This create brand key case Invalid 

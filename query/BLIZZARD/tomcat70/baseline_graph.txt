@@ -1,0 +1,81 @@
+39769	all always give getLoader classloader destroy executing windows when any the and David Best 
+40380	syncro expiring boolean manager null expire Potential 
+42530	synchronized sessions processExpires ManagerBase line session remove the such operations and processing lock from results Session 
+45453	all server other hang access hangs for threads PreparedStatement DIGEST two JDBCRealm plus the that driver DigestAuthenticator and synchronization try authentication getRoles 
+47158	declared think variables race this volatile rid AccessLogValve article these condition get has Based class 
+47524	proposal Trunk issue this for its diff Bugzilla attaching Created the The file attachment executor McastServiceImpl class events 
+48172	other read getter could tell multiple then when the nor field AtomicInteger are from fields just Various 
+48234	parent sure methods logger Similar for getLogger Javadoc wrong considerations the The that logName and synchronised This returns subclasses 
+48248	running communicate threads run volatile used between 
+48249	running communicate threads run volatile used between 
+48399	diffLock used Lock Created that attachment field protected and mutable final lock details fields Patch 
+48790	add ManagerBase this createSession Ljava Lock HttpServletRequest field and statement http setId lang Session maxActive 
+48843	threads curThreadsBusy requests mailing any out the The into calls and http processing block returns after 
+48895	other threads protection the that leak ThreadLocals and there clears ThreadLocalMap synchronization state because 
+49129	static correct incorrect lazy multiple threads volatile possible processor the unsynchronized field This initialized initialization completely Findbugs non volatile 
+49144	very other static called threads then accessed any the that into field else and stored until from fields Findbugs 
+49567	amount Start tomcat Internal thrown when printing Created the The async attachment there GET attached starting demonstrating 
+49730	memory issue For resources less requests serve the offer The that with same and than increasing page 
+49905	tomcat DeltaManager AFTER threads during WebAppClassLoader overriden Created running leak null attachment and context This addIfUnderCorePoolSize 
+49985	init race data lazy AstInteger line AstString concurrent getInteger respectively Data getString any without AstFloatingPoint Lazy number variable synchronization lines 
+49987	private read race concurrent Data ApplicationContext null variable write Map parameters results 
+50138	synchronized access HashMap tomcat this RUNNABLE threads processor The the javadoc runnable spin synchronization SecurityUtil map hash 
+50293	add next CompositeELResolver change update then check updates Created the The with default size attachment array synchronization fails 
+50352	request void though called servlet Using when the HttpServletRequest async protected Example AsyncListener true MyServlet asyncSupported from after complete value 
+50353	IllegalStateException called servlet Calling instead timeout the The HttpServletRequest async null following MyServlet asyncSupported returns case 
+50459	bindThread side tomcat methods commit instead both the call current bind found unbind and effect unbindThread 
+50547	cluster session for DeltaManager during patch these The nor that are and startup Best timestamp CHANGE_SESSION_ID add sessions received message Neither the SESSION_EXPIRED synchronization messages 
+50554	getClass some instance objects classes Using for replacing concurrency The getInitialContext lock block Class different class simply subclasses 
+50629	bindThread other Tomcat methods about for listener their two that protected and initialization unbindThread those latest new making start the loadOnStartup filter 
+51185	synchronized Tomcat for synchro used without that fine and JDBC new think DataSourceProxy more grained this  createPool synchronisation lots since 
+51197	very server Tomcat n t test for sendError AsyncContext any setHeader the with that and absolutely stuck there from connection every hunky changed 
+51212	add which Philippe for multiple Atomic approach Created heavy Sql number with executions performance same attachment QueryStats synchornisation SlowQueryReport failure and 
+51467	completion below usage start for instead rid the most runnable StandardContext few  run lines just  join since 
+51545	request tomcat discussed available Threadname mailinglist users Created the usable that attachment served details ExtendedAccessLogValve threadname 
+51688	webapp which new memory getDefaultToolkit will against this capture simple Windows Any the that calls ContextClassLoader JreMemoryLeakPreventionListener after AWT creation undeploy 
+52055	request server side servlet InputStream for HTTP the The with input post stream bytes chunking following After from endChunk 
+52091	stress synchronized using log this ReentrantReadWriteLock when that environment field Profiler are web causes lock concurrently block from parameters 
+52213	synchronized flag access this pattern detect volatile Keshmesh Therefore used enabled concurrency properly Field boolean sufficient protect accesses 
+52259	Tomcat including lib tomcat for dead when directory with web port are and contact details just 
+52356	shared synchronized Tomcat access data race thus developers inside remove ChannelMessage the Field getSize condition size races and potential 
+52777	JVM sessions Christopher counts count listener for resources suppose down the these that parallel and starts events deployment 
+52999	That container request pretty critical fireContainerEvent session StandardSession myfaces during list the with that into array copying said class 
+53173	parking Connector configuration fairly this for RejectedExecutionException the minSpareThreads The into condition Executor SocketStatus maxThreads connectionTimeout maxConnections SocketWrapper 
+53450	parking read then ReentrantReadWriteLock the The Violeta condition following context lock from write every 
+53498	line another concurrent mining look the attachment and than name attributes from executes hashmap misusages putIfAbsent 
+53624	which dispatch issue against line was instead sendRedirect the The that RedirectA scenario and Servlet ServletContext creates page 
+53843	container actual dispatch initiated For this soon isAsyncStarted becomes the begins async that calls Without processing after DispatcherType 
+54045	always other static work for TcpFailureDetector best membership list without the with node missing member TcpPingInterceptor from SEND_OPTIONS_USE_ACK replicated map since 
+54086	cluster ConcurrentModificationException sets tomcat the The with iterator are and safe directly close key 
+54521	request cache instance data one requests nonce two the The with into Concerned same writing digest well client fails 
+55267	disconnect some test got users that load NIO and Basically stuck locked just simulate connect Did 
+55309	server issue within TagPluginManager Concurrent One concurrent two when specified Created the such with PageInfo attachment unless there ServletContext page 
+55521	some new weeks session For this protection message Created the The that condition file attachment only fixation user flow 
+55524	Scheduler Websockets monitor deadlock during Shared Created the AsyncOp attachment Atmosphere WsOutbound lock This AtmosphereResourceImpl write 
+55582	JspServletWrapper all given issue Concurrent this concurrent threads A jsp Two two Created TagFileProcessor duplicated The the null attachment and following from B jsp C tag 
+55684	parent Tomcat access granted The either permissions root ThreadGroup order all which may start threads SecurityException list the getThread avoid 
+55799	over Basic SEVERE large more this several then instead message the that nio and  sendText 
+55996	Context request side this continu AsyncContext message around the The with public Async and processing client Based publishing 
+56042	very actual before asyncComplete clear bit startAsync the The valid that with even response and Async 
+56082	getLoggerNames Tomcat tomcat reproduced Created JDK lot the with into ClassLoaderLogManager attachment and webapps attached 
+56518	webapp some oracle tomcat HTTP when the jdk async attachment and above client 
+56577	parking WsServerContainer SendHandler stack methods for threads any example daemon the The trace condition following send 
+56653	Context Tomcat test foo For for contexts instead when the The with field and following there updated between 
+56724	some issue for several start backgroundProcess script OnOutOfMemoryError via compounding the with that JMX and else effect after errors 
+56746	webapp access line loader classloader secure The accessing SecureIOThreadFactory websocket context client from new thus AsyncChannelWrapperSecure this Removing resources threads them Webssocket the calling 
+56857	all performs RUNNABLE CPU accessed these runnable and AND than get safe modified ConcurrentHashMap per invokeMethod 
+56907	very new using issue will this threads destroy program jvisualvm URL the Threads that with non existent calls and connection 
+57265	behind handler server some Tomcat using read race hiden occurrence when the with NIO nio NGINX and http 
+57338	cluster Tomcat ClusterSingleSignOn session come when sync any out the The single that nodes When are SingleSignOnEntry action online state after valve 
+57340	atmosphere forks internal read nginx for handle when the The NioEndpoint AttachmentKey same closing and get close Poller 
+57420	always process resource more classes debugger this for list error when the ContextConfig that with DirContextURLConnection class URL_ENCODER 
+57681	Tomcat loader classes Parallel loading specific Source Created patch the that attachment fix web parallel synchronizing supports class 
+57683	request keyboard Tomcat stockticket byte stockticker this AsyncContext error example the The JDK with async into handled 
+57779	using AbstractQueuedSynchronizer for For non container monitor both the blocked and lock holds handling write SocketWrapper 
+57943	poller process tomcat log one this error when soon the NioEndpoint nio http connection has 
+57959	ensures read correct race tomcat log rotated way the The valid and Despite This lock writer write latest 
+57977	been n t before against loader bound Request invoke had used trunk Created the Response The that current bind attachment has Webapp 
+58179	snippet line two The the later same null and else name well 
+58522	some jsp duplicating The Entry children are and directories from included others multiple representing this war the newer entries following calling http 
+58946	    enforced this for ParameterMap used forwarded The the Returns that    page following class 
+59138	over some SEVERE configuration for their IMO basis the startStop ThreadLocal checkThreadLocalMapForLeaks and Third anonymous warning List per party key 

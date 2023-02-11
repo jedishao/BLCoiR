@@ -1,0 +1,38 @@
+543	synchronized some access encapsulates validates For changes multiple HBase the lot these that provide and HMaster state region conditions class possibility 
+659	checking cache enwiki more batchUpdate two the that condition and retiringRegions region 
+663	all which some cache before for its during updatesLock updates each flushed the The with number that are startup lock assumption flushAn HStore acquired 
+699	That address fixing before old was for scan relocateRegion hudson out the tried threaddump region hanging table first hbase taking 
+818	handler for monitor deadlock WriteState the HRegion with regionserver Flusher lock uploading IPC HashSet 
+950	new hang expires works commit update then the getting into with that existing proceeds rowlock and now lock This until row passed 
+1569	Luckily Call cluster hours race import seemed this clean IllegalAccessError down heavy the regionserver condition load rare after first open 
+1740	which here read production more one One memstore hfile the The condition high load and get This under ICV snapshot 
+1840	which using debug IndexTableThe loads update thrown includes used IndexedTable when Line with unit tests fix stacktrace following row apos RowLock Invalid 
+1869	through delete when conjunction public and lock row Will just Invalid RowLock which void test testing packaging IOException throws the TestIndexedTable with following final shortly 
+2023	all other regions one this threads requests the offline locateRegionInMeta and get client few userRegionLock block region thousand highly 
+6565	some for used unsafe repeated coprocessor happened the result found tests Coprocessor multithreading different results exec 
+8923	however cluster tries test may last race before chaosmonkey start also recovery when ExitCodeException moment the with ChaosMonkey due teardown happens 
+13606	regions submit expected two specified both the HRegionInfo path async bulkAssignThresholdRegions servers public and List behavior assign 
+13662	    scan HBASE inside throws any the that with callSeq failure scanner has seems OutOfOrderScannerNextException 
+13959	all splitting involves more this about for bit each the these single The most with fail split common size and setup region storefile table 
+13988	handler server alive more for threads INFO the from lease exiting 
+14178	cache waiting for monitor off the lot regionserver Entry blocked WAITING client block because table offsetLock 
+14241	obtain cluster stack debug Root level one monitor deadlock during output RpcClientImpl MASTER_META_SERVER_OPERATIONS and connection 
+14359	all decTaskCounter will for unchecked during HTable error observed the The task and  close until AsyncProcess close 
+14463	using read offset bad IdReadWriteLock each the bucket performance same array and machine BucketCache online from implement class much 
+14555	handler test port BLOCKED this toString Waited MVCC Blocked queue Just 
+14812	BufferedMutatorImpl WAITING monitor deadlock ResultBoundedCompletionService prio worker daemon 
+14926	All server side readingThrift RUNNABLE this HBASE got patch runnable BufferedInputStream stuck thrift client worker since changed 
+15001	sink for multiple For possible the The zero that size are and leads edits following HBaseInterClusterReplicationEndpoint This verification 
+15030	TableNamespaceManager ownable ProcedureExecutor for this monitor deadlock ReentrantReadWriteLock running synchronizer 
+15093	performs MetricsSource  setSizeofLogQueue incorrect log multithreaded for instead when enabled setting the multiwal into non trivial decrementing size and  decrSizeofLogQueue This queue 
+15146	new dispatch rpc acks epoll queueBlocking down capacity the scheduler The lots schedulers slows readers blocking and trying block different everything Those 
+15650	about threads reading Store also contention Remove many HBASE when point writing StoreFile TimeRangeTracker 
+15957	some parent alive will for HBASE the result shouldCloseConnection never and markClosed interrupt This connection handling writer close connections 
+16081	WAL remove_peer gigantic same and blocking peer WALs from finish gracefully  take all which will ReplicationSourceManager underlying the rollingWe with take When  recordLog CompletionService HBaseInterClusterReplicationEndpoint Replication 
+16144	other will before old finally claimQueues false then clean when multi the useMulti nodes prematurelyIn acquiring and lock Replication from forever operation queue 
+16304	handler datanode AbstractQueuedSynchronizer waiting monitor ReentrantReadWriteLock Full HRegion runnable port SynchronousQueue queue 
+16367	server cluster log before reach start was being HRegionServer that premature abort and HMaster initialization region dies hbase between since 
+16429	all parking handler called waiting SafePointZigZagLatch for deadlock FSHLog the with jstack runnable buffer rollWriter apos experienced 
+16699	&apos;s new byPass other cases unconfigured Once issue more For concurrent unittest simpler wrong Please the places and following getWaitInterval lines 
+16721	some cluster WAL max this multiple for the split flush Too due region flusher logs 
+16788	compacted instead removing the call regionserver archived with closeAndArchiveCompactedFiles same calls are abort and compactedfiles calling files copy close HStore removeCompactedfiles 

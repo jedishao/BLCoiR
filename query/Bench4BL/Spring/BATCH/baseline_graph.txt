@@ -1,0 +1,18 @@
+170	Concurrent operationUse eventually StepExecution when modification running asynchrounous step hibernateJobDao StaleObjectStateException results operation 
+449	always item threw previous will reader caused ahead one makes skip error both the that and calling synchronization writer ItemSkipPolicyItemHandler between 
+603	JobExecution are and could another modified volatile fields 
+782	execution some for SimpleAsyncTaskExecutor the into such and synchronizer above semaphore step from case 
+912	all making will confident this least during list accessed without the that performance fix JobRegistryBackgroundJobRunner variable context errors 
+1272	explain Write tolerant work FaultTolerantChunkProcessor multiple threads fault run strange the skips once and multi threaded apparently This step hard 
+1278	multiple for threads underlying exceptions RepeatTemplate the throw This BATCH ignorable aborts early 
+1362	over visible last rather asking infinite want One commit threads its FINISHED the The that apparently multi threaded and than spinning step between 
+1526	big detection Tomcat deal one this for ChunkMonitor local The the leak existing re deployment web from 
+1542	protection inside StepExecution really concurrency anyway the The JobExecution executions collections and safety effect only safe BATCH copy job MapJobRepository write 
+1572	read reader loosing chunk come out the The ExceptionHandler and failing lock UnexpectedRollbackException Collection step transaction 
+1709	distance about concurrent Must caching setting are and limit occasionally fails cache race column duplicate strange BeanWrapperFieldSetMapper concurrency the with condition names even exact messages properties 
+1724	still critical rather least for this sort without the same failure and limit step queue retry since 
+1725	otherwise concurrent used when modification exceptions SubclassClassifier there concurrently ConcurrentHashMap 
+2126	which instance dateFormat work longNumberFormat any the properly with TaskExecutor Thus due and asynchronous variable setup evaluated 
+2153	static works HashMap Hashtable maven for start multiple project increment possible the with minimal fix and NullPointerException decrement attached produces threadsafe Replacing TestStepSynchronizationManagerMain 
+2156	STEP_EXECUTION_ID SERIALIZED_CONTEXT multithreaded tasklet deadlock updates JobRepository two nested our when concurrency The exit Transaction due PREFIX ConcurrencyFailureException UPDATE ABORTed SHORT_CONTEXT order 
+2313	couple hasn Ended main during contexts Spring error Flow the with number that AbstractJob into NullPointerException apos 

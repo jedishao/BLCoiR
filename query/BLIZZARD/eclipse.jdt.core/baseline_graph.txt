@@ -1,0 +1,7 @@
+29585	container resourceChanged classpath resource processResourceDelta for tree initializing run initializeRoots broadcastChanges notify The getResolvedClasspath endOperation Model initialize locked modifications Core 
+58314	cursor console AST visiting n t multiple this for save threads ASTs the The that readers does safe came managment from 
+291322	issue several freed Windows immediately when delete running the tests file Some tear known calls and get subsequent This hence JDT errors Core 
+327143	next called Right The into that number and loop awaiting case new consequence manager jobs was touch index accept the call never null processing job 
+421473	all annotation side clients this for least annotations handle type getAnnotations the that condition and there scope from block returns since 
+431275	product DeltaProcessingState this was bugzilla collected addPackageFragmentRoot Lock the call JavaModelManager headless with and well 
+464570	    which shared static may caused weblogic index fixes the reproduce with such multi threads This jdt case AIOOBE conflict 

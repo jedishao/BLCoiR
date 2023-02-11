@@ -1,0 +1,31 @@
+6623	getSelectionFromWidget access called getLaunchElement removeDeletedHistories refreshPluginActions run then getDelegate Threading Compiled the plugin startup fails Invalid Plugin 
+15379	which viewer ResourceNavigator log listener changes project packages WorkingSetManager the The that view and only working from 
+33942	requirements other IDecoratorManager this for Javadoc then  update mention The call the javadoc SWTException form get restriction threading state updated 
+46562	cvs Reference Full the mode Signal runnable from Client prio modal 
+48382	which attempting stack before problematic another this for deadlock while both the The running automated trace tests releasing due are marker join ILock 
+54450	seemed work observation this Only requestInUI the call that dialog what and getWorkbench from join job info Another 
+59782	All Types ImplicitJobs Reference Dispatcher Full the runnable Caching came perspective YJP 
+67053	nature false about IOException talking something both the failure trying Current case  lock Location 
+74185	all test preventing within before this for UIJobTest main while concurrency the The altogether dual and failure booleans until join assertions job potential 
+76378	otherwise allows held NotifyJob timing sometimes multiple locks nested UIThread patch the that notification JUnit background and interaction seems operation 
+84141	Currently sometimes this rule decorations while instead locks remove the running DecoratorScheduler are and scheduling lock DecorationScheduler 
+108162	new some using line for Resource resources deadlock our participant the The refactoring MoveFilesAndFoldersOperation Move managed  the active shell  following from plug class 
+113582	Reference jobs during Full the runnable marker Worker well 
+114527	condition startup leads Race intermittent Workbench crashes 
+114813	registry called going added will before listener for simple getBundle the The that JUnit and Incorrect failure synchronization from events those 
+118414	EventManager Reference Dispatcher Full each WorkingSetManager mode runnable startup State Client 
+136855	COM STA using Secondary dll objects deadlock Windows the The calls versions IBM and block 
+164361	handler Task beginTask before for when dialog and get This one this isVisible check label message the with condition task name job user 
+168806	new n t ensureWorkerThreadIsRunning does start 
+171452	handler couple using will appears deadlock got syncExec the Deadlock that trace causing startup Splash from deadlocks 
+230472	Activities synchronized internal n t reloaded list when enabled controlled the with correctly Expression are and persisted 
+248908	dirty editor synchronized Form for false when the More setBusy calling true BusyIndicator locked PROP_DIRTY events 
+258352	too ProgressManager synchronization expensive 
+262032	may create deadlock DeadlockDetector 
+273752	which fired test Platform probably PACKAGES_REFRESHED getSourceOfContribution deadlock testEditorClosure syncExec The the that suite getType event 
+296056	perform rule deadlock beginRuleThe syncExec The the Deadlock that and following now scheduling owns begin between case attempts since 
+296822	doing other isCanceled called methods usage for two The these that and than setCanceled which work expected one monitor volatile the field cancelled progress 
+302536	double locking checked MarkerSupportRegistry Broken 
+306738	item change defining type tool radio the MToolBar with selection state written items ToolItem quitting 
+307405	which stack NULL waiting one this NavigatorContentServiceContentProvider their deadlock our when users the Deadlock and Event starting Framework
+312063	ListenerList HashSetHashSets guarantee instead SelectionServiceImpl are and does safe event order 

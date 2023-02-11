@@ -1,0 +1,32 @@
+1810	stack SFSB for OwnableReentrantLock into lock This subsequent different released will was thrown Synchronization the fail never Because ownership owning callback pushed 
+2016	over which role servlet foo expected run invokes when propagated invocations the The async with invocation and asynchronous EJB assume runs 
+2065	for Update SPI out The that same jboss does jar hard latest marked timed test testing the suite name integration job transaction since 
+2458	RpcDispatcher registry Channel start Stopping Service Processing the JGroups weld Services entries null service and ear Starting missing dependents deployment AppOneBean 
+2467	AsynchronousService configured Deadlock installed using startup cachesCacheConfigurationService wrapper Infinispan transactional 
+2954	using issue instead Synchronization JSMContextProducer switch The the JMSContextProducer with Transaction syncs TransactionSynchronizationRegistry injected registers must registration directly JMSContext register 
+3259	test built Failed start for contexts deploy the RuntimeException service and ear scope ContextNotActiveException WeldStartService MSC deployment 
+3280	server some for jdbc remoting when the that file fix and integration lock from MSC directly starting 
+3338	test will two Section spec the The same and than JMSContext transaction Transactional 
+3381	rollback request process will Possible ActiveOperation received immediately sends that never cancellation and managed domain cancelled sending initiating receipt after operation 
+3396	checkSuccessful test this dist the ManagementClient XNIO management name from apos 
+3517	eventually The result leaks leak that reload does results DeploymentMountProvider will newScheduledThreadPool pool start OOM command the stop slow calls effect 
+3548	which means incorrect for distributed the with that JTA Singleton trying synchronizations synchronization ClassLoader This processing transaction RequestProcessor TCCL 
+3695	all however ScheduledExecutorService explicitly will scheduled session pool false threads attempt execute SessionExpirationScheduler the leaks undeployThe web unless Distributed expiration uses after 
+3715	for timeouts BatchContainer used these relies web Async lock This because ejb new sessions distributable capabilities the These Batcher servlets clustering Infinispan locals 
+3727	registry below CacheException one start channel this EmbeddedCacheManagerStartupException invoke during type any the JGroups that Race starts 
+3731	IllegalStateException count for RUN INFO timeout running invocation caller task Transaction public repeating doCancellations state EJB transaction status 
+3942	Probably mod_cluster race issue will session for clean the with condition same revalidate and Race draining well exists logic conditions 
+4133	server hang bad pending timeouts threads failed the with timer When Hanging and service there redeploy because worker EJB persistent deployment 
+4310	adapters adapter for threads possible check the that Additional Ironjacamar and following well try apos 
+4511	this the ApplicationDeadlockException How ApplicationDeadlockExceptionDescription stale EAP and raises block catch Visual transaction retry 
+4844	which Wildfly committed issue necessary before ContainerManagedConcurrencyInterceptor this IMHO run when the The that Here earlier too are Singleton than CMTTxInterceptor EJB transaction early 
+5186	log GlobalTransaction exactly remote WARN local the The Unable and came only few from ERROR 
+5449	factory correctlyWildfly other race custom channel for Custom started two when the The JGroups condition same and overwritten there only 
+5596	Possible could methods invoking one change multiple concurrent threads MDBs deactivate the effects calls lock from simultaneously startDelivery order 
+5770	marked channel for Stopping transactions RollbackException INFO local the JGroups web are ERROR Pool MSC Final Current Undertow 
+6127	SYNCHRONIZED synchronized REQUIRED UNSYNCHRONIZED TRANSACTION type any without target the component JTA and there context persistence from transaction 
+6215	SessionSynchronization SFSB before JBPAPP for concurrent executing local whilst the SFSBIssue managed and calling has transaction 
+6405	synchronized limitation Wildfly this getBeanDeploymentArchive getBeanManager sense any both workaround the The STACK with into following locked 
+6776	configuration Failed another change for pools threads description long the running same failure marshal creating create workmanager persist queue 
+6877	cache read log below more keys change another for our acquire the that trace and than XXX Fine key TimeoutException 
+7282	IIOP correct resource double one this recovery deadlock used then transactions remote when remoting the diamond same jboss and JTA Current transaction 

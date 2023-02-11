@@ -1,0 +1,33 @@
+1247	the Interpreted line get  bci lock This used good frame Compiled 
+1302	called main run handle checker Source Native BlockedThreadChecker blocked Unknown startup limit 
+1355	HttpClientRequestImpl JVM Server line this deadlock the getlock total handleException and response  bci ClientConnection frame 
+1466	HttpClientRequestImpl level one this dangerous for ServerConnection monitor deadlock instead two something the glitch lock behaviour per just 
+1469	 createEndpoint called multiple HttpClientMetrics for threads resources HTTP SPI QueueManager the The leak same  getConnQueue client from different fresh implementations acquired ConnQueue 
+1573	shared stack One Windows when example closing blocked and AsyncFile issue more was opening filesystem the nbd with mapped drive Blocked user 
+1598	Asynchronous still been read for vertx wrong The blocked eventloop Async blocking limit has write close open 
+1633	Context blocked log does provided  executeBlocking description threads 
+1742	here over similar cache read will instances Sample multiple the The that such file cached verticle This try FileResolver case 
+1834	handler request synchronized HttpServerRequest loops run SockJSSocket when the holding reconnects and websocket handlers HttpServer context Netty connection event under close 
+1892	all setHandler completion handler based within our the prints The that and asynchronous After different 
+2012	for also counter writesOutstanding when long the that into AsyncFileImpl and Race get context invalid This from because complete updated write 
+2370	which resolver will synchronous pool underlying inconsistent when ConnectionProvider the The that asynchronous failure HttpClient host callback connection case resolved 
+2418	which new using illustrates acuires Possible multiple messagesToSend locks when gets the The same Consumer and trying get stuck verticle IgniteClusterManager HazelcastClusterManager 
+2670	boostrap this when propagated wrong the with that are loop and GlobalEventExecutor Netty event Client notifications 
+2684	    happen execution race Mongo for Handler  T  when resolution off the trace future asynchronous and Future This callback completes runOnContext executeBlocking 
+2773	all request delivery Currently race pool this when without hold the better valid with condition and there context client connection close connections between 
+2916	which handler still called HTTP them while when lead remove that holding are handlers lock event deadlocks 
+2982	the HttpClientRequestImpl some pretty os_prio BLOCKED for http monitor simple relative 
+3064	here some other synchronous methods this for failed then when the result that same related stream HttpServerResponse Future responses operation case 
+3140	handler synchronized Currently for reading them used when the file calls and handlers calling only This synchronization lock AsyncFile block useful 
+3142	Deadlock server instances regression deploying several verticle This starting net when 
+3232	setHandler works main promise Vertx down The the output these with that executor VertxTest future  close Future from event complete terminated 
+3335	Steps execution for instead any the blocked loop and resolveFile above Invoking This block unpause because event worker runs existsInternal 
+3468	Ubuntu mixed OpenJDK Source openjdk blocked Unknown HttpClientDoubleFail Test build Running complete 
+3469	performs before indefinitely when The same and does host client after because close retry will pool HTTP the fail failure retrying callback self 
+3658	likely making unexpected least this false mixed the unhandled with fail and future well block List situation isComplete 
+4024	synchronized race listener this outer while when without the with that even port future context debugging after TCPServerBase 
+4069	CloseFuture instance WorkerExecutor WorkerExecutorImpl one monitor deadlock Vertx VertxImpl the into looks and above lock close 
+4104	other WorkerExecutorImpl carefully false this right breakpoint the call running sleep that and lock executeBlocking 
+4221	here became NPE pool executed slot instead meantime when the that post null Leases get reported This action connection from lease 
+4275	the synchronized handler called within block ConnectionBase 
+4278	DeploymentManager additional this any our when required the The DeploymentOptions null name quite from class registerVerticleFactory verticles 

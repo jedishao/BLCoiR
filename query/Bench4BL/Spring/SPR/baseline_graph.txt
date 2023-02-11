@@ -1,0 +1,1 @@
+7688	JVM allow synchronized null does could NullPointerException thrown pvs checkPropertySkippingIBM 

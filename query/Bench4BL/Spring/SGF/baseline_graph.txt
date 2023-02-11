@@ -1,0 +1,2 @@
+231	Policy init thus more batch for specify threads Tested nested the Sender sender parallel than Ordering property senders queue gateway policy 
+280	instance methods start proper around running the The stop and does variable safe synchronization ContinuousQueryListenerContainer class addition 

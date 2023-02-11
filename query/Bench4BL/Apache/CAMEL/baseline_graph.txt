@@ -1,0 +1,64 @@
+140	That instance n t XsltBuilder more used ResultHandler transformation unsafe hold the result never same and variable reset cleared 
+510	InAggregator rid MultiCastAggregatorTest out The patch output that There aggregating Intermittent are aggregators test race also both the condition attached unused exchange 
+574	loan using mulitcast added for parallelly enough broker improvement when example the Multicast into default performance When parallel there After CAMEL processing create 
+715	very process ConcurrentModificationException void Processor ThreadProcess run simple defining multicore Stack Exchange with routing runTask public systems ThreadProcessor 
+803	shared ValidatingProcessor issue created another this error each The locally solution would fix easiest stored errorHandler information written 
+1199	across throttle throttling multiple threads appears instead per Throttler 
+1270	using bee ctrl countdown run Camel MainSupport when seen The camel stopping from Then latch hanging Main class 
+1401	new request Marshaller getter instance instances lazy custom parse our JaxbDataFormat SAXException explicit the with that Due well every 
+1510	over side queuing untested establishing this its continuously exceptions concurrency the The that BatchProcessor sender and following effect connection 
+1565	which called DeadLetterChannel for XSD while Logger two the endpoint contains hit camel safe ERROR flow first validation 
+1583	all server process LDAP will temporarily JNDI requests possible when directory required the The with existing across component ldap context 
+1604	add UnitOfWork nabble registering custom for synchronization callbacks DSL processor easy 
+1641	new ftp instance created for discussion each FTPClient component nabble camel does Basically safe http producer consumer 
+1650	which based some illustrates address clustered locking message extended the that with database environment condition mechanism IdempotentConsumer 
+1670	all behind was start The the Components route file myBean left and files lock leaving OverlappingFileLockException File errors 
+1795	new bad want listener maxMessagesPerTask message when wrong the jms receiving default defaults camel only per messageJmsConfiguratiuon strict 
+1930	XPathExpression some using Messages natural objects one multiple for concurrent contention Camel message resulting the these jms JMS xpath Synchronized are and consumers According 
+1966	which the CamelNamespaceHandler Here mail discusses about safe 
+2049	tcp lazySessionCreation acceptor instances pool Camel MINA used sync both proxying file known and true attached well 
+2175	Initialization other cxfBinding pass will this multiple HeaderFilterStrategyAware threads CXF cxf the that with camel true safe initialized getAndSet 
+2496	through week test this several threads directory the patch that with Attached symptom condition what shows file StreamCache following seda 
+2824	luck this for Aggregator deadlock while any without testcase running with route camel far failing After DefaultTimeoutMap processdump full 
+2935	other asynchronously test before asyncCallback methods for impossible Synchronization via the patch that fix and report messages course 
+2986	resume suspend completion IllegalStateException initial leading isInitial executed executing heavy the async that and than concurrently block Jetty under 
+2994	wanting instance Message test InputStream one INFO Logger the Exchange CXF cxf routing with such CxfClientCallback only complete Body 
+3216	all ScheduledPollConsumer new re schedule die ftp throwable being poll polling then kept JDK the that runnable stop due and scheduledscheduled This consumers 
+3277	which issue converter for several type loading around attempt the loaders The patch fail with cast load abort camel and attached converters 
+3349	proceed below performing for binding sync instanceof the getting invocation endpoint would and getBinding Race following getAndSet under 
+3493	ConcurrentModificationException other methods one multiple this threads removing the route are various following get synchronization Caused from removeRouteDefinitions definitions 
+3528	created needed writers when hold The cxf CXF readers and camel HybridSourceDataBinding schemas safe must state properties 
+7116	CamelContext doStop one another for direct its threads generateHttpUrl JIRA example with route closing When does client from Where poolCase 
+7161	init using BLOCKED start dozer its monitor then springWhen the call spring with into stop camel and lock getBean 
+7239	SchemaFactory issue Address work threads the safe avoid ValidatorProcessor addition 
+7318	add other will false HDFS this IOException two the transfer carries Consumer fix rename and consumers after ioe order 
+7321	some other separate environments The running that his JUnit order Jiang all processes test within pass this was the JcrConsumer with tests Willem following 
+7364	JpaMessageIdRepository reason change for this constructor non our required strange each the The that EntityManager safe assigned 
+7556	listening Multiple concurrent multiple threads rabbitmq Allow the single JMS endpoint camel queue consumer 
+7715	new stopped still SjmsConsumer instance for pool ThreadPool Camel when component endpoint removed even and context producer SjmsProducer every consumer 
+7795	some may correct caused lose values underlying MDC without odd the The that such async system regression commits from after mechanism first 
+7968	singleton race Instead Instance multiple concurrent Containers handle when approach undefined concurrency the The that Container ContainerRegistry what behaviour 
+7973	proposal CircuitBreaker circuit configuration this raised processor CircuitBreakerLoadBalancer the The Exchange async behave This after case 
+7988	next phaned read could for was thrown call the file causing abort eligible lock This camelLock consumer case 
+8088	FTP waiting initial this for ilk IOException soTimeout the condition ftpClient connection where socket further reply connect 
+8134	issue limited unlimited could about this false OOM error redelivery HttpProducer CachedOutputStream the into with endpoint Here even does synchronization exchange closedOnCompletion option 
+8146	parking suspend resume AbstractQueuedSynchronizer start TIMED_WAITING SFTP threads Camel something the condition route stop and stopping sftp 
+8200	    very memory for this executed setMessageId message body processInOut redundant that JMS null response and calling 
+8241	Unix test issue before will tested this command the that into environment updating attached well case exec 
+8268	values scan concurrent used when The endpoint same camel passed because between using will Cloning threads FilterList list wrong the filter safe 
+8353	defer till Instead release channel when acquire The that closing would and only lock FileLockExclusiveReadLockStrategy released acquired the invalid closed open 
+8673	here slightly ConcurrentModificationException still ticket when The the routes refers fix and addRouteCollection CAMEL creating dynamic routesThis 
+8713	still for pool aggregation run then setting aggregate the that fly ParallelAggregate parallel even true CAMEL only processing worker 
+8885	ConsumeLockEntity select beginning wan false update then without wrong the that condition and function ConsumeDeleteI lock consumeDelete locked just entity 
+8954	completion using markerFile strategies readLock For two locks Lock the file When common b fileName and synchronizations there only lock This information share FileLockExclusiveReadLockStrategy after 
+9199	implements very Serializable objects non when soon The that Consumer fix and sending consumer add will this threads serializable RabbitMQ contains tests partially 
+9311	shared vice instance more for HTTP contexts any two the originating with routes router endpoint differently calls Concurrency and dynamic bean case versa 
+9319	ProducerTemplate memory SshClient for when Any reproduce are and subsequent from together new execution using issue more threads profiler being the with These 
+9331	shared httpClient using manager doStop this when the does builder Also client http closed connection close 
+9738	which doStop for several started invoke While the call unbind web camel IoAcceptor from dispose after 
+9951	getThreadPool some Websocket previous will minThreads for WebSocket these connected cosumer component default These websocket and camel maxThreads Setup properties 
+9970	next CamelFileLength for update Camel when long granted The file and writing get lock exclusive write fails read stores length its the someone lastModified parameters 
+10024	next disconnect CloseFuture will setting the The call with true closed after ExchangeTimedOutException close errors connections 
+10215	synchronized cache instance static race afterPoll will ordering EventDrivenPollingConsumer For used  receive poll the with same and DefaultConsumerTemplate returning beforePoll client ConsumerCache 
+10229	channel For message rabbitmq the The RabbitMQ Consumer stopping destinationQueue following behaviour close consumer 
+10273	flag level configuration custom for ThreadPool pool simple possible check instead the take that Endpoint just account 

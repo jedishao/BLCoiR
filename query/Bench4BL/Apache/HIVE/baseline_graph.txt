@@ -1,0 +1,42 @@
+545	equivalent using efficient more sometimes ArrayList instead the codeMost single that Hive roughly This except threaded Vector class 
+3057	may threadLocalMS getMS raw Subsequent HiveMetaStore store RawStore local wrong the The null calls does function variable HMSHandler 
+3408	race within caused RUNNABLE QueryPlan mailing The with runnable are and following updateCountersInQueryPlan 
+4000	race infinite jobs multiple several threads HashMaps loops lead MapReduce the The getting that into Hive When are stuck client progress conditions those 
+7011	generation cache access n t will against concurrent Tez inputformat the HiveInputFormat split parallel safe protect 
+7341	schema interfaces couple instance cleaner for HCatTable HCatCreateTableDesc Falcon the The with that and from HCatalog between composing 
+8440	compileMonitor more Hadoop Hiveserver pool BLOCKED for monitor our number approximately and than reduces block from ETL per 
+9199	which some needed locking For Excessive for unnecessary its contention instead DDL output DummyTxnManager the with database DDLs exclusive lock complete WriteEntity table 
+9598	SQLException main catch IllegalMonitorStateException 
+10483	side read select part for insert Insert simpler the More with partition same and xxxx lock xxx from where join overwrite 
+11036	query concurrent makes workload deadlocked gets high condition Metastore DataNucleus Race hangUnder moderate 
+11616	NucleusTransactionException here     which metastore issue log below will this cocurrent issues concurrency the DelegationTokenSecretManager that same hivemetastore after objectstore state has Invalid 
+12238	    input safety more VectorUDFDate For NumberFormatException Caused errors Vectorization 
+12248	which ObjectStore access race Following this type Detached The the with condition MDelegationToken DataNuclues multi threads backend DBTokenStore 
+12266	some before release for proper run locks when acquires enabled that same and hooks add Beeline issue possible command the shell until much 
+12409	synchronized sure initTxnMgr may this multiple threads run HIVE safe since Session 
+12529	all competing away signature will max this for locks timeout how current There until written 
+12620	new Acid log detect DBLockManager instead locks refactor that TxnHandler removed due interleave lock debugging from logic 
+12768	static serde sortable issues due safety binary deserialization buffer decimal 
+12797	session part pool tez changes pools used Synchronization while when issues shutting down The HIVE with introduced are causes llap 
+12904	other line blocks for deadlock entire the TaskExecutorService  bci LlapDaemonProtocolProtos well apos frame 
+12926	issue session part tez changes pool pools used while when issues shutting down The HIVE with introduced are causes synchronization llap Another 
+12927	all metastore one increment sequences any HBase concurrency safe row per presence 
+12996	temp NULL n t session created for multiple them inside acid the that tables hour tmp today only lock table 
+13013	all     Serializable still will FOR isolation them run SELECT concurrency the that number TxnHandler operations Further There few This UPDATE deadlocks support 
+13213	    ACID work Exclusive values for resources insert non acid acquire example Read into DbLockManger lock table 
+13395	the The which with issue and for this rows table 
+13458	which sure n t heartbeat will query additional stopHeartbeat sent really the that fail current does and lock stops thing Another 
+13512	next rather objects for concurrent dag used The running that same parallel than This because obtain query initializing counter the compilation safe ids TezWork 
+13599	pre emption some Scheduler updates down removing the scheduler with condition Incorrect following ERROR handling from UncaughtExceptionHandler items Queue queue preemption 
+13699	for JavaDataModel two when attempt The that same parallel because class etc  static may  get query threads the call compilation safe 
+13725	Streaming for batch multiple threads txn the relevant that calls and vice versa client from different synchronize 
+13753	server request for used error DbTxnManager The that same Race client from different Thrift which That metastore side multiple threads sharing the response safe 
+13833	Add heartbeat initial this unnecessary skip immediately when locks the delay scheduling lock Since after acquisition starting happens send acquired 
+13858	cluster attempting some instead preempt completeInitialization the running task what else blocking there get interrupt ended end skipping 
+14357	all test this understand while upon locks closer these failing This try case order jira 
+14400	issuing side imagine will For multiple insert example the with such partition same effect from different apos table realize 
+14463	InactivityMonitor AbstractQueuedSynchronizer DataFileAppender this monitor used ActiveMQ space RMI The runnable SynchronousQueue 
+14739	hive through deadlock running that Runtime causing and Chris FileSystem throughout hadoop hooks order based cli Nauroth Hadoop runtime Deepesh queries the  Cache ShutdownHookManager runs 
+14778	all actual given other outstanding heartbeat TransactionBatch for StreamingConnection both most the reference these and else MetaStoreClients closed concurrently model Thrift 
+14924	Null pointer MSCK Pointer run while command TABLE single mode running throwing reproduce with REPAIR null and threaded table order 
+15090	metastore process could unexpected inside hope without token the running ExpiredTokenRemover that Temporary loop and failure there from 

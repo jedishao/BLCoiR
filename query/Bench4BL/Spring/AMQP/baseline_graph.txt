@@ -1,0 +1,17 @@
+125	container some waiting listeners Unreliable for SimpleMessageListenerContainer failed stop leads lock algorithm 
+190	RabbitTemplate synchronized more channel for natively when Forum the The that with TransactionManager publishes channelTransacted hence tag 
+223	container adapter amqp acks multiple SimpleListenerContainerIf two each the running spring that declares Too externally doStart integration This uses protect 
+243	badly add consequence EnhancedPatternLayoutlike another PatternLayout pattern JavaDoc AmqpAppender issues the The routing generated and lost synchronization messages because lossThe key 
+249	RabbitTemplate autoAck race Issues channel Rabbit count admin QueuesTemporary accounting put the take with Temporary cached Queues unacked reply just consumer 
+260	container using SNAPSHOT issue test configuration was listener project done when both the The with RabbitTransactionManager When Hanging and channelTransacted where 
+262	template ConcurrentModificationException using multiple threads possible the random with pendingConfirms same publish rabbit confirms messages sending from just 
+274	RabbitTemplate synchronized using Listener downstream channel Local transactions exposeListenerChannel the Transactions Container external default When Properly and synchronizedWithTransaction true property This close 
+275	container cancel Listener before rejected Stopping during The Container blocking reject Race where consumer was requeued message the requeue with canceled When stop messages queue first 
+331	OutOfMemory that When abort will expected this threads occurs situation 
+355	container small ErrorHandler active received message soon the exit that and there only verify onMessage from possibility 
+365	waiting channel listener ack manual down The Consumer and Race only This latch consumer fails test double countdown received message broker redelivered the messages closed 
+469	this interleaved used requests executeErlangRpc the The result with that ErlangTemplate calls and safety receiveRPC end connection sendRPC 
+506	synchronized ConcurrentModificationException maps values Although while getUnconfirmed removing the fail pendingConfirms iterating  re are and those synchronize 
+532	other ConcurrentModificationException below line testing this source accessed network the that node pendingConfirms places itself null are continuous PublisherCallbackChannelImpl map 
+551	container read methods wrongly javadocs listener error the getting The with Mockito failure multi threaded WrongTypeOfReturnValue above This syntax mock apos 
+648	cancel configured suspend other issue Stop detect basicCacncel broker the The with that handleCancel handleCancelOk queues there get consumers consumer queue those 

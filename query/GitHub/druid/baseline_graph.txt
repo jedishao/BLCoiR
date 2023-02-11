@@ -1,0 +1,31 @@
+582	through cluster using indexing separate upload jobs JobHelper Hadoop its during something the same create jar hadoop 
+812	server realtime still will this historical local redundant the loaded task and segment merge Race final callback This files 
+1014	request race query for this real error lead empty the result node regex condition and kafka DESCENDING value 
+1210	SASL server coordinator negotiated ClientCnxn error INFO timeout unknown the The and from connection did 
+1360	indexing about this run the running that task nodes are were and service Race Running assigned autoscaling worker workers updated tasks status 
+1715	log RemoteTaskRunner for multiple was its say acquire locks long running the task index_realtime_REDACTED cleanup failure TaskLockbox lock from after 
+2793	big for its backlog than TaskQueue lock Duplicate ms  key errors primary addition 
+2842	NPE been Multiple RemoteTaskRunner assignment pending multiple for threads while taskRunnerWorkItem running RTR with rtr introduced task RemoteTaskRun tasks assign 
+2991	some new fact IncrementalIndex query for LongMax then any facts aggregate the IncremetalIndex with weird from unaggregated multi thread value 
+3063	flight new lookup Possible held rather more work Unloadable requests the The than After lock 
+3393	NettyHttpClient cluster finally channel channelDisconnected historical retVal the better Druid disconnected and future This from ChannelException 
+3459	ReentrantLock ownable node cache topN_REDACTED NamespaceExtractionCacheManager issue synchronizer for deadlock 
+3593	ReentrantLock ownable cache for monitor offheap deadlock Deadlock the AtomicBoolean NamespaceExtractionCacheManager synchronizer lock 
+3600	All IndexerSQLMetadataStorageCoordinator metadata read old commit for this threads TaskLocation segments the task and else host FiniteAppenderatorDriver beat 
+3608	all factory putting work advantage One one for cross reindexing two the IngestSegmentFirehoseFactory into same task and datasource get This fixed tasks together 
+3772	issue about  gvsmirnov KafkaLookupExtractorFactory forget condition Race FYI creating comment just order 
+4226	lookups all using advertiser_account_manager_id aprox for Source the node found druid Unknown too from 
+4296	stack indexing issue HLL numThreads the duration into null timeseries and from tranquility BufferUnderflowException 
+4984	small cluster happen  dgolitsyn missed start callbacks cachingCost segments the that number view balancer Callback  leventov too trying initialization Inventory 
+5338	new tryAddEvents some issue line batch CPU while the reference high and loop  bci After emitter concurrentBatch 
+6020	which leader variables interfaces stack Optional throws when taskMaster becomes the The public only initialized after taskRunner  TaskRunner  overlord 
+6028	elapsed TABLE Errors SqlMetadataRuleManagerTest and datasource Skipped waiters obtained SELECT DROP 
+6139	all testCheckpointForUnknownTaskGroup called test issue this for WTH the The stacktrace null corresponding among KafkaSupervisorTest 
+6201	HttpRemoteTaskRunner pending BLOCKED for monitor the with entry lock hrtr ConcurrentHashMap overlord LifecycleLock 
+6287	been issue may before Kafka its Service verifyAndMergeCheckpoints completed sort used are firstKey Race KafkaSupervisor where has results Indexing 
+6826	NPE below already could refreshSegmentsForDataSource holder the segmentMap removed Concurrency outside FYI segment get SegmentMetadataHolder lock  surekhasaharan 
+6867	stack HashMap level one exhaust for monitor deadlock the DruidStatement and DruidConnection above lock information 
+7400	metadata other separate for interact during two without Druid password and hardcoding restart change them store PasswordProvider each users the condition PasswordProviders uses connecting user username 
+8622	which always spawned for For them deadlock supervisorCapacity middleManagers capacity running slots task would and there ParallelIndexSupervisorTask This Since further possibility supervisor tasks 
+9292	n t HashMap replace proper rules simple into fix and does now action modified after because ConcurrentHashMap assigning race AtomicReference store CoordinatorRuleManager the actually with never 
+10005	new will query available dataSourceName segments the The number load public and datasource following segment This interval returns from ingestion full 

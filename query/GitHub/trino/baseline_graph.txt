@@ -1,0 +1,10 @@
+2962	parking all hive using fulfill delete the call that condition Hive getTable and loadPartitionByName calling This executors behaviour directly 
+6202	here hang test one pool monitor stacktraces the tests owned apparently LogTestDurationListener owns from information every who full 
+6389	partitions more another JOIN Process FROM deadlock object_id SELECT chosen the result with statement lock transaction INNER 
+7454	which  release Each Partition spill unblocks SpilledLookupSourceHandle operator spilled call with never disk partition Spilled This finishes finish join  disposeRequested PartitionedLookupSourceFactory gracefully HashBuilderOperator 
+7872	    another Similar deadlocked Process chosen the with DATABASE Transaction READ_COMMITTED_SNAPSHOT SQLServerException statement lock transaction 
+9741	Expected image columns testSelectInformationSchemaColumns another deadlocked FROM deadlock SELECT chosen SQL the The Transaction succeed lock transaction 
+11798	finance_dh hive NULL select held query possible locks  findepi the The  losipiuk Hive There ACQUIRED WAITING missing Trino lock booking_f state timestamp 
+13212	setBytes which likely critical  pollPage caused moved DirectExchangeClient section significant  addPages Lock most and lock This congestion 
+14132	new using Query releaseLock format HiveMetastoreTableOperations done the TABLE Hive total file Metastore related and get only lock table case tbl status 
+14605	broken actual execution chance test query pool RUNNABLE run recovery got something the getting The that path There failure stuck prio 

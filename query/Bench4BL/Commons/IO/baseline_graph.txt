@@ -1,0 +1,5 @@
+99	Theno still for commons extended the The better that leak solution and undeployed end cleans everything class FileCleaner user 
+136	static StringBuffers Multiple cbuffer OutputStream mixed these the lbuffer StringBuffer public returning and calling variable HexDump Both 
+201	other read could one count CountingInputStream threads sense functionality underlying then without The the correctly stream only between safely 
+207	forceMkdir other processes chance will created one threads IOException two directory the with that correctly same throw Race there 
+216	was this thrown during any delete LockableFileWriter the into take file fix deletion failure there lock files returns fails account quietly 

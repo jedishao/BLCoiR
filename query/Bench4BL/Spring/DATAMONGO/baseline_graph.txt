@@ -1,0 +1,4 @@
+199	Below read several BLOCKED during During The the with Field tests performance were only lock http exec status 
+532	which authenticate issue will link isAuthenticated each the The and doGetDb CannotGetMongoDbConnectionException 
+622	doSave using race rather created concurrent insert store unversioned instead doSaveVersioned uses doInsert avoid conditions inserts 
+737	MongoSynchronizations TransactionSynchronizationManager issue Mongo one bound for two the The that database does and only options 

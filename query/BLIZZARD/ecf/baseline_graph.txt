@@ -1,0 +1,18 @@
+125572	Generic for ECF From while two mutexes generic Lock the provider ClientSOContainer following Client 
+223484	Closer server disconnect though Start Bundle was threads run Repeat Data done the More Several and State following Running from XMPP 
+229237	container given retrieveServices this for addContainer immediately list via the newly connected xmpps When and associated block after adds 
+232530	which very uncaught cases read death frequently this any lead exceptions out the and causes from subclasses Session 
+265413	JMDNSDiscoveryContainer objects threads dead issues originating the that same calls Intermittent and lock from must between 
+265415	Dead Canceler before unregisterService run dead occurs obtains ServiceInfo the JmDNSImpl synchronization lock 
+267035	More synchronized safe  toString toString information ReplicaSharedObjectDescription 
+273357	SocketChannel side data Alice more for the Bob above course from socket 
+273819	Somehow kind tell Containers this wrong the The dialog are and opens wizard per every user 
+299849	disconnect NPE will another this RegistrySharedObject received main handle message remoteServerID null and This  handleAddRegistrationcan Main close 
+321468	Currently access dispatch will listener this registered invoke deadlock inside IRemoteServiceListener remote via the The call result that service This attempts 
+321469	stopped explicitly created DiscoveredServiceTracker this clean ListenerQueue distribution when done the never are cleanup and This ThreadGroup bundle 
+323208	BundleStatusException more for While loading DiscoveredServiceTrackerImpl when Created the AbstractBundle with existing attachment Distribution DiscoveredEndpointEvent jar bundle 
+326949	getRemoteServiceReferences container add Currently adapter synchronous methods needed One additional one IRemoteServiceContainerAdapter remote two are service there 
+337973	process zoodiscovery SyncConnected isConnected start for For the WatchedEvent null and quite because 
+341818	Steps new internal using r_osgi was error sample when System out the proxy times native provider loop create Always has close consumer 
+348487	stopped Reference for monitor the that runnable Signal and MultiThreadedHttpConnectionManager 
+432662	synchronized printStackTrace manifest modifier for show schemes instantiate nested the found same Unable HttpClient solves from after 

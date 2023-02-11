@@ -1,0 +1,4 @@
+65	over     some getPersistentEntity discovered thus semi parsed already PersistentEntity additional BasicPersistentEntity makes the PersistentProperties and addPersistentEntity This properties 
+362	which instance upfront issue lookupRepositoryFactoryInformationFor already instances this Potential RepositoryInformation the that into eagerly repositories variable writes RepositoriesgetRepoInfoFor 
+390	over ConcurrentModificationException issue HashMap values another AbstractMappingContext this modifies collection Spring while the persistentEntities that iterator following lock 
+831	getPersistentEntity populating another one sometimes multiple this threads when any without empty the with addPersistentEntity from entity properties 

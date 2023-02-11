@@ -1,0 +1,32 @@
+7392	tries stack  not responding  our when JDIThreads out incompatible are startup get model state because thinks synch threads suspended the Some 
+8683	over attempting stack NPE assumes SignalDispatcher Suspend Our the that Hit system top there Select step suspending after frame 
+12695	temporary adapter adapters debug one for then our breakpoint the super that hit When top get only from breakpoints user order 
+16930	which manually InvalidThreadStateException expected perform for error breakpoint the evaluation better incompatible does and state after user 
+21801	parent data for ThreadGroupReference each command the that current These library related there client base group 
+22005	necessary asynchExec run Review via the that performance post calls and review synchExec runnables little 
+24579	new CVS waiting ModalContext another steps Open The Create blocking lock perspective anonymous until Exact checkout connect 
+33297	displayed Unneccessary manager EvaluationListener  resolveFormatter when two suspended the formatter evaluation places There logged logging from toString user errors  evaluationComplete 
+33712	                                              ENTRY for ARCH specified point The the MESSAGE library en_US following linux from jar locked Mar gtk 
+43197	termination process debug last called for the that same and tracker term after event different Job terminated 
+52474	CVS projects Exploring more work module this pattern opened during point nice out the number that smoothly Perspective blocked scenario workbench 
+57467	which stack debug frames race old for preserve underlying then our two something the The re use previously and invalid frame 
+64951	condition IBM will screen evaluating while suspended labels shot 
+65107	here watches discovered this had switch breakpoint the total and            following processing DebugView between 
+65149	date some CVS other resource log for tree Resource project replacing Got local the The with following ResourceException after locked initializeProblemHandling modifications 
+66413	restarting conditional log Illegal was this error when suspended the The with dialog condition times Further and startup debugging 
+78534	dispatching ConcurrentModificationException ENTRY debug test occurred this while got STACK MESSAGE core ThreadMonitorManager debugging case events 
+88923	All asynchronously expression before methods performing Evaluations  evaluate expressions done The evaluation the compiled IEvaluationEngine processing create 
+101118	debug ENTRY line nothing source when BootLoader the async Command and trying processing 
+125868	resulted happen access debug session this launch Subsequent when launching exceptions the and Running only jdt first Invalid 
+148006	waiting for monitor deadlock Full autobuild ins the binary Worker Class plug ConsoleDocument 
+161781	suspend Status ignored initial before debugger remote the The with current function connection state status 
+165174	using turned will show launch screenshot stepping sync the into with view selection lost following block after monitors 
+169542	debug will more one careful least start its the nor mode More appear view and checked ThreadGroup under first group 
+178912	here new deal everyone instances methods Potential list around AbstractVMInstallType the createVMInstall that impl with condition  id  and variable member fVMs 
+182237	variables been access when exceptions the Variables these getting view updating SWTException Since first open Invalid 
+187000	over stack debug again tree focus expands many the The with that More times and machine step older press 
+229394	editor NPE another multiple while cell when the entry with view array Command outside from plug value chars 
+312038	very stat more again for RUNNABLE directory out the result that shows attachment and than NFS JREContainer 
+343039	sessions including debugger this show was deadlock Please the The how default and turning owned debugging JDT ability benefitted monitors 
+446040	move package access for whiteboard Please the how field and following information plug from user Invalid 
+506865	synchronized checking may created for existence being two done the createVMInstall with condition same outside Race block VMs creation since 
