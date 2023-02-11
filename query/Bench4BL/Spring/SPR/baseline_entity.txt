@@ -1,0 +1,1 @@
+7688	NullPointerException be thrown synchronized pvs checkPropertySkippingIBM JVM does allow synchronized

@@ -1,0 +1,6 @@
+123840	is are requests running JVM use instances DataEngine data corruption occur requests get set static fields time use static fields NEvaluator FilterPassControllerData Engine classes NEvaluator FilterPassController used n bottom n filter process use class fields store proessing data classes keep request data instance fields report query need have instance
+195335	Multithreads issue static hashmap class HTMLServerImageHandler has been synchronized leads images are handled write disk times
+208512	Classes package odaconsumer have multithreads issuesClasses package odaconsumer are thread
+284367	DataSourceFactory is thread
+287102	Classloader deadlock related OSGILauncher
+314645	XML Datasource is Thread Safe passing data InputStream passing XML data IRunTask application resulting files be corrupted error occures passing InputStream using setAppContext method warning be written log WARNUNG Exceptions occur xml parsing see attachments stackstrace Steps Reproduce Run sample application attachments use Xmx1024m VM Argument avoid memory errors Wait log shows warning WARNUNG Exceptions occur xml parsing Kill sample application process Analyze generated rptdocument files ascending file size find files
