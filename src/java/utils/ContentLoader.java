@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ContentLoader {
@@ -71,7 +72,7 @@ public class ContentLoader {
     return tokens;
   }
 
-  public static ArrayList<String> getAllLinesList(String fileName) {
+  public static List<String> getAllLinesList(String fileName) {
     // reading items as list
     String[] items = getAllLines(fileName);
     return new ArrayList<>(Arrays.asList(items));

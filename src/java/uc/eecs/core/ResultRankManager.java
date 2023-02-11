@@ -15,15 +15,14 @@ public class ResultRankManager {
   public static HashMap<String, String> keyMap = new HashMap<>();
   String keyfile;
 
-  public ResultRankManager(String bench, String repoName, ArrayList<String> results, ArrayList<String> goldset) {
+  public ResultRankManager(
+      String bench, String repoName, ArrayList<String> results, ArrayList<String> goldset) {
     this.bench = bench;
     this.repoName = repoName;
     this.results = results;
     this.goldset = goldset;
-    // this.keyfile = DatasetConfig.CORPUS_INDEX_KEY_MAPPING + "/" + this.repoName + ".ckeys";
     this.keyfile =
-        "src/resources/Lucene-Index2File-Mapping"
-            + "/" + this.bench + "/" + this.repoName + ".txt";
+        "Lucene/Lucene-Index2File-Mapping" + "/" + this.bench + "/" + this.repoName + ".txt";
     if (keyMap.isEmpty()) {
       // load only the HashMap is empty
       loadKeys();

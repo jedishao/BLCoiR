@@ -10,9 +10,6 @@ import java.util.Scanner;
 
 public class StopWordManager {
   public ArrayList<String> stopList;
-  String stopDir = DatasetConfig.STOPWORD_DIR + "/stop-words-english-total.txt";
-  String javaKeywordFile = DatasetConfig.STOPWORD_DIR + "/java-keywords.txt";
-  String CppKeywordFile = DatasetConfig.STOPWORD_DIR + "/cpp-keywords.txt";
 
   public StopWordManager() {
     // initialize the Hash set

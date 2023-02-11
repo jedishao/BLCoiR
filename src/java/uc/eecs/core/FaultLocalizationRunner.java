@@ -55,11 +55,11 @@ public class FaultLocalizationRunner {
   }
 
   public static void main(String[] args) throws IOException, ParseException {
-    int bugID = 7715;
-    String repository = DatasetConfig.A_CAMEL;
-    String bench = DatasetConfig.BENCH4BL;
+    int bugID = 57943;
+    String repository = DatasetConfig.TOMCAT;
+    String bench = DatasetConfig.BLIZZARD;
     String searchQuery =
-        "SjmsConsumer SjmsProducer remove ThreadPool Camel context ExecutorServiceManager instance endpoint";
+        "poller request HashIterator process accept connection nioendpoint";
     FaultLocalizationRunner faultLocalizationRunner =
         new FaultLocalizationRunner(bench, repository, bugID, searchQuery);
     //    FaultLocalizationRunner faultLocalizationRunner1 =

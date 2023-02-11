@@ -4,11 +4,7 @@ public class DatasetConfig {
 
   public static final String DATASET_DIR = "dataset/";
   public static final String QUERY_DIR = "query/";
-  public static final String INDEX_DIR = "src/resources/Lucene_Index";
-  public static String STOPWORD_DIR = DATASET_DIR + "/nlp/";
-  public static String CORPUS_INDEX_KEY_MAPPING =
-      DATASET_DIR + "/src/dataset/Lucene-Index2File-Mapping";
-  public static String CORPUS_DIR = DATASET_DIR + "/src/dataset/Corpus";
+  public static final String INDEX_DIR = "Lucene/Lucene_Index";
 
   // bench name
   public static String BLIZZARD = "BLIZZARD";

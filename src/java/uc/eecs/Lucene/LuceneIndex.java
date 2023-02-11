@@ -21,15 +21,6 @@ public class LuceneIndex {
   String docs;
   public int totalIndexed = 0;
 
-  public LuceneIndex(String repoName) {
-    // initialization
-    this.index = DatasetConfig.INDEX_DIR + "/" + repoName;
-    this.docs = DatasetConfig.CORPUS_DIR + "/" + repoName;
-    // this.makeIndexFolder(repoName);
-    System.out.println("Index:" + this.index);
-    System.out.println("Docs:" + this.docs);
-  }
-
   public LuceneIndex(String indexFolder, String docsFolder) {
     this.index = indexFolder;
     this.docs = docsFolder;

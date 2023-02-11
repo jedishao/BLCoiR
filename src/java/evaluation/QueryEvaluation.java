@@ -3,30 +3,21 @@ package evaluation;
 import uc.eecs.core.FaultLocalizationRunner;
 import utils.ContentLoader;
 import utils.config.BugReportsID;
+import utils.config.ClassificationID;
 import utils.config.DatasetConfig;
+import utils.config.EvaluationConfig;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class QueryEvaluation {
   public void queryResults() {
     String bench = DatasetConfig.LTR;
-    String repository = DatasetConfig.ASPECTJ;
-    ArrayList<String> acer =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/acer.txt");
-    ArrayList<String> acer_st =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/acer_st.txt");
-    ArrayList<String> baseline_nl =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/baseline_nl.txt");
-    ArrayList<String> baseline_nlst =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/baseline_nlst.txt");
-    ArrayList<String> baseline_title =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/baseline_title.txt");
-    ArrayList<String> our =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/our.txt");
-    ArrayList<String> our_ =
-            ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/our+.txt");
+    String repository = DatasetConfig.PLATFORM;
+    List<String> our_ =
+            ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/our_stn.txt");
     int index = 0;
-    for (int id : BugReportsID.ASPECTJ) {
+    for (int id : ClassificationID.PLATFORM_STN) {
       FaultLocalizationRunner fr1 =
           new FaultLocalizationRunner(bench, repository, id, our_.get(index).split("\t")[1]);
       for (int r : fr1.getGoldFileIndicesClass()) {

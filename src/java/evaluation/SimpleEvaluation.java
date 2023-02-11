@@ -6,6 +6,7 @@ import org.dom4j.Element;
 import utils.ContentLoader;
 import utils.XMLParser;
 import utils.config.BugReportsID;
+import utils.config.ClassificationID;
 import utils.config.DatasetConfig;
 import utils.config.EvaluationConfig;
 
@@ -15,7 +16,7 @@ import java.util.*;
 public class SimpleEvaluation {
 
   public void readResults(String path, List<Integer> id, String re) {
-    ArrayList<String> results = ContentLoader.getAllLinesList(path);
+    List<String> results = ContentLoader.getAllLinesList(path);
     for (String s1 : results) {
       String s2 = s1.split("\t")[0];
       if (id.contains(Integer.parseInt(s2))) {
@@ -58,7 +59,7 @@ public class SimpleEvaluation {
   }
 
   public void collectResults(String path, List<Integer> id) {
-    ArrayList<String> results = ContentLoader.getAllLinesList(path);
+    List<String> results = ContentLoader.getAllLinesList(path);
     //    System.out.println(id.size());
     for (String s1 : results) {
       if (s1.split("\t").length == 2) {
@@ -71,7 +72,7 @@ public class SimpleEvaluation {
   }
 
   public Map<String, List<Integer>> mapping(String path) {
-    ArrayList<String> results = ContentLoader.getAllLinesList(path);
+    List<String> results = ContentLoader.getAllLinesList(path);
     Map<String, List<Integer>> re = new HashMap<>();
     for (String s1 : results) {
       if (s1.split("\t").length > 1) {
@@ -200,8 +201,9 @@ public class SimpleEvaluation {
     String change = "dataset/" + te + "/" + "/changeset.xml";
     SimpleEvaluation se = new SimpleEvaluation();
 //    se.calculateTop(se.mapping(path), size);
-                se.calculateMRR();
-                se.calculateMAP();
+//                se.calculateMRR();
+//                se.calculateMAP();
+                se.readResults("query/BLUiR_camel.txt", ClassificationID.CAMEL_NL, "BLUiR");
     //    int size = 0;
     //
     //    String da = DatasetConfig.BIRT;

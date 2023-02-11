@@ -231,7 +231,7 @@ public class TraceElemExtractor {
     String repoName = DatasetConfig.W_WFCORE;
     String path = DatasetConfig.QUERY_DIR + "Bench4BL/" + repoName + "/our.txt";
     int j = 0;
-    ArrayList<String> results = ContentLoader.getAllLinesList(path);
+    List<String> results = ContentLoader.getAllLinesList(path);
     for (int bugID : BugReportsID.WFCORE) {
       //    String brFile = DatasetConfig.DATASET_DIR + "/BR-Raw/" + repoName + "/" + bugID +
       // ".txt";
