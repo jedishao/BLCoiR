@@ -119,11 +119,11 @@ public class SimpleEvaluation {
   }
 
   public void calculateMAP() {
-    int size = DatasetConfig.GITHUB_SIZE;
-    String te = DatasetConfig.GITHUB;
+    int size = DatasetConfig.BENCH4BL_SIZE;
+    String te = DatasetConfig.BENCH4BL;
     SimpleEvaluation se = new SimpleEvaluation();
     float p = 0;
-    for (String s1 : EvaluationConfig.GITHUB) {
+    for (String s1 : EvaluationConfig.BENCH4BL) {
       //      String path =
       //          "IRBL-Evaluation/"
       //              + te
@@ -134,7 +134,7 @@ public class SimpleEvaluation {
       //              + "_"
       //              + s1.split("/")[1]
       //              + ".txt";
-      String path = "Query-Evaluation/" + te + "/" + s1 + "/baseline_entity.txt";
+      String path = "Query-Evaluation/" + te + "/" + s1 + "/acer.txt";
       Map<String, List<Integer>> map = se.mapping(path);
       for (String key : map.keySet()) {
         int j = 0;
@@ -171,11 +171,11 @@ public class SimpleEvaluation {
   }
 
   public void calculateMRR() {
-    int size = DatasetConfig.LTR_SIZE;
-    String te = DatasetConfig.LTR;
+    int size = DatasetConfig.BLIZZARD_SIZE;
+    String te = DatasetConfig.BLIZZARD;
     SimpleEvaluation se = new SimpleEvaluation();
     float p = 0;
-    for (String s1 : EvaluationConfig.LTR) {
+    for (String s1 : EvaluationConfig.BLIZZARD) {
       //      String path =
       //          "IRBL-Evaluation/"
       //              + te
@@ -186,7 +186,7 @@ public class SimpleEvaluation {
       //              + "_"
       //              + s1.split("/")[1]
       //              + ".txt";
-      String path = "Query-Evaluation/" + te + "/" + s1 + "/baseline_entity.txt";
+      String path = "Query-Evaluation/" + te + "/" + s1 + "/baseline_graph.txt";
       Map<String, List<Integer>> map = se.mapping(path);
       for (String key : map.keySet()) {
         int rank = map.get(key).get(0);
@@ -212,13 +212,13 @@ public class SimpleEvaluation {
     String te = DatasetConfig.LTR;
     int size = DatasetConfig.LTR_SIZE;
     //    String path = "IRBL-Evaluation/" + te + "/" + DatasetConfig.BUGLOCATOR + ".txt";
-    String path = "Query-Evaluation/" + te + "/baseline_entity.txt";
+    String path = "Query-Evaluation/" + te + "/baseline_title.txt";
     //    String path = "Query-Evaluation/" + te + "/our+.txt";
     String change = "dataset/" + te + "/" + "/changeset.xml";
     SimpleEvaluation se = new SimpleEvaluation();
-    //    se.calculateTop(se.mapping(path), size);
-    //                    se.calculateMRR();
-    se.calculateMAP();
+//    se.calculateTop(se.mapping(path), size);
+//                        se.calculateMRR();
+        se.calculateMAP();
     //    se.readResults("query/BLUiR_camel.txt", ClassificationID.CAMEL_NL, "BLUiR");
     //    int size = 0;
     //
@@ -241,12 +241,12 @@ public class SimpleEvaluation {
     //    String path = "IRBL-Evaluation/GitHub/" + s2 + "/" + s3 + "_" + s2 + ".txt";
     //    new SimpleEvaluation().readResults(path, BugReportsID.VERTX, s3);
     // get all results
-    //    for (String s4 : EvaluationConfig.LTR) {
-    //      String path1 = "Query-Evaluation/LtR/" + s4 + "/baseline_entity.txt";
+    //    for (String s4 : EvaluationConfig.BENCH4BL) {
+    //      String path1 = "Query-Evaluation/Bench4BL/" + s4 + "/baseline_graph.txt";
     //      //      String path1 =
     //      //              "IRBL-Evaluation/Bench4BL/" + s4 + "/" + DatasetConfig.AMALGAM + "_" +
     //      //                      s4.split("/")[1] + ".txt";
-    //      se.collectResults(path1, EvaluationConfig.LTR_ID.get(i));
+    //      se.collectResults(path1, EvaluationConfig.BENCH4BL_ID.get(i));
     //      i++;
     //    }
     //            String path1 = "Query-Evaluation/LtR/" + DatasetConfig.SWT + "/our+.txt";

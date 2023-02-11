@@ -16,10 +16,7 @@ import utils.config.QueryConfig;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,7 +24,7 @@ public class BaselineGen {
 
   public void genBaseline_nl(List<Integer> idList, String rep, String project) throws IOException {
     String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_nl.txt";
-    FileWriter fileWritter = new FileWriter(path, true);
+    FileWriter fileWriter = new FileWriter(path, true);
     int cus = 0;
     for (int id : idList) {
       cus++;
@@ -57,19 +54,19 @@ public class BaselineGen {
           sb.append(c).append(" ");
         }
       }
-      fileWritter.write(id + "\t" + sb.toString().trim());
+      fileWriter.write(id + "\t" + sb.toString().trim());
       if (cus != idList.size()) {
-        fileWritter.write("\n");
+        fileWriter.write("\n");
       }
-      fileWritter.flush();
+      fileWriter.flush();
     }
-    fileWritter.close();
+    fileWriter.close();
   }
 
   public void genBaseline_nlst(List<Integer> idList, String rep, String project)
       throws IOException {
     String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_nlst.txt";
-    FileWriter fileWritter = new FileWriter(path, true);
+    FileWriter fileWriter = new FileWriter(path, true);
     int cus = 0;
     for (int id : idList) {
       cus++;
@@ -95,19 +92,19 @@ public class BaselineGen {
         }
         sb.append(c).append(" ");
       }
-      fileWritter.write(id + "\t" + sb.toString().trim());
+      fileWriter.write(id + "\t" + sb.toString().trim());
       if (cus != idList.size()) {
-        fileWritter.write("\n");
+        fileWriter.write("\n");
       }
-      fileWritter.flush();
+      fileWriter.flush();
     }
-    fileWritter.close();
+    fileWriter.close();
   }
 
   public void genBaseline_title(List<Integer> idList, String rep, String project)
       throws IOException {
     String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_title.txt";
-    FileWriter fileWritter = new FileWriter(path, true);
+    FileWriter fileWriter = new FileWriter(path, true);
     int cus = 0;
     for (int id : idList) {
       cus++;
@@ -125,20 +122,20 @@ public class BaselineGen {
         }
         sb.append(v).append(" ");
       }
-      fileWritter.write(id + "\t" + sb.toString().trim());
+      fileWriter.write(id + "\t" + sb.toString().trim());
       if (cus != idList.size()) {
-        fileWritter.write("\n");
+        fileWriter.write("\n");
       }
-      fileWritter.flush();
+      fileWriter.flush();
     }
-    fileWritter.close();
+    fileWriter.close();
   }
 
   public void genBaseline_entities(List<Integer> idList, String rep, String project)
       throws IOException {
     DepManager depManager = new DepManager();
     String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_entity.txt";
-    FileWriter fileWritter = new FileWriter(path, true);
+    FileWriter fileWriter = new FileWriter(path, true);
     int cus = 0;
     for (int id : idList) {
       cus++;
@@ -166,88 +163,72 @@ public class BaselineGen {
         }
         sb1.append(v).append(" ");
       }
-      fileWritter.write(id + "\t" + sb1.toString().trim());
+      fileWriter.write(id + "\t" + sb1.toString().trim());
       if (cus != idList.size()) {
-        fileWritter.write("\n");
+        fileWriter.write("\n");
       }
-      fileWritter.flush();
+      fileWriter.flush();
     }
-    fileWritter.close();
+    fileWriter.close();
   }
 
   public void genBaseline_graph(List<Integer> idList, String rep, String project)
-          throws IOException {
+      throws IOException {
     DepManager depManager = new DepManager();
-    String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_entity.txt";
-    FileWriter fileWritter = new FileWriter(path, true);
+    String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_graph.txt";
+    FileWriter fileWriter = new FileWriter(path, true);
+    String[] sym = {
+      "(", ")", ":", "[", "]", "}", "{", "#", "-", "|", "%", "@", ".", "+", "=", "\\", "/", "#",
+      "*", "?", "^", "$", "\"", "'", "<", ">", ","
+    };
+    List<String> list = Arrays.asList(sym);
     int cus = 0;
     for (int id : idList) {
       cus++;
-      String brPath = DatasetConfig.DATASET_DIR + rep + "/" + project + "/BR/" + id + ".txt";
-      List<String> con = BRLoader.loadBugReportList(brPath);
-      TextNormalizer tn = new TextNormalizer(con);
-      ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
-      StringBuilder sb = new StringBuilder();
-      for (SemanticGraph semanticGraph : dependencies) {
-        for (IndexedWord indexedWord : semanticGraph.vertexListSorted()) {
-          if (indexedWord.tag().startsWith("NN") || indexedWord.tag().startsWith("VB")) {
-            sb.append(indexedWord.originalText()).append(" ");
-          }
-        }
-      }
-      String[] s = sb.toString().split(" ");
-      StringBuilder sb1 = new StringBuilder();
-      String[] sym = {
-              "(", ")", ":", "[", "]", "}", "{", "#", "-", "|", "%", "@", ".", "+", "=", "\\", "/", "#",
-              "*", "?", "^", "$", "\"", "'", "<", ">", ","
-      };
-      for (String v : s) {
-        for (String s1 : sym) {
-          v = v.replace(s1, " ");
-        }
-        sb1.append(v).append(" ");
-      }
-      fileWritter.write(id + "\t" + sb1.toString().trim());
-      if (cus != idList.size()) {
-        fileWritter.write("\n");
-      }
-      fileWritter.flush();
-    }
-    fileWritter.close();
-  }
-
-  public void genG(List<Integer> idList, String rep, String project) throws IOException {
-    DepManager depManager = new DepManager();
-    String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_entity.txt";
-    FileWriter fileWritter = new FileWriter(path, true);
-    int cus = 0;
-    for (int id : idList) {
-      cus++;
-      DefaultDirectedGraph<String, DefaultEdge> graph = new DefaultDirectedGraph<>(DefaultEdge.class);
+      DefaultDirectedGraph<String, DefaultEdge> graph =
+          new DefaultDirectedGraph<>(DefaultEdge.class);
       String brPath = DatasetConfig.DATASET_DIR + rep + "/" + project + "/BR/" + id + ".txt";
       List<String> con = BRLoader.loadBugReportList(brPath);
       TextNormalizer tn = new TextNormalizer(con);
       ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
       for (SemanticGraph semanticGraph : dependencies) {
-        Set<String> noun = new HashSet<>();
         for (IndexedWord root : semanticGraph.getRoots()) {
           for (IndexedWord child : semanticGraph.getChildList(root)) {
-            checkVer(graph, root.word());
-            checkEdge(graph, root.word(), child.word());
-            getChildren(child, semanticGraph, graph);
+            if (!list.contains(child.word())) {
+              checkVer(graph, root.word());
+              checkVer(graph, child.word());
+              checkEdge(graph, root.word(), child.word());
+              getChildren(child, semanticGraph, graph, 0);
+            }
           }
         }
       }
       GraphParser gp = new GraphParser(graph);
-      System.out.println(id + "\t" + gp.getQuery());
+      fileWriter.write(id + "\t" + gp.getQuery());
+      if (cus != idList.size()) {
+        fileWriter.write("\n");
+      }
+      fileWriter.flush();
     }
+    fileWriter.close();
   }
-  protected boolean getChildren(IndexedWord child, SemanticGraph semanticGraph, DefaultDirectedGraph<String, DefaultEdge> graph) {
+
+  protected boolean getChildren(
+      IndexedWord child,
+      SemanticGraph semanticGraph,
+      DefaultDirectedGraph<String, DefaultEdge> graph,
+      int count) {
+    if (count > 5) {
+      return false;
+    } else {
+      count++;
+    }
     if (semanticGraph.getChildList(child).isEmpty()) return false;
     for (IndexedWord c1 : semanticGraph.getChildList(child)) {
       checkVer(graph, child.word());
+      checkVer(graph, c1.word());
       checkEdge(graph, child.word(), c1.word());
-      getChildren(c1, semanticGraph, graph);
+      getChildren(c1, semanticGraph, graph, count);
     }
     return true;
   }
@@ -259,18 +240,19 @@ public class BaselineGen {
   }
 
   protected void checkEdge(
-          DefaultDirectedGraph<String, DefaultEdge> graph, String from, String to) {
+      DefaultDirectedGraph<String, DefaultEdge> graph, String from, String to) {
     if (!graph.containsEdge(from, to)) {
       graph.addEdge(from, to);
     }
   }
+
   public static void main(String[] args) throws IOException {
-    int size = EvaluationConfig.BENCH4BL.length;
+    int size = EvaluationConfig.LTR.length;
     for (int i = 0; i < size; i++)
       new BaselineGen()
-          .genBaseline_entities(
-              EvaluationConfig.BENCH4BL_ID.get(i), DatasetConfig.BENCH4BL, EvaluationConfig.BENCH4BL[i]);
-    //    new BaselineGen().genBaseline_nl(BugReportsID.ECF, DatasetConfig.BLIZZARD,
-    // DatasetConfig.ECF);
+          .genBaseline_graph(
+              EvaluationConfig.LTR_ID.get(i),
+              DatasetConfig.LTR,
+              EvaluationConfig.LTR[i]);
   }
 }
