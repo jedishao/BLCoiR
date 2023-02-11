@@ -12,12 +12,12 @@ import java.util.List;
 
 public class QueryEvaluation {
   public void queryResults() {
-    String bench = DatasetConfig.BENCH4BL;
-    String repository = DatasetConfig.A_HBASE;
+    String bench = DatasetConfig.BLIZZARD;
+    String repository = DatasetConfig.TOMCAT;
     List<String> our_ =
             ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/baseline_entity.txt");
     int index = 0;
-    for (int id : BugReportsID.HBASE) {
+    for (int id : BugReportsID.TOMCAT70) {
       FaultLocalizationRunner fr1 =
           new FaultLocalizationRunner(bench, repository, id, our_.get(index).split("\t")[1]);
       for (int r : fr1.getGoldFileIndicesClass()) {
