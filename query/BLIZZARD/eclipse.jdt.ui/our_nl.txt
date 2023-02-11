@@ -1,0 +1,6 @@
+12996	access select project error type mulitpage example file leave get create jar finish export creation editor happen mpe fill eclipse fail build install
+103450	fix statement block remove option
+179109	Editor computing AST twice concurrently
+297709	editor agent item package resource autocomplete firefox change tree link mozilla control windows opening result swt composite action jdt class option
+336841	package test classpath work show head view file attachment fix explorer detail synchronize
+411636	editor burn stack package large link save project cycle trace file delay attachment build explorer action indigo

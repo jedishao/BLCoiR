@@ -1,4 +1,4 @@
-RedissonLock locks up
+RedissonLock locks up.
 Under heavy use on production, Redisson's locks get all locked up, and the application stalls. I'm using Redisson 1.1.5
 I have 1 thread locked trying to release a lock:
 

@@ -1,0 +1,10 @@
+7392	synch stack jdithread startup show model state frame
+12695	adapter debug list breakpoint top spot get event user order
+16930	invalidthreadstateexception area error message breakpoint evaluation eval provide get step state tostring user
+52474	note fact pattern project repository attempt platform point switch number dialog scenario perspective lock block workbench checkout cvs work module start check eclipse build
+57467	stack compare attempt fix flastmethod computestackframe tos lastmethod case info debug jdithread transisent race test issue index label requestor something condition background logic frame
+64951	condition screen label shot breakpoint debugging tostring stack variables select
+165174	view selection lose show launch block monitor screenshot sync synchronized
+169542	displayed Debug view parent contain Build ID Create ThreadGroup correct traversable Variables correctly
+187000	stack release debugger focus lot mouse stick press worker tree start selection stacktrace machine loose step information window collapse
+343039	race session debugger monitor deadlock turn how default person debugging jdt ability consider option

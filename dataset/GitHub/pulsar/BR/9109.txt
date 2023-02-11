@@ -1,4 +1,4 @@
-pulsar-timer thread blocked at redeliverUnacknowledgedMessages.
+pulsar-timer thread blocked at redeliver UnacknowledgedMessages.
 Describe the bug
 After broker crash and restart, consumers got blocked, consumer rateOut decrease to 0, can't auto recover without restart consumer process.
 To Reproduce

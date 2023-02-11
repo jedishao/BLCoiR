@@ -1,0 +1,9 @@
+659	splitting cache compactor enwiki integer hlog daemon call regionserver condition closing size scanner lock memcache row batchupdate region ipc retiringregion  cacheflushlock
+818	server handler stack level hashset monitor run deadlock hregion hold flushsomeregion regionserver lock information uploading flusher region ipc
+1840	note indextablethe debug test line sense number fail unit stacktrace load fix rowlock indexedtable lock row ioexception apos info
+1869	void test testing testlockedrowdelete packaging svn patch fail conjunction rowlock indexedtable lock create row ioexception testindexedtable
+14812	ResultBoundedCompletionService
+14926	server side hang recover log timeout daemon crash bufferedinputstream patch thrift readingthrift lock client socket state worker prio hbase
+15030	parking cluster stack log reentrantreadwritelock deadlock integrationtestddlmasterfailover lock info tablenamespacemanager procedureexecutor level integrationtestddlmasterfailoveri monitor timed_waiting daemon jstack synchronizer information
+16304	waiting periodic reentrantreadwritelock cms deadlock hregion jvmpausemonitor leaserenewer updateslockhere referencequeue lock abstractqueuedsynchronizer surrogate dispatcher signal  handlefilenotfoundexception rpcserver sweep finalizer gang jni timed_waiting util service mark
+16429	safepointreleasedlatch parking handler waiting ring release deadlock safepointzigzaglatch  releasesafepoint logroller  replacewriter ringbuffereventhandler buffer consumer jira issue sync timed_waiting daemon rollwriter fshlog countdownlatch replacewriter append apos

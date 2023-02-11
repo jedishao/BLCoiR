@@ -1,0 +1,7 @@
+8683	suspend stack npe select nullpointerexception hit system step signaldispatcher assume frame
+33712	JavaDebugOptionsManager modifications
+65149	JavaDebugOptionsManager initializeProblemHandling
+78534	stack debug test occur message entry core apparently get threadmonitormanager event  clone hashmap case concurrentmodificationexception
+148006	execution stack level monitor autobuild mode consoledocument build lock client plug information worker
+312038	hang automount automounter pid source directory example lockup isexpandable attachment isfile lock jar zip stat jrecontainer start tree way eclipse performance nfs jdt haschildren
+446040	RuntimeClasspathViewer preferenceChange

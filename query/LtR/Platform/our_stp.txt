@@ -1,0 +1,3 @@
+6623	AbstractUIPlugin refreshPluginActions
+59782	EventLoopProgressMonitor ImplicitJobs ThreadJob IndexManager eventmgr EventThread
+118414	AbstractWorkingSetManager IndexManager JobManager^0.5

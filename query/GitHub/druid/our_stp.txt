@@ -1,0 +1,8 @@
+2793	mysqlintegrityconstraintviolationexception argument redacted taskqueue status_payload error retryutils attempt way entry  diff payload datasource lock created_date ms  unabletoexecutestatementexception callbackfailedexception thing value primary
+3393	cluster server executionexception hundred instance channel run source channelexception nettyhttpclient side chance race shape byte query pool broker condition druid future directdruidclient callback thing httpclient
+4296	maxgcpausemillis fieldaccesspostaggregator fieldaccess sizebyte doublesumaggregatorfactory middlemanager timeseriesquery javaopt chainedexecutionqueryrunner constantvalue arithmeticpostaggregator aggregatorspec hyperuniquecardinality fnname basetaskdir postaggregatorspec numthread hll doublesum multiplespecificsegmentspec hyperuniquesaggregatorfactory hyperunique constantpostaggregator queryid fieldname middlemanger restoretasksonrestart datasource bufferunderflowexception segmentdescriptor
+6020	leader stack npe taskmaster race this optional taskqueue follow nullpointerexception taskrunner trace variable gettaskrunner initialize becomeleader overlord
+6028	drop argument deadlock error cycle sec sqltransactionrollbackexception payload lock victim row standardexception table group sqlmetadatarulemanagertest test max syscolumns finder datasource failure waiter unabletoexecutestatementexception tablelock
+6139	testCheckpointForUnknownTaskGroup KafkaSupervisorTest
+6201	cluster lifecyclelock httpremotetaskrunner os_prio test monitor deadlock sync daemon entry task concurrenthashmap lock hrtr state worker prio runner overlord
+6867	stack level exhaust monitor deadlock druidstatement hold                               druidconnection lock information connection hashmap

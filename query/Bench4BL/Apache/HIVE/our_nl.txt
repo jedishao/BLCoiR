@@ -1,0 +1,9 @@
+545	hive vector arraylist class codemost
+4000	hive static access race hashmaps start cpu condition mapreduce loop lock client progress job
+12266	hive cli issue release remain beeline believe command timeout acid hook shell lock client
+12768	static issue serde safety deserialization buffer decimal
+12996	metastore temp internally manager session ctc_txnid query ctc_partition insert functionality store acid into hour tmp today statement lock ignore definition value table
+13512	    tezwork query counter dag possible int running compilation compilationwhen atomicinteger
+13725	heartbeat acid result impl streaming endpoint client create case metastore rpc batch txn follow sample call sequence provide response vice versa synchronization
+13833	add delay heartbeat scheduling lock unnecessary acquisition
+14400	joe metastore side race session query insert alreadyexistsexception handle launch example condition partition today effect statement create value user apos table

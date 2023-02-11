@@ -1,0 +1,5 @@
+2962	loadpartitionbyname couple waiting thead gettable deadlock executor prio metastore coordinator race issue pool cpu settablefuture daemon call condition queue presto
+6389	process argument sqlserverexception dbo,table_name query gettableproperty deadlock error finder result partition_schemes resultsetexception partition testsqlserverintegrationsmoketest failure schema_id name lock victim data_compression_desc transaction table
+7872	process issue resource sqlserverexception read_committed_snapshot testsqlservertypemapping deadlock error rerun elapse database failure statement lock runtimeexception victim transaction
+9741	sqlserver TestSqlServerConnectorTest SqlServerConnectorTest testSelectInformationSchemaColumns deadlock
+14605	execution stack chance test query pool fault run recovery failswithoutretry something path runnable trace capability testexplainanalyze build failure get prio

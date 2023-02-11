@@ -2,7 +2,7 @@
 40	add resource deadlock ttl trylock confuse refer lock plan operation situation
 67	redissonlist concurrency call invocation iterator size sublist mean safe hasnext value
 83	waiting redisson deadlock redis lock stick state prio key info obtain cli monitor list daemon defaultpromise name http DefaultPromise^0.33333334 RedissonLock^0.2
-89	note production line awaituninterruptibly redisson redis multi output blocked get lock redisconnection state key unlock one stall timeunit int lockinterruptibly jstack redissonlock  bci information frame
+89	lock production RedissonLock lockInterruptibly
 106	date datum iterator condition redissonlist race hasnext list
 169	ConnectionManager CommandHandler MasterSlaveConnectionManager
 199	handler stack nioeventloopgroup range slot deque number newfixedthreadpool trace event issue tail defaultchannelpipeline clusterconnectionmanager concurrency pipeline warn million ReplayingDecoder^1.0 ByteToMessageDecoder^0.5 AbstractChannelHandlerContext^0.33333334 ChannelInboundHandlerAdapter^0.2

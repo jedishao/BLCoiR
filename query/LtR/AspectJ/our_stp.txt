@@ -1,0 +1,2 @@
+269867	static instance access line show system loop get state prio getajtype clazz weakhashmap
+320468	ModifiersPattern getModifierFlag

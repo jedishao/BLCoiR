@@ -1,0 +1,8 @@
+574	Multicast default excecutor create enough parallel processing
+1199	appear throttler
+1583	Ldap component
+1604	nabble custom unitofwork synchronization callback dsl processor
+3349	request flag absence binding getbinding endpoint load startup copying protocolheaders race issue sync headerfilterstrategyaware cxfrsendpoint way instanceof async invocation condition headerstrategy headerfilterstrategy getandset apos customer
+7556	allow jms endpoint camel rabbitmq consumer queue
+7988	file nabble lock poll acquire consumer case camellock
+9311	Concurrency issue with the dynamic router

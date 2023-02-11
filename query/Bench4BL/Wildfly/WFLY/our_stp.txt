@@ -1,0 +1,6 @@
+3259	ServletContextListeners WeldComponentIntegrationProcessor WeldStartService UndertowDeploymentService
+3396	TimerResourceDefinition
+3727	fact channel type up_prot error startupmy jchannel creation registry npe race pool start jgroups nullpointerexception component embeddedcachemanagerstartupexception channeltransport service variable wildfly serverservice
+3731	StatefulSessionSynchronizationInterceptor
+5770	Lock TimeoutException CacheRegistry close  Just happened node shutdown testing locally
+6877	session putkeyvaluecommand trace timeoutexception web defaultlockmanager onephasecommit yyy lock embeddedexpirablemetadata value key valuematcher force_synchronous maxidle cache locking topologyid preparecommand ignore_return_values immutable xxx wildfly zzz secondsour putifabsent globaltransaction

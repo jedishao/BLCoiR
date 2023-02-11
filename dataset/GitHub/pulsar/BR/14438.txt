@@ -1,4 +1,4 @@
-sometimes  internalDeleteTopicForcefully  will block forever.
+sometimes  internal DeleteTopicForcefully  will block forever.
           
   
     

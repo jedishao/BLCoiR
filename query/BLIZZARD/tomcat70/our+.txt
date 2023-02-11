@@ -54,7 +54,7 @@
 55524	atmosphere shared stack wsoutbound deadlock asyncop duscuss scheduler attachment websocket atmosphereresourceimpl lock write issue AbstractReflectorAtmosphereHandler^1 DefaultBroadcaster^0.5
 55582	TagFileProcessor RuntimeContext JspServletWrapper JspRuntimeContext spServletWrapper wrapper
 55684	securityexception parent access tomcat want permission manage getthread root try threadgroup order
-55799	RemoteEndpoint NioEndpoint^1.0 NioEndpoint Poller^0.5 Thread^0.25 SocketChannelImpl^0.2 NioChannel^0.14285715 NioServletInputStream^0.125 AbstractServletInputStream^0.1
+55799	RemoteEndpoint WsRemoteEndpointImplBase NioEndpoint^1.0 Poller^0.5 SocketChannelImpl^0.2 NioChannel^0.14285715 NioServletInputStream^0.125 AbstractServletInputStream^0.1
 55996	request server interruptedexception tomcat servlet asynccontext release continu run mon output attachment problemservlet context variant client based side void message async processing http AsyncContextImpl^1.0 ProblemServlet AsynRunnable^0.33333334 AsyncContextImpl RunnableWrapper^0.25 ThreadPoolExecutor^0.2 ThreadPoolExecutor Worker^0.16666667 Thread^0.14285715
 56042	reason request stack servlet bit error startasync spec trace scenario complex raise jetty state wonder asynccomplete issue work involve must_dispatch async appear response AsyncStateMachine^1.0 Http11Processor^0.5 AbstractHttp11Processor^0.33333334 AsyncContextImpl^0.2 ErrorReportValve^0.16666667 AccessLogValve^0.14285715 StandardEngineValve^0.125 CoyoteAdapter^0.11111111
 56082	ClassLoaderLogManager LogManager getLogManager
@@ -71,7 +71,7 @@
 57420	DirContextURLConnection DirContextURLConnection^1.0 ContextConfig^0.5
 57681	allow add tomcat loader source loading patch relate file attachment web port detail classloading class
 57683	access software tomcat stockticket log asynccontext stockticker error crash example stockicker abstractprocessor seterrorstate client connection press write mar console keyboard jdk async esc response progress ise socket page SocketOutputStream^1.0 InternalOutputBuffer^0.25 ByteChunk^0.2 AbstractHttp11Processor^0.14285715 Response^0.125 OutputBuffer^0.11111111
-57779	lock abstractqueuedsynchronizer client connection end socketwrapper monitor servletoutputstream socket operation JIoEndpoint SocketProcessor^0.5  WrappingRunnable^0.2 JIoEndpoint^0.14285715 AbstractProcessor^0.125 AbstractHttp11Processor^0.11111111
+57779	lock abstractqueuedsynchronizer client connection AbstractProcessor socketwrapper monitor servletoutputstream socket operation SocketProcessor^0.5  WrappingRunnable^0.2 JIoEndpoint^0.14285715 AbstractProcessor^0.125 AbstractHttp11Processor^0.11111111
 57943	poller request die process tomcat log error accept nio http connection catch nioendpoint Poller^0.25
 57959	race issue tomcat log remain deadlock way wrong condition file fix lock comment writer write order
 57977	PersistentValve invoke

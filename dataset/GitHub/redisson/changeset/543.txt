@@ -1,4 +1,4 @@
-src/main/java/org/redisson/RedissonPatternTopic.javav
+src/main/java/org/redisson/RedissonPatternTopic.java
 src/main/java/org/redisson/RedissonTopic.java
 src/main/java/org/redisson/connection/ConnectionManager.java
 src/main/java/org/redisson/connection/MasterSlaveConnectionManager.java

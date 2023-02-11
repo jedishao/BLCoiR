@@ -1,0 +1,7 @@
+65107	note classcastexception stack jun debug debugview error switch breakpoint reproduce async total watch processing queue frame
+66413	log work error target dialog strangeness condition startup state condition
+101118	JavaDetailFormattersManager
+125868	JDIModelPresentation
+178912	access getter fvms type impl safety member block createvminstall race everyone ivminstalltype runtime right list call condition abstractvminstalltype variable name synchronization setter
+182237	view access get variable JDIModelPresentation
+229394	jface tue buildid program cell error type sun view array bootloader value editor npe var check entry cdt en_us char variable plug location arch
