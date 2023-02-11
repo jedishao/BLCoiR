@@ -170,6 +170,47 @@ public class BaselineGen {
     fileWritter.close();
   }
 
+  public void genBaseline_graph(List<Integer> idList, String rep, String project)
+          throws IOException {
+    DepManager depManager = new DepManager();
+    String path = DatasetConfig.QUERY_DIR + rep + "/" + project + "/baseline_entity.txt";
+    FileWriter fileWritter = new FileWriter(path, true);
+    int cus = 0;
+    for (int id : idList) {
+      cus++;
+      String brPath = DatasetConfig.DATASET_DIR + rep + "/" + project + "/BR/" + id + ".txt";
+      List<String> con = BRLoader.loadBugReportList(brPath);
+      TextNormalizer tn = new TextNormalizer(con);
+      ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
+      StringBuilder sb = new StringBuilder();
+      for (SemanticGraph semanticGraph : dependencies) {
+        for (IndexedWord indexedWord : semanticGraph.vertexListSorted()) {
+          if (indexedWord.tag().startsWith("NN") || indexedWord.tag().startsWith("VB")) {
+            sb.append(indexedWord.originalText()).append(" ");
+          }
+        }
+      }
+      String[] s = sb.toString().split(" ");
+      StringBuilder sb1 = new StringBuilder();
+      String[] sym = {
+              "(", ")", ":", "[", "]", "}", "{", "#", "-", "|", "%", "@", ".", "+", "=", "\\", "/", "#",
+              "*", "?", "^", "$", "\"", "'", "<", ">", ","
+      };
+      for (String v : s) {
+        for (String s1 : sym) {
+          v = v.replace(s1, " ");
+        }
+        sb1.append(v).append(" ");
+      }
+      fileWritter.write(id + "\t" + sb1.toString().trim());
+      if (cus != idList.size()) {
+        fileWritter.write("\n");
+      }
+      fileWritter.flush();
+    }
+    fileWritter.close();
+  }
+
   public static void main(String[] args) throws IOException {
     int size = EvaluationConfig.BENCH4BL.length;
     for (int i = 0; i < size; i++)
