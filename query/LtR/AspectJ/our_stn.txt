@@ -1,2 +1,2 @@
-155148	server argument ctrl classloader deadlock identity licyclassloader httpserver lock class oracle policyclassloader hashcode monitor arraylist filehandler workconsumer system information workexecutorworkerthread tostring
-408721	ReferenceType checkForComodification ResolvedType TypeFactory findDerivativeType
+155148	server argument classloader deadlock licyclassloader httpserver lock policyclassloader hashcode monitor arraylist filehandler workconsumer information tostring SearchPolicy^1.0 PolicyClassLoader^0.5 SearchPolicy^0.33333334 SearchSequence^0.25
+408721	weaver arraylist ReferenceType^1 TypeFactory^0.25 ResolvedType^0.2 TypePattern^0.125 ExactTypePattern^0.11111111

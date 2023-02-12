@@ -1,3 +1,3 @@
-1565	SchemaFactory endpoint
-7161	ctr init other defer loader start dozer monitor deadlock bit spring stop camel service concurrenthashmap lock state springwhen stuff
-8146	parking type result threadsseem path leak file camel abstractqueuedsynchronizer prio consequence os_prio issue start orphan something timed_waiting daemon condition route stop sftp
+1565	SchemaFactory endpoint XMLSchemaFactory^0.5 SchemaFactory^0.33333334 ValidatingProcessor^0.25 ProcessorEndpoint^0.14285715 AsyncProcessorTypeConverter^0.11111111
+7161	ctr init other defer loader start dozer monitor deadlock bit spring stop camel service concurrenthashmap lock state springwhen stuff DefaultSingletonBeanRegistry^1.0 AbstractBeanFactory^0.5 DefaultListableBeanFactory^0.33333334 AbstractApplicationContext^0.14285715 BeanFactoryUtils^0.125 ApplicationContextRegistry^0.11111111 PropertyPlaceholderDelegateRegistry^0.1
+8146	parking type result threadsseem path leak file camel abstractqueuedsynchronizer prio consequence os_prio issue start orphan something timed_waiting daemon condition route stop sftp Unsafe^1.0 LockSupport^0.5 AbstractQueuedSynchronizer ConditionObject^0.33333334 ScheduledThreadPoolExecutor DelayedWorkQueue^0.25 ThreadPoolExecutor^0.16666667 ThreadPoolExecutor Worker^0.125 Thread^0.11111111

@@ -1,1 +1,1 @@
-202	server stack deadlock eap protocolconnectionmanager lock client arraydeque resume cli debug break bytebuffer monitor wfly remoting breakpoint management wildfly apos
+202	server stack deadlock eap protocolconnectionmanager lock client arraydeque resume cli debug break bytebuffer monitor wfly remoting breakpoint management wildfly apos CLIModelControllerClient ChannelCloseHandler^1.0 SpiUtils^0.33333334 AbstractHandleableCloseable CloseHandlerTask^0.25 AbstractHandleableCloseable^0.2 RemoteConnectionChannel^0.14285715 RemoteConnectionHandler^0.11111111

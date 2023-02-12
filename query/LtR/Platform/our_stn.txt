@@ -1,2 +1,2 @@
-46562	ProgressManager Semaphore
-113582	MarkerAdapter level jobs framework task monoreconciler marker semaphore javareconciler party
+46562	ProgressManager^0.1 UISynchronizer^0.33333334 OverrideAndUpdateAction^0.2 CVSSubscriberAction^0.16666667
+113582	per compilationunit level jobs framework task monoreconciler MarkerAdapter^0.2 javareconciler party

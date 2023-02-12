@@ -1,1 +1,1 @@
-199	stack test query jmeter observe synchronisation performance field http carry state exec status
+199	stack test query jmeter observe synchronisation performance field http carry state exec status AccessibleObject^0.33333334 AnnotationBasedPersistentProperty^0.25 BasicPersistentEntity^0.2 MappingMongoConverter^0.16666667 MongoTemplate^0.11111111

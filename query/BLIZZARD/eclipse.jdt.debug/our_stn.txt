@@ -1,7 +1,7 @@
-65107	note classcastexception stack jun debug debugview error switch breakpoint reproduce async total watch processing queue frame
-66413	log work error target dialog strangeness condition startup state condition
-101118	JavaDetailFormattersManager
-125868	JDIModelPresentation
-178912	access getter fvms type impl safety member block createvminstall race everyone ivminstalltype runtime right list call condition abstractvminstalltype variable name synchronization setter
-182237	view access get variable JDIModelPresentation
-229394	jface tue buildid program cell error type sun view array bootloader value editor npe var check entry cdt en_us char variable plug location arch
+65107	note classcastexception stack jun debug debugview error switch breakpoint reproduce async total watch processing queue frame Instruction^1.0 PushFieldVariable^0.5 Interpreter^0.33333334 ASTEvaluationEngine 1 EvaluationRunnable^0.25 JDIThread^0.2 ASTEvaluationEngine EvalRunnable^0.16666667 JDIThread ThreadJob^0.14285715 Worker^0.125
+66413	log work error target dialog strangeness condition startup state condition IncompatibleThreadStateException^1.0 ThreadReferenceImpl^0.5 JDIThread^0.33333334 JavaLineBreakpoint^0.2 JavaBreakpoint^0.14285715 EventDispatcher^0.125 Thread^0.11111111
+101118	debug buildid source message sun eclipse entry async bootloader processing JavaDetailFormattersManager^1.0 JavaDetailFormattersManager JDIThread ThreadJob^0.16666667
+125868	access debug restart session start launch head result ImageDescriptorRegistry JDIModelPresentation^0.5
+178912	access getter fvms type impl safety member block createvminstall race everyone ivminstalltype runtime right list call condition abstractvminstalltype variable name synchronization setter AbstractVMInstallType^1.0 JREContainerInitializer^0.5 LaunchingPlugin VMChanges^0.25 LaunchingPlugin 1^0.16666667 BatchOperation^0.14285715 JavaModelOperation^0.125 Workspace^0.11111111 JavaCore^0.1
+182237	view access get variable SWT^1.0 Display^0.25 ImageDescriptorRegistry^0.14285715 JavaPlugin^0.1
+229394	jface tue buildid program cell error type sun view array bootloader value editor npe var check entry cdt en_us char variable plug location arch ColumnViewerEditor^1.0 ColumnViewerEditor 2^0.5 CellEditor 1^0.33333334 SafeRunner^0.25 Platform^0.2 JFaceUtil 1^0.16666667 SafeRunnable^0.14285715 CellEditor^0.125 TextCellEditor 5^0.1

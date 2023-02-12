@@ -1,2 +1,2 @@
-29585	exception container initializeroot resource getresolvedclasspath tree resourcechange run endoperation broadcastchange modification notify core model processresourcedelta initialize
+29585	exception container initializeroot resource getresolvedclasspath tree resourcechange run endoperation broadcastchange modification notify core model processresourcedelta initialize JavaCore^1.0 JavaCore 1^0.5 Platform^0.33333334 Workspace^0.16666667 Thread^0.14285715
 58314	cursor console ast reader nullpointerexception managment
