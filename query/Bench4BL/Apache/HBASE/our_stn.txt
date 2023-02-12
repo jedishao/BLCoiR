@@ -1,3 +1,3 @@
-1569	cluster regionserver happen take condition import race load hour illegalaccesserror StoreFile^1.0 Store^0.5 HRegionServer^0.33333334 Thread^0.2
-14178	handler waiting hregion timeout lot offsetlock lock client block prio table cache os_prio rpc below idlock monitor daemon regionserver entry port infomation queue IdLock^0.33333334 HFileReaderV2^0.25 HFileBlockIndex^0.2 HFileReaderV2^0.16666667 StoreFileScanner^0.125 NonLazyKeyValueScanner^0.1
-14555	Deadlock MVCC branch toString IT test MultiVersionConcurrencyControl^1.0 HRegion^0.16666667 RSRpcServices^0.11111111
+1569	StoreFile^1.0 Store^0.5 HRegionServer^0.33333334
+14178	regionserver HFileBlockIndex^0.2 HFileReaderV2 StoreFileScanner^0.125 NonLazyKeyValueScanner^0.1
+14555	Deadlock MVCC waitForRead toString MultiVersionConcurrencyControl^1.0 HRegion^0.16666667 RSRpcServices^0.11111111
