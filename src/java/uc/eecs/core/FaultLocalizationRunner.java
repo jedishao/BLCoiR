@@ -55,16 +55,16 @@ public class FaultLocalizationRunner {
   }
 
   public static void main(String[] args) throws IOException, ParseException {
-    int bugID = 57943;
-    String repository = DatasetConfig.TOMCAT;
-    String bench = DatasetConfig.BLIZZARD;
+    int bugID = 4278;
+    String repository = DatasetConfig.VERTX;
+    String bench = DatasetConfig.GITHUB;
     String searchQuery =
-        "poller request HashIterator process accept connection nioendpoint";
+        "attempt openjdk startup deploymentmanager deploymentoptions information DeploymentManager VertxImpl^0.33333334";
     FaultLocalizationRunner faultLocalizationRunner =
         new FaultLocalizationRunner(bench, repository, bugID, searchQuery);
     //    FaultLocalizationRunner faultLocalizationRunner1 =
     //        new FaultLocalizationRunner(bench, repository, bugID, searchQuery1);
-    System.out.println("First found index:" + faultLocalizationRunner.getFirstRank());
+    System.out.println("First found index:" + faultLocalizationRunner.getGoldFileIndicesClass());
     //    System.out.println("First found index:" + faultLocalizationRunner1.getFirstRank());
   }
 }
