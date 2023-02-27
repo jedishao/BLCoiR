@@ -119,11 +119,11 @@ public class SimpleEvaluation {
   }
 
   public void calculateMAP() {
-    int size = DatasetConfig.BENCH4BL_SIZE;
-    String te = DatasetConfig.BENCH4BL;
+    int size = DatasetConfig.GITHUB_SIZE;
+    String te = DatasetConfig.GITHUB;
     SimpleEvaluation se = new SimpleEvaluation();
     float p = 0;
-    for (String s1 : EvaluationConfig.BENCH4BL) {
+    for (String s1 : EvaluationConfig.GITHUB) {
       //      String path =
       //          "IRBL-Evaluation/"
       //              + te
@@ -134,7 +134,7 @@ public class SimpleEvaluation {
       //              + "_"
       //              + s1.split("/")[1]
       //              + ".txt";
-      String path = "Query-Evaluation/" + te + "/" + s1 + "/acer.txt";
+      String path = "Query-Evaluation/" + te + "/" + s1 + "/our+.txt";
       Map<String, List<Integer>> map = se.mapping(path);
       for (String key : map.keySet()) {
         int j = 0;
@@ -171,11 +171,11 @@ public class SimpleEvaluation {
   }
 
   public void calculateMRR() {
-    int size = DatasetConfig.BLIZZARD_SIZE;
-    String te = DatasetConfig.BLIZZARD;
+    int size = DatasetConfig.GITHUB_SIZE;
+    String te = DatasetConfig.GITHUB;
     SimpleEvaluation se = new SimpleEvaluation();
     float p = 0;
-    for (String s1 : EvaluationConfig.BLIZZARD) {
+    for (String s1 : EvaluationConfig.GITHUB) {
       //      String path =
       //          "IRBL-Evaluation/"
       //              + te
@@ -186,7 +186,7 @@ public class SimpleEvaluation {
       //              + "_"
       //              + s1.split("/")[1]
       //              + ".txt";
-      String path = "Query-Evaluation/" + te + "/" + s1 + "/baseline_graph.txt";
+      String path = "Query-Evaluation/" + te + "/" + s1 + "/our.txt";
       Map<String, List<Integer>> map = se.mapping(path);
       for (String key : map.keySet()) {
         int rank = map.get(key).get(0);
@@ -218,7 +218,7 @@ public class SimpleEvaluation {
     SimpleEvaluation se = new SimpleEvaluation();
 //    se.calculateTop(se.mapping(path), size);
 //                        se.calculateMRR();
-        se.calculateMAP();
+        se.calculateMRR();
     //    se.readResults("query/BLUiR_camel.txt", ClassificationID.CAMEL_NL, "BLUiR");
     //    int size = 0;
     //
