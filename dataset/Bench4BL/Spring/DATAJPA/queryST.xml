@@ -1,0 +1,56 @@
+<bugrepository name="DATAJPA">
+    <bug id="268" opendate="2012-11-06 04:11:56" fixdate="2012-11-06 06:05:50" resolution="Fixed">
+        <buginformation>
+            <summary>server threadlocals loader redeployment classloader space bindresource reference methodinvocation
+                web class case outofmemoryerror test locking pool permgen rush transactionsynchronizationmanager graph
+                target link call lockmodepopulatingmethodinterceptor service spacein
+            </summary>
+            <description>server threadlocals loader redeployment classloader space bindresource reference
+                methodinvocation web class case outofmemoryerror test locking pool permgen rush
+                transactionsynchronizationmanager graph target link call lockmodepopulatingmethodinterceptor service
+                spacein
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.jpa.repository.support.LockModeRepositoryPostProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="359" opendate="2013-06-17 15:34:01" fixdate="2013-06-19 04:26:12" resolution="Fixed">
+        <buginformation>
+            <summary>annotation datum maven documentation query findone update dataobject methodif suffix findall sample
+                crud output findoneandlock derby lock operation class lock apos
+            </summary>
+            <description>annotation datum maven documentation query findone update dataobject methodif suffix findall
+                sample crud output findoneandlock derby lock operation class lock apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.jpa.repository.LockIntegrationTests.java</file>
+            <file type="M">org.springframework.data.jpa.repository.support.SimpleJpaRepository.java</file>
+            <file type="M">org.springframework.data.jpa.repository.sample.RoleRepository.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="620" opendate="2014-10-29 09:38:03" fixdate="2014-10-30 02:01:59" resolution="Fixed">
+        <buginformation>
+            <summary>invoke lookup crudmethodmetadatapostprocessor data line release believe queries spring call result
+                loop crudmethodmetadatapopulatingmethodintercceptor concurrenthashmap safe jpa behavior hashmap apos
+            </summary>
+            <description>invoke lookup crudmethodmetadatapostprocessor data line release believe queries spring call
+                result loop crudmethodmetadatapopulatingmethodintercceptor concurrenthashmap safe jpa behavior hashmap
+                apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
