@@ -1,0 +1,17 @@
+<bugrepository name="SHDP">
+    <bug id="374" opendate="2014-07-24 07:22:34" fixdate="2014-07-25 12:40:00" resolution="Fixed">
+        <buginformation>
+            <summary>AbstractDataStreamWriter getOutput
+            </summary>
+            <description>AbstractDataStreamWriter getOutput
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.hadoop.store.support.OutputStoreObjectSupport.java</file>
+            <file type="M">org.springframework.data.hadoop.store.output.AbstractDataStreamWriter.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
