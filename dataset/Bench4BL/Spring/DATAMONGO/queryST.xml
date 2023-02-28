@@ -1,0 +1,108 @@
+<bugrepository name="DATAMONGO">
+    <bug id="199" opendate="2011-07-19 05:40:40" fixdate="2011-12-06 04:46:47" resolution="Fixed">
+        <buginformation>
+            <summary>stack test query jmeter observe synchronisation performance field http carry state exec status
+            </summary>
+            <description>stack test query jmeter observe synchronisation performance field http carry state exec status
+                at java.lang.reflect.Field.getAnnotation(Field.java:1000)
+                at java.lang.reflect.AccessibleObject.isAnnotationPresent(AccessibleObject.java:168)
+                at org.springframework.data.mapping.AnnotationBasedPersistentProperty.isTransient(AnnotationBasedPersistentProperty.java:74)
+                at org.springframework.data.mapping.BasicPersistentEntity.doWithProperties(BasicPersistentEntity.java:111)
+                at org.springframework.data.document.mongodb.convert.MappingMongoConverter.read(MappingMongoConverter.java:230)
+                at org.springframework.data.document.mongodb.convert.MappingMongoConverter.read(MappingMongoConverter.java:174)
+                at org.springframework.data.document.mongodb.convert.MappingMongoConverter.read(MappingMongoConverter.java:128)
+                at org.springframework.data.document.mongodb.MongoTemplate$ReadDbObjectCallback.doWith(MongoTemplate.java:1655)
+                at org.springframework.data.document.mongodb.MongoTemplate.executeFindMultiInternal(MongoTemplate.java:1426)
+                at org.springframework.data.document.mongodb.MongoTemplate.doFind(MongoTemplate.java:1186)
+                at org.springframework.data.document.mongodb.MongoTemplate.find(MongoTemplate.java:587)
+                at org.springframework.data.document.mongodb.MongoTemplate.find(MongoTemplate.java:557)
+                at $MongoOperations_1314237160b.find($MongoOperations_1314237160b.java)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.mapping.CachingMongoPersistentProperty.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="532" opendate="2012-09-07 03:49:02" fixdate="2012-09-12 04:06:56" resolution="Fixed">
+        <buginformation>
+            <summary>mongo authenticate isauthenticated spring password database git fix dev block multithreading
+                dogetdb authentication issue mongodbutils check call cannotgetmongodbconnectionexception driver
+                databasename
+            </summary>
+            <description>mongo authenticate isauthenticated spring password database git fix dev block multithreading
+                dogetdb authentication issue mongodbutils check call cannotgetmongodbconnectionexception driver
+                databasename
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.MongoDbUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="622" opendate="2013-02-26 01:40:45" fixdate="2013-03-05 00:52:23" resolution="Fixed">
+        <buginformation>
+            <summary>condition race insert create doinsert dosave dosaveversioned
+            </summary>
+            <description>condition race insert create doinsert dosave dosaveversioned
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.MongoTemplateTests.java</file>
+            <file type="M">org.springframework.data.mongodb.core.MongoTemplate.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="737" opendate="2013-08-01 21:18:51" fixdate="2013-08-12 00:53:30" resolution="Fixed">
+        <buginformation>
+            <summary>mongo stack mongosynchronizations unbindresource illegalstateexception patch datamongo database
+                trace committer extra triggerbeforecompletion dogetdb value key localhost issue test mongodbutils holder
+                community transactionsynchronizationmanager beforecompletion interaction thing transaction
+            </summary>
+            <description>mongo stack mongosynchronizations unbindresource illegalstateexception patch datamongo database
+                trace committer extra triggerbeforecompletion dogetdb value key localhost issue test mongodbutils holder
+                community transactionsynchronizationmanager beforecompletion interaction thing transaction
+                at org.springframework.transaction.support.TransactionSynchronizationManager.unbindResource(TransactionSynchronizationManager.java:209)
+                at org.springframework.transaction.support.ResourceHolderSynchronization.beforeCompletion(ResourceHolderSynchronization.java:69)
+                at org.springframework.transaction.support.TransactionSynchronizationUtils.triggerBeforeCompletion(TransactionSynchronizationUtils.java:106)
+                at org.springframework.transaction.support.AbstractPlatformTransactionManager.triggerBeforeCompletion(AbstractPlatformTransactionManager.java:937)
+                at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:834)
+                at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:822)
+                at org.springframework.test.context.transaction.TransactionalTestExecutionListener$TransactionContext.endTransaction(TransactionalTestExecutionListener.java:519)
+                at org.springframework.test.context.transaction.TransactionalTestExecutionListener.endTransaction(TransactionalTestExecutionListener.java:293)
+                at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:186)
+                at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:406)
+                at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:91)
+                at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+                at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+                at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+                at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+                at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+                at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+                at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+                at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+                at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+                at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+                at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+                at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+                at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+                at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:76)
+                at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:195)
+                at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:63)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.MongoDbUtils.java</file>
+            <file type="M">org.springframework.data.mongodb.core.MongoDbUtilsUnitTests.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

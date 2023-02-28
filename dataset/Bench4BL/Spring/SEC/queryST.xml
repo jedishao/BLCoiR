@@ -1,0 +1,334 @@
+<bugrepository name="SEC">
+    <bug id="188" opendate="2006-02-11 16:27:33" fixdate="2006-02-11 16:29:39" resolution="Fixed">
+        <buginformation>
+            <summary>javadoc execution confuse securitycontext securitycontextholder acegisecurity
+                inheritablethreadlocal developer user errorfrom associate
+            </summary>
+            <description>javadoc execution confuse securitycontext securitycontextholder acegisecurity
+                inheritablethreadlocal developer user errorfrom associate
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.context.SecurityContextHolder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="192" opendate="2006-02-19 08:42:38" fixdate="2006-02-19 10:38:29" resolution="Fixed">
+        <buginformation>
+            <summary>setdetail authenticate authenticationexception login something call fail cas null provider
+                getdetail catch casauthenticationtoken authentication
+            </summary>
+            <description>setdetail authenticate authenticationexception login something call fail cas null provider
+                getdetail catch casauthenticationtoken authentication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.ui.digestauth.DigestProcessingFilter.java</file>
+            <file type="M">org.acegisecurity.concurrent.ConcurrentSessionControllerImplTests.java</file>
+            <file type="M">org.acegisecurity.ui.webapp.AuthenticationProcessingFilter.java</file>
+            <file type="M">org.acegisecurity.ui.switchuser.SwitchUserProcessingFilter.java</file>
+            <file type="M">org.acegisecurity.ui.cas.CasProcessingFilter.java</file>
+            <file type="M">org.acegisecurity.ui.webapp.SiteminderAuthenticationProcessingFilter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="197" opendate="2006-02-21 17:41:01" fixdate="2006-04-25 14:05:59" resolution="Fixed">
+        <buginformation>
+            <summary>ConcurrentSessionController expired Sessions only
+            </summary>
+            <description>ConcurrentSessionController expired Sessions only
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.concurrent.SessionRegistryImplTests.java</file>
+            <file type="M">org.acegisecurity.concurrent.ConcurrentSessionControllerImpl.java</file>
+            <file type="M">org.acegisecurity.concurrent.SessionRegistryImpl.java</file>
+            <file type="M">org.acegisecurity.concurrent.SessionRegistry.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="328" opendate="2006-07-27 19:49:15" fixdate="2006-09-14 14:37:09" resolution="Fixed">
+        <buginformation>
+            <summary>acegi snippet date cachewasus think cache authenticate change check retrieveuser call
+                abstractuserdetailsauthenticationprovider hit throw failure synchronization information avoid case
+            </summary>
+            <description>acegi snippet date cachewasus think cache authenticate change check retrieveuser call
+                abstractuserdetailsauthenticationprovider hit throw failure synchronization information avoid case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.providers.dao.AbstractUserDetailsAuthenticationProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="356" opendate="2006-09-20 00:35:43" fixdate="2006-11-13 10:44:49" resolution="Fixed">
+        <buginformation>
+            <summary>request securitycontext access read securitycontextholder httpsessioncontextintegrationfilter
+                session change run functionality example leak mean abstractsecurityinterceptor context http setcontext
+                authentication
+            </summary>
+            <description>request securitycontext access read securitycontextholder httpsessioncontextintegrationfilter
+                session change run functionality example leak mean abstractsecurityinterceptor context http setcontext
+                authentication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.context.HttpSessionContextIntegrationFilter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="398" opendate="2006-11-24 21:14:12" fixdate="2007-08-31 07:43:41" resolution="Fixed">
+        <buginformation>
+            <summary>redirect request securitycontext issue resource httpsessioncontextintegrationfilter wrapper login
+                authenticationprocessingfilter concurrency dofilter delay post solution due response get block finish
+                page complete authentication
+            </summary>
+            <description>redirect request securitycontext issue resource httpsessioncontextintegrationfilter wrapper
+                login authenticationprocessingfilter concurrency dofilter delay post solution due response get block
+                finish page complete authentication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.context.HttpSessionContextIntegrationFilterTests.java</file>
+            <file type="M">org.acegisecurity.context.HttpSessionContextIntegrationFilter.java</file>
+            <file type="M">org.acegisecurity.context.HttpSessionContextIntegrationFilterTests.java</file>
+            <file type="M">org.acegisecurity.ui.AbstractProcessingFilter.java</file>
+            <file type="M">org.acegisecurity.ui.AbstractProcessingFilterTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="423" opendate="2007-01-04 01:40:23" fixdate="2007-05-24 12:54:29" resolution="Fixed">
+        <buginformation>
+            <summary>request securitycontext access read securitycontextholder httpsessioncontextintegrationfilter
+                session introduce change run functionality example sec leak mean abstractsecurityinterceptor context
+                http setcontext authentication
+            </summary>
+            <description>request securitycontext access read securitycontextholder httpsessioncontextintegrationfilter
+                session introduce change run functionality example sec leak mean abstractsecurityinterceptor context
+                http setcontext authentication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.context.HttpSessionContextIntegrationFilter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="444" opendate="2007-03-04 22:25:10" fixdate="2007-05-24 12:42:26" resolution="Fixed">
+        <buginformation>
+            <summary>session usage point trace get registersuccessfulauthentication authentication
+                concurrentsessioncontrollerimpl debug race below occur exceptiontranslationfilter strack command entry
+                sequence sessionalreadyusedexception condition http registernewsession user
+            </summary>
+            <description>session usage point trace get registersuccessfulauthentication authentication
+                concurrentsessioncontrollerimpl debug race below occur exceptiontranslationfilter strack command entry
+                sequence sessionalreadyusedexception condition http registernewsession user
+                at org.acegisecurity.concurrent.SessionRegistryImpl.registerNewSession(SessionRegistryImpl.java:121)
+                at org.acegisecurity.concurrent.ConcurrentSessionControllerImpl.registerSuccessfulAuthentication(ConcurrentSessionControllerImpl.java:142)
+                at org.acegisecurity.providers.ProviderManager.doAuthentication(ProviderManager.java:191)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.acegisecurity.concurrent.ConcurrentSessionControllerImpl.java</file>
+            <file type="M">org.acegisecurity.concurrent.SessionRegistryImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="618" opendate="2007-12-06 22:31:14" fixdate="2007-12-07 03:22:46" resolution="Fixed">
+        <buginformation>
+            <summary>controller checkauthenticationallowed access ensure session clear abstractauthenticationmanager
+                control check pull abstractuserdetailsauthenticationprovider copydetail casauthenticationprovider
+                provider copy place providermanager class authentication
+            </summary>
+            <description>controller checkauthenticationallowed access ensure session clear abstractauthenticationmanager
+                control check pull abstractuserdetailsauthenticationprovider copydetail casauthenticationprovider
+                provider copy place providermanager class authentication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.providers.ProviderManager.java</file>
+            <file type="M">org.springframework.security.AbstractAuthenticationManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="670" opendate="2008-02-10 07:55:22" fixdate="2008-04-05 09:57:09" resolution="Fixed">
+        <buginformation>
+            <summary>deleteentrybyobjectidentityforeignkey dataaccessexception deadlock oid acl oidpkey objectidentity
+                deleteentry load identity notfound deletechildren childrenexistexception lock row param table key
+                parent_object acl_object_identity acl_class rdb jdbcmutableaclservice acl_entry
+            </summary>
+            <description>deleteentrybyobjectidentityforeignkey dataaccessexception deadlock oid acl oidpkey
+                objectidentity deleteentry load identity notfound deletechildren childrenexistexception lock row param
+                table key parent_object acl_object_identity acl_class rdb jdbcmutableaclservice acl_entry
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.acls.jdbc.JdbcMutableAclService.java</file>
+            <file type="M">org.springframework.security.acls.jdbc.JdbcAclServiceTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="809" opendate="2008-05-01 01:15:21" fixdate="2008-05-12 07:06:10" resolution="Fixed">
+        <buginformation>
+            <summary>stack illegalargumentexception sure uncode configuration openid session work update control sample
+                way call trace incompatibility relate solution openidauthenticationprocessingfilter try getdetail
+                authenticationmanager
+            </summary>
+            <description>stack illegalargumentexception sure uncode configuration openid session work update control
+                sample way call trace incompatibility relate solution openidauthenticationprocessingfilter try getdetail
+                authenticationmanager
+                at org.springframework.util.Assert.notNull(Assert.java:112)
+                at org.springframework.security.concurrent.SessionRegistryUtils.obtainSessionIdFromAuthentication(SessionRegistryUtils.java:52)
+                at org.springframework.security.concurrent.ConcurrentSessionControllerImpl.checkAuthenticationAllowed(ConcurrentSessionControllerImpl.java:92)
+                at org.springframework.security.providers.ProviderManager.doAuthentication(ProviderManager.java:199)
+                at org.springframework.security.AbstractAuthenticationManager.authenticate(AbstractAuthenticationManager.java:46)
+                at org.springframework.security.ui.openid.OpenIDAuthenticationProcessingFilter.attemptAuthentication(OpenIDAuthenticationProcessingFilter.java:82)
+                at org.springframework.security.ui.AbstractProcessingFilter.doFilterHttp(AbstractProcessingFilter.java:249)
+                at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+                at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+                at org.springframework.security.ui.logout.LogoutFilter.doFilterHttp(LogoutFilter.java:87)
+                at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+                at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+                at org.springframework.security.ui.SessionFixationProtectionFilter.doFilterHttp(SessionFixationProtectionFilter.java:68)
+                at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+                at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+                at org.springframework.security.context.HttpSessionContextIntegrationFilter.doFilterHttp(HttpSessionContextIntegrationFilter.java:229)
+                at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+                at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+                at org.springframework.security.concurrent.ConcurrentSessionFilter.doFilterHttp(ConcurrentSessionFilter.java:97)
+                at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+                at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+                at org.springframework.security.securechannel.ChannelProcessingFilter.doFilterHttp(ChannelProcessingFilter.java:116)
+                at org.springframework.security.ui.SpringSecurityFilter.doFilter(SpringSecurityFilter.java:53)
+                at org.springframework.security.util.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:371)
+                at org.springframework.security.util.FilterChainProxy.doFilter(FilterChainProxy.java:174)
+                at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:183)
+                at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:138)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.ui.openid.OpenIDAuthenticationProcessingFilter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1396" opendate="2010-02-01 09:54:42" fixdate="2010-02-11 04:53:16" resolution="Fixed">
+        <buginformation>
+            <summary>request import session jsp advice httpsession httpservletrequest illegalstateexception spring
+                httpsessioncontextintegration web mvc jetty attribute securitycontext remembermeprocessingfilter
+                httpsessioncontextintegrationfilter onredirectupdatesessionresponsewrapper httpservletresponse
+                sendredirect senderror script threadlocal filter sessionfixationprotectionfilter response processing
+                http page user
+            </summary>
+            <description>request import session jsp advice httpsession httpservletrequest illegalstateexception spring
+                httpsessioncontextintegration web mvc jetty attribute securitycontext remembermeprocessingfilter
+                httpsessioncontextintegrationfilter onredirectupdatesessionresponsewrapper httpservletresponse
+                sendredirect senderror script threadlocal filter sessionfixationprotectionfilter response processing
+                http page user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.web.session.SessionManagementFilter.java</file>
+            <file type="M">org.springframework.security.web.context.SaveContextOnUpdateOrErrorResponseWrapper.java</file>
+            <file type="M">org.springframework.security.web.context.HttpSessionSecurityContextRepository.java</file>
+            <file type="M">org.springframework.security.config.http.HttpSecurityBeanDefinitionParserTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2067" opendate="2012-10-19 06:51:45" fixdate="2012-10-19 07:49:38" resolution="Fixed">
+        <buginformation>
+            <summary>atmosphere instance servlet session admin run error login sec spring security library flush stream
+                comet context class savecontextservletoutputstream mvn nothing getoutputstream sample
+                springsecuritycontextkey condition savecontext
+            </summary>
+            <description>atmosphere instance servlet session admin run error login sec spring security library flush
+                stream comet context class savecontextservletoutputstream mvn nothing getoutputstream sample
+                springsecuritycontextkey condition savecontext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.web.servletapi.HttpServlet3RequestFactory.java</file>
+            <file type="M">org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilterTests.java</file>
+            <file type="M">org.springframework.security.web.FilterInvocation.java</file>
+            <file type="M">org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilterTests.java</file>
+            <file type="M">org.springframework.security.web.context.request.async.SecurityContextCallableProcessingInterceptor.java</file>
+            <file type="M">org.springframework.security.web.context.request.async.SecurityContextCallableProcessingInterceptorTests.java</file>
+            <file type="M">org.springframework.security.web.context.SaveContextOnUpdateOrErrorResponseWrapper.java</file>
+            <file type="M">org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.java</file>
+            <file type="M">org.springframework.security.config.http.SecurityFilters.java</file>
+            <file type="M">org.springframework.security.web.savedrequest.DefaultSavedRequest.java</file>
+            <file type="M">org.springframework.security.web.authentication.rememberme.AbstractRememberMeServicesTests.java</file>
+            <file type="M">org.springframework.security.config.http.HttpConfigurationBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3108" opendate="2015-09-18 08:48:30" fixdate="2015-10-27 19:00:38" resolution="Fixed">
+        <buginformation>
+            <summary>request flag createauthenticatedtoken isaccountnonexpired session digestauthenticationfilter
+                authorization createemptycontext solution scenario digest case isenabled authentication process
+                securitycontext jsessionid isuserinrole system getauthentication response abstractsecurityinterceptor
+                authority header comment user
+            </summary>
+            <description>request flag createauthenticatedtoken isaccountnonexpired session digestauthenticationfilter
+                authorization createemptycontext solution scenario digest case isenabled authentication process
+                securitycontext jsessionid isuserinrole system getauthentication response abstractsecurityinterceptor
+                authority header comment user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.web.authentication.www.DigestAuthenticationFilter.java</file>
+            <file type="M">org.springframework.security.web.authentication.www.DigestAuthenticationFilterTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3109" opendate="2015-09-18 14:19:14" fixdate="2015-10-26 22:27:19" resolution="Fixed">
+        <buginformation>
+            <summary>delegatingsecuritycontextexecutor reschedulingrunnable theadpooltaskscheduler mechanic
+                delegatingsecuritycontextexecutorwe spring sec security fix scheduling context property boot
+                enableonoriginalthread cron securitycontext issue work delegatingsecuritycontextrunnable pool trigger
+                suspect threadpooltaskscheduler call fail setup
+            </summary>
+            <description>delegatingsecuritycontextexecutor reschedulingrunnable theadpooltaskscheduler mechanic
+                delegatingsecuritycontextexecutorwe spring sec security fix scheduling context property boot
+                enableonoriginalthread cron securitycontext issue work delegatingsecuritycontextrunnable pool trigger
+                suspect threadpooltaskscheduler call fail setup
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilterTests.java</file>
+            <file type="M">org.springframework.security.concurrent.DelegatingSecurityContextCallableTests.java</file>
+            <file type="M">org.springframework.security.concurrent.DelegatingSecurityContextRunnable.java</file>
+            <file type="M">org.springframework.security.concurrent.DelegatingSecurityContextRunnableTests.java</file>
+            <file type="M">org.springframework.security.concurrent.DelegatingSecurityContextCallable.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

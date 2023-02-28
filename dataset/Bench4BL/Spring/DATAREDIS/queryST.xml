@@ -1,0 +1,18 @@
+<bugrepository name="DATAREDIS">
+    <bug id="310" opendate="2014-05-28 01:21:27" fixdate="2014-06-30 01:20:11" resolution="Fixed">
+        <buginformation>
+            <summary>process race occur start del check good put evict example call serialize rediscache condition get
+                lock serious inconsistency value key exec
+            </summary>
+            <description>process race occur start del check good put evict example call serialize rediscache condition
+                get lock serious inconsistency value key exec
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.redis.cache.RedisCache.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
