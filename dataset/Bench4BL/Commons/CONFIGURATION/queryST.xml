@@ -1,0 +1,38 @@
+<bugrepository name="CONFIGURATION">
+    <bug id="344" opendate="2008-10-30 11:46:39" fixdate="2008-11-08 15:53:53" resolution="Fixed">
+        <buginformation>
+            <summary>fireevent stack access configuration throwexceptiononmissing listener refresh deadlock invalidate
+                commons reload fix anyone property lock http block information event grab strategy getnodecombiner
+            </summary>
+            <description>fireevent stack access configuration throwexceptiononmissing listener refresh deadlock
+                invalidate commons reload fix anyone property lock http block information event grab strategy
+                getnodecombiner
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.configuration.AbstractFileConfiguration.java</file>
+            <file type="M">org.apache.commons.configuration.TestCombinedConfiguration.java</file>
+            <file type="M">org.apache.commons.configuration.CombinedConfiguration.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="407" opendate="2010-02-06 17:04:32" fixdate="2010-02-08 21:04:22" resolution="Fixed">
+        <buginformation>
+            <summary>parent access configuration section error fix low root property create hard add read test issue ini
+                probability change node unit viewnode hierarchicaliniconfiguration throw safe operation
+            </summary>
+            <description>parent access configuration section error fix low root property create hard add read test issue
+                ini probability change node unit viewnode hierarchicaliniconfiguration throw safe operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.configuration.HierarchicalINIConfiguration.java</file>
+            <file type="M">org.apache.commons.configuration.TestHierarchicalINIConfiguration.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

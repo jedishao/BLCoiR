@@ -1,0 +1,984 @@
+<bugrepository name="HIVE">
+    <bug id="545" opendate="2009-06-06 00:56:15" fixdate="2010-12-25 15:55:16" resolution="Fixed">
+        <buginformation>
+            <summary>hive vector arraylist class codemost
+            </summary>
+            <description>hive vector arraylist class codemost
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.parse.ASTNode.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.ScriptOperator.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.dynamic_type.ParseException.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lib.Node.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.plan.PlanUtils.java</file>
+            <file type="M">org.apache.hadoop.hive.service.HiveServer.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.history.HiveHistory.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.metadata.Table.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.optimizer.GenMRFileSink1.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.CommonJoinOperator.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.dynamic_type.TokenMgrError.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lib.GraphWalker.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.InputSignature.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.QTestUtil.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.FetchTask.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.udf.UDFConv.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.RowResolver.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.UDAFEvaluatorResolver.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.RowSchema.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.MapJoinOperator.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.io.NonSyncDataInputBuffer.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.thrift.TCTLSeparatedProtocol.java</file>
+            <file type="M">org.apache.hadoop.hive.cli.CliDriver.java</file>
+            <file type="M">org.apache.hadoop.hive.hwi.HWISessionManager.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.dynamic_type.DynamicSerDeFieldList.java</file>
+            <file type="M">org.apache.hadoop.hive.hwi.TestHWISessionManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.QBJoinTree.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.Warehouse.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.Driver.java</file>
+            <file type="M">org.apache.hadoop.hive.hwi.HWISessionItem.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.io.RCFileOutputFormat.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.SemanticAnalyzer.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.optimizer.physical.GenMRSkewJoinProcessor.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.plan.AddPartitionDesc.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.Task.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.lazybinary.LazyBinaryMap.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.columnar.BytesRefWritable.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorUtils.java</file>
+            <file type="M">org.apache.hadoop.hive.hwi.HWIServer.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.Utilities.java</file>
+            <file type="M">org.apache.hadoop.hive.hwi.HWIAuth.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.io.CombineHiveInputFormat.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.Operator.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.TestHiveMetaStore.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.ExecDriver.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.udf.UDFTestLength.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.optimizer.ColumnPrunerProcFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3057" opendate="2012-05-26 00:17:34" fixdate="2012-05-31 16:12:10" resolution="Fixed">
+        <buginformation>
+            <summary>rawstore getms store threadlocalms call hivemetastore function get variable
+            </summary>
+            <description>rawstore getms store threadlocalms call hivemetastore function get variable
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.metastore.HiveMetaStore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3408" opendate="2012-08-27 07:56:33" fixdate="2013-04-02 01:40:57" resolution="Fixed">
+        <buginformation>
+            <summary>hive hashset part mailing updatecountersinqueryplan hit state prio classhive
+                updatecountersinqueryplan race queryplan list condition person extractcounter report extractcounters
+            </summary>
+            <description>hive hashset part mailing updatecountersinqueryplan hit state prio classhive
+                updatecountersinqueryplan race queryplan list condition person extractcounter report extractcounters
+                at java.util.HashMap.getEntry(HashMap.java:347)
+                at java.util.HashMap.containsKey(HashMap.java:335)
+                at java.util.HashSet.contains(HashSet.java:184)
+                at org.apache.hadoop.hive.ql.QueryPlan.extractCounters(QueryPlan.java:342)
+                at org.apache.hadoop.hive.ql.QueryPlan.getQueryPlan(QueryPlan.java:419)
+                at org.apache.hadoop.hive.ql.QueryPlan.toString(QueryPlan.java:592)
+                at org.apache.hadoop.hive.ql.history.HiveHistory.logPlanProgress(HiveHistory.java:493)
+                at org.apache.hadoop.hive.ql.exec.ExecDriver.progress(ExecDriver.java:395)
+                at org.apache.hadoop.hive.ql.exec.ExecDriver.execute(ExecDriver.java:686)
+                at org.apache.hadoop.hive.ql.exec.MapRedTask.execute(MapRedTask.java:123)
+                at org.apache.hadoop.hive.ql.exec.Task.executeTask(Task.java:130)
+                at org.apache.hadoop.hive.ql.exec.TaskRunner.runSequential(TaskRunner.java:57)
+                at org.apache.hadoop.hive.ql.exec.TaskRunner.run(TaskRunner.java:47)
+                "Thread-1090" prio=10 tid=0x00007fd17012f000 nid=0x10ff runnable [0x00007fd175152000]
+                java.lang.Thread.State: RUNNABLE
+                at java.util.HashMap.getEntry(HashMap.java:347)
+                at java.util.HashMap.containsKey(HashMap.java:335)
+                at java.util.HashSet.contains(HashSet.java:184)
+                at org.apache.hadoop.hive.ql.QueryPlan.updateCountersInQueryPlan(QueryPlan.java:297)
+                at org.apache.hadoop.hive.ql.QueryPlan.getQueryPlan(QueryPlan.java:420)
+                at org.apache.hadoop.hive.ql.QueryPlan.toString(QueryPlan.java:592)
+                at org.apache.hadoop.hive.ql.history.HiveHistory.logPlanProgress(HiveHistory.java:493)
+                at org.apache.hadoop.hive.ql.exec.ExecDriver.progress(ExecDriver.java:395)
+                at org.apache.hadoop.hive.ql.exec.ExecDriver.execute(ExecDriver.java:686)
+                at org.apache.hadoop.hive.ql.exec.MapRedTask.execute(MapRedTask.java:123)
+                at org.apache.hadoop.hive.ql.exec.Task.executeTask(Task.java:130)
+                at org.apache.hadoop.hive.ql.exec.TaskRunner.runSequential(TaskRunner.java:57)
+                at org.apache.hadoop.hive.ql.exec.TaskRunner.run(TaskRunner.java:47)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.history.HiveHistory.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.QueryPlan.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.typeinfo.TypeInfoUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4000" opendate="2013-02-08 00:14:40" fixdate="2013-02-18 02:20:43" resolution="Fixed">
+        <buginformation>
+            <summary>hive static access race hashmaps start cpu condition mapreduce loop lock client progress job
+            </summary>
+            <description>hive static access race hashmaps start cpu condition mapreduce loop lock client progress job
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.history.HiveHistory.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.QueryPlan.java</file>
+            <file type="M">org.apache.hadoop.hive.serde2.typeinfo.TypeInfoUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7011" opendate="2014-05-03 01:33:29" fixdate="2014-05-12 22:08:01" resolution="Fixed">
+        <buginformation>
+            <summary>generation cache split access parallel tez inputformat hiveinputformat
+            </summary>
+            <description>generation cache split access parallel tez inputformat hiveinputformat
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.io.HiveInputFormat.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7341" opendate="2014-07-02 22:52:09" fixdate="2014-08-18 11:02:21" resolution="Fixed">
+        <buginformation>
+            <summary>hcattable hive schema serializetable instance falcon source patch partition hcataddpartitiondesc
+                builder deserializetable definition table add metastore serde storagedescriptor hcatcreatetabledesc
+                addpartition change hcatalog hcatpartition diff right trunk caveat
+            </summary>
+            <description>hcattable hive schema serializetable instance falcon source patch partition
+                hcataddpartitiondesc builder deserializetable definition table add metastore serde storagedescriptor
+                hcatcreatetabledesc addpartition change hcatalog hcatpartition diff right trunk caveat
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hive.hcatalog.api.HCatPartition.java</file>
+            <file type="M">org.apache.hive.hcatalog.api.TestHCatClient.java</file>
+            <file type="M">org.apache.hive.hcatalog.api.HCatClientHMSImpl.java</file>
+            <file type="M">org.apache.hive.hcatalog.api.HCatAddPartitionDesc.java</file>
+            <file type="M">org.apache.hive.hcatalog.api.HCatCreateTableDesc.java</file>
+            <file type="M">org.apache.hive.hcatalog.api.HCatTable.java</file>
+            <file type="M">org.apache.hive.hcatalog.api.HCatClient.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8440" opendate="2014-10-13 09:08:51" fixdate="2014-12-09 10:57:02" resolution="Fixed">
+        <buginformation>
+            <summary>cluster request compilemonitor runin number client block hadoop etl heap prio map day query pool
+                monitor schedule entry environment task hiveserver job
+            </summary>
+            <description>cluster request compilemonitor runin number client block hadoop etl heap prio map day query
+                pool monitor schedule entry environment task hiveserver job
+                at org.apache.hadoop.hive.ql.Driver.run(Driver.java:888)
+                at org.apache.hadoop.hive.service.HiveServer$HiveServerHandler.execute(HiveServer.java:198)
+                at org.apache.hadoop.hive.service.ThriftHive$Processor$execute.getResult(ThriftHive.java:644)
+                at org.apache.hadoop.hive.service.ThriftHive$Processor$execute.getResult(ThriftHive.java:628)
+                at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+                at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+                at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:206)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+                at java.lang.Thread.run(Thread.java:662)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.parse.GenTezProcContext.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.Driver.java</file>
+            <file type="M">org.apache.hive.service.cli.CLIServiceTest.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.optimizer.RemoveDynamicPruningBySize.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.GenTezUtils.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.GenTezWork.java</file>
+            <file type="M">org.apache.hadoop.hive.conf.HiveConf.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.session.SessionState.java</file>
+            <file type="M">org.apache.hive.service.cli.session.HiveSessionImpl.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.parse.TezCompiler.java</file>
+            <file type="M">org.apache.hive.service.cli.session.HiveSessionImplwithUGI.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9199" opendate="2014-12-23 18:45:44" fixdate="2014-12-24 22:40:21" resolution="Fixed">
+        <buginformation>
+            <summary>createtable give writetype determine locking contention suggest ddl example output database
+                writeentity dummytxnmanager lockmode lock operation table
+            </summary>
+            <description>createtable give writetype determine locking contention suggest ddl example output database
+                writeentity dummytxnmanager lockmode lock operation table
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DummyTxnManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9598" opendate="2015-02-06 18:52:50" fixdate="2015-02-12 07:33:14" resolution="Fixed">
+        <buginformation>
+            <summary>illegalmonitorstateexception sqlexception catch tryrelease
+            </summary>
+            <description>illegalmonitorstateexception sqlexception catch tryrelease
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hive.jdbc.HiveStatement.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10483" opendate="2015-04-24 20:54:21" fixdate="2015-04-29 03:13:43" resolution="Fixed">
+        <buginformation>
+            <summary>shared side part query insert require deadlock txn dbtxnmanagerinsert partition xxxx lock xxx
+                overwrite case conflict
+            </summary>
+            <description>shared side part query insert require deadlock txn dbtxnmanagerinsert partition xxxx lock xxx
+                overwrite case conflict
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbLockManager.java</file>
+            <file type="M">org.apache.hadoop.hive.common.JavaUtils.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.TestTxnCommands2.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11036" opendate="2015-06-17 20:34:47" fixdate="2015-11-16 19:56:02" resolution="Fixed">
+        <buginformation>
+            <summary>datanucleus metastore condition race query workload deadlock
+            </summary>
+            <description>datanucleus metastore condition race query workload deadlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.metastore.TestMetastoreVersion.java</file>
+            <file type="M">org.apache.hive.jdbc.TestJdbcWithMiniHS2.java</file>
+            <file type="M">org.apache.hadoop.hive.conf.HiveConf.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.Utilities.java</file>
+            <file type="M">org.apache.hive.beeline.cli.TestHiveCli.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.ObjectStore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11616" opendate="2015-08-21 09:00:07" fixdate="2015-10-30 21:53:30" resolution="Fixed">
+        <buginformation>
+            <summary>DelegationTokenSecretManager
+            </summary>
+            <description>DelegationTokenSecretManager
+                at org.apache.hadoop.hive.thrift.DBTokenStore.invokeOnRawStore(DBTokenStore.java:154)
+                at org.apache.hadoop.hive.thrift.DBTokenStore.getToken(DBTokenStore.java:88)
+                at org.apache.hadoop.hive.thrift.TokenStoreDelegationTokenSecretManager.retrievePassword(TokenStoreDelegationTokenSecretManager.java:112)
+                at org.apache.hadoop.hive.thrift.TokenStoreDelegationTokenSecretManager.retrievePassword(TokenStoreDelegationTokenSecretManager.java:56)
+                at org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge$Server$SaslDigestCallbackHandler.getPassword(HadoopThriftAuthBridge.java:565)
+                at org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge$Server$SaslDigestCallbackHandler.handle(HadoopThriftAuthBridge.java:596)
+                at com.sun.security.sasl.digest.DigestMD5Server.validateClientResponse(DigestMD5Server.java:589)
+                at com.sun.security.sasl.digest.DigestMD5Server.evaluateResponse(DigestMD5Server.java:244)
+                at org.apache.thrift.transport.TSaslTransport$SaslParticipant.evaluateChallengeOrResponse(TSaslTransport.java:539)
+                at org.apache.thrift.transport.TSaslTransport.open(TSaslTransport.java:283)
+                at org.apache.thrift.transport.HiveTSaslServerTransport.open(HiveTSaslServerTransport.java:133)
+                at org.apache.thrift.transport.HiveTSaslServerTransport$Factory.getTransport(HiveTSaslServerTransport.java:261)
+                at org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge$Server$TUGIAssumingTransportFactory$1.run(HadoopThriftAuthBridge.java:739)
+                at org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge$Server$TUGIAssumingTransportFactory$1.run(HadoopThriftAuthBridge.java:736)
+                at java.security.AccessController.doPrivileged(Native Method)
+                at javax.security.auth.Subject.doAs(Subject.java:360)
+                at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1652)
+                at org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge$Server$TUGIAssumingTransportFactory.getTransport(HadoopThriftAuthBridge.java:736)
+                at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:268)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+                Caused by: org.datanucleus.transaction.NucleusTransactionException: Invalid state. Transaction has already started
+                at org.datanucleus.transaction.TransactionManager.begin(TransactionManager.java:47)
+                at org.datanucleus.TransactionImpl.begin(TransactionImpl.java:131)
+                at org.datanucleus.api.jdo.JDOTransaction.internalBegin(JDOTransaction.java:88)
+                at org.datanucleus.api.jdo.JDOTransaction.begin(JDOTransaction.java:80)
+                at org.apache.hadoop.hive.metastore.ObjectStore.openTransaction(ObjectStore.java:420)
+                at org.apache.hadoop.hive.metastore.ObjectStore.getToken(ObjectStore.java:6455)
+                at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at org.apache.hadoop.hive.metastore.RawStoreProxy.invoke(RawStoreProxy.java:98)
+                at com.sun.proxy.$Proxy4.getToken(Unknown Source)
+                at sun.reflect.GeneratedMethodAccessor7.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at org.apache.hadoop.hive.thrift.DBTokenStore.invokeOnRawStore(DBTokenStore.java:146)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.thrift.ZooKeeperTokenStore.java</file>
+            <file type="M">org.apache.hive.service.auth.HiveAuthFactory.java</file>
+            <file type="M">org.apache.hadoop.hive.thrift.DBTokenStore.java</file>
+            <file type="M">org.apache.hadoop.hive.thrift.TestDBTokenStore.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.HiveMetaStore.java</file>
+            <file type="M">org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12238" opendate="2015-10-23 01:10:57" fixdate="2015-11-03 04:11:43" resolution="Fixed">
+        <buginformation>
+            <summary>input vectorization safety more error vectorudfdate
+            </summary>
+            <description>input vectorization safety more error vectorudfdate
+                at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+                at java.lang.Long.parseLong(Long.java:601)
+                at java.lang.Long.parseLong(Long.java:631)
+                at java.text.DigitList.getLong(DigitList.java:195)
+                at java.text.DecimalFormat.parse(DecimalFormat.java:2051)
+                at java.text.SimpleDateFormat.subParse(SimpleDateFormat.java:1869)
+                at java.text.SimpleDateFormat.parse(SimpleDateFormat.java:1514)
+                at java.text.DateFormat.parse(DateFormat.java:364)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.VectorUDFDateString$1.evaluate(VectorUDFDateString.java:48)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.StringUnaryUDF.evaluate(StringUnaryUDF.java:90)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.VectorExpression.evaluateChildren(VectorExpression.java:121)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.StringGroupColConcatStringScalar.evaluate(StringGroupColConcatStringScalar.java:50)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.VectorExpression.evaluateChildren(VectorExpression.java:121)
+                at org.apache.hadoop.hive.ql.exec.vector.udf.VectorUDFAdaptor.evaluate(VectorUDFAdaptor.java:112)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.VectorExpression.evaluateChildren(VectorExpression.java:121)
+                at org.apache.hadoop.hive.ql.exec.vector.expressions.VectorUDFTimestampFieldLong.evaluate(VectorUDFTimestampFieldLong.java:93)
+                at org.apache.hadoop.hive.ql.exec.vector.VectorSelectOperator.process(VectorSelectOperator.java:123)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.exec.vector.expressions.VectorUDFDateString.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.vector.expressions.TestVectorDateExpressions.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12248" opendate="2015-10-23 19:50:20" fixdate="2015-10-30 18:45:22" resolution="Fixed">
+        <buginformation>
+            <summary>persistencemanager race rawstore mdelegationtoken type error threadlocal objectdetachedexception
+                dbtokenstore datanuclues condition root safe detach backend objectstore multi thread operation
+            </summary>
+            <description>persistencemanager race rawstore mdelegationtoken type error threadlocal
+                objectdetachedexception dbtokenstore datanuclues condition root safe detach backend objectstore multi
+                thread operation
+                at org.datanucleus.ExecutionContextImpl.assertNotDetached(ExecutionContextImpl.java:5728)
+                at org.datanucleus.ExecutionContextImpl.retrieveObject(ExecutionContextImpl.java:1859)
+                at org.datanucleus.ExecutionContextThreadedImpl.retrieveObject(ExecutionContextThreadedImpl.java:203)
+                at org.datanucleus.api.jdo.JDOPersistenceManager.jdoRetrieve(JDOPersistenceManager.java:605)
+                at org.datanucleus.api.jdo.JDOPersistenceManager.retrieveAll(JDOPersistenceManager.java:693)
+                at org.datanucleus.api.jdo.JDOPersistenceManager.retrieveAll(JDOPersistenceManager.java:713)
+                at org.apache.hadoop.hive.metastore.ObjectStore.getAllTokenIdentifiers(ObjectStore.java:6517)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.thrift.ZooKeeperTokenStore.java</file>
+            <file type="M">org.apache.hive.service.auth.HiveAuthFactory.java</file>
+            <file type="M">org.apache.hadoop.hive.thrift.DBTokenStore.java</file>
+            <file type="M">org.apache.hadoop.hive.thrift.TestDBTokenStore.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.HiveMetaStore.java</file>
+            <file type="M">org.apache.hadoop.hive.thrift.HadoopThriftAuthBridge.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12266" opendate="2015-10-26 19:50:30" fixdate="2015-11-03 19:48:46" resolution="Fixed">
+        <buginformation>
+            <summary>hive cli issue release remain beeline believe command timeout acid hook shell lock client
+            </summary>
+            <description>hive cli issue release remain beeline believe command timeout acid hook shell lock client
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.Driver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12409" opendate="2015-11-13 19:33:56" fixdate="2015-11-23 17:31:18" resolution="Fixed">
+        <buginformation>
+            <summary>hive session inittxnmgr
+            </summary>
+            <description>hive session inittxnmgr
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.session.SessionState.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12529" opendate="2015-11-26 00:14:12" fixdate="2015-12-04 19:14:10" resolution="Fixed">
+        <buginformation>
+            <summary>appropriate acquirelock max signature timeout way throw dbtxnmanager lock client block
+            </summary>
+            <description>appropriate acquirelock max signature timeout way throw dbtxnmanager lock client block
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbLockManager.java</file>
+            <file type="M">org.apache.hadoop.hive.conf.HiveConf.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager2.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.DDLTask.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnHandler.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.HiveTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.ErrorMsg.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12620" opendate="2015-12-08 21:11:05" fixdate="2015-12-14 20:27:30" resolution="Fixed">
+        <buginformation>
+            <summary>auto dblockmanager log gettxnidfromlockid timeoutlock txnhandler turn tracking attempt
+                metaexception timeout couldn acid lockid mode dblockmanger statement lock debugging connection misc
+                unlock read module refactor apos checklock
+            </summary>
+            <description>auto dblockmanager log gettxnidfromlockid timeoutlock txnhandler turn tracking attempt
+                metaexception timeout couldn acid lockid mode dblockmanger statement lock debugging connection misc
+                unlock read module refactor apos checklock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbLockManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12768" opendate="2015-12-31 02:27:00" fixdate="2016-01-11 23:50:11" resolution="Fixed">
+        <buginformation>
+            <summary>static issue serde safety deserialization buffer decimal
+            </summary>
+            <description>static issue serde safety deserialization buffer decimal
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.serde2.binarysortable.BinarySortableSerDe.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12797" opendate="2016-01-06 23:01:24" fixdate="2016-01-26 01:00:04" resolution="Fixed">
+        <buginformation>
+            <summary>hive issue session introduce change part tez pool synchronization llap
+                concurrentmodificationexception
+            </summary>
+            <description>hive issue session introduce change part tez pool synchronization llap
+                concurrentmodificationexception
+                at java.util.LinkedList$ListItr.checkForComodification(LinkedList.java:966)
+                at java.util.LinkedList$ListItr.remove(LinkedList.java:921)
+                at org.apache.hadoop.hive.ql.exec.tez.TezSessionPoolManager.stop(TezSessionPoolManager.java:288)
+                at org.apache.hive.service.server.HiveServer2.stop(HiveServer2.java:479)
+                at org.apache.hive.service.server.HiveServer2$2.run(HiveServer2.java:183)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezJobMonitor.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezSessionPoolManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12904" opendate="2016-01-21 19:45:17" fixdate="2016-01-26 03:18:50" resolution="Fixed">
+        <buginformation>
+            <summary>rpccontroller server line llapdaemonprotocolprotos accesscontrolcontext deadlock
+                executioncompletionthread maybeunregisterforfinishedstatenotification blocked isinwaitqueue scheduling
+                block ipc iswait message taskexecutorservice sync task future methoddescriptor bci
+                privilegedexceptionaction frame
+            </summary>
+            <description>rpccontroller server line llapdaemonprotocolprotos accesscontrolcontext deadlock
+                executioncompletionthread maybeunregisterforfinishedstatenotification blocked isinwaitqueue scheduling
+                block ipc iswait message taskexecutorservice sync task future methoddescriptor bci
+                privilegedexceptionaction frame
+                - org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService$TaskWrapper.isInWaitQueue() @bci=0, line=690 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.finishableStateUpdated(org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService$TaskWrapper, boolean) @bci=8, line=485 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.access$1500(org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService, org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService$TaskWrapper, boolean) @bci=3, line=78 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService$TaskWrapper.finishableStateUpdated(boolean) @bci=27, line=733 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.QueryInfo$FinishableStateTracker.sourceStateUpdated(java.lang.String) @bci=76, line=210 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.QueryInfo.sourceStateUpdated(java.lang.String) @bci=5, line=164 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.QueryTracker.registerSourceStateChange(java.lang.String, java.lang.String, org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos$SourceStateProto) @bci=34, line=228 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.ContainerRunnerImpl.sourceStateUpdated(org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos$SourceStateUpdatedRequestProto) @bci=47, line=255 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.LlapDaemon.sourceStateUpdated(org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos$SourceStateUpdatedRequestProto) @bci=5, line=328 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.impl.LlapDaemonProtocolServerImpl.sourceStateUpdated(com.google.protobuf.RpcController, org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos$SourceStateUpdatedRequestProto) @bci=5, line=105 (Compiled frame)
+                - org.apache.hadoop.hive.llap.daemon.rpc.LlapDaemonProtocolProtos$LlapDaemonProtocol$2.callBlockingMethod(com.google.protobuf.Descriptors$MethodDescriptor, com.google.protobuf.RpcController, com.google.protobuf.Message) @bci=80, line=13067 (Compiled frame)
+                - org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker.call(org.apache.hadoop.ipc.RPC$Server, java.lang.String, org.apache.hadoop.io.Writable, long) @bci=246, line=616 (Compiled frame)
+                - org.apache.hadoop.ipc.RPC$Server.call(org.apache.hadoop.ipc.RPC$RpcKind, java.lang.String, org.apache.hadoop.io.Writable, long) @bci=9, line=969 (Compiled frame)
+                - org.apache.hadoop.ipc.Server$Handler$1.run() @bci=38, line=2151 (Compiled frame)
+                - org.apache.hadoop.ipc.Server$Handler$1.run() @bci=1, line=2147 (Compiled frame)
+                - java.security.AccessController.doPrivileged(java.security.PrivilegedExceptionAction, java.security.AccessControlContext) @bci=0 (Compiled frame)
+                - javax.security.auth.Subject.doAs(javax.security.auth.Subject, java.security.PrivilegedExceptionAction) @bci=42, line=422 (Compiled frame)
+                - org.apache.hadoop.security.UserGroupInformation.doAs(java.security.PrivilegedExceptionAction) @bci=14, line=1657 (Compiled frame)
+                - org.apache.hadoop.ipc.Server$Handler.run() @bci=315, line=2145 (Interpreted frame)
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.llap.daemon.impl.QueryInfo.java</file>
+            <file type="M">org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12926" opendate="2016-01-26 00:59:47" fixdate="2016-01-27 22:49:16" resolution="Fixed">
+        <buginformation>
+            <summary>hive issue session introduce change part tez pool synchronization llap
+                concurrentmodificationexception
+            </summary>
+            <description>hive issue session introduce change part tez pool synchronization llap
+                concurrentmodificationexception
+                at java.util.LinkedList$ListItr.checkForComodification(LinkedList.java:966)
+                at java.util.LinkedList$ListItr.remove(LinkedList.java:921)
+                at org.apache.hadoop.hive.ql.exec.tez.TezSessionPoolManager.stop(TezSessionPoolManager.java:288)
+                at org.apache.hive.service.server.HiveServer2.stop(HiveServer2.java:479)
+                at org.apache.hive.service.server.HiveServer2$2.run(HiveServer2.java:183)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezSessionPoolManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12927" opendate="2016-01-26 02:31:44" fixdate="2016-02-18 17:59:52" resolution="Fixed">
+        <buginformation>
+            <summary>sequence metastore safe increment row presence hbase concurrency
+            </summary>
+            <description>sequence metastore safe increment row presence hbase concurrency
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.metastore.hbase.TestHBaseSchemaTool.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.hbase.HBaseReadWrite.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12996" opendate="2016-02-03 23:08:28" fixdate="2016-05-11 18:21:43" resolution="Fixed">
+        <buginformation>
+            <summary>metastore temp internally manager session ctc_txnid query ctc_partition insert functionality store
+                acid into hour tmp today statement lock ignore definition value table
+            </summary>
+            <description>metastore temp internally manager session ctc_txnid query ctc_partition insert functionality
+                store acid into hour tmp today statement lock ignore definition value table
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager2.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13013" opendate="2016-02-05 18:03:51" fixdate="2016-02-29 19:34:07" resolution="Fixed">
+        <buginformation>
+            <summary>drop reduce txnhandler update read_committed isolation deadlock serializable concurrency number
+                operation support
+            </summary>
+            <description>drop reduce txnhandler update read_committed isolation deadlock serializable concurrency number
+                operation support
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TestTxnHandlerNegative.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.CompactionTxnHandler.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13213" opendate="2016-03-05 06:01:27" fixdate="2016-05-03 22:26:48" resolution="Fixed">
+        <buginformation>
+            <summary>acid dblockmanger resource lock insert value acquire table example
+            </summary>
+            <description>acid dblockmanger resource lock insert value acquire table example
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager2.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.TestTxnCommands2.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13395" opendate="2016-03-31 00:57:49" fixdate="2016-05-05 22:29:55" resolution="Fixed">
+        <buginformation>
+            <summary>hive runinternal insert update acquirelocksandopentxn acidacid dir mvcss lockid hive_locks patch
+                opentxn statement lock block row table txnid txn recordvalidtxn originaltransactionid mvcc
+                currenttransactionid user base
+            </summary>
+            <description>hive runinternal insert update acquirelocksandopentxn acidacid dir mvcss lockid hive_locks
+                patch opentxn statement lock block row table txnid txn recordvalidtxn originaltransactionid mvcc
+                currenttransactionid user base
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.conf.HiveConf.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnUtils.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.txn.compactor.HouseKeeperServiceBase.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TestTxnHandler.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.txn.compactor.Worker.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.txn.compactor.TestCleaner.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TestCompactionTxnHandler.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbLockManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.TestHiveMetaStoreTxns.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnStore.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.HiveMetaStore.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.TestTxnCommands2.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnDbUtil.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.txn.compactor.Initiator.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager2.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnHandler.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.io.TestAcidUtils.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.ErrorMsg.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13458" opendate="2016-04-07 21:51:18" fixdate="2016-05-11 23:55:04" resolution="Fixed">
+        <buginformation>
+            <summary>happen fail stopheartbeat heartbeat query heartbeater lock assumption thing
+            </summary>
+            <description>happen fail stopheartbeat heartbeat query heartbeater lock assumption thing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.io.rcfile.truncate.ColumnTruncateTask.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.mr.ExecDriver.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.mr.HadoopJobExecHelper.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.io.merge.MergeFileTask.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.TestTxnCommands2.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezJobMonitor.java</file>
+            <file type="M">org.apache.hadoop.hive.conf.HiveConf.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.Context.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.io.rcfile.stats.PartialScanTask.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezTask.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13512" opendate="2016-04-14 02:54:48" fixdate="2016-05-02 01:20:25" resolution="Fixed">
+        <buginformation>
+            <summary>tezwork query counter dag possible int running compilation compilationwhen atomicinteger
+            </summary>
+            <description>tezwork query counter dag possible int running compilation compilationwhen atomicinteger
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.plan.TezWork.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13599" opendate="2016-04-24 05:06:05" fixdate="2016-06-07 03:38:12" resolution="Fixed">
+        <buginformation>
+            <summary>pre emption shut update run error scheduler state worker llap info llapdaemon item race test
+                taskexecutorservice look uncaughtexceptionhandler condition failure handling nosuchelementexception
+                queue preemption
+            </summary>
+            <description>pre emption shut update run error scheduler state worker llap info llapdaemon item race test
+                taskexecutorservice look uncaughtexceptionhandler condition failure handling nosuchelementexception
+                queue preemption
+                at java.util.AbstractQueue.remove(AbstractQueue.java:117)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.removeAndGetFromPreemptionQueue(TaskExecutorService.java:568)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.handleScheduleAttemptedRejection(TaskExecutorService.java:493)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.access$1100(TaskExecutorService.java:81)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService$WaitQueueWorker.run(TaskExecutorService.java:285)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+                at java.util.AbstractQueue.remove(AbstractQueue.java:117)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.removeAndGetFromPreemptionQueue(TaskExecutorService.java:568)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.handleScheduleAttemptedRejection(TaskExecutorService.java:493)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.access$1100(TaskExecutorService.java:81)
+                at org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService$WaitQueueWorker.run(TaskExecutorService.java:285)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.llap.daemon.impl.TaskExecutorService.java</file>
+            <file type="M">org.apache.hadoop.hive.llap.daemon.impl.TestTaskExecutorService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13699" opendate="2016-05-05 22:14:30" fixdate="2016-05-21 01:16:14" resolution="Fixed">
+        <buginformation>
+            <summary>static issue javadatamodel compilation get query class
+            </summary>
+            <description>static issue javadatamodel compilation get query class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.util.JavaDataModel.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13725" opendate="2016-05-10 00:45:58" fixdate="2016-06-27 06:44:18" resolution="Fixed">
+        <buginformation>
+            <summary>heartbeat acid result impl streaming endpoint client create case metastore rpc batch txn follow
+                sample call sequence provide response vice versa synchronization
+            </summary>
+            <description>heartbeat acid result impl streaming endpoint client create case metastore rpc batch txn follow
+                sample call sequence provide response vice versa synchronization
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.metastore.txn.TxnDbUtil.java</file>
+            <file type="M">org.apache.hive.hcatalog.streaming.HiveEndPoint.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.TestTxnCommands.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13753" opendate="2016-05-12 22:48:00" fixdate="2016-05-16 17:27:19" resolution="Fixed">
+        <buginformation>
+            <summary>metastore server request happen side fact rpc race error message sequence condition solution
+                response mean dbtxnmanager thrift client synchronize
+            </summary>
+            <description>metastore server request happen side fact rpc race error message sequence condition solution
+                response mean dbtxnmanager thrift client synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbLockManager.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13833" opendate="2016-05-24 17:51:20" fixdate="2016-06-14 22:36:53" resolution="Fixed">
+        <buginformation>
+            <summary>add delay heartbeat scheduling lock unnecessary acquisition
+            </summary>
+            <description>add delay heartbeat scheduling lock unnecessary acquisition
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.DbTxnManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13858" opendate="2016-05-26 01:41:35" fixdate="2016-06-01 18:09:43" resolution="Fixed">
+        <buginformation>
+            <summary>HiveProcessor completeInitialization
+            </summary>
+            <description>HiveProcessor completeInitialization
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.ReduceRecordProcessor.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezProcessor.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.MapRecordProcessor.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.Operator.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.RecordProcessor.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.MergeFileRecordProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14357" opendate="2016-07-27 12:35:48" fixdate="2016-08-01 18:39:51" resolution="Fixed">
+        <buginformation>
+            <summary>TestDbTxnManager2 testLocksInSubquery
+            </summary>
+            <description>TestDbTxnManager2 testLocksInSubquery
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.TestDbTxnManager2.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.TestTxnCommands.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14400" opendate="2016-08-02 00:13:38" fixdate="2016-08-03 03:00:13" resolution="Fixed">
+        <buginformation>
+            <summary>joe metastore side race session query insert alreadyexistsexception handle launch example condition
+                partition today effect statement create value user apos table
+            </summary>
+            <description>joe metastore side race session query insert alreadyexistsexception handle launch example
+                condition partition today effect statement create value user apos table
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.metadata.Hive.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14463" opendate="2016-08-08 08:21:29" fixdate="2016-08-16 18:08:03" resolution="Fixed">
+        <buginformation>
+            <summary>writecheck waiting data periodic latencylock reaper scheduler chauhan referencequeue lock pspermgen
+                worker renewclean dispatcher testmsgbusconnection tcp activemq finalizer jni readcheck broker
+                timed_waiting daemon task paroldgen psyounggen
+            </summary>
+            <description>writecheck waiting data periodic latencylock reaper scheduler chauhan referencequeue lock
+                pspermgen worker renewclean dispatcher testmsgbusconnection tcp activemq finalizer jni readcheck broker
+                timed_waiting daemon task paroldgen psyounggen
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for  &amp;lt;0x000000078166f0b8&amp;gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+                at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+                at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:359)
+                at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:942)
+                at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+                "InactivityMonitor Async Task: java.util.concurrent.ThreadPoolExecutor$Worker@182a483f[State = -1, empty queue]" daemon prio=5 tid=0x00007fe90d801000 nid=0x585f waiting on condition [0x000000011786b000]
+                java.lang.Thread.State: TIMED_WAITING (parking)
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for  &amp;lt;0x000000078166f0b8&amp;gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+                at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+                at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:359)
+                at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:942)
+                at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hive.hcatalog.listener.TestMsgBusConnection.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14739" opendate="2016-09-12 21:33:27" fixdate="2016-09-13 21:50:21" resolution="Fixed">
+        <buginformation>
+            <summary>hive deepesh nauroth deadlock hook cache lock hadoop case order add cli khandelwal query runtime
+                priority shutdownhookmanager filesystem runnable chris analyze report
+            </summary>
+            <description>hive deepesh nauroth deadlock hook cache lock hadoop case order add cli khandelwal query
+                runtime priority shutdownhookmanager filesystem runnable chris analyze report
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.exec.spark.session.SparkSessionManagerImpl.java</file>
+            <file type="M">org.apache.hive.hcatalog.common.HiveClientCache.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.mr.HadoopJobExecHelper.java</file>
+            <file type="M">org.apache.hadoop.hive.metastore.HiveMetaStore.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.lockmgr.zookeeper.CuratorFrameworkSingleton.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.hooks.ATSHook.java</file>
+            <file type="M">org.apache.hadoop.hive.ql.exec.tez.TezJobMonitor.java</file>
+            <file type="M">org.apache.hive.service.server.HiveServer2.java</file>
+            <file type="M">org.apache.hive.beeline.BeeLine.java</file>
+            <file type="M">org.apache.hadoop.hive.cli.CliDriver.java</file>
+            <file type="M">org.apache.hive.common.util.ShutdownHookManager.java</file>
+            <file type="M">org.apache.hive.common.util.TestShutdownHookManager.java</file>
+            <file type="M">org.apache.hive.ptest.api.server.ExecutionController.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14778" opendate="2016-09-16 18:14:28" fixdate="2016-09-29 17:44:23" resolution="Fixed">
+        <buginformation>
+            <summary>streamingconnection rpc transactionbatch heartbeat maintain document nothing reference apithe
+                thrift client obvious create model threading let metastoreclient
+            </summary>
+            <description>streamingconnection rpc transactionbatch heartbeat maintain document nothing reference apithe
+                thrift client obvious create model threading let metastoreclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hive.hcatalog.streaming.StreamingConnection.java</file>
+            <file type="M">org.apache.hive.hcatalog.streaming.TransactionBatch.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14924" opendate="2016-10-10 22:40:22" fixdate="2016-11-08 07:17:02" resolution="Fixed">
+        <buginformation>
+            <summary>MSCK REPAIR table single threaded null pointer
+            </summary>
+            <description>MSCK REPAIR table single threaded null pointer
+                at org.apache.hadoop.hive.ql.metadata.HiveMetaStoreChecker.checkPartitionDirs(HiveMetaStoreChecker.java:423)
+                at org.apache.hadoop.hive.ql.metadata.HiveMetaStoreChecker.findUnknownPartitions(HiveMetaStoreChecker.java:315)
+                at org.apache.hadoop.hive.ql.metadata.HiveMetaStoreChecker.checkTable(HiveMetaStoreChecker.java:291)
+                at org.apache.hadoop.hive.ql.metadata.HiveMetaStoreChecker.checkTable(HiveMetaStoreChecker.java:236)
+                at org.apache.hadoop.hive.ql.metadata.HiveMetaStoreChecker.checkMetastore(HiveMetaStoreChecker.java:113)
+                at org.apache.hadoop.hive.ql.exec.DDLTask.msck(DDLTask.java:1834)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.ql.metadata.HiveMetaStoreChecker.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15090" opendate="2016-10-28 12:11:18" fixdate="2016-11-17 17:06:31" resolution="Fixed">
+        <buginformation>
+            <summary>hive temporary metastore process expiredtokenremover decide token fix stop loop failure removal
+                catch
+            </summary>
+            <description>hive temporary metastore process expiredtokenremover decide token fix stop loop failure removal
+                catch
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hive.thrift.TokenStoreDelegationTokenSecretManager.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

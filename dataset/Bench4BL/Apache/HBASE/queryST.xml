@@ -1,0 +1,971 @@
+<bugrepository name="HBASE">
+    <bug id="543" opendate="2008-03-24 22:26:42" fixdate="2008-12-24 01:38:25" resolution="Fixed">
+        <buginformation>
+            <summary>access lot patch pendingregion solution state place class map possibility hbase hmaster race kind
+                regionstodelete change closingregion collection trunk structure unassignedregion hole regionmanager
+                condition regionstoclose region apos
+            </summary>
+            <description>access lot patch pendingregion solution state place class map possibility hbase hmaster race
+                kind regionstodelete change closingregion collection trunk structure unassignedregion hole regionmanager
+                condition regionstoclose region apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.MetaScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.RegionManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ServerManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.HMaster.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.BaseScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.ServerConnection.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ChangeTableState.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ProcessRegionClose.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ProcessServerShutdown.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.HConnectionManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ProcessRegionOpen.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="659" opendate="2008-05-30 20:35:11" fixdate="2008-06-01 05:21:37" resolution="Fixed">
+        <buginformation>
+            <summary>splitting cache compactor enwiki integer hlog daemon call regionserver condition closing size
+                scanner lock memcache row batchupdate region ipc retiringregion cacheflushlock
+            </summary>
+            <description>splitting cache compactor enwiki integer hlog daemon call regionserver condition closing size
+                scanner lock memcache row batchupdate region ipc retiringregion cacheflushlock
+                at sun.misc.Unsafe.park(Native Method)
+                at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(Unknown Source)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(Unknown Source)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(Unknown Source)
+                at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(Unknown Source)
+                at java.util.concurrent.locks.ReentrantLock.lock(Unknown Source)
+                at org.apache.hadoop.hbase.HLog.startCacheFlush(HLog.java:459)
+                at org.apache.hadoop.hbase.HRegion.internalFlushcache(HRegion.java:1089)
+                at org.apache.hadoop.hbase.HRegion.close(HRegion.java:594)
+                - locked &amp;lt;0x00002aaab70bf3a0&amp;gt; (a java.lang.Integer)
+                at org.apache.hadoop.hbase.HRegion.splitRegion(HRegion.java:759)
+                - locked &amp;lt;0x00002aaab70bf3a0&amp;gt; (a java.lang.Integer)
+                at org.apache.hadoop.hbase.HRegionServer$CompactSplitThread.split(HRegionServer.java:248)
+                at org.apache.hadoop.hbase.HRegionServer$CompactSplitThread.run(HRegionServer.java:204)
+                at sun.misc.Unsafe.park(Native Method)
+                at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(Unknown Source)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(Unknown Source)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(Unknown Source)
+                at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(Unknown Source)
+                at java.util.concurrent.locks.ReentrantLock.lock(Unknown Source)
+                at org.apache.hadoop.hbase.HLog.rollWriter(HLog.java:219)
+                at org.apache.hadoop.hbase.HRegionServer$LogRoller.run(HRegionServer.java:615)
+                - locked &amp;lt;0x00002aaab69ccf00&amp;gt; (a java.lang.Integer)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.TableOperation.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.TableDelete.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ChangeTableState.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ColumnOperation.java</file>
+            <file type="M">org.apache.hadoop.hbase.util.MetaUtils.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFileScanner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="663" opendate="2008-06-03 18:32:48" fixdate="2008-06-03 19:28:07" resolution="Fixed">
+        <buginformation>
+            <summary>cache log update guarantee skip hregion number sequence startup ask lock assumption reconstruction
+                hstore flushan updateslock write snapshot
+            </summary>
+            <description>cache log update guarantee skip hregion number sequence startup ask lock assumption
+                reconstruction hstore flushan updateslock write snapshot
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="699" opendate="2008-06-19 05:49:29" fixdate="2008-06-19 07:14:53" resolution="Fixed">
+        <buginformation>
+            <summary>process hang address waiting scan testmigrate hudson good relocateregion fix threaddump try catch
+                region table hbase unix hudsonits
+            </summary>
+            <description>process hang address waiting scan testmigrate hudson good relocateregion fix threaddump try
+                catch region table hbase unix hudsonits
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.HConnectionManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.util.TestMigrate.java</file>
+            <file type="M">org.apache.hadoop.hbase.HBaseClusterTestCase.java</file>
+            <file type="M">org.apache.hadoop.hbase.HMerge.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.HTable.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="818" opendate="2008-08-11 23:53:09" fixdate="2008-08-12 16:22:05" resolution="Fixed">
+        <buginformation>
+            <summary>server handler stack level hashset monitor run deadlock hregion hold flushsomeregion regionserver
+                lock information uploading flusher region ipc
+            </summary>
+            <description>server handler stack level hashset monitor run deadlock hregion hold flushsomeregion
+                regionserver lock information uploading flusher region ipc
+                at org.apache.hadoop.hbase.regionserver.Flusher.flushSomeRegions(Flusher.java:261)
+                - waiting to lock &amp;lt;0xb6f69a70&amp;gt; (a org.apache.hadoop.hbase.regionserver.Flusher)
+                at org.apache.hadoop.hbase.regionserver.Flusher.reclaimMemcacheMemory(Flusher.java:252)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.batchUpdate(HRegionServer.java:1136)
+                at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:623)
+                at org.apache.hadoop.hbase.ipc.HbaseRPC$Server.call(HbaseRPC.java:473)
+                at org.apache.hadoop.ipc.Server$Handler.run(Server.java:896)
+                at org.apache.hadoop.hbase.regionserver.HRegion.flushcache(HRegion.java:948)
+                - waiting to lock &amp;lt;0xb73610c0&amp;gt; (a org.apache.hadoop.hbase.regionserver.HRegion$WriteState)
+                at org.apache.hadoop.hbase.regionserver.Flusher.flushRegion(Flusher.java:173)
+                - locked &amp;lt;0xb6f69cf0&amp;gt; (a java.util.HashSet)
+                at org.apache.hadoop.hbase.regionserver.Flusher.flushSomeRegions(Flusher.java:267)
+                - locked &amp;lt;0xb6f69a70&amp;gt; (a org.apache.hadoop.hbase.regionserver.Flusher)
+                at org.apache.hadoop.hbase.regionserver.Flusher.reclaimMemcacheMemory(Flusher.java:252)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.batchUpdate(HRegionServer.java:1136)
+                at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:623)
+                at org.apache.hadoop.hbase.ipc.HbaseRPC$Server.call(HbaseRPC.java:473)
+                at org.apache.hadoop.ipc.Server$Handler.run(Server.java:896)
+                "IPC Server handler 2 on 60020":
+                at org.apache.hadoop.hbase.regionserver.Flusher.addRegion(Flusher.java:237)
+                - waiting to lock &amp;lt;0xb6f69cf0&amp;gt; (a java.util.HashSet)
+                at org.apache.hadoop.hbase.regionserver.Flusher.request(Flusher.java:114)
+                at org.apache.hadoop.hbase.regionserver.HRegion.requestFlush(HRegion.java:1627)
+                - locked &amp;lt;0xb73610c0&amp;gt; (a org.apache.hadoop.hbase.regionserver.HRegion$WriteState)
+                at org.apache.hadoop.hbase.regionserver.HRegion.update(HRegion.java:1614)
+                at org.apache.hadoop.hbase.regionserver.HRegion.batchUpdate(HRegion.java:1398)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.batchUpdate(HRegionServer.java:1137)
+                at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:623)
+                at org.apache.hadoop.hbase.ipc.HbaseRPC$Server.call(HbaseRPC.java:473)
+                at org.apache.hadoop.ipc.Server$Handler.run(Server.java:896)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="950" opendate="2008-10-22 21:59:43" fixdate="2008-10-22 23:49:10" resolution="Fixed">
+        <buginformation>
+            <summary>hang rowlock lock update ignore row apiintroduced rowlocks hbase
+            </summary>
+            <description>hang rowlock lock update ignore row apiintroduced rowlocks hbase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.BatchUpdate.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.HTable.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1569" opendate="2009-06-23 07:42:47" fixdate="2009-06-25 23:57:37" resolution="Fixed">
+        <buginformation>
+            <summary>cluster regionserver happen take condition import race load hour illegalaccesserror
+            </summary>
+            <description>cluster regionserver happen take condition import race load hour illegalaccesserror
+                at org.apache.hadoop.hbase.regionserver.StoreFile.getReader(StoreFile.java:356)
+                at org.apache.hadoop.hbase.regionserver.Store.getStorefilesIndexSize(Store.java:1378)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.doMetrics(HRegionServer.java:1075)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.run(HRegionServer.java:454)
+                at java.lang.Thread.run(Thread.java:619)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Store.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFile.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1740" opendate="2009-08-04 00:00:29" fixdate="2009-09-11 21:46:31" resolution="Fixed">
+        <buginformation>
+            <summary>correct production scan hfile attempt put result load fix get memcache icv value timestamp happen
+                issue race level one keyvalue start memstore condition know demonstrate snapshot
+            </summary>
+            <description>correct production scan hfile attempt put result load fix get memcache icv value timestamp
+                happen issue race level one keyvalue start memstore condition know demonstrate snapshot
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestHRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MemStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Store.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1840" opendate="2009-09-15 19:29:23" fixdate="2009-09-15 20:23:27" resolution="Fixed">
+        <buginformation>
+            <summary>note indextablethe debug test line sense number fail unit stacktrace load fix rowlock indexedtable
+                lock row ioexception apos info
+            </summary>
+            <description>note indextablethe debug test line sense number fail unit stacktrace load fix rowlock
+                indexedtable lock row ioexception apos info
+                [junit] java.io.IOException: java.io.IOException: Invalid row lock
+                [junit] at org.apache.hadoop.hbase.regionserver.HRegion.getLock(HRegion.java:1640)
+                [junit] at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1244)
+                [junit] at org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegion.put(IndexedRegion.java:97)
+                [junit] at org.apache.hadoop.hbase.regionserver.HRegion.put(HRegion.java:1216)
+                [junit] at org.apache.hadoop.hbase.regionserver.HRegionServer.put(HRegionServer.java:1818)
+                [junit] at sun.reflect.GeneratedMethodAccessor23.invoke(Unknown Source)
+                [junit] at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+                [junit] at java.lang.reflect.Method.invoke(Method.java:597)
+                [junit] at org.apache.hadoop.hbase.ipc.HBaseRPC$Server.call(HBaseRPC.java:650)
+                [junit] at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:915)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.tableindexed.TestIndexedTable.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1869" opendate="2009-09-25 19:46:24" fixdate="2009-09-25 23:22:21" resolution="Fixed">
+        <buginformation>
+            <summary>void test testing testlockedrowdelete packaging svn patch fail conjunction rowlock indexedtable
+                lock create row ioexception testindexedtable
+            </summary>
+            <description>void test testing testlockedrowdelete packaging svn patch fail conjunction rowlock indexedtable
+                lock create row ioexception testindexedtable
+                at org.apache.hadoop.hbase.regionserver.HRegion.getLock(HRegion.java:1621)
+                at org.apache.hadoop.hbase.regionserver.HRegion.delete(HRegion.java:1094)
+                at org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegion.delete(IndexedRegion.java:269)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.delete(HRegionServer.java:2014)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+                at java.lang.reflect.Method.invoke(Method.java:597)
+                at org.apache.hadoop.hbase.ipc.HBaseRPC$Server.call(HBaseRPC.java:648)
+                at org.apache.hadoop.hbase.ipc.HBaseServer$Handler.run(HBaseServer.java:915)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.tableindexed.TestIndexedTable.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2023" opendate="2009-12-01 22:21:04" fixdate="2010-03-12 07:24:05" resolution="Fixed">
+        <buginformation>
+            <summary>server request access issue userregionlock its encounter sync locateregioninmeta solution
+                otherstake thrift lock client block stick region table synchronize
+            </summary>
+            <description>server request access issue userregionlock its encounter sync locateregioninmeta solution
+                otherstake thrift lock client block stick region table synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.HConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6565" opendate="2012-08-13 06:18:42" fixdate="2012-08-16 18:49:09" resolution="Fixed">
+        <buginformation>
+            <summary>Coprocessor exec result Map thread safe
+            </summary>
+            <description>Coprocessor exec result Map thread safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.HTable.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8923" opendate="2013-07-10 22:40:57" fixdate="2013-07-11 01:47:46" resolution="Fixed">
+        <buginformation>
+            <summary>cluster process test race boom chaosmonkey recovery moment exitcodeexception fail teardown status
+            </summary>
+            <description>cluster process test race boom chaosmonkey recovery moment exitcodeexception fail teardown
+                status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.HBaseTestingUtility.java</file>
+            <file type="M">org.apache.hadoop.hbase.DistributedHBaseCluster.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13606" opendate="2015-05-01 07:44:58" fixdate="2015-05-11 23:18:00" resolution="Fixed">
+        <buginformation>
+            <summary>server bulkassignthresholdregion void invokeassign sync bulkassign robin async path pathfrom
+                comment region behavior waituntildone assign
+            </summary>
+            <description>server bulkassignthresholdregion void invokeassign sync bulkassign robin async path pathfrom
+                comment region behavior waituntildone assign
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.AssignmentManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.GeneralBulkAssigner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13662" opendate="2015-05-11 18:00:26" fixdate="2015-05-12 16:48:38" resolution="Fixed">
+        <buginformation>
+            <summary>date request stack outoforderscannernextexception thought heartbeat scan discussion error
+                hasnextcallseq patch outoforder failurewhile scanner client end hbase nextcallseq question
+                outoforderscannernext callseq throw failure
+            </summary>
+            <description>date request stack outoforderscannernextexception thought heartbeat scan discussion error
+                hasnextcallseq patch outoforder failurewhile scanner client end hbase nextcallseq question
+                outoforderscannernext callseq throw failure
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.RSRpcServices.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13959" opendate="2015-06-24 04:04:47" fixdate="2015-06-30 01:25:54" resolution="Fixed">
+        <buginformation>
+            <summary>part threadpool reference number split file fix client ten write table retry case splitting
+                notservingregionexception column exhaust workload store concurrency environment size setup region
+                storefile family operation
+            </summary>
+            <description>part threadpool reference number split file fix client ten write table retry case splitting
+                notservingregionexception column exhaust workload store concurrency environment size setup region
+                storefile family operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.SplitTransactionImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.HConstants.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13988" opendate="2015-06-29 13:20:55" fixdate="2015-07-07 02:28:30" resolution="Fixed">
+        <buginformation>
+            <summary>add handler server cluster prod debug log hbaseserver exit logroller stop future root lease region
+                info hregionserver memstoreflusher
+            </summary>
+            <description>add handler server cluster prod debug log hbaseserver exit logroller stop future root lease
+                region info hregionserver memstoreflusher
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14178" opendate="2015-08-02 07:51:58" fixdate="2015-08-06 09:22:39" resolution="Fixed">
+        <buginformation>
+            <summary>handler waiting hregion timeout lot offsetlock lock client block prio table cache os_prio rpc below
+                idlock monitor daemon regionserver entry port infomation queue reentrantlock
+            </summary>
+            <description>handler waiting hregion timeout lot offsetlock lock client block prio table cache os_prio rpc
+                below idlock monitor daemon regionserver entry port infomation queue reentrantlock
+                at java.lang.Object.wait(Native Method)
+                at java.lang.Object.wait(Object.java:502)
+                at org.apache.hadoop.hbase.util.IdLock.getLockEntry(IdLock.java:79)
+                - locked &amp;lt;0x0000000773af7c18&amp;gt; (a org.apache.hadoop.hbase.util.IdLock$Entry)
+                at org.apache.hadoop.hbase.io.hfile.HFileReaderV2.readBlock(HFileReaderV2.java:352)
+                at org.apache.hadoop.hbase.io.hfile.HFileBlockIndex$BlockIndexReader.loadDataBlockWithScanInfo(HFileBlockIndex.java:253)
+                at org.apache.hadoop.hbase.io.hfile.HFileReaderV2$AbstractScannerV2.seekTo(HFileReaderV2.java:524)
+                at org.apache.hadoop.hbase.io.hfile.HFileReaderV2$AbstractScannerV2.reseekTo(HFileReaderV2.java:572)
+                at org.apache.hadoop.hbase.regionserver.StoreFileScanner.reseekAtOrAfter(StoreFileScanner.java:257)
+                at org.apache.hadoop.hbase.regionserver.StoreFileScanner.reseek(StoreFileScanner.java:173)
+                at org.apache.hadoop.hbase.regionserver.NonLazyKeyValueScanner.doRealSeek(NonLazyKeyValueScanner.java:55)
+                at org.apache.hadoop.hbase.regionserver.KeyValueHeap.generalizedSeek(KeyValueHeap.java:313)
+                at org.apache.hadoop.hbase.regionserver.KeyValueHeap.requestSeek(KeyValueHeap.java:269)
+                at org.apache.hadoop.hbase.regionserver.StoreScanner.reseek(StoreScanner.java:695)
+                at org.apache.hadoop.hbase.regionserver.StoreScanner.seekAsDirection(StoreScanner.java:683)
+                at org.apache.hadoop.hbase.regionserver.StoreScanner.next(StoreScanner.java:533)
+                at org.apache.hadoop.hbase.regionserver.KeyValueHeap.next(KeyValueHeap.java:140)
+                at org.apache.hadoop.hbase.regionserver.HRegion$RegionScannerImpl.populateResult(HRegion.java:3889)
+                at org.apache.hadoop.hbase.regionserver.HRegion$RegionScannerImpl.nextInternal(HRegion.java:3969)
+                at org.apache.hadoop.hbase.regionserver.HRegion$RegionScannerImpl.nextRaw(HRegion.java:3847)
+                at org.apache.hadoop.hbase.regionserver.HRegion$RegionScannerImpl.next(HRegion.java:3820)
+                - locked &amp;lt;0x00000005e5c55ad0&amp;gt; (a org.apache.hadoop.hbase.regionserver.HRegion$RegionScannerImpl)
+                at org.apache.hadoop.hbase.regionserver.HRegion$RegionScannerImpl.next(HRegion.java:3807)
+                at org.apache.hadoop.hbase.regionserver.HRegion.get(HRegion.java:4779)
+                at org.apache.hadoop.hbase.regionserver.HRegion.get(HRegion.java:4753)
+                at org.apache.hadoop.hbase.regionserver.HRegionServer.get(HRegionServer.java:2916)
+                at org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:29583)
+                at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:2027)
+                at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:108)
+                at org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:114)
+                at org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:94)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.HFileReaderImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.CacheConfig.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14241" opendate="2015-08-18 19:20:50" fixdate="2015-08-19 16:02:05" resolution="Fixed">
+        <buginformation>
+            <summary>master_meta_server_operations cluster stack metaservershutdownhandler debug level closecaught
+                monitor deadlock output rpcclientimpl poolmap testmastermetricswrapper root lock connection
+                setupiostreams
+            </summary>
+            <description>master_meta_server_operations cluster stack metaservershutdownhandler debug level closecaught
+                monitor deadlock output rpcclientimpl poolmap testmastermetricswrapper root lock connection
+                setupiostreams
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14359" opendate="2015-09-03 11:17:39" fixdate="2015-09-04 01:45:43" resolution="Fixed">
+        <buginformation>
+            <summary>datum waituntildone tasksent recommendation error autoflush taskdone hour close client
+                rejectedexecutionexception table outofmemoryerror clause product rpc flushcommit env
+                sendmultiactioncurrently htable call sendmultiaction task rpctimeout asyncprocess dectaskcounter
+            </summary>
+            <description>datum waituntildone tasksent recommendation error autoflush taskdone hour close client
+                rejectedexecutionexception table outofmemoryerror clause product rpc flushcommit env
+                sendmultiactioncurrently htable call sendmultiaction task rpctimeout asyncprocess dectaskcounter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.AsyncProcess.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14463" opendate="2015-09-22 13:48:36" fixdate="2015-11-25 03:37:48" resolution="Fixed">
+        <buginformation>
+            <summary>datum bucketcache hundred getlockentry bucketcachewe getblock search len feature array root
+                idreadwritelock lock rowkey copy hbase reentrancereadwritelock item idlock store cachedblock performance
+                machine yarn analytic lrucache
+            </summary>
+            <description>datum bucketcache hundred getlockentry bucketcachewe getblock search len feature array root
+                idreadwritelock lock rowkey copy hbase reentrancereadwritelock item idlock store cachedblock performance
+                machine yarn analytic lrucache
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.CacheTestUtils.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.bucket.TestBucketCache.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14555" opendate="2015-10-06 00:10:11" fixdate="2015-10-06 00:51:06" resolution="Fixed">
+        <buginformation>
+            <summary>Deadlock MVCC branch toString IT test
+            </summary>
+            <description>Deadlock MVCC branch toString IT test
+                org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.toString(MultiVersionConcurrencyControl.java:234)
+                java.lang.String.valueOf(String.java:2994)
+                java.lang.StringBuilder.append(StringBuilder.java:131)
+                org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.waitForRead(MultiVersionConcurrencyControl.java:209)
+                org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.completeAndWait(MultiVersionConcurrencyControl.java:144)
+                org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:3191)
+                org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2837)
+                org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2779)
+                org.apache.hadoop.hbase.regionserver.RSRpcServices.doBatchOp(RSRpcServices.java:697)
+                org.apache.hadoop.hbase.regionserver.RSRpcServices.doNonAtomicRegionMutation(RSRpcServices.java:659)
+                org.apache.hadoop.hbase.regionserver.RSRpcServices.multi(RSRpcServices.java:2047)
+                org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:32594)
+                org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:2120)
+                org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:106)
+                org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:130)
+                org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:107)
+                java.lang.Thread.run(Thread.java:745)
+                org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.complete(MultiVersionConcurrencyControl.java:191)
+                org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.completeAndWait(MultiVersionConcurrencyControl.java:143)
+                org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:3191)
+                org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2837)
+                org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2779)
+                org.apache.hadoop.hbase.regionserver.RSRpcServices.doBatchOp(RSRpcServices.java:697)
+                org.apache.hadoop.hbase.regionserver.RSRpcServices.doNonAtomicRegionMutation(RSRpcServices.java:659)
+                org.apache.hadoop.hbase.regionserver.RSRpcServices.multi(RSRpcServices.java:2047)
+                org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:32594)
+                org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:2120)
+                org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:106)
+                org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:130)
+                org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:107)
+                java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14812" opendate="2015-11-14 00:05:33" fixdate="2015-11-17 22:51:18" resolution="Fixed">
+        <buginformation>
+            <summary>ResultBoundedCompletionService
+            </summary>
+            <description>ResultBoundedCompletionService
+                at java.lang.Object.wait(Native Method)
+                at java.lang.Object.wait(Object.java:502)
+                at org.apache.hadoop.hbase.client.ResultBoundedCompletionService.take(ResultBoundedCompletionService.java:148)
+                - locked &amp;lt;0x00000006b6ae7670&amp;gt; (a [Lorg.apache.hadoop.hbase.client.ResultBoundedCompletionService$QueueingFuture;)
+                at org.apache.hadoop.hbase.client.ScannerCallableWithReplicas.call(ScannerCallableWithReplicas.java:188)
+                at org.apache.hadoop.hbase.client.ScannerCallableWithReplicas.call(ScannerCallableWithReplicas.java:59)
+                at org.apache.hadoop.hbase.client.RpcRetryingCaller.callWithoutRetries(RpcRetryingCaller.java:200)
+                at org.apache.hadoop.hbase.client.ClientSmallReversedScanner.loadCache(ClientSmallReversedScanner.java:212)
+                at org.apache.hadoop.hbase.client.ClientSmallReversedScanner.next(ClientSmallReversedScanner.java:186)
+                at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegionInMeta(ConnectionManager.java:1276)
+                at org.apache.hadoop.hbase.client.ConnectionManager$HConnectionImplementation.locateRegion(ConnectionManager.java:1182)
+                at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:370)
+                at org.apache.hadoop.hbase.client.AsyncProcess.submit(AsyncProcess.java:321)
+                at org.apache.hadoop.hbase.client.BufferedMutatorImpl.backgroundFlushCommits(BufferedMutatorImpl.java:194)
+                at org.apache.hadoop.hbase.client.BufferedMutatorImpl.flush(BufferedMutatorImpl.java:171)
+                - locked &amp;lt;0x00000006b6ae79c0&amp;gt; (a org.apache.hadoop.hbase.client.BufferedMutatorImpl)
+                at org.apache.hadoop.hbase.client.HTable.flushCommits(HTable.java:1430)
+                at org.apache.hadoop.hbase.client.HTable.put(HTable.java:1033)
+                at org.apache.hadoop.hbase.thrift2.ThriftHBaseServiceHandler.putMultiple(ThriftHBaseServiceHandler.java:268)
+                at sun.reflect.GeneratedMethodAccessor11.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at org.apache.hadoop.hbase.thrift2.ThriftHBaseServiceHandler$THBaseServiceMetricsProxy.invoke(ThriftHBaseServiceHandler.java:114)
+                at com.sun.proxy.$Proxy10.putMultiple(Unknown Source)
+                at org.apache.hadoop.hbase.thrift2.generated.THBaseService$Processor$putMultiple.getResult(THBaseService.java:1637)
+                at org.apache.hadoop.hbase.thrift2.generated.THBaseService$Processor$putMultiple.getResult(THBaseService.java:1621)
+                at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+                at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+                at org.apache.thrift.server.AbstractNonblockingServer$FrameBuffer.invoke(AbstractNonblockingServer.java:478)
+                at org.apache.thrift.server.Invocation.run(Invocation.java:18)
+                at org.apache.hadoop.hbase.thrift.CallQueue$Call.run(CallQueue.java:64)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.ResultBoundedCompletionService.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.ScannerCallableWithReplicas.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14926" opendate="2015-12-04 06:25:45" fixdate="2015-12-04 22:06:34" resolution="Fixed">
+        <buginformation>
+            <summary>server side hang recover log timeout daemon crash bufferedinputstream patch thrift readingthrift
+                lock client socket state worker prio hbase
+            </summary>
+            <description>server side hang recover log timeout daemon crash bufferedinputstream patch thrift
+                readingthrift lock client socket state worker prio hbase
+                at java.net.SocketInputStream.socketRead0(Native Method)
+                at java.net.SocketInputStream.read(SocketInputStream.java:152)
+                at java.net.SocketInputStream.read(SocketInputStream.java:122)
+                at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)
+                at java.io.BufferedInputStream.read1(BufferedInputStream.java:275)
+                at java.io.BufferedInputStream.read(BufferedInputStream.java:334)
+                - locked &amp;lt;0x000000066d859490&amp;gt; (a java.io.BufferedInputStream)
+                at org.apache.thrift.transport.TIOStreamTransport.read(TIOStreamTransport.java:127)
+                at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+                at org.apache.thrift.transport.TFramedTransport.readFrame(TFramedTransport.java:129)
+                at org.apache.thrift.transport.TFramedTransport.read(TFramedTransport.java:101)
+                at org.apache.thrift.transport.TTransport.readAll(TTransport.java:84)
+                at org.apache.thrift.protocol.TCompactProtocol.readByte(TCompactProtocol.java:601)
+                at org.apache.thrift.protocol.TCompactProtocol.readMessageBegin(TCompactProtocol.java:470)
+                at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:27)
+                at org.apache.hadoop.hbase.thrift.TBoundedThreadPoolServer$ClientConnnection.run(TBoundedThreadPoolServer.java:289)
+                at org.apache.hadoop.hbase.thrift.CallQueue$Call.run(CallQueue.java:64)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.thrift.ThriftServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.thrift2.ThriftServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.thrift.ThriftServerRunner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15001" opendate="2015-12-17 21:27:57" fixdate="2015-12-22 06:48:24" resolution="Fixed">
+        <buginformation>
+            <summary>depend idea part division number shipping safety retry verification edit sink batch arraylist
+                hbaseinterclusterreplicationendpoint list int non empty size arithmeticexception replicationsource
+                walprovider success replicationsinkmanager operation
+            </summary>
+            <description>depend idea part division number shipping safety retry verification edit sink batch arraylist
+                hbaseinterclusterreplicationendpoint list int non empty size arithmeticexception replicationsource
+                walprovider success replicationsinkmanager operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.HBaseInterClusterReplicationEndpoint.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.TestReplicationSinkManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.ReplicationSinkManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15030" opendate="2015-12-22 12:45:03" fixdate="2015-12-23 17:59:36" resolution="Fixed">
+        <buginformation>
+            <summary>parking cluster stack log reentrantreadwritelock deadlock integrationtestddlmasterfailover lock
+                info tablenamespacemanager procedureexecutor level integrationtestddlmasterfailoveri monitor
+                timed_waiting daemon jstack synchronizer information
+            </summary>
+            <description>parking cluster stack log reentrantreadwritelock deadlock integrationtestddlmasterfailover lock
+                info tablenamespacemanager procedureexecutor level integrationtestddlmasterfailoveri monitor
+                timed_waiting daemon jstack synchronizer information
+                at org.apache.hadoop.hbase.master.TableNamespaceManager.releaseExclusiveLock(TableNamespaceManager.java:157)
+                - waiting to lock &amp;lt;0x0000000725c36a48&amp;gt; (a org.apache.hadoop.hbase.master.TableNamespaceManager)
+                at org.apache.hadoop.hbase.master.procedure.CreateNamespaceProcedure.releaseLock(CreateNamespaceProcedure.java:216)
+                at org.apache.hadoop.hbase.master.procedure.CreateNamespaceProcedure.releaseLock(CreateNamespaceProcedure.java:43)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execLoop(ProcedureExecutor.java:842)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execLoop(ProcedureExecutor.java:794)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.access$400(ProcedureExecutor.java:75)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor$2.run(ProcedureExecutor.java:479)
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for  &amp;lt;0x000000072574b330&amp;gt; (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireNanos(AbstractQueuedSynchronizer.java:929)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireNanos(AbstractQueuedSynchronizer.java:1245)
+                at java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.tryLock(ReentrantReadWriteLock.java:1115)
+                at org.apache.hadoop.hbase.master.TableNamespaceManager.acquireExclusiveLock(TableNamespaceManager.java:150)
+                - locked &amp;lt;0x0000000725c36a48&amp;gt; (a org.apache.hadoop.hbase.master.TableNamespaceManager)
+                at org.apache.hadoop.hbase.master.procedure.CreateNamespaceProcedure.acquireLock(CreateNamespaceProcedure.java:210)
+                at org.apache.hadoop.hbase.master.procedure.CreateNamespaceProcedure.acquireLock(CreateNamespaceProcedure.java:43)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.executeRollback(ProcedureExecutor.java:941)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execLoop(ProcedureExecutor.java:821)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.execLoop(ProcedureExecutor.java:794)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor.access$400(ProcedureExecutor.java:75)
+                at org.apache.hadoop.hbase.procedure2.ProcedureExecutor$2.run(ProcedureExecutor.java:479)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.TableNamespaceManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15093" opendate="2016-01-12 23:41:27" fixdate="2016-04-11 15:27:46" resolution="Fixed">
+        <buginformation>
+            <summary>setsizeoflogqueue replication happen sure log metricssource source incrementing multiwal world size
+                incrsizeoflogqueue report divide decrsizeoflogqueue operation queue
+            </summary>
+            <description>setsizeoflogqueue replication happen sure log metricssource source incrementing multiwal world
+                size incrsizeoflogqueue report divide decrsizeoflogqueue operation queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsSource.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.ReplicationSource.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsReplicationGlobalSourceSource.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsReplicationSourceSourceImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsReplicationSourceSource.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15146" opendate="2016-01-21 01:39:35" fixdate="2016-01-28 13:16:01" resolution="Fixed">
+        <buginformation>
+            <summary>dispatch rpc reader epoll ack awful capacity scheduler lot queueblocking blocking limit block
+                everything queue
+            </summary>
+            <description>dispatch rpc reader epoll ack awful capacity scheduler lot queueblocking blocking limit block
+                everything queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.AsyncProcess.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.BalancedQueueRpcExecutor.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.TestAsyncProcess.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcScheduler.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.ConnectionImplementation.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.TestHCM.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.FifoRpcScheduler.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcExecutor.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.SimpleRpcScheduler.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RWQueueRpcExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15650" opendate="2016-04-14 04:54:20" fixdate="2016-04-16 03:13:49" resolution="Fixed">
+        <buginformation>
+            <summary>timerangetracker contention store storefile point hbase remove
+            </summary>
+            <description>timerangetracker contention store storefile point hbase remove
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.TimeRange.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StripeStoreFlusher.java</file>
+            <file type="M">org.apache.hadoop.hbase.HConstants.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestTimeRangeTracker.java</file>
+            <file type="M">org.apache.hadoop.hbase.mob.DefaultMobStoreFlusher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestQueryMatcher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFileReader.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFile.java</file>
+            <file type="M">org.apache.hadoop.hbase.KeyValueUtil.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.Query.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFileWriter.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.DefaultStoreFlusher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.ExplicitColumnTracker.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TimeRangeTracker.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.ScanQueryMatcher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Store.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Segment.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.HFilePrettyPrinter.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MemStoreSnapshot.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.ImmutableSegment.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MockStoreFile.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.DefaultMemStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MutableSegment.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.AbstractMemStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.compactions.Compactor.java</file>
+            <file type="M">org.apache.hadoop.hbase.mapreduce.TestHFileOutputFormat2.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15957" opendate="2016-06-03 18:51:23" fixdate="2016-06-07 18:46:47" resolution="Fixed">
+        <buginformation>
+            <summary>parent flag introduce work pool start check shouldcloseconnection remove result relate fix
+                circumstance calling connection handling end writer hbase
+            </summary>
+            <description>parent flag introduce work pool start check shouldcloseconnection remove result relate fix
+                circumstance calling connection handling end writer hbase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.ipc.IntegrationTestRpcClient.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16081" opendate="2016-06-22 01:47:30" fixdate="2016-07-12 01:16:05" resolution="Fixed">
+        <buginformation>
+            <summary>replication replicationsourcemanager wal remove_peer race completionservice
+                hbaseinterclusterreplicationendpoint rollingwe call take condition recordlog peer executor get able lock
+                try removepeer take situation
+            </summary>
+            <description>replication replicationsourcemanager wal remove_peer race completionservice
+                hbaseinterclusterreplicationendpoint rollingwe call take condition recordlog peer executor get able lock
+                try removepeer take situation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.HBaseInterClusterReplicationEndpoint.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.ReplicationSourceManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.ReplicationEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16144" opendate="2016-06-29 06:55:38" fixdate="2016-07-18 02:02:34" resolution="Fixed">
+        <buginformation>
+            <summary>claimqueue replication add node die default usemulti lock operation queue crash
+            </summary>
+            <description>claimqueue replication add node die default usemulti lock operation queue crash
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.ReplicationFactory.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.TestMultiSlaveReplication.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.ReplicationQueuesZKImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.HMaster.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.cleaner.ReplicationZKLockCleanerChore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16304" opendate="2016-07-29 09:33:23" fixdate="2016-08-24 20:02:28" resolution="Fixed">
+        <buginformation>
+            <summary>waiting periodic reentrantreadwritelock cms deadlock hregion jvmpausemonitor leaserenewer
+                updateslockhere referencequeue lock abstractqueuedsynchronizer surrogate dispatcher signal
+                handlefilenotfoundexception rpcserver sweep finalizer gang jni timed_waiting util service mark
+            </summary>
+            <description>waiting periodic reentrantreadwritelock cms deadlock hregion jvmpausemonitor leaserenewer
+                updateslockhere referencequeue lock abstractqueuedsynchronizer surrogate dispatcher signal
+                handlefilenotfoundexception rpcserver sweep finalizer gang jni timed_waiting util service mark
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for  &amp;lt;0x000000066f996718&amp;gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+                at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+                at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:359)
+                at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:942)
+                at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1068)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16367" opendate="2016-08-06 09:20:28" fixdate="2016-08-08 17:42:13" resolution="Fixed">
+        <buginformation>
+            <summary>Race between master region server initialization lead premature server abort
+            </summary>
+            <description>Race between master region server initialization lead premature server abort
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.HMaster.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16429" opendate="2016-08-17 03:35:09" fixdate="2016-08-18 03:21:34" resolution="Fixed">
+        <buginformation>
+            <summary>safepointreleasedlatch parking handler waiting ring release deadlock safepointzigzaglatch
+                releasesafepoint logroller replacewriter ringbuffereventhandler buffer consumer jira issue sync
+                timed_waiting daemon rollwriter fshlog countdownlatch replacewriter append apos
+            </summary>
+            <description>safepointreleasedlatch parking handler waiting ring release deadlock safepointzigzaglatch
+                releasesafepoint logroller replacewriter ringbuffereventhandler buffer consumer jira issue sync
+                timed_waiting daemon rollwriter fshlog countdownlatch replacewriter append apos
+                at sun.misc.Unsafe.park(Native Method)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:349)
+                at com.lmax.disruptor.MultiProducerSequencer.next(MultiProducerSequencer.java:136)
+                at com.lmax.disruptor.MultiProducerSequencer.next(MultiProducerSequencer.java:105)
+                at com.lmax.disruptor.RingBuffer.next(RingBuffer.java:246)
+                at org.apache.hadoop.hbase.regionserver.wal.FSHLog.append(FSHLog.java:1222)
+                at org.apache.hadoop.hbase.regionserver.HRegion.doMiniBatchMutation(HRegion.java:3188)
+                at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2879)
+                at org.apache.hadoop.hbase.regionserver.HRegion.batchMutate(HRegion.java:2819)
+                at org.apache.hadoop.hbase.regionserver.RSRpcServices.doBatchOp(RSRpcServices.java:736)
+                at org.apache.hadoop.hbase.regionserver.RSRpcServices.doNonAtomicRegionMutation(RSRpcServices.java:698)
+                at org.apache.hadoop.hbase.regionserver.RSRpcServices.multi(RSRpcServices.java:2095)
+                at org.apache.hadoop.hbase.protobuf.generated.ClientProtos$ClientService$2.callBlockingMethod(ClientProtos.java:32213)
+                at org.apache.hadoop.hbase.ipc.RpcServer.call(RpcServer.java:774)
+                at org.apache.hadoop.hbase.ipc.CallRunner.run(CallRunner.java:102)
+                at org.apache.hadoop.hbase.ipc.RpcExecutor.consumerLoop(RpcExecutor.java:133)
+                at org.apache.hadoop.hbase.ipc.RpcExecutor$1.run(RpcExecutor.java:108)
+                at java.lang.Thread.run(Thread.java:756)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestHRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.wal.FSHLog.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16699" opendate="2016-09-23 21:02:48" fixdate="2016-10-10 21:34:14" resolution="Fixed">
+        <buginformation>
+            <summary>issue line averageintervalratelimiter check bypass patch overflow getwaitinterval post place logic
+                behavior day ratelimiters case
+            </summary>
+            <description>issue line averageintervalratelimiter check bypass patch overflow getwaitinterval post place
+                logic behavior day ratelimiters case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.quotas.OperationQuota.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.RateLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.TimeBasedLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.QuotaLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.TestRateLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.AverageIntervalRateLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.DefaultOperationQuota.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.NoopOperationQuota.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.NoopQuotaLimiter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16721" opendate="2016-09-28 00:33:17" fixdate="2016-10-17 21:32:06" resolution="Fixed">
+        <buginformation>
+            <summary>datum cluster hundred production log tracking split file logroller flush limit flusher logs case
+                requester wal max memstore concurrency maxlog regionserver schedule fshlog force region seqid
+            </summary>
+            <description>datum cluster hundred production log tracking split file logroller flush limit flusher logs
+                case requester wal max memstore concurrency maxlog regionserver schedule fshlog force region seqid
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.wal.WAL.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.wal.TestFSHLog.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.wal.AbstractTestFSWAL.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16788" opendate="2016-10-06 23:14:38" fixdate="2016-10-10 23:15:48" resolution="Fixed">
+        <buginformation>
+            <summary>HStore close closeAndArchiveCompactedFiles
+            </summary>
+            <description>HStore close closeAndArchiveCompactedFiles
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HStore.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

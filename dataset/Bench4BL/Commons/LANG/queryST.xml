@@ -1,0 +1,100 @@
+<bugrepository name="LANG">
+    <bug id="367" opendate="2007-10-30 13:25:17" fixdate="2007-11-05 09:55:33" resolution="Fixed">
+        <buginformation>
+            <summary>static instance hashmaps document clear guarantee also follow fastdateformat patch safety
+                simpledateformat final assumption share attribute class case apos
+            </summary>
+            <description>static instance hashmaps document clear guarantee also follow fastdateformat patch safety
+                simpledateformat final assumption share attribute class case apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.lang.time.FastDateFormat.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="459" opendate="2008-09-15 16:09:36" fixdate="2008-09-16 16:36:51" resolution="Fixed">
+        <buginformation>
+            <summary>HashCodeBuilder isRegistered identityHashCode
+            </summary>
+            <description>HashCodeBuilder isRegistered identityHashCode
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.lang.builder.HashCodeBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="481" opendate="2009-01-23 19:48:12" fixdate="2010-01-16 08:04:53" resolution="Fixed">
+        <buginformation>
+            <summary>range hash
+            </summary>
+            <description>range hash
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.lang3.Range.java</file>
+            <file type="M">org.apache.commons.lang.math.DoubleRange.java</file>
+            <file type="M">org.apache.commons.lang.math.IntRange.java</file>
+            <file type="M">org.apache.commons.lang.math.FloatRange.java</file>
+            <file type="M">org.apache.commons.lang.math.LongRange.java</file>
+            <file type="M">org.apache.commons.lang.math.NumberRange.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="584" opendate="2010-01-28 18:22:48" fixdate="2010-02-02 23:37:20" resolution="Fixed">
+        <buginformation>
+            <summary>work targetexceptionutil lock addcausemethodname exceptionutils removecausemethodname
+                cause_method_names target
+            </summary>
+            <description>work targetexceptionutil lock addcausemethodname exceptionutils removecausemethodname
+                cause_method_names target
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.lang3.exception.ExceptionUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1230" opendate="2016-05-16 08:29:17" fixdate="2016-08-21 17:18:40" resolution="Fixed">
+        <buginformation>
+            <summary>threadlocals equalsbuilder access run believe redundant remove hashcodebuilder idkey identity lang
+                value re reading lookup registry consequence read issue introduce unregister contention threadlocal call
+                synchronization
+            </summary>
+            <description>threadlocals equalsbuilder access run believe redundant remove hashcodebuilder idkey identity
+                lang value re reading lookup registry consequence read issue introduce unregister contention threadlocal
+                call synchronization
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.lang3.builder.EqualsBuilder.java</file>
+            <file type="M">org.apache.commons.lang3.builder.HashCodeBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1251" opendate="2016-07-27 05:18:01" fixdate="2016-07-31 17:51:29" resolution="Fixed">
+        <buginformation>
+            <summary>safety constructor primitivetype hashmap map classloaderawareobjectinputstream initializer
+            </summary>
+            <description>safety constructor primitivetype hashmap map classloaderawareobjectinputstream initializer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.lang3.SerializationUtils.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

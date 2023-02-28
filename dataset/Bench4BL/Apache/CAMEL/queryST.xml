@@ -1,0 +1,1318 @@
+<bugrepository name="CAMEL">
+    <bug id="140" opendate="2007-09-10 14:17:19" fixdate="2007-10-01 16:15:11" resolution="Fixed">
+        <buginformation>
+            <summary>result resulthandler instance xsltbuilder variable reset threadsafe transformation
+            </summary>
+            <description>result resulthandler instance xsltbuilder variable reset threadsafe transformation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.builder.xml.XsltBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="510" opendate="2008-05-13 03:43:12" fixdate="2008-05-13 04:21:26" resolution="Fixed">
+        <buginformation>
+            <summary>multicastaggregatortestthere test race aggregator look patch output condition failure get exchange
+                copy inaggregator
+            </summary>
+            <description>multicastaggregatortestthere test race aggregator look patch output condition failure get
+                exchange copy inaggregator
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.MultiCastAggregatorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="574" opendate="2008-06-04 01:42:58" fixdate="2008-06-04 02:38:07" resolution="Fixed">
+        <buginformation>
+            <summary>Multicast default excecutor create enough parallel processing
+            </summary>
+            <description>Multicast default excecutor create enough parallel processing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.MulticastProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="715" opendate="2008-07-14 10:19:14" fixdate="2008-07-24 05:17:37" resolution="Fixed">
+        <buginformation>
+            <summary>runtask stack process threadprocessor threadprocess run processor multicore routing trace get
+                exchange threadpoolexecutor
+            </summary>
+            <description>runtask stack process threadprocessor threadprocess run processor multicore routing trace get
+                exchange threadpoolexecutor
+                Stack trace:
+                Exception in thread "Thread Processor"
+                java.util.ConcurrentModificationException
+                at java.util.HashMap$HashIterator.nextEntry(HashMap.java:793)
+                at java.util.HashMap$EntryIterator.next(HashMap.java:834)
+                at java.util.HashMap$EntryIterator.next(HashMap.java:832)
+                at java.util.HashMap.putAll(HashMap.java:523)
+                at org.apache.camel.processor.Pipeline.createNextExchange(Pipeline.java:146)
+                at org.apache.camel.processor.Pipeline$1.done(Pipeline.java:123)
+                at org.apache.camel.processor.ThreadProcessor$ProcessCall.run(ThreadProcessor.java:66)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:885)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:907)
+                at java.lang.Thread.run(Thread.java:619)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.Camel715ThreadProcessorTest.java</file>
+            <file type="M">org.apache.camel.impl.DefaultExchange.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="803" opendate="2008-08-09 06:27:45" fixdate="2008-08-09 17:33:45" resolution="Fixed">
+        <buginformation>
+            <summary>ValidatingProcessor process errorHandler
+            </summary>
+            <description>ValidatingProcessor process errorHandler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.validation.DefaultValidationErrorHandler.java</file>
+            <file type="M">org.apache.camel.processor.validation.ValidatingProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1199" opendate="2008-12-19 12:20:41" fixdate="2009-01-05 08:53:57" resolution="Fixed">
+        <buginformation>
+            <summary>appear throttler
+            </summary>
+            <description>appear throttler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.Throttler.java</file>
+            <file type="M">org.apache.camel.processor.ThrottlerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1270" opendate="2009-01-18 09:56:18" fixdate="2009-01-18 10:06:27" resolution="Fixed">
+        <buginformation>
+            <summary>countdown main mainsupport
+            </summary>
+            <description>countdown main mainsupport
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.util.MainSupport.java</file>
+            <file type="M">org.apache.camel.spring.Main.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1401" opendate="2009-02-27 06:31:24" fixdate="2009-02-27 09:12:42" resolution="Fixed">
+        <buginformation>
+            <summary>request classcastexception reuse getter instance custom unmarshaller jaxbcontext jaxbdataformat
+                jaxb saxexception get safe synchronization marshaller everything
+            </summary>
+            <description>request classcastexception reuse getter instance custom unmarshaller jaxbcontext jaxbdataformat
+                jaxb saxexception get safe synchronization marshaller everything
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.converter.jaxb.JaxbDataFormat.java</file>
+            <file type="M">org.apache.camel.example.JAXBConvertTest.java</file>
+            <file type="M">org.apache.camel.converter.jaxb.JaxbConverter.java</file>
+            <file type="M">org.apache.camel.converter.jaxb.FallbackTypeConverter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1510" opendate="2009-04-02 01:05:12" fixdate="2009-04-16 20:31:33" resolution="Fixed">
+        <buginformation>
+            <summary>queuing access batchprocessor run ssl jms loop await class addition side enqueueexchange locking
+                aggregator batch control analysis list sample something concurrency performance sender batchtimeout
+                effect processing exchange queue
+            </summary>
+            <description>queuing access batchprocessor run ssl jms loop await class addition side enqueueexchange
+                locking aggregator batch control analysis list sample something concurrency performance sender
+                batchtimeout effect processing exchange queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.BatchProcessor.java</file>
+            <file type="M">org.apache.camel.processor.StreamResequencer.java</file>
+            <file type="M">org.apache.camel.processor.StreamResequencerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1565" opendate="2009-04-24 12:32:39" fixdate="2009-04-24 16:10:16" resolution="Fixed">
+        <buginformation>
+            <summary>SchemaFactory endpoint
+            </summary>
+            <description>SchemaFactory endpoint
+                at com.sun.org.apache.xerces.internal.jaxp.validation.Util.toSAXException(Util.java:62)
+                at com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory.newSchema(XMLSchemaFactory.java:214)
+                at javax.xml.validation.SchemaFactory.newSchema(SchemaFactory.java:594)
+                at org.apache.camel.processor.validation.ValidatingProcessor.createSchema(ValidatingProcessor.java:204)
+                at org.apache.camel.processor.validation.ValidatingProcessor.getSchema(ValidatingProcessor.java:118)
+                at org.apache.camel.processor.validation.ValidatingProcessor.process(ValidatingProcessor.java:54)
+                at org.apache.camel.impl.ProcessorEndpoint.onExchange(ProcessorEndpoint.java:92)
+                at org.apache.camel.impl.ProcessorEndpoint$1.process(ProcessorEndpoint.java:66)
+                at org.apache.camel.impl.converter.AsyncProcessorTypeConverter$ProcessorToAsyncProcessorBridge.process(AsyncProcessorTypeConverter.java:43)
+                .....
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.validator.ValidatorComponent.java</file>
+            <file type="M">org.apache.camel.processor.validation.ValidatingProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1583" opendate="2009-05-02 10:20:11" fixdate="2009-05-04 14:05:00" resolution="Fixed">
+        <buginformation>
+            <summary>Ldap component
+            </summary>
+            <description>Ldap component
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.ldap.LdapProducer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1604" opendate="2009-05-12 08:29:38" fixdate="2009-05-15 09:02:08" resolution="Fixed">
+        <buginformation>
+            <summary>nabble custom unitofwork synchronization callback dsl processor
+            </summary>
+            <description>nabble custom unitofwork synchronization callback dsl processor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.model.OnCompletionDefinition.java</file>
+            <file type="M">org.apache.camel.builder.RouteBuilder.java</file>
+            <file type="M">org.apache.camel.processor.OnCompletionProcessor.java</file>
+            <file type="M">org.apache.camel.model.ProcessorDefinition.java</file>
+            <file type="M">org.apache.camel.model.RoutesDefinition.java</file>
+            <file type="M">org.apache.camel.spring.CamelContextFactoryBean.java</file>
+            <file type="M">org.apache.camel.PollingConsumerAware.java</file>
+            <file type="M">org.apache.camel.spring.handler.CamelNamespaceHandler.java</file>
+            <file type="M">org.apache.camel.spring.processor.onexception.SpringOnExceptionFromChoiceUseOriginalBodyTest.java</file>
+            <file type="M">org.apache.camel.processor.DeadLetterChannelHandledPolicyTest.java</file>
+            <file type="M">org.apache.camel.processor.OnCompletionTest.java</file>
+            <file type="M">org.apache.camel.processor.OnCompletionOnFailureOnlyTest.java</file>
+            <file type="M">org.apache.camel.Exchange.java</file>
+            <file type="M">org.apache.camel.spi.Synchronization.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1641" opendate="2009-05-23 08:14:55" fixdate="2009-05-25 13:26:34" resolution="Fixed">
+        <buginformation>
+            <summary>ftp instance discussion component ftpclient camel nabble http producer create consumer
+            </summary>
+            <description>ftp instance discussion component ftpclient camel nabble http producer create consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.file.remote.FtpProducerConcurrentTest.java</file>
+            <file type="M">org.apache.camel.component.file.FileComponent.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileEndpoint.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpOperations.java</file>
+            <file type="M">org.apache.camel.component.file.remote.RemoteFileProducer.java</file>
+            <file type="M">org.apache.camel.component.file.FileEndpoint.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpComponent.java</file>
+            <file type="M">org.apache.camel.component.file.remote.SftpEndpoint.java</file>
+            <file type="M">org.apache.camel.component.file.remote.SftpComponent.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpEndpoint.java</file>
+            <file type="M">org.apache.camel.component.file.remote.RemoteFileEndpoint.java</file>
+            <file type="M">org.apache.camel.component.file.FileConsumerMoveExpressionTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1650" opendate="2009-05-27 12:38:36" fixdate="2009-06-07 11:23:29" resolution="Fixed">
+        <buginformation>
+            <summary>IdempotentConsumer MemoryIdempotentRepository
+            </summary>
+            <description>IdempotentConsumer MemoryIdempotentRepository
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.idempotent.IdempotentOnCompletion.java</file>
+            <file type="M">org.apache.camel.processor.idempotent.MemoryIdempotentRepository.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileConsumer.java</file>
+            <file type="M">org.apache.camel.processor.idempotent.IdempotentConsumer.java</file>
+            <file type="M">org.apache.camel.model.IdempotentConsumerDefinition.java</file>
+            <file type="M">org.apache.camel.processor.idempotent.FileIdempotentRepository.java</file>
+            <file type="M">org.apache.camel.spi.IdempotentRepository.java</file>
+            <file type="M">org.apache.camel.component.file.FileConsumerIdempotentRefTest.java</file>
+            <file type="M">org.apache.camel.processor.idempotent.jpa.JpaMessageIdRepository.java</file>
+            <file type="M">org.apache.camel.management.MultiInstanceProcessorTest.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpConsumerIdempotentRefTest.java</file>
+            <file type="M">org.apache.camel.processor.jpa.JpaIdempotentConsumerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1670" opendate="2009-06-04 22:57:47" fixdate="2009-06-08 07:04:03" resolution="Fixed">
+        <buginformation>
+            <summary>start run mybean source error directory look speed call overlappingfilelockexception component file
+                route experiment enddirectory lock mymethod from startdirectory move bean
+            </summary>
+            <description>start run mybean source error directory look speed call overlappingfilelockexception component
+                file route experiment enddirectory lock mymethod from startdirectory move bean
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.file.stress.FileAsyncStressTest.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.MarkerFileExclusiveReadLockStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.FileProcessStrategyFactory.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.GenericFileRenameProcessStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpConsumerIdempotentRefTest.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.GenericFileProcessStrategySupport.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.FileLockExclusiveReadLockStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.GenericFileRenameExclusiveReadLockStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileExclusiveReadLockStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.remote.SftpConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.GenericFileProcessStrategyFactory.java</file>
+            <file type="M">org.apache.camel.component.file.FileConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileOnCompletion.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileEndpoint.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1795" opendate="2009-07-03 14:54:34" fixdate="2009-07-03 15:13:45" resolution="Fixed">
+        <buginformation>
+            <summary>default camel listener maxmessagespertask messagejmsconfiguratiuon defaultmessagelistenercontainer
+                message
+            </summary>
+            <description>default camel listener maxmessagespertask messagejmsconfiguratiuon
+                defaultmessagelistenercontainer message
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jms.JmsConfiguration.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1930" opendate="2009-08-24 09:15:20" fixdate="2009-10-13 07:41:30" resolution="Fixed">
+        <buginformation>
+            <summary>access evaluation jms routing xpath camel xml useless create consumer xpathexpression expression
+                specification contention message look cheer threadlocal xpathbuilder synchronization choice fabrice
+            </summary>
+            <description>access evaluation jms routing xpath camel xml useless create consumer xpathexpression
+                expression specification contention message look cheer threadlocal xpathbuilder synchronization choice
+                fabrice
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.builder.xml.XPathBuilder.java</file>
+            <file type="M">org.apache.camel.builder.xml.MessageVariableResolver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1966" opendate="2009-09-01 04:55:28" fixdate="2009-12-30 02:24:33" resolution="Fixed">
+        <buginformation>
+            <summary>CamelNamespaceHandler
+            </summary>
+            <description>CamelNamespaceHandler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.spring.handler.CamelNamespaceHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2049" opendate="2009-10-01 09:00:11" fixdate="2009-10-08 06:23:36" resolution="Fixed">
+        <buginformation>
+            <summary>producera instance configuration point endpoint file scenario camel lazysessioncreation parameter
+                from consumer tcp localhost contain acceptor kind pool sync sample route connector true safe producer
+                mina
+            </summary>
+            <description>producera instance configuration point endpoint file scenario camel lazysessioncreation
+                parameter from consumer tcp localhost contain acceptor kind pool sync sample route connector true safe
+                producer mina
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.mina.MinaComponent.java</file>
+            <file type="M">org.apache.camel.component.mina.MinaProducer.java</file>
+            <file type="M">org.apache.camel.component.bean.BeanProcessor.java</file>
+            <file type="M">org.apache.camel.component.mina.MinaConsumer.java</file>
+            <file type="M">org.apache.camel.util.concurrent.ExecutorServiceHelper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2175" opendate="2009-11-16 13:32:10" fixdate="2009-11-16 14:20:25" resolution="Fixed">
+        <buginformation>
+            <summary>cxf getandset getcxfbinding camel webserive initialization sense cxfbinding
+                headerfilterstrategyaware case
+            </summary>
+            <description>cxf getandset getcxfbinding camel webserive initialization sense cxfbinding
+                headerfilterstrategyaware case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.restlet.RestletEndpoint.java</file>
+            <file type="M">org.apache.camel.component.cxf.CxfEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2496" opendate="2010-02-24 15:38:16" fixdate="2010-06-07 01:45:15" resolution="Fixed">
+        <buginformation>
+            <summary>runtimecamelexception week race test log var introduce filenotfoundexception believe splitter
+                directory patch symptom condition streamcache folder file seda case queue
+            </summary>
+            <description>runtimecamelexception week race test log var introduce filenotfoundexception believe splitter
+                directory patch symptom condition streamcache folder file seda case queue
+                at org.apache.camel.converter.stream.FileInputStreamCache.reset(FileInputStreamCache.java:52)
+                at org.apache.camel.converter.stream.StreamCacheConverter$StreamSourceCache.reset(StreamCacheConverter.java:126)
+                at org.apache.camel.util.MessageHelper.resetStreamCache(MessageHelper.java:105)
+                at org.apache.camel.builder.xml.XPathBuilder.getDocument(XPathBuilder.java:548)
+                at org.apache.camel.builder.xml.XPathBuilder.evaluateAs(XPathBuilder.java:428)
+                at org.apache.camel.builder.xml.XPathBuilder.evaluate(XPathBuilder.java:118)
+                at org.apache.camel.processor.Splitter.createProcessorExchangePairs(Splitter.java:72)
+                at org.apache.camel.processor.MulticastProcessor.process(MulticastProcessor.java:155)
+                at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:80)
+                at org.apache.camel.processor.DeadLetterChannel.process(DeadLetterChannel.java:189)
+                at org.apache.camel.processor.DeadLetterChannel.process(DeadLetterChannel.java:133)
+                at org.apache.camel.management.InstrumentationProcessor.process(InstrumentationProcessor.java:68)
+                at org.apache.camel.processor.interceptor.StreamCachingInterceptor.proceed(StreamCachingInterceptor.java:87)
+                at org.apache.camel.processor.interceptor.StreamCachingInterceptor.process(StreamCachingInterceptor.java:82)
+                at org.apache.camel.processor.UnitOfWorkProcessor.process(UnitOfWorkProcessor.java:52)
+                at org.apache.camel.component.seda.SedaConsumer.run(SedaConsumer.java:72)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+                at java.lang.Thread.run(Thread.java:637)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.converter.stream.CachedOutputStream.java</file>
+            <file type="M">org.apache.camel.converter.stream.CachedOutputStreamTest.java</file>
+            <file type="M">org.apache.camel.converter.stream.FileInputStreamCache.java</file>
+            <file type="M">org.apache.camel.processor.SplitterStreamCacheTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2824" opendate="2010-06-16 19:43:30" fixdate="2010-06-18 05:36:52" resolution="Fixed">
+        <buginformation>
+            <summary>DefaultTimeoutMap
+            </summary>
+            <description>DefaultTimeoutMap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.aggregator.AggregateTimeoutOnlyTest.java</file>
+            <file type="M">org.apache.camel.util.TimeoutMap.java</file>
+            <file type="M">org.apache.camel.util.DefaultTimeoutMap.java</file>
+            <file type="M">org.apache.camel.processor.aggregate.AggregateProcessor.java</file>
+            <file type="M">org.apache.camel.processor.aggregator.AggregateFromWireTapTest.java</file>
+            <file type="M">org.apache.camel.util.DefaultTimeoutMapTest.java</file>
+            <file type="M">org.apache.camel.processor.aggregator.AggregatorTest.java</file>
+            <file type="M">org.apache.camel.management.JmxNotificationEventNotifier.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2935" opendate="2010-07-10 10:01:35" fixdate="2010-07-10 20:56:48" resolution="Fixed">
+        <buginformation>
+            <summary>camelexecutionexception defaultproducertemplateasynctest commit asynccallback moment patch fix
+                camel case onfailure test work change fault message way opinion getexception throw failure
+                synchronization try send
+            </summary>
+            <description>camelexecutionexception defaultproducertemplateasynctest commit asynccallback moment patch fix
+                camel case onfailure test work change fault message way opinion getexception throw failure
+                synchronization try send
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.DefaultProducerTemplateAsyncTest.java</file>
+            <file type="M">org.apache.camel.impl.DefaultConsumerTemplateTest.java</file>
+            <file type="M">org.apache.camel.ProducerTemplate.java</file>
+            <file type="M">org.apache.camel.impl.DefaultProducerTemplateTest.java</file>
+            <file type="M">org.apache.camel.component.jetty.HttpAuthMethodPriorityTest.java</file>
+            <file type="M">org.apache.camel.impl.ProducerCache.java</file>
+            <file type="M">org.apache.camel.processor.BeanInvocationThrowsExceptionTest.java</file>
+            <file type="M">org.apache.camel.impl.DefaultProducerTemplate.java</file>
+            <file type="M">org.apache.camel.impl.DefaultMessage.java</file>
+            <file type="M">org.apache.camel.issues.Issue3Test.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2986" opendate="2010-07-22 19:19:11" fixdate="2010-07-22 19:27:14" resolution="Fixed">
+        <buginformation>
+            <summary>isinitial resume completion dispatched loadreason race camelcontinuationservlet occur
+                illegalstateexception async callback block jetty case
+            </summary>
+            <description>isinitial resume completion dispatched loadreason race camelcontinuationservlet occur
+                illegalstateexception async callback block jetty case
+                at org.eclipse.jetty.server.AsyncContinuation.dispatch(AsyncContinuation.java:364)
+                at org.eclipse.jetty.server.AsyncContinuation.resume(AsyncContinuation.java:769)
+                at org.apache.camel.component.jetty.CamelContinuationServlet$1.done(CamelContinuationServlet.java:85)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+                at org.apache.camel.processor.UnitOfWorkProcessor$1.done(UnitOfWorkProcessor.java:104)
+                at org.apache.camel.processor.DefaultChannel$1.done(DefaultChannel.java:262)
+                at org.apache.camel.processor.RedeliveryErrorHandler$1.done(RedeliveryErrorHandler.java:302)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jetty.CamelContinuationServlet.java</file>
+            <file type="M">org.apache.camel.component.jetty.JettyHttpComponent.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2994" opendate="2010-07-26 11:21:48" fixdate="2010-07-26 13:29:07" resolution="Fixed">
+        <buginformation>
+            <summary>instance logger invoke body error cxfclientcallback cxf default inputstream camel end workqueue
+                info clientcallback test race message cxfwsdlonlytest condition exchange nosuchelementexception
+                expectedrun
+            </summary>
+            <description>instance logger invoke body error cxfclientcallback cxf default inputstream camel end workqueue
+                info clientcallback test race message cxfwsdlonlytest condition exchange nosuchelementexception
+                expectedrun
+                at java.util.AbstractList$Itr.next(AbstractList.java:350)
+                at org.apache.camel.processor.Pipeline$1.done(Pipeline.java:153)
+                at org.apache.camel.processor.DefaultChannel$1.done(DefaultChannel.java:262)
+                at org.apache.camel.processor.RedeliveryErrorHandler$1.done(RedeliveryErrorHandler.java:302)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+                at org.apache.camel.component.cxf.CxfClientCallback.handleException(CxfClientCallback.java:77)
+                at org.apache.cxf.interceptor.ClientOutFaultObserver.onMessage(ClientOutFaultObserver.java:55)
+                at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream$1.run(HTTPConduit.java:2144)
+                at org.apache.cxf.workqueue.AutomaticWorkQueueImpl$2.run(AutomaticWorkQueueImpl.java:253)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+                at java.lang.Thread.run(Thread.java:637)
+                at java.util.AbstractList$Itr.next(AbstractList.java:350)
+                at org.apache.camel.processor.Pipeline$1.done(Pipeline.java:153)
+                at org.apache.camel.processor.DefaultChannel$1.done(DefaultChannel.java:262)
+                at org.apache.camel.processor.RedeliveryErrorHandler$1.done(RedeliveryErrorHandler.java:302)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+                at org.apache.camel.management.InstrumentationProcessor$1.done(InstrumentationProcessor.java:78)
+                at org.apache.camel.component.cxf.CxfClientCallback.handleException(CxfClientCallback.java:77)
+                at org.apache.cxf.interceptor.ClientOutFaultObserver.onMessage(ClientOutFaultObserver.java:55)
+                at org.apache.cxf.transport.http.HTTPConduit$WrappedOutputStream$1.run(HTTPConduit.java:2144)
+                at org.apache.cxf.workqueue.AutomaticWorkQueueImpl$2.run(AutomaticWorkQueueImpl.java:253)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+                at java.lang.Thread.run(Thread.java:637)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.cxf.GreeterImplWithSleep.java</file>
+            <file type="M">org.apache.camel.component.cxf.interceptors.RawMessageContentRedirectInterceptor.java</file>
+            <file type="M">org.apache.camel.component.cxf.CxfClientCallback.java</file>
+            <file type="M">org.apache.camel.component.cxf.CXFWsdlOnlyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3216" opendate="2010-10-11 15:25:12" fixdate="2010-10-11 15:57:59" resolution="Fixed">
+        <buginformation>
+            <summary>die ftp throwable polling jdk file avoid scheduledpollconsumer consumer
+            </summary>
+            <description>die ftp throwable polling jdk file avoid scheduledpollconsumer consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.ScheduledPollConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.FileConsumerPollStrategyRollbackThrowExceptionTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3277" opendate="2010-10-25 19:46:50" fixdate="2010-10-26 06:42:29" resolution="Fixed">
+        <buginformation>
+            <summary>loader converter logger exhausted type error while inputstreamcache attempt exchangeid patch load
+                camel abortthe conversion delivery registry classcastexception issue defaulterrorhandler loading node
+                core route
+            </summary>
+            <description>loader converter logger exhausted type error while inputstreamcache attempt exchangeid patch
+                load camel abortthe conversion delivery registry classcastexception issue defaulterrorhandler loading
+                node core route
+                at com.sun.org.apache.xpath.internal.jaxp.XPathExpressionImpl.eval(XPathExpressionImpl.java:116)
+                at com.sun.org.apache.xpath.internal.jaxp.XPathExpressionImpl.eval(XPathExpressionImpl.java:98)
+                at com.sun.org.apache.xpath.internal.jaxp.XPathExpressionImpl.evaluate(XPathExpressionImpl.java:180)
+                at org.apache.camel.builder.xml.XPathBuilder.doInEvaluateAs(XPathBuilder.java:598)
+                at org.apache.camel.builder.xml.XPathBuilder.evaluateAs(XPathBuilder.java:570)
+                at org.apache.camel.builder.xml.XPathBuilder.matches(XPathBuilder.java:122)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.osgi.Activator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3349" opendate="2010-11-19 22:32:35" fixdate="2010-11-19 22:57:34" resolution="Fixed">
+        <buginformation>
+            <summary>request flag absence binding getbinding endpoint load startup copying protocolheaders race issue
+                sync headerfilterstrategyaware cxfrsendpoint way instanceof async invocation condition headerstrategy
+                headerfilterstrategy getandset apos customer
+            </summary>
+            <description>request flag absence binding getbinding endpoint load startup copying protocolheaders race
+                issue sync headerfilterstrategyaware cxfrsendpoint way instanceof async invocation condition
+                headerstrategy headerfilterstrategy getandset apos customer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.cxf.jaxrs.CxfRsEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3493" opendate="2011-01-05 01:09:05" fixdate="2011-01-05 06:39:09" resolution="Fixed">
+        <buginformation>
+            <summary>removeroutedefinitions one route get removeroutedefinition synchronization definition
+                concurrentmodificationexception
+            </summary>
+            <description>removeroutedefinitions one route get removeroutedefinition synchronization definition
+                concurrentmodificationexception
+                at java.util.AbstractList$Itr.checkForComodification(AbstractList.java:372)
+                at java.util.AbstractList$Itr.next(AbstractList.java:343)
+                at java.util.AbstractCollection.removeAll(AbstractCollection.java:336)
+                at org.apache.camel.impl.DefaultCamelContext.removeRouteDefinitions(DefaultCamelContext.java:588)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.DefaultCamelContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3528" opendate="2011-01-11 16:44:56" fixdate="2011-01-11 17:45:53" resolution="Fixed">
+        <buginformation>
+            <summary>HybridSourceDataBinding thread safe
+            </summary>
+            <description>HybridSourceDataBinding thread safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jms.JmsSuspendResumeTest.java</file>
+            <file type="M">org.apache.camel.component.jms.CamelJmsTestHelper.java</file>
+            <file type="M">org.apache.camel.component.cxf.HybridSourceDataBinding.java</file>
+            <file type="M">org.apache.camel.maven.HtmlToPdfMojo.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7116" opendate="2014-01-09 11:31:28" fixdate="2014-01-10 09:04:57" resolution="Fixed">
+        <buginformation>
+            <summary>JettyHttpProducer doStop does not stop client thread poolCase
+            </summary>
+            <description>JettyHttpProducer doStop does not stop client thread poolCase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jetty.JettyHttpProducer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7161" opendate="2014-02-03 09:37:44" fixdate="2014-02-03 09:39:35" resolution="Fixed">
+        <buginformation>
+            <summary>ctr init other defer loader start dozer monitor deadlock bit spring stop camel service
+                concurrenthashmap lock state springwhen stuff
+            </summary>
+            <description>ctr init other defer loader start dozer monitor deadlock bit spring stop camel service
+                concurrenthashmap lock state springwhen stuff
+                at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:182)
+                - waiting to lock &amp;lt;0x00000007d7c4ca38&amp;gt; (a java.util.concurrent.ConcurrentHashMap)
+                at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:468)
+                at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:356)
+                at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:334)
+                at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:434)
+                at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:428)
+                at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1182)
+                at org.springframework.beans.factory.BeanFactoryUtils.beansOfTypeIncludingAncestors(BeanFactoryUtils.java:228)
+                at org.apache.camel.spring.spi.ApplicationContextRegistry.findByTypeWithName(ApplicationContextRegistry.java:85)
+                at org.apache.camel.impl.PropertyPlaceholderDelegateRegistry.findByTypeWithName(PropertyPlaceholderDelegateRegistry.java:70)
+                at org.apache.camel.converter.dozer.DozerTypeConverterLoader.lookupDozerBeanMapperConfigurations(DozerTypeConverterLoader.java:228)
+                at org.apache.camel.converter.dozer.DozerTypeConverterLoader.init(DozerTypeConverterLoader.java:155)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.converter.dozer.DozerTypeConverterLoader.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7239" opendate="2014-02-24 04:45:58" fixdate="2014-02-24 07:16:43" resolution="Fixed">
+        <buginformation>
+            <summary>Address SchemaFactory safe issue
+            </summary>
+            <description>Address SchemaFactory safe issue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.validator.ValidatorRouteTest.java</file>
+            <file type="M">org.apache.camel.processor.validation.ValidatingProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7318" opendate="2014-03-21 09:08:05" fixdate="2015-03-05 12:43:11" resolution="Fixed">
+        <buginformation>
+            <summary>happen process hdfsinputstream work nothing hdf team concurrency transfer file rename parallel
+                hdfsconsumer hdfs try catch ioexception everything ioe consumer order
+            </summary>
+            <description>happen process hdfsinputstream work nothing hdf team concurrency transfer file rename parallel
+                hdfsconsumer hdfs try catch ioexception everything ioe consumer order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.hdfs.HdfsConsumerTest.java</file>
+            <file type="M">org.apache.camel.component.hdfs.HdfsConsumer.java</file>
+            <file type="M">org.apache.camel.component.hdfs2.HdfsConsumerTest.java</file>
+            <file type="M">org.apache.camel.component.hdfs2.HdfsInputStream.java</file>
+            <file type="M">org.apache.camel.component.hdfs2.integration.HdfsProducerConsumerIntegrationTest.java</file>
+            <file type="M">org.apache.camel.component.hdfs2.HdfsConsumer.java</file>
+            <file type="M">org.apache.camel.component.hdfs2.integration.HdfsAppendTest.java</file>
+            <file type="M">org.apache.camel.component.hdfs.HdfsInputStream.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7321" opendate="2014-03-23 01:32:55" fixdate="2014-03-25 07:43:00" resolution="Fixed">
+        <buginformation>
+            <summary>JcrConsumer
+            </summary>
+            <description>JcrConsumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jcr.JcrConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7364" opendate="2014-04-14 12:46:20" fixdate="2014-09-02 12:11:54" resolution="Fixed">
+        <buginformation>
+            <summary>reason product jpamessageidrepository change constructor entitymanager behavior assign
+            </summary>
+            <description>reason product jpamessageidrepository change constructor entitymanager behavior assign
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.idempotent.jpa.JpaMessageIdRepository.java</file>
+            <file type="M">org.apache.camel.component.jpa.AbstractJpaMethodTest.java</file>
+            <file type="M">org.apache.camel.component.jpa.JpaConstants.java</file>
+            <file type="M">org.apache.camel.component.jpa.JpaProducer.java</file>
+            <file type="M">org.apache.camel.processor.idempotent.IdempotentConsumer.java</file>
+            <file type="M">org.apache.camel.component.jpa.JpaConsumer.java</file>
+            <file type="M">org.apache.camel.processor.idempotent.IdempotentOnCompletion.java</file>
+            <file type="M">org.apache.camel.spi.IdempotentRepository.java</file>
+            <file type="M">org.apache.camel.component.jpa.JpaEndpoint.java</file>
+            <file type="M">org.apache.camel.model.rest.RestConfigurationDefinition.java</file>
+            <file type="M">org.apache.camel.test.blueprint.component.rest.FromRestConfigurationTest.java</file>
+            <file type="M">org.apache.camel.component.restlet.RestletComponent.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.RestCamelSparkAcceptTest.java</file>
+            <file type="M">org.apache.camel.component.rest.FromRestConfigurationTest.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.SparkComponent.java</file>
+            <file type="M">org.apache.camel.spi.RestConfiguration.java</file>
+            <file type="M">org.apache.camel.test.blueprint.component.rest.FromRestUriPrefixTest.java</file>
+            <file type="M">org.apache.camel.component.rest.FromRestUriPrefixTest.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.RestCamelSparkRequestBeanTest.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.RestCamelSparkSplatTest.java</file>
+            <file type="M">org.apache.camel.component.restlet.RestRestletGetTest.java</file>
+            <file type="M">org.apache.camel.test.blueprint.component.rest.FromRestGetTest.java</file>
+            <file type="M">org.apache.camel.model.rest.VerbDefinition.java</file>
+            <file type="M">org.apache.camel.component.rest.FromRestGetEndPathTest.java</file>
+            <file type="M">org.apache.camel.model.ProcessorDefinition.java</file>
+            <file type="M">org.apache.camel.component.rest.FromRestGetTest.java</file>
+            <file type="M">org.apache.camel.model.RouteDefinition.java</file>
+            <file type="M">org.apache.camel.management.ManagedFromRestGetTest.java</file>
+            <file type="M">org.apache.camel.example.spark.MySparkRouteBuilder.java</file>
+            <file type="M">org.apache.camel.component.rest.FromRestExplicitComponentTest.java</file>
+            <file type="M">org.apache.camel.model.rest.RestDefinition.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.RestCamelSparkParamTest.java</file>
+            <file type="M">org.apache.camel.test.blueprint.component.rest.FromRestGetEmbeddedRouteTest.java</file>
+            <file type="M">org.apache.camel.component.rest.FromRestGetEmbeddedRouteTest.java</file>
+            <file type="M">org.apache.camel.CamelContext.java</file>
+            <file type="M">org.apache.camel.impl.DefaultCamelContext.java</file>
+            <file type="M">org.apache.camel.component.rest.RestComponent.java</file>
+            <file type="M">org.apache.camel.blueprint.BlueprintJaxbRestTest.java</file>
+            <file type="M">org.apache.camel.spring.CamelContextFactoryBean.java</file>
+            <file type="M">org.apache.camel.builder.RouteBuilder.java</file>
+            <file type="M">org.apache.camel.core.xml.AbstractCamelContextFactoryBean.java</file>
+            <file type="M">org.apache.camel.blueprint.CamelContextFactoryBean.java</file>
+            <file type="M">org.apache.camel.model.ModelCamelContext.java</file>
+            <file type="M">org.apache.camel.spring.handler.CamelNamespaceHandler.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.RestCamelSparkComponentTest.java</file>
+            <file type="M">org.apache.camel.model.rest.RestsDefinition.java</file>
+            <file type="M">org.apache.camel.model.rest.PathDefinition.java</file>
+            <file type="M">org.apache.camel.component.sparkrest.RestCamelSparkTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7556" opendate="2014-06-29 13:02:44" fixdate="2014-09-07 06:59:11" resolution="Fixed">
+        <buginformation>
+            <summary>allow jms endpoint camel rabbitmq consumer queue
+            </summary>
+            <description>allow jms endpoint camel rabbitmq consumer queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitMQConsumer.java</file>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitMQLoadIntTest.java</file>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitMQEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7715" opendate="2014-08-19 00:37:45" fixdate="2014-08-20 05:51:21" resolution="Fixed">
+        <buginformation>
+            <summary>sjmsproducer instance pool threadpool remove stopsjmsconsumer executorservicemanager exist
+                component endpoint camel context sjmsconsumer producer consumer
+            </summary>
+            <description>sjmsproducer instance pool threadpool remove stopsjmsconsumer executorservicemanager exist
+                component endpoint camel context sjmsconsumer producer consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.sjms.SjmsProducer.java</file>
+            <file type="M">org.apache.camel.component.sjms.SjmsConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7795" opendate="2014-09-09 12:50:12" fixdate="2014-09-09 13:07:13" resolution="Fixed">
+        <buginformation>
+            <summary>initialisation parent request stack fact threadpool attempt cxf routing endpoint optimisation
+                engine camel inheritablethreadlocal context mechanism value situation corethread mdc async mdccallback
+                component routeid system response regression callback behaviour
+            </summary>
+            <description>initialisation parent request stack fact threadpool attempt cxf routing endpoint optimisation
+                engine camel inheritablethreadlocal context mechanism value situation corethread mdc async mdccallback
+                component routeid system response regression callback behaviour
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.MDCUnitOfWork.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7968" opendate="2014-10-27 10:38:41" fixdate="2014-11-02 08:41:32" resolution="Fixed">
+        <buginformation>
+            <summary>container singleton instance race approach good concurrency containerregistry define containers
+                behaviour threadsafe
+            </summary>
+            <description>container singleton instance race approach good concurrency containerregistry define containers
+                behaviour threadsafe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.spi.Container.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7973" opendate="2014-10-27 15:02:10" fixdate="2014-10-30 09:09:35" resolution="Fixed">
+        <buginformation>
+            <summary>routebuilder circuitbreaker request circuit breaker configuration error
+                asyncprocessorconverterhelper patch solution fix rejectedexecutionexception close case proposal receive
+                test processor opening misbehaviour async circuitbreakerloadbalancertest exchange behaviour
+                circuitbreakerloadbalancer
+            </summary>
+            <description>routebuilder circuitbreaker request circuit breaker configuration error
+                asyncprocessorconverterhelper patch solution fix rejectedexecutionexception close case proposal receive
+                test processor opening misbehaviour async circuitbreakerloadbalancertest exchange behaviour
+                circuitbreakerloadbalancer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.CircuitBreakerLoadBalancerTest.java</file>
+            <file type="M">org.apache.camel.processor.loadbalancer.CircuitBreakerLoadBalancer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7988" opendate="2014-11-01 08:02:50" fixdate="2014-11-01 10:19:23" resolution="Fixed">
+        <buginformation>
+            <summary>file nabble lock poll acquire consumer case camellock
+            </summary>
+            <description>file nabble lock poll acquire consumer case camellock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.file.GenericFileConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.FileLockExclusiveReadLockStrategy.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8088" opendate="2014-11-27 17:48:41" fixdate="2015-02-15 11:23:38" resolution="Fixed">
+        <buginformation>
+            <summary>FTP indefinitely connection timeout occurs during connect
+            </summary>
+            <description>FTP indefinitely connection timeout occurs during connect
+                at org.apache.commons.net.ftp.FTP._connectAction_(FTP.java:389)
+                at org.apache.commons.net.ftp.FTPClient._connectAction_(FTPClient.java:796)
+                at org.apache.commons.net.SocketClient.connect(SocketClient.java:172)
+                at org.apache.commons.net.SocketClient.connect(SocketClient.java:192)
+                at org.apache.camel.component.file.remote.FtpOperations.connect(FtpOperations.java:95)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.file.remote.RemoteFileProducer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8134" opendate="2014-12-09 07:22:38" fixdate="2014-12-09 19:25:41" resolution="Fixed">
+        <buginformation>
+            <summary>add issue discussion oom error redelivery synchronisation endpoint httpproducer synchronization
+                exchange cachedoutputstream closedoncompletion falsecachedoutputstream option
+            </summary>
+            <description>add issue discussion oom error redelivery synchronisation endpoint httpproducer synchronization
+                exchange cachedoutputstream closedoncompletion falsecachedoutputstream option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.converter.stream.CachedOutputStreamTest.java</file>
+            <file type="M">org.apache.camel.converter.stream.CachedOutputStream.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8146" opendate="2014-12-11 13:14:54" fixdate="2014-12-18 12:21:39" resolution="Fixed">
+        <buginformation>
+            <summary>parking type result threadsseem path leak file camel abstractqueuedsynchronizer prio consequence
+                os_prio issue start orphan something timed_waiting daemon condition route stop sftp
+            </summary>
+            <description>parking type result threadsseem path leak file camel abstractqueuedsynchronizer prio
+                consequence os_prio issue start orphan something timed_waiting daemon condition route stop sftp
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+                at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.DefaultScheduledPollConsumerScheduler.java</file>
+            <file type="M">org.apache.camel.impl.ScheduledPollConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8200" opendate="2014-12-30 13:58:45" fixdate="2015-01-04 07:07:22" resolution="Fixed">
+        <buginformation>
+            <summary>request invokation jmsproducer createnextmessage memory body setting patch jms camel reply class
+                processinout test race dosend message messaging component condition response callback persistence
+                setmessageid exchange
+            </summary>
+            <description>request invokation jmsproducer createnextmessage memory body setting patch jms camel reply
+                class processinout test race dosend message messaging component condition response callback persistence
+                setmessageid exchange
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jms.JmsProducer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8241" opendate="2015-01-13 20:55:00" fixdate="2015-02-22 10:51:24" resolution="Fixed">
+        <buginformation>
+            <summary>note defaultexeccommandexecutor run error library common stream defaultexecutor case chance test
+                race issue command exit appear environment condition failure exec unix ‘ve
+            </summary>
+            <description>note defaultexeccommandexecutor run error library common stream defaultexecutor case chance
+                test race issue command exit appear environment condition failure exec unix ‘ve
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.exec.impl.DefaultExecCommandExecutor.java</file>
+            <file type="M">org.apache.camel.component.exec.ExecDefaultExecutor.java</file>
+            <file type="M">org.apache.camel.component.exec.ExecProducer.java</file>
+            <file type="M">org.apache.camel.component.exec.ExecEndpointTest.java</file>
+            <file type="M">org.apache.camel.component.exec.ExecEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8268" opendate="2015-01-23 07:35:25" fixdate="2015-02-12 06:24:51" resolution="Fixed">
+        <buginformation>
+            <summary>scan listthe list produce filterlist filter call endpoint camel solve value hbase
+            </summary>
+            <description>scan listthe list produce filterlist filter call endpoint camel solve value hbase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.hbase.HBaseProducerTest.java</file>
+            <file type="M">org.apache.camel.component.hbase.HBaseEndpoint.java</file>
+            <file type="M">org.apache.camel.component.hbase.HBaseProducer.java</file>
+            <file type="M">org.apache.camel.component.hbase.mapping.HeaderMappingStrategy.java</file>
+            <file type="M">org.apache.camel.component.hbase.model.HBaseRow.java</file>
+            <file type="M">org.apache.camel.component.hbase.HBaseConstants.java</file>
+            <file type="M">org.apache.camel.component.hbase.model.HBaseCell.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8353" opendate="2015-02-14 08:12:56" fixdate="2015-02-15 08:17:52" resolution="Fixed">
+        <buginformation>
+            <summary>defer release nabble remain channel lock acquire close filelockexclusivereadlockstrategy
+            </summary>
+            <description>defer release nabble remain channel lock acquire close filelockexclusivereadlockstrategy
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.Exchange.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.MarkerFileExclusiveReadLockStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.FileLockExclusiveReadLockStrategy.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8673" opendate="2015-04-20 09:12:08" fixdate="2015-04-22 00:06:50" resolution="Fixed">
+        <buginformation>
+            <summary>removeRouteCollection addRouteCollection
+            </summary>
+            <description>removeRouteCollection addRouteCollection
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.DefaultCamelContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8713" opendate="2015-04-28 15:08:13" fixdate="2015-04-28 18:34:02" resolution="Fixed">
+        <buginformation>
+            <summary>boss work pool aggregation parallelaggregate aggregate mode fly parallel camel processing worker
+                option
+            </summary>
+            <description>boss work pool aggregation parallelaggregate aggregate mode fly parallel camel processing
+                worker option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.MulticastProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8885" opendate="2015-06-18 08:27:17" fixdate="2015-07-09 06:25:21" resolution="Fixed">
+        <buginformation>
+            <summary>consumedelete think condition consumelockentity beginning function lock consumedeletei entity
+            </summary>
+            <description>consumedelete think condition consumelockentity beginning function lock consumedeletei entity
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jpa.JpaConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8954" opendate="2015-07-12 11:01:35" fixdate="2015-07-16 19:49:32" resolution="Fixed">
+        <buginformation>
+            <summary>datum markerfileexclusivereadlockstrategy camelfilelockfilename file_lock_file_acquired file
+                readlock filelock camelfilelockfileacquired file_lock_exclusive_lock camelfilelockexclusivelock property
+                lock share b filename uow file_lock_random_access_file completion read store
+                filelockexclusivereadlockstrategy input file_lock_file_name route markerfile
+                camelfilelockrandomaccessfile synchronization exchange information strategy
+            </summary>
+            <description>datum markerfileexclusivereadlockstrategy camelfilelockfilename file_lock_file_acquired file
+                readlock filelock camelfilelockfileacquired file_lock_exclusive_lock camelfilelockexclusivelock property
+                lock share b filename uow file_lock_random_access_file completion read store
+                filelockexclusivereadlockstrategy input file_lock_file_name route markerfile
+                camelfilelockrandomaccessfile synchronization exchange information strategy
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.file.GenericFile.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.MarkerFileExclusiveReadLockStrategy.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.FileLockExclusiveReadLockStrategy.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9199" opendate="2015-10-07 21:14:44" fixdate="2015-10-08 05:42:08" resolution="Fixed">
+        <buginformation>
+            <summary>test rabbitmq serializable consumer crash
+            </summary>
+            <description>test rabbitmq serializable consumer crash
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitMQInOutIntTest.java</file>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitMQConsumer.java</file>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitMQEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9311" opendate="2015-11-11 16:45:11" fixdate="2015-11-13 16:29:30" resolution="Fixed">
+        <buginformation>
+            <summary>Concurrency issue with the dynamic router
+            </summary>
+            <description>Concurrency issue with the dynamic router
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.processor.RoutingSlip.java</file>
+            <file type="M">org.apache.camel.processor.DynamicRouter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9319" opendate="2015-11-13 10:50:36" fixdate="2015-11-16 16:30:22" resolution="Fixed">
+        <buginformation>
+            <summary>execution producertemplate memory issue resource ssh profiler discussion kill command result call
+                leak sshclient machine create class
+            </summary>
+            <description>execution producertemplate memory issue resource ssh profiler discussion kill command result
+                call leak sshclient machine create class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.ssh.SshConsumer.java</file>
+            <file type="M">org.apache.camel.component.ssh.SshProducer.java</file>
+            <file type="M">org.apache.camel.component.ssh.SshEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9331" opendate="2015-11-16 19:16:28" fixdate="2015-11-18 08:28:52" resolution="Fixed">
+        <buginformation>
+            <summary>leak manager tell builder http client connection dostop httpclientthread httpclient
+            </summary>
+            <description>leak manager tell builder http client connection dostop httpclientthread httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.http4.HttpEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9738" opendate="2016-03-22 10:55:20" fixdate="2016-03-22 12:20:18" resolution="Fixed">
+        <buginformation>
+            <summary>address doshutdown start ioacceptor threadpool leak dostart web unbind camel dostop behavior bugfix
+                consumer
+            </summary>
+            <description>address doshutdown start ioacceptor threadpool leak dostart web unbind camel dostop behavior
+                bugfix consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.mina2.Mina2Consumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9951" opendate="2016-05-06 12:20:49" fixdate="2016-05-09 11:43:08" resolution="Fixed">
+        <buginformation>
+            <summary>runtimecamelexception getthreadpool require availableprocessor maxthread minthread component
+                cosumer default websocket camel property setup jetty attribute value
+            </summary>
+            <description>runtimecamelexception getthreadpool require availableprocessor maxthread minthread component
+                cosumer default websocket camel property setup jetty attribute value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.websocket.WebsocketComponent.java</file>
+            <file type="M">org.apache.camel.component.websocket.WebsocketEndpointConfigurationTest.java</file>
+            <file type="M">org.apache.camel.component.websocket.WebsocketConsumerRouteTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9970" opendate="2016-05-16 13:30:13" fixdate="2016-05-20 07:08:21" resolution="Fixed">
+        <buginformation>
+            <summary>read change length simple store poll camelfilelength wrong file solution someone filegiven camel
+                parameter lock header write
+            </summary>
+            <description>read change length simple store poll camelfilelength wrong file solution someone filegiven
+                camel parameter lock header write
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.file.FileConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.GenericFileConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.remote.FtpConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.remote.RemoteFileIgnoreDoPollErrorTest.java</file>
+            <file type="M">org.apache.camel.component.file.remote.SftpConsumer.java</file>
+            <file type="M">org.apache.camel.component.file.strategy.FileChangedReadLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10024" opendate="2016-06-07 07:39:24" fixdate="2016-06-23 20:47:37" resolution="Fixed">
+        <buginformation>
+            <summary>handler exchangetimedoutexception log session line error illegalstateexception fix iteration
+                connection maybedisconnectondone race testing one pool message closefuture call unit condition system
+                producer
+            </summary>
+            <description>handler exchangetimedoutexception log session line error illegalstateexception fix iteration
+                connection maybedisconnectondone race testing one pool message closefuture call unit condition system
+                producer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.mina2.Mina2Producer.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2TextLineDelimiter.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2NoResponseFromServerTest.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2Consumer.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2ProducerShutdownMockTest.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2ExchangeTimeOutTest.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2ClientModeTcpTextlineDelimiterTest.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2EncodingTest.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2TransferExchangeOptionTest.java</file>
+            <file type="M">org.apache.camel.component.mina2.Mina2ReverseProtocolHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10215" opendate="2016-08-01 22:43:27" fixdate="2016-08-02 06:49:45" resolution="Fixed">
+        <buginformation>
+            <summary>datum instance ordering part beforepoll poll defaultconsumertemplate aggregate endpoint split
+                afterpoll consumercache pollingconsumer client consumer eventdrivenpollingconsumer cache static race
+                receive condition processing
+            </summary>
+            <description>datum instance ordering part beforepoll poll defaultconsumertemplate aggregate endpoint split
+                afterpoll consumercache pollingconsumer client consumer eventdrivenpollingconsumer cache static race
+                receive condition processing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.impl.EventDrivenPollingConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10229" opendate="2016-08-09 15:47:55" fixdate="2016-08-16 14:29:56" resolution="Fixed">
+        <buginformation>
+            <summary>autoack skipqueuedeclare channel defaultexceptionhandler rabbitconsumer protocol basiccancel
+                destinationqueue tag reply consumer side sourcequeue prefetchcount handledelivery amqp deliverytag
+                skipexchangedeclare message rabbitmq basicack amqchannel behaviour queue
+            </summary>
+            <description>autoack skipqueuedeclare channel defaultexceptionhandler rabbitconsumer protocol basiccancel
+                destinationqueue tag reply consumer side sourcequeue prefetchcount handledelivery amqp deliverytag
+                skipexchangedeclare message rabbitmq basicack amqchannel behaviour queue
+                at com.rabbitmq.client.impl.AMQChannel.ensureIsOpen(AMQChannel.java:195)
+                at com.rabbitmq.client.impl.AMQChannel.transmit(AMQChannel.java:309)
+                at com.rabbitmq.client.impl.AMQChannel.transmit(AMQChannel.java:303)
+                at com.rabbitmq.client.impl.ChannelN.basicAck(ChannelN.java:1043)
+                at org.apache.camel.component.rabbitmq.RabbitConsumer.handleDelivery(RabbitConsumer.java:108)
+                at com.rabbitmq.client.impl.ConsumerDispatcher$5.run(ConsumerDispatcher.java:144)
+                at com.rabbitmq.client.impl.ConsumerWorkService$WorkPoolRunnable.run(ConsumerWorkService.java:99)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.rabbitmq.RabbitConsumer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10273" opendate="2016-08-26 15:59:48" fixdate="2016-08-27 08:41:03" resolution="Fixed">
+        <buginformation>
+            <summary>flag level configuration custom pool enablejmx check threadpool put setting endpoint component jmx
+                publish correspondent jetty account
+            </summary>
+            <description>flag level configuration custom pool enablejmx check threadpool put setting endpoint component
+                jmx publish correspondent jetty account
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.camel.component.jetty.JettyHttpComponent.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
