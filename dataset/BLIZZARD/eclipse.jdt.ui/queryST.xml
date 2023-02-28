@@ -1,0 +1,620 @@
+<bugrepository name="eclipse.jdt.ui">
+    <bug id="12996" opendate="2002-04-08 10:49:21" fixdate="2002-10-23 10:06:36" resolution="Fixed">
+        <buginformation>
+            <summary>access select project error type mulitpage example file leave get create jar finish export creation
+                editor happen mpe fill eclipse fail build install
+            </summary>
+            <description>access select project error type mulitpage example file leave get create jar finish export
+                creation editor happen mpe fill eclipse fail build install
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.JavaPlugin.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.jarpackager.JarFileExportOperation.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="29531" opendate="2003-01-15 09:00:03" fixdate="2003-02-20 14:10:03" resolution="Fixed">
+        <buginformation>
+            <summary>preview editor move select package nullpointerexception javacolormanager refactoring build activate
+                initialize press
+            </summary>
+            <description>preview editor move select package nullpointerexception javacolormanager refactoring build
+                activate initialize press
+                at org.eclipse.jdt.internal.ui.text.JavaColorManager.getColor(JavaColorManager.java:53)
+                at org.eclipse.jdt.internal.ui.text.JavaColorManager.getColor(JavaColorManager.java:85)
+                at org.eclipse.jdt.internal.ui.text.AbstractJavaScanner.addToken(AbstractJavaScanner.java:90)
+                at org.eclipse.jdt.internal.ui.text.AbstractJavaScanner.initialize(AbstractJavaScanner.java:75)
+                at org.eclipse.jdt.internal.ui.text.java.JavaCodeScanner.#init>(JavaCodeScanner.java:126)
+                at org.eclipse.jdt.ui.text.JavaTextTools.#init>(JavaTextTools.java:80)
+                at org.eclipse.jdt.internal.ui.JavaPlugin.getJavaTextTools(JavaPlugin.java:316)
+                at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.initializeDocument(CompilationUnitDocumentProvider.java:979)
+                at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createDocument(CompilationUnitDocumentProvider.java:994)
+                at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$BufferFactory.internalGetDocument(CompilationUnitDocumentProvider.java:630)
+                at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider$BufferFactory.createBuffer(CompilationUnitDocumentProvider.java:646)
+                at org.eclipse.jdt.internal.core.WorkingCopy.openBuffer(WorkingCopy.java:365)
+                at org.eclipse.jdt.internal.core.Openable.getBuffer(Openable.java:192)
+                at org.eclipse.jdt.internal.core.CompilationUnit.getContents(CompilationUnit.java:367)
+                at org.eclipse.jdt.internal.compiler.parser.Parser.parse(Parser.java:7095)
+                at org.eclipse.jdt.internal.compiler.SourceElementParser.parseCompilationUnit(SourceElementParser.java:1051)
+                at org.eclipse.jdt.internal.core.CompilationUnit.generateInfos(CompilationUnit.java:323)
+                at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:77)
+                at org.eclipse.jdt.internal.core.Openable.openWhenClosed(Openable.java:395)
+                at org.eclipse.jdt.internal.core.Openable.open(Openable.java:346)
+                at org.eclipse.jdt.internal.core.WorkingCopy.open(WorkingCopy.java:354)
+                at org.eclipse.jdt.internal.core.CompilationUnit.getWorkingCopy(CompilationUnit.java:609)
+                at org.eclipse.jdt.internal.core.CompilationUnit.getSharedWorkingCopy(CompilationUnit.java:581)
+                at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitDocumentProvider.createElementInfo(CompilationUnitDocumentProvider.java:845)
+                at org.eclipse.ui.texteditor.AbstractDocumentProvider.connect(AbstractDocumentProvider.java:302)
+                at org.eclipse.jdt.internal.corext.textmanipulation.TextBufferFactory.acquire(TextBufferFactory.java:85)
+                at org.eclipse.jdt.internal.corext.textmanipulation.TextBuffer.acquire(TextBuffer.java:371)
+                at org.eclipse.jdt.internal.corext.codemanipulation.ImportsStructure.aquireTextBuffer(ImportsStructure.java:538)
+                at org.eclipse.jdt.internal.corext.codemanipulation.ImportsStructure.#init>(ImportsStructure.java:85)
+                at org.eclipse.jdt.internal.corext.codemanipulation.ImportEdit.#init>(ImportEdit.java:33)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveCuUpdateCreator.getImportEdit(MoveCuUpdateCreator.java:217)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveCuUpdateCreator.addImportToSourcePackageTypes(MoveCuUpdateCreator.java:176)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveCuUpdateCreator.addUpdates(MoveCuUpdateCreator.java:121)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveCuUpdateCreator.addUpdates(MoveCuUpdateCreator.java:112)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveCuUpdateCreator.createChangeManager(MoveCuUpdateCreator.java:88)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveRefactoring.createChangeManager(MoveRefactoring.java:448)
+                at org.eclipse.jdt.internal.corext.refactoring.reorg.MoveRefactoring.checkInput(MoveRefactoring.java:151)
+                at org.eclipse.jdt.internal.ui.refactoring.CheckConditionsOperation.run(CheckConditionsOperation.java:59)
+                at org.eclipse.jdt.internal.ui.refactoring.CreateChangeOperation.run(CreateChangeOperation.java:94)
+                at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:95)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.text.AbstractJavaScanner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="75843" opendate="2004-10-07 16:21:54" fixdate="2004-11-02 15:23:30" resolution="Fixed">
+        <buginformation>
+            <summary>createmethodentrybreakpoint iresource deadlock dialog ischedulingrule event dispatcher creation
+                situation chain reaction team jdi int iworkspacerunnable breakpoint javabreakpoint entry component delay
+                gui jdt syncexec snapshot
+            </summary>
+            <description>createmethodentrybreakpoint iresource deadlock dialog ischedulingrule event dispatcher creation
+                situation chain reaction team jdi int iworkspacerunnable breakpoint javabreakpoint entry component delay
+                gui jdt syncexec snapshot
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="79793" opendate="2004-11-30 12:22:45" fixdate="2004-12-17 09:35:08" resolution="Fixed">
+        <buginformation>
+            <summary>deadlock javaworkingsetupdater
+            </summary>
+            <description>deadlock javaworkingsetupdater
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.workingsets.JavaWorkingSetUpdater.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="103450" opendate="2005-07-12 02:13:14" fixdate="2010-06-11 10:39:08" resolution="Fixed">
+        <buginformation>
+            <summary>fix statement block remove option
+            </summary>
+            <description>fix statement block remove option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.text.correction.CorrectionMessages.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.text.correction.CorrectionMessages.properties</file>
+            <file type="M">org.eclipse.jdt.internal.ui.text.correction.QuickAssistProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="125013" opendate="2006-01-24 10:50:34" fixdate="2006-02-14 11:29:43" resolution="Fixed">
+        <buginformation>
+            <summary>preferenceforwarder firepropertychangeevent javamodelmanager PreferencesAdapter
+            </summary>
+            <description>preferenceforwarder firepropertychangeevent javamodelmanager PreferencesAdapter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.ui.org.eclipse.jdt.internal.ui.text.PreferencesAdapter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="179109" opendate="2007-03-23 15:46:13" fixdate="2007-03-26 12:39:07" resolution="Fixed">
+        <buginformation>
+            <summary>Editor computing AST twice concurrently
+            </summary>
+            <description>Editor computing AST twice concurrently
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.ClassFileEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingManager.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="261198" opendate="2009-01-15 09:21:52" fixdate="2009-07-16 09:12:39" resolution="Fixed">
+        <buginformation>
+            <summary>javasynchronizationcontentprovider business src change project team source repository structure
+                eclipse node view trace folder somebusiness spot model synchronize
+            </summary>
+            <description>javasynchronizationcontentprovider business src change project team source repository structure
+                eclipse node view trace folder somebusiness spot model synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="272742" opendate="2009-04-17 14:23:52" fixdate="2009-04-20 05:23:41" resolution="Fixed">
+        <buginformation>
+            <summary>imagesonfilesystemregistry error type swtexception javadoc path view computer get concurrently
+                getnewfile info editor save png filenotfoundexception imageloader fimagecount input system step
+            </summary>
+            <description>imagesonfilesystemregistry error type swtexception javadoc path view computer get concurrently
+                getnewfile info editor save png filenotfoundexception imageloader fimagecount input system step
+                at org.eclipse.swt.SWT.error(SWT.java:3864)
+                at org.eclipse.swt.SWT.error(SWT.java:3779)
+                at org.eclipse.swt.graphics.ImageLoader.save(ImageLoader.java:241)
+                at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:104)
+                at org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.getImageURL(ImagesOnFileSystemRegistry.java:85)
+                at org.eclipse.jdt.internal.ui.infoviews.JavadocView.getInfoText(JavadocView.java:1079)
+                at org.eclipse.jdt.internal.ui.infoviews.JavadocView.getJavadocHtml(JavadocView.java:1009)
+                at org.eclipse.jdt.internal.ui.infoviews.JavadocView.computeInput(JavadocView.java:876)
+                at org.eclipse.jdt.internal.ui.infoviews.AbstractInfoView$2.run(AbstractInfoView.java:620)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="291996" opendate="2009-10-11 10:35:40" fixdate="2009-10-14 04:41:20" resolution="Fixed">
+        <buginformation>
+            <summary>javamergeviewer
+            </summary>
+            <description>javamergeviewer
+                at org.eclipse.swt.SWT.error(SWT.java:3952)
+                at org.eclipse.swt.SWT.error(SWT.java:3867)
+                at org.eclipse.swt.SWT.error(SWT.java:3838)
+                at org.eclipse.swt.widgets.Widget.error(Widget.java:463)
+                at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:355)
+                at org.eclipse.swt.custom.StyledText.replaceStyleRanges(StyledText.java:7191)
+                at org.eclipse.jface.text.TextViewer.addPresentation(TextViewer.java:4776)
+                at org.eclipse.jface.text.TextViewer.changeTextPresentation(TextViewer.java:4855)
+                at org.eclipse.jface.text.presentation.PresentationReconciler.applyTextRegionCollection(PresentationReconciler.java:579)
+                at org.eclipse.jface.text.presentation.PresentationReconciler.processDamage(PresentationReconciler.java:568)
+                at org.eclipse.jface.text.presentation.PresentationReconciler.access$3(PresentationReconciler.java:564)
+                at org.eclipse.jface.text.presentation.PresentationReconciler$InternalListener.textChanged(PresentationReconciler.java:225)
+                at org.eclipse.jface.text.TextViewer.updateTextListeners(TextViewer.java:2806)
+                at org.eclipse.jface.text.TextViewer.invalidateTextPresentation(TextViewer.java:3426)
+                at org.eclipse.compare.contentmergeviewer.TextMergeViewer.invalidateTextPresentation(TextMergeViewer.java:1686)
+                at org.eclipse.jdt.internal.ui.compare.JavaMergeViewer.handlePropertyChange(JavaMergeViewer.java:174)
+                at org.eclipse.jdt.internal.ui.compare.JavaMergeViewer.access$4(JavaMergeViewer.java:166)
+                at org.eclipse.jdt.internal.ui.compare.JavaMergeViewer$2.propertyChange(JavaMergeViewer.java:455)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore.firePropertyChangeEvent(ChainedPreferenceStore.java:164)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore.handlePropertyChangeEvent(ChainedPreferenceStore.java:431)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore.access$0(ChainedPreferenceStore.java:408)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore$PropertyChangeListener.propertyChange(ChainedPreferenceStore.java:69)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore$3.run(ScopedPreferenceStore.java:375)
+                at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:372)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore$2.preferenceChange(ScopedPreferenceStore.java:194)
+                at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:753)
+                at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:756)
+                at org.eclipse.core.internal.preferences.EclipsePreferences.put(EclipsePreferences.java:769)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore.setValue(ScopedPreferenceStore.java:789)
+                at org.eclipse.jface.text.templates.persistence.TemplateStore.save(TemplateStore.java:215)
+                at org.eclipse.jdt.internal.ui.CompatibilityTemplateStore.load(CompatibilityTemplateStore.java:64)
+                at org.eclipse.jdt.internal.ui.JavaPlugin.getCodeTemplateStore(JavaPlugin.java:899)
+                at org.eclipse.jdt.internal.ui.viewsupport.ProjectTemplateStore.#init>(ProjectTemplateStore.java:47)
+                at org.eclipse.jdt.internal.corext.codemanipulation.StubUtility.getCodeTemplate(StubUtility.java:1439)
+                at org.eclipse.jdt.internal.corext.codemanipulation.StubUtility.getMethodComment(StubUtility.java:616)
+                at org.eclipse.jdt.ui.CodeGeneration.getMethodComment(CodeGeneration.java:196)
+                at org.eclipse.jdt.internal.corext.refactoring.code.ExtractMethodRefactoring.createNewMethod(ExtractMethodRefactoring.java:908)
+                at org.eclipse.jdt.internal.corext.refactoring.code.ExtractMethodRefactoring.createChange(ExtractMethodRefactoring.java:486)
+                at org.eclipse.ltk.core.refactoring.CreateChangeOperation.run(CreateChangeOperation.java:124)
+                at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:209)
+                at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+                at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+                at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+                at org.eclipse.swt.SWT.error(SWT.java:3952)
+                at org.eclipse.swt.SWT.error(SWT.java:3867)
+                at org.eclipse.swt.SWT.error(SWT.java:3838)
+                at org.eclipse.swt.widgets.Widget.error(Widget.java:463)
+                at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:355)
+                at org.eclipse.swt.custom.StyledText.replaceStyleRanges(StyledText.java:7191)
+                at org.eclipse.jface.text.TextViewer.addPresentation(TextViewer.java:4776)
+                at org.eclipse.jface.text.TextViewer.changeTextPresentation(TextViewer.java:4855)
+                at org.eclipse.jface.text.presentation.PresentationReconciler.applyTextRegionCollection(PresentationReconciler.java:579)
+                at org.eclipse.jface.text.presentation.PresentationReconciler.processDamage(PresentationReconciler.java:568)
+                at org.eclipse.jface.text.presentation.PresentationReconciler.access$3(PresentationReconciler.java:564)
+                at org.eclipse.jface.text.presentation.PresentationReconciler$InternalListener.textChanged(PresentationReconciler.java:225)
+                at org.eclipse.jface.text.TextViewer.updateTextListeners(TextViewer.java:2806)
+                at org.eclipse.jface.text.TextViewer.invalidateTextPresentation(TextViewer.java:3426)
+                at org.eclipse.compare.contentmergeviewer.TextMergeViewer.invalidateTextPresentation(TextMergeViewer.java:1686)
+                at org.eclipse.jdt.internal.ui.compare.JavaMergeViewer.handlePropertyChange(JavaMergeViewer.java:174)
+                at org.eclipse.jdt.internal.ui.compare.JavaMergeViewer.access$4(JavaMergeViewer.java:166)
+                at org.eclipse.jdt.internal.ui.compare.JavaMergeViewer$2.propertyChange(JavaMergeViewer.java:455)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore.firePropertyChangeEvent(ChainedPreferenceStore.java:164)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore.handlePropertyChangeEvent(ChainedPreferenceStore.java:431)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore.access$0(ChainedPreferenceStore.java:408)
+                at org.eclipse.ui.texteditor.ChainedPreferenceStore$PropertyChangeListener.propertyChange(ChainedPreferenceStore.java:69)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore$3.run(ScopedPreferenceStore.java:375)
+                at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:372)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore$2.preferenceChange(ScopedPreferenceStore.java:194)
+                at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:753)
+                at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:756)
+                at org.eclipse.core.internal.preferences.EclipsePreferences.put(EclipsePreferences.java:769)
+                at org.eclipse.ui.preferences.ScopedPreferenceStore.setValue(ScopedPreferenceStore.java:789)
+                at org.eclipse.jface.text.templates.persistence.TemplateStore.save(TemplateStore.java:215)
+                at org.eclipse.jdt.internal.ui.CompatibilityTemplateStore.load(CompatibilityTemplateStore.java:64)
+                at org.eclipse.jdt.internal.ui.JavaPlugin.getCodeTemplateStore(JavaPlugin.java:899)
+                at org.eclipse.jdt.internal.ui.viewsupport.ProjectTemplateStore.#init>(ProjectTemplateStore.java:47)
+                at org.eclipse.jdt.internal.corext.codemanipulation.StubUtility.getCodeTemplate(StubUtility.java:1439)
+                at org.eclipse.jdt.internal.corext.codemanipulation.StubUtility.getMethodComment(StubUtility.java:616)
+                at org.eclipse.jdt.ui.CodeGeneration.getMethodComment(CodeGeneration.java:196)
+                at org.eclipse.jdt.internal.corext.refactoring.code.ExtractMethodRefactoring.createNewMethod(ExtractMethodRefactoring.java:908)
+                at org.eclipse.jdt.internal.corext.refactoring.code.ExtractMethodRefactoring.createChange(ExtractMethodRefactoring.java:486)
+                at org.eclipse.ltk.core.refactoring.CreateChangeOperation.run(CreateChangeOperation.java:124)
+                at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:209)
+                at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1800)
+                at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+                at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.compare.JavaMergeViewer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="296794" opendate="2009-12-03 07:32:06" fixdate="2011-01-20 08:53:18" resolution="Fixed">
+        <buginformation>
+            <summary>DocumentChange fails if document is not thread safe
+            </summary>
+            <description>DocumentChange fails if document is not thread safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.ltk.internal.core.refactoring.UndoDocumentChange.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.AllChangeTests.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.AllChangeTests.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.ltk.internal.core.refactoring.UndoDocumentChange.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.DocumentChange.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="297709" opendate="2009-12-13 23:39:05" fixdate="2010-01-07 19:24:09" resolution="Fixed">
+        <buginformation>
+            <summary>editor agent item package resource autocomplete firefox change tree link mozilla control windows
+                opening result swt composite action jdt class option
+            </summary>
+            <description>editor agent item package resource autocomplete firefox change tree link mozilla control
+                windows opening result swt composite action jdt class option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="300536" opendate="2010-01-22 14:01:04" fixdate="2010-01-26 04:45:55" resolution="Fixed">
+        <buginformation>
+            <summary>access fix get state error swtexception
+            </summary>
+            <description>access fix get state error swtexception
+                at org.eclipse.swt.SWT.error(SWT.java:4083)
+                at org.eclipse.swt.SWT.error(SWT.java:3998)
+                at org.eclipse.swt.SWT.error(SWT.java:3969)
+                at org.eclipse.swt.widgets.Widget.error(Widget.java:664)
+                at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:491)
+                at org.eclipse.swt.custom.StyledText.getLinePixel(StyledText.java:4167)
+                at org.eclipse.swt.custom.StyledText.handleTextChanging(StyledText.java:6241)
+                at org.eclipse.swt.custom.StyledText$6.textChanging(StyledText.java:5611)
+                at org.eclipse.jface.text.DefaultDocumentAdapter.fireTextChanging(DefaultDocumentAdapter.java:392)
+                at org.eclipse.jface.text.DefaultDocumentAdapter.documentAboutToBeChanged(DefaultDocumentAdapter.java:309)
+                at org.eclipse.jface.text.AbstractDocument.fireDocumentAboutToBeChanged(AbstractDocument.java:641)
+                at org.eclipse.jface.text.projection.ProjectionDocument.delayedFireDocumentAboutToBeChanged(ProjectionDocument.java:769)
+                at org.eclipse.jface.text.projection.ProjectionDocument.masterDocumentAboutToBeChanged(ProjectionDocument.java:728)
+                at org.eclipse.jface.text.projection.ProjectionDocumentManager.fireDocumentEvent(ProjectionDocumentManager.java:121)
+                at org.eclipse.jface.text.projection.ProjectionDocumentManager.documentAboutToBeChanged(ProjectionDocumentManager.java:138)
+                at org.eclipse.jface.text.AbstractDocument.fireDocumentAboutToBeChanged(AbstractDocument.java:645)
+                at org.eclipse.jface.text.AbstractDocument.replace(AbstractDocument.java:1148)
+                at org.eclipse.core.internal.filebuffers.SynchronizableDocument.replace(SynchronizableDocument.java:195)
+                at org.eclipse.jface.text.AbstractDocument.replace(AbstractDocument.java:1176)
+                at org.eclipse.core.internal.filebuffers.SynchronizableDocument.replace(SynchronizableDocument.java:181)
+                at org.eclipse.text.edits.ReplaceEdit.performDocumentUpdating(ReplaceEdit.java:82)
+                at org.eclipse.text.edits.TextEditProcessor.executeUndo(TextEditProcessor.java:223)
+                at org.eclipse.text.edits.UndoEdit.dispatchPerformEdits(UndoEdit.java:57)
+                at org.eclipse.text.edits.TextEditProcessor.performEdits(TextEditProcessor.java:156)
+                at org.eclipse.text.edits.TextEdit.apply(TextEdit.java:711)
+                at org.eclipse.ltk.core.refactoring.UndoTextFileChange.perform(UndoTextFileChange.java:195)
+                at org.eclipse.jdt.core.refactoring.UndoCompilationUnitChange.perform(UndoCompilationUnitChange.java:74)
+                at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter$1.run(UndoableOperation2ChangeAdapter.java:321)
+                at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1859)
+                at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1841)
+                at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.executeChange(UndoableOperation2ChangeAdapter.java:351)
+                at org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.undo(UndoableOperation2ChangeAdapter.java:183)
+                at org.eclipse.core.commands.operations.TriggeredOperations.undo(TriggeredOperations.java:228)
+                at org.eclipse.core.commands.operations.DefaultOperationHistory.doUndo(DefaultOperationHistory.java:415)
+                at org.eclipse.core.commands.operations.DefaultOperationHistory.undo(DefaultOperationHistory.java:1280)
+                at org.eclipse.ui.operations.UndoActionHandler.runCommand(UndoActionHandler.java:78)
+                at org.eclipse.ui.operations.OperationHistoryActionHandler$4.run(OperationHistoryActionHandler.java:311)
+                at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ltk.core.refactoring.UndoTextFileChange.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="301242" opendate="2010-01-29 08:34:46" fixdate="2010-01-29 19:13:09" resolution="Fixed">
+        <buginformation>
+            <summary>save space dialog undo attachment lock action press workbench add editor test format check
+                searchpattern validatematchrule stacktrace user
+            </summary>
+            <description>save space dialog undo attachment lock action press workbench add editor test format check
+                searchpattern validatematchrule stacktrace user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="319689" opendate="2010-07-13 07:51:35" fixdate="2010-07-28 08:11:46" resolution="Fixed">
+        <buginformation>
+            <summary>problemmarkermanager
+            </summary>
+            <description>problemmarkermanager
+                at org.eclipse.swt.SWT.error(SWT.java:4083)
+                at org.eclipse.swt.SWT.error(SWT.java:3998)
+                at org.eclipse.swt.SWT.error(SWT.java:3969)
+                at org.eclipse.swt.widgets.Display.error(Display.java:1027)
+                at org.eclipse.swt.widgets.Display.createDisplay(Display.java:794)
+                at org.eclipse.swt.widgets.Display.create(Display.java:777)
+                at org.eclipse.swt.graphics.Device.#init>(Device.java:130)
+                at org.eclipse.swt.widgets.Display.#init>(Display.java:668)
+                at org.eclipse.swt.widgets.Display.#init>(Display.java:659)
+                at org.eclipse.swt.widgets.Display.getDefault(Display.java:1303)
+                at org.eclipse.jdt.internal.ui.util.SWTUtil.getStandardDisplay(SWTUtil.java:63)
+                at org.eclipse.jdt.internal.ui.viewsupport.ProblemMarkerManager.fireChanges(ProblemMarkerManager.java:201)
+                at org.eclipse.jdt.internal.ui.viewsupport.ProblemMarkerManager.resourceChanged(ProblemMarkerManager.java:144)
+                at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:291)
+                at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+                at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+                at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:327)
+                at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1181)
+                at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:157)
+                at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:242)
+                at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.util.SWTUtil.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ImageDescriptorRegistry.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ProblemMarkerManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="336841" opendate="2011-02-10 11:42:09" fixdate="2011-02-21 13:02:25" resolution="Fixed">
+        <buginformation>
+            <summary>package test classpath work show head view file attachment fix explorer detail synchronize
+            </summary>
+            <description>package test classpath work show head view file attachment fix explorer detail synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.tests.packageview.PackageExplorerShowInTests.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.packageview.PackageExplorerShowInTests.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="347599" opendate="2011-05-30 01:27:55" fixdate="2011-10-24 15:16:16" resolution="Fixed">
+        <buginformation>
+            <summary>release createchange none uncertainty cycle life patch performrefactoringhistoryoperation
+                refactoring attachment lock place possibility situation c checkfinalcondition resource
+                refactoringhistorywizard index rafactoring check way eclipse cdt dispose checkinitialcondition
+                conditions
+            </summary>
+            <description>release createchange none uncertainty cycle life patch performrefactoringhistoryoperation
+                refactoring attachment lock place possibility situation c checkfinalcondition resource
+                refactoringhistorywizard index rafactoring check way eclipse cdt dispose checkinitialcondition
+                conditions
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.examples.TestMoveDescriptorAction.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.refactoring.binary.BinaryRefactoringHistoryWizard.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.AllTests.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.RefactoringContextTest.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.resource.ResourceRefactoringTests.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.resource.ResourceRefactoringUndoTests.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.PerformRefactoringHistoryOperation.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.PerformRefactoringOperation.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.Refactoring.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.RefactoringContext.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.RefactoringDescriptor.java</file>
+            <file type="M">org.eclipse.ltk.ui.refactoring.RefactoringWizard.java</file>
+            <file type="M">org.eclipse.ltk.ui.refactoring.RefactoringWizardOpenOperation.java</file>
+            <file type="M">org.eclipse.ltk.ui.refactoring.history.RefactoringHistoryWizard.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="411636" opendate="2013-06-25 14:51:15" fixdate="2013-08-22 05:01:30" resolution="Fixed">
+        <buginformation>
+            <summary>editor burn stack package large link save project cycle trace file delay attachment build explorer
+                action indigo
+            </summary>
+            <description>editor burn stack package large link save project cycle trace file delay attachment build
+                explorer action indigo
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.tests.packageview.ContentProviderTests6.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="411841" opendate="2013-06-27 19:03:40" fixdate="2013-07-02 13:55:03" resolution="Fixed">
+        <buginformation>
+            <summary>junit stack process test work project capture launch menu sample rerun eclipse result patch view
+                trace freeze build enable context config
+            </summary>
+            <description>junit stack process test work project capture launch menu sample rerun eclipse result patch
+                view trace freeze build enable context config
+                org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:286)
+                org.eclipse.core.internal.localstore.FileSystemResourceManager.write(FileSystemResourceManager.java:1132)
+                org.eclipse.core.internal.resources.Folder.internalCreate(Folder.java:180)
+                org.eclipse.core.internal.resources.Folder.create(Folder.java:107)
+                org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.createFolder(AbstractImageBuilder.java:470)
+                org.eclipse.jdt.internal.core.builder.AbstractImageBuilder$1.visit(AbstractImageBuilder.java:254)
+                org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:85)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+                org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:86)
+                org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:127)
+                org.eclipse.core.internal.resources.Resource.accept(Resource.java:95)
+                org.eclipse.core.internal.resources.Resource.accept(Resource.java:52)
+                org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.addAllSourceFiles(AbstractImageBuilder.java:219)
+                org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:51)
+                org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:254)
+                org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:184)
+                org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:728)
+                org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+                org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+                org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+                org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+                org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+                org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:256)
+                org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:394)
+                org.eclipse.core.internal.resources.Project$1.run(Project.java:618)
+                org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+                org.eclipse.core.internal.resources.Project.internalBuild(Project.java:597)
+                org.eclipse.core.internal.resources.Project.build(Project.java:114)
+                org.eclipse.debug.core.model.LaunchConfigurationDelegate$1.run(LaunchConfigurationDelegate.java:423)
+                org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+                org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+                org.eclipse.debug.core.model.LaunchConfigurationDelegate.buildProjects(LaunchConfigurationDelegate.java:430)
+                org.eclipse.debug.core.model.LaunchConfigurationDelegate.buildForLaunch(LaunchConfigurationDelegate.java:126)
+                org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:823)
+                org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+                org.eclipse.jdt.internal.junit.model.TestRunSession.rerunTest(TestRunSession.java:485)
+                org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.rerunTest(TestRunnerViewPart.java:2062)
+                org.eclipse.jdt.internal.junit.ui.RerunAction.run(RerunAction.java:52)
+                org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+                org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+                org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+                org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+                org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+                org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+                org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3554)
+                org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3179)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.junit.model.TestRunSession.java</file>
+            <file type="M">org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="417765" opendate="2013-09-21 16:17:41" fixdate="2014-03-06 16:03:01" resolution="Fixed">
+        <buginformation>
+            <summary>newjavaprojectwizardpagetwo mageDescriptorRegistry hookDisplay Bndtool OSGi
+            </summary>
+            <description>newjavaprojectwizardpagetwo mageDescriptorRegistry hookDisplay Bndtool OSGi
+                at org.eclipse.swt.SWT.error(SWT.java:4397)
+                at org.eclipse.swt.SWT.error(SWT.java:4312)
+                at org.eclipse.swt.SWT.error(SWT.java:4283)
+                at org.eclipse.swt.widgets.Display.error(Display.java:1204)
+                at org.eclipse.swt.widgets.Display.checkDevice(Display.java:759)
+                at org.eclipse.swt.widgets.Display.disposeExec(Display.java:1181)
+                at org.eclipse.jdt.internal.ui.viewsupport.ImageDescriptorRegistry.hookDisplay(ImageDescriptorRegistry.java:77)
+                at org.eclipse.jdt.internal.ui.viewsupport.ImageDescriptorRegistry.#init> (ImageDescriptorRegistry.java:40)
+                at org.eclipse.jdt.internal.ui.JavaPlugin.internalGetImageDescriptorRegistry(JavaPlugin.java:954)
+                at org.eclipse.jdt.internal.ui.JavaPlugin.getImageDescriptorRegistry(JavaPlugin.java:347)
+                at org.eclipse.jdt.internal.ui.wizards.buildpaths.CPListLabelProvider.#init> (CPListLabelProvider.java:68)
+                at org.eclipse.jdt.internal.ui.wizards.buildpaths.BuildPathsBlock.#init>(BuildPathsBlock.java:189)
+                at org.eclipse.jdt.ui.wizards.JavaCapabilityConfigurationPage.getBuildPathsBlock(JavaCapabilityConfigurationPage.java:95)
+                at org.eclipse.jdt.ui.wizards.JavaCapabilityConfigurationPage.init(JavaCapabilityConfigurationPage.java:151)
+                at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.initializeBuildPath(NewJavaProjectWizardPageTwo.java:318)
+                at bndtools.wizards.project.NewBndProjectWizardPageTwo.initializeBuildPath(NewBndProjectWizardPageTwo.java:106)
+                at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.updateProject(NewJavaProjectWizardPageTwo.java:252)
+                at org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageTwo.performFinish(NewJavaProjectWizardPageTwo.java:484)
+                at org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard.finishPage(JavaProjectWizard.java:82)
+                at org.eclipse.jdt.internal.ui.wizards.NewElementWizard$2.run(NewElementWizard.java:118)
+                at org.eclipse.jdt.internal.core.BatchOperation.executeOperation(BatchOperation.java:39)
+                at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:728)
+                at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
+                at org.eclipse.jdt.core.JavaCore.run(JavaCore.java:5331)
+                at org.eclipse.jdt.internal.ui.actions.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:106)
+                at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ImageDescriptorRegistry.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
