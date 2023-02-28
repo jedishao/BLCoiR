@@ -1,0 +1,36 @@
+<bugrepository name="SWF">
+    <bug id="976" opendate="2008-12-01 23:36:59" fixdate="2008-12-10 06:55:46" resolution="Fixed">
+        <buginformation>
+            <summary>simpleelcontext eldelegatingvariableresolver eldelegatingpropertyresolver
+            </summary>
+            <description>simpleelcontext eldelegatingvariableresolver eldelegatingpropertyresolver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.faces.expression.ELDelegatingVariableResolver.java</file>
+            <file type="M">org.springframework.faces.expression.ELDelegatingPropertyResolver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1437" opendate="2010-12-13 06:46:57" fixdate="2013-08-16 08:46:12" resolution="Fixed">
+        <buginformation>
+            <summary>ast contextwhen example evaluation result springelexpression root getvalueinternal context override
+                class flow case synchronize package expression nullpointerexception most rootobject unique
+                propertyorfieldreference apos
+            </summary>
+            <description>ast contextwhen example evaluation result springelexpression root getvalueinternal context
+                override class flow case synchronize package expression nullpointerexception most rootobject unique
+                propertyorfieldreference apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.binding.expression.spel.SpringELExpressionParser.java</file>
+            <file type="M">org.springframework.binding.expression.spel.SpringELExpression.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

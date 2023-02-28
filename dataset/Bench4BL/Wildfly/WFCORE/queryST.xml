@@ -1,0 +1,231 @@
+<bugrepository name="WFCORE">
+    <bug id="132" opendate="2014-09-30 00:58:27" fixdate="2014-10-01 20:18:20" resolution="Fixed">
+        <buginformation>
+            <summary>add deal max runtime boundedqueuethreadpoolwriteattributehandler undefined core default define
+                attribute behavior value
+            </summary>
+            <description>add deal max runtime boundedqueuethreadpoolwriteattributehandler undefined core default define
+                attribute behavior value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.threads.BoundedQueueThreadPoolWriteAttributeHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="196" opendate="2014-10-23 21:01:44" fixdate="2014-11-01 02:06:10" resolution="Fixed">
+        <buginformation>
+            <summary>parking server usedit waiting ctrl channel mode unblock hostcontroller blocked lock
+                abstractqueuedsynchronizer block state managedserver controller monitor task management service domain
+            </summary>
+            <description>parking server usedit waiting ctrl channel mode unblock hostcontroller blocked lock
+                abstractqueuedsynchronizer block state managedserver controller monitor task management service domain
+                at org.jboss.as.host.controller.ServerInventoryImpl$1.handleClose(ServerInventoryImpl.java:461)
+                at org.jboss.as.host.controller.ServerInventoryImpl$1.handleClose(ServerInventoryImpl.java:456)
+                at org.jboss.remoting3.spi.SpiUtils.safeHandleClose(SpiUtils.java:54)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable$CloseHandlerTask.run(AbstractHandleableCloseable.java:501)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable.runCloseTask(AbstractHandleableCloseable.java:406)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable.closeComplete(AbstractHandleableCloseable.java:277)
+                at org.jboss.remoting3.remote.RemoteConnectionChannel.closeAction(RemoteConnectionChannel.java:532)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable.close(AbstractHandleableCloseable.java:153)
+                at org.jboss.as.protocol.mgmt.ManagementChannelReceiver.handleEnd(ManagementChannelReceiver.java:127)
+                at org.jboss.remoting3.remote.RemoteConnectionChannel$2.run(RemoteConnectionChannel.java:282)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:744)
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for  &amp;lt;0x00000007f61e5480&amp;gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:186)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2043)
+                at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+                at org.jboss.as.controller.remote.BlockingQueueOperationListener.retrievePreparedOperation(BlockingQueueOperationListener.java:88)
+                at org.jboss.as.controller.remote.TransactionalProtocolHandlers.executeBlocking(TransactionalProtocolHandlers.java:76)
+                at org.jboss.as.host.controller.ManagedServer$ServerStopTask.execute(ManagedServer.java:846)
+                at org.jboss.as.host.controller.ManagedServer.internalSetState(ManagedServer.java:531)
+                at org.jboss.as.host.controller.ManagedServer.stop(ManagedServer.java:259)
+                - locked &amp;lt;0x00000007f7946a30&amp;gt; (a org.jboss.as.host.controller.ManagedServer)
+                at org.jboss.as.host.controller.ServerInventoryImpl.stopServers(ServerInventoryImpl.java:339)
+                at org.jboss.as.host.controller.ServerInventoryImpl.shutdown(ServerInventoryImpl.java:437)
+                at org.jboss.as.host.controller.ServerInventoryService$1.run(ServerInventoryService.java:124)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:744)
+                at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.host.controller.ManagedServerProxy.java</file>
+            <file type="M">org.jboss.as.test.integration.domain.management.util.DomainTestConnection.java</file>
+            <file type="M">org.jboss.as.host.controller.mgmt.ServerToHostOperationHandlerFactoryService.java</file>
+            <file type="M">org.jboss.as.host.controller.ManagedServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="202" opendate="2014-10-24 09:33:34" fixdate="2014-11-17 12:38:29" resolution="Fixed">
+        <buginformation>
+            <summary>server stack deadlock eap protocolconnectionmanager lock client arraydeque resume cli debug break
+                bytebuffer monitor wfly remoting breakpoint management wildfly apos
+            </summary>
+            <description>server stack deadlock eap protocolconnectionmanager lock client arraydeque resume cli debug
+                break bytebuffer monitor wfly remoting breakpoint management wildfly apos
+                at org.jboss.as.cli.impl.CLIModelControllerClient$ChannelCloseHandler.handleClose(CLIModelControllerClient.java:286)
+                - waiting to lock &amp;lt;0x0000000783433408&amp;gt; (a java.lang.String)
+                at org.jboss.as.cli.impl.CLIModelControllerClient$ChannelCloseHandler.handleClose(CLIModelControllerClient.java:269)
+                at org.jboss.remoting3.spi.SpiUtils.safeHandleClose(SpiUtils.java:54)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable$CloseHandlerTask.run(AbstractHandleableCloseable.java:501)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable.runCloseTask(AbstractHandleableCloseable.java:406)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable.closeComplete(AbstractHandleableCloseable.java:277)
+                at org.jboss.remoting3.remote.RemoteConnectionChannel.closeAction(RemoteConnectionChannel.java:532)
+                at org.jboss.remoting3.spi.AbstractHandleableCloseable.closeAsync(AbstractHandleableCloseable.java:359)
+                at org.jboss.remoting3.remote.RemoteConnectionHandler.closeAllChannels(RemoteConnectionHandler.java:392)
+                - locked &amp;lt;0x00000007851ae6e0&amp;gt; (a java.util.ArrayDeque)
+                at org.jboss.remoting3.remote.RemoteConnectionHandler.handleConnectionClose(RemoteConnectionHandler.java:109)
+                at org.jboss.remoting3.remote.RemoteReadListener.handleEvent(RemoteReadListener.java:81)
+                - locked &amp;lt;0x00000007851ae6e0&amp;gt; (a java.util.ArrayDeque)
+                at org.jboss.remoting3.remote.RemoteReadListener.handleEvent(RemoteReadListener.java:45)
+                at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:72)
+                at org.xnio.channels.TranslatingSuspendableChannel.handleReadable(TranslatingSuspendableChannel.java:189)
+                at org.xnio.channels.TranslatingSuspendableChannel$1.handleEvent(TranslatingSuspendableChannel.java:103)
+                at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:72)
+                at org.xnio.channels.TranslatingSuspendableChannel.handleReadable(TranslatingSuspendableChannel.java:189)
+                at org.xnio.ssl.JsseConnectedSslStreamChannel.handleReadable(JsseConnectedSslStreamChannel.java:183)
+                at org.xnio.channels.TranslatingSuspendableChannel$1.handleEvent(TranslatingSuspendableChannel.java:103)
+                at org.xnio.ChannelListeners.invokeChannelListener(ChannelListeners.java:72)
+                at org.xnio.nio.NioHandle.run(NioHandle.java:90)
+                at org.xnio.nio.WorkerThread.run(WorkerThread.java:198)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.cli.handlers.ConnectionInfoHandler.java</file>
+            <file type="M">org.jboss.as.cli.impl.CLIModelControllerClient.java</file>
+            <file type="M">org.jboss.as.cli.impl.CommandContextImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="553" opendate="2015-02-18 23:23:50" fixdate="2015-03-06 12:29:58" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor request think modelcontrollerclientoperationhandler instance
+                modelcontrollerclientoperationhandlerfactoryservice clientrequestexecutor pool channel constructor
+                interface setting manage stop fix management service client create class addition
+            </summary>
+            <description>threadpoolexecutor request think modelcontrollerclientoperationhandler instance
+                modelcontrollerclientoperationhandlerfactoryservice clientrequestexecutor pool channel constructor
+                interface setting manage stop fix management service client create class addition
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.controller.remote.ModelControllerClientOperationHandler.java</file>
+            <file type="M">org.jboss.as.controller.ModelControllerClientTestCase.java</file>
+            <file type="M">org.jboss.as.controller.remote.AbstractModelControllerOperationHandlerFactoryService.java</file>
+            <file type="M">org.jboss.as.host.controller.mgmt.MasterDomainControllerOperationHandlerService.java</file>
+            <file type="M">org.jboss.as.controller.remote.ModelControllerClientOperationHandlerFactoryService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="997" opendate="2015-09-22 03:53:31" fixdate="2015-10-08 12:06:14" resolution="Fixed">
+        <buginformation>
+            <summary>handshake server hang ldaploginmodule ssl timeout security default solution ldap eap block value
+                add testing kill failover response realm option
+            </summary>
+            <description>handshake server hang ldaploginmodule ssl timeout security default solution ldap eap block
+                value add testing kill failover response realm option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.domain.management.connections.ldap.ThreadLocalSSLSocketFactory.java</file>
+            <file type="M">org.jboss.as.domain.management.security.WrapperSSLContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1002" opendate="2015-09-22 21:22:02" fixdate="2015-10-23 17:04:01" resolution="Fixed">
+        <buginformation>
+            <summary>sendresponse server log line assertionerror error slave result erc assertion situation outcome
+                execute_tx_request npe process race abortoperationhandler stderr executionrequestcontext call fail
+                complete_tx_request task executerequestcontext management response
+            </summary>
+            <description>sendresponse server log line assertionerror error slave result erc assertion situation outcome
+                execute_tx_request npe process race abortoperationhandler stderr executionrequestcontext call fail
+                complete_tx_request task executerequestcontext management response
+                at org.jboss.as.controller.remote.TransactionalProtocolOperationHandler$ExecuteRequestContext.failed(TransactionalProtocolOperationHandler.java:458)
+                at org.jboss.as.controller.remote.TransactionalProtocolOperationHandler$AbortOperationHandler.handleRequest(TransactionalProtocolOperationHandler.java:275)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:270)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:252)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:123)
+                at org.jboss.as.protocol.mgmt.ManagementChannelReceiver$1.handleMessage(ManagementChannelReceiver.java:56)
+                at org.jboss.as.protocol.mgmt.ManagementChannelReceiver.handleMessage(ManagementChannelReceiver.java:85)
+                at org.jboss.remoting3.remote.RemoteConnectionChannel$5.run(RemoteConnectionChannel.java:451)
+                at org.jboss.remoting3.EndpointImpl$TrackingExecutor$1.run(EndpointImpl.java:705)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.controller.remote.TransactionalProtocolOperationHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1025" opendate="2015-10-01 15:37:07" fixdate="2015-10-04 15:33:28" resolution="Fixed">
+        <buginformation>
+            <summary>parking waiting rejectedexecutionexceptionthe managementrequestcontext result trip lock
+                rejectedexecutionexception block prio case jira os_prio one transactionalprotocoloperationhandler sync
+                async caller task management failure response executeasync countdownlatch
+            </summary>
+            <description>parking waiting rejectedexecutionexceptionthe managementrequestcontext result trip lock
+                rejectedexecutionexception block prio case jira os_prio one transactionalprotocoloperationhandler sync
+                async caller task management failure response executeasync countdownlatch
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for  &amp;lt;0xddbb4aa0&amp;gt; (a java.util.concurrent.CountDownLatch$Sync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
+                at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:231)
+                at org.jboss.as.controller.remote.TransactionalProtocolOperationHandler.sendResponse(TransactionalProtocolOperationHandler.java:540)
+                at org.jboss.as.controller.remote.TransactionalProtocolOperationHandler$ExecuteRequestContext.failed(TransactionalProtocolOperationHandler.java:377)
+                - locked &amp;lt;0xddbb2300&amp;gt; (a org.jboss.as.controller.remote.TransactionalProtocolOperationHandler$ExecuteRequestContext)
+                at org.jboss.as.protocol.mgmt.ActiveOperationSupport$ActiveOperationImpl$2.handleFailed(ActiveOperationSupport.java:350)
+                at org.jboss.threads.AsyncFutureTask$Reg.run(AsyncFutureTask.java:60)
+                at org.jboss.as.protocol.mgmt.ActiveOperationSupport$1.execute(ActiveOperationSupport.java:55)
+                at org.jboss.threads.AsyncFutureTask.safeExecute(AsyncFutureTask.java:169)
+                at org.jboss.threads.AsyncFutureTask.setFailed(AsyncFutureTask.java:162)
+                at org.jboss.as.protocol.mgmt.ActiveOperationSupport$ActiveOperationImpl.access$400(ActiveOperationSupport.java:295)
+                at org.jboss.as.protocol.mgmt.ActiveOperationSupport$ActiveOperationImpl$1.failed(ActiveOperationSupport.java:315)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler$2.executeAsync(AbstractMessageHandler.java:333)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler$2.executeAsync(AbstractMessageHandler.java:315)
+                at org.jboss.as.controller.remote.TransactionalProtocolOperationHandler$ExecuteRequestHandler.handleRequest(TransactionalProtocolOperationHandler.java:144)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:270)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:252)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:123)
+                at org.jboss.as.protocol.mgmt.ManagementChannelReceiver$1.handleMessage(ManagementChannelReceiver.java:56)
+                at org.jboss.as.protocol.mgmt.ManagementChannelReceiver.handleMessage(ManagementChannelReceiver.java:85)
+                at org.jboss.remoting3.remote.RemoteConnectionChannel$5.run(RemoteConnectionChannel.java:463)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.controller.remote.ModelControllerClientOperationHandler.java</file>
+            <file type="M">org.jboss.as.protocol.mgmt.ManagementRequestContext.java</file>
+            <file type="M">org.jboss.as.protocol.mgmt.AbstractMessageHandler.java</file>
+            <file type="M">org.jboss.as.controller.remote.TransactionalProtocolOperationHandler.java</file>
+            <file type="M">org.jboss.as.controller.remote.ResponseAttachmentInputStreamSupportTestCase.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
