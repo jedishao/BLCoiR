@@ -1,0 +1,855 @@
+<bugrepository name="ecf">
+    <bug id="323208" opendate="2010-08-19 23:02:56" fixdate="2010-09-26 02:34:17" resolution="Fixed">
+        <buginformation>
+            <summary>Distribution Provider exceeds startup time limit (5 sec) if existing services are present.
+            </summary>
+            <description>Created attachment 177060 [details]
+                testcase
+                I'm using Eclipse 3.6 with ECF 3.3.
+                I was trying to reproduce the problem I encountered with multiple hosts on the same machine with
+                zookeeper when I ran into an exception when using jmdns.
+                To reproduce, unzip the attached workspace, run the consumer, run the first host, then run the second
+                host.
+                You should get the following exception:
+                !MESSAGE While loading class
+                "org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl$DiscoveredEndpointEvent",
+                thread "Thread[JMDNS Discovery Thread,5,main]" timed out waiting (5000ms) for thread "Thread[Start Level
+                Event Dispatcher,5,main]" to finish starting bundle
+                "org.eclipse.ecf.osgi.services.distribution_1.2.0.v20100615-1451 [21]".
+                To avoid deadlock, thread "Thread[JMDNS Discovery Thread,5,main]" is proceeding but
+                "org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl$DiscoveredEndpointEvent"
+                may not be fully initialized.
+                !STACK 0
+                org.osgi.framework.BundleException: State change in progress for bundle
+                "initial@reference:file:../../workspaces/osgi-remote-services/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.ecf.osgi.services.distribution_1.2.0.v20100615-1451.jar/"
+                by thread "Start Level Event Dispatcher".
+                at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1071)
+                at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:281)
+                at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+                at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+                at
+                org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+                at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+                at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+                at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+                at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+                at
+                org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl.serviceChanged(DiscoveredServiceTrackerImpl.java:151)
+                at
+                org.eclipse.ecf.internal.osgi.services.discovery.ServicePublicationHandler.notifyDiscoveredServiceTrackers(ServicePublicationHandler.java:103)
+                at
+                org.eclipse.ecf.internal.osgi.services.discovery.ServicePublicationHandler.serviceDiscovered(ServicePublicationHandler.java:73)
+                at
+                org.eclipse.ecf.discovery.AbstractDiscoveryContainerAdapter.fireServiceDiscovered(AbstractDiscoveryContainerAdapter.java:120)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer.fireDiscovered(JMDNSDiscoveryContainer.java:366)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer$2.run(JMDNSDiscoveryContainer.java:327)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer$1.run(JMDNSDiscoveryContainer.java:125)
+                at java.lang.Thread.run(Thread.java:637)
+                Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+                ...
+                21 more
+                Root exception:
+                org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+                at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1071)
+                at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:281)
+                at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+                at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:265)
+                at
+                org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:106)
+                at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:453)
+                at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:393)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+                at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:410)
+                at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+                at java.lang.ClassLoader.loadClass(ClassLoader.java:248)
+                at
+                org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl.serviceChanged(DiscoveredServiceTrackerImpl.java:151)
+                at
+                org.eclipse.ecf.internal.osgi.services.discovery.ServicePublicationHandler.notifyDiscoveredServiceTrackers(ServicePublicationHandler.java:103)
+                at
+                org.eclipse.ecf.internal.osgi.services.discovery.ServicePublicationHandler.serviceDiscovered(ServicePublicationHandler.java:73)
+                at
+                org.eclipse.ecf.discovery.AbstractDiscoveryContainerAdapter.fireServiceDiscovered(AbstractDiscoveryContainerAdapter.java:120)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer.fireDiscovered(JMDNSDiscoveryContainer.java:366)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer$2.run(JMDNSDiscoveryContainer.java:327)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer$1.run(JMDNSDiscoveryContainer.java:125)
+                at java.lang.Thread.run(Thread.java:637)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.osgi.services.distribution.Activator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="273819" opendate="2009-04-27 07:24:25" fixdate="2011-08-09 01:01:30" resolution="Fixed">
+        <buginformation>
+            <summary>Containers are instantiated every time a wizard opens.
+            </summary>
+            <description>Somehow, this feels kind of wrong.
+                The container is also not disposed when the wizard closes (if the user cancels the dialog).
+                Should it?
+                Currently, every time the wizard is opened and closed, a thread is started (per bug 266817) and as far
+                as I can tell, runs forever.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.irc.ui.Activator.java</file>
+            <file type="M">org.eclipse.ecf.internal.irc.ui.wizards.IRCConnectWizard.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.xmpp.ui.wizards.XMPPConnectWizard.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="348487" opendate="2011-06-06 20:40:02" fixdate="2011-11-30 14:16:38" resolution="Fixed">
+        <buginformation>
+            <summary>JMDNS Discovery Thread is slowing down shutdown.
+            </summary>
+            <description>I noticed that after Eclipse appears to have shutdown it takes a long time for the Java process
+                to exit.
+                Looking at a thread dump all remaining threads are daemon threads except for JMDNS Discovery Thread.
+                Shouln't this be marked as a daemon thread as well and/or shutdown when the bundle is stopped that
+                started it?
+                Full thread dump Java HotSpot(TM) Server VM (16.3-b01 mixed mode):
+                "MultiThreadedHttpConnectionManager cleanup" daemon prio=10 tid=0x0b4aa800 nid=0xd6e in Object.wait()
+                [0xc0f76000]
+                java.lang.Thread.State: WAITING (on object monitor)
+                at java.lang.Object.wait(Native Method)
+                - waiting on#xd71f4800> (a java.lang.ref.ReferenceQueue$Lock)
+                at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+                - locked#xd71f4800> (a java.lang.ref.ReferenceQueue$Lock)
+                at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+                at
+                org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$ReferenceQueueThread.run(MultiThreadedHttpConnectionManager.java:1122)
+                "Thread-4" daemon prio=10 tid=0xc32f8800 nid=0xcb3 in Object.wait() [0xc06fe000]
+                java.lang.Thread.State: TIMED_WAITING (on object monitor)
+                at java.lang.Object.wait(Native Method)
+                - waiting on#xd71012c8> (a org.apache.commons.httpclient.util.IdleConnectionTimeoutThread)
+                at
+                org.apache.commons.httpclient.util.IdleConnectionTimeoutThread.run(IdleConnectionTimeoutThread.java:108)
+                - locked#xd71012c8> (a org.apache.commons.httpclient.util.IdleConnectionTimeoutThread)
+                "JMDNS Discovery Thread" prio=10 tid=0xc0db9000 nid=0xcaa in Object.wait() [0xc02fe000]
+                java.lang.Thread.State: WAITING (on object monitor)
+                at java.lang.Object.wait(Native Method)
+                - waiting on#xd62fd768> (a org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue)
+                at java.lang.Object.wait(Object.java:485)
+                at org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue.peekQueue(SimpleFIFOQueue.java:53)
+                - locked#xd62fd768> (a org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue)
+                at org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue.dequeue(SimpleFIFOQueue.java:41)
+                - locked#xd62fd768> (a org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue)
+                at
+                org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer$1.run(JMDNSDiscoveryContainer.java:121)
+                at java.lang.Thread.run(Thread.java:619)
+                "Low Memory Detector" daemon prio=10 tid=0xc6f16c00 nid=0xc70 runnable [0x00000000]
+                java.lang.Thread.State: RUNNABLE
+                "CompilerThread1" daemon prio=10 tid=0xc6f14c00 nid=0xc6f waiting on condition [0x00000000]
+                java.lang.Thread.State: RUNNABLE
+                "CompilerThread0" daemon prio=10 tid=0xc6f12c00 nid=0xc6e waiting on condition [0x00000000]
+                java.lang.Thread.State: RUNNABLE
+                "Signal Dispatcher" daemon prio=10 tid=0xc6f11400 nid=0xc6d waiting on condition [0x00000000]
+                java.lang.Thread.State: RUNNABLE
+                "Finalizer" daemon prio=10 tid=0xc6f00800 nid=0xc6c in Object.wait() [0xc70f3000]
+                java.lang.Thread.State: WAITING (on object monitor)
+                at java.lang.Object.wait(Native Method)
+                - waiting on#xd3969058> (a java.lang.ref.ReferenceQueue$Lock)
+                at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+                - locked#xd3969058> (a java.lang.ref.ReferenceQueue$Lock)
+                at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+                at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+                "Reference Handler" daemon prio=10 tid=0x096e0c00 nid=0xc6b in Object.wait() [0xc7144000]
+                java.lang.Thread.State: WAITING (on object monitor)
+                at java.lang.Object.wait(Native Method)
+                - waiting on#xd3981908> (a java.lang.ref.Reference$Lock)
+                at java.lang.Object.wait(Object.java:485)
+                at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+                - locked#xd3981908> (a java.lang.ref.Reference$Lock)
+                "main" prio=10 tid=0x09640800 nid=0xc65 waiting on condition [0xf6992000]
+                java.lang.Thread.State: RUNNABLE
+                at java.lang.Shutdown.halt0(Native Method)
+                at java.lang.Shutdown.halt(Shutdown.java:95)
+                - locked#xd3837c70> (a java.lang.Shutdown$Lock)
+                at java.lang.Shutdown.exit(Shutdown.java:169)
+                - locked#xc7b25238> (a java.lang.Class for java.lang.Shutdown)
+                at java.lang.Runtime.exit(Runtime.java:90)
+                at java.lang.System.exit(System.java:904)
+                at org.eclipse.equinox.launcher.Main.main(Main.java:1394)
+                "VM Thread" prio=10 tid=0x096de000 nid=0xc6a runnable
+                "GC task thread#0 (ParallelGC)" prio=10 tid=0x09647800 nid=0xc66 runnable
+                "GC task thread#1 (ParallelGC)" prio=10 tid=0x09649000 nid=0xc67 runnable
+                "GC task thread#2 (ParallelGC)" prio=10 tid=0x0964a800 nid=0xc68 runnable
+                "GC task thread#3 (ParallelGC)" prio=10 tid=0x0964bc00 nid=0xc69 runnable
+                "VM Periodic Task Thread" prio=10 tid=0xc6f18800 nid=0xc71 waiting on condition
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>3.5.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.core.sharedobject.util.SimpleFIFOQueue.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="125572" opendate="2006-01-27 16:32:14" fixdate="2006-01-28 15:37:40" resolution="Fixed">
+        <buginformation>
+            <summary>ECF Generic provider thread interlock.
+            </summary>
+            <description>We see the following problem while running an ECF-based app that connects to an ECF-based
+                server app using version 0.5 or version 0.6 ECF generic provider.
+                From time to time two threads in a client app become interlocked on two mutexes:
+                Thread [Thread-2] (Suspended)
+                owns: Client (id=136)
+                waiting for: ClientSOContainer$Lock (id=135)
+                SyncSOClientContainer(ClientSOContainer).connect(ID,
+                IConnectContext) line: 162
+                TimeSyncTask$TimeSyncInitiator.initSyncService() line: 48
+                TimeSyncTask.run() line: 133
+                Thread.run() line: not available
+                Thread [Thread-3] (Suspended)
+                owns: ClientSOContainer$Lock (id=135)
+                waiting for: Client (id=136)
+                Client.isConnected() line: 213
+                SyncSOClientContainer(SOContainer).killConnection(IConnection) line: 742
+                SyncSOClientContainer(ClientSOContainer).dispose() line: 79
+                TimeSyncTask$TimeSyncInitiator.closeSyncService() line: 77
+                TimeSyncTask$TimeSyncInitiator.sendTimeSyncMessage() line: 67
+                TimeSyncTask.run() line: 134
+                Thread.run() line: not available
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.generic.ClientSOContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="257017" opendate="2008-12-01 02:09:25" fixdate="2009-03-07 13:06:38" resolution="Fixed">
+        <buginformation>
+            <summary>Implement the datashare APIs on top of the Team API to allow two peers to synchronize their
+                resources.
+            </summary>
+            <description>See attachment 118976 [details] from bug 239048 comment 2.
+                The synchronize view and the work will be discussed on this bug as I'd like to leave 239048 for an
+                implementation of the sync API that allows changes to the workspace to be distributed in real-time.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.team.internal.ecf.ui.actions.OverrideWithRemoteAction.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.actions.OverrideWithRemoteOperation.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.handlers.CompareWithHandler.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.handlers.CompareWithMenuContributionItem.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.handlers.SynchronizeWithHandler.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.handlers.SynchronizeWithMenuContributionItem.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.subscriber.RemoteSubscriberParticipant.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.wizards.RemotePeerSynchronizeWizard.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.ui.wizards.RemotePeerSynchronizeWizardPage.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.ECFStart.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.RemoteShare.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.RemoteSyncInfo.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.TeamSynchronization.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.messages.FetchResponse.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.messages.FetchVariantRequest.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.messages.FetchVariantsRequest.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.messages.IResponse.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.messages.ShareRequest.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.messages.ShareResponse.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.variants.RemoteResourceVariant.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.variants.RemoteResourceVariantComparator.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.variants.RemoteResourceVariantTree.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.variants.RemoteResourceVariantTreeSubscriber.java</file>
+            <file type="M">org.eclipse.team.internal.ecf.core.variants.RemoteStorage.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="229237" opendate="2008-04-29 03:47:59" fixdate="2013-03-28 11:13:16" resolution="Fixed">
+        <buginformation>
+            <summary>xmpps accounts can appear twice in contacts list.
+            </summary>
+            <description>When creating a connection to (e.g.) the XMPPS provider for the first time, when the contacts
+                list view has not yet been shown, the same account (e.g. slewis@ecf.eclipse.org) can be added twice
+                (MultiRosterView.addContainer called twice).
+                When the connect ui opens the view i.e. in XMPPConnectWizard.performFinish (this block is executed via
+                Display.asyncExec()).
+                private void openView() {
+                try {
+                final MultiRosterView view = (MultiRosterView)
+                workbench.getActiveWorkbenchWindow().getActivePage().showView(MultiRosterView.VIEW_ID);
+                view.addContainer(container);
+                } catch (final PartInitException e) {
+                e.printStackTrace();
+                }
+                }
+                When showView(MultiRosterView.VIEW_ID) is called the first time, this triggers the
+                MultiRosterView.setupTreeViewer, which calls MultiRosterView.retrieveServices().
+                In MRV.retrieveServices is a block that looks for IPresenceServices and if found adds the associated
+                container via MRV.addContainer:
+                private void retrieveServices() {
+                IPresenceService[] services = Activator.getDefault().getPresenceServices();
+                for (int i = 0; i# services.length; i++) {
+                IContainer container = (IContainer) services[i].getAdapter(IContainer.class);
+                if (container != null  container.getConnectedID() != null) {
+                addContainer(container);
+                }
+                }
+                }
+                Because the openView block is run asynchronously, retrieveServices can find the newly connected
+                container exposed as an IPresenceService...immediately after the container connect notification (in xmpp
+                provider).
+                Then, the view.addContainer(container) call is also made (via openView()), and the same
+                container/account is added twice.
+                Remy what do you think is the appropriate fix? It's not changing the asyncExec to a syncExec (this
+                can/does result in deadlock).
+                It could be
+                1) removing retrieveServices() (but would this have other negative side effects?)
+                2) Adding a check in addContainer for the prior existence of a given container and not adding it if
+                already present?
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.presence.ui.MultiRosterView.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="321469" opendate="2010-08-01 21:10:56" fixdate="2010-08-01 21:13:06" resolution="Fixed">
+        <buginformation>
+            <summary>improve clean up in DiscoveredServiceTracker.
+            </summary>
+            <description>In DiscoveredServiceTracker a ListenerQueue and Thread/ThreadGroup are created but never
+                explicitly stopped when the org.eclipse.ecf.osgi.services.distribution bundle is stopped.
+                This cleanup should be done when this bundle is stopped.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl.java</file>
+            <file type="M">org.eclipse.ecf.internal.osgi.services.distribution.Activator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="321468" opendate="2010-08-01 19:30:47" fixdate="2010-08-01 19:46:59" resolution="Fixed">
+        <buginformation>
+            <summary>RegistrySharedObject should dispatch remote service listener events asynchronously.
+            </summary>
+            <description>Currently, in RegistrySharedObject.fireRemoteServiceListeners the dispatch to the registered
+                listeners is synchronous.
+                This has the result that if the code inside the IRemoteServiceListener attempts to access the remote
+                service (e.g. to invoke a remote call), this will deadlock.
+                The fix is to dispatch remote service listener events asynchronously via a ListenerQueue.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="223484" opendate="2008-03-21 07:36:26" fixdate="2008-12-13 20:39:22" resolution="Fixed">
+        <buginformation>
+            <summary>Several threads remain though disconnect was done from the XMPP server.
+            </summary>
+            <description>Build ID: 2.0.0.v20080310-1643
+                Steps To Reproduce:
+                1.
+                Connect the XMPP server
+                2.
+                Discoonect
+                5 threads do not dispose;
+                [org.eclipse.ecf.docshare.DocShare:run]
+                [org.eclipse.ecf.presence.collab.ui.url.URLShare:run]
+                [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run]
+                [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run]
+                [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run]
+                More information:
+                Repeat 3 time ( 1, 2, 1, 2, 1 and 2),
+                the following threads remained.
+                Thread [main] (Running)
+                Daemon Thread [State Data Manager] (Running)
+                Daemon Thread [Framework Event Dispatcher] (Running)
+                Daemon Thread [Start Level Event Dispatcher] (Running)
+                Daemon Thread [Bundle File Closer] (Running)
+                Thread [Worker-0] (Running)
+                Thread [Worker-4] (Running)
+                Thread [JMDNS Discovery Thread] (Running)
+                Thread [Timer-0] (Running)
+                Thread [JmDNS.SocketListener] (Running)
+                Thread [org.eclipse.ecf.datashare.IChannelContainerAdapter:run] (Running)
+                Daemon Thread [Thread-5] (Running)
+                Thread [org.eclipse.ecf.docshare.DocShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.url.URLShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run] (Running)
+                Thread [org.eclipse.ecf.datashare.IChannelContainerAdapter:run] (Running)
+                Thread [org.eclipse.ecf.docshare.DocShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.url.URLShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run] (Running)
+                Thread [org.eclipse.ecf.datashare.IChannelContainerAdapter:run] (Running)
+                Thread [org.eclipse.ecf.docshare.DocShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.url.URLShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.view.ViewShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.console.ConsoleShare:run] (Running)
+                Thread [org.eclipse.ecf.presence.collab.ui.screencapture.ScreenCaptureShare:run] (Running)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.presence.ui.MultiRosterAccount.java</file>
+            <file type="M">org.eclipse.ecf.internal.docshare.ECFStart.java</file>
+            <file type="M">org.eclipse.ecf.presence.ui.MultiRosterView.java</file>
+            <file type="M">org.eclipse.ecf.datashare.AbstractShare.java</file>
+            <file type="M">org.eclipse.ecf.internal.presence.collab.ui.ShareReceiversECFStart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="265413" opendate="2009-02-19 02:27:38" fixdate="2009-02-19 02:33:18" resolution="Fixed">
+        <buginformation>
+            <summary>Intermittent dead-lock issues in JMDNSDiscoveryContainer.
+            </summary>
+            <description>org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer must not use the same lock
+                objects between threads that make calls on javax.jmdns.JmDNS and calls originating from
+                javax.jmdns.JmDNS.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="337973" opendate="2011-02-23 09:09:05" fixdate="2011-03-14 04:37:10" resolution="Fixed">
+        <buginformation>
+            <summary>Remote service undiscovered and not rediscovered due to concurrency bug.
+            </summary>
+            <description>Build Identifier: 3.4
+                Hi,
+                While using zoodiscovery I got a remote service undiscovered and it was not rediscovered again.
+                Following error has been reported at the moment of undiscovery:
+                22-02-2011 20:47:04 [pool-1-thread-5] [org.apache.zookeeper.server.NIOServerCnxn] ERROR - Thread
+                Thread[pool-1-thread-5,5,main] died
+                org.eclipse.core.runtime.AssertionFailedException: null argument:
+                at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:85)
+                at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:73)
+                at org.eclipse.ecf.provider.zookeeper.node.internal.WatchManager.addZooKeeper(WatchManager.java:238)
+                at org.eclipse.ecf.provider.zookeeper.node.internal.ReadRoot$1.run(ReadRoot.java:70)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+                at java.lang.Thread.run(Unknown Source)
+                I had a quick look at the zoodiscovery code and it seems that the above exception happened because
+                ReadRoot.this.readKeeper is null on line 70 in ReadRoot.java.
+                I think the reason why readKeeper is null is because there's a race condition in the ReadRoot.process
+                method.
+                Although the process method is synchronized it uses a separate thread to process the WatchedEvent and
+                the code within this thread is not thread safe.
+                For example, you get two ReadRoot.process calls quite fast after each other:
+                - one with WatchedEvent state Disconnected or Expired (A)
+                - one with WatchedEvent state SyncConnected (B)
+                Then you can have following:
+                enter ReadRoot.process(A)
+                /
+                start thread for A -
+                | exit ReadRoot.process(A)
+                | enter ReadRoot.process(B)
+                enter case Disconnected \
+                ReadRoot.this.isConnected=false \
+                enter connect() - start thread for B
+                ...
+                |
+                this.readKeeper.close() |
+                | enter case SyncConnected
+                | if (!ReadRoot.this.isConnected)
+                this.readKeeper = null |
+                | ReadRoot.this.isConnected=true
+                watchManager.removeZooKeeper(null) ???? |
+                | watchManager.addZooKeeper(null) --> !!! AssertionFailedException !!!
+                ???? --> That's another bug: in connect method removeZooKeeper will have no effect because
+                this.readKeeper is already set to null.
+                This means that the list of zooKeepers in watchManager will only grow.
+                I've put the severity on Major because the remote service is not rediscovered.
+                Reproducible: Sometimes
+                Steps to Reproduce:
+                As for any concurrency bug it's hard to reproduce and I don't have any idea how I could increase the
+                probability to reproduce it.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.zookeeper.node.internal.ReadRoot.java</file>
+            <file type="M">org.eclipse.ecf.provider.zookeeper.core.internal.IService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="299849" opendate="2010-01-16 11:33:20" fixdate="2010-01-16 12:01:20" resolution="Fixed">
+        <buginformation>
+            <summary>RegistrySharedObject#handle* can throw NPE.
+            </summary>
+            <description>In this code:
+                if (remoteContainerID == null || getLocalContainerID().equals(remoteContainerID)) {
+                return;
+                }
+                XMPPRemoteServiceAdapterFactory#XMPPRegistrySharedObject#getLocalContainerID()
+                returns container ID as connected ID:
+                protected ID getLocalContainerID() {
+                // For XMPP, the local container ID is its connected ID.
+                return getContext().getConnectedID();
+                }
+                this code returns XMPPContainer.remoteServerID.
+                But! If we will invoke method XMPPContainer.disconnect() then we will set remoteServerID to null and
+                getLocalContainerID will return null.
+                In RegistrySharedObject#handleAddRegistration we will have NPE.
+                This situation can occur because we receive/handle packet in another (not main) thread.
+                We can receive message in thread A, close connection in thread Main and begin handle received message in
+                thread A.
+                Therefore we can got NPE.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="341818" opendate="2011-04-04 12:18:56" fixdate="2011-05-11 10:48:13" resolution="Fixed">
+        <buginformation>
+            <summary>System is out of thread resources when using r_osgi provider.
+            </summary>
+            <description>Build Identifier: eclipse 3.6.2 SDK - ECF 3.5
+                executing the sample code:
+                org.eclipse.ecf.examples.remoteservices.hello.consumer.rs
+                org.eclipse.ecf.examples.remoteservices.hello.host.rs
+                the consumer code was enhanced:
+                // 6.
+                Finally...call the proxy
+                long start, end, total;
+                start = System.currentTimeMillis();
+                String response=null;
+                long count = 8000;
+                for (int i = 0; i#count;i++)
+                response = proxy.sayHello("RemoteService Consumer");
+                end = System.currentTimeMillis();
+                total = end - start;
+                long avg = total/count;
+                System.out.println("total=["+total+"][avg=" +(avg) +"]"+ response);
+                error recived:
+                An internal error has occurred.
+                unable to create new native thread
+                Reproducible: Always
+                Steps to Reproduce:
+                1.
+                invoke the consumer 8000 times in close loop
+                2.
+                3.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.provider.r_osgi.Activator.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.r_osgi.RemoteServiceImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="432662" opendate="2014-04-12 01:58:25" fixdate="2014-07-10 09:41:54" resolution="Fixed">
+        <buginformation>
+            <summary>ECFRuntimeException: Unable to instantiate schemes for HttpClient.
+            </summary>
+            <description>In my multi-threaded application I get many exceptions like the following for a short period
+                after startup:
+                org.eclipse.ecf.core.util.ECFRuntimeException: Unable to instantiate schemes for HttpClient.
+                at
+                org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.registerSchemes(HttpClientRetrieveFileTransfer.java:200)
+                at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.init>
+                (HttpClientRetrieveFileTransfer.java:176)
+                at
+                org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransferFactory.newInstance(HttpClientRetrieveFileTransferFactory.java:22)
+                at org.eclipse.ecf.internal.provider.filetransfer.Activator.getFileTransfer(Activator.java:608)
+                at
+                org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:92)
+                at org.eclipse.oomph.internal.setup.util.ECFURIHandlerImpl.createInputStream(ECFURIHandlerImpl.java:129)
+                Finding the cause was a little difficult because ECFRuntimeException.printStackTrace() doesn't show the
+                nested causes, but I found the cause nevertheless.
+                It's in org.eclipse.ecf.internal.provider.filetransfer.httpclient4.Activator:
+                public SSLSocketFactory getSSLSocketFactory() {
+                if (sslSocketFactoryTracker == null) {
+                sslSocketFactoryTracker = new ServiceTracker(this.context, SSLSocketFactory.class.getName(), null);
+                sslSocketFactoryTracker.open();
+                }
+                return (SSLSocketFactory) sslSocketFactoryTracker.getService();
+                }
+                The method is not thread-safe.
+                Adding a "synchronized" modifier solves the problem.
+                I noticed that the getLogService() method might suffer from the same problem, but if so it didn't
+                manifest itself for me.
+                I used org.eclipse.ecf.provider.filetransfer.httpclient4_1.0.300.v20140228-1838 and found that the bug
+                is still present in the master branch.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.filetransfer.httpclient4.Activator.java</file>
+            <file type="M">org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientDefaultSSLSocketFactoryModifier.java</file>
+            <file type="M">org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientDefaultSSLSocketFactoryModifier.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.filetransfer.httpclient.Activator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="265415" opendate="2009-02-19 02:37:58" fixdate="2009-02-19 02:39:29" resolution="Fixed">
+        <buginformation>
+            <summary>Dead-lock in javax.jmdns.impl.JmDNSImpl.unregisterService(ServiceInfo).
+            </summary>
+            <description>JMDNS 2.1
+                If javax.jmdns.impl.tasks.Canceler run before javax.jmdns.impl.JmDNSImpl obtains the synchronization
+                object javax.jmdns.impl.JmDNSImpl.unregisterService(ServiceInfo).lock, a dead-lock occurs.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.JmDNSImpl.java</file>
+            <file type="M">org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.tasks.Canceler.java</file>
+            <file type="M">org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.JmDNSImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="271323" opendate="2009-04-06 10:46:22" fixdate="2009-04-08 12:25:42" resolution="Fixed">
+        <buginformation>
+            <summary>improve shared object API performance.
+            </summary>
+            <description>The shared object API has some unnecessary synchronization and tracing that significantly
+                reduced performance.
+                These should be eliminated.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.generic.SOContext.java</file>
+            <file type="M">org.eclipse.ecf.core.sharedobject.util.SimpleFIFOQueue.java</file>
+            <file type="M">org.eclipse.ecf.provider.comm.tcp.Client.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="267035" opendate="2009-03-04 10:24:05" fixdate="2009-03-05 02:38:31" resolution="Fixed">
+        <buginformation>
+            <summary>ReplicaSharedObjectDescription#toString() is not thread safe.
+            </summary>
+            <description>Build ID: M20080911-1700
+                Steps To Reproduce:
+                Primary(GUID[Cq+I8tyQMDnXR9gyzYuCvllUYz4=]; org.acoveo.ecf.monitoringTool.AgentGroupInformation) says
+                Hello java.util.ConcurrentModificationException.
+                at java.util.LinkedList$ListItr.checkForComodification(LinkedList.java:761)
+                at java.util.LinkedList$ListItr.next(LinkedList.java:696)
+                at java.util.AbstractCollection.toString(AbstractCollection.java:421)
+                at java.lang.String.valueOf(String.java:2827)
+                at java.lang.StringBuilder.append(StringBuilder.java:115)
+                at java.util.AbstractMap.toString(AbstractMap.java:490)
+                at java.lang.String.valueOf(String.java:2827)
+                at java.lang.StringBuffer.append(StringBuffer.java:219)
+                at
+                org.eclipse.ecf.core.sharedobject.ReplicaSharedObjectDescription.toString(ReplicaSharedObjectDescription.java:108)
+                at java.lang.String.valueOf(String.java:2827)
+                at java.lang.StringBuffer.append(StringBuffer.java:219)
+                at org.eclipse.ecf.provider.generic.SOContext.sendCreate(SOContext.java:188)
+                at
+                org.eclipse.ecf.core.sharedobject.BaseSharedObject.replicateToRemoteContainers(BaseSharedObject.java:569)
+                at org.acoveo.ecf.BaseReflectionSharedObject.access$2(BaseReflectionSharedObject.java:1)
+                at org.acoveo.ecf.BaseReflectionSharedObject$1.processEvent(BaseReflectionSharedObject.java:271)
+                at org.eclipse.ecf.core.sharedobject.BaseSharedObject.fireEventProcessors(BaseSharedObject.java:185)
+                at org.eclipse.ecf.core.sharedobject.BaseSharedObject.handleEvent(BaseSharedObject.java:122)
+                at org.eclipse.ecf.provider.generic.SOWrapper.svc(SOWrapper.java:229)
+                at org.eclipse.ecf.provider.generic.SOWrapper$2.run(SOWrapper.java:190)
+                at org.eclipse.ecf.provider.generic.SOContainer$SharedObjectJobRunnable.run(SOContainer.java:142)
+                at org.eclipse.equinox.internal.util.impl.tpt.threadpool.Executor.run(Executor.java:70)
+                More information:
+                toString should be synchronized.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.core.sharedobject.ReplicaSharedObjectDescription.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="326949" opendate="2010-10-04 13:05:02" fixdate="2010-10-04 13:05:02" resolution="Fixed">
+        <buginformation>
+            <summary>add getRemoteServiceReferences(ID,ID[],String,String) to remote service container adapter api.
+            </summary>
+            <description>Currently, there are two synchronous getRemoteServiceReferences methods on
+                IRemoteServiceContainerAdapter:
+                public IRemoteServiceReference[] getRemoteServiceReferences(ID target, String clazz, String filter)
+                throws InvalidSyntaxException, ContainerConnectException;
+                public IRemoteServiceReference[] getRemoteServiceReferences(ID[] idFilter, String clazz, String filter)
+                throws InvalidSyntaxException;
+                One additional one is needed:
+                public IRemoteServiceReference[] getRemoteServiceReferences(ID target, ID[] idFilter, String clazz,
+                String filter) throws InvalidSyntaxException, ContainerConnectException;
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.riena.container.RienaContainer.java</file>
+            <file type="M">org.eclipse.ecf.remoteservice.IRemoteServiceContainerAdapter.java</file>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RemoteServiceContainer.java</file>
+            <file type="M">org.eclipse.ecf.remoteservice.client.AbstractClientContainer.java</file>
+            <file type="M">org.eclipse.ecf.remoteservice.client.RemoteServiceClientRegistry.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.local.container.LocalRemoteServiceContainer.java</file>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.r_osgi.R_OSGiRemoteServiceContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="273357" opendate="2009-04-22 18:57:22" fixdate="2009-04-28 16:53:18" resolution="Fixed">
+        <buginformation>
+            <summary>Abstract implementation of datashare APIs using Java 1.4 NIO.
+            </summary>
+            <description>Created attachment 132859 [details]
+                Single text file with two Java classes.
+                This is still a work in progress but I guess I'll put it in bugzilla for the time being.
+                NIODatashareContainer:
+                -abstract createNIOChannel(ID channelId, IChannelListener listener, Map properties)
+                -abstract createNIOChannel(IChannelConfig newChannelConfig)
+                Counterparts to createChannel(...).
+                NIOChannel:
+                -sendRequest(ID)
+                Used by sendMessage(ID, byte[]) to send a request to the remote peer forablishing a socket
+                connection with each other.
+                ---------------------------------
+                IChannelContainerAdapter channelContainer = new NIOConcreteSubclass();
+                // this is presumably invoked on both ends, Alice and Bob now both have
+                // a thread 1, it is waiting for IP addresses to connect to
+                IChannel channel = channelContainer.createChannel(...);
+                // the returned channel will be an NIOChannel subclass, thread 2 starts,
+                // thread 2 will accept sockets, send, and receive byte[] messages
+                channel.sendMessage(targetId, message); /* snippet X */
+                // at this point, the channel checks if there is a SocketChannel available
+                // for the target id, since none is found, it will invoke NIOChannel's
+                // sendRequest(ID) so the implementation will notify the remote peer
+                // the byte[] message itself will be queued up for processing later when a
+                // socket connection _is_ablished
+                /* sendRequest(ID) is invoked on Alice's side */
+                /* Bob processes the request and calls NIODatashareContainer's
+                enqueue(String[]) */
+                // at this point, there is a String[] (holding ip at [0] and port at [1])
+                // IP address waiting to be processed, thread A sees the IP and begins
+                // processing
+                /* SocketChannel.open(String, port) is invoked, Bob having processed
+                Alice's request, tries to connect to Alice */
+                /* a SocketChannel is returned, Bob identifies himself by sending his ID
+                as a serialized object */
+                /* Alice's thread 2 has a non-blocking ServerSocketChannel, it accepts
+                the socket channel from Bob */
+                /* handshaking begins, NIOChannel stores the socket channel with
+                put(...) on Alice's side */
+                /* on Bob's thread 1 side, we process the handshake details from the
+                NIOChannel, if we get the ID and try to find a matching NIOChannel,
+                the socket is closed it not found, if found, store the socket through
+                NIOChannel just like the above */
+                // now both Alice and Bob's NIOChannels have a SocketChannel
+                // corresponding to each other
+                /* Alice's thread 2 finds the byte[] message originally sent by
+                snippet X, Alice's NIOChannel retrieves Bob's SocketChannel and writes
+                him the data */
+                /* Bob's thread 2 polls and finds data waiting to be read, his
+                SocketChannel reads the information from the ByteBuffer and notifies
+                his IChannelListener of this data */
+                // ...and so on and so forth...
+                ---------------------------------
+                Wow, that probably made no sense at all, right?
+                Known issues:
+                -not all events are fired, IChannelContainerListener is not used at all, for IChannelListener, only
+                IChannelMessageEvents are fired at the moment.
+                -from the example, you might've noticed that repeated invocations of sendMessage(ID, byte[]) may cause
+                multiple invocations to sendRequest(ID), this is not good of course.
+                -thread A should probably only start when a channel has been created instead of in the constructor.
+                -NIOChannel stores the SocketChannel before the handshake is truly complete as thread A has not really
+                "accepted" the connection yet, thread B should remove stale sockets that are disconnected (based on
+                isOpen()?).
+                -thread B sends/receives messages but also accepts sockets, socket handshake maybe should be done in a
+                thread C because the handshake is currently a blocking operation, on the other hand, three threads is a
+                lot, maybe change to non-blocking.
+                -unhandled exceptions.
+                Room for improvement:
+                -the dispose life cycle of the channel container is not completely clear because
+                IChannelContainerAdapter doesn't have any disconnect() or dispose() methods, not sure if this is a
+                general datashare API problem or not.
+                -more javadocs, more comments.
+                ---------------------------------
+                Definitely more but these are the ones I know of off-hand.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.ConcreteNIOChannel.java</file>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.ConcreteNIODatashareContainer.java</file>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.ContainerImpl.java</file>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.NIODatashareTest.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.ChannelData.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.NIOChannel.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.NIODatashareContainer.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.Util.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="232530" opendate="2008-05-16 12:09:46" fixdate="2008-05-18 14:27:43" resolution="Fixed">
+        <buginformation>
+            <summary>Session and subclasses needs to handle whitespace and exceptions better.
+            </summary>
+            <description>I am using ECF 2.0.0.v20080514
+                I am seeing very frequently parsing problems in the ChatSession.read() method which lead to exception
+                which causes the death of the Session$IdleThread that processes the received messages.
+                If an unexpected Exception occurs I can no longer receive messages in the current session.
+                So perhaps it is better to protect the Session$IdleThread from any uncaught exceptions.
+                One of the cases that leads to the described behavior is this:
+                The original received message which is being processed by the ChatSession.read():
+                "MSG s_boshev@prosyst.bg s_boshev@prosyst.bg 129
+                MIME-Version: 1.0
+                Content-Type: text/plain; charset=UTF-8
+                X-MMS-IM-Format: FN=MS%20Shell%20Dlg; EF=; CO=0; CS=cc; PF=0
+                e de"
+                This leads to this exception:
+                Exception in thread "Thread-12" java.lang.StringIndexOutOfBoundsException: String index out of range: 5
+                at java.lang.String.checkBounds(String.java:402)
+                at java.lang.String.#init>(String.java:443)
+                at org.eclipse.ecf.protocol.msn.ChatSession.read(ChatSession.java:295)
+                at org.eclipse.ecf.protocol.msn.Session$IdleThread.run(Session.java:287)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.protocol.msn.ChatSession.java</file>
+            <file type="M">org.eclipse.ecf.protocol.msn.DispatchSession.java</file>
+            <file type="M">org.eclipse.ecf.protocol.msn.Session.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

@@ -1,0 +1,5 @@
+334	0	0.8	org.springframework.ws.transport.support.AbstractStandaloneMessageReceiver.java
+613	0	0.8	org.springframework.xml.xpath.Jaxp13XPathTemplate.java
+613	354	0.0	org.springframework.ws.server.endpoint.adapter.XPathParamAnnotationMethodEndpointAdapter.java
+613	719	0.0	org.springframework.xml.xpath.Jaxp13XPathExpressionFactory.java
+947	26	0.21103375	org.springframework.ws.wsdl.wsdl11.Wsdl4jDefinition.java
