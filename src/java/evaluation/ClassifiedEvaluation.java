@@ -1,5 +1,6 @@
 package evaluation;
 
+import org.jheaps.monotone.BigIntegerRadixHeap;
 import utils.ContentLoader;
 
 import utils.MiscUtility;
@@ -96,11 +97,11 @@ public class ClassifiedEvaluation {
   }
 
   public void calculateMAP() {
-    int size = DatasetConfig.PE_SIZE;
+    int size = DatasetConfig.STN_SIZE + DatasetConfig.NL_SIZE;
     ClassifiedEvaluation ce = new ClassifiedEvaluation();
     float p = 0;
     //    String path = "IRBL-Evaluation/All/" + DatasetConfig.BLIZZARD + "_STP.txt";
-    String path = "Query-Evaluation/All/our_PE.txt";
+    String path = "Query-Evaluation/AllQuery/brsum_nl.txt";
     Map<String, List<Integer>> map = ce.mapping(path);
     for (String key : map.keySet()) {
       int j = 0;
@@ -121,11 +122,11 @@ public class ClassifiedEvaluation {
   }
 
   public void calculateMRR() {
-    int size = DatasetConfig.NL_SIZE;
+    int size = DatasetConfig.STN_SIZE + DatasetConfig.NL_SIZE;
     ClassifiedEvaluation ce = new ClassifiedEvaluation();
     float p = 0;
     //    String path = "IRBL-Evaluation/All/" + DatasetConfig.BLIZZARD+ "_STP.txt";
-    String path = "Query-Evaluation/All/our_NLL.txt";
+    String path = "Query-Evaluation/AllQuery/our_nl.txt";
     Map<String, List<Integer>> map = ce.mapping(path);
     for (String key : map.keySet()) {
       int rank = map.get(key).get(0);
@@ -140,7 +141,7 @@ public class ClassifiedEvaluation {
     ClassifiedEvaluation ce = new ClassifiedEvaluation();
     //    String te = DatasetConfig.LTR;
     //    String path = "Query-Evaluation/All/our_PE.txt";
-        ce.calculateMAP();
+    ce.calculateMAP();
     int i = 0;
     //    ce.collectResults(path, ClassificationID.LTR_PE);
     //        for (String s : EvaluationConfig.DATA) {
@@ -151,7 +152,7 @@ public class ClassifiedEvaluation {
     String path1 = "Query-Evaluation/All/our+_ST1.txt";
     String path2 = "IRBL-Evaluation/All/" + DatasetConfig.BLIA + "_ST.txt";
     String path3 = "Query-Evaluation/All/our_.txt";
-    String path4 = "Query-Evaluation/" + DatasetConfig.BENCH4BL + "/our+_final.txt";
+    String path4 = "Query-Evaluation/" + DatasetConfig.GITHUB + "/baseline_entity.txt";
     String path5 = "Query-Evaluation/" + DatasetConfig.BENCH4BL + "/our_PE1.txt";
     //    String path2 = "query/BLUiR_tomcat.txt";
     Map<String, List<Integer>> l1 = ce.mapping(path4);
@@ -178,15 +179,15 @@ public class ClassifiedEvaluation {
     //        System.out.println(ss);
     //      }
     //    }
-    List<Integer> list1 = BugReportsID.WFLY;
-//    List<Integer> list1 = LTR_ST;
-//    for (String s : l1.keySet()) {
-//      if (list1.contains(Integer.parseInt(s))) {
-//        for (int rank : l1.get(s)) {
-//          System.out.println(s + "\t" + rank);
-//        }
-//      }
-//    }
+    //    List<Integer> list1 = BugReportsID.WFLY;
+    List<Integer> list1 = GIT_STP;
+    for (String s : l1.keySet()) {
+      if (list1.contains(Integer.parseInt(s))) {
+        for (int rank : l1.get(s)) {
+          //          System.out.println(s + "\t" + rank);
+        }
+      }
+    }
     //    for (int i1 : list1){
     //      int j = 0;
     //      for (int i2 : list1){
@@ -209,7 +210,7 @@ public class ClassifiedEvaluation {
     //      if (PLATFORM_STN.contains(Integer.parseInt(s.split("\t")[0]))) System.out.println(s);
     //    }
     //        String path = "Query-Evaluation/"+DatasetConfig.BENCH4BL+"/our_final.txt";
-    String path = "Query-Evaluation/" + DatasetConfig.GITHUB + "/our+_final.txt";
-    //    ce.calculateTop(ce.mapping(path), DatasetConfig.GITHUB_SIZE);
+    String path = "Query-Evaluation/AllQuery/Our_NL.txt";
+    //    ce.calculateTop(ce.mapping(path), DatasetConfig.STN_SIZE + DatasetConfig.NL_SIZE);
   }
 }

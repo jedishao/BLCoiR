@@ -136,12 +136,12 @@ public class BugReportsID {
   public static void main(String[] args) {
     BugReportsID br = new BugReportsID();
 //    br.getID("dataset/LtR/SWT/BR/");
-    int i = 0;
-    for (List<Integer> l : EvaluationConfig.LTR_ID){
-      System.out.println(l.size());
-      i += l.size();
-    }
-    System.out.println(i);
+//    int i = 0;
+//    for (List<Integer> l : EvaluationConfig.LTR_ID){
+//      System.out.println(l.size());
+//      i += l.size();
+//    }
+    System.out.println(DRUID.size());
   }
 
   void getID(String path) {
