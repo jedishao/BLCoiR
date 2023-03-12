@@ -1,0 +1,12 @@
+Base64 encode() method is no longer thread-safe, breaking clients using it as a shared BinaryEncoder.
+Streaming support was added to Base64 in commons-codec 1.4 with CODEC-69. 
+This introduced instance variables to Base64 which means the class can no longer be used as a shared BinaryEncoder instance.
+For example, BinaryEncoder has an interface which could be (and was) used like this with Base64:
+
+
+Base64 is no longer thread-safe in commons-codec 1.4, so code like the above which is accessed by multiple threads can throw NullPointerException:
+
+Looking at the implementation of Base64, I think making it thread-safe for this kind of usage would be quite tricky.
+I haven't attempted to prepare a patch.
+I would be happy if it was indicated in the Javadoc that Base64 is not thread-safe and should not be shared.
+However, some other users of commons-codec might be more worried about this regression.
