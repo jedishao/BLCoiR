@@ -1,2 +1,3 @@
 XsltBuilder instance not threadsafe and can't be used more then once.
-XsltBuilder uses a ResultHandler instance variable to hold the result of the transformation. That makes it thread unsafe and at the same time, as it‘s never cleared/reset, it can’t be used more then once.
+XsltBuilder uses a ResultHandler instance variable to hold the result of the transformation.
+That makes its thread unsafe and at the same time, as it never cleared/reset, it can’t be used more then once.
