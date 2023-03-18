@@ -1,0 +1,12 @@
+Hive locks in waiting state still held indefinitely.
+Hive locks in waiting state, timestamp acquired_at would have ‘NULL’ value,  and then locks are held indefinitely.
+The missing timestamp might be the cause.
+Steps to reproduce:
+
+There is an exclusive lock on the hive table (perhaps by writing data with hive/spark)
+Run select query in Trino, Trino shared_read lock in waiting state due to the exclusive lock in step 1
+If we cancel the Trino query, the Trino lock stays there forever in waiting state
+
+#10401 released the locks in ACQUIRED state but didn’t release the locks in WAITING state.
+The possible workaround is a script to delete the locks in Hive.
+      

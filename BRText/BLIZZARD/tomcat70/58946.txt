@@ -1,0 +1,14 @@
+ApplicationHttpRequest should enforce immutability of ParameterMap.
+JavaDoc for ServletRequest.getParameterMap(), both ours and the one at Oracle site [1] says:
+"Returns: an immutable java.util.Map containing [...]"
+The problem is that this immutability is not enforced by org.apache.catalina.core.ApplicationHttpRequest class that is used to implement included or forwarded requests.
+Note that org.apache.catalina.util.ParameterMap class used for usual (not forwarded) requests does enforce immutability.
+An example of message from that class is shown below.
+Reproducible with current Tomcat 8.0-dev.
+Steps to reproduce
+1.
+Put the following two JSPs into ROOT web application:
+The following response is observed:
+Expected:
+If I call the test2.jsp application directly, the behaviour is as expected:
+I noticed this issue while performing code review, inspired by a thread started 2016-01-19 on users mailing list [2].

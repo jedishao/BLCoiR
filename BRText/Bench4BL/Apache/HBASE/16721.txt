@@ -1,0 +1,9 @@
+Concurrency issue in WAL unflushed seqId tracking.
+I'm inspecting an interesting case where in a production cluster, some regionservers ends up accumulating hundreds of WAL files, even with force flushes going on due to max logs. 
+This happened multiple times on the cluster, but not on other clusters.
+The cluster has periodic memstore flusher disabled, however, this still does not explain why the force flush of regions due to max limit is not working.
+I think the periodic memstore flusher just masks the underlying problem, which is why we do not see this in other clusters.
+The problem starts like this: 
+then, it continues until the RS is restarted:
+The problem is that region d4cf39dc40ea79f5da4d0cf66d03cb1f is already split some time ago, and was able to flush its data and split without any problems.
+However, the FSHLog still thinks that there is some unflushed data for this region.

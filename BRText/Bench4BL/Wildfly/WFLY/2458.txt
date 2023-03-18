@@ -1,0 +1,7 @@
+Re-deployment of a clustered application fail due to race-condition with infinispan.
+If a clustered application should be redeployed it looks like that infinispan is not able to stop complete until the deployer finish undeployment and start to deploy the new application.
+See the Exception below.
+The behaviour is the same for managed or unmanged deployments.
+If it is unmanaged the .failed marker file exists.
+After the failure the application is shown in the mgmt console without deployed Beans.
+A second deploy attempt will be successfully

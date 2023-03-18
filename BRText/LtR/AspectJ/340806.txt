@@ -1,0 +1,1 @@
+Race condition in JavaLangTypeToResolvedTypeConverter (potentially exposed through Spring AOP).

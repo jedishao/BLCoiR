@@ -1,0 +1,17 @@
+JMSContext is not thread-safe.
+Section 12.4.4 of the JMS 2.0 spec says:
+
+If a method is called on an injected JMSContext when there is a JTA transaction (either bean-managed or container-managed), the scope of the JMSContext will be @TransactionScoped.
+This is not currently true in WildFly. As a test case, suppose you have the following two beans:
+
+
+If you deploy and run the above code, you will see a lot of this:
+
+Sessions are not supposed to be used by more than one thread concurrently.
+That should not be happening if the JMSContext is really @TransactionScoped. 
+The problem appears to be in org.jboss.as.messaging.deployment.JMSContextProducer, specifically the JMSContextWrapper.getDelegate() method. 
+If two threads call it at the same time, the first will create a delegate but the second will receive the same delegate as the first, because the delegate doesn't get nulled until the transaction in the first thread completes.
+This means that both threads are using the same session at the same time, which is not allowed. 
+I don't know how HornetQ detects concurrent use, but depending on how that works, it's also possible that messages will end up being part of the wrong transaction.
+A workaround is to inject Instance.JMSContext instead of JMSContext directly (the two commented out lines of code). 
+Since the JMSContext producer is @Dependent, each Instance.get() call will return a new instance, and only one thread will ever use any given instance.

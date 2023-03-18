@@ -1,0 +1,3 @@
+Deadlock in MVCC branch-1.2 toString()
+Just saw this in an IT test.
+Thread 75 (PriorityRpcServer.handler=3,queue=1,port=16020):

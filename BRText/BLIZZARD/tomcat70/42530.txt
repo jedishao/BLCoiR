@@ -1,0 +1,10 @@
+ManagerBase.backgroundProcess throws NullPointerException.
+ManagerBase.backgroundProcess throws NullPointerException.
+TestServletF
+It is as follows in org.apache.catalina.session.ManagerBase:(findSessions() that is called by processExpires()).
+
+In Tomcat6, sessions of ManagerBase has been changed from HashMap to ConcurrentHashMap.
+At the same time, synchronized operations of sessions have been removed from the methods such as findSession(String is), add(Session session), and remove(Session session).
+However, if the lock of sessions is not acquired by add(Session session) and remove(Session session), Servlets can execute session.invalidate() between (A) and (B). (see above.)
+As a result, NullpointerException is thrown by processing the 682 line of ManagerBase.processExpires().
+I think add(Session session) and remove(Session session) should manipulate sessions in synchronized manner like Tomcat5.5.

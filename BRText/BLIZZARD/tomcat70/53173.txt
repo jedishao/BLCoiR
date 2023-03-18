@@ -1,0 +1,14 @@
+maxConnections feature hangs the system.
+fix missing count down for maxConnections latch
+We've run into a scenario where the JIO Acceptor thread hangs as connections are not counted down properly.
+Thread dump yields
+This, as you may imagine, is a fairly hard use case to reproduce into a simple test case.
+The easiest way to reproduce it is to create the following configuration
+This reproduces one test case, where the state machine is not taking into account that connections may be rejected by the queue, but it doesn't count down the latch.
+I'm attaching a patch to fix this specific use case, but it may not be a complete fix.
+As a workaround, the patch also introduces the maxConnections="-1" configuration that disables the usage of maxConnections.
+The -1 setting is important to give administrator a workaround while the other edge cases are tracked down.
+I have not been able to reproduce this error with NIO connector.
+There is one more place in the JioEndpoint that requires handling of RejectedExecutionException in the
+public boolean processSocketAsync(SocketWrapper<Socket> socket,SocketStatus status)
+This is currently unhandled.

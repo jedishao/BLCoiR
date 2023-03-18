@@ -1,0 +1,4 @@
+Race condition during channel create vs start causing NPE on channel startup.
+My hunch is that this is due to the fact that WildFly creates a channel in one thread but starts it in another.
+Specifically, Protocol.up_prot is set by ChannelService.start() (via new JChannel(...)) but is accessed by GlobalComponentRegistryService.start() (via Channel.connect(...)) - which happen in different threads.  
+To prevents NPEs like the one below, we need to ensure that any variables set during channel creation are volatile.

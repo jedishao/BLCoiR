@@ -1,0 +1,9 @@
+Possible race condition while updating DataSource Metadata [Kafka Indexing Service].
+We have Kafka indexing service running currently with no replication and task count equivalent to number of kafka partitions. One of the tasks failed with this exception -
+com.metamx.common.ISE: Transaction failure publishing segments, aborting
+
+Earlier in the task log I see this -
+Meanwhile this was in the overlord log -
+From the logs it seems like that two threads qtp370356001-171 and qtp370356001-152 wanted to update the datasource metadata. Initially, both threads read the commit_metadata_payload from DB and then qtp370356001-171 updated the metadata successfully whereas qtp370356001-152 failed as the old commit metadata it read earlier is not as same as commit metadata in DB now. All this happens in updateDataSourceMetadataWithHandle method of IndexerSQLMetadataStorageCoordinator.java class.
+One way to solve this issue is to synchronize access to updateDataSourceMetadataWithHandle method but better way would be to retry in case of such failures. However, retryTransaction does not retry in case of RuntimeException which would be thrown in this case here - https://github.com/druid-io/druid/blob/master/server/src/main/java/io/druid/metadata/IndexerSQLMetadataStorageCoordinator.java#L342
+      

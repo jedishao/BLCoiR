@@ -1,0 +1,5 @@
+Exception during namespace bundle split.
+This particular exception was reported. It was during an automatically initiated bundle split.
+I think that the race condition is happening since all 4 initial bundles are getting split around the same time and the bundle cache gets updated while the new bundle split is being processed.
+The result doesn't cause any particular issue, just that the bundle split fails with invalid bundle range, but the current bundle will continue to run unaffacted until the next split will take place.
+      

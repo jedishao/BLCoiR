@@ -1,0 +1,41 @@
+Race condition registering resource adapters at startupUpstream Jira of https://bugzilla.redhat.com/show_bug.cgi?id=1184610
+Please see bugzilla description for details and reproducer.
+
+Description of problem:
+
+During startup of JBoss, the following occurs randomly (not on every start):
+
+How reproducible:
+
+Random - it's a race condition but adding Byteman which slows execution (due to synchronous logging) of the code in which the race takes place seems to increase the frequency at which the failure occurs.
+
+Steps to Reproduce:
+
+1. Copy a resource adapter archive to standalone/deployments
+
+2. Configure the standalone.xml with two adapter configs specified (single RAR)
+
+3. Start JBoss (a few restarts may be required as it doesn&amp;apos;t always happen)
+
+Actual results:
+
+The server.log shows the exception below (and I suspect at least one of the adapter configs is not deployed - though I didn&amp;apos;t confirm the latter).
+
+Expected results:
+
+No exception should be raised
+
+Additional info:
+Document URL: 
+Section Number and Name:
+Describe the issue:
+It appears that where there are multiple adapter configurations, registering of the adapters is done on different threads and sometimes two threads check to see if the resource-adapters "subsystem" (I think that is what is being created) exists ... it is possible for two threads to be told it doesn&amp;apos;t exist - in which case both threads will try to create it.
+I think the code at issue is found in lines 120 and 122 of ./connector/src/main/java/org/jboss/as/connector/deployers/ra/processors/AbstractResourceAdapterDeploymentServiceListener.java
+
+At line 120, we check if the path exists ... and if it does not try to create it at line 122 ... but it possible that between the two lines one thread is executing, another thread may do the same - one will "win the race" and the other will fail with the exception.
+I did note that the entire block is wrapped in a synchronization block - synchronized on &amp;apos;this&amp;apos; - so there must be multiple instances of the AbstractResourceAdapterDeploymentServiceListener class since the logging shows interleaved execution of the check and register calls across multiple threads.
+
+Suggestions for improvement:
+Additional information:
+
+Attached an archive containing a simple adapter (generated using the Ironjacamar generation tool), an excerpt of the standalone.xml configuration used as well as an excerpt of the log file and a byteman script used to produce the stack traces in the log excerpt.

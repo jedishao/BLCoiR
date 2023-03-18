@@ -1,0 +1,2 @@
+"Show In" doesn't work in Synchronize view for open .java file outside of classpath.
+"Show In > Package Explorer" doesn't work in the Synchronize view for an open .java file that is not on the classpath.

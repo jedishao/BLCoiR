@@ -1,0 +1,5 @@
+Deadlock while obtaining lock
+Thread gets stuck while obtaining lock. Running 'keys L*' in redis-cli returns an empty list.
+
+The same lock name was likely concurrently obtained and held by another thread possibly on another jvm, and then released.
+Redisson version used: 1.1.5

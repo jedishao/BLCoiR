@@ -1,0 +1,11 @@
+Fix deadlock during cluster shutdown due to concurrent connection closeCaught while testing branch-1.0, shutting down TestMasterMetricsWrapper.
+Found one Java-level deadlock:
+Full stack dump and deadlock debug output attached.
+Root cause:
+In RpcClientImpl#close(), we obtain lock on connections first:
+
+Then markClosed() tries to obtain lock on connection object:
+
+Another thread, MetaServerShutdownHandler, calls RpcClientImpl$Connection#setupIOstreams() where :
+
+Lock on connection object is obtained first, then lock on connections is attempted, leading to deadlock:

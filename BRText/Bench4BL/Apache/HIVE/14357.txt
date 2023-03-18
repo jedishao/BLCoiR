@@ -1,0 +1,7 @@
+TestDbTxnManager2#testLocksInSubquery failing in branch-2.1.
+checkCmdOnDriver(driver.compileAndRespond("insert into R select * from S where a in (select a from T where b = 1)"));
+
+This test case is failing.
+The expected order of locks is supposed to be T, S, R. But upon closer inspection, it seems to be R,S,T.
+I'm not much familiar with what these locks are and why the order is important. Raising this jira so while I try to understand it all. 
+Meanwhile, if somebody can explain here, would be helpful. 

@@ -1,0 +1,3 @@
+SFSB tx lock not released in exception was thrown in Synchronization callback.
+Because the owning tx was never pushed into the OwnableReentrantLock ownership stack in org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.handleThrowableInTxSync(...).
+This will cause subsequent Lock.tryAcquire(..) to fail for a different tx.

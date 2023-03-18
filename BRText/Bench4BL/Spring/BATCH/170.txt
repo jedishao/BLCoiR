@@ -1,0 +1,2 @@
+Concurrent modification of StepExecution when running an asynchrounous step operationUse of a hibernateJobDao eventually results in a StaleObjectStateException when running an asynchrounous step operation:
+See:

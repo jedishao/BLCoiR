@@ -1,0 +1,3 @@
+ConsumeLockEntity without ConsumeDeleteI think that condition at the beginning of the lock function is wrong:
+
+If I wanna just select and then update entity I should set consumeDelete=false, but If so entity will newer be locked...

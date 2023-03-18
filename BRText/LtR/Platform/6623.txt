@@ -1,0 +1,2 @@
+Threading problems on plugin startup.
+Plugin-startup can be called in the UI-thread, but AbstractUIPlugin.refreshPluginActions then fails.

@@ -1,0 +1,3 @@
+Race condition in array_concat.
+A query like:
+where a and b are of type array(map(string, double)), fails non-deterministically with various exceptions (Presto version 0.144.2):

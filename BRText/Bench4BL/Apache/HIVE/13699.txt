@@ -1,0 +1,3 @@
+Make JavaDataModel#get thread safe for parallel compilation.
+The class JavaDataModel has a static method, #get, that is not thread safe. 
+This may be an issue when parallel query compilation is enabled because two threads may attempt to call JavaDataModel#get at the same time, etc.

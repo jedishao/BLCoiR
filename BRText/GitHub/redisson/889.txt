@@ -1,0 +1,10 @@
+Cache ops taking too long
+Currently i'm using Redisson 2.7.4 as JCache Provider, and some cache operations are taking a long time to execute, as can be seen in the log below:
+
+Taking a thread dump I noticed that all EJB async threads (and some http-executor threads too) were in the same state, generating a huge queue in the async thread pool:
+
+Thread dump for some threads (Complete thread dump can be downloaded here):
+
+locked <f75019a> (a java.util.concurrent.ThreadPoolExecutor$Worker)
+
+it looks like that is a lock issue, but i don't know how to solve it.

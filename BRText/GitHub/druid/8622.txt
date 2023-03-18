@@ -1,0 +1,19 @@
+Proposal: concept of supervisor type task slots for resolving parallel task deadlocks.
+Motivation
+ParallelIndexSupervisorTask is a supervisor style task that delegates work to one or more spawned subtasks. Since both, supervisor task and subtasks, are using same task slot pool, there is possibility of a deadlock.
+For example, say a druid cluster has 4 task slots and 4 ParallelIndexSupervisorTask tasks are submitted simultaneously and started running on available 4 task slots. Subtasks spawned by the supervisor tasks would never be able to run and supervisor tasks would keep on waiting.
+It is also discussed in #8061 (comment).
+Proposed changes
+Add a method boolean Task.isSupervisor() to Task interface which returns true if the task is a supervisor task that spawns subtasks to delegate work.
+ParallelIndexSupervisorTask would return true while all other current task impls would return false.
+Add a druid.worker.supervisorCapacity configuration on middleManagers, which designates available slots to run supervisor tasks. This config is similar to druid.worker.capacity which designates available non-supervisor task slots.
+[Http]RemoteTaskRunner code would be updated to recognize that supervisor tasks consume slot from supervisorCapacity and not capacity .
+Rationale
+A potential alternative is to use #7066 to send all supervisor tasks to a dedicated set of middleManagers which only get supervisor tasks.
+Operational impact
+User of ParallelIndexSupervisorTask would need to set property druid.worker.supervisorCapacity on middleManagers.
+Test plan (optional)
+will run it on a staging cluster.
+Future work (optional)
+for reliability: supervisor tasks could be treated further specially be imposing a "always restartable" restriction on them and also not failing them if middleManager running them crashed .
+      

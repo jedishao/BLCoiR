@@ -1,0 +1,4 @@
+Temp tables shouldn't be locked.
+Internally, INSERT INTO ... VALUES statements use temp table to accomplish its functionality. 
+But temp tables shouldn't be stored in the metastore tables for ACID, because they are by definition only visible inside the session that created them, and we don't allow multiple threads inside a session.
+If a temp table is used in a query, it should be ignored by lock manager.

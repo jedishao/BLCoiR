@@ -1,0 +1,8 @@
+Vertx#close Future will not callback the handler.
+The Future returned by vertx.close() never completes because the thread pool has been shut down.
+The first of these works, the second doesn't:
+
+Sync.await is just a blocking method that waits for a future to complete using setHandler.
+The output from that is:
+
+and it never completes.

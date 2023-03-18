@@ -1,0 +1,2 @@
+Core Exception as resource tree is locked initializing classpath container.
+Java Model Exception: Core Exception [code 4] The resource tree is locked for modifications.

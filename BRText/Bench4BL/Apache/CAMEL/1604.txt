@@ -1,0 +1,2 @@
+UnitOfWork synchronization callbacks - add DSL for easy registering custom processor.
+See nabble:

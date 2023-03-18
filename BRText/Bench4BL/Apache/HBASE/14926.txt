@@ -1,0 +1,7 @@
+Hung ThriftServer; 
+no timeout on read from client; 
+if client crashes, worker thread gets stuck readingThrift server is hung. All worker threads are doing this:
+
+They never recover.
+I don't have client side logs.
+We've been here before: HBASE-4967 "connected client thrift sockets should have a server side read timeout" but this patch only got applied to fb branch (and thrift has changed since then).

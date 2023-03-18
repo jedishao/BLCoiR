@@ -1,0 +1,11 @@
+Illegal thread state when debugging to conditional BP on startup.
+Further strangeness to bug 64951
+* condition is i == 57
+* change to Java perspective
+* shutdown workspace
+* restart workspace
+* re-launch last (debug mode)
+* Error dialog appears claiming a runtime exception occurred in the condition.
+The error dialog appears 4 to 6 times (stacked) and this is in the log:
+Terminating and restarting the target works OK.
+Seems to be a problem with evaluating the condition on startup.

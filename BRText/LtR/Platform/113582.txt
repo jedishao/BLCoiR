@@ -1,0 +1,7 @@
+Deadlock updating marker list during builds.
+I hot a deadlock involving jobs.
+The only two parties involved appear to be the problems view and the editor being saved.
+From the stacktrace, It's not obvious to me why the deadlock has occurred.
+I'm assigning it to Tod since the Problems view is involved but it could also be a problem in the Jobs framework so I've copied John as well. Here's the stacktrace.
+
+locked <0x17197160> (a org.eclipse.jface.text.reconciler.DirtyRegionQueue)

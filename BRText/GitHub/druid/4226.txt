@@ -1,0 +1,4 @@
+druid-lookups-cached-global race condition when realtime node starts.
+When we spawn a new realtime node from tranquility (from storm), it takes a bit to load all the lookups (aprox 36 seconds), and during that time, the node already published the segment and queries using lookups obviously fail
+This can be seen in the log of the realtime task:
+later on it loads successfully (but it's 36 seconds too late :P)

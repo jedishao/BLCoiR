@@ -1,0 +1,5 @@
+Concurrency Issues
+Today I tried some tests to experiment with Redisson's performance using a build from /master and discovered significant concurrency issues. I'm not sure what the state of this code is, so perhaps these issues are known ones, but wanted to make sure you guys are aware of them.
+I have a very simple app that a) Creates a Redisson instance with a connection pool of 50 to masters and 50 to slaves, then b) creates a quick thread pool using Executors.newFixedThreadPool() and then c) feeds it Runnables, each of which generates a random string and adds it to the end of a Deque.
+
+Whenever I do any of these three things: 1) Add >1 millions of queued Runnables or 2) Increase the number of threads >20 or 3) add a .contains() call on the Deque (more on that in a sec), I get a ton of exceptions that don't include any of my code in the stack trace. Here's one such snippet:

@@ -1,0 +1,9 @@
+[Transactiion] Performance bottleneck of TransactionBufferHandler.
+Is your enhancement request related to a problem? Please describe.
+The synchronization lock added due to timeout will cause the performance bottleneck of TransactionBufferHandler
+Describe the solution you'd like
+
+Do not use the run method for timeout processing
+Do not use sync locks
+
+      

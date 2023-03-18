@@ -1,0 +1,2 @@
+TestStateMachine.testSetIf() fails non-deterministically.
+This happens pretty frequently on Travis, so likely is some kind of race.

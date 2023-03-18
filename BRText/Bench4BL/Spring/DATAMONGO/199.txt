@@ -1,0 +1,4 @@
+Synchronisation during performance tests.
+Hi, 
+During performance tests, I observed that several threads were in status "blocked". Below, the stack:
+The tests were carried out with jmeter with read-only queries.

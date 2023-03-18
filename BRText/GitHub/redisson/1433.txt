@@ -1,0 +1,9 @@
+Concurrent calls to RemoteService should not result in an exception.
+Expected behavior
+Concurrent calls to RemoteService should not result in an exception
+Actual behavior
+Concurrent calls to RemoteService should result in an exception
+Steps to reproduce or test case
+
+Redisson configuration
+config.useSingleServer().setAddress("redis://127.0.0.1:6379");

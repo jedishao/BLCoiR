@@ -1,0 +1,9 @@
+Deadlock on overlord with HttpRemoteTaskRunner.
+We noticed deadlocks on the overlord in our test cluster in HttpRemoteTaskRunner:
+waiting to lock <0x00000000c1544c10> (a java.lang.Object)
+waiting to lock <0x00000000c1544c10> (a java.lang.Object)
+waiting to lock <0x00000000c1544980> (a io.druid.concurrent.LifecycleLock)
+locked <0x00000000c1540300> (a java.util.concurrent.ConcurrentHashMap)
+locked <0x00000000c1540300> (a java.util.concurrent.ConcurrentHashMap)
+waiting to lock <0x00000000c1544c10> (a java.lang.Object)
+locked <0x00000000c1543b50> (a io.druid.concurrent.LifecycleLock)

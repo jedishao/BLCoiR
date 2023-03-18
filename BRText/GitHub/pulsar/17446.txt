@@ -1,0 +1,12 @@
+[Bug] Producer may be permanently blocked by chunking messages when blockIfQueueFull is enabled.
+Search before asking
+I searched in the issues and found nothing similar.
+
+It can be reproduced simply by following.
+
+What did you expect to see?
+The reason for this bug is how the chunk message semaphore is obtained.
+
+When a large message is split into a large number of chunks (i.e. the message is too big or the chunkMaxMessageSize is set too small), all the remaining semaphores will be acquired.
+The sending (send() and sendAsync()) of large message will be blocked by itself forever.
+By the way, once blockIfQueueFull/maxPendingMessages/chunking are enabled at the same time, this risk of deadlock exists even if the number of chunks of a single message is not very large.

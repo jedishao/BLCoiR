@@ -1,0 +1,10 @@
+RedissonFairLock deadlock.
+Seems related to the change on #2099.
+We have tried to upgrade to 3.11.2 from 3.10.7 and this behavior started occurring.
+
+The FairLock acquired on high load system without lease time defined.
+
+Redisson does not handle the case of Fair lock without lease time (on high load).
+when many different threads are asking for the same lock key the client is stuck and no thread acquires the lock.
+
+Steps to reproduce or test case

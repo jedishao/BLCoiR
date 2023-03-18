@@ -1,0 +1,6 @@
+Deadlock running flushSomeRegions.
+Playing with MR uploading no a regionserver with 60+ regions, I ran into a deadlock:
+Found one Java-level deadlock:
+Java stack information for the threads listed above:
+Found 1 deadlock.
+Regionserver is hosed.

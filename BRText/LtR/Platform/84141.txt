@@ -1,0 +1,3 @@
+DecorationScheduler should not lock UI Thread20050125.
+Currently the DecoratorScheduler locks the UI Thread sometimes while decorations are running.
+We should remove this lock and use a scheduling rule instead.

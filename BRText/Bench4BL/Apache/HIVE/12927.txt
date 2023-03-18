@@ -1,0 +1,4 @@
+HBase metastore: sequences should be one per row, not all in one row.
+  long getNextSequence(byte[] sequence) throws IOException {
+
+Is not safe in presence of any concurrency. It should use HBase increment API.

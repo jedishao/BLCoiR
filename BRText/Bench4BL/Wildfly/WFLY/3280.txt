@@ -1,0 +1,14 @@
+Thread locking problem when app server is going to shutdown.
+I face problem that remoting thread and MSC service thread is deadlocked when server is going to shutdown.
+This happens in half of the cases when I run my integration arquillian tests again EAP 6.3.0 engineering releases.
+I deploy one testing application packaged as jar file and then jdbc driver is deployed by copying to deployments folder.
+I'm attaching server log file and thread dump at the time when threads are stuck.
+I was trying to find out where the lock occurs and from the stack trace it happens on two places. One is lock on remoting queue and other is lock on DeploymentRepository object.
+I did a quick fix which seems to work for me that I removed synchronized keyword from the methods which remove listeners in DeploymentRepository.
+It means from:
+https://github.com/jbossas/jboss-eap/blob/6.x/ejb3/src/main/java/org/jboss/as/ejb3/deployment/DeploymentRepository.java#L103
+and
+https://github.com/jbossas/jboss-eap/blob/6.x/ejb3/src/main/java/org/jboss/as/ejb3/deployment/DeploymentRepository.java#L107
+I'm really not sure whether this is a correct fix but I just put my observation here to have some starting point.
+This could not be trouble in remoting directly, maybe it's rather problem of MSC component. 
+If so, please, change the jira type. Thank you.

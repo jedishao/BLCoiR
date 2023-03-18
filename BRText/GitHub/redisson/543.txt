@@ -1,0 +1,6 @@
+RLock trylock blocks forever
+Found this in 2.2.16, seems like this was not around in 2.2.10. But still verifying.
+When tryLock is called with 0 wait time, the thread blocks forever.
+I took a thread dump and it looks like the stack pasted below.
+A note on the environment: We are running this against an Elasticache cluster in AWS and accessing from 4 EC2 instances.
+We have seen a lot of command timeouts. I am not sure if that is some way leading to this.

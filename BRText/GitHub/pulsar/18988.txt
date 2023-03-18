@@ -1,0 +1,7 @@
+[Bug] Deadlock pulsar-io and metadata-store if transactions enabled.
+Search before asking
+I searched in the issues and found nothing similar.
+
+Seen in 2.10, believe the issue still exists in current master, not able to reproduce
+Minimal reproduce step
+Not able to reproduce it programatically

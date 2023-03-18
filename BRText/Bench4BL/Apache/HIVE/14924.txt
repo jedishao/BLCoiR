@@ -1,0 +1,5 @@
+MSCK REPAIR table with single threaded is throwing null pointer exception.
+MSCK REPAIR TABLE is throwing Null Pointer Exception while running on single threaded mode (hive.mv.files.thread=0).
+Error:
+In order to reproduce:
+set hive.mv.files.thread=0 and run MSCK REPAIR TABLE command.

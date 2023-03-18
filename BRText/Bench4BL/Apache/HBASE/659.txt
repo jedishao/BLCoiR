@@ -1,0 +1,4 @@
+HLog#cacheFlushLock not cleared; hangs a region.
+I have a region that is stuck in a close that was ordained by a split.  
+Here is what I have from the log pertaining to the stuck region:
+Then in thread dump, I have two threads blocked on the HLog#cacheFlushLock but looking in code, there is no obvious code path that would get a situation where a lock is held and then not released.

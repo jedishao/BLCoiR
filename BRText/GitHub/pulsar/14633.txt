@@ -1,0 +1,10 @@
+setupTopicPublishRateLimiterMonitor() can block forever, causing deadlock for metadata store operations.
+Describe the bug
+
+This can block forever, causing metadata operations to deadlock.
+
+To Reproduce
+No reliable way to reproduce the problem, though we have seen this in production deployment.
+Expected behavior
+This method should not block.
+      

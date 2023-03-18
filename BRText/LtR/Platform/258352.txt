@@ -1,0 +1,1 @@
+synchronization in ProgressManager too expensive.

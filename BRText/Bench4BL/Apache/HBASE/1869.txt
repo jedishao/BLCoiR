@@ -1,0 +1,5 @@
+IndexedTable delete fails when used in conjunction with RowLock().
+Created the following test in TestIndexedTable,
+which fails and throws the following exception,
+Patch coded for the latest version in SVN (looks like 0.21.0) , just going through final testing and packaging.
+Will attach shortly.

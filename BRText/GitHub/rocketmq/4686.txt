@@ -1,0 +1,16 @@
+The lock was released in the wrong position.
+BUG REPORT
+Please describe the issue you observed:
+What did you do (The steps to reproduce)?
+
+In org.apache.rocketmq.namesrv.kvconfig.KVConfigManager#putKVConfig
+
+The lock should be released in the outermost layer in case the lock cannot be released due to an exception after it is acquired
+
+The lock is released in the correct position
+The lock is released in the wrong position
+
+Please tell us about your environment:
+
+The thread should return to the interrupted state after being interrupted
+      

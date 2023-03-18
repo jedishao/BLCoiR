@@ -1,0 +1,6 @@
+JavaColorManager initialized in non UI thread.
+- open Workspace
+- select CU without opening in editor
+- activate Move refactoring
+- select different package
+- press Preview

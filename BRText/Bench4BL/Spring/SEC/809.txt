@@ -1,0 +1,10 @@
+Concurrent Session Control and OpenID Incompatibility.
+Hi,
+The openid sample worked fine for me.
+I tried to use the Concurrent Session Control but it doesn't work. 
+The following post has the same bug:
+Solution proposed is to update the OpenIDAuthenticationProcessingFilter and to populate details before call to the authenticationManager, this way: token.setDetails(authenticationDetailsSource.buildDetails(req));
+Not sure what uNcode suggests is the good way to fix it.
+Could be related to 
+Here is my SS configuration (really basic, based on the sample openid):
+Here is my stack trace :

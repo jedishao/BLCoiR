@@ -1,0 +1,6 @@
+There may be concurrency problems in org.redisson.RedissonLock#tryLockInnerAsync.
+tryLockInnerAsync(long waitTime, long leaseTime, TimeUnit unit, long threadId, RedisStrictCommand<T> command) {
+
+internalLockLeaseTime = unit.toMillis(leaseTime);
+
+if two thread get the same lock subject and run the method at same time, one's leaseTime is -1, and another's leaseTime is bigger than 30, the "-1" thread first cam in and set internalLockLeaseTime, then another thread came in set the internalLockLeaseTime bigger than 30, then if the bigger leaseTime one get the real redis lock! It while cause watchDog invaild and the lock be expired ahead of time

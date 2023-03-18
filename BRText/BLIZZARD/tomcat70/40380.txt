@@ -1,0 +1,3 @@
+Potential syncro problem in StandardSession.expire(boolean).
+public void expire(boolean notify) {
+if (expiring)

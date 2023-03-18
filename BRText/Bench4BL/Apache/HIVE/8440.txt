@@ -1,0 +1,9 @@
+Hiveserver block query.
+In our environment Hiveserver handle approximately 15000 jobs per day.
+Sometimes we found a large number of  ETL tasks wait in our ETL schedule queue to run.
+In this situation only few Hadoop Job running in Hadoop cluster,many maps and reduces slots free.
+We view Hiveserver heap found Hiveserver block a large number of query:
+
+It is a problem of HiveServer cannot handle concurrent requests from more than one client?
+Why HiveServer cannot handle concurrent requests?
+Under code in org.apache.hadoop.hive.ql cause Hiveserver cannot handle concurrent requests?

@@ -1,0 +1,7 @@
+Possible Deadlock/Thead starvation between Hive loadPartitionByName and getTable.
+We've seen an issue a couple times now where the Presto coordinator continues to queue queries, but none get executed, I believe I've traced it back to a race condition that can cause a deadlock.
+In a thread dump of the coordinator we saw that all 40 of our Hive Metastore refresh threads were waiting on a getTable call from within the loadPartitionByName method:
+
+I believe the issue is that all the executors in the thread pool are being used, leaving no open executors to complete the loadTable call needed to fulfill getTable.
+This behaviour seems to have been introduced by #1921  When loadPartitionByName was switched from using delete directly to calling getTable
+      

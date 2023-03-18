@@ -1,0 +1,18 @@
+Deadlock on start gRPC server
+Start sometimes hangs with deadlock
+Steps to reproduce the bug
+I suppose it's a race condition related to synchronization in gRPC (ServerImpl), await in NetServer.start and vertx/nettty event loops (probably single threaded). Probably it could happened at any time if someone start gRPC server and concurrently open new client connection to that server.
+In my case I stopped and started the gGPR server but I'm not sure if it is somehow related.
+What I see in the thread dump is the following 2 threads that stays in that state, seems, forever:
+From what I see in these thread dumps and the code I think that this could be the problem (deadlock):
+
+Vertx grpc starts server (ServerImpl.start) in vertx blocking thread
+ServerImpl synchronize on lock and then try (keeping lock) to start server (NetServer.start)
+NetServer.start opens a channel, binds to it, and since that moment it, I assume, may receive connections from remote clients
+It seems, at this time a remote client opens connection to this server (already bound)
+Then in channel's event loop (probably single threaded) is received initChannel which try to get ServerImpl.lock in ServerListenerImpl.transportCreated (coudln't because got by ServerImpl.start)
+NetServer.start then schedules runnable in channel's event loop and blocks with channelzFuture.await()
+Now, channelzFuture.await() waits for a runnable to be executed in channel's event loop (probably single threaded)
+At this point channelzFuture.await keeps ServerImpl.lock lock, while the ServerListenerImpl.transportCreated occupies/blocks (this is what I suppose) the single threaded channel's event loop thus making impossible to process further
+
+I'm attaching file with thread dumps of the whole JVM

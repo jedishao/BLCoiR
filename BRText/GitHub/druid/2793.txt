@@ -1,0 +1,4 @@
+Duplicate primary key errors cause TaskQueue big lock to be held for way longer than it should.
+#1896 introduced an addition of e4e5f03#diff-e677e1ba7e3cf3b5b97660cfc17749beR144 which causes errors on duplicate primary key entries to be retried way more than they should.
+This retry holds onto the big lock in TaskQueue while it exhausts its attempts, causing a big backlog of things wanting to use the big lock in TaskQueue
+      

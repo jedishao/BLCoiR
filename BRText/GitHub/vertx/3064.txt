@@ -1,0 +1,6 @@
+HttpServerResponse operation should not fail synchronously when the stream is closed.
+We already have made some improvements here and for we should have the same behaviour for other related responses methods.
+
+when the stream is ended (by the user) then it should fail synchronously because it is a programming mistake
+when the stream is closed then it should not fail synchronously but should fail asynchronously.
+In Vert.x 4 the synchronous operation return a Future result that be failed in this case.

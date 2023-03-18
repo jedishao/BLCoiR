@@ -1,0 +1,3 @@
+race condition on static field CodeStream.noVisibleLocals in method CodeStream.init().
+weblogic make use of JDT to compile the translated java source from jsp files to java bytecode with multi-threads, ArrayIndexOutOfBoundsException occurs intermittently as following stack showing (weblogic repackaged the jdt jar for avoiding potential class conflict):
+This AIOOBE should be caused by race-condition on the shared static field org.eclipse.jdt.internal.compiler.codegen.CodeStream.noVisibleLocals, it's easy to figure out a case which can reproduce such AIOOBE, one of the possible fixes may be:

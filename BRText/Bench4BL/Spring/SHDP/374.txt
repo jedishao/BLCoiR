@@ -1,0 +1,4 @@
+Race condition for overwrite.
+org.springframework.data.hadoop.store.output.AbstractDataStreamWriter.getOutput() always opens file using a default create(Path) method which enables overwriting by default. 
+This is not what we want especially because it will create all sort of race conditions if same file is opened from multiple writers.
+This would lead in below hadoop exception:

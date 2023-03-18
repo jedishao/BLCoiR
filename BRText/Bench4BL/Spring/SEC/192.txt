@@ -1,0 +1,3 @@
+Concurrent login checking fails with CAS.
+The CAS authentication provider should call setDetails on the newly created CASAuthenticationToken. 
+Alternatively, this could be done somewhere like AbstractAuthenticationProvider.authenticate, since it is probably common to all providers. Something like:

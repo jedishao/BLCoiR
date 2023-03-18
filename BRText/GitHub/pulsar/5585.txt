@@ -1,0 +1,8 @@
+Non-persistent topic's replication has a deadlock.
+NonPersistentReplicator disable batching. If there is batch message,producer will acquire one,but release num in message's meta when process ack.
+
+So the ProducerImpl's semaphore no longer has any effect, the ProducerImpl's sendAsync method maybe  blocked in pendingMessages' put method.
+There may be a deadlock between ackReceived and sendAsync .
+The deadlock is between pulsar-io-22-8 and pulsar-io-22-12 in jstack log.
+broker jstack log
+      

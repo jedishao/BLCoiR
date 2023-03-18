@@ -1,0 +1,17 @@
+In-process transport deadlock during shutdown
+Simultaneously shutting down both server and client sharing the same in-process transport can lead to a deadlock. During server shutdown, the transport lock is held while calling transportShutdown on the channel listener, which attempts to lock the channel. At the same time, channel.shutdownNow() holds the channel lock while also trying to lock the transport which leads to a deadlock:
+Found one Java-level deadlock:
+waiting to lock monitor 0x00007f88221d72a8 (object 0x000000076eb28a20, a io.grpc.ChannelImpl), which is held by "main"
+waiting to lock monitor 0x00007f8824015488 (object 0x000000076c2afb38, a io.grpc.transport.inprocess.InProcessTransport), which is held by "AccountServer STOPPING"
+
+Java stack information for the threads listed above:
+waiting to lock <0x000000076eb28a20> (a io.grpc.ChannelImpl)
+locked <0x000000076c2afb38> (a io.grpc.transport.inprocess.InProcessTransport)
+locked <0x000000076c2afb38> (a io.grpc.transport.inprocess.InProcessTransport)
+locked <0x000000076bfe81a8> (a io.grpc.ServerImpl)
+locked <0x000000076be7fdc0> (a io.grpc.transport.inprocess.InProcessServer)
+locked <0x000000076bfe81a8> (a io.grpc.ServerImpl)
+waiting to lock <0x000000076c2afb38> (a io.grpc.transport.inprocess.InProcessTransport)
+locked <0x000000076eb28a20> (a io.grpc.ChannelImpl)
+locked <0x000000076eb28a20> (a io.grpc.ChannelImpl)
+Found 1 deadlock.

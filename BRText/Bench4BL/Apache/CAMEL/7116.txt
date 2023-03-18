@@ -1,0 +1,7 @@
+JettyHttpProducer.doStop does not stop client thread poolCase:
+CamelContext with one route:
+Where generateHttpUrl() returns  for example:
+When CamelContext is closing, JettyHttpProducer.doStop is not called.
+
+When JettyHttpProducer.client is closing, its thread pool is not closed and the threads are non-deamon threads (subject to another JIRA), so application cannot be shutdown.
+

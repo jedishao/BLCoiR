@@ -1,0 +1,8 @@
+[Bug] locallyAcquiredLocks leak in OwnershipCache.
+Search before asking
+
+I searched in the issues and found nothing similar.
+
+should be locallyAcquiredLocks.remove(bundle)
+
+      

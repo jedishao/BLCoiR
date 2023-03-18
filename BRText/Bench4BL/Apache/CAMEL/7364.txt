@@ -1,0 +1,4 @@
+JpaMessageIdRepository uses EntityManager non thread-safe.
+In our product we have found strange behavior of JpaMessageIdRepository when change version 2.9.2 to 2.12.3.
+The reason for this was that EntityManager assigned in the constructor org.apache.camel.processor.idempotent.jpa.JpaMessageIdRepository, but EntityManager not required to be thread safe.
+I think need assign the EntityManager in each method separately.

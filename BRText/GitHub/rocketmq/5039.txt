@@ -1,0 +1,4 @@
+localHostName() get stuck when constructing the BrokerIdentity object.
+
+The BrokerIdentity is frequently constructed in many cases. It's not a good idea to initialize an instance of InetAddress every time.
+      

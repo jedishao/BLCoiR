@@ -1,0 +1,11 @@
+Race condition in PersistentTopic#addReplicationCluster.
+          Describe the bug
+In class org.apache.pulsar.broker.service.persistent.PersistentTopic, we have field replicators of class ConcurrentOpenHashMap.
+There is a race condition in method addReplicationCluster.
+
+It's clear that there is a race condition if multi threads would run in this code. For example
+Thread A is just about to execute replicators.remove, Thread B inserts a non-null PersistentReplicator.
+Then thread A will delete the PersistentReplicator which thread B just created.
+And there is no other thread safe measures applied to these code.
+Expected behavior
+It should be thead safe.

@@ -1,0 +1,4 @@
+EventLoop thread blocked on Vertx.clusteredVertx().
+Vertx 3.2.1.
+Sometimes EventLoop thread blocked on Vertx.clusteredVertx().
+Method Vertx.clusteredVertx() called on the main java thread on application startup.

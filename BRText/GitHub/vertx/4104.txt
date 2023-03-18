@@ -1,0 +1,19 @@
+WorkerExecutor.executeBlocking sometimes holds a lock on the WorkerExecutor after the blocking call has completed.
+
+I ran into a Java deadlock in a large application, and based on the stack trace of the blocked threads, it seems to be caused by each thread running WorkerExecutor.executeBlocking on the same two WorkerExecutor instances, but in a different order. One thread looked like this:
+
+WorkerExecutorImpl.executeBlocking looks like this:
+
+If that fut.onComplete call runs after the blockingCodeHandler has finished, the asyncResultHandler will be executed right away on the current thread. This means that we stay inside of the synchronized block as we continue on. If one thread does
+we1.executeBlocking(...) followed by we2.executeBlocking(...), and another thread does it in the reverse order, and the first call each thread makes ends up running asyncResultHandler right away, you deadlock.
+
+Do you have a reproducer?
+Here is a simple JUnit test that reproduces it:
+
+Note that you also need to add a breakpoint on this line in WorkerExecuteImpl.executeBlocking, to ensure that the blockingCodeHandler always finishes before fut.onComplete runs:
+
+if (asyncResultHandler != null) {
+
+I used the Intellij "Evaluate and log" breakpoint option to insert a 200ms sleep on this line, which lead to consistent reproductions when executing the above test.
+
+I suspect this is hard to reliably reproduce outside of a carefully constructed test, because the timing requirements are so specific.

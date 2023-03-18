@@ -1,0 +1,4 @@
+camel-cxf - CxfClientCallback is invoked twice when only one was expectedRun the test CXFWsdlOnlyTest.
+Because CXF invokes the CxfClientCallback 2 times there is a race condition with 2 threads wanting to complete routing the Exchange.
+You can then end up with errors such as
+CXF should only invoke the org.apache.cxf.endpoint.ClientCallback one time as we have only registered this once.

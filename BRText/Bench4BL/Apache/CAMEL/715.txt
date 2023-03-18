@@ -1,0 +1,3 @@
+ConcurrentModificationException in ThreadProcessor.
+When defining very simple routing with ThreadProcessor. 
+I get ConcurrentModificationException on multicore systems.

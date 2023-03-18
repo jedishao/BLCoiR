@@ -1,0 +1,2 @@
+Derived finder filter values are not thread safe.
+CypherFinderQuery filter values are shared across different threads making query execution unpredictable.

@@ -1,0 +1,3 @@
+ChaosMonkey test teardown may fail due to race with ChaosMonkey.
+If chaosmonkey restarts RS at the last moment before test teardown happens, cluster recovery may not see it in cluster status;
+however, RS process is already running, so when cluster recovery also tries to start it, it gets ExitCodeException. Boom!

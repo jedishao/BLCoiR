@@ -1,0 +1,3 @@
+Use ArrayList instead of Vector in single-threaded.
+Hive codeMost of the Hive code is single-threaded, but sometimes we are using Vector instead of the more efficient ArrayList.
+"This class (ArrayList) is roughly equivalent to Vector, except that it is unsynchronized."

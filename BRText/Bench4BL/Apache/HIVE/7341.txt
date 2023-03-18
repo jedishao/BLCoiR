@@ -1,0 +1,35 @@
+Support for Table replication across HCatalog instances.
+The HCatClient currently doesn't provide very much support for replicating HCatTable definitions between 2 HCatalog Server (i.e. Hive metastore) instances. 
+Systems similar to Apache Falcon might find the need to replicate partition data between 2 clusters, and keep the HCatalog metadata in sync between the two. 
+This poses a couple of problems:
+
+The definition of the source table might change (in column schema, I/O formats, record-formats, serde-parameters, etc.).
+The system will need a way to diff 2 tables and update the target-metastore with the changes. E.g.
+
+targetTable.resolve( sourceTable, targetTable.diff(sourceTable) );
+
+hcatClient.updateTableSchema(dbName, tableName, targetTable);
+
+The current HCatClient.addPartitions() API requires that the partition's schema be derived from the table's schema, thereby requiring that the table-schema be resolved before partitions with the new schema are added to the table. 
+This is problematic, because it introduces race conditions when 2 partitions with differing column-schemas (e.g. right after a schema change) are copied in parallel. 
+This can be avoided if each HCatAddPartitionDesc kept track of the partition's schema, in flight.
+The source and target metastores might be running different/incompatible versions of Hive.
+
+The impending patch attempts to address these concerns (with some caveats).
+
+HCatTable now has
+	
+a diff() method, to compare against another HCatTable instance.
+a resolve(diff) method to copy over specified table-attributes from another HCatTable.
+a serialize/deserialize mechanism (via HCatClient.serializeTable() and HCatClient.deserializeTable()), so that HCatTable instances constructed in other class-loaders may be used for comparison.
+
+
+HCatPartition now provides finer-grained control over a Partition's column-schema, StorageDescriptor settings, etc.
+This allows partitions to be copied completely from source, with the ability to override specific properties if required (e.g. location).
+HCatClient.updateTableSchema() can now update the entire table-definition, not just the column schema.
+I've cleaned up and removed most of the redundancy between the HCatTable, HCatCreateTableDesc and HCatCreateTableDesc.Builder.
+The prior API failed to separate the table-attributes from the add-table-operation's attributes.
+By providing fluent-interfaces in HCatTable, and composing an HCatTable instance in HCatCreateTableDesc, the interfaces are cleaner(ish).
+The old setters are deprecated, in favour of those in HCatTable. Likewise, HCatPartition and HCatAddPartitionDesc.
+
+I'll post a patch for trunk shortly.

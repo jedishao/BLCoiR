@@ -1,0 +1,5 @@
+Flaky-tests: PulsarClientImpl.close hangs forever.
+PulsarClientImpl.close sometimes hangs forever. Example from ClientDeduplicationFailureTest.shutdown .
+example failure
+There's a possible deadlock.
+      

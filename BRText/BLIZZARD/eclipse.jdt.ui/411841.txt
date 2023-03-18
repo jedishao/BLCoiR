@@ -1,0 +1,5 @@
+Rerunning a test from JUnit results view is launching the test on UI thread.
+When I rerun a test by selecting "Run" from the JUnit test results view context menu the test launch is happening on the UI thread.
+When build before launch is enabled the project build is invoked on UI thread on Eclipse is frozen during the test launch process.
+I am working on a patch to avoid it by delegating the rerun config launching to DebugUITools.launch() and will attach it to the bug soon.
+A sample stack trace captured during the freeze is ...

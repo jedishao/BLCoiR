@@ -1,0 +1,2 @@
+Sporadic query failures due to a deadlock in SqlServerClient.getTableProperties:
+"Transaction was deadlocked ... and has been chosen as the deadlock victim".

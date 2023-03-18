@@ -1,0 +1,3 @@
+NPE in RTR with multiple threads for task assignment.
+Multiple threads in task assignment causes NPE.
+Seems to have been introduced by #2521

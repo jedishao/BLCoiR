@@ -1,0 +1,2 @@
+java.lang.IllegalMonitorStateException/java.util.concurrent.locks.ReentrantLock$Sync.tryRelease.
+if ResultSet.closed called after Statement.close calledhttp://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html#close()

@@ -1,0 +1,3 @@
+java.util.ConcurrentModificationException when multiple threads enter the weaver.
+I am using AspectJ 1.7.1.
+Occasionally I see the following exception, which I believe is related to multiple threads initializing some internal state.

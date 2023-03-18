@@ -1,0 +1,15 @@
+System is out of thread resources when using r_osgi provider.
+executing the sample code:
+org.eclipse.ecf.examples.remoteservices.hello.consumer.rs
+org.eclipse.ecf.examples.remoteservices.hello.host.rs
+the consumer code was enhanced:
+
+error recived:
+An internal error has occurred.
+unable to create new native thread
+Reproducible: Always
+Steps to Reproduce:
+1.
+invoke the consumer 8000 times in close loop
+2.
+3.

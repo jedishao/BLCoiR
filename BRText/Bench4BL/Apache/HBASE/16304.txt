@@ -1,0 +1,9 @@
+HRegion#RegionScannerImpl#handleFileNotFoundException may lead to deadlock when trying to obtain write lock on updatesLock
+here is my jvm stack:
+parking to wait for  &lt;0x000000066f996718&gt; (a java.util.concurrent.SynchronousQueue$TransferStack)
+parking to wait for  &lt;0x000000066ffb5950&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+parking to wait for  &lt;0x000000066ffb5950&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+parking to wait for  &lt;0x000000066fd70dd8&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+parking to wait for  &lt;0x00000006708113f8&gt; (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+parking to wait for  &lt;0x000000066ffb5c20&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+parking to wait for  &lt;0x000000066ffb5c20&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)

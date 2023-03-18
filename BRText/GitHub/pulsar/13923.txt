@@ -1,0 +1,14 @@
+[Proxy] Race condition in Pulsar Proxy that causes UnsupportedOperationExceptions in Proxy logs.
+Describe the bug
+It is common that UnsupportedOperationExceptions appear on the Proxy logs. This particular issue was reproduced very often when Geo-replication was configured between 2 clusters.
+
+To Reproduce
+Steps to reproduce the behavior:
+
+Setup 2 Pulsar clusters and enable geo-replication in a namespace that is shared across the clusters.
+Create a topic with 200 partitions in the replicated namespace.
+Restart all brokers in one cluster to get the geo-replication connections to re-initialize until you have reproduced the issue in the Pulsar Proxy logs.
+
+Expected behavior
+The race conditions should be handled in Pulsar Proxy
+      

@@ -1,0 +1,5 @@
+Tomcat 8 hiden behind NGINX fails to send file when using NIO connector.
+We have moved Tomcat 8 server behind the nginx balancing server and have started  experiencing this problem:
+Problem occurres irregularly when loading lots of scripts refencenced by homepage.
+It seems to be ok with useSendfile=false.
+I have tried to add some slow logging (with flushing output) to code and it lowers occurrence rate, so it looks like some race condition problem.

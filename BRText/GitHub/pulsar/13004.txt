@@ -1,0 +1,30 @@
+[metadata] Race condition in ResourceLockImpl#revalidate.
+Describe the bug
+Current unit test org.apache.pulsar.metadata.LockManagerTest#updateValueWhenKeyDisappears have a small chance that will fails with following exception:
+
+It fails on the line here:
+
+After some digging, I found that it's because there is a race condition of method org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl#revalidate.
+Call stack A:
+
+LockManagerImpl#handleDataNotification
+ResourceLockImpl#lockWasInvalidated
+ResourceLockImpl#revalidate
+
+Call stack B:
+
+org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl#acquire
+ResourceLockImpl#acquireWithNoRevalidation fails with LockBusyException
+ResourceLockImpl#revalidate, See:
+
+Once the node is deleted and two ResourceLockImpl#revalidate are called at the same time, one of them is going to fail.
+So in the case above lock.updateValue is failed.
+To Reproduce
+Steps to reproduce the behavior:
+
+It's easier to reproduce this when we add a 5ms delay in MetadataStore#get or use DelayInjectionMetadataStore in [metadata] add DelayInjectionMetadataStore#13005
+Run updateValueWhenKeyDisappears a few times
+See error.
+
+Expected behavior
+lock.updateValue should always success in this case.

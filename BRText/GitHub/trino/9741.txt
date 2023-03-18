@@ -1,0 +1,2 @@
+TestSqlServerConnectorTest.testSelectInformationSchemaColumns fail in 2019-CU13-ubuntu-20.04.
+The test succeeds in 2017 image, but it fails in 2019 image. We need to find the cause of deadlock.

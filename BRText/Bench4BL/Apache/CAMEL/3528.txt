@@ -1,0 +1,3 @@
+HybridSourceDataBinding not thread safe.
+The HybridSourceDataBinding in camel-cxf is not thread safe.
+The readers/writers in CXF hold state (like schemas and properties) and must be created when needed.

@@ -1,0 +1,5 @@
+Queries are occasionally getting stuck.
+The test that got stuck in this specific run is io.trino.faulttolerant.iceberg.TestIcebergTaskFailureRecoveryTest.testExplainAnalyze.
+
+While the test is built to validate failure recovery capabilities in fault tolerant execution the actual query that is getting stuck is not run with fault tolerant execution (see FailureRecoveryAssert.failsWithoutRetries in the stack trace). There's a chance that something is broken in the query failure path in pipelined execution.
+      

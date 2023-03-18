@@ -1,0 +1,6 @@
+Blocked thread warning when opening or closing an AsyncFile 
+Users have reported blocked thread warning when opening or closing an AsyncFile.
+Here are example stack traces:
+
+One user provided more details and reported he was using a mapped Windows shared drive.
+I have been able to reproduce the opening issue by a slow network filesystem (with twickle and nbd).

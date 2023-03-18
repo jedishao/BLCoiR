@@ -1,0 +1,5 @@
+Indefinite lock lost during master failover
+I've found my indefinitely held locks will sometimes disappear after a master/slave failover.
+The block here will not reschedule a renewal if the attempt of the update fails.
+The update can fail during a failover, in which case the lock is gone for good.
+The exception that gets thrown when the update fails:

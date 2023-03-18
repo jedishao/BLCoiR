@@ -1,0 +1,8 @@
+multilock fail
+lock fail when get first lock in multi lock case
+Steps to reproduce or test case
+when I set waitTime=0in multi lock , it fail, but I set waitTime=0 in RLock, it success, why?
+
+then , debug RedissonMultiLock,  until Line 413
+
+I think it is a bug in RedissonMultiLock

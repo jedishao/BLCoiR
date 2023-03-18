@@ -1,0 +1,2 @@
+OkHttp: race between sendCancel and sendFrame.
+If sendCancel is called (by timeout for example) before the stream is started, a following sendFrame will cause a NPE:

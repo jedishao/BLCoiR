@@ -1,0 +1,8 @@
+TransactionalProtocolOperationHandler.AbortOperationHandler must initialize the ExecuteRequestContext before responding.
+If in a race a COMPLETE_TX_REQUEST cancelling an op is processed by a server/slave HC before the original EXECUTE_TX_REQUEST is processed, when the EXECUTE_TX_REQUEST comes in the AbortOperationHandler attempts to respond with a "outcome"=&gt;"cancelled" response.
+This will fail because the ExecutionRequestContext will not be initialized.
+In this situation the AbortOperationHandler should initialize the ERC.
+With assertions enabled, this appears in the log:
+
+
+Without assertions, a few lines later a call to sendResponse will result in an NPE.

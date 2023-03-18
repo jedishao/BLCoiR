@@ -1,0 +1,5 @@
+JDBCRealm.getRoles bad synchronization causes hangs w/ DIGEST authentication.
+JDBCRealm.getRoles bad synchronization causes hangs w/ DIGEST authentication.
+JDBCRealm caches PreparedStatement preparedRoles.
+That, and missing synchronization in JDBCRealm and/or DigestAuthenticator allow two threads to call getRoles simultaneously so that T1 will do stmt.executeQuery() while T2 does stmt.setString(1, userName) plus another .executeQuery() on the same PreparedStatement object.
+In the worst case, the JDBC driver gets confused by this, and blocks forever waiting for server response, causing all other threads that try to access DB hang.

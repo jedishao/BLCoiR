@@ -1,0 +1,15 @@
+Possible race-conditions in hashCode of the range classes.
+The hashCode() methods of the range classes look very suspicious to me. 
+The value is lazily initialized, but the calculation is done _on the cached value. 
+With some unlucky timing a caller may get an incomplete hash.
+An unlucky sequence of Code could be something like
+
+where T1 and T2 are different threads accessing the method in parallel and T2 gets the wrong hash "17".
+Affected classes are
+org.apache.commons.lang.math.DoubleRange
+org.apache.commons.lang.math.FloatRange
+org.apache.commons.lang.math.IntRange
+org.apache.commons.lang.math.LongRange
+org.apache.commons.lang.math.NumberRange
+org.apache.commons.lang.math.Range
+Possible fix: calculate the hash on a temporary variable and finally assign it to the member.

@@ -1,0 +1,5 @@
+HttpClientMetrics#createEndpoint may be called multiple times for the same endpoint.
+The implementation of io.vertx.core.http.impl.ConnectionManager.QueueManager#getConnQueue can lead to HttpClientMetrics#createEndpoint being called multiple times for the same endpoint if different threads try to use a fresh HTTP client:
+
+HttpClientMetrics#createEndpoint is called from the ConnQueue constructor so a single instance of ConnQueue must be created if none is in the map.
+Otherwise SPI implementations my leak resources acquired in #createEndpoint as #closeEndpoint would never be called for the corresponding queue instance.

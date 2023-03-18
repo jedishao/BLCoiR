@@ -1,0 +1,25 @@
+Deadlock in JavaModelManager$PerProjectInfo and DeltaProcessingState.
+An adopter product (IBM) than runs in headless mode is hitting a deadlock with monitors org.eclipse.jdt.internal.core.JavaModelManager$PerProjectInfo and org.eclipse.jdt.internal.core.DeltaProcessingState.
+This product started to hit this deadlock with JDT 3.6.50.v_B79_R36x_J7 (org.eclipse.jdt.core_3.6.50.v_B79_R36x_J7.jar).
+They did not see this deadlock when they were using 3.6.4.v_A79_R36x (org.eclipse.jdt.core_3.6.4.v_A79_R36x).
+I noticed that the patch in bugzilla https:..bugs.eclipse.org.bugs.show_bug.cgi?id=338006 was put into the stream between those two versions (although the bugzilla was targeted to 3.7.
+maybe was backported), and the code added there appears in all the stack traces I have collected (specifically, the call to the new method DeltaProcessor.addPackageFragmentRoot in DeltaProcessor.addToParentInfo).
+BTW, I compared the code with the latest code in master, and the code path involved in these stacks has not changed, so I believe this could happen in master as well.
+Below are the stack traces.
+Thread Name
+Worker-2
+State
+Deadlock.Blocked
+Monitor
+Owns Monitor Lock on org.eclipse.jdt.internal.core.DeltaProcessingState@0x0000000007292CF8
+Waiting for Monitor Lock on org.eclipse.jdt.internal.core.JavaModelManager$PerProjectInfo@0x000000001603D008
+Java Stack
+
+Thread Name
+main
+State
+Deadlock.Blocked
+Monitor
+Owns Monitor Lock on org.eclipse.jdt.internal.core.JavaModelManager$PerProjectInfo@0x000000001603D008
+Waiting for Monitor Lock on org.eclipse.jdt.internal.core.DeltaProcessingState@0x0000000007292CF8
+Java Stack

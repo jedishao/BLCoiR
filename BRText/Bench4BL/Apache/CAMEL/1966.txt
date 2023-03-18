@@ -1,0 +1,2 @@
+CamelNamespaceHandler is not thread safe.
+Here is the mail thread[1] which discusses about it.

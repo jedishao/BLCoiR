@@ -1,0 +1,2 @@
+RedissonSession#changeSessionId expiredKey race condition
+We have a number of instances of our app in production, and we’ve encountered a race condition where the same session might have changeSessionId invoked on the same session separate servers. This means one server might receive -2 from PTTL, which isn’t currently handled.

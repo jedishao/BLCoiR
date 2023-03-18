@@ -1,0 +1,7 @@
+Starting and stopping routes leak threads.
+Seems to be identical consequence as with previous issue CAMEL-5677, but perhaps due to a different cause.
+Having a file or SFTP based route, trying something like:
+
+results in 50 orphan threads of this type:
+
+Switching to suspend/resume solves the problem, however I guess the start/stop issue should be addressed.

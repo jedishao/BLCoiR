@@ -1,0 +1,12 @@
+Deadlock if using separate thread to write to ServletOutputStream.
+If using a separate (non-container) thread to write to a ServletOutputStream, a deadlock can occur, if an io-error occurs during write.
+For example, if the client drops the connection.
+This is caused by a synchronized operation on the the underlying socket-object.
+The servlet handling thread is blocked, while waiting for the end of output from the separate thread, and holds a lock on the socket-object:
+- parking to wait for  <0x00000000c3b273b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+- locked <0x00000000c38ef6d8> (a org.apache.tomcat.util.net.SocketWrapper)
+The separate thread trys to write, but an io-error occurs:
+- waiting to lock <0x00000000c38ef6d8> (a org.apache.tomcat.util.net.SocketWrapper)
+Now it trys to get a lock on the socket-object and both threads are blocked forever.
+In the former tomcat version we used (7.0.53) this was not an issue.
+I had a look in the source code and saw that the failing code was invented later.

@@ -1,0 +1,4 @@
+RedissonSessionRepository topic listeners initialization has race condition
+We’ve successfully migrated to using RedissonSessionRepository for our Spring sessions, but we get intermittent NPEs right after startup.
+It looks like the issue is that the first listener is added before all of the topics are initialized, and the conditional matching in onMessage doesn’t go in the same order as initialization.
+

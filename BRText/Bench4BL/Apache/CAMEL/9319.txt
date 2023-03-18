@@ -1,0 +1,5 @@
+SshClient resource leak when used from ProducerTemplate.
+When using ProducerTemplate for execution of an ssh command (i.e. producerTemplate.requestBody("ssh://...", String.class)), 11 threads are being created, that are never killed.
+Any subsequent calls create new threads, eventually this exhausts memory and thread resources on the machine.
+These threads are not being killed even when explicitly stopping the ProducerTemplate.
+Here is a more detailed discussion, together with profiler results and code to reproduce the issue:

@@ -1,0 +1,3 @@
+Race condition in OuterPositionTracker.
+We saw an error in the OuterPositionTracker, where the outer position iterator is being fetched while there are still reference counts.
+I think this might be caused because the query was tearing down due to a limit.  Here is the stack.

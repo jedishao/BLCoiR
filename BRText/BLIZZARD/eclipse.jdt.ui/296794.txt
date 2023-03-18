@@ -1,0 +1,6 @@
+DocumentChange fails if document is not thread safe.
+This code worked in Eclipse 3.4 but throws org.eclipse.swt.SWTException: Invalid thread access in Eclipse 3.5.
+Seems like this is because of you try to run the refactoring changes in non ui thread when possible.
+Reproducible: Always
+Steps to Reproduce:
+final Point position;

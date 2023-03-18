@@ -1,0 +1,4 @@
+race condition in coordinator.
+the coordniator node stopped responding (and so did the broker).
+The coordinator logs say 'Crazy race condition'.
+logs of the coordinator:

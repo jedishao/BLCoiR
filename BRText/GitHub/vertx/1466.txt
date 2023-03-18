@@ -1,0 +1,13 @@
+Deadlock in ServerConnection/HttpClientRequestImpl.
+We use an HttpClient per thread, and this just happened.
+Found one Java-level deadlock:
+
+waiting to lock monitor 0x00007f553c037b48 (object 0x000000070d5fda10, a io.vertx.core.http.impl.ServerConnection), which is held by "vert.x-eventloop-thread-3"
+waiting to lock monitor 0x00007f55d9772a28 (object 0x0000000653c73ab0, a io.vertx.core.http.impl.HttpClientRequestImpl), which is held by "vert.x-eventloop-thread-0"
+waiting to lock <0x000000070d5fda10> (a io.vertx.core.http.impl.ServerConnection)
+locked <0x0000000653c73ab0> (a io.vertx.core.http.impl.HttpClientRequestImpl)
+waiting to lock <0x0000000653c73ab0> (a io.vertx.core.http.impl.HttpClientRequestImpl)
+locked <0x000000070d5fda10> (a io.vertx.core.http.impl.ServerConnection)
+
+There is a chance that it's just a glitch, we had some weird behaviour, two instances launched instead of one or something...
+Also, this code looks a bit dangerous (io.vertx.core.http.impl.HttpClientRequestImpl#getLock):

@@ -1,0 +1,7 @@
+Race condition inside ConcurrentSessionControllerImpl.
+I was getting SessionAlreadyUsedException on rapid usage (by single user). The strack trace of the exception is below.
+The problem seems to be the unsynchronized sequence of commands Inside ConcurrentSessionControllerImpl.registerSuccessfulAuthentication():
+            sessionRegistry.removeSessionInformation(sessionId);
+            sessionRegistry.registerNewSession(sessionId, principal);
+The registerNewSession() will fail if an other thread registers the same session between these two commands.
+The strack trace:

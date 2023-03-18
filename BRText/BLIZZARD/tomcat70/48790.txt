@@ -1,0 +1,7 @@
+Race condition in org.apache.catalina.session.ManagerBase:maxActive.
+We are running tomcat 6.0.18 with a race detector, and find one race condition in class
+org.apache.catalina.session.ManagerBase field maxActive.
+Data Race 1: org.apache.catalina.session.ManagerBase: maxActive
+Here is the code snip of ManagerBase.java
+Statement 1 and statement 2 should executed in an atomic manner.
+One fix to this problem is to move statement 1 and statement 2 into a synchronized block.

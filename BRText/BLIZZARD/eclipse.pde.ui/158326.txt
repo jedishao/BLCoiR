@@ -1,0 +1,6 @@
+Opening build.properties for big plug-in locks UI for 45s and flashes cursor.
+Opening build.properties for a big plug-in locks the UI for 45+ seconds and heavily flashes the cursor beween busy and normal.
+- open /org.eclipse.jdt.ui.tests.refactoring/build.properties
+- go to 'Build' page
+Trace taken while blocked (looks like CheckboxTreeViewer creates children eagerly):
+- locked <0x1b6f5798> (a org.eclipse.swt.widgets.RunnableLock)

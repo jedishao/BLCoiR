@@ -1,0 +1,7 @@
+Lack of synchronization in org.apache.catalina.security.SecurityUtil.
+Symptom: all processor threads spin madly in:
+Cause: org.apache.catalina.security.SecurityUtil.objectCache is a HashMap, but access to it is not synchronized.
+The javadoc for HashMap says:
+Note that this implementation is not synchronized.
+If multiple threads access a hash map concurrently, and at least one of the threads modifies the map structurally, it must be synchronized externally.
+Proposed solution: change objectCache to ConcurrentHashMap;

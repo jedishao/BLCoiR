@@ -1,0 +1,5 @@
+deadlock using MoveFilesAndFoldersOperation from a refactoring participant.
+We provide a Resource Move refactoring participant for resources managed by our plug-in.
+The following line of code in the participant causes the deadlock:
+
+The MoveFilesAndFoldersOperation class is from the "org.eclipse.ui.actions" package.

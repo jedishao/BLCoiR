@@ -1,0 +1,19 @@
+IVMInstallType api and AbstractVMInstallType impl are not thread safe.
+The IVMInstallType.createVMInstall(<id>) method call immediately makes the vm install visible to everyone.
+I hit a race condition that looked like this:
+Thread 1
+========
+IVMInstall vm = type.createVMInstall(vmId);
+vm.setInstallLocation( vmLocation );
+vm.setName(vmName);
+Thread 2
+========
+There are two thread safety problems here:
+1.
+IVMInstallType api causes new runtimes to be made available to everyone before they can be fully initialized.
+2.
+AbstractVMInstallType internally does not use synchronization.
+Most specifically, access to fVMs list member variable is not synchronized.
+Potential fix:
+Can't change existing IVMInstallType api, but the AbstractVMInstallType implementation can be changed to synchronize on the vm type object for all getter and setter methods that deal with vm instances.
+That directly addresses #2 and allows #1 to be worked around by adding a synchronized block around code in Thread 1 above...

@@ -1,0 +1,8 @@
+Deadlock in BasicAction when jboss remoting and JTA is used.
+At EJBRemoteTransactionPropagatingInterceptor, a transaction that has been already open at current server could be ignored, thus causing the transaction to be reimported, resulting in the double diamond problem and a deadlock.
+Issue created based on discussion at jboss-support-transactions list.
+Current jboss remoting implementation on JTA does not provide correct handling of double diamond transaction propagation problem.
+If transaction is propagated from one server to other one and then back to the first one then such situation can cause deadlock. 
+Remote calls and transactions are processed but when servers using the same remote resource the prepare phase of 2PC can stuck. 
+Transaction is timed-out later and recovery process rolls it back.
+IIOP/JTS does not suffer with this flaw.

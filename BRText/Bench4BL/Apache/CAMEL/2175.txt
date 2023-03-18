@@ -1,0 +1,5 @@
+Initialization code of camel-cxf is not thread safe.
+getCxfBinding is not thread safe in case multiple threads hit a CXF webserive at once and it hasnt been initialized before.
+Code like this
+
+Is a false sense as the getAndSet will let other threads pass it with a cxfBinding that still may not have been initialized.

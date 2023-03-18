@@ -1,0 +1,12 @@
+NPE from JFace when using cell editor in variables view.
+Steps do not consistently reproduce, but I have encontered the NPE multiple times while debugging.
+Possible race condition in JFace.
+There is a null check before the NPE location, but another thread could call dispose.
+1) Run a java program with an array of chars.
+2) Stop on a breakpoint, display the array of chars in the var view.
+3) Select an array entry's value in the var view to open cell editor
+4) Delete the value
+5) Click outside of the cell
+6) Two errors, first error (Invalid Type) is correct, second is NPE
+Error
+Problems occurred when invoking code from plug-in: "org.eclipse.jface".

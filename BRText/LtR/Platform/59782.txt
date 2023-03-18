@@ -1,0 +1,5 @@
+Deadlock in reentrant workspace.runbuild I20040420-1300.
+- started eclipse in Java perspective
+- I believe I selected a project in the packager explorer, then chose Window > Preferences
+- when the prefs dialog came up (with the Workbench page selected), I then got a progress dialog
+- it showed a waiting user operation and a waiting workspace build

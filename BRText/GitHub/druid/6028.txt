@@ -1,0 +1,5 @@
+Error in SqlMetadataRuleManagerTest.
+A lock could not be obtained due to a deadlock, cycle of locks and waiters is:
+A lock could not be obtained due to a deadlock, cycle of locks and waiters is:
+
+      

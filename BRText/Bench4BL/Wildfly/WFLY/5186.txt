@@ -1,0 +1,15 @@
+TimeoutException: Unable to acquire lock after 15 secondsSeen in these scenarios:
+ejb-ejbservlet-shutdown-repl-async
+ejb-ejbservlet-jvmkill-repl-async
+http-session-shutdown-repl-async-tcpStack
+http-session-undeploy-dist-sync
+With no obvious connection to failover of the nodes, usually all the 4 servers log this error few times during the testrun (each server different time):
+
+The error is usually followed by a warning: 
+
+
+While the error was logged 15 times by all servers in this particular run, the warning message was logged 505 times.
+Server log:
+The same error with different stacktrace:
+
+Server log:

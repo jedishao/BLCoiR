@@ -1,0 +1,3 @@
+StepSynchronizationManager uses static HashMap - NullPointerException with multiple Threadsorg.springframework.batch.core.scope.context.StepSynchronizationManager produces NullPointerException, because it uses static java.util.HashMap to increment and decrement variables for the current Thread, which is not threadsafe.
+Solution: Replacing java.util.HashMap with java.util.Hashtable (threadsafe) works for me.
+\Find attached a minimal maven project (start TestStepSynchronizationManagerMain to reproduce the NullPointerException) and a possible fix.

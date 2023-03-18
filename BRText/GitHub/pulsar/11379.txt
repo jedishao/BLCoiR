@@ -1,0 +1,16 @@
+Directory facing race condition on NarUnpacker.
+Describe the bug
+This issue is an extension for #11340. When users create functions with parallelism larger than the number of functions-worker, the directory race condition can be observed.
+
+Above exception from a single node broker + functions worker, with a sample function parallelism=3. The exception shows that it is unable to delete /tmp/pulsar-nar/pulsar-java-functions-pojo-parse-1.0-SNAPSHOT.jar-unpacked/META-INF/maven, which has already been deleted by another instance of the sample function. This exception raised my attention   and lead me to #11340.
+To Reproduce
+Steps to reproduce the behavior:
+
+Have a single node cluster on K8S by https://github.com/streamnative/charts, I have created a sample values file as gist and can be found here
+build a sample function, you can take my example https://github.com/freeznet/pulsar-java-functions-pojo-parse and build with mvn
+create function with the sample package with parallelism>1, it is easier to reproduce with larger parallelism.
+normally you can observe the issue first with pulsar-admin functions status with some of the instances are not running.
+for some instances you can observe the above exception from the broker's log, this is because the race condition happens when multiple threads trying to delete the same file.
+for some instances you can observe the exception described in Extracted Pulsar Function jar file content in /tmp/pulsar-nar directory gets corrupted or overridden by different content #11340, this is because the race condition happens when some threads deleted the extracted nar package by the extracting thread, and the extracting thread is still loading the classes.
+
+      

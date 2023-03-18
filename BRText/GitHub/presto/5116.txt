@@ -1,0 +1,4 @@
+Race in TestTaskExecutor.testTaskHandle.
+This test fails non-deterministically with:
+java.lang.AssertionError: expected [1] but found [0]
+It's pretty easy to repro if you set the invocation count to 10k

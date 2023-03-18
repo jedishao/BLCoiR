@@ -1,0 +1,3 @@
+Potential deadlock when using phased scheduler with broadcast joins.
+The scheduling dependency graph is missing an edge (2->1), which can cause the join stage to be scheduled independently (and before) the build stage.
+      

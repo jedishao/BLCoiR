@@ -1,0 +1,8 @@
+HTTP Client - Deadlock
+Sometimes, it appears that some eventloops are blocked while doing some http client relative stuff (Vert.x 3.7.0)
+Here is a threaddump:
+waiting to lock <0x00000000c5b865e0> (a io.vertx.core.http.impl.HttpClientRequestImpl)
+locked <0x00000000c541b4b8> (a io.vertx.core.http.impl.Http1xClientConnection)
+locked <0x00000000c541b4b8> (a io.vertx.core.http.impl.Http1xClientConnection)
+
+I'm trying to provide a simple reproducer but it seems that the deadlock is pretty hard to reproduce.

@@ -1,0 +1,10 @@
+BatchProcessor interrupt has side effects.
+I have noticed that the BatchProcessor class uses the Thread class interrupt method to wake the run loop from sleeping within the enqueueExchange method.
+The unfortunate side effect of this is that if the run loop is in the middle of processing exchanges, and the processing involves something slow like establishing a JMS connection over SSL or queuing to an asynchronous processor, then the processing can become interrupted.
+The consequence of this side effect is that the batch sender thread rarely gets the opportunity to complete properly and exceptions regarding the interrupt are thrown.
+This all became apparent during some performance testing that resulted in continuously adding exchanges to the aggregator, the threshold becoming reached, and then trying to enqueue the aggregated result to a JMS queue.
+If my analysis of the BatchProcessor is correct then I would recommend finer grained concurrency controls being used instead of relying upon interrupting a thread. Perhaps something like the following (untested) re-write of the sender:
+I have replaced the concurrent queue with a regular linked list and mutexed its access.
+In addition any queuing of exchanges is noted. This should result in less locking.
+The main change though is that queuing an exchange does not interrupt the batch sender's current activity.
+I hope that this sample is useful.

@@ -1,0 +1,14 @@
+[Proxy] Proxied /admin endpoint connections might remain blocked forever.
+Describe the bug
+Proxied /admin endpoint connections might remain blocked forever.
+Example stacktrace
+waiting to re-lock in wait() <0x00000000d3269c28> (a java.util.ArrayDeque)
+
+Expected behavior
+There should be a timeout in place which prevents threads to hang forever in this state.
+When investigating the issue and code, it can be seen that the timeout isn't set for proxied requests.
+The call to super.setTimeout method is missing in AdminProxyHandler. The base method is overridden and that's why it doesn't get set to any value.
+this is the code in the base class method which sets the timeout:
+https://github.com/eclipse/jetty.project/blob/526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8/jetty-proxy/src/main/java/org/eclipse/jetty/proxy/AbstractProxyServlet.java#L321-L324
+Another observation from that code is that it has been copy-pasted from the Jetty code. There's no use of using the ServletConfig for getting the configuration values. This code need some cleanup too.
+      

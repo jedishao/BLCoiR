@@ -1,0 +1,8 @@
+Bookie down causes deadlock in broker.
+One of multiple bookie servers in our cluster went down due to a hardware failure. At the same time, the broker server went down.
+Messages that the broker could not connect to ZK were output to its log. I think this is due to a deadlock.
+
+Below is a thread dump just before the broker shuts down.
+broker_threaddump.txt
+This phenomenon is similar to #3566. However the Pulsar version of the broker is 2.3.2, and the previous bug should have already been fixed.
+      

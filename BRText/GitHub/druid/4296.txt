@@ -1,0 +1,12 @@
+HLL BufferUnderflowException querying realtime indexing tasks.
+I already posted in the druid-user google group about this: https://groups.google.com/forum/#!topic/druid-user/X71sEX1Ia_8 but I've decided to also post here since I think it may be an actual issue.
+I believe I'm seeing an issue related to #3560, even though I'm running the 0.9.2 final release downloaded from http://static.druid.io/artifacts/releases/druid-0.9.2-bin.tar.gz, which should contain the fix (#3578).
+A little context:  I'm running indexing realtime tasks on middleManagers that have events pushed to them from applications using tranquility.  When I run timeseries queries for intervals that are being indexed on an indexing node, although the queries may initially return data, after a time, if I repeatedly run the queries I'll eventually begin receiving BufferUnderflowException errors from peon nodes. Here is the relevant query and stack trace pulled from the peon task logs
+My middleManger configuration is here:
+
+A fix I've found is that if I set
+druid.indexer.fork.property.druid.processing.numThreads=1
+Then I no longer have any issues, which leads to me to think I am running into the race condition described in the linked issue which ends up corrupting the HLL segment.
+Setting the processing threads to 1 is not ideal though since I would like the efficiency of having an indexing thread and a query thread per task if possible.
+I also tried upgrading the cluster to 0.10.0 and still ran into this issue as well.
+      

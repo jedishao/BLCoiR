@@ -1,0 +1,4 @@
+ConcurrentModificationException in PublisherCallbackChannelImpl.
+While testing continuous publishing to a RabbitMQ node that I blocked network traffic to (simulating a network partition), I got this ConcurrentModificationException in PublisherCallbackChannelImpl, the line number indicates that this happened in the pendingConfirms map. 
+Looking at the source code, the code is guarded by synchronizing on the map, while other places in the code where the map is accessed are synchronized on the PublisherCallbackChannelImpl itself.
+Stacktrace below:

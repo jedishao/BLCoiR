@@ -1,0 +1,2 @@
+Thread blocked in io.vertx.core.net.impl.clientconnection.ConnectionManager.getConnection
+While upgrading https://github.com/folio-org/okapi from Vert.x 4.0.0 milestone 4 to milestone 5, we noticed a serious issue with HttpClient connections being thread blocked.. It seems to appear when connection can not be made to a remote host. Using same client and issuing another request that also fails results in a thread blocked warning and a halt of the event loop..

@@ -1,0 +1,16 @@
+[Java client] Deadlock in Pulsar Client when running ConsumerBatchReceiveTest.
+There's a deadlock issue in Pulsar Client in master branch. A PR test run had stalled and the thread dump detected this deadlock issue:
+Found one Java-level deadlock:
+
+waiting to lock monitor 0x00007fce080ad180 (object 0x00000000c6094a00, a org.apache.pulsar.client.impl.ConsumerImpl), which is held by "pulsar-client-internal-459-1"
+waiting for ownable synchronizer 0x00000000c6094bf0, (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync), which is held by "pulsar-timer-462-1"
+
+Java stack information for the threads listed above:
+waiting to lock <0x00000000c6094a00> (a org.apache.pulsar.client.impl.ConsumerImpl)
+parking to wait for  <0x00000000c6094bf0> (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+locked <0x00000000c6094a00> (a org.apache.pulsar.client.impl.ConsumerImpl)
+Found 1 deadlock.
+
+Expected behavior
+Pulsar Client shouldn't deadlock.
+      

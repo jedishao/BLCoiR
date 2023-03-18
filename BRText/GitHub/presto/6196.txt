@@ -1,0 +1,24 @@
+Deadlock in task info fetching.
+Hit this one in production. Suddenly all queries get queued and all clients start timing out. Here is the full stack trace.
+Found one Java-level deadlock:
+
+waiting to lock monitor 0x00007f8fed4a6fb8 (object 0x00007f9615a7e020, a com.facebook.presto.execution.resourceGroups.ResourceGroup$RootResourceGroup), which is held by "ResourceGroupManager"
+"ResourceGroupManager":
+waiting to lock monitor 0x00007f91f0cc3598 (object 0x00007f9a9f000a48, a com.facebook.presto.execution.SqlStageExecution), which is held by "HttpRemoteTask-20160926_222904_08073_w6q27.1.105-2010288"
+waiting to lock monitor 0x00007f90ed8c3ee8 (object 0x00007f9a9f000870, a com.facebook.presto.server.remotetask.ContinuousTaskStatusFetcher), which is held by "ContinuousTaskStatusFetcher-20160926_222904_08073_w6q27.1.105-2009564"
+waiting to lock monitor 0x00007f910c0b5948 (object 0x00007f9a9f0008e0, a com.facebook.presto.server.remotetask.HttpRemoteTask), which is held by "HttpRemoteTask-20160926_222904_08073_w6q27.1.105-2010288"
+
+Java stack information for the threads listed above:
+waiting to lock <0x00007f9615a7e020> (a com.facebook.presto.execution.resourceGroups.ResourceGroup$RootResourceGroup)
+waiting to lock <0x00007f9a9f000a48> (a com.facebook.presto.execution.SqlStageExecution)
+locked <0x00007f9615a7e020> (a com.facebook.presto.execution.resourceGroups.ResourceGroup$RootResourceGroup)
+locked <0x00007f9615a7e020> (a com.facebook.presto.execution.resourceGroups.ResourceGroup$RootResourceGroup)
+locked <0x00007f9615a7e020> (a com.facebook.presto.execution.resourceGroups.ResourceGroup$RootResourceGroup)
+waiting to lock <0x00007f9a9f000870> (a com.facebook.presto.server.remotetask.ContinuousTaskStatusFetcher)
+locked <0x00007f9a9f0008e0> (a com.facebook.presto.server.remotetask.HttpRemoteTask)
+locked <0x00007f9a9f0008e0> (a com.facebook.presto.server.remotetask.HttpRemoteTask)
+locked <0x00007f9a9f000a48> (a com.facebook.presto.execution.SqlStageExecution)
+waiting to lock <0x00007f9a9f0008e0> (a com.facebook.presto.server.remotetask.HttpRemoteTask)
+locked <0x00007f9a9f000870> (a com.facebook.presto.server.remotetask.ContinuousTaskStatusFetcher)
+
+Found 1 deadlock.

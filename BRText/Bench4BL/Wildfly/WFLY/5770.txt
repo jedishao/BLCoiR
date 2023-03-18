@@ -1,0 +1,2 @@
+Lock TimeoutException on CacheRegistry.close()
+Just happened on node shutdown when testing locally.

@@ -1,0 +1,32 @@
+Crash of stockticket async example caused by an aborted client request.
+I mentioned this issue in "Time for 7.0.60" thread on dev@.
+It is a bug with error handling in example webapp.
+It is not a regression from recent changes.
+It is reproducible with 7.0.59.
+Steps to reproduce:
+Using Tomcat 7.0.59, JDK 6u45.
+1.
+Start Tomcat
+2.
+Visit stockicker example,
+http://localhost:8080/examples/async/stockticker
+3.
+Abort the request while the page is being loaded (Press "Esc" key on keyboard)
+4.
+Re-visit the example
+http://localhost:8080/examples/async/stockticker
+Expected: Working stockicker example.
+Actual:
+1) Browser waits for a response.
+After several seconds the progress indicator stops.
+A blank page is displayed.
+1) Access log shows response status 200, but byte counter is zero ("-").
+1) Looking into catalina.2015-03-10.log, there is the following exception:
+The connection will be closed immediately
+1) Looking at console,
+There is the same exception as in "3)",
+followed by the following exception:
+Essentially, the async.Stockticker thread crashed due to a non handled ISE.
+This explains the behaviour.
+1) The exception in "4)" is logged to the console only.
+It is not logged into Tomcat log files.

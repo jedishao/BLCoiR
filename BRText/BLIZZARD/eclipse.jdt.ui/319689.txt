@@ -1,0 +1,2 @@
+Invalid thread access in ProblemMarkerManager.
+I've just got this exception while shuting down my 4.0 SDK but my guess from the stacktrace is that this not really a problem solely in 4.0

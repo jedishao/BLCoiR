@@ -1,0 +1,5 @@
+DelegationTokenSecretManager reuses the same objectstore, which has concurrency issues.
+sometime in metastore log, will get below exception, after analysis, we found that :
+when hivemetastore start, the DelegationTokenSecretManager will maintain the same objectstore, see here
+saslServer.startDelegationTokenSecretManager(conf, *baseHandler.getMS()*, ServerMode.METASTORE);
+this lead to the cocurrent issue.

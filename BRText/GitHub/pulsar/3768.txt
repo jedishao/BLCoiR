@@ -1,0 +1,5 @@
+[pulsar-function] intermittent test failure due to deadlock.
+org.apache.pulsar.functions.worker.PulsarWorkerAssignmentTest.shutdown() has intermittent failure due to deadlock into function-worker.
+Disabling this for now and we have to enable back once deadlock issue is fixed at function-worker.
+Error Message
+Method org.apache.pulsar.functions.worker.PulsarWorkerAssignmentTest.shutdown() didn't finish within the time-out 60000

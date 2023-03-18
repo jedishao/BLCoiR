@@ -1,0 +1,4 @@
+IllegalStateException in CamelContinuationServlet under heavy loadReason is a race between continuation.suspend() and continuation.resume(). 
+It can occur that continuation.resume() is executed before continuation.suspend() leading to an IllegalStateException thrown by Jetty:
+This is the case when an async completion callback is faster than the thread that is concurrently executing the if (continuation.isInitial()) block. 
+I'll commit a fix soon that also follows the recommendations in http://wiki.eclipse.org/Jetty/Feature/Continuations to always call continuation.suspend() before registering the continuation with a callback handler.

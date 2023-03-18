@@ -1,0 +1,5 @@
+A race condition is caused within QueryPlan classHive's threads are stopped at HashMap.getEntry(..) that is used within QueryPlan#extractCounters() and QueryPlan#updateCountersInQueryPlan().  
+It seems that a race condition problem of a HashSet object is caused when extractCounters() and updateCountersInQueryPlan() are concurrently executed.  
+I hit the problem with Hive 0.7.1 but, I think that it also is caused with 0.8.1.
+The problem is reported by several persons on mailing list.
+The following is a part of my thread dump.

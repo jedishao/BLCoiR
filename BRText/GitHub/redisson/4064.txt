@@ -1,0 +1,16 @@
+Thread safe problem when acquiring locks resulting in a pubsub channel not being unsubscribed
+This seems to be related to:  #2575
+Expected behavior
+The pub/sub channels that are created while trying to acquire a lock with RedissonLock should be unsubscribed when no longer needed.
+Actual behavior
+In some cases when 2 pub sub channels are created around the same time for (2 different lock keys) one of the two throws an error:
+Subscribe timeout: (7500ms). Increase 'subscriptionsPerConnection' and/or 'subscriptionConnectionPoolSize' parameters.
+After this error the failed lock key will lock fine when not locked. If it is however locked by another thread it will fail instantly.
+see the logging from the test case below, notice how thread [pool-1-thread-12] successfully locks key 0.
+When thread [pool-1-thread-19] tries to lock lockkey-0  it instantly throws the subscribe timeout exception (notice it does not wait 7500ms).
+If there is no locking going on and the app is still running it kept a channel active for lockkey-0
+
+Some logging from the test case when it fails:
+
+Steps to reproduce or test case
+This does not always fail, sometimes it runs a million locks without issues sometimes it throws the error and puts a channel in a failed state.

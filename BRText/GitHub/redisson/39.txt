@@ -1,0 +1,14 @@
+Locking on Jersey
+I'm trying to use Lock and Unlock on Jersey Resource.
+
+User makes a POST request
+System LOCK "A"
+System does some stuff
+System UNLOCK "A"
+User makes another POST request
+System LOCK "A"
+System does some stuff
+System UNLOCK "A"
+
+The system crashes at point 6 (view attachment).
+If i try to make some LOCK-UNLOCK in a while loop it works, but when i make these LOCK-UNLOCK from different Threads it does not works.

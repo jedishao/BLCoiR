@@ -1,0 +1,25 @@
+Abstract implementation of datashare APIs using Java 1.4 NIO.
+Created attachment 132859 [details]
+Single text file with two Java classes.
+This is still a work in progress but I guess I'll put it in bugzilla for the time being.
+NIODatashareContainer:
+-abstract createNIOChannel(ID channelId, IChannelListener listener, Map properties)
+-abstract createNIOChannel(IChannelConfig newChannelConfig)
+Counterparts to createChannel(...).
+NIOChannel:
+-sendRequest(ID)
+Used by sendMessage(ID, byte[]) to send a request to the remote peer for establishing a socket connection with each other.
+
+Wow, that probably made no sense at all, right?
+Known issues:
+-not all events are fired, IChannelContainerListener is not used at all, for IChannelListener, only IChannelMessageEvents are fired at the moment.
+-from the example, you might've noticed that repeated invocations of sendMessage(ID, byte[]) may cause multiple invocations to sendRequest(ID), this is not good of course.
+-thread A should probably only start when a channel has been created instead of in the constructor.
+-NIOChannel stores the SocketChannel before the handshake is truly complete as thread A has not really "accepted" the connection yet, thread B should remove stale sockets that are disconnected (based on isOpen()?).
+-thread B sends/receives messages but also accepts sockets, socket handshake maybe should be done in a thread C because the handshake is currently a blocking operation, on the other hand, three threads is a lot, maybe change to non-blocking.
+-unhandled exceptions.
+Room for improvement:
+-the dispose life cycle of the channel container is not completely clear because IChannelContainerAdapter doesn't have any disconnect() or dispose() methods, not sure if this is a general datashare API problem or not.
+-more javadocs, more comments.
+
+Definitely more but these are the ones I know of off-hand.

@@ -1,0 +1,6 @@
+Zombie tasks able to acquire locks after failure.
+We had an issue where disconnect somewhere occurred long enough for the overlord to log a task as failed, but the task was still running.
+After 45 mins or so the task submitted a lock acquire request and it was granted, but since the task had already been failed, it never was properly cleaned up.
+These are from the overlord
+
+Suffice to say, this is a long-running task that acquires multiple 1-hr locks during the course of its execution.

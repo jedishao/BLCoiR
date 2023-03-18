@@ -1,0 +1,5 @@
+ConcurrencyFailureException when multithreaded tasklet updates %PREFIX%STEP_EXECUTION_CONTEXT tableNeed to synchronize the step.
+Execution in org.springframework.batch.core.repository.dao.JdbcExecutionContextDao in the method updateExecutionContext(final StepExecution stepExecution), in order to prevent concurrency failures if two threads are trying to update the same step execution context record.
+It appears this is already done in JdbcStepExecutionDao.updateStepExecution at line 162:
+synchronized (stepExecution) {
+The error we are getting when our multithreaded tasklet is processing is:

@@ -1,0 +1,3 @@
+rare race condition can take down a regionserver. 
+this happened after 24 hours of heavy import load on my cluster.
+Luckily the shutdown seemed to be clean:

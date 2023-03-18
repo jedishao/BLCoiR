@@ -1,0 +1,3 @@
+Race in taskMaster when the overlord becomes the leader.
+TaskMaster has the interfaces to return the variables (taskRunner, taskQueue, etc) which are initialized only when the overlord becomes the leader. The code of the interfaces is like this:
+However, taskRunner is initialized in DruidLeaderSelector.Listener.becomeLeader() which is called after the overlord becomes the leader, and thus Optional.of() throws an NPE. The full stack trace is as follows:

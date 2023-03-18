@@ -1,0 +1,3 @@
+Non synchronized access to WeakHashMap causes infinite loop.
+The non synchronized access from AjTypeSystem.getAjType(clazz) to a static instance of WeakHashMap may cause an infinite loop at start up in a multi threaded system.
+The thread dump shows that 32 of 33 threads of the application stuck in WeakHashMap.get(Object) line 355:

@@ -1,0 +1,2 @@
+Distributed web session expiration ScheduledExecutorService leaks threads on undeploy.
+The ScheduledExecutorService employed by the SessionExpirationScheduler uses shutdown() to shutdown the thread pool - however, unless we explicitly setExecuteExistingDelayedTasksAfterShutdownPolicy(false), all scheduled tasks will attempt to execute after shutdown!

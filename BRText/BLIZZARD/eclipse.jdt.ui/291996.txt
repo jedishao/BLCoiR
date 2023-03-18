@@ -1,0 +1,3 @@
+Invalid thread access from JavaMergeViewer during extracting method.
+I was extracting method in the source with compilation errors.
+Error dialog disappeared, so I guess some shell was presented and closed after the error.

@@ -1,0 +1,5 @@
+ClassCastException processing async thread queue.
+Debugging some (horrible) code I got the following exception:
+2.
+In DebugView switch stack frames a few times, alternating between "T1!" and "T2!"
+Note: I had watches on total and i when I discovered this bug.

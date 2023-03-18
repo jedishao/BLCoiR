@@ -1,0 +1,7 @@
+race-condition breaks dynamic WSDL.
+We have developed a couple of Spring Webservices deployed on Tomcat in a (stateless) Docker container that from time to time somehow fail to start correctly and return a stacktrace instead of the WSDL. 
+Restarting the container will almost always fix it at the first attempt.
+The same issue was reported here by someone else:
+It looks like it is similar to bugs like these:
+
+Below the complete stacktrace:

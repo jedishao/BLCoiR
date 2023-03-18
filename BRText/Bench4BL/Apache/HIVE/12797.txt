@@ -1,0 +1,2 @@
+Synchronization issues with tez/llap session pool in hs2.
+The changes introduced as part of HIVE-12674 causes issues while shutting down hs2 when session pools are used.

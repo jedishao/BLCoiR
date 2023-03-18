@@ -1,0 +1,1 @@
+Realm.ensureWorkerThreadIsRunning() doesn't start a new thread.

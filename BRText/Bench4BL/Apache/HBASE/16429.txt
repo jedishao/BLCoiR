@@ -1,0 +1,22 @@
+FSHLog: deadlock if rollWriter called when ring buffer filled with appendsRecently we experienced an online problem that all handlers are stuck. 
+Checking the jstack we could see all handler threads waiting for RingBuffer.next, while the single ring buffer consumer dead waiting for safePointReleasedLatch to count down:
+
+Normal handler thread:
+RingBufferEventHandler thread waiting for safePointReleasedLatch:
+
+FSHLog#replaceWriter will call SafePointZigZagLatch#releaseSafePoint to count down safePointReleasedLatch, but replaceWriter got stuck when trying to publish a sync onto ring buffer:
+
+Thus deadlock happens.
+A brief process of how deadlock forms:
+
+ring buffer filled with appends
+
+rollWriter happens
+
+the only consumer of ring buffer waiting for safePointReleasedLatch
+
+rollWriter cannot publish sync since ring buffer is full
+
+rollWriter won't release safePointReleasedLatch
+
+This JIRA targeting at resolve this issue, and will add a UT to cover the case.

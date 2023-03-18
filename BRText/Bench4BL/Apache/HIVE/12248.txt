@@ -1,0 +1,9 @@
+The rawStore used in DBTokenStore should be thread-safe.
+A non-thread-safe implementation of RawStore, particularly ObjectStore, set in DBTokenStore is being shared by multi-threads, which causes the race condition in DataNuclues to access the backend DB. 
+The DN PersistenceManager(PM) in ObjectStore is not thread safe, so DBTokenStore should use a ThreadLocal ObjectStore.
+Following errors might be root caused by the race condition in DN PM.
+
+Object of type "org.apache.hadoop.hive.metastore.model.MDelegationToken" is detached. Detached objects cannot be used with this operation.
+
+org.datanucleus.exceptions.ObjectDetachedException: Object of type "org.apache.hadoop.hive.metastore.model.MDelegationToken" is detached.
+Detached objects cannot be used with this operation.

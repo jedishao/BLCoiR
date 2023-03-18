@@ -1,0 +1,14 @@
+Race condition in Future setHandler/completion between threads
+In one of our projects we have encountered a problem with CompositeFuture.all() when running "outside" of a verticle (in junit tests).
+Here is a sample program:
+After a while it prints something like
+
+Inside implementation of CompositeFutureImpl.all() the setHandler() function is called upon each future in the composition (in our case two).
+The problem here is that the completion of futures runs in a different thread than setting the handler.
+Neither of the functions (setHandler() nor complete()) are atomic and it may result in a situation when the handler is never called.
+The problem seems to be more fundamental.
+The future implementation (FutureImpl) is not thread safe and using it from different threads may cause difficulties.
+When running inside a verticle it's ok because asynchronous callbacks are serialized within the event loop
+and should not run concurrently.
+I don't know if this is an expected behaviour and Futures (and their compositions) should be used only within verticles.
+Our understanding based on looking into the implementation of CompositeFutureImpl is that the intention was to make it thread safe.

@@ -1,0 +1,10 @@
+Hang in HostController shutdown when CTRL-C is usedIt is fairly easy to produce a hang in domain mode shutdown by launching domain.sh and then soft killing the process with CTRL-C.
+If this hang happens, a thread dump will show this
+waiting to lock &lt;0x00000007f7946a30&gt; (a org.jboss.as.host.controller.ManagedServer)
+parking to wait for  &lt;0x00000007f61e5480&gt; (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+
+The 2nd thread is blocking waiting for a prepared response from one of the servers. 
+The first thread is trying to send a notification that the channel connecting to the server has been closed. 
+The first thread will never unblock because the 2nd thread can't proceed and deliver the information that the channel is closed.
+This happens because all the processes (PC, HC, servers) respond to the CTRL-C. So the server is shutting down in parallel and has closed the channel.
+In theory this could happen for other reasons too, though. Anything that results in closing the channel while the ManagedServer lock is held.

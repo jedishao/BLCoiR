@@ -1,0 +1,19 @@
+JMDNS Discovery Thread is slowing down shutdown.
+I noticed that after Eclipse appears to have shutdown it takes a long time for the Java process to exit.
+Looking at a thread dump all remaining threads are daemon threads except for JMDNS Discovery Thread.
+Shouln't this be marked as a daemon thread as well and/or shutdown when the bundle is stopped that started it?
+Full thread dump Java HotSpot(TM) Server VM (16.3-b01 mixed mode):
+- waiting on <0xd71f4800> (a java.lang.ref.ReferenceQueue$Lock)
+- locked <0xd71f4800> (a java.lang.ref.ReferenceQueue$Lock)
+- waiting on <0xd71012c8> (a org.apache.commons.httpclient.util.IdleConnectionTimeoutThread)
+- locked <0xd71012c8> (a org.apache.commons.httpclient.util.IdleConnectionTimeoutThread)
+- waiting on <0xd62fd768> (a org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue)
+- locked <0xd62fd768> (a org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue)
+- locked <0xd62fd768> (a org.eclipse.ecf.internal.provider.jmdns.SimpleFIFOQueue)
+- waiting on <0xd3969058> (a java.lang.ref.ReferenceQueue$Lock)
+- locked <0xd3969058> (a java.lang.ref.ReferenceQueue$Lock)
+- waiting on <0xd3981908> (a java.lang.ref.Reference$Lock)
+- locked <0xd3981908> (a java.lang.ref.Reference$Lock)
+- locked <0xd3837c70> (a java.lang.Shutdown$Lock)
+- locked <0xc7b25238> (a java.lang.Class for java.lang.Shutdown)
+"VM Periodic Task Thread" prio=10 tid=0xc6f18800 nid=0xc71 waiting on condition

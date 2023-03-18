@@ -1,0 +1,14 @@
+Race condition in Mina2Producer/Mina2Consumer when closing connections with disconnect=true.
+There is a race condition in the Mina2Producer when trying to close connections after use by setting disconnect=true or setting CamelMina2CloseSessionWhenComplete=true. 
+Connections will not be fully closed in the method maybeDisconnectOnDone. 
+The call to session.close(true) returns a CloseFuture - one must await this to ensure the session is really closed.
+In the current implementation, there is no await on the CloseFuture.
+This means that the producer will be returned to the pool before the session is closed.
+If the next call comes right after, it is very likely that it will get the same producer and that the session will suddenly be closed while in use, leading to errors like ExchangeTimedOutException:
+The OUT message was not received within 30000 ms or java.lang.IllegalStateException: handler cannot be set while the service is active.
+The fix is trivial - just change line 221 in Mina2Producer.java.
+
+But the unit testing might be more complex.
+There might be a similar issue in Mina2Consumer - but I could not provoke it as easily.
+Here is a small program demonstrating the problem - on my system it will fail within the first 50 iterations.
+When looking at the debug log, it is clear that the connections are closed too late - after the next iteration has started.

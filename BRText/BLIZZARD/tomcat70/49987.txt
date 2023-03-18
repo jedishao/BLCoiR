@@ -1,0 +1,4 @@
+Data race in ApplicationContext.
+http://svn.apache.org/repos/asf/tomcat/tc6.0.x/trunk/java/org/apache/catalina/core/ApplicationContext.java
+Data race on variable.
+In method

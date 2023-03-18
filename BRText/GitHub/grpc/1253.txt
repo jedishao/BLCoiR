@@ -1,0 +1,3 @@
+ClientCallImpl operations race with Context cancellation.
+With be60086, we don't create the stream when the Context is cancelled, so the following request(), sendMessage(), halfClose() will encounter an IllegalStateException like:
+@louiscryan, FYI, I'll send you a PR to fix it soon.

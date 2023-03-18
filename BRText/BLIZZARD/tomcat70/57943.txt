@@ -1,0 +1,4 @@
+NioEndpoint, one poller thread died.
+when i restart tomcat,the tomcat can not process request soon find an error log.
+tomcat poller thread is not catch this exception,so this thread is died.
+connection is accept but has no poller thread to process.

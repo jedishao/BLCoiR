@@ -1,0 +1,6 @@
+Deadlock on each startup caused by AbstractWorkingSetManagerI20051129-0800.
+
+I always get a deadlock caused by AbstractWorkingSetManager when starting an existing workspace:
+
+waiting on <0x12dd1b00> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager)
+locked <0x12dd1b00> (a org.eclipse.jdt.internal.core.search.indexing.IndexManager)

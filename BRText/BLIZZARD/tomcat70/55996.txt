@@ -1,0 +1,12 @@
+Async context does not timeout with HTTP NIO connector.
+Servlet with Async processing and Java Based client
+I created a ProblemServlet which receives request via a Java based client.
+The Servlet starts an Async processing for each request.
+Within the Async processing run() method there is a while loop which cyclically sends String messages to the client.
+The implementation of run method is shown.
+When a Java based console application client hits this servlet and reads its output stream, for around 10 sec the messages arrive.
+But after 10 seconds the connection is closed by the server.
+Exception in thread "http-bio-8080-exec-6" java.lang.IllegalStateException: The request associated with the AsyncContext has already completed processing.
+Issue is seen with "apache-tomcat-7.0.50", "apache-tomcat-7.0.47".
+Not tested with other release 7 variants.
+The same codebase when run on "apache-tomcat-8.0.0-RC10" there are no issues.

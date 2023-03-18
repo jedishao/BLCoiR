@@ -1,0 +1,12 @@
+Deadlock during refresh properties.
+Hi,
+Commons configurations get itself stuck in deadlock when refreshing properties using Managed reloading strategy. 
+It seems to me it gets stuck because of fireEvent in reload method.
+Another access grabs lock on synchronized (getNodeCombiner()) when trying to rebuild but Combined configuration is one of the listeners for event es well and it gets stuck when processing invalidate. 
+Can anyone suggest quick fix please?
+Relevant information follows.
+Thanks
+Pavel
+Configuration:
+
+Our Reload code:

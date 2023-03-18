@@ -1,0 +1,20 @@
+Race condition throws an unhandled exception in CompositeFuture.all.
+Which version(s) did you encounter this bug ?
+3.9.2, but this is likely in newer versions as well.
+
+Context
+When at least two futures executing on different threads are passed to CompositeFuture.all(), there is a race condition throwing an unhandled and unexpected exception if the futures both fail at virtually the same time.
+
+The gap between this synchronized block in all method reached when a future fails
+
+and the synchronized block in doComplete method
+
+can create a situation where a subsequent future/thread sees that composite.isComplete() is false, yet making it to doComplete method, returning false after seeing result is not null.
+
+After returning from tryFail method, this then throws the unhandled and unexpected exception in fail method
+
+
+Here is a simple test with @RunWith(VertxUnitRunner.class) treating unhandled exceptions as unit test failures.
+
+
+which should throw at least one exception, depending on the number of executions.

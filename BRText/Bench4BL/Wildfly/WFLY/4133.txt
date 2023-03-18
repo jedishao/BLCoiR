@@ -1,0 +1,2 @@
+Hanging EJB threads because of a persistent timer and failed deployment. 
+When there is a time service with pending timeouts a bad redeploy can hang worker threads in the server.

@@ -1,0 +1,14 @@
+Fine session attributes (i.e. replication-granularity = ATTRIBUTE) cause org.infinispan.util.concurrent.TimeoutException: ISPN000299: Unable to acquire lock after 15 secondsOur system using the following infinispan configuration for web session cache (i.e. an async, non-transactional, batch, optimistic locking dustrubutable cache):
+
+When we perform a load test for one of our business use case in our system, Wildfly always throw the infamous locking for 15 seconds timeout exception:
+After tracing using the trace log, we found the time difference between a "Lock all keys" log statement and the "Release locks for keys" log statement takes for about 15~20 seconds, so if another concurrent request would like to lock the same key within that interval, it will result in the timeout exception, example as below:
+
+We think that is strange as those session keys are POJO without complex nested objects, and we only perform read operation on those objects. 
+Although we know objects without marked @org.wildfly.clustering.web.annotation.Immutable will perform cache sync, we believe that should not took for more than 1 second to commit the cache but it takes for more than 15 seconds...
+After future tracing, we found the following log message on another cluster node:
+
+
+In general, it synchronized XXX key 2 times, YYY key 2272 times, ZZZ key 3 times!!!
+The root cause should be this line: https://github.com/wildfly/wildfly/blob/10.0.0.Final/clustering/web/infinispan/src/main/java/org/wildfly/clustering/web/infinispan/session/fine/FineSessionAttributes.java#L76 where a new CacheEntryMutator.mutate() will trigger a new PutKeyValueCommand.
+For consecutive get call on the same session key, it will trigger the PutKeyValueCommand multiple times, but that is not necessary for transactional/ batched cache in general as the MarshalledValue is lazily serialized, the actual value is pointing to the same instance.
+Attached the suggested change, which solved our issue. Basically use a Set to track the mutated attribute names, to ensure the command is only issued once. Tested on non-transactional, batched cache (non-transactional, non-batch cache may not work as I did not think about that...)

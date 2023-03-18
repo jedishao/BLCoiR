@@ -1,0 +1,6 @@
+RedissonLock.tryLock() interrupted and keep renew lock
+Expected behavior
+when tryLock is interrupted, watchdog renew listener is cancelled too
+
+Actual behavior
+when tryLock is interrupted, watchdog keeps renewing lock, this makes infinite lock.

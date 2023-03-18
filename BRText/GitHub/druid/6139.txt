@@ -1,0 +1,6 @@
+Race in testCheckpointForUnknownTaskGroup() of KafkaSupervisorTest.
+The stacktrace is:
+The corresponding code is:
+Assert.assertNotNull(serviceEmitter.getStackTrace());
+So, the issue is, serviceEmitter.getStackTrace() can return null when this check is called, so the test should wait for the stacktrace to be set.
+      

@@ -1,0 +1,8 @@
+unsafe initialization in BicubicSplineInterpolatingFunction.
+The lazy initialization of the internal array of partialDerivatives in BicubicSplineInterpolatingFunction is not thread safe. 
+If multiple threads call any of the partialDerivative functions concurrently one thread may start the initialization and others will see the array is non-null and assume it is fully initialized. 
+If the internal array of partial derivatives was initialized in the constructor this would not be a problem.
+i.e. the following check in partialDerivative(which, x, y)
+
+will start the initialization. However in computePartialDerivatives() partialDerivatives = new BivariateFunction;
+makes it appear to other threads as the the initialization has completed when it may not have.

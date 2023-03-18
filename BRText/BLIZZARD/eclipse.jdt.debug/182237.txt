@@ -1,0 +1,2 @@
+Invalid thread access exceptions in Java Variables view.
+Since updating to M6, I have been getting these exceptions when I first open the variables view.

@@ -1,0 +1,4 @@
+Data race in RetriableStream.onReady()
+As shown in the following stack trace, RetriableStream.onReady() is calling isReady() on transport thread, whereas isReady() is calling frame().isClosed(), but framer.closed is not thread-safe.
+
+SUMMARY: ThreadSanitizer: data race MessageFramer.java:320 in io.grpc.internal.MessageFramer.close()V

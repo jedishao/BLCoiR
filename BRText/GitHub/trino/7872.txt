@@ -1,0 +1,1 @@
+Flaky TestSqlServerTypeMapping: "Transaction was deadlocked ... and has been chosen as the deadlock victim".

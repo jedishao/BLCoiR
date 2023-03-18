@@ -1,0 +1,5 @@
+Make camel-validation thread-safe.
+When a flow which contains a camel-validation endpoint is started, the XSD schemas are not loaded until the first request comes in and the camel-validation endpoint is first hit.
+If two requests come in simultaneously, the initialization will be performed twice, at the same time. 
+It seems that SchemaFactory is not thread-safe, so this results in the following exception:
+Is it possible to backport the fix to 1.4?

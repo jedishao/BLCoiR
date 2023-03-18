@@ -1,0 +1,22 @@
+Deadlock in master TableNamespaceManager while running IntegrationTestDDLMasterFailover.
+I was running IntegrationTestDDLMasterFailover on distributed cluster when i notice this.
+Here is relevant part of master's jstack:
+
+"ProcedureExecutor-3":
+
+  waiting for ownable synchronizer 0x000000072574b330, (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync),
+  which is held by "ProcedureExecutor-1"
+
+"ProcedureExecutor-1":
+  waiting to lock monitor 0x00007fd2cc328908 (object 0x0000000725c36a48, a org.apache.hadoop.hbase.master.TableNamespaceManager),
+
+  which is held by "ProcedureExecutor-3"
+
+Java stack information for the threads listed above:
+
+
+
+Found 1 deadlock.
+
+
+I will try to dig more info about why this happened logs not showing much.

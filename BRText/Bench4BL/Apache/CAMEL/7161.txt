@@ -1,0 +1,2 @@
+camel-dozer - Can cause dead-lock in init when using springWhen using spring with dozer, and we call init in the ctr, then spring can cause a deadlock when it does its getBean stuff.
+We should defer init to a bit later, and turn the loader into a service so init is done like the others with start|stop methods.

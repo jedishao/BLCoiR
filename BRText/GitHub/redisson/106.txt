@@ -1,0 +1,2 @@
+RedissonList's Iterator Race Conditions.
+RedissonList iterator as it tries to keep "up to date" with data has a race condition in which if between the .hasNext() and the .next() call the set is emptied the list will throw NoSuchElementException.

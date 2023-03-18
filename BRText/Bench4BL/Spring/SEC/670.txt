@@ -1,0 +1,33 @@
+Deleting from ACL_OBJECT_IDENTITY can cause deadlocks under (load test).
+While performing load testing, we found concurrent deletes from the ACL_OBJECT_IDENTITY table by the JdbcMutableAclService would cause deadlocks in the database.
+This is potentially only a problem when using MS SQL server 2000, I haven't tested any other RDBs.
+The deadlocks were found when simulating only 3 concurrent users, so was relatively easy to reproduce.
+The deadlocks are caused for several reasons, I'll start with the most serious.
+deleteAcl(ObjectIdentity objectIdentity, boolean deleteChildren) does the following:
+1 find all children of the ACL
+2 optionally delete these recursively  // not tested, but would cause deadlocks i think
+call deleteEntries(..)
+    performs a select to find Objectidentity pkey
+    deletes from ACL_Entry
+call deleteObjectIdentityAndOptionallyClass(..)
+    performs a select to find Objectidentity pkey
+    deletes from ACL_OBJECT_IDENTITY
+    selects from ACL_OBJECT_IDENTITY to see if the entry deleted was the last from a particular class
+    deletes from ACL_CLASS (dependent on outcome of previous select)
+
+In MS SQL server the best practise is to perform all selects first, then do deletes, interleaving selects and deletes is a recipe for deadlocks.
+After some reorganisation of the above operations, we also found another deadlock caused by the database this time internally, where 2 concurrent deletes on the ACL_OBJECT_IDENTITY table when the DB was checking the foreign key to "parent object", which we had to solve with a synchronized.
+I've pasted our fixed code below, not that it no longer deletes from the ACL_CLASS table if the ACL_OBJECT_IDENTITY row is that last one that referenced it, as I find this a waste of time (you may not agree?), it this may cause issues with a coinciding insert into ACL_OBJECT_IDENTITY (untested and not fully thought through).  
+Also if deleteChildren was passed as true, I'm sure the deadlocks would still occur.
+
+deleted is the last of that class, as this would
+require a select after a delete, which can cause deadlocks on some RDB's, and potentially another thread creating an ACL may have checked that ACL_CLASS row exist and is waiting to insert would experience problems.
+Also note that this method is synchronised, this is yet another deadlock avoidance manoeuvre, here's why.
+The ACL_OBJECT_IDENTITY table has a foreign key back to itself (to support hierarchical ACLs), and this can cause the following situation:
+Thread 1 (T1) is attempting to delete row X, so obtains an exclusive page lock on row X (and some of it close buddies).
+Thread 1 (T2) is attempting to delete row Y, so obtains an exclusive page lock on row Y (and some of it close buddies).
+T2 now performs a table scan to ensure the FK from PARENT_OBJECT back to ID (same table remember) is not violated by removal of row Y, but has to wait for the exclusive lock held by T1 to be released.
+T1 now performs a table scan to ensure the FK from PARENT_OBJECT back to ID (same table remember) is not violated by removal of row X, but has to wait for the exclusive lock held by T2 to be released.
+This has been observed using MS SQL Server, under load testing.
+
+Retrieves the primary key from the acl_object_identity table for the passed ObjectIdentity. Unlike some other methods in this implementation, this method will NOT create a row (use 

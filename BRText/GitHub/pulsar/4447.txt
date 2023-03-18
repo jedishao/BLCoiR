@@ -1,0 +1,9 @@
+Broker gets stuck when getting partitioned stats.
+Describe the bug
+Brokers in our cluster get stuck when executing internalGetPartitionedStats:
+
+pulsar/pulsar-broker/src/main/java/org/apache/pulsar/broker/admin/impl/PersistentTopicsBase.java
+
+thread dump:
+To Reproduce
+We haven't found the way to reproduce yet.

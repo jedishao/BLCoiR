@@ -1,0 +1,4 @@
+Race condition that fails a query.
+Stack trace:
+
+This happens fairly regularly in the CI (same issue, but different test run from the above):

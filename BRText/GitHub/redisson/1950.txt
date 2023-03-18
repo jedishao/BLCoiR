@@ -1,0 +1,7 @@
+PriorityBlockingQueue doesn't release lock after reconnect on network.
+there is a lock name redisson_sortedset_lock:{testqueue} which doesn't release, it seem's like it can't release lock cause network broke, however it get a lock before network boke.
+Steps to reproduce or test case
+1.run code blow
+
+2.disconnect your network
+3.wait a few minute,then reconnect your network

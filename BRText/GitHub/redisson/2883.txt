@@ -1,0 +1,4 @@
+RedissonFairLock deadlock
+
+RedissonFairLock result.
+Only more than 100 "endLok" were printed。if use RedissonLock，it can be print all.

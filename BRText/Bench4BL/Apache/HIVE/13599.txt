@@ -1,0 +1,3 @@
+LLAP: Incorrect handling of the preemption queue on finishable state updates.
+When running some tests with pre-emption enabled, got the following exception.
+Looks like a race condition when removing items from pre-emption queue.

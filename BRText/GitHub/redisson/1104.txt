@@ -1,0 +1,21 @@
+RFairLock dead lock issue.
+Hi,
+I would like to report a locking issue we are seeing using redisson versions 3.3.2 to 3.5.4, using RFairLock.
+We have 3 instances of an application competing for a fair lock.
+After some time, the timeout of the fair lock queue gets set to a time many hours in the future, and no thread ever gets the lock.
+
+Here is what redis is reporting during one of the occurences - both commands ran at about 9:30AM PST on 10/17/2017 (1508257800000):
+
+
+You can see that the timeout (zscore of the timeout keys) is set about 6 hours in the future.
+
+So far, we haven't been able to reproduce the issue locally, but it is happening daily in our production environment.
+We are suspecting the problem is happening randomly when one of the application gets killed by the operating system (kill -9), something that can happen quite often due to the way we manage the apps.
+
+We were using redisson version 3.2.3 before, and never experienced the issue.
+Earlier this year, we tried updating to version 3.3.2 and started seeing the problem within a day or so.
+We reverted to 3.2.3, and waited for an updated version.
+Two days ago, we decided to upgrade to 3.5.4 assuming the problem was fixed, but it happened again within a few hours.
+I will keep on trying to reproduce the issue, but any help is appreciated.
+Thanks,
+Michael

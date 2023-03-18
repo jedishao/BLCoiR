@@ -1,0 +1,15 @@
+jdk14 trace deadlock in oc4j.
+I turned on tracing for the Aj class inside of Oracle's OC4J server.
+In one test (not always) it deadlocked.
+It looks like the threads are each trying to lock each other's loader.
+Notice that one of the threads is in the toString method of the Oracle ClassLoader (perhaps another reason to prefer tracing argument class names and system identity hashcodes).
+
+Here's a thread dump from Ctrl+BREAK:
+
+Found one Java-level deadlock:
+
+waiting to lock monitor 0x003384ec (object 0x05239e48, a oracle.classloader.PolicyClassLoader), which is held by "OC4J Launcher"
+waiting to lock monitor 0x0033848c (object 0x0554f0e8, a oracle.classloader.PolicyClassLoader), which is held by "WorkExecutorWorkerThread-1"
+Java stack information for the threads listed above:
+
+Found 1 deadlock.

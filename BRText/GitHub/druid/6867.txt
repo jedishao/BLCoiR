@@ -1,0 +1,4 @@
+deadlock found in DruidStatement.
+We found deadlock in DruidStatement and DruidConnection, this will cause exhaust connections.
+Found one Java-level deadlock:
+Java stack information for the threads listed above:

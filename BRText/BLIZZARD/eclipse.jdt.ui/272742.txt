@@ -1,0 +1,5 @@
+ImagesOnFileSystemRegistry is not thread safe.
+Got the exception below when I clicked/hovered over a type and had the Javadoc view open (linked to editor).
+This has already been reported as bug 223686, but the real problem is that ImagesOnFileSystemRegistry is not thread safe.
+I could not find steps to reproduce, but I'm pretty sure this happens if getNewFile() is called in two threads at the same time such that fImageCount is the same for both threads.
+Later, both threads must call ImageLoader#save(..) concurrently.

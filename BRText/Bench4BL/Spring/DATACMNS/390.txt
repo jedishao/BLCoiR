@@ -1,0 +1,8 @@
+ConcurrentModificationException in MappingContextTypeInformationMapper.resolveTypeFrom.
+I am using Spring Data and found the following Stacktrace in the logs:
+I think that there might be a data race in the implementation of org.springframework.data.mapping.context.AbstractMappingContext#getPersistentEntities()
+Although the code acquires a read lock when returning the values of the HashMap "persistentEntities" it immediately releases the lock.
+This opens up the possibility that a thread modifies the values of "persistentEntities" while another thread is iterating over the values. 
+The JavaDoc of java.util.HashMap#values() says "If the map is modified while an iteration over the collection is in progress (except through the iterator's own &lt;tt&gt;remove&lt;/tt&gt; operation), the results of the iteration are undefined."
+In my case I get a ConcurrentModificationException.
+It would be nice, if you could take a look at this issue.  

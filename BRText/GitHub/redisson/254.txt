@@ -1,0 +1,6 @@
+EOFException when I use RLock with SerializationCodec
+I configure Redisson to use SerializationCodec instead of default JsonJacksonCodec.
+Then I run my code in environment with concurrent threads and use Lock object to sync thread.
+After that I get exception and unlock only after expiration in 30 sec.
+Previous major version of Redisson does't contain this issues.
+Similar problem I have when I use CountDown.

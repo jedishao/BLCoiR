@@ -1,0 +1,8 @@
+Performance: DataSourceProxy#createPool should use more fine grained synchronisation
+Hello,
+I don't know if this is the right component.
+My Enhancement concerns new Tomcat JDBC POOL.
+Looking at code I think that DataSourceProxy#createPool should not be synchronized but use another private method that is synchronized and used only when creation is needed, something like that:
+Currently since createPool() is called for lots of getters we get this synchro IMPACT without really needing it.
+Regards
+Philippe

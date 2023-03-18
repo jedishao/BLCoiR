@@ -1,0 +1,8 @@
+Long latency issue while call Redis.
+I use Redisson 2.2.10 to implement distributed lock in my project.
+And then I run load test for this distributed lock using SINGLE redis mode.
+But I found there are many long latency APIs, and it's wired that almost all the long latency APIs are a little greater than 1000ms.
+The average latency and 99 percent latecy is about 15ms and 30ms respectively.
+And then I used jstack to get the call stack and found most of the threads are WAITING at the same place just as the following
+
+Meanwhile, during the test, I dumped the network packages using tcpdump and found that it took about 1000ms before the first package was sent to Redis. And in Redis server, I didn't find any slow query whose latency is more than 10ms. So I think, for the long latency API, most of the time might be cost in the project not the network. So can you help me to have a check or give me some suggestion about this issue? Many thanks.

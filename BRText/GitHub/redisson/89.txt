@@ -1,0 +1,12 @@
+RedissonLock locks up
+Under heavy use on production, Redisson's locks get all locked up, and the application stalls. I'm using Redisson 1.1.5
+I have 1 thread locked trying to release a lock:
+
+Also of note, I have about 30 other threads locked awaiting for a lock (a different one from the one used by the previous thread).
+I checked the threads with jstack, here is the relevant output:
+
+I checked Redis's state:
+
+
+this key is the one corresponding to the thread blocked trying to release a lock.
+The other threads, that are waiting for a separate lock are locked even though there is no-one taking up such lock....

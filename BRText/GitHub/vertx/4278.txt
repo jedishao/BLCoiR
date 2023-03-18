@@ -1,0 +1,18 @@
+ArrayList concurrency error when deploying the verticles
+Hi
+We have an intermitent problem with the startup of our applications, in a few attempts I can reproduce so it quite often to occur.
+
+This is the error:
+
+This is the piece of code that is triggering the concurrency error:
+
+class: DeploymentManager
+method: registerVerticleFactory
+The exception is thrown by ArrayList.sort, here is the code
+
+So from my analysis the ArrayList is being modified while it is being sorted.
+We have 20 verticles in this application, so we iterate over the collection of class names and invoke the method below from
+
+rxDeployVerticle(String name, DeploymentOptions options)
+Please let me know if any additional information is required.
+Thanks

@@ -1,0 +1,3 @@
+Remove TimeRangeTracker as point of contention when many threads reading a StoreFile.
+HBASE-12148 is about "Remove TimeRangeTracker as point of contention when many threads writing a Store". 
+It is also a point of contention when reading.

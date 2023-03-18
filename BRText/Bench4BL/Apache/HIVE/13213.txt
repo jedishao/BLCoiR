@@ -1,0 +1,4 @@
+make DbLockManger work for non-acid resources. 
+for example:
+insert into T values(...)
+If T is an ACID table we acquire Read lock, but for non-acid table it should acquire Exclusive lock.

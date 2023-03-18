@@ -1,0 +1,8 @@
+Exception in using RedissonMultiLock
+I have 5 independent masters and I use single server config to create Redisson instance.
+
+The RedissonMultiLock works fine if all the redis nodes are alive.
+If I shutdown one of the redis nodes, it will throw RedisConnectionException
+Exception in thread "main" org.redisson.client.RedisConnectionException: Can't init enough connections amount! Only 0 from 5 were initialized. Server: /192.168.223.128:8000
+According to The Redlock algorithm, it should try to lock another node but not throw exception. Do I use RedissonMultiLock correctly?
+It tries to acquire the lock in all the N instances sequentially, using the same key name and random value in all the instances. During step 2, when setting the lock in each instance, the client uses a timeout which is small compared to the total lock auto-release time in order to acquire it. For example if the auto-release time is 10 seconds, the timeout could be in the ~ 5-50 milliseconds range. This prevents the client from remaining blocked for a long time trying to talk with a Redis node which is down: if an instance is not available, we should try to talk with the next instance ASAP.

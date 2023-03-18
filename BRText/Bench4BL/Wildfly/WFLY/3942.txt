@@ -1,0 +1,2 @@
+Race condition with clean shutdown and mod_cluster session draining.
+Probably same issue exists in WF as well, I will revalidate the logic for race conditions.

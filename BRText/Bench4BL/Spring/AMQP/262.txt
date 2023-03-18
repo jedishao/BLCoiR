@@ -1,0 +1,5 @@
+ConcurrentModificationException with publish confirms.
+I'm getting random ConcurrentModificationExceptions in the publish confirm code when sending messages from multiple threads, using the same rabbit template.
+Looking at the code, it seems that PublisherCallbackChannelImpl.addPendingConfirm() is thread unsafe. 
+It should synchronize the access to this.pendingConfirms, just like processAck() does. 
+I've attached a possible fix. 

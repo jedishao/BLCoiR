@@ -1,0 +1,41 @@
+NIO async servlet limit latch leak.
+the sample webapp to reproduce the bug
+we have encouter this bug in a real product webapp.
+I have tested this in linux x86, oracle jdk jdk1.7.0_55, tomcat 7.0.53 and tomcat 8.0.5.
+we change HTTP Connector to NIO in "server.xml", e.g. protocol="org.apache.coyote.http11.Http11NioProtocol"
+the simplified situation:
+1.
+call "req.startAsync()" to start async serlvet, then execute the async logic in our user thread.
+2.
+sometimes the user thread be interrupted (by some timeout logic of our code).
+3.
+some user code call "resp.flushBuffer()" to send response to client
+PROBLEM:
+in the situation descibed above, the "LimitLatch.countDown()" is not called.
+when the connections limit latch count up to max ( default "10000" ), tomcat DO not accept any connection, all incoming client hangs.
+REPRODUCER:
+in a clean tomcat-7.0.53 installation:
+1.
+change the default "server.xml" Connector config.
+(1) change protocol="org.apache.coyote.http11.Http11NioProtocol"
+(2) Optional, add maxConnections="100" to reproduce the bug faster.
+2.
+copy the sample webapp in the attachment to "webapps/ROOT.war"
+3.
+start tomcat.
+4.
+each request is likely cause a limit latch leak.
+when the requests reaches maxConnections (100 as we set above) or some more, the client ( curl ) hangs.
+after some debug, wo found these:
+1.
+when the thread was interrupted, when the user code call "resp.flushBuffer()", the NioChannel was Closed by jdk NIO code, and a ClosedByInterruptException is thrown.
+2.
+when the channel closed, the SelectionKey was removed by Poller thread,
+3.
+when we call "ctx.complete()", it run to "org.apache.tomcat.util.net.NioEndpoint.processSocket(NioChannel, SocketStatus, boolean)", code is below:
+since the SelectionKey was removed, the "attachment" returns null.
+the logic is break, "AbstractEndpoint.countDownConnection()" is not called, a limit latch leak happens.
+1.
+switch to the stable BIO connector.
+2.
+avoid call "resp.flushBuffer()" in the user thread.

@@ -1,0 +1,5 @@
+executeBlocking callback run on the wrong thread for asynchronous future resolution.
+Currently the executeBlocking(Handler<Future<T>>, Handler<AsyncResult<T>>) might execute the callback on the wrong thread when the runOnContext(...) execution loses the race against the thread that completes the future.
+This never happens when the worker thread completes the future, but it can happen when the worker thread hands off the future to another thread that completes it.
+
+This happen in the Mongo client and fails with a stack-trace like:

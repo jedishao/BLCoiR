@@ -1,0 +1,8 @@
+Possible race condition leading to NullPointerException in SynchronizationManagerSupport.
+We recently migrated to Spring Batch 3.x a system that has been running fine in production for a number of years on older Spring Batch 2.x releases. 
+While this has been running fine in production for a couple of months now, yesterday a batch failed with what appears to be some kind of race condition/multithreading bug.
+Re-running the batch completely (which would operate on exactly the same data in a re-run) worked fine so this is not easily reproducible.
+The error was
+In the step that failed, the batch has been split into partitions with gridSize=2 running across 5 threads. it looks like the failure happened at the end of the step.
+Having a look inside the code the NPE line is below. Could this be due to inconsistent synchronization or possibly an assumption that the count hasn't already been removed that is not true?
+Without being highly familiar with the code it looks a bit odd to me to synchronize on one field (counts) during increment, but another (contexts) during decrement.

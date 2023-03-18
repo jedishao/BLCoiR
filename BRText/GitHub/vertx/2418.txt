@@ -1,0 +1,4 @@
+Possible deadlock when trying to get multiple locks
+Here is the code, which illustrates the problem.
+The Consumer verticle acuires lock1 and gets stuck.
+I have reproduced the same problem using HazelcastClusterManager and IgniteClusterManager.

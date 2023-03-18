@@ -1,0 +1,10 @@
+NPE in TimerResourceDefinition.
+I am experiencing race conditions when running test remotely from Arquillian to Wildfly 8.1.0.CR2. 
+In 2 of 3 Cases i get a NPE in Wildfly in relation to one of my own scheduled EJB.
+Stacktrace:
+
+My scheduled Service FileDeploymentScanner is somewhat special, it schedules the times itself (No Schedule annotation. Simplified it looks like this:
+
+What is happening, is, the arquillian client apparently tries to read complete wildfly configuration (dont know why), and during this step it fails to do so.
+I failed to write reproducer ear/app. I can&amp;apos;t release my closed source though which produces this error.
+But hopefully, this NPE is easy to fix.

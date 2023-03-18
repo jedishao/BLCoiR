@@ -1,0 +1,5 @@
+Include full stacktraces from LogTestDurationListener test hang monitor.
+tests apparently hanged.
+one test thread is here:
+
+the information who owns TestClass@2a78dd6a is not present, probably because every stacktrace is limited to 8 frames.

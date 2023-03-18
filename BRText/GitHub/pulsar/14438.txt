@@ -1,0 +1,4 @@
+sometimes internal DeleteTopicForcefully will block forever.
+
+in our scene, when we dump the thread many times , we can see this will wait forever
+      

@@ -1,0 +1,5 @@
+Calling asyncContext.getResponse() returns null after async timeout.
+If the async thread calls asyncContext.getResponse() after the async timeout, it gets a null reference.
+In the following example, it leads to a NPE.
+The servlet spec is not very clear on the behavior to adopt after a timeout, but I don't think null should be returned.
+Maybe an IllegalStateException instead? It seems to be the case if complete() is called after the timeout.

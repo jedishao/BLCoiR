@@ -1,0 +1,8 @@
+Invalid Thread Access when launching.
+Running HEAD.
+1.
+restart eclipse
+2.
+start a jdt debug session and resulted in this exception
+It seems to only happen on the first launch.
+Subsequent launches do not result in exceptions.

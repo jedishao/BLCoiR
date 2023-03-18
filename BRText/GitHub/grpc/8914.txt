@@ -1,0 +1,12 @@
+binder: Deadlock due to unexpected re-entrancy of transactions on process-local Binder
+BinderTransport locking was written under the assumption that calls to IBinder#transact() enqueued the Parcel for delivery to the peer and returned immediately. However, Android guarantees the unique object identity of IBinder instances within a process. And so when a client creates a Channel to a Server/Service within its own process, BinderClientTransport.outgoingBinder == BinderServerTransport.outgoingBinder. android.os.Binder#transact() on that object is implemented not as a system call to the binder driver but as a direct call to its own onTransact() method.
+This is a problem because BinderTransport#handleTransaction() holds its 'this' lock while calling outgoingBinder.transact() in multiple places. If two peer instances of BinderClientTransport and BinderServerTransport are running handleTransaction() on different threads at the same time, they can each end up holding their own lock while waiting (forever) for the other's.
+Steps to reproduce one instance of this bug
+
+Use BinderChannelBuilder to create a Channel to an android.app.Service hosted by the same process
+Have both the client and server repeatedly send messages to each other around the same time from different threads
+
+What did you expect to see?
+No deadlock
+What did you see instead?
+Example deadlock, via sendAcknowledgeBytes():

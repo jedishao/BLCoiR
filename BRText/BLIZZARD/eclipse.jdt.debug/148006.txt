@@ -1,0 +1,20 @@
+deadlock in ConsoleDocument during ant execution in autobuild.
+Got this after starting up with the build, importing plug-ins as binary, and waiting for autobuild to complete:
+Full thread dump Java HotSpot(TM) Client VM (1.4.2_06-b02 mixed mode):
+Found one Java-level deadlock:
+=============================
+"Thread-12":
+waiting to lock monitor 0x080930fc (object 0x48ac6540, a org.eclipse.ui.internal.console.ConsoleDocument),
+which is held by "Worker-8"
+"Worker-8":
+waiting to lock monitor 0x08092cd4 (object 0x56c9ddb0, a java.lang.Class),
+which is held by "Thread-12"
+Java stack information for the threads listed above:
+===================================================
+"Thread-12":
+- waiting to lock <0x48ac6540> (a org.eclipse.ui.internal.console.ConsoleDocument)
+- locked <0x56c9ddb0> (a java.lang.Class)
+- locked <0x48abcae0> (a org.apache.tools.ant.Project)
+- waiting to lock <0x56c9ddb0> (a java.lang.Class)
+- locked <0x48ac6540> (a org.eclipse.ui.internal.console.ConsoleDocument)
+Found 1 deadlock.

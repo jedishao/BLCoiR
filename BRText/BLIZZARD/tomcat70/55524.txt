@@ -1,0 +1,18 @@
+Deadlock produced during Websocket write operation (org.apache.catalina.websocket.WsOutbound).
+thread dump of the deadlock.
+I use Tomcat with an application that uses Websockets.
+The websockets are handled by the Atmosphere framework: https://github.com/Atmosphere/atmosphere
+A deadlock occurs during write operations to the websocket.
+I have attached a thread dump of the deadlock.
+This issue is also discussed here:
+Here are the deadlocked threads:
+Found one Java-level deadlock:
+waiting to lock monitor 0x00007efebc0015f8 (object 0x00000005ef4c6988, a org.apache.catalina.websocket.WsOutbound),
+which is held by "Atmosphere-Scheduler-2"
+waiting to lock monitor 0x00007efe8c290ac0 (object 0x00000005ef4b77f8, a org.atmosphere.cpr.AtmosphereResourceImpl),
+which is held by "Atmosphere-Shared-AsyncOp-267"
+Java stack information for the threads listed above:
+- waiting to lock <0x00000005ef4c6988> (a org.apache.catalina.websocket.WsOutbound)
+- locked <0x00000005ef4b77f8> (a org.atmosphere.cpr.AtmosphereResourceImpl)
+- waiting to lock <0x00000005ef4b77f8> (a org.atmosphere.cpr.AtmosphereResourceImpl)
+- locked <0x00000005ef4c6988> (a org.apache.catalina.websocket.WsOutbound)

@@ -1,0 +1,14 @@
+[Bug] Deadlock while reading Schema from BookKeeper.
+Search before asking
+
+I searched in the issues and found nothing similar.
+
+Minimal reproduce step
+There is a combination of facts in which you can end up in a stuck broker with the main ZK client thread stuck like this:
+
+It is a consequence of #17762
+The main problem here is that with PulsarRegistrationClient even if we use the MetadataCache there is still a chance that we load the value with a blocking call to ZK.
+https://github.com/datastax/pulsar/blob/3738257bd5be07f317aa68c2217aececf28c1761/p[…]apache/pulsar/metadata/bookkeeper/PulsarRegistrationClient.java
+in BookKeeper Zk Registration Driver we never perform reads in that method
+https://github.com/datastax/bookkeeper/blob/034ef8566ad037937a4d58a28f70631175744f[…]n/java/org/apache/bookkeeper/discover/ZKRegistrationClient.java
+      

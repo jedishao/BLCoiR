@@ -1,0 +1,3 @@
+ConcurrentModificationException in ThreadMonitorManager.
+I got this exception while debugging a test case.
+Apparently, HashMap#clone() is not thread safe.

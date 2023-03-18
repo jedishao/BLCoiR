@@ -1,0 +1,28 @@
+Broker Healthcheck Endpoint Exposes Race Conditions.
+Describe the bug
+There appears to be a few race conditions in the /brokers/health endpoint.
+I verified this is in 2.9.1 and it looks like it is probably present in master.
+There are several issues exposed by this behavior and the resulting stack traces.
+
+One call to that endpoint can force another to fail.
+There is a chance for an NPE here: 
+
+Also relevant for the above code is that because it is called outside of a lock on the subscription, it could possibly remove the wrong subscription.
+This method is blocking a pulsar thread without any obvious reason: 
+
+It's obvious to me how we should fix the endpoint to make it work for concurrent calls.
+I am going to start by focusing on the other calls.
+To Reproduce
+Steps to reproduce the behavior:
+
+Deploy a 2.9.1 broker.
+Observer logs.
+It's possible that you'll need to rerun step 2 several times. Given that it is a race in the endpoint, it is not guaranteed to trigger every time.
+
+Resulting stack trace:
+
+Another time, I got the below stack trace. In this case, I was using a custom build of Pulsar, so the line numbers are a bit off, but the NPEs are relevant and should be addressed.
+
+Expected behavior
+I would expect the health check endpoint to work correctly for concurrent calls.
+      

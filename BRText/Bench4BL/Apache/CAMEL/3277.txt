@@ -1,0 +1,6 @@
+Threading issue which lets converter loading abort.
+The type converter loading is not threadsafe and fails sometimes.
+That will end up with around 17 type converters loaded only which will probably let your camel routes fail with conversion errors like:
+
+Tracking the issue down showed that several type converter loaders share the same registry object and fail to load all converters every once a while.
+That can be fixed by making the load method synchronized...see attached patch.

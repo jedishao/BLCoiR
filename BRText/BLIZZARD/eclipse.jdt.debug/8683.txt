@@ -1,0 +1,5 @@
+NPE after suspending VM attempting to step on system thread.
+Suspend the VM.
+Select the SignalDispatcher thread.
+Hit step over.
+Our code assumes that there is a top stack frame.

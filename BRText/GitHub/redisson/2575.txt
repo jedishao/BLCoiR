@@ -1,0 +1,16 @@
+RedissonLock fails to unsubscribe from channel when a lock is acquired
+Expected behavior
+The pub/sub channels that are created while trying to acquire a lock with RedissonLock should be unsubscribed when no longer needed.
+
+Actual behavior
+Some pub/sub channels are still present (meaning that the client did not unsubscribe) even after some locks are no longer used (either they expired or were unlocked). These channels are never cleaned up (still present after 24h since created). The only workaround to get rid of these is to restart the client.
+This was observed because it caused a connection leak. When calling RedissonLock to obtain new locks this returned the error: Subscribe timeout: (7500ms). Increase 'subscriptionsPerConnection' and/or 'subscriptionConnectionPoolSize' parameters. We have increased the limits in order to have a workaround for this bug
+
+Steps to reproduce or test case
+
+use RedissonLock.java implementation with method lockInterruptibly(long leaseTime, TimeUnit unit) to obtain multiple locks simultaneously.
+use lower limits for subscription-connection-pool-size and subscriptions-per-connection to increase the probability to see the bug
+wait until this error shows up Subscribe timeout: (7500ms). Increase 'subscriptionsPerConnection' and/or 'subscriptionConnectionPoolSize' parameters.
+connect to Redis server and fetch all lock keys and all pub-sub channels.
+if number of pub-sub channels > active locks , then the bug was reproduced
+if number of pub-sub channels does not decrease at all long after locks are being created, this means that subscriptions have leaked, active long after these are no longer used in RedissonLock implementation

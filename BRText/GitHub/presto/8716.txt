@@ -1,0 +1,4 @@
+Hang in AWS SDK with parallel uploads under load.
+As PrestoS3FileSystem.uploadObject is using aws s3 sdk 1.10.30, a race condition in aws sdk waitForCompletion method affects it.
+A proposal to update AWS SDK to a newer stable version.
+A race condition that can occur with multiple calls to CopyMonitor#setFuture and UploadMonitor#setFuture that can cause an infinite loop in AbstractTransfer#waitForCompletion.

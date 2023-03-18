@@ -1,0 +1,3 @@
+Asynchronous read/write done on wrong thread.
+The open/close issue has been addressed here #1573. Async read/write still is blocking.
+

@@ -1,0 +1,6 @@
+CsdsService not properly synchronized with XdsClient
+Consider this code from CsdsService:
+
+The initial issue is that getSubscribedResourcesMetadata() and getCurrentVersion() have no synchronization:
+
+That is bad. However, the xdsClient API itself is insufficient for CSDS because those two method calls need to be atomic; even if each of those methods were thread-safe the version needs to match the resources returned.

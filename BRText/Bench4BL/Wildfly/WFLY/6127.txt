@@ -1,0 +1,8 @@
+Throw IllegalStateException if JTA tx has an unsynchronized persistence context and the target is synchronized persistence contextSPEC:
+If a component is called and the JTA transaction is propagated into that component:
+If there is a persistence context of type SynchronizationType.UNSYNCHRONIZED
+associated with the JTA transaction and the target component specifies a persistence context of type SynchronizationType.SYNCHRONIZED, the IllegalStateException is thrown by the container.
+We have a stateful session bean (SFB1) / PC: TRANSACTION/UNSYNCHRONIZED)
+stateful session bean (SFB2) / PC: TRANSACTION/SYNCHRONIZED)
+SFB1 method M1 (REQUIRED) calls SFB2 Method 2 (REQUIRED):
+PC is propagated from SFB1 to SFB2 without any exception.

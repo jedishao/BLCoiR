@@ -1,0 +1,3 @@
+org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor should not register a Synchronization if the transaction was rolled back.
+http://fpaste.org/125252/ shows what happens when the transaction has already been rolled back ().
+Test case is available via https://github.com/scottmarlow/wildfly/tree/transactiontimeout_clientut

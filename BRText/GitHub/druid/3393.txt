@@ -1,0 +1,9 @@
+should handle channel disconnected better in NettyHttpClient or Druid.
+I'm facing such a race condition:
+Broker runs a query, finally calls the httpClient.go() in DirectDruidClient, the httpClient is instance of NettyHttpClient.
+Inside the NettyHttpClient.go() method, after the channel is taken from the pool and verified in good shape and ready to fire the query, then the historical side reaches the idle time and disconnect this channel.
+Then handler.channelDisconnected callback is called, and finally the query is failed in broker.
+This exception occurs hundreds of times  in our druid cluster (it is a busy cluster).
+This channel never has a chance to actually connect to the historical to get a single byte back, thus ,I think, the NettyHttpClient.go() should retry internally one time to get a new channel to finish the "go" instead of set the retVal future to fail.
+The same thing can happen when channel.write(httpRequest).addListener(...) in NettyHttpClient. the channel to write can be closed by historical server after it is taken from the pool channel, thus it also should be retried.
+here is the trace:

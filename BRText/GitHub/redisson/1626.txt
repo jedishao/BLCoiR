@@ -1,0 +1,32 @@
+Deadlock with RedissonLock used by JCache.
+We've ran into a number of issues with using the Redisson implementation of JCache via bucket4j in production for rate limiting.
+
+JCache.put(K key, V value) calls RedissonLock.lock() with no lease time, resulting in RedissonLock's creating a 'watchdog' thread that continuously renews the lease on the lock in Redis. We are using the default 'lockWatchdogTimeout' of 30 seconds so this thread runs every 10 seconds. What we've seen is in rare cases this watchdog thread never gets canceled, meaning it continues renewing the lease indefinitely until the instance containing the thread is restarted. This causes deadlock of all other threads trying to grab the lock and can ultimately bring down an application as threads build up.
+
+Threads using RedissonLock will wait forever for a lock to be released. There is no timeout when waiting for the lock.
+
+The 'unlock' method in RedissonLock can fail for a number of reasons -- e.g., timing out trying to unlock with Redis after 3 seconds (this happened in our case). When the unlock fails the watchdog thread is not canceled.
+This means the instance would have to be restarted to release the lock.
+Expected behavior
+
+A 'watchdog' thread should not exist. This is prone to issues where it never gets destroyed and a lock is held forever.
+A lease time should be used to ensure the lock is never held forever and somehow it should be verified that the lock is still held by the caller when making updates with it (an atomic check at update time) in case the first thread doesn't execute its update within the lease time and another thread grabs the lock.
+
+Threads should not wait forever for the lock. There should be some configurable timeout.
+
+A timeout on 'unlock' should be retried, but the lease time in 1 should handle any failure to unlock. If for some reason the 'watchdog' thread is kept, the unlock needs to ensure it is canceled if it fails.
+
+Steps to reproduce or test case
+
+Issues verified via redisson code review.
+
+Can reproduce by forcing a timeout in redis on the 'unlock' call made by RedissonLock, leaving the 'watchdog' thread around to keep holding the lock and observing that all other threads wait forever for the lock.
+
+Redis 3.2.4 via AWS ElastiCache
+
+Redisson 3.5.4 but the same issues appear to be present in 3.8.0 as well
+
+Subsequent 'watchdog' thread timing out, actually saving us in this case because when the 'watchdog' thread fails it doesn't reschedule itself and the lock got released:
+time 01:16:31.300
+
+Can't update lock {buckets}:SiBJapgTpcxaBHBLc5ZqSw:key expiration

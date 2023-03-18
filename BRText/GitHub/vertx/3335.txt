@@ -1,0 +1,7 @@
+FileSystemImpl.existsInternal can block event loop thread.
+Invoking vertx.filesystem().exists() can block the event loop thread.
+This is because resolveFile() runs in the event loop thread instead of in the worker thread:
+See https://github.com/eclipse-vertx/vert.x/blob/master/src/main/java/io/vertx/core/file/impl/FileSystemImpl.java#L1113:
+
+You can mock calls to resolveFile() to sleep for any amount of time or set a breakpoint on the resolveFile call as a test runs.
+Wait up to the blocked thread checker interval and unpause execution. BlockedThreadChecker will report that the thread has been blocked.

@@ -1,0 +1,5 @@
+Deadlock with TransportSet
+Hello,
+I was testing Grpc with RoundRobinLB and a custom NameResolver when this deadlock happened:
+
+I don't know if it may relate to my own code or if the issue is on grpc side.

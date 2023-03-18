@@ -1,0 +1,11 @@
+JREContainer hasChildren locks up the UI for more than 30s.
+backtrace and example of recursive stat 3.6M7
+I'm seeing this very frequently.
+Changing a Manifest.MF, for example, causes the entire Eclipse UI to lockup.
+There seems to be an issue in the way that the JDT discovers whether a source directory is available.
+Using jstack multiple times, I see that the main thread is locked up in java.io.File.isFile(), called as a result of TreeViewer.isExpandable():
+Stracing the process shows that's it's iterating up the tree recursively looking for src.zip/src.jar.
+When it hits a NFS automount directory the thread main thread is context switched out, and the stat is 100+ times slower.
+It seems to be doing this again and again on the UI thread:
+This is really bad for performance, and hurts automounters badly.
+ I attached strace some time after the start of the hang and I have 28M of stat()s...

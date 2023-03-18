@@ -1,0 +1,10 @@
+ConcurrentModificationException in NioReceiver on shutdown.
+We use tomcat clustering for session replication with 4 nodes and sometimes 8 nodes.
+We get a ConcurrentModificationException occasionally on shutdown.
+I have been unable to reliably reproduce the exception.
+In the log, I see "Unable to close cluster receiver selector." with the exception below:
+I looked at the code briefly and noticed the use of a SelectionKey Iterator.
+I have not dug deep enough to find any issue in the NioReceiver code, but I did find this potentially relevant text in the Selector javadocs (http://docs.oracle.com/javase/7/docs/api/java/nio/channels/Selector.html):
+"A selector's key and selected-key sets are not, in general, safe for use by multiple concurrent threads.
+If such a thread might modify one of these sets directly then access should be controlled by synchronizing on the set itself.
+The iterators returned by these sets' iterator methods are fail-fast: If the set is modified after the iterator is created, in any way except by invoking the iterator's own remove method, then a ConcurrentModificationException will be thrown."

@@ -1,0 +1,13 @@
+PulsarKafkaProducer is not thread safe.
+Is your feature request related to a problem? Please describe.
+I replaced kafka client with pulsar-client-kafka, referring to this document.
+
+Then, sending messages to multiple topics at the same time caused an exception(NullPointerException).
+This exception does not occur in version 2.2.1, but does occur in version 2.3.2 and later.
+I think that the change made in this PR is the cause.
+Each time you send a message to a new topic, the cluster object is regenerated.
+https://github.com/apache/pulsar/blob/v2.3.2/pulsar-client-kafka-compat/pulsar-client-kafka/src/main/java/org/apache/kafka/clients/producer/PulsarKafkaProducer.java#L229
+The javadoc states that KafkaProducer is thread safe.
+https://kafka.apache.org/20/javadoc/org/apache/kafka/clients/producer/KafkaProducer.html
+I want to use pulsar-client-kafka without modifying the code that used Kafka client.
+To Reproduce

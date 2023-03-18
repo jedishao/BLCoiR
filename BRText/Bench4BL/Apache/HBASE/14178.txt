@@ -1,0 +1,4 @@
+regionserver blocks because of waiting for offsetLock.
+My regionserver blocks, and all client rpc timeout. 
+I print the regionserver's jstack,  it seems a lot of threads were blocked for waiting offsetLock, detail infomation belows:
+PS: my table's block cache is off

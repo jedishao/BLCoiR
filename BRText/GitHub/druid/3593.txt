@@ -1,0 +1,9 @@
+[QTL] Deadlock in offheap cache.
+waiting for ownable synchronizer 0x00000004f0550030, (a java.util.concurrent.locks.ReentrantLock$NonfairSync), which is held by "qtp1930842682-69"
+waiting to lock monitor 0x00007fa3d4009bd8 (object 0x00000004c38b04a8, a java.util.concurrent.atomic.AtomicBoolean), which is held by "NamespaceExtractionCacheManager-0"
+
+Java stack information for the threads listed above:
+parking to wait for <0x00000004f0550030> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+locked <0x00000004c38b04a8> (a java.util.concurrent.atomic.AtomicBoolean)
+waiting to lock <0x00000004c38b04a8> (a java.util.concurrent.atomic.AtomicBoolean)
+Found 1 deadlock.

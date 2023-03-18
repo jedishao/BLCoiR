@@ -1,0 +1,4 @@
+StreamCache/Splitter race condition.
+Attached patch introduces a test that shows the following symptom:
+I believe it must be a race condition when several threads are passing through the splitter, in the above case I'm using a seda queue with 5 threads.
+Am logging this now as I'm not sure what time I'll have to investigate further this week.

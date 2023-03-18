@@ -1,0 +1,4 @@
+RowLock fails when used with IndexTable.
+The following exception is thrown when using RowLock to update a row in an IndexedTable:
+NOTE #1: Line numbers in stacktrace may not make sense because I've been hacking in loads of debug info.
+NOTE #2: I attaching a fix which includes unit tests

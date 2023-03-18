@@ -1,0 +1,9 @@
+ConcurrentModificationException.
+Installed in addition to Eclipse-SDK: CDT-4.0RC0, EMF-2.3.0M7, Releng.Tools
+Here's what I did:
+* Synchronize workspace (the .exsd in question was not affected),
+choose run in background
+* Look at some diffs found by synchronize
+* Switch to PDE Perspective
+* Ctrl+Shift+R, type "subsystemconfigurations" --> brings up my file, subsystemconfigurations.exsd
+--> PDE Schema Editor is opened, I see a dialog about the ConcurrentModificationException

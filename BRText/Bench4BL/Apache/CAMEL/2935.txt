@@ -1,0 +1,7 @@
+Broken failure reporting via DefaultProucerTemplate.asyncCallback and Synchronization.
+onFailureThe recent change in ProducerCache.send.ProducerCache.java
+that throws a CamelExecutionException if exchange.getException is not null, makes it impossible for DefaultProducerTemplate.asyncCallback to report failures (other than fault messages) asynchronously via Synchronization.onFailure.DefaultProducerTemplate.java
+This was working in Camel 2.3 (but unfortunately there wasn't any test case for it).
+I attached a patch for DefaultProducerTemplateAsyncTest that demonstrates the problem.
+I didn't commit a fix yet because I'm unsure at the moment about the best way to fix that.
+Of course I tried a naive fix in the DefaultProducerTemplate.asyncCallback methods which causes the test (in the patch) to pass but I'd like to hear other opinions before I continue.

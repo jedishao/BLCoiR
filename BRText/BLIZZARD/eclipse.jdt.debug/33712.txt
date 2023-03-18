@@ -1,0 +1,3 @@
+"The resource tree is locked for modifications" from JavaDebugOptionsManager.
+I found the following in my log.
+I'd recently created a new Java Project and then created a new Main method, following the steps in Bug 33612 comment #5.

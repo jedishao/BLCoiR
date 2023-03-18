@@ -1,0 +1,4 @@
+Setup default values for thread-connected properties in WebSocket component.
+If you do not set properties minThreads or maxThreads or method getThreadPool() returns null then you will get RuntimeCamelException and websocket cosumer will not be created.
+These attributes were not required in previous versions of camel. Websocket component now uses Jetty 9.
+If these properties are really required why do not use some default values?

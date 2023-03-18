@@ -1,0 +1,2 @@
+Invalid thread access while undoing quick fix.
+I quick-fixed a dead code error and then used undo to see previous state.

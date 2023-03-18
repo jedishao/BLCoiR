@@ -1,0 +1,4 @@
+Deadlock in modal cvs dialogI20031111.
+
+I was using "Update and Overwrite" on a conflicting resource from the sync view.
+As you can see from the dump the modal CVS dialog locks itself up.

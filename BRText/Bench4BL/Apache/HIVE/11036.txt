@@ -1,0 +1,1 @@
+Race condition in DataNucleus makes Metastore to hangUnder moderate to high concurrent query workload Metastore gets deadlocked in DataNucleus.
