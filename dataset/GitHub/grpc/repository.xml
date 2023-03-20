@@ -1,0 +1,1843 @@
+<bugrepository name="grpc">
+    <bug id="2388" opendate="2016-10-28 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>New deadlock in TransportSet and GrpcTimer
+            </summary>
+            <description>Hi,
+                I have encountered a new deadlock in TransportSet. I'm running under v1.0 with #2258 cherry-picked.
+
+                Found one Java-level deadlock:
+                "consumer-63":
+                waiting to lock monitor 0x00007f7ea408ca78 (object 0x0000000733ee5700, a java.lang.Object),
+                which is held by "consumer-35"
+                "consumer-35":
+                waiting to lock monitor 0x00007f7e9052a3c8 (object 0x000000070c6272f0, a java.lang.Object),
+                which is held by "grpc-timer-0"
+                "grpc-timer-0":
+                waiting to lock monitor 0x00007f7ea408ca78 (object 0x0000000733ee5700, a java.lang.Object),
+                which is held by "consumer-35"
+                Java stack information for the threads listed above:
+                "consumer-63":
+                at io.grpc.internal.DelayedClientTransport.newStream(DelayedClientTransport.java:118)
+
+                waiting to lock#0x0000000733ee5700> (a java.lang.Object)
+                at io.grpc.internal.ClientCallImpl.start(ClientCallImpl.java:214)
+                at io.grpc.ForwardingClientCall.start(ForwardingClientCall.java:47)
+                at //.GrpcService$1$1.start(GrpcService.java:190)
+                at io.grpc.stub.ClientCalls.startCall(ClientCalls.java:273)
+                at io.grpc.stub.ClientCalls.asyncUnaryRequestCall(ClientCalls.java:252)
+                at io.grpc.stub.ClientCalls.futureUnaryCall(ClientCalls.java:189)
+                at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:135)
+
+                "consumer-35":
+                at io.grpc.internal.InUseStateAggregator.updateObjectInUse(InUseStateAggregator.java:50)
+
+                waiting to lock#0x000000070c6272f0> (a java.lang.Object)
+                at io.grpc.internal.TransportSet$BaseTransportListener.transportInUse(TransportSet.java:357)
+                at io.grpc.internal.DelayedClientTransport.newStream(DelayedClientTransport.java:128)
+                locked#0x0000000733ee5700> (a java.lang.Object)
+                at io.grpc.internal.ClientCallImpl.start(ClientCallImpl.java:214)
+                at io.grpc.ForwardingClientCall.start(ForwardingClientCall.java:47)
+                at //.GrpcService$1$1.start(GrpcService.java:190)
+                at io.grpc.stub.ClientCalls.startCall(ClientCalls.java:273)
+                at io.grpc.stub.ClientCalls.asyncUnaryRequestCall(ClientCalls.java:252)
+                at io.grpc.stub.ClientCalls.futureUnaryCall(ClientCalls.java:189)
+                at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:135)
+
+                "grpc-timer-0":
+                at io.grpc.internal.DelayedClientTransport.hasPendingStreams(DelayedClientTransport.java:283)
+
+                waiting to lock#0x0000000733ee5700> (a java.lang.Object)
+                at io.grpc.internal.TransportSet$1EndOfCurrentBackoff.run(TransportSet.java:246)
+                locked#0x000000070c6272f0> (a java.lang.Object)
+                at io.grpc.internal.LogExceptionRunnable.run(LogExceptionRunnable.java:56)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="116" opendate="2015-02-24 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Buffer Messages until TLS Handshake and HTTP2 Negotiation complete
+            </summary>
+            <description>When grpc uses Netty as the client transport all RPC calls (aka HTTP2 Streams) block until the
+                TLS Handshake and the HTTP2 negotiation is complete.
+                This blocking implementation (in grpc) is currently required as Netty's SslHandler doesn't buffer
+                messages until the Handshake is complete ("You must make sure not to write a message while the handshake
+                is in progress unless you are renegotiating."), and there is nothing to stop the user from starting to
+                make RPC calls immediately.
+                This behavior comes with two problems:
+
+                With RPC calls blocking until the TLS Handshake is complete, every call launched before the TLS
+                Handshake and HTTP2 Negotiation are done will block its thread from which one would expect async
+                behavior though.
+                In cases when a DirectExecutor is being used it might lead to the EventLoop blocking forever (deadlock
+                effectively). There is several scenarios how a deadlock could happen. One such scenario is when you are
+                writing a server in Netty and within that server you want to connect to a grpc service to fetch some
+                data. If you now use a DirectExecutor and reuse the EventLoop of the server with the grpc client, the
+                TLS handshake would block the server's EventLoop, which is also the very EventLoop responsible for
+                completing the TLS HandShake. That way neither the server nor the client would ever make progress again.
+
+                @nmittler , @ejona86 and I talked about this problem earlier today and we agreed to get rid of the
+                blocking behavior by adding an additional ChannelHandler to the end of the pipeline (tail) that will
+                buffer any data until TLS # HTTP2 are working. After that it will send the buffered messages through the
+                pipeline and remove itself from the pipeline.
+                @nmittler @ejona86 @louiscryan
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.netty.Http2Negotiator.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientTransport.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="17" opendate="2015-01-20 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Race for Netty between cancel and stream creation
+            </summary>
+            <description>AbstractClientStream.cancel won't cancel the stream on the wire if it appears the stream has
+                not yet been allocated, as is described by the comment:
+                // Only send a cancellation to remote side if we have actually been allocated
+                // a stream id and we are not already closed. i.e. the server side is aware of the stream.
+                However, what happens if this is the case, is that the transport is not notified of the stream
+                destruction, and the stream will still eventually be created by the transport and not be cancelled. This
+                issue does not seem a problem with the OkHttp transport, since it allocates the stream id before
+                returning any newly created stream. However, Netty delays id allocation until just before the stream
+                headers are sent, which 1) is always done asynchronously and 2) may be strongly delayed due to
+                MAX_CONCURRENT_STREAMS.
+                It appears that the optimization in AbstractClientStream should be removed outright and sendCancel's doc
+                be updated to specify the expectation to handle such cases (as opposed to directly cause RST_STREAM).
+                Both OkHttp and Netty seem to be handling such cases already. More importantly, the optimization seems
+                highly prone for races given that id allocation is occurring in the transport thread whereas
+                AbstractClientStream.cancel is happening on some application thread; using the normal synchronization
+                between application and transport threads seems more than efficient enough and simpler.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.AbstractClientStream.java</file>
+            <file type="M">io.grpc.transport.ClientStream.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientTransport.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandlerTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientStreamTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1253" opendate="2015-12-04 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ClientCallImpl operations race with Context cancellation.
+            </summary>
+            <description>With be60086, we don't create the stream when the Context is cancelled, so the following
+                request(), sendMessage(), halfClose() will encounter an IllegalStateException like:
+                java.lang.IllegalStateException: Not started
+                at com.google.common.base.Preconditions.checkState(Preconditions.java:178)
+                at io.grpc.internal.ClientCallImpl.request(ClientCallImpl.java:257)
+                at io.grpc.ForwardingClientCall.request(ForwardingClientCall.java:50)
+                at io.grpc.stub.ClientCalls.startCall(ClientCalls.java:199)
+                at io.grpc.stub.ClientCalls.asyncUnaryRequestCall(ClientCalls.java:173)
+                at io.grpc.stub.ClientCalls.futureUnaryCall(ClientCalls.java:135)
+
+                @louiscryan, FYI, I'll send you a PR to fix it soon.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.inprocess.InProcessTransport.java</file>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.DelayedStream.java</file>
+            <file type="M">io.grpc.internal.NoopClientStream.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="887" opendate="2015-08-27 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>OkHttp: race between sendCancel and sendFrame.
+            </summary>
+            <description>If sendCancel is called (by timeout for example) before the stream is started, a following
+                sendFrame will cause a NPE:
+                java.lang.NullPointerException
+                at io.grpc.okhttp.OkHttpClientStream.sendFrame(OkHttpClientStream.java:197)
+                at io.grpc.internal.AbstractClientStream.internalSendFrame(AbstractClientStream.java:199)
+                at io.grpc.internal.AbstractStream$2.deliverFrame(AbstractStream.java:128)
+                at io.grpc.internal.MessageFramer.commitToSink(MessageFramer.java:297)
+                at io.grpc.internal.MessageFramer.flush(MessageFramer.java:255)
+                at io.grpc.internal.AbstractStream.flush(AbstractStream.java:178)
+                at io.grpc.ClientCallImpl.sendMessage(ClientCallImpl.java:213)
+                at io.grpc.stub.ClientCalls$CallToStreamObserverAdapter.onNext(ClientCalls.java:210)
+                at
+                io.grpc.testing.integration.AbstractTransportTest.timeoutOnSleepingServer(AbstractTransportTest.java:843)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:606)
+                at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+                at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+                at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+                at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+                at org.junit.internal.runners.statements.FailOnTimeout$StatementThread.run(FailOnTimeout.java:74)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.okhttp.OkHttpClientStream.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpClientTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3084" opendate="2017-06-09 00:00:00" fixdate="2022-10-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Potential deadlock due to calling callbacks while holding a lock
+            </summary>
+            <description>InProcessClientStream and InProcessServerStream are synchronized on their own.
+                InProcessClientStream.serverStreamListener is called under synchronized (InProcessClientStream.this),
+                and vice versa.
+                If the application tries to call methods on ClientCall or ServerCall from within the callbacks (assuming
+                that it has already taken care of the thread-safety of the method calls on "Call" objects), a deadlock
+                is possible when direct executor is used. For example:
+
+
+                Thread1
+
+                InProcessClientStream.serverRequested (locks InProcessClientStream.this)
+                InProcessClientStream.serverStreamListener.messageRead()
+                Eventually reaches application callback, which calls ServerCall.close()
+                InProcessServerStream.close() (locks InProcessServerStream.this)
+
+
+                Thread2
+
+                InProcessServerStream.clientRequested (locks InProcessServerStream.this)
+                InProcessServerStream.clientStreamListener.messageRead()
+                Eventually reaches application callback, which calls ClientCall.close()
+                InProcessClientStream.close() (locks InProcessClientStream.this)
+
+
+                As locks are acquired in reverse orders from two threads, a deadlock is possible.
+                The fundamental issue is that we should not call into application code while holding a lock, because we
+                don't know what application code can do thus we can't control the order of subsequent locking.
+                OkHttp has the same issue, because OkHttpClientStream.transportDataReceived(), which will call into
+                application code, is called under lock.
+                We could use ChannelExecutor (maybe renamed) to prevent calling into callbacks while holding a lock.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+            <file type="M">io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.java</file>
+            <file type="M">io.grpc.internal.ServerImplTest.java</file>
+            <file type="M">io.grpc.util.UtilServerInterceptorsTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2562" opendate="2017-01-03 00:00:00" fixdate="2021-04-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Race between pick and transport shutdown
+            </summary>
+            <description>Right now they are done in two steps:
+
+                A transport that is in READY state is selected
+                newStream() is called on the selected transport.
+
+                If transport is shutdown (by LoadBalancer or channel idle mode) between the two steps, Step 2 will fail
+                spuriously. Currently we work around this by adding a delay between stopping selecting a subchannel
+                (which owns the transport) and shutting it down. As long as the delay is longer than the time between
+                Step 1 and Step 2, the race won't happen.
+                This is not ideal because it relies on timing to work correctly, and will still fail in extreme cases
+                where the time between the two steps are longer than the pre-set delay.
+                It would be a better solution to differentiate the racy shutdown and the intended shutdown (Channel is
+                shutdown for good). In response to racy shutdown, transport selection will be retried. The
+                clientTransportProvider in ManagedChannelImpl is in the best position to do this, because it knows
+                whether the Channel has shutdown. clientTransportProvider would have to call newStream() and start the
+                stream, and return the started stream to ClientCallImpl instead of a transport.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2.java</file>
+            <file type="M">io.grpc.internal.ObjectPool.java</file>
+            <file type="M">io.grpc.internal.OobChannel.java</file>
+            <file type="M">io.grpc.internal.SingleTransportChannel.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport2Test.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2IdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2Test.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1408" opendate="2016-02-11 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Potential risk of deadlock from calling listeners under locks
+            </summary>
+            <description>Methods of ClientTransport.Listener and ServerTransportListener are usually called under a
+                lock. The biggest reason for locking is to guarantee the ordering of multiple methods on the same
+                listener.
+                However, these listeners usually call into channel layer code, and may in turn acquire locks from there,
+                which forms a transport lock -> channel lock lock order. On the other hand, when channel layer calls
+                into transport layer, it's possible to form a channel lock -> transport lock lock order, which makes
+                deadlock possible.
+                It's unlikely an issue today because there is an implicit rule today that channel layer will not hold
+                any lock while calling into transport. However, as the code base grows, it will become harder to keep
+                track of such requirement.
+                A possible solution is to always schedule listener calls on a serialized executor, with the cost of a
+                thread, so that listener order can be guaranteed without the need of locking. There may be better
+                options.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.inprocess.InProcessChannelBuilder.java</file>
+            <file type="M">io.grpc.inprocess.InProcessTransport.java</file>
+            <file type="M">io.grpc.internal.AbstractManagedChannelImplBuilder.java</file>
+            <file type="M">io.grpc.internal.ClientTransport.java</file>
+            <file type="M">io.grpc.internal.ClientTransportFactory.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport.java</file>
+            <file type="M">io.grpc.internal.DelayedStream.java</file>
+            <file type="M">io.grpc.internal.ManagedClientTransport.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransportTest.java</file>
+            <file type="M">io.grpc.internal.DelayedStreamTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTransportManagerTest.java</file>
+            <file type="M">io.grpc.internal.TestUtils.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+            <file type="M">io.grpc.netty.NettyChannelBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.netty.NettyClientTransport.java</file>
+            <file type="M">io.grpc.netty.NettyClientTransportTest.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpChannelBuilder.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpClientTransport.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpClientTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="605" opendate="2015-07-08 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>BufferingHttp2ConnectionEncoder does not shutdown properly on channelInactive
+            </summary>
+            <description>@nmittler
+                There is a nasty race condition during the handling of channelInactive in NettyClientHandler which goes
+                a bit like this....
+
+                NettyClientHandler.channelInactive -> for each active stream report closure to GRPC
+                NettyClientHandler.channelInactive -> Http2ConnectionHandler.channelInactive ->
+                Http2ConnectionHandler.BaseDecoder.channelInactive -> for each active stream call close ->
+                BufferingHttp2ConnectionEncoder.Http2ConnectionAdapter.onStreamClose -> try creating new stream -> adds
+                stream to active list (OOPS! this stream is never closed)
+
+                This reproduces for NettyClientTransportTest.bufferedStreamsShouldBeClosedWhenTransportTerminates with
+                5.0beta5.
+                Having streams being created as a side-effect of channel inactivation is undesirable. Potential fixes
+                include
+
+                Reorder teardown in Http2ConnectionHandler.BaseDecoder.channelInactive so encoders are closed() before
+                streams are closed.
+                Make BufferedHttp2ConnectionEncoder check channel.isActive() when trying to create streams.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">codec-http2.src.main.java.io.netty.handler.codec.http2.Http2ConnectionHandler.java</file>
+            <file type="M">codec-http2.src.main.java.io.netty.handler.codec.http2.StreamBufferingEncoder.java</file>
+            <file type="M">codec-http2.src.test.java.io.netty.handler.codec.http2.StreamBufferingEncoderTest.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoder.java</file>
+            <file type="M">io.grpc.transport.netty.GoAwayClosedStreamException.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoderTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5450" opendate="2019-03-08 00:00:00" fixdate="2019-06-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Data race in NameResolve.Listener.onError
+            </summary>
+            <description>NameResolve.Listener.onError can be called concurrently in different threads, so the following
+                code in onError() impl may have data race.
+                if (haveBackends == null || haveBackends) {
+                channelLogger.log(ChannelLogLevel.WARNING, "Failed to resolve name: {0}", error);
+                haveBackends = false;
+                }
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8565" opendate="2021-09-29 00:00:00" fixdate="2021-12-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Data race in RetriableStream.onReady()
+            </summary>
+            <description>As shown in the following stack trace, RetriableStream.onReady() is calling isReady() on
+                transport thread, whereas isReady() is calling frame().isClosed(), but framer.closed is not thread-safe.
+                WARNING: ThreadSanitizer: data race (pid=6458)
+                Write of size 1 at 0x0000cef27b09 by thread T36:
+                #0 io.grpc.internal.MessageFramer.close()V MessageFramer.java:320
+                #1 io.grpc.internal.AbstractStream.endOfMessages()V AbstractStream.java:84
+                #2 io.grpc.internal.AbstractClientStream.halfClose()V AbstractClientStream.java:194
+                #3 io.grpc.internal.ForwardingClientStream.halfClose()V ForwardingClientStream.java:72
+                #4
+                io.grpc.internal.RetriableStream$1HalfCloseEntry.runWith(Lio/grpc/internal/RetriableStream$Substream;)V
+                RetriableStream.java:655
+                #5 io.grpc.internal.RetriableStream.delayOrExecute(Lio/grpc/internal/RetriableStream$BufferEntry;)V
+                RetriableStream.java:526
+                #6 io.grpc.internal.RetriableStream.halfClose()V RetriableStream.java:659
+                #7 io.grpc.internal.ClientCallImpl.halfCloseInternal()V ClientCallImpl.java:497
+                #8 io.grpc.internal.ClientCallImpl.halfClose()V ClientCallImpl.java:486
+                #9 io.grpc.internal.DelayedClientCall$6.run()V DelayedClientCall.java:360
+                #10 io.grpc.internal.DelayedClientCall.delayOrExecute(Ljava/lang/Runnable;)V DelayedClientCall.java:247
+                #11 io.grpc.internal.DelayedClientCall.halfClose()V DelayedClientCall.java:357
+                #12 io.grpc.PartialForwardingClientCall.halfClose()V PartialForwardingClientCall.java:44
+                #13 io.grpc.ForwardingClientCall.halfClose()V ForwardingClientCall.java:22
+                #14 io.grpc.ForwardingClientCall$SimpleForwardingClientCall.halfClose()V ForwardingClientCall.java:44
+                #15 io.grpc.PartialForwardingClientCall.halfClose()V PartialForwardingClientCall.java:44
+                #16 io.grpc.ForwardingClientCall.halfClose()V ForwardingClientCall.java:22
+                #17 io.grpc.ForwardingClientCall$SimpleForwardingClientCall.halfClose()V ForwardingClientCall.java:44
+                #18
+                io.grpc.stub.ClientCalls.asyncUnaryRequestCall(Lio/grpc/ClientCall;Ljava/lang/Object;Lio/grpc/stub/ClientCalls$StartableListener;)V
+                ClientCalls.java:309
+                #19
+                io.grpc.stub.ClientCalls.asyncUnaryRequestCall(Lio/grpc/ClientCall;Ljava/lang/Object;Lio/grpc/stub/StreamObserver;Z)V
+                ClientCalls.java:294
+                #20
+                io.grpc.stub.ClientCalls.asyncUnaryCall(Lio/grpc/ClientCall;Ljava/lang/Object;Lio/grpc/stub/StreamObserver;)V
+                ClientCalls.java:68
+                #21
+                com.google.apphosting.runtime.grpc.GrpcClientContext.call(Lio/grpc/Channel;Lio/grpc/MethodDescriptor;Ljava/lang/Object;Lio/grpc/stub/StreamObserver;)V
+                GrpcClientContext.java:46
+                #22
+                com.google.apphosting.runtime.anyrpc.GrpcClients$GrpcEvaluationRuntimeClient.handleRequest(Lcom/google/apphosting/runtime/anyrpc/AnyRpcClientContext;Lcom/google/apphosting/base/protos/RuntimePb$UPRequest;Lcom/google/apphosting/runtime/anyrpc/AnyRpcCallbac
+                GrpcClients.java:43
+                #23
+                com.google.apphosting.runtime.anyrpc.AbstractRpcCompatibilityTest.runClient(ILjava/util/concurrent/CountDownLatch;Lcom/google/apphosting/runtime/anyrpc/ClientInterfaces$EvaluationRuntimeClient;Ljava/util/concurrent/Semaphore;Ljava/util/Queue;)V
+                AbstractRpcCompatibilityTest.java:596
+                #24
+                com.google.apphosting.runtime.anyrpc.AbstractRpcCompatibilityTest.lambda$doTestConcurrency$0(ILjava/util/concurrent/CountDownLatch;Lcom/google/apphosting/runtime/anyrpc/ClientInterfaces$EvaluationRuntimeClient;Ljava/util/concurrent/Semaphore;Ljava/util/Qu
+                AbstractRpcCompatibilityTest.java:573
+                #25 com.google.apphosting.runtime.anyrpc.AbstractRpcCompatibilityTest$$Lambda$94.run()V ??
+                #26 java.lang.Thread.run()V Thread.java:830
+                #27 (Generated Stub)
+                #null>
+
+                Previous read of size 1 at 0x0000cef27b09 by thread T24:
+                #0 io.grpc.internal.MessageFramer.isClosed()Z MessageFramer.java:310
+                #1 io.grpc.internal.AbstractStream.isReady()Z AbstractStream.java:94
+                #2 io.grpc.internal.AbstractClientStream.isReady()Z AbstractClientStream.java:207
+                #3 io.grpc.internal.ForwardingClientStream.isReady()Z ForwardingClientStream.java:47
+                #4 io.grpc.internal.RetriableStream.isReady()Z RetriableStream.java:595
+                #5 io.grpc.internal.RetriableStream$Sublistener.onReady()V RetriableStream.java:1051
+                #6 io.grpc.internal.ForwardingClientStreamListener.onReady()V ForwardingClientStreamListener.java:44
+                #7 io.grpc.internal.AbstractStream$TransportState.notifyIfReady()V AbstractStream.java:347
+                #8 io.grpc.internal.AbstractStream$TransportState.onStreamAllocated()V AbstractStream.java:286
+                #9
+                io.grpc.netty.NettyClientStream$TransportState.setHttp2Stream(Lio/netty/handler/codec/http2/Http2Stream;)V
+                NettyClientStream.java:285
+                #10 io.grpc.netty.NettyClientHandler$5.operationComplete(Lio/netty/channel/ChannelFuture;)V
+                NettyClientHandler.java:639
+                #11 io.grpc.netty.NettyClientHandler$5.operationComplete(Lio/netty/util/concurrent/Future;)V
+                NettyClientHandler.java:621
+                #12
+                io.netty.util.concurrent.DefaultPromise.notifyListener0(Lio/netty/util/concurrent/Future;Lio/netty/util/concurrent/GenericFutureListener;)V
+                DefaultPromise.java:577
+                #13
+                io.netty.util.concurrent.DefaultPromise.notifyListeners0(Lio/netty/util/concurrent/DefaultFutureListeners;)V
+                DefaultPromise.java:570
+                #14 io.netty.util.concurrent.DefaultPromise.notifyListenersNow()V DefaultPromise.java:549
+                #15 io.netty.util.concurrent.DefaultPromise.notifyListeners()V DefaultPromise.java:490
+                #16 io.netty.util.concurrent.DefaultPromise.setValue0(Ljava/lang/Object;)Z DefaultPromise.java:615
+                #17 io.netty.util.concurrent.DefaultPromise.setSuccess0(Ljava/lang/Object;)Z DefaultPromise.java:604
+                #18 io.netty.util.concurrent.DefaultPromise.trySuccess(Ljava/lang/Object;)Z DefaultPromise.java:104
+                #19 io.netty.handler.codec.http2.Http2CodecUtil$SimpleChannelPromiseAggregator.tryPromise()Z
+                Http2CodecUtil.java:383
+                #20
+                io.netty.handler.codec.http2.Http2CodecUtil$SimpleChannelPromiseAggregator.trySuccess(Ljava/lang/Void;)Z
+                Http2CodecUtil.java:349
+                #21
+                io.netty.handler.codec.http2.Http2CodecUtil$SimpleChannelPromiseAggregator.trySuccess(Ljava/lang/Object;)Z
+                Http2CodecUtil.java:261
+                #22
+                io.netty.util.internal.PromiseNotificationUtil.trySuccess(Lio/netty/util/concurrent/Promise;Ljava/lang/Object;Lio/netty/util/internal/logging/InternalLogger;)V
+                PromiseNotificationUtil.java:48
+                #23 io.netty.channel.ChannelOutboundBuffer.safeSuccess(Lio/netty/channel/ChannelPromise;)V
+                ChannelOutboundBuffer.java:717
+                #24 io.netty.channel.ChannelOutboundBuffer.remove()Z ChannelOutboundBuffer.java:272
+                #25 io.netty.channel.ChannelOutboundBuffer.removeBytes(J)V ChannelOutboundBuffer.java:352
+                #26 io.netty.channel.socket.nio.NioSocketChannel.doWrite(Lio/netty/channel/ChannelOutboundBuffer;)V
+                NioSocketChannel.java:431
+                #27 io.netty.channel.AbstractChannel$AbstractUnsafe.flush0()V AbstractChannel.java:934
+                #28 io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0()V AbstractNioChannel.java:354
+                #29 io.netty.channel.AbstractChannel$AbstractUnsafe.flush()V AbstractChannel.java:898
+                #30 io.netty.channel.DefaultChannelPipeline$HeadContext.flush(Lio/netty/channel/ChannelHandlerContext;)V
+                DefaultChannelPipeline.java:1372
+                #31 io.netty.channel.AbstractChannelHandlerContext.invokeFlush0()V
+                AbstractChannelHandlerContext.java:750
+                #32 io.netty.channel.AbstractChannelHandlerContext.invokeFlush()V AbstractChannelHandlerContext.java:742
+                #33 io.netty.channel.AbstractChannelHandlerContext.flush()Lio/netty/channel/ChannelHandlerContext;
+                AbstractChannelHandlerContext.java:728
+                #34 io.netty.handler.codec.http2.Http2ConnectionHandler.flush(Lio/netty/channel/ChannelHandlerContext;)V
+                Http2ConnectionHandler.java:189
+                #35 io.netty.channel.AbstractChannelHandlerContext.invokeFlush0()V
+                AbstractChannelHandlerContext.java:750
+                #36 io.netty.channel.AbstractChannelHandlerContext.invokeFlush()V AbstractChannelHandlerContext.java:742
+                #37 io.netty.channel.AbstractChannelHandlerContext.flush()Lio/netty/channel/ChannelHandlerContext;
+                AbstractChannelHandlerContext.java:728
+                #38 io.netty.channel.DefaultChannelPipeline.flush()Lio/netty/channel/ChannelPipeline;
+                DefaultChannelPipeline.java:967
+                #39 io.netty.channel.AbstractChannel.flush()Lio/netty/channel/Channel; AbstractChannel.java:242
+                #40 io.grpc.netty.WriteQueue.flush()V WriteQueue.java:147
+                #41 io.grpc.netty.WriteQueue$1.run()V WriteQueue.java:46
+                #42 io.netty.util.concurrent.AbstractEventExecutor.safeExecute(Ljava/lang/Runnable;)V
+                AbstractEventExecutor.java:164
+                #43 io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(J)Z
+                SingleThreadEventExecutor.java:472
+                #44 io.netty.channel.nio.NioEventLoop.run()V NioEventLoop.java:500
+                #45 io.netty.util.concurrent.SingleThreadEventExecutor$4.run()V SingleThreadEventExecutor.java:989
+                #46 io.netty.util.internal.ThreadExecutorMap$2.run()V ThreadExecutorMap.java:74
+                #47 io.netty.util.concurrent.FastThreadLocalRunnable.run()V FastThreadLocalRunnable.java:30
+                #48 java.lang.Thread.run()V Thread.java:830
+                #49 (Generated Stub)
+                #null>
+
+                Thread T36 (tid=6496, running) created by thread T4 at:
+                #0 pthread_create
+                third_party/llvm/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:976:3
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x69ceac)
+                #1 os::create_thread(Thread*, os::ThreadType, unsigned long)
+                #null>
+                (libjvm.so+0x10484c1)
+                #2 java.lang.Thread.start()V Thread.java:799
+                #3 com.google.apphosting.runtime.anyrpc.AbstractRpcCompatibilityTest.doTestConcurrency(I)V
+                AbstractRpcCompatibilityTest.java:575
+                #4 com.google.apphosting.runtime.anyrpc.AbstractRpcCompatibilityTest.testConcurrency_LargeRequest()V
+                AbstractRpcCompatibilityTest.java:550
+                #5 (Generated Stub)
+                #null>
+                #6
+                jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+                NativeMethodAccessorImpl.java:62
+                #7
+                jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+                DelegatingMethodAccessorImpl.java:43
+                #8 java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+                Method.java:566
+                #9 org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;
+                FrameworkMethod.java:57
+                #10 org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;
+                ReflectiveCallable.java:12
+                #11
+                org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+                FrameworkMethod.java:59
+                #12 org.junit.internal.runners.statements.InvokeMethod.evaluate()V InvokeMethod.java:17
+                #13 org.junit.internal.runners.statements.RunBefores.evaluate()V RunBefores.java:26
+                #14 org.junit.internal.runners.statements.RunAfters.evaluate()V RunAfters.java:27
+                #15 org.junit.rules.TestWatcher$1.evaluate()V TestWatcher.java:55
+                #16 org.junit.rules.RunRules.evaluate()V RunRules.java:20
+                #17 org.junit.runners.BlockJUnit4ClassRunner$1.evaluate()V BlockJUnit4ClassRunner.java:81
+                #18
+                org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V
+                ParentRunner.java:327
+                #19
+                org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V
+                BlockJUnit4ClassRunner.java:84
+                #20
+                org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V
+                BlockJUnit4ClassRunner.java:57
+                #21 org.junit.runners.ParentRunner$3.run()V ParentRunner.java:292
+                #22 org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V ParentRunner.java:73
+                #23 org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V
+                ParentRunner.java:290
+                #24
+                org.junit.runners.ParentRunner.access$000(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V
+                ParentRunner.java:60
+                #25 org.junit.runners.ParentRunner$2.evaluate()V ParentRunner.java:270
+                #26 org.junit.internal.runners.statements.RunBefores.evaluate()V RunBefores.java:26
+                #27 org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V
+                ParentRunner.java:370
+                #28
+                com.google.testing.junit.runner.internal.junit4.CancellableRequestFactory$CancellableRunner.run(Lorg/junit/runner/notification/RunNotifier;)V
+                CancellableRequestFactory.java:108
+                #29 org.junit.runner.JUnitCore.run(Lorg/junit/runner/Runner;)Lorg/junit/runner/Result;
+                JUnitCore.java:137
+                #30 org.junit.runner.JUnitCore.run(Lorg/junit/runner/Request;)Lorg/junit/runner/Result;
+                JUnitCore.java:115
+                #31 com.google.testing.junit.runner.junit4.JUnit4Runner.run()Lorg/junit/runner/Result;
+                JUnit4Runner.java:104
+                #32 com.google.testing.junit.runner.RunnerShell$2.run(Ljava/lang/Class;[Ljava/lang/String;)I
+                RunnerShell.java:34
+                #33
+                com.google.testing.junit.runner.GoogleTestRunner.runTestsInSuite(Ljava/lang/Class;[Ljava/lang/String;)I
+                GoogleTestRunner.java:200
+                #34
+                com.google.testing.junit.runner.GoogleTestRunner.runTestsInSuite(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/ClassLoader;Z)I
+                GoogleTestRunner.java:184
+                #35 com.google.testing.junit.runner.GoogleTestRunner.main([Ljava/lang/String;)V
+                GoogleTestRunner.java:137
+                #36 (Generated Stub)
+                #null>
+                #37 devtools_java_launcher::internal::LauncherMainImpl::JavaMain(JNIEnv_*, std::__tsan::pair
+                std: :__tsan: :basic_string
+                char, std::__tsan::char_traits#char>, std::__tsan::allocator
+                char>
+                >, devtools_java_launcher::internal::ArgumentEncoding> const#, int, char**, std::__tsan::basic_string
+                char, std::__tsan::char_traits#char>, std::__tsan::allocator
+                char>
+                > const#) devtools/java/launcher/run_java-internal.cc:1030:8
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x71e717)
+                #38 operator() devtools/java/launcher/run_java-internal.cc:428:16
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #39 Invoke(lambda at devtools/java/launcher/run_java-internal.cc:426:7) #, std::__tsan::pair#std:
+                        :__tsan: :string, devtools_java_launcher::internal::ArgumentEncoding> #, int #, char **#,
+                std::__tsan::string #, JNIEnv_ *> third_party/absl/base/internal/invoke.h:153:12
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #40 invoke#(lambda at devtools/java/launcher/run_java-internal.cc:426:7) #, std::__tsan::pair#std:
+                        :__tsan: :string, devtools_java_launcher::internal::ArgumentEncoding> #, int #, char **#,
+                std::__tsan::string #, JNIEnv_ *> third_party/absl/base/internal/invoke.h:180:10
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #41 Apply#jvalue, absl::container_internal::CompressedTuple#(lambda at
+                devtools/java/launcher/run_java-internal.cc:426:7), std::__tsan::pair#std: :__tsan: :string,
+                devtools_java_launcher::internal::ArgumentEncoding>, int, char **, std::__tsan::string> #, 0UL, 1UL,
+                2UL, 3UL, 4UL, JNIEnv_ *> third_party/absl/functional/internal/front_binder.h:36:10
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #42 operator()
+                #JNIEnv_
+                *, jvalue> third_party/absl/functional/internal/front_binder.h:56:12
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #43 __invoke
+                #absl: :functional_internal: :FrontBinder
+                #(lambda at devtools/java/launcher/run_java-internal.cc:426:7), std::__tsan::pair#std: :__tsan: :string,
+                devtools_java_launcher::internal::ArgumentEncoding>, int, char **, std::__tsan::string> #, JNIEnv_ *>
+                third_party/crosstool/v18/stable/toolchain/bin/../include/c++/v1/type_traits:3918:1
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #44 __call
+                #absl: :functional_internal: :FrontBinder
+                #(lambda at devtools/java/launcher/run_java-internal.cc:426:7), std::__tsan::pair#std: :__tsan: :string,
+                devtools_java_launcher::internal::ArgumentEncoding>, int, char **, std::__tsan::string> #, JNIEnv_ *>
+                third_party/crosstool/v18/stable/toolchain/bin/../include/c++/v1/__functional/invoke.h:30:16
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #45 operator()
+                third_party/crosstool/v18/stable/toolchain/bin/../include/c++/v1/__functional/function.h:221:12
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #46 jvalue std::__tsan::__function::__policy_invoker
+                >, devtools_java_launcher::internal::ArgumentEncoding>, int, char**, std::__tsan::basic_string#char,
+                std::__tsan::char_traits#char>, std::__tsan::allocator
+                #char>
+                > >, jvalue (JNIEnv_*)> >(std::__tsan::__function::__policy_storage const*, JNIEnv_*)
+                third_party/crosstool/v18/stable/toolchain/bin/../include/c++/v1/__functional/function.h:702:16
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x722a39)
+                #47 operator()
+                third_party/crosstool/v18/stable/toolchain/bin/../include/c++/v1/__functional/function.h:834:16
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x734598)
+                #48 operator()
+                third_party/crosstool/v18/stable/toolchain/bin/../include/c++/v1/__functional/function.h:1175:12
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x734598)
+                #49 devtools_java_launcher::internal::UserRequest::Run(thread::Future#devtools_java_launcher:
+                        :JniResult>*) devtools/java/launcher/launcher-impl.cc:97:19
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x734598)
+                #50 void thread::FutureObjectInternal::ProducerRunner
+                #devtools_java_launcher: :JniResult>
+                (thread::FutureObjectInternal*, void*) thread/future/future-inl.h:286:52
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x738585)
+                #51 ProducerWrapper thread/future/future.cc:37:5
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x73c3b1)
+                #52 thread::FutureObjectInternal::Run() thread/future/future.cc:61:3
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x73c3b1)
+                #53 devtools_java_launcher::internal::LauncherImpl::VmThreadRoutine(void*)
+                devtools/java/launcher/launcher-impl.cc:189:14
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x735684)
+
+                Thread T24 (tid=6483, running) created by thread T21 at:
+                #0 pthread_create
+                third_party/llvm/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:976:3
+                (376a5944a96225acb3a97f61e6778a4ec3c82048422e4aec0368c2ff748e7a61_020003520650+0x69ceac)
+                #1 os::create_thread(Thread*, os::ThreadType, unsigned long)
+                #null>
+                (libjvm.so+0x10484c1)
+                #2 java.lang.Thread.start()V Thread.java:799
+                #3 io.netty.util.concurrent.ThreadPerTaskExecutor.execute(Ljava/lang/Runnable;)V
+                ThreadPerTaskExecutor.java:32
+                #4 io.netty.util.internal.ThreadExecutorMap$1.execute(Ljava/lang/Runnable;)V ThreadExecutorMap.java:57
+                #5 io.netty.util.concurrent.SingleThreadEventExecutor.doStartThread()V
+                SingleThreadEventExecutor.java:978
+                #6 io.netty.util.concurrent.SingleThreadEventExecutor.startThread()V SingleThreadEventExecutor.java:947
+                #7 io.netty.util.concurrent.SingleThreadEventExecutor.execute(Ljava/lang/Runnable;Z)V
+                SingleThreadEventExecutor.java:830
+                #8 io.netty.util.concurrent.SingleThreadEventExecutor.execute(Ljava/lang/Runnable;)V
+                SingleThreadEventExecutor.java:818
+                #9
+                io.netty.channel.AbstractChannel$AbstractUnsafe.register(Lio/netty/channel/EventLoop;Lio/netty/channel/ChannelPromise;)V
+                AbstractChannel.java:471
+                #10
+                io.netty.channel.SingleThreadEventLoop.register(Lio/netty/channel/ChannelPromise;)Lio/netty/channel/ChannelFuture;
+                SingleThreadEventLoop.java:87
+                #11
+                io.netty.channel.SingleThreadEventLoop.register(Lio/netty/channel/Channel;)Lio/netty/channel/ChannelFuture;
+                SingleThreadEventLoop.java:81
+                #12 io.netty.bootstrap.AbstractBootstrap.initAndRegister()Lio/netty/channel/ChannelFuture;
+                AbstractBootstrap.java:323
+                #13 io.netty.bootstrap.AbstractBootstrap.register()Lio/netty/channel/ChannelFuture;
+                AbstractBootstrap.java:227
+                #14
+                io.grpc.netty.NettyClientTransport.start(Lio/grpc/internal/ManagedClientTransport$Listener;)Ljava/lang/Runnable;
+                NettyClientTransport.java:260
+                #15
+                io.grpc.internal.ForwardingConnectionClientTransport.start(Lio/grpc/internal/ManagedClientTransport$Listener;)Ljava/lang/Runnable;
+                ForwardingConnectionClientTransport.java:34
+                #16
+                io.grpc.internal.ForwardingConnectionClientTransport.start(Lio/grpc/internal/ManagedClientTransport$Listener;)Ljava/lang/Runnable;
+                ForwardingConnectionClientTransport.java:34
+                #17 io.grpc.internal.InternalSubchannel.startNewTransport()V InternalSubchannel.java:259
+                #18 io.grpc.internal.InternalSubchannel$2.run()V InternalSubchannel.java:201
+                #19 io.grpc.SynchronizationContext.drain()V SynchronizationContext.java:95
+                #20 io.grpc.SynchronizationContext.execute(Ljava/lang/Runnable;)V SynchronizationContext.java:127
+                #21
+                io.grpc.internal.ManagedChannelImpl$NameResolverListener.onResult(Lio/grpc/NameResolver$ResolutionResult;)V
+                ManagedChannelImpl.java:1869
+                #22 io.grpc.internal.DnsNameResolver$Resolve.run()V DnsNameResolver.java:333
+                #23 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V
+                ThreadPoolExecutor.java:1128
+                #24 java.util.concurrent.ThreadPoolExecutor$Worker.run()V ThreadPoolExecutor.java:628
+                #25 java.lang.Thread.run()V Thread.java:830
+                #26 (Generated Stub)
+                #null>
+
+                SUMMARY: ThreadSanitizer: data race MessageFramer.java:320 in io.grpc.internal.MessageFramer.close()V
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.AbstractStream.java</file>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ServerCallImpl.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+            <file type="M">io.grpc.internal.ServerCallImplTest.java</file>
+            <file type="M">io.grpc.netty.NettyStreamTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6601" opendate="2020-01-14 00:00:00" fixdate="2020-04-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Deadlock on start gRPC server
+            </summary>
+            <description>What version of gRPC-Java are you using?
+                1.26.0
+                What is your environment?
+                Linux, Alpine
+                openjdk version "1.8.0_171"
+                OpenJDK Runtime Environment (IcedTea 3.8.0) (Alpine 8.171.11-r0)
+                OpenJDK 64-Bit Server VM (build 25.171-b11, mixed mode)
+                Netty - 4.1.44.Final
+                Vertx # Vertx-gRPC - 3.8.4
+                What did you expect to see?
+                Proper start of gRPC Server
+                What did you see instead?
+                Start sometimes hangs with deadlock
+                Steps to reproduce the bug
+                int_threaddump
+                I suppose it's a race condition related to synchronization in gRPC (ServerImpl), await in
+                NetServer.start and vertx/nettty event loops (probably single threaded). Probably it could happened at
+                any time if someone start gRPC server and concurrently open new client connection to that server.
+                In my case I stopped and started the gGPR server but I'm not sure if it is somehow related.
+                Analysis
+                What I see in the thread dump is the following 2 threads that stays in that state, seems, forever:
+
+
+                "vert.x-eventloop-thread-0" #39 prio=10 os_prio=0 tid=0x000055711e379000 nid=0x2d waiting for monitor
+                entry [0x00007fb72abc8000]
+                java.lang.Thread.State: BLOCKED (on object monitor)
+                at io.grpc.internal.ServerImpl$ServerListenerImpl.transportCreated(ServerImpl.java:379)
+                - waiting to lock#0x00000000c559f1a0> (a java.lang.Object)
+                at io.grpc.netty.NettyServer$1.initChannel(NettyServer.java:224)
+                - locked#0x00000000c559bfd8> (a io.grpc.netty.NettyServer)
+                at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:129)
+                "vert.x-worker-thread-12" #214 prio=10 os_prio=0 tid=0x000055711f2d1800 nid=0x418 in Object.wait()
+                [0x00007fb720656000]
+                java.lang.Thread.State: WAITING (on object monitor)
+                at java.lang.Object.wait(Native Method)
+                at java.lang.Object.wait(Object.java:502)
+                at io.netty.util.concurrent.DefaultPromise.await(DefaultPromise.java:252)
+                - locked#0x00000000c589baa0> (a io.netty.util.concurrent.PromiseTask)
+                at io.netty.util.concurrent.DefaultPromise.await(DefaultPromise.java:35)
+                at io.grpc.netty.NettyServer.start(NettyServer.java:269)
+                at io.grpc.internal.ServerImpl.start(ServerImpl.java:184)
+                - locked#0x00000000c559f1a0> (a java.lang.Object)
+                at io.grpc.internal.ServerImpl.start(ServerImpl.java:90)
+
+
+                From what I see in these thread dumps and the code I think that this could be the problem (deadlock):
+
+                Vertx grpc starts server (ServerImpl.start) in vertx blocking thread
+                ServerImpl synchronize on lock and then try (keeping lock) to start server (NetServer.start)
+                NetServer.start opens a channel, binds to it, and since that moment it, I assume, may receive
+                connections from remote clients
+                It seems, at this time a remote client opens connection to this server (already bound)
+                Then in channel's event loop (probably single threaded) is received initChannel which try to get
+                ServerImpl.lock in ServerListenerImpl.transportCreated (coudln't because got by ServerImpl.start)
+                NetServer.start then schedules runnable in channel's event loop and blocks with channelzFuture.await()
+                Now, channelzFuture.await() waits for a runnable to be executed in channel's event loop (probably single
+                threaded)
+                At this point channelzFuture.await keeps ServerImpl.lock lock, while the
+                ServerListenerImpl.transportCreated occupies/blocks (this is what I suppose) the single threaded
+                channel's event loop thus making impossible to process further
+
+                I'm attaching file with thread dumps of the whole JVM
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.netty.NettyServer.java</file>
+            <file type="M">io.grpc.netty.NettyServerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6229" opendate="2019-10-08 00:00:00" fixdate="2020-01-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>all: remove deprecated usePlaintext(boolean)
+            </summary>
+            <description>[]
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">api.src.main.java.io.grpc.ForwardingChannelBuilder.java</file>
+            <file type="M">api.src.main.java.io.grpc.ManagedChannelBuilder.java</file>
+            <file type="M">io.grpc.inprocess.InProcessChannelBuilder.java</file>
+            <file type="M">cronet.src.main.java.io.grpc.cronet.CronetChannelBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyChannelBuilder.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpChannelBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="238" opendate="2015-03-23 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Race in Server handler initialization
+            </summary>
+            <description>When initializing an incoming client connection, we call startAsync() on the transport, which
+                registers the handler on a separate thread. This is obviously a race, and it would have probably been
+                fixed if I had finished Service removal in #35.
+                Symptom:
+                DEBUG i.n.channel.DefaultChannelPipeline - Discarded inbound message
+                SimpleLeakAwareByteBuf(PooledUnsafeDirectByteBuf(ridx: 0, widx: 259, cap: 1024)) that reached at the
+                tail of the pipeline. Please check your pipeline configuration.
+
+                The quickest fix would be to call awaitRunning() from initChannel(). That reduces the rate new
+                connections can connect, but is probably the most expedient solution, until #35 is finished.
+                @nmittler, thoughts?
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.netty.NettyServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1343" opendate="2016-01-23 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Deadline can fire before stream started
+            </summary>
+            <description>In ClientCallImpl the deadline is scheduled before stream.start(). However, if the deadline has
+                already elapsed the runnable will be executed immediately and race with the start. I've only looked into
+                how OkHttp may be impacted.
+                I believe a NullPointerException would be thrown when trying to notify the stream listener due to the
+                cancellation. However, due to #1237 the exception won't be logged. Thus, this will result in a hung
+                stream that never completes with no logging as to what went wrong.
+                This was discovered due to timeout_on_sleeping_server on android being flaky, because it uses a very
+                small timeout. The test would fail at awaitCompletion.
+                @carl-mastrangelo, FYI
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">interop-testing.src.main.java.io.grpc.testing.integration.AbstractTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1549" opendate="2016-03-14 00:00:00" fixdate="2021-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Simplify implementation of back-pressure in StreamObserver-based stub
+            </summary>
+            <description>Pending API changes can allow reactive/async pattern for interacting with flow control and
+                applying back pressure: https://github.com/grpc/grpc-java/pull/1545/files
+                In many cases, automatic back-pressure in generated stubs could be very useful -- e.g. having calls to
+                StreamObserve#onNext(T) block instead of queueing.
+                It's been pointed out that this could cause deadlock for bidi-streaming operations, so perhaps we can
+                just not expose this functionality for bidi-streaming calls?
+                It may also be worth pointing out that most other runtimes (wrapped languages and Go) already expose
+                streams via blocking operations and already require that apps be aware of and work-around possible
+                deadlock issues resulting therefrom. So maybe providing similar mechanisms in Java is fine, with said
+                caveats.
+                Another possible alternative could possibly be done in an extension/add-on instead of in GRPC. For
+                example, wrapping streaming requests and responses with RxJava Observables may further simplify the
+                async case enough to make the synchronous (and possibly-deadlock-prone) case unnecessary.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">api.src.main.java.io.grpc.ClientCall.java</file>
+            <file type="M">api.src.main.java.io.grpc.ServerCall.java</file>
+            <file type="M">stub.src.main.java.io.grpc.stub.CallStreamObserver.java</file>
+            <file type="M">src.main.java.com.google.devtools.build.lib.runtime.BlazeCommandDispatcher.java</file>
+            <file type="M">src.main.java.com.google.devtools.build.lib.runtime.BlazeRuntime.java</file>
+            <file type="M">src.main.java.com.google.devtools.build.lib.runtime.CommandDispatcher.java</file>
+            <file type="M">src.main.java.com.google.devtools.build.lib.server.GrpcServerImpl.java</file>
+            <file type="M">src.main.java.com.google.devtools.build.lib.server.RPCServer.java</file>
+            <file type="M">src.test.java.com.google.devtools.build.lib.server.GrpcServerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2453" opendate="2016-11-28 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Threading of StatsTraceContext
+            </summary>
+            <description>StatsTraceContext assumes non-thread-safety, which is fine as long as the RPC is closed by the
+                application through the ClientCall/ServerCall interface, which are also not thread-safe.
+                However, if the RPC is not closed by the application, but either cancelled by the other side, or closed
+                by transport due to errors, which will call callEnded() from the transport thread which is not
+                synchronized with the application thread. As the application may not be notified about the closure in
+                time, it may still trying to send messages, resulting in wireBytesSent() etc being called after
+                callEnded(), which would trigger a check failure. There is also a data race on the counter fields as
+                wireBytesSent() etc write them and callEnded() reads them from different threads without
+                synchronization.
+                We will remove the preconditions checks from writeBytesSent() etc. For the data race, some kind of
+                synchronization would be required, maybe atomics? @ejona86
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.StatsTraceContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1981" opendate="2016-06-25 00:00:00" fixdate="2021-04-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Executor usage in ClientCallImpl races with channel shutdown and termination.
+            </summary>
+            <description>ManagedChannelImpl clear scheduledExecutor in shutdown(), and releases (which potentially
+                closes) executor in maybeTerminateChannel().
+                Neither newCall() nor ClientCallImpl checks the shutdown state of the channel. ClientCallImpl relies on
+                FailingClientTransport for the expected behavior. However, ClientCallImpl uses the passed in executors
+                anyway, for scheduling the deadline timer and invoking the call listener.
+                If ClientCallImpl tries to schedule a deadline timer after the channel is shut down, it will get a NPE.
+                If it runs the call listener after the shared executor has been closed, which is 1 second
+                (SharedResourceHolder.DESTROY_DELAY_SECONDS) after all references are gone, e.g., the application calls
+                Call.start() that late, it will get a RejectedExecutionException. Our current tests are not testing for
+                the two cases.
+                This doesn't seem to be a serious issue. It only affect people who try to use Calls after the channel
+                has been shutdown. I am yet to figure out a solution.
+                Anyway, it seems executor should be cleared after being returned to the shared pool, like
+                scheduledExecutor.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2.java</file>
+            <file type="M">io.grpc.internal.ObjectPool.java</file>
+            <file type="M">io.grpc.internal.OobChannel.java</file>
+            <file type="M">io.grpc.internal.SingleTransportChannel.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport2Test.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2IdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2Test.java</file>
+            <file type="M">io.grpc.inprocess.InProcessChannelBuilder.java</file>
+            <file type="M">io.grpc.internal.AbstractManagedChannelImplBuilder.java</file>
+            <file type="M">io.grpc.internal.CallCredentialsApplyingTransportFactory.java</file>
+            <file type="M">io.grpc.internal.ClientTransportFactory.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplIdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpChannelBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyChannelBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="583" opendate="2015-06-30 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>OkHttp's cancellation is not properly synchronized
+            </summary>
+            <description>OkHttpClientStream.sendCancel() calls finishStream() from an application thread. But
+                finishStream() calls transportReportStatus() without any lock held. That is not synchronized correctly,
+                as transportReportStatus() may only be called from the transport thread (i.e., while lock is held).
+                It seems that all usages of streams is done while lock is held except for within finishStream() and
+                data(). data() can actually race with finishStream() and end up sending DATA frames after the
+                RST_STREAM. It seems it would be best to just have stream protected by lock, because it having its own
+                synchronization isn't providing much benefit and isn't leading to correct code.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.okhttp.AsyncFrameWriter.java</file>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientStream.java</file>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientTransport.java</file>
+            <file type="M">io.grpc.transport.okhttp.OutboundFlowController.java</file>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8190" opendate="2021-05-19 00:00:00" fixdate="2021-11-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>grpc hang due to the ELG thread placement of NameResolver refresh method
+            </summary>
+            <description>What version of gRPC are you using?
+                grpc v1.32.1
+                What operating system (Linux, Windows, …) and version?
+                Both Linux and Windows
+                What did you do?
+                Implement a customized NameResolver which extends NameResolver, let's call it "CustomizedNameResolver".
+                In the override refresh() method, it makes a grpc call to service discovery agent to retrieve a list of
+                service instances and then resolve them.
+                What did you expect to see?
+                Expect the customized namer resolver works whenever being called and not hang in the existing grpc call.
+                What did you see instead?
+                grpc calls hang in the customized name resolver, particularly on the grpc calling inside overridden
+                refresh() method.
+                We did a thread dump analysis, the problem is the grpc call inside overridden refresh() method is placed
+                in gRPC ELG thread instead of worker thread, which in turns blocks all gRPC traffic causing grpc call
+                hang indefinitely.
+                According to comment on refresh() method, the document does not clearly states that you must delegate a
+                grpc call to a worker/background thread to not block other grpc calls.
+                First, is the placement of grpc call inside overridden refresh() method on the grpc ELG thread an
+                expected behavior? Why cannot we delegate it to worker thread by default?
+                Second, some guides and explanations could be added to the document on NameResolver to further clarify.
+                Attach a thread dump on ELG for your reference. Thank you.
+                "grpc-default-worker-ELG-1-6" - Thread t@428
+                java.lang.Thread.State: WAITING
+                at java.base@11.0.9.1/jdk.internal.misc.Unsafe.park(Native Method)
+                - parking to wait for#41c8f5eb> (a
+                java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+                at java.base@11.0.9.1/java.util.concurrent.locks.LockSupport.park(Unknown Source)
+                at
+                java.base@11.0.9.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown
+                Source)
+                at java.base@11.0.9.1/java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+                at io.grpc.stub.ClientCalls$ThreadlessExecutor.waitAndDrain(ClientCalls.java:642)
+                at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:130)
+                ...
+                at com.xxx.xxx.CustomizedNameResolver.refresh(com.xxx.xxx.CustomizedNameResolver.refresh:59)
+                at io.grpc.internal.ManagedChannelImpl.refreshNameResolution(ManagedChannelImpl.java:447)
+                at io.grpc.internal.ManagedChannelImpl.refreshAndResetNameResolution(ManagedChannelImpl.java:441)
+                at io.grpc.internal.ManagedChannelImpl.access$3900(ManagedChannelImpl.java:99)
+                at
+                io.grpc.internal.ManagedChannelImpl$LbHelperImpl.handleInternalSubchannelState(ManagedChannelImpl.java:1046)
+                at io.grpc.internal.ManagedChannelImpl$LbHelperImpl.access$4500(ManagedChannelImpl.java:1040)
+                at
+                io.grpc.internal.ManagedChannelImpl$LbHelperImpl$1ManagedInternalSubchannelCallback.onStateChange(ManagedChannelImpl.java:1084)
+                at io.grpc.internal.InternalSubchannel$2.run(InternalSubchannel.java:362)
+                at io.grpc.SynchronizationContext.drain(SynchronizationContext.java:88)
+                at io.grpc.internal.InternalSubchannel$TransportListener.transportShutdown(InternalSubchannel.java:621)
+                at
+                io.grpc.netty.shaded.io.grpc.netty.ClientTransportLifecycleManager.notifyShutdown(ClientTransportLifecycleManager.java:53)
+                at io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler.goingAway(NettyClientHandler.java:703)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.NameResolver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="999" opendate="2015-09-10 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Possible race condition ServerImpl between start() and shutdown()
+            </summary>
+            <description>I believe it may be possible if start and stop are called concurrently that the shared executor
+                may not get released. I'm not sure if this is an actual problem, but it does go against the @ ThreadSafe
+                annotation.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3207" opendate="2017-07-08 00:00:00" fixdate="2018-09-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Data race in TestServiceImpl.
+            </summary>
+            <description>WARNING: ThreadSanitizer: data race (pid=982210)
+                Read of size 8 at 0x7fd444897628 by thread T36:
+                #0 io.grpc.internal.MessageFramer.close()V (MessageFramer.java:305)
+                #1 io.grpc.internal.AbstractStream.endOfMessages()V (AbstractStream.java:68)
+                #2 io.grpc.internal.AbstractServerStream.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (AbstractServerStream.java:129)
+                #3 io.grpc.internal.ServerCallImpl.close(Lio/grpc/Status;Lio/grpc/Metadata;)V (ServerCallImpl.java:173)
+                #4 io.grpc.PartialForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (PartialForwardingServerCall.java:46)
+                #5 io.grpc.ForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (ForwardingServerCall.java:22)
+                #6 io.grpc.ForwardingServerCall$SimpleForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (ForwardingServerCall.java:39)
+                #7 io.grpc.testing.integration.TestServiceImpl$6$1.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (TestServiceImpl.java:579)
+                #8 io.grpc.PartialForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (PartialForwardingServerCall.java:46)
+                #9 io.grpc.ForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (ForwardingServerCall.java:22)
+                #10 io.grpc.ForwardingServerCall$SimpleForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (ForwardingServerCall.java:39)
+                #11 io.grpc.testing.integration.TestServiceImpl$5$1.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (TestServiceImpl.java:552)
+                #12 io.grpc.PartialForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (PartialForwardingServerCall.java:46)
+                #13 io.grpc.ForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (ForwardingServerCall.java:22)
+                #14 io.grpc.ForwardingServerCall$SimpleForwardingServerCall.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (ForwardingServerCall.java:39)
+                #15 io.grpc.testing.integration.TestServiceImpl$4$1.close(Lio/grpc/Status;Lio/grpc/Metadata;)V
+                (TestServiceImpl.java:525)
+                #16 io.grpc.stub.ServerCalls$ServerCallStreamObserverImpl.onError(Ljava/lang/Throwable;)V
+                (ServerCalls.java:302)
+                #17 io.grpc.testing.integration.TestServiceImpl$2.onError(Ljava/lang/Throwable;)V
+                (TestServiceImpl.java:212)
+                #18 io.grpc.stub.ServerCalls$2$1.onCancel()V (ServerCalls.java:233)
+                #19 io.grpc.internal.ServerCallImpl$ServerStreamListenerImpl.closed(Lio/grpc/Status;)V
+                (ServerCallImpl.java:280)
+                #20 io.grpc.internal.ServerImpl$JumpToApplicationThreadServerStreamListener$3.runInContext()V
+                (ServerImpl.java:613)
+                #21 io.grpc.internal.ContextRunnable.run()V (ContextRunnable.java:37)
+                #22 io.grpc.internal.SerializingExecutor.run()V (SerializingExecutor.java:102)
+                #23 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V
+                (ThreadPoolExecutor.java:1142)
+                #24 java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:617)
+                #25 java.lang.Thread.run()V (Thread.java:745)
+                #26 (Generated Stub)
+
+                Previous write of size 8 at 0x7fd444897628 by thread T38 (mutexes: write M173247660336208224):
+                #0 io.grpc.internal.MessageFramer.commitToSink(ZZ)V (MessageFramer.java:331)
+                #1 io.grpc.internal.MessageFramer.flush()V (MessageFramer.java:282)
+                #2 io.grpc.internal.AbstractStream.flush()V (AbstractStream.java:59)
+                #3 io.grpc.internal.ServerCallImpl.sendMessage(Ljava/lang/Object;)V (ServerCallImpl.java:134)
+                #4 io.grpc.ForwardingServerCall.sendMessage(Ljava/lang/Object;)V (ForwardingServerCall.java:32)
+                #5 io.grpc.ForwardingServerCall.sendMessage(Ljava/lang/Object;)V (ForwardingServerCall.java:32)
+                #6 io.grpc.ForwardingServerCall.sendMessage(Ljava/lang/Object;)V (ForwardingServerCall.java:32)
+                #7 io.grpc.stub.ServerCalls$ServerCallStreamObserverImpl.onNext(Ljava/lang/Object;)V
+                (ServerCalls.java:293)
+                #8 io.grpc.testing.integration.TestServiceImpl$ResponseDispatcher.dispatchChunk()V
+                (TestServiceImpl.java:338)
+                #9
+                io.grpc.testing.integration.TestServiceImpl$ResponseDispatcher.access$000(Lio/grpc/testing/integration/TestServiceImpl$ResponseDispatcher;)V
+                (TestServiceImpl.java:249)
+                #10 io.grpc.testing.integration.TestServiceImpl$ResponseDispatcher$1.run()V (TestServiceImpl.java:263)
+                #11 io.grpc.internal.LogExceptionRunnable.run()V (LogExceptionRunnable.java:41)
+                #12 java.util.concurrent.Executors$RunnableAdapter.call()Ljava/lang/Object; (Executors.java:511)
+                #13 java.util.concurrent.FutureTask.run()V (FutureTask.java:266)
+                #14
+                java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Ljava/util/concurrent/ScheduledThreadPoolExecutor$ScheduledFutureTask;)V
+                (ScheduledThreadPoolExecutor.java:180)
+                #15 java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run()V
+                (ScheduledThreadPoolExecutor.java:295)
+                #16 java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V
+                (ThreadPoolExecutor.java:1142)
+                #17 java.util.concurrent.ThreadPoolExecutor$Worker.run()V (ThreadPoolExecutor.java:617)
+                #18 java.lang.Thread.run()V (Thread.java:745)
+                #19 (Generated Stub)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.testing.integration.TestServiceImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2865" opendate="2017-03-30 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Rare race condition in Client
+            </summary>
+            <description>While more prominent when using compression, this race occurs without it as well. The typical
+                race looks something like:
+
+                Client starts and RPC
+                The transport to the server is not yet available, so a DelayedClientTransport is used.
+                The server handles the RPC and sends back headers and a compressed message.
+                The client sees there are headers, and begins executing the queued stream callbacks, on the channel
+                executor threads instead of the transport thread
+                The client sees the Data frame, and tries to decompress it on the network thread. *This fails since the
+                headers from 4 have not yet been processed.
+                The stream has already failed, but the queued callback for onHeaders() is finally executed on the app
+                thread.
+
+                This is the root cause of #2157. As mentioned, this isn't just for compression. ClientInterceptors will
+                see headers after data has been received. The solution (temporary?) seems to be to move OkHttp to used
+                AbstractClientStream2 in #2821, and then move decompression from ClientCallImpl to the stream. That will
+                fix the decompression, but not interceptors.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ServerCallImpl.java</file>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+            <file type="M">io.grpc.internal.ServerImplTest.java</file>
+            <file type="M">io.grpc.inprocess.InProcessTransport.java</file>
+            <file type="M">io.grpc.internal.AbstractClientStream.java</file>
+            <file type="M">io.grpc.internal.AbstractServerStream.java</file>
+            <file type="M">io.grpc.internal.AbstractStream.java</file>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ClientStream.java</file>
+            <file type="M">io.grpc.internal.DelayedStream.java</file>
+            <file type="M">io.grpc.internal.NoopClientStream.java</file>
+            <file type="M">io.grpc.internal.ServerStream.java</file>
+            <file type="M">io.grpc.internal.Stream.java</file>
+            <file type="M">io.grpc.internal.DelayedStreamTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2246" opendate="2016-09-09 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Deadlock with TransportSet
+            </summary>
+            <description>Hello,
+                I was testing Grpc with RoundRobinLB and a custom NameResolver when this deadlock happened:
+
+                Found one Java-level deadlock:
+                "grpc-timer-0":
+                waiting to lock monitor 0x00007fa1b00062c8 (object 0x00000007397d7f88, a java.lang.Object),
+                which is held by "main"
+                "main":
+                waiting to lock monitor 0x00007fa1800087f8 (object 0x00000007397d7e00, a java.lang.Object),
+                which is held by "grpc-timer-0"
+                "grpc-timer-0":
+                at io.grpc.internal.DelayedClientTransport.hasPendingStreams(DelayedClientTransport.java:284)
+
+                waiting to lock#0x00000007397d7f88> (a java.lang.Object)
+                at io.grpc.internal.TransportSet$1EndOfCurrentBackoff.run(TransportSet.java:246)
+                locked#0x00000007397d7e00> (a java.lang.Object)
+                at io.grpc.internal.LogExceptionRunnable.run(LogExceptionRunnable.java:56)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at
+                java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+                at
+                java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+
+                "main":
+                at io.grpc.internal.InUseStateAggregator.updateObjectInUse(InUseStateAggregator.java:50)
+
+                waiting to lock#0x00000007397d7e00> (a java.lang.Object)
+                at io.grpc.internal.TransportSet$BaseTransportListener.transportInUse(TransportSet.java:357)
+                at io.grpc.internal.DelayedClientTransport.newStream(DelayedClientTransport.java:128)
+                locked#0x00000007397d7f88> (a java.lang.Object)
+                at io.grpc.internal.ClientCallImpl.start(ClientCallImpl.java:214)
+                at io.grpc.stub.ClientCalls.startCall(ClientCalls.java:273)
+                at io.grpc.stub.ClientCalls.asyncUnaryRequestCall(ClientCalls.java:252)
+                at io.grpc.stub.ClientCalls.futureUnaryCall(ClientCalls.java:189)
+                at io.grpc.stub.ClientCalls.blockingUnaryCall(ClientCalls.java:135)
+                at [...]remote.TestGrpc$TestBlockingStub.sayHello(TestGrpc.java:156)
+
+
+                I don't know if it may relate to my own code or if the issue is on grpc side.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6641" opendate="2020-01-24 00:00:00" fixdate="2021-06-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Deadlock in server transport with multiple ports
+            </summary>
+            <description>ServerImpl.start() calls NettyServer.start() while holding ServerImpl.lock. NettyServer.start()
+                awaits a submitted runnable in eventloop. However, this pending runnable may never be executed because
+                the eventloop might be executing some other task, , like ServerListenerImpl.transportCreated(), that is
+                trying to acquire ServerImpl.lock causing a deadlock.
+                This is a deadlock for multiple-port server transport usecase with the same deadlock mechanism as #6601.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.inprocess.InProcessServer.java</file>
+            <file type="M">io.grpc.inprocess.InProcessServerBuilder.java</file>
+            <file type="M">io.grpc.internal.InternalServer.java</file>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+            <file type="M">io.grpc.internal.ServerImplBuilder.java</file>
+            <file type="M">io.grpc.inprocess.InProcessServerBuilderTest.java</file>
+            <file type="M">io.grpc.inprocess.InProcessTransportTest.java</file>
+            <file type="M">io.grpc.inprocess.StandaloneInProcessTransportTest.java</file>
+            <file type="M">io.grpc.internal.AbstractTransportTest.java</file>
+            <file type="M">io.grpc.internal.ServerImplBuilderTest.java</file>
+            <file type="M">io.grpc.internal.ServerImplTest.java</file>
+            <file type="M">io.grpc.netty.InternalNettyServerBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyServer.java</file>
+            <file type="M">io.grpc.netty.NettyServerBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyClientTransportTest.java</file>
+            <file type="M">io.grpc.netty.NettyServerBuilderTest.java</file>
+            <file type="M">io.grpc.netty.NettyServerTest.java</file>
+            <file type="M">io.grpc.netty.NettyTransportTest.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpTransportTest.java</file>
+            <file type="M">io.grpc.internal.testing.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="120" opendate="2015-02-24 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Remove blocking parts from NettyClientTransport
+            </summary>
+            <description>NettyClientTransport#newStream is currently a blocking operation. It blocks until the HEADERS
+                frame has been written on the wire. This is behavior is not what people who use our asynchronous API
+                would come to expect.
+                The blocking also is the cause for severe performance issues in the QPS Client as it results in more or
+                less in as many threads being created as there are concurrent calls going on (We have seen ~850 Threads
+                for 1000 concurrent calls, resulting in OOM).
+                The blocking may also lead to deadlocking the EventLoop in cases where a DirectExecutor is used. One
+                scenario where a deadlock might happen is when the EventLoop is not able to completely flush the HEADERS
+                frame on the wire because then Netty would internally create a task to flush the remaining bytes and put
+                this task in its task queue. This task can never be completed though as the EventLoop Thread is blocked
+                by our very own newStream method waiting for the task to be completed ...
+                This issue depends on #116 and #118 to be resolved first.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.testing.integration.Util.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoder.java</file>
+            <file type="M">io.grpc.transport.netty.GoAwayClosedStreamException.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientTransport.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoderTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandlerTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientStreamTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyHandlerTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8914" opendate="2022-02-11 00:00:00" fixdate="2022-06-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>binder: Deadlock due to unexpected re-entrancy of transactions on process-local Binder
+            </summary>
+            <description>BinderTransport locking was written under the assumption that calls to IBinder#transact()
+                enqueued the Parcel for delivery to the peer and returned immediately. However, Android guarantees the
+                unique object identity of IBinder instances within a process. And so when a client creates a Channel to
+                a Server/Service within its own process, BinderClientTransport.outgoingBinder ==
+                BinderServerTransport.outgoingBinder. android.os.Binder#transact() on that object is implemented not as
+                a system call to the binder driver but as a direct call to its own onTransact() method.
+                This is a problem because BinderTransport#handleTransaction() holds its 'this' lock while calling
+                outgoingBinder.transact() in multiple places. If two peer instances of BinderClientTransport and
+                BinderServerTransport are running handleTransaction() on different threads at the same time, they can
+                each end up holding their own lock while waiting (forever) for the other's.
+                Steps to reproduce one instance of this bug
+
+                Use BinderChannelBuilder to create a Channel to an android.app.Service hosted by the same process
+                Have both the client and server repeatedly send messages to each other around the same time from
+                different threads
+
+                What did you expect to see?
+                No deadlock
+                What did you see instead?
+                Example deadlock, via sendAcknowledgeBytes():
+                "xxx" prio=5 tid=25 Blocked
+                | group="main" sCount=1 ucsCount=0 flags=1 obj=0x12c40c00 self=0xb400006e9ce43460
+                | sysTid=24211 nice=10 cgrp=background sched=0/0 handle=0x6caac7dcb0
+                | state=S schedstat=( 6776198013 56795686488 17245 ) utm=455 stm=221 core=1 HZ=100
+                | stack=0x6caab7a000-0x6caab7c000 stackSize=1039KB
+                | held mutexes=
+                **at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:449)**
+                **- waiting to lock#0x04f85343> (a io.grpc.binder.internal.BinderTransport$BinderClientTransport) held
+                by thread 64**
+                at io.grpc.binder.internal.LeakSafeOneWayBinder.onTransact(LeakSafeOneWayBinder.java:63)
+                at android.os.Binder.transact(Binder.java:1157)
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:514)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                #or>
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:515)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                #or>
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:516)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                #or>
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:517)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                **- locked#0x0f79cc83> (a io.grpc.binder.internal.BinderTransport$BinderServerTransport)**
+                **at io.grpc.binder.internal.LeakSafeOneWayBinder.onTransact(LeakSafeOneWayBinder.java:63)**
+                at android.os.Binder.transact(Binder.java:1157)
+                at io.grpc.binder.internal.BinderTransport.sendTransaction(BinderTransport.java:402)
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:261)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                #or>
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:262)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                #or>
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:263)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                #or>
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:264)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                at io.grpc.binder.internal.Outbound$ClientOutbound.sendSingleMessageAndHalfClose(Outbound.java:381)
+                at io.grpc.binder.internal.SingleMessageClientStream.halfClose(SingleMessageClientStream.java:105)
+                #or>
+                at io.grpc.binder.internal.Outbound$ClientOutbound.sendSingleMessageAndHalfClose(Outbound.java:382)
+                at io.grpc.binder.internal.SingleMessageClientStream.halfClose(SingleMessageClientStream.java:105)
+
+                "yyy" prio=5 tid=64 Blocked
+                | group="main" sCount=1 ucsCount=0 flags=1 obj=0x12d41100 self=0xb400006e9cf25400
+                | sysTid=16535 nice=10 cgrp=background sched=0/0 handle=0x6ca795fcb0
+                | state=S schedstat=( 84994090 239215329 419 ) utm=5 stm=2 core=1 HZ=100
+                | stack=0x6ca785c000-0x6ca785e000 stackSize=1039KB
+                | held mutexes=
+                **at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:449)**
+                **- waiting to lock#0x0f79cc83> (a io.grpc.binder.internal.BinderTransport$BinderServerTransport) held
+                by thread 25**
+                at io.grpc.binder.internal.LeakSafeOneWayBinder.onTransact(LeakSafeOneWayBinder.java:63)
+                at android.os.Binder.transact(Binder.java:1157)
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:514)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                #or>
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:515)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                #or>
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:516)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                #or>
+                at io.grpc.binder.internal.BinderTransport.sendAcknowledgeBytes(BinderTransport.java:517)
+                at io.grpc.binder.internal.BinderTransport.handleTransaction(BinderTransport.java:477)
+                **- locked#0x04f85343> (a io.grpc.binder.internal.BinderTransport$BinderClientTransport)**
+                **at io.grpc.binder.internal.LeakSafeOneWayBinder.onTransact(LeakSafeOneWayBinder.java:63)**
+                at android.os.Binder.transact(Binder.java:1157)
+                at io.grpc.binder.internal.BinderTransport.sendTransaction(BinderTransport.java:402)
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:261)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                #or>
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:262)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                #or>
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:263)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                #or>
+                at io.grpc.binder.internal.Outbound.sendInternal(Outbound.java:264)
+                at io.grpc.binder.internal.Outbound.send(Outbound.java:212)
+                at io.grpc.binder.internal.Outbound$ServerOutbound.sendSingleMessageAndClose(Outbound.java:460)
+                at io.grpc.binder.internal.SingleMessageServerStream.close(SingleMessageServerStream.java:102)
+                #or>
+                at io.grpc.binder.internal.Outbound$ServerOutbound.sendSingleMessageAndClose(Outbound.java:461)
+                at io.grpc.binder.internal.SingleMessageServerStream.close(SingleMessageServerStream.java:102)
+                \- locked#0x0f7ee7bb> (a io.grpc.binder.internal.Outbound$ServerOutbound)
+                at io.grpc.internal.ServerCallImpl.closeInternal(ServerCallImpl.java:223)
+                at io.grpc.internal.ServerCallImpl.close(ServerCallImpl.java:207)
+                at io.grpc.stub.ServerCalls$ServerCallStreamObserverImpl.onCompleted(ServerCalls.java:395)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.binder.internal.BinderTransportTest.java</file>
+            <file type="M">io.grpc.binder.internal.BinderTransport.java</file>
+            <file type="M">io.grpc.binder.internal.OneWayBinderProxy.java</file>
+            <file type="M">io.grpc.binder.internal.Outbound.java</file>
+            <file type="M">io.grpc.binder.internal.ParcelHolder.java</file>
+            <file type="M">io.grpc.binder.internal.OneWayBinderProxyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5015" opendate="2018-10-29 00:00:00" fixdate="2021-07-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Revisit LoadBalancer API's threading model
+            </summary>
+            <description>The LoadBalancer main interface is not thread-safe, and is guaranteed to be called from the
+                SynchronizationContext. This has relieved implementors from worrying about synchronization.
+                As for the auxiliary interfaces, SubchannelPicker is intentionally thread-safe because it on the
+                critical path. Helper and Subchannel are not on the critical path, we made them thread-safe because they
+                are implemented by GRPC and we thought making them thread-safe would probably provide more convenience
+                to their callers.
+                However, client-side health checking (#4932) and our (Google-internal) request routing work revealed two
+                use cases where a LoadBalancer may wrap or delegate to another, while adding additional logic. Helper
+                and Subchannel may also be wrapped in the process.
+                For example, HealthCheckingLoadBalancerFactory wraps Helper.createSubchannel() to initialize health
+                checking on the created Subchannel, and we find it much easier to implement if createSubchannel() were
+                always called from the SynchronizationContext, which is not the case right now since createSubchannel()
+                is thread-safe. In fact, probably all LoadBalancers always call createSubchannel() from the
+                SynchronizationContext, otherwise it may race with handleSubchannelState() and it's non-trivial to
+                handle, and will cancel out the benefits of the threading guarantee on the main LoadBalancer interface.
+                Because of the apparent issue with createSubchannel(), we are going to suggest always calling it from
+                the SynchronizationContext, and will log a warning if it's not the case.
+                We'd like to discuss whether it makes sense to make Helper and Subchannel non-thread-safe, and require
+                them to be called from SynchronizationContext.
+                My argument for non-thread-safety: we made Helper and Subchannel thread-safe based on the mindset that
+                they is only one implementation which is from GRPC. In fact, a 3rd-party developer may want to wrap them
+                and add their own logic, and it now becomes their burden to make their added logic thread-safe too.
+                Possible argument for thread-safety: Subchannel.requestConnection() may be called from the critical
+                path. However, since it doesn't guarantee any action for the caller, the caller can easily enqueue it to
+                the SynchronizationContext.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.LoadBalancer.java</file>
+            <file type="M">io.grpc.SynchronizationContext.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+            <file type="M">io.grpc.SynchronizationContextTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplIdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.internal.AutoConfiguredLoadBalancerFactory.java</file>
+            <file type="M">io.grpc.internal.ServiceConfigUtil.java</file>
+            <file type="M">io.grpc.util.ForwardingLoadBalancer.java</file>
+            <file type="M">io.grpc.util.ForwardingLoadBalancerTest.java</file>
+            <file type="M">io.grpc.services.HealthCheckingLoadBalancerFactory.java</file>
+            <file type="M">io.grpc.services.HealthCheckingLoadBalancerFactoryTest.java</file>
+            <file type="M">io.grpc.internal.PickFirstLoadBalancerTest.java</file>
+            <file type="M">io.grpc.util.RoundRobinLoadBalancerTest.java</file>
+            <file type="M">io.grpc.grpclb.CachedSubchannelPool.java</file>
+            <file type="M">io.grpc.grpclb.GrpclbLoadBalancer.java</file>
+            <file type="M">io.grpc.grpclb.GrpclbState.java</file>
+            <file type="M">io.grpc.grpclb.SubchannelPool.java</file>
+            <file type="M">io.grpc.grpclb.CachedSubchannelPoolTest.java</file>
+            <file type="M">io.grpc.grpclb.GrpclbLoadBalancerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1510" opendate="2016-03-03 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>DelayedClientTransport and InProcessTransport means deadlock
+            </summary>
+            <description>There is a chance of deadlock when DelayedClientTransport is linked with an InProcessTransport.
+                See /pull/1503.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.DelayedClientTransport.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTransportManagerTest.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+            <file type="M">io.grpc.internal.FakeClock.java</file>
+            <file type="M">io.grpc.internal.TestUtils.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="696" opendate="2015-08-03 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>In-process transport deadlock during shutdown
+            </summary>
+            <description>Simultaneously shutting down both server and client sharing the same in-process transport can
+                lead to a deadlock. During server shutdown, the transport lock is held while calling transportShutdown
+                on the channel listener, which attempts to lock the channel. At the same time, channel.shutdownNow()
+                holds the channel lock while also trying to lock the transport which leads to a deadlock:
+                Found one Java-level deadlock:
+                =============================
+                "AccountServer STOPPING":
+                waiting to lock monitor 0x00007f88221d72a8 (object 0x000000076eb28a20, a io.grpc.ChannelImpl),
+                which is held by "main"
+                "main":
+                waiting to lock monitor 0x00007f8824015488 (object 0x000000076c2afb38, a
+                io.grpc.transport.inprocess.InProcessTransport),
+                which is held by "AccountServer STOPPING"
+
+                Java stack information for the threads listed above:
+                ===================================================
+                "AccountServer STOPPING":
+                at io.grpc.ChannelImpl$TransportListener.transportShutdown(ChannelImpl.java:281)
+                - waiting to lock#0x000000076eb28a20> (a io.grpc.ChannelImpl)
+                at io.grpc.transport.inprocess.InProcessTransport.notifyShutdown(InProcessTransport.java:151)
+                - locked#0x000000076c2afb38> (a io.grpc.transport.inprocess.InProcessTransport)
+                at io.grpc.transport.inprocess.InProcessTransport.shutdown(InProcessTransport.java:140)
+                - locked#0x000000076c2afb38> (a io.grpc.transport.inprocess.InProcessTransport)
+                at io.grpc.ServerImpl$ServerListenerImpl.serverShutdown(ServerImpl.java:240)
+                - locked#0x000000076bfe81a8> (a io.grpc.ServerImpl)
+                at io.grpc.transport.inprocess.InProcessServer.shutdown(InProcessServer.java:77)
+                - locked#0x000000076be7fdc0> (a io.grpc.transport.inprocess.InProcessServer)
+                at io.grpc.ServerImpl.shutdown(ServerImpl.java:135)
+                - locked#0x000000076bfe81a8> (a io.grpc.ServerImpl)
+                at com.pexlabs.grpc.AbstractGrpcServer.shutDown(AbstractGrpcServer.java:42)
+                at com.google.common.util.concurrent.AbstractIdleService$2$2.run(AbstractIdleService.java:69)
+                at com.google.common.util.concurrent.Callables$3.run(Callables.java:95)
+                at java.lang.Thread.run(Thread.java:745)
+                "main":
+                at io.grpc.transport.inprocess.InProcessTransport.shutdown(InProcessTransport.java:136)
+                - waiting to lock#0x000000076c2afb38> (a io.grpc.transport.inprocess.InProcessTransport)
+                at io.grpc.ChannelImpl.shutdown(ChannelImpl.java:128)
+                - locked#0x000000076eb28a20> (a io.grpc.ChannelImpl)
+                at io.grpc.ChannelImpl.shutdownNow(ChannelImpl.java:149)
+                - locked#0x000000076eb28a20> (a io.grpc.ChannelImpl)
+                at com.pexlabs.grpc.AbstractGrpcClient.close(AbstractGrpcClient.java:25)
+                at com.pexlabs.test.TestUtil$1.doStop(TestUtil.java:25)
+                at com.google.common.util.concurrent.AbstractService.stopAsync(AbstractService.java:204)
+                at com.google.common.util.concurrent.ServiceManager.stopAsync(ServiceManager.java:327)
+                at com.pexlabs.test.TestContext.after(TestContext.java:75)
+                at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:50)
+                at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+                at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+                at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+                at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:78)
+                at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:212)
+                at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:68)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+
+                Found 1 deadlock.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.ChannelImpl.java</file>
+            <file type="M">io.grpc.ServerImpl.java</file>
+            <file type="M">io.grpc.ChannelImplTest.java</file>
+            <file type="M">io.grpc.ServerImplTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8642" opendate="2021-11-01 00:00:00" fixdate="2022-10-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>CsdsService not properly synchronized with XdsClient
+            </summary>
+            <description>Consider this code from CsdsService:
+
+
+                grpc-java/xds/src/main/java/io/grpc/xds/CsdsService.java
+
+
+                Lines 152 to 155
+                in
+                a46560e
+
+
+                static ClientConfig getClientConfigForXdsClient(XdsClient xdsClient) {
+
+
+                ListenersConfigDump ldsConfig = dumpLdsConfig(
+
+
+                xdsClient.getSubscribedResourcesMetadata(ResourceType.LDS),
+
+
+                xdsClient.getCurrentVersion(ResourceType.LDS));
+
+
+                The initial issue is that getSubscribedResourcesMetadata() and getCurrentVersion() have no
+                synchronization:
+
+
+                grpc-java/xds/src/main/java/io/grpc/xds/ClientXdsClient.java
+
+
+                Lines 1842 to 1848
+                in
+                14eb3b2
+
+
+                Map#String, ResourceMetadata> getSubscribedResourcesMetadata(ResourceType type) {
+
+
+                Map#String, ResourceMetadata> metadataMap = new HashMap();
+
+
+                for (Map.Entry#String, ResourceSubscriber> entry : getSubscribedResourcesMap(type).entrySet()) {
+
+
+                metadataMap.put(entry.getKey(), entry.getValue().metadata);
+
+
+                }
+
+
+                return metadataMap;
+
+
+                }
+
+
+                grpc-java/xds/src/main/java/io/grpc/xds/AbstractXdsClient.java
+
+
+                Lines 257 to 258
+                in
+                a46560e
+
+
+                // Must be synchronized.
+
+
+                String getCurrentVersion(ResourceType type) {
+
+
+                That is bad. However, the xdsClient API itself is insufficient for CSDS because those two method calls
+                need to be atomic; even if each of those methods were thread-safe the version needs to match the
+                resources returned.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.xds.AbstractXdsClient.java</file>
+            <file type="M">io.grpc.xds.ClientXdsClient.java</file>
+            <file type="M">io.grpc.xds.CsdsService.java</file>
+            <file type="M">io.grpc.xds.XdsClient.java</file>
+            <file type="M">io.grpc.xds.CsdsServiceTest.java</file>
+            <file type="M">io.grpc.xds.ClientXdsClientTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="330" opendate="2015-04-23 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>OkHttpClientTransport.onGoAway() races with startPendingStreams()
+            </summary>
+            <description>onGoAway has two phases: do things necessary under lock and final cleanup. In the first phase
+                it collects the streams to terminate in the second and sets goAway.
+                startPendingStreams() does not observe goAway and also creates new streams that should be failed due to
+                the goAway. From an initial look, it seems it would be best to remove failPendingStreams() and simply
+                integrate its two phases into onGoAway()'s two phases; that is, when holding the lock in onGoAway,
+                replace pendingStreams with an empty list, and then when not holding the lock call transportReportStatus
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientTransport.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2152" opendate="2016-08-10 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Deadlock found in TransportSet
+            </summary>
+            <description>When running benchmarks where the client started up faster than the server, The first few calls
+                failed as unavailable. Our internal deadlock detector seems to think there is a deadlock around here:
+                Deadlock(s) found:
+                "grpc-client-net-1-32" daemon prio=5 Id=175 BLOCKED on java.lang.Object@7eeb2e6b owned by
+                "grpc-client-app-5" Id=119
+                io.grpc.internal.DelayedClientTransport.startBackoff(DelayedClientTransport.java:323)
+                io.grpc.internal.TransportSet.scheduleBackoff(TransportSet.java:235)
+                io.grpc.internal.TransportSet.access$1500(TransportSet.java:61)
+                io.grpc.internal.TransportSet$TransportListener.transportShutdown(TransportSet.java:440)
+                io.grpc.netty.ClientTransportLifecycleManager.notifyShutdown(ClientTransportLifecycleManager.java:68)
+                io.grpc.netty.ClientTransportLifecycleManager.notifyTerminated(ClientTransportLifecycleManager.java:84)
+                io.grpc.netty.NettyClientTransport$4.operationComplete(NettyClientTransport.java:181)
+                io.grpc.netty.NettyClientTransport$4.operationComplete(NettyClientTransport.java:175)
+                io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:514)
+                io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:488)
+                io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:427)
+                io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:120)
+                io.netty.channel.DefaultChannelPromise.setFailure(DefaultChannelPromise.java:87)
+                io.grpc.netty.ProtocolNegotiators$AbstractBufferingHandler.fail(ProtocolNegotiators.java:436)
+                io.grpc.netty.ProtocolNegotiators$AbstractBufferingHandler.exceptionCaught(ProtocolNegotiators.java:376)
+                io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:295)
+                io.netty.channel.AbstractChannelHandlerContext.invokeExceptionCaught(AbstractChannelHandlerContext.java:274)
+                io.netty.channel.AbstractChannelHandlerContext.fireExceptionCaught(AbstractChannelHandlerContext.java:266)
+                io.grpc.netty.NettyClientTransport$3.operationComplete(NettyClientTransport.java:165)
+                io.grpc.netty.NettyClientTransport$3.operationComplete(NettyClientTransport.java:156)
+                io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:514)
+                io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:507)
+                io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:486)
+                io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:427)
+                io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:129)
+                io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.fulfillConnectPromise(AbstractNioChannel.java:321)
+                io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:337)
+                io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:588)
+                io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:512)
+                io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:426)
+                io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:398)
+                io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:877)
+                io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+                java.lang.Thread.run(Thread.java:745)
+
+
+                "grpc-client-app-5" daemon prio=5 Id=119 BLOCKED on java.lang.Object@17902cf5 owned by
+                "grpc-client-net-1-32" Id=175
+                io.grpc.internal.InUseStateAggregator.updateObjectInUse(InUseStateAggregator.java:51)
+                io.grpc.internal.TransportSet$BaseTransportListener.transportInUse(TransportSet.java:345)
+                io.grpc.internal.DelayedClientTransport.newStream(DelayedClientTransport.java:128)
+                io.grpc.internal.DelayedClientTransport$PendingStream.createRealStream(DelayedClientTransport.java:382)
+                io.grpc.internal.DelayedClientTransport$PendingStream.access$100(DelayedClientTransport.java:369)
+                io.grpc.internal.DelayedClientTransport$2.run(DelayedClientTransport.java:261)
+                java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+                java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+                java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+                java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+                java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransportTest.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8536" opendate="2021-09-20 00:00:00" fixdate="2021-12-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>BinderChannel flow control can get stuck under load
+            </summary>
+            <description>What version of gRPC-Java are you using?
+                head
+                What is your environment?
+                Linux/Android
+                Steps to reproduce the bug
+                We're launching a unary "GetTile" gRPC interaction between two Android processes. Response message can
+                be ~100kb and clients request several tiles one after the other. Telemetry from the field shows that
+                after a while some clients start experiencing DEADLINE_EXCEEDED errors even though other calls to the
+                same server process over different Channels continue to succeed.
+                By lowering BinderTransport#TRANSACTION_BYTES_WINDOW and requesting tiles in a loop I can reproduce
+                similar symptoms locally. Using the debugger I can see the server's BinderTransport#transmitWindowFull
+                becomes stuck true even though all bytes have been acknowledged by the client. The server is generating
+                response messages but isn't able to put them on the wire. I believe the problem is that
+                BinderTransport#sendTransaction() updates transmitWindowFull based on an unsynchronized read of
+                acknowledgedOutgoingBytes, which may not include concurrent updates by #handleAcknowledgedBytes() on
+                another thread.
+                What did you expect to see?
+                Binder transactions should pause when flow control kicks in then resume when enough outstanding bytes
+                are acknowledged.
+                What did you see instead?
+                Outstanding bytes are acknowledged but transmitWindowFull remains true in a way that's inconsistent with
+                acknowledgedOutgoingBytes and numOutgoingBytes.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.binder.internal.BinderTransport.java</file>
+            <file type="M">io.grpc.binder.internal.FlowController.java</file>
+            <file type="M">io.grpc.binder.internal.FlowControllerTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

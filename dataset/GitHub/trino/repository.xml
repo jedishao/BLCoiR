@@ -1,0 +1,724 @@
+<bugrepository name="trino">
+    <bug id="14132" opendate="2022-09-14 00:00:00" fixdate="2022-10-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Missing manifest file when releasing Hive Metastore's the lock has failed.
+            </summary>
+            <description>HiveMetastoreTableOperations using aquireLock and releaseLock while committing to iceberg
+                existing table.
+                releaseLock happens in the finally block and that step can also fail, and that result into that missing
+                manifest file.
+                Steps To Reproduce:
+                CREATE TABLE tbl (
+                id integer,
+                name varchar,
+                part varchar
+                )
+                WITH (
+                location = '/path',
+                format = 'PARQUET'
+                );
+
+                INSERT INTO tbl VALUES (1,'product', 'part1');
+
+
+                if HiveMetastoreTableOperations's line failed to execute at Metastore level. It can fail for Metastore
+                timeout or if lock is missing from HMS side it can throw NoSuchLockException which is an Exception and
+                not RuntimeException
+                Then after the failure, insert/select or any query on this table will fail, and table becomes unusable:
+                INSERT INTO tbl VALUES (2,'product', 'part1');
+
+                Query 20220829_214404_00026_j9tvf, FAILED, 3 nodes
+                Splits: 68 total, 67 done (98.53%)
+                0.47 [0 rows, 0B] [0 rows/s, 0B/s]
+
+                Query 20220829_214404_00026_j9tvf failed: Failed to get status for file:
+                //path/tbl/metadata/snap-5290494244823571353-1-34a427a1-054c-4ecf-a49b-f3e3ef9203a0.avro
+
+
+                Reason would be when the release lock step was failed, the Iceberg's commit handles only
+                RuntimeException so in case of NoSuchLockException being thrown then it has not done any step.
+                So, looks like the new snapshot is created and pointing to a new manifest file in the previous step, but
+                that file is missing/not created.
+                related issues: #14104 #12581
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.HiveMetastoreTableOperations.java</file>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.TestIcebergHiveMetastoreTableOperationsReleaseLockFailure.java</file>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.TestingIcebergHiveMetastoreCatalogModule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9741" opendate="2021-10-22 00:00:00" fixdate="2022-02-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TestSqlServerConnectorTest.testSelectInformationSchemaColumns fail in 2019-CU13-ubuntu-20.04.
+            </summary>
+            <description>The test succeeds in 2017 image, but it fails in 2019 image. We need to find the cause of
+                deadlock.
+                Error: Tests run: 274, Failures: 1, Errors: 0, Skipped: 32, Time elapsed: 694.821 s
+
+                FAILURE! - in TestSuite
+                Error: io.trino.plugin.sqlserver.TestSqlServerConnectorTest.testSelectInformationSchemaColumns Time
+                elapsed: 5.331 s
+                FAILURE!
+                java.lang.AssertionError: Expected query to succeed: SELECT * FROM information_schema.columns
+                at org.testng.Assert.fail(Assert.java:83)
+                at io.trino.testing.QueryAssertions.assertQuerySucceeds(QueryAssertions.java:278)
+                at io.trino.testing.AbstractTestQueryFramework.assertQuerySucceeds(AbstractTestQueryFramework.java:269)
+                at io.trino.testing.AbstractTestQueryFramework.assertQuerySucceeds(AbstractTestQueryFramework.java:264)
+                at io.trino.testing.BaseConnectorTest.testSelectInformationSchemaColumns(BaseConnectorTest.java:991)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at
+                java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+                at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+                at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+                at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+                at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+                Caused by: java.lang.RuntimeException: Transaction (Process ID 60) was deadlocked on lock resources with
+                another process and has been chosen as the deadlock victim. Rerun the transaction.
+                at io.trino.testing.AbstractTestingTrinoClient.execute(AbstractTestingTrinoClient.java:121)
+                at io.trino.testing.DistributedQueryRunner.execute(DistributedQueryRunner.java:476)
+                at io.trino.testing.QueryAssertions.assertQuerySucceeds(QueryAssertions.java:275)
+                ... 16 more
+                Suppressed: java.lang.Exception: SQL: SELECT * FROM information_schema.columns
+                at io.trino.testing.DistributedQueryRunner.execute(DistributedQueryRunner.java:479)
+                ... 17 more
+                Caused by: io.trino.spi.TrinoException: Transaction (Process ID 60) was deadlocked on lock resources
+                with another process and has been chosen as the deadlock victim. Rerun the transaction.
+                at io.trino.plugin.jdbc.BaseJdbcClient.getColumns(BaseJdbcClient.java:318)
+                at io.trino.plugin.jdbc.ForwardingJdbcClient.getColumns(ForwardingJdbcClient.java:88)
+                at
+                io.trino.plugin.jdbc.jmx.StatisticsAwareJdbcClient.lambda$getColumns$4(StatisticsAwareJdbcClient.java:108)
+                at io.trino.plugin.jdbc.jmx.JdbcApiStats.wrap(JdbcApiStats.java:35)
+                at io.trino.plugin.jdbc.jmx.StatisticsAwareJdbcClient.getColumns(StatisticsAwareJdbcClient.java:108)
+                at io.trino.plugin.jdbc.CachingJdbcClient.lambda$getColumns$3(CachingJdbcClient.java:158)
+                at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4864)
+                at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+                at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+                at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+                at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+                at com.google.common.cache.LocalCache.get(LocalCache.java:3962)
+                at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4859)
+                at io.trino.plugin.jdbc.CachingJdbcClient.get(CachingJdbcClient.java:666)
+                at io.trino.plugin.jdbc.CachingJdbcClient.getColumns(CachingJdbcClient.java:158)
+                at io.trino.plugin.jdbc.CachingJdbcClient.lambda$getColumns$3(CachingJdbcClient.java:158)
+                at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4864)
+                at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+                at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+                at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+                at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+                at com.google.common.cache.LocalCache.get(LocalCache.java:3962)
+                at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4859)
+                at io.trino.plugin.jdbc.CachingJdbcClient.get(CachingJdbcClient.java:666)
+                at io.trino.plugin.jdbc.CachingJdbcClient.getColumns(CachingJdbcClient.java:158)
+                at io.trino.plugin.jdbc.DefaultJdbcMetadata.getTableMetadata(DefaultJdbcMetadata.java:561)
+                at io.trino.plugin.jdbc.DefaultJdbcMetadata.lambda$listTableColumns$10(DefaultJdbcMetadata.java:598)
+                at java.base/java.util.Optional.ifPresent(Optional.java:183)
+                at io.trino.plugin.jdbc.DefaultJdbcMetadata.listTableColumns(DefaultJdbcMetadata.java:598)
+                at io.trino.spi.connector.ConnectorMetadata.streamTableColumns(ConnectorMetadata.java:254)
+                at io.trino.metadata.MetadataManager.listTableColumns(MetadataManager.java:673)
+                at io.trino.metadata.MetadataListing.listTableColumns(MetadataListing.java:180)
+                at
+                io.trino.connector.informationschema.InformationSchemaPageSource.addColumnsRecords(InformationSchemaPageSource.java:251)
+                at
+                io.trino.connector.informationschema.InformationSchemaPageSource.buildPages(InformationSchemaPageSource.java:216)
+                at
+                io.trino.connector.informationschema.InformationSchemaPageSource.getNextPage(InformationSchemaPageSource.java:183)
+                at io.trino.operator.TableScanOperator.getOutput(TableScanOperator.java:311)
+                at io.trino.operator.Driver.processInternal(Driver.java:388)
+                at io.trino.operator.Driver.lambda$processFor$9(Driver.java:292)
+                at io.trino.operator.Driver.tryWithLock(Driver.java:685)
+                at io.trino.operator.Driver.processFor(Driver.java:285)
+                at io.trino.execution.SqlTaskExecution$DriverSplitRunner.processFor(SqlTaskExecution.java:1076)
+                at io.trino.execution.executor.PrioritizedSplitRunner.process(PrioritizedSplitRunner.java:163)
+                at io.trino.execution.executor.TaskExecutor$TaskRunner.run(TaskExecutor.java:484)
+                at io.trino.$gen.Trino_testversion____20211022_064843_3.run(Unknown Source)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+                Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Transaction (Process ID 60) was deadlocked
+                on lock resources with another process and has been chosen as the deadlock victim. Rerun the
+                transaction.
+                at com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:262)
+                at com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1632)
+                at
+                com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:602)
+                at
+                com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:524)
+                at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7418)
+                at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:3272)
+                at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:247)
+                at com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:222)
+                at
+                com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:446)
+                at com.microsoft.sqlserver.jdbc.SQLServerDatabaseMetaData.getColumns(SQLServerDatabaseMetaData.java:653)
+                at io.trino.plugin.jdbc.BaseJdbcClient.getColumns(BaseJdbcClient.java:336)
+                at io.trino.plugin.jdbc.BaseJdbcClient.getColumns(BaseJdbcClient.java:268)
+                ... 46 more
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.BaseSqlServerConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.SqlServerQueryRunner.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerLatestConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7454" opendate="2021-03-30 00:00:00" fixdate="2021-04-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Join spill to disk race condition.
+            </summary>
+            <description>Join spill (from join side) operates as follows:
+                Last join operator instance calls io.trino.operator.PartitionedLookupSourceFactory#finishProbeOperator.
+                New io.trino.operator.PartitionedConsumption is created with spilledPartitions.
+                Spilled partitions are released by join in order using
+                io.trino.operator.PartitionedConsumption.Partition#release.
+                Each SpilledLookupSourceHandle is disposed io.trino.operator.SpilledLookupSourceHandle#dispose when all
+                joins call PartitionedConsumption.Partition#release on particular partition
+                Dispose sets io.trino.operator.SpilledLookupSourceHandle#disposeRequested, which was also returned in
+                io.trino.operator.HashBuilderOperator#isBlocked.
+                This unblocks HashBuilderOperator which now can finish gracefully.
+                Join spill (from build side) operates as follows:
+
+                io.trino.operator.HashBuilderOperator#startMemoryRevoke is called on HashBuilderOperator.
+                Revoke future finishes
+                HashBuilderOperator gets blocked on io.trino.operator.SpilledLookupSourceHandle#disposeRequested or
+                unspillingRequested.
+                SpilledLookupSourceHandle is disposed when it's no longer used by join. This sets
+                io.trino.operator.SpilledLookupSourceHandle#disposeRequested which unblocks HashBuilderOperator.
+                HashBuilderOperator finishes gracefully
+
+                Race condition:
+
+                io.trino.operator.PartitionedLookupSourceFactory#finishProbeOperator. New
+                io.trino.operator.PartitionedConsumption is created with spilledPartitions.
+                io.trino.operator.HashBuilderOperator#startMemoryRevoke is called on HashBuilderOperator.
+                It calls io.trino.operator.PartitionedLookupSourceFactory#setPartitionSpilledLookupSourceHandle which
+                registers spilled partition in io.trino.operator.PartitionedLookupSourceFactory#spilledPartitions.
+                However, PartitionedConsumption is already created, so newly spilled partition will never be released by
+                join operators.
+                HashBuilderOperator#isBlocked never finishes because dispose is never called on spilled partition.
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.operator.PartitionedLookupSourceFactory.java</file>
+            <file type="M">io.trino.sql.planner.LocalExecutionPlanner.java</file>
+            <file type="M">io.trino.operator.TestHashJoinOperator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13212" opendate="2022-07-18 00:00:00" fixdate="2022-07-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Lock congestion in DirectExchangeClient.
+            </summary>
+            <description>io.trino.operator.DirectExchangeClient#addPages and
+                io.trino.operator.DirectExchangeClient#pollPage can cause significant lock congestion.
+                This is most likely caused by 5832a59 which moved setBytes to critical section.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.operator.DirectExchangeClient.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11798" opendate="2022-04-05 00:00:00" fixdate="2022-06-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Hive locks in waiting state still held indefinitely.
+            </summary>
+            <description>Hive locks in waiting state, timestamp acquired_at would have ‘NULL’ value, and then locks are
+                held indefinitely.
+                The missing timestamp might be the cause.
+                Steps to reproduce:
+
+                There is an exclusive lock on the hive table (perhaps by writing data with hive/spark)
+                Run select query in Trino, Trino shared_read lock in waiting state due to the exclusive lock in step 1
+                If we cancel the Trino query, the Trino lock stays there forever in waiting state
+
+                | 50026627.1 | finance_dh | booking_f | NULL | ACQUIRED | | SHARED_READ | 51469930 | 0 | 1646976632000 |
+                somenaths | coordinator-58d7bfd46d-thq4w | 20220311_053014_06047_rerfi |
+                | 49750772.1 | finance_dh | booking_f | NULL | WAITING | 49749303.1 | SHARED_READ | 51197595 | 0 | NULL
+                | sghildiyal | coordinator-74bc6dfc86-48dkj | 20220309_054310_07520_29emh |
+                | 49751175.1 | finance_dh | booking_f | NULL | WAITING | 49749303.1 | SHARED_READ | 51197962 | 0 | NULL
+                | beherasa | coordinator-74bc6dfc86-48dkj | 20220309_054825_07702_29emh |
+
+                #10401 released the locks in ACQUIRED state but didn’t release the locks in WAITING state.
+                The possible workaround is a script to delete the locks in Hive.
+                CC: @findepi @losipiuk
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.hive.metastore.SemiTransactionalHiveMetastore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7872" opendate="2021-05-10 00:00:00" fixdate="2021-05-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Flaky TestSqlServerTypeMapping: "Transaction was deadlocked ... and has been chosen as the deadlock
+                victim".
+            </summary>
+            <description>2021-05-09T11:29:42.9038391Z [ERROR] init(io.trino.plugin.sqlserver.TestSqlServerTypeMapping)
+                Time elapsed: 2.698 s
+                FAILURE!
+                2021-05-09T11:29:42.9040757Z java.lang.RuntimeException: Failed to execute statement: ALTER DATABASE
+                database_6dfc467e1fca49b3b1e222cf5b22d97b SET READ_COMMITTED_SNAPSHOT ON
+                2021-05-09T11:29:42.9043000Z at
+                io.trino.plugin.sqlserver.TestingSqlServer.execute(TestingSqlServer.java:69)
+                2021-05-09T11:29:42.9045474Z at
+                io.trino.plugin.sqlserver.TestingSqlServer.setUpDatabase(TestingSqlServer.java:106)
+                2021-05-09T11:29:42.9047892Z at
+                io.trino.plugin.sqlserver.TestingSqlServer.start(TestingSqlServer.java:82)
+                2021-05-09T11:29:42.9050812Z at
+                io.trino.plugin.sqlserver.TestSqlServerTypeMapping.createQueryRunner(TestSqlServerTypeMapping.java:33)
+                2021-05-09T11:29:42.9053925Z at
+                io.trino.testing.AbstractTestQueryFramework.init(AbstractTestQueryFramework.java:90)
+                2021-05-09T11:29:42.9056353Z at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native
+                Method)
+                2021-05-09T11:29:42.9061656Z at
+                java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                2021-05-09T11:29:42.9064445Z at
+                java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                2021-05-09T11:29:42.9066515Z at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                2021-05-09T11:29:42.9068382Z at
+                org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                2021-05-09T11:29:42.9070682Z at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+                2021-05-09T11:29:42.9072613Z at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+                2021-05-09T11:29:42.9074378Z at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
+                2021-05-09T11:29:42.9076873Z at
+                org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:169)
+                2021-05-09T11:29:42.9079140Z at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+                2021-05-09T11:29:42.9081080Z at
+                java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                2021-05-09T11:29:42.9083107Z at
+                java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                2021-05-09T11:29:42.9084525Z at java.base/java.lang.Thread.run(Thread.java:829)
+                2021-05-09T11:29:42.9086391Z Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Transaction
+                (Process ID 51) was deadlocked on lock resources with another process and has been chosen as the
+                deadlock victim. Rerun the transaction.
+                2021-05-09T11:29:42.9089454Z at
+                com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:262)
+                2021-05-09T11:29:42.9092519Z at
+                com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1632)
+                2021-05-09T11:29:42.9095497Z at
+                com.microsoft.sqlserver.jdbc.SQLServerStatement.doExecuteStatement(SQLServerStatement.java:872)
+                2021-05-09T11:29:42.9098375Z at
+                com.microsoft.sqlserver.jdbc.SQLServerStatement$StmtExecCmd.doExecute(SQLServerStatement.java:767)
+                2021-05-09T11:29:42.9100423Z at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7375)
+                2021-05-09T11:29:42.9102785Z at
+                com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:3206)
+                2021-05-09T11:29:42.9105666Z at
+                com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:247)
+                2021-05-09T11:29:42.9108576Z at
+                com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:222)
+                2021-05-09T11:29:42.9111293Z at
+                com.microsoft.sqlserver.jdbc.SQLServerStatement.execute(SQLServerStatement.java:743)
+                2021-05-09T11:29:42.9113560Z at
+                io.trino.plugin.sqlserver.TestingSqlServer.execute(TestingSqlServer.java:66)
+                2021-05-09T11:29:42.9114812Z ... 17 more
+                2021-05-09T11:29:42.9115059Z
+                2021-05-09T11:29:43.3184530
+
+                Similar issue: #6389
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6202" opendate="2020-12-04 00:00:00" fixdate="2021-06-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Include full stacktraces from LogTestDurationListener test hang monitor.
+            </summary>
+            <description>See https://github.com/prestosql/presto/runs/1497472672.
+                tests apparently hanged.
+                one test thread is here:
+
+                2020-12-04T07:53:43.1535741Z "pool-2-thread-2" prio=5 Id=16 BLOCKED on org.testng.TestClass@2a78dd6a
+                owned by "pool-2-thread-1" Id=15
+                2020-12-04T07:53:43.1537790Z at
+                app//org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:158)
+                2020-12-04T07:53:43.1539747Z - blocked on org.testng.TestClass@2a78dd6a
+                2020-12-04T07:53:43.1540972Z at app//org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+                2020-12-04T07:53:43.1542880Z at
+                java.base@11.0.9/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                2020-12-04T07:53:43.1545474Z at
+                java.base@11.0.9/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                2020-12-04T07:53:43.1547540Z at java.base@11.0.9/java.lang.Thread.run(Thread.java:834)
+                2020-12-04T07:53:43.1548037Z
+                2020-12-04T07:53:43.1548486Z Number of locked synchronizers = 1
+                2020-12-04T07:53:43.1549747Z - java.util.concurrent.ThreadPoolExecutor$Worker@7cedfa63
+
+                the information who owns TestClass@2a78dd6a is not present, probably because every stacktrace is limited
+                to 8 frames.
+
+                see full thread dump -- https://github.com/prestosql/presto/runs/1497472672 or
+                https://gist.github.com/findepi/2f87bad4047976bee6af9223f5d3ff6c
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.tests.product.launcher.cli.SuiteRun.java</file>
+            <file type="M">io.trino.jvm.Threads.java</file>
+            <file type="M">io.trino.testng.services.LogTestDurationListener.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6389" opendate="2020-12-19 00:00:00" fixdate="2021-05-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Sporadic query failures due to a deadlock in SqlServerClient.getTableProperties: "Transaction was
+                deadlocked ... and has been chosen as the deadlock victim".
+            </summary>
+            <description>https://github.com/prestosql/presto/runs/1581864249
+                2020-12-19T15:49:54.7256766Z [ERROR]
+                testStddevPushdown(io.prestosql.plugin.sqlserver.TestSqlServerIntegrationSmokeTest) Time elapsed: 13.253
+                s
+                FAILURE!
+                2020-12-19T15:49:54.7271020Z java.lang.RuntimeException: Unable to advance result set [statement:"SELECT
+                data_compression_desc FROM sys.partitions p INNER JOIN sys.tables t ON p.object_id = t.object_id INNER
+                JOIN sys.indexes i ON t.object_id = i.object_id WHERE SCHEMA_NAME(t.schema_id) = :schema AND t.name =
+                :table_name AND i.type IN (0,1) AND i.data_space_id NOT IN (SELECT data_space_id FROM
+                sys.partition_schemes)", arguments:{positional:{},
+                named:{schema:dbo,table_name:test_stddev_pushdown_gn0z4}, finder:[]}]
+                2020-12-19T15:49:54.7273851Z at
+                io.prestosql.testing.AbstractTestingPrestoClient.execute(AbstractTestingPrestoClient.java:115)
+                2020-12-19T15:49:54.7277668Z at
+                io.prestosql.testing.DistributedQueryRunner.execute(DistributedQueryRunner.java:462)
+                2020-12-19T15:49:54.7282982Z at
+                io.prestosql.sql.query.QueryAssertions$QueryAssert.verifyResultsWithPushdownDisabled(QueryAssertions.java:396)
+                2020-12-19T15:49:54.7287666Z at
+                io.prestosql.sql.query.QueryAssertions$QueryAssert.isFullyPushedDown(QueryAssertions.java:346)
+                2020-12-19T15:49:54.7294040Z at
+                io.prestosql.plugin.sqlserver.TestSqlServerIntegrationSmokeTest.testStddevPushdown(TestSqlServerIntegrationSmokeTest.java:191)
+                2020-12-19T15:49:54.7299413Z at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native
+                Method)
+                2020-12-19T15:49:54.7303649Z at
+                java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                2020-12-19T15:49:54.7309009Z at
+                java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                2020-12-19T15:49:54.7312634Z at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                2020-12-19T15:49:54.7316747Z at
+                org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                2020-12-19T15:49:54.7320371Z at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+                2020-12-19T15:49:54.7323848Z at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+                2020-12-19T15:49:54.7328079Z at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+                2020-12-19T15:49:54.7332967Z at
+                org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+                2020-12-19T15:49:54.7337454Z at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+                2020-12-19T15:49:54.7342284Z at
+                java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                2020-12-19T15:49:54.7347196Z at
+                java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                2020-12-19T15:49:54.7350901Z at java.base/java.lang.Thread.run(Thread.java:834)
+                2020-12-19T15:49:54.7363757Z Caused by: org.jdbi.v3.core.result.ResultSetException: Unable to advance
+                result set [statement:"SELECT data_compression_desc FROM sys.partitions p INNER JOIN sys.tables t ON
+                p.object_id = t.object_id INNER JOIN sys.indexes i ON t.object_id = i.object_id WHERE
+                SCHEMA_NAME(t.schema_id) = :schema AND t.name = :table_name AND i.type IN (0,1) AND i.data_space_id NOT
+                IN (SELECT data_space_id FROM sys.partition_schemes)", arguments:{positional:{},
+                named:{schema:dbo,table_name:test_stddev_pushdown_gn0z4}, finder:[]}]
+                2020-12-19T15:49:54.7370100Z at
+                org.jdbi.v3.core.result.ResultSetResultIterator.safeNext(ResultSetResultIterator.java:108)
+                2020-12-19T15:49:54.7375451Z at
+                org.jdbi.v3.core.result.ResultSetResultIterator.hasNext(ResultSetResultIterator.java:60)
+                2020-12-19T15:49:54.7380114Z at org.jdbi.v3.core.result.ResultIterable.findOne(ResultIterable.java:156)
+                2020-12-19T15:49:54.7406158Z at
+                io.prestosql.plugin.sqlserver.SqlServerClient.getTableDataCompression(SqlServerClient.java:437)
+                2020-12-19T15:49:54.7409551Z at
+                io.prestosql.plugin.sqlserver.SqlServerClient.getTableProperties(SqlServerClient.java:378)
+                2020-12-19T15:49:54.7413134Z at
+                io.prestosql.plugin.jdbc.ForwardingJdbcClient.getTableProperties(ForwardingJdbcClient.java:288)
+                2020-12-19T15:49:54.7416761Z at
+                io.prestosql.plugin.jdbc.jmx.StatisticsAwareJdbcClient.getTableProperties(StatisticsAwareJdbcClient.java:304)
+                2020-12-19T15:49:54.7420320Z at
+                io.prestosql.plugin.jdbc.CachingJdbcClient.getTableProperties(CachingJdbcClient.java:365)
+                2020-12-19T15:49:54.7423854Z at
+                io.prestosql.plugin.jdbc.CachingJdbcClient.getTableProperties(CachingJdbcClient.java:365)
+                2020-12-19T15:49:54.7426713Z at
+                io.prestosql.plugin.jdbc.JdbcMetadata.getTableMetadata(JdbcMetadata.java:344)
+                2020-12-19T15:49:54.7429342Z at
+                io.prestosql.metadata.MetadataManager.getTableMetadata(MetadataManager.java:508)
+                2020-12-19T15:49:54.7431916Z at
+                io.prestosql.sql.planner.InputExtractor.createInput(InputExtractor.java:66)
+                2020-12-19T15:49:54.7436831Z at
+                io.prestosql.sql.planner.InputExtractor$Visitor.processScan(InputExtractor.java:102)
+                2020-12-19T15:49:54.7438354Z at
+                io.prestosql.sql.planner.InputExtractor$Visitor.visitTableScan(InputExtractor.java:84)
+                2020-12-19T15:49:54.7439900Z at
+                io.prestosql.sql.planner.InputExtractor$Visitor.visitTableScan(InputExtractor.java:71)
+                2020-12-19T15:49:54.7441486Z at
+                io.prestosql.sql.planner.plan.TableScanNode.accept(TableScanNode.java:143)
+                2020-12-19T15:49:54.7443489Z at
+                io.prestosql.sql.planner.InputExtractor$Visitor.visitPlan(InputExtractor.java:109)
+                2020-12-19T15:49:54.7444925Z at
+                io.prestosql.sql.planner.InputExtractor$Visitor.visitPlan(InputExtractor.java:71)
+                2020-12-19T15:49:54.7446639Z at
+                io.prestosql.sql.planner.plan.PlanVisitor.visitAggregation(PlanVisitor.java:29)
+                2020-12-19T15:49:54.7448501Z at
+                io.prestosql.sql.planner.plan.AggregationNode.accept(AggregationNode.java:203)
+                2020-12-19T15:49:54.7450225Z at
+                io.prestosql.sql.planner.InputExtractor.lambda$extractInputs$0(InputExtractor.java:54)
+                2020-12-19T15:49:54.7451891Z at com.google.common.collect.ImmutableList.forEach(ImmutableList.java:405)
+                2020-12-19T15:49:54.7453580Z at
+                io.prestosql.sql.planner.InputExtractor.extractInputs(InputExtractor.java:54)
+                2020-12-19T15:49:54.7455417Z at
+                io.prestosql.execution.SqlQueryExecution.doPlanQuery(SqlQueryExecution.java:457)
+                2020-12-19T15:49:54.7457231Z at
+                io.prestosql.execution.SqlQueryExecution.planQuery(SqlQueryExecution.java:430)
+                2020-12-19T15:49:54.7458932Z at
+                io.prestosql.execution.SqlQueryExecution.start(SqlQueryExecution.java:382)
+                2020-12-19T15:49:54.7460607Z at
+                io.prestosql.execution.SqlQueryManager.createQuery(SqlQueryManager.java:237)
+                2020-12-19T15:49:54.7462722Z at
+                io.prestosql.dispatcher.LocalDispatchQuery.lambda$startExecution$7(LocalDispatchQuery.java:143)
+                2020-12-19T15:49:54.7464832Z at io.prestosql.$gen.Presto_testversion____20201219_154259_200.run(Unknown
+                Source)
+                2020-12-19T15:49:54.7466248Z at
+                java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                2020-12-19T15:49:54.7467907Z at
+                java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                2020-12-19T15:49:54.7469798Z at java.base/java.lang.Thread.run(Thread.java:834)
+                2020-12-19T15:49:54.7471276Z Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Transaction
+                (Process ID 52) was deadlocked on lock resources with another process and has been chosen as the
+                deadlock victim. Rerun the transaction.
+                2020-12-19T15:49:54.7475238Z at
+                com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:254)
+                2020-12-19T15:49:54.7477578Z at
+                com.microsoft.sqlserver.jdbc.SQLServerResultSet$FetchBuffer.nextRow(SQLServerResultSet.java:5378)
+                2020-12-19T15:49:54.7479795Z at
+                com.microsoft.sqlserver.jdbc.SQLServerResultSet.fetchBufferNext(SQLServerResultSet.java:1754)
+                2020-12-19T15:49:54.7482318Z at
+                com.microsoft.sqlserver.jdbc.SQLServerResultSet.next(SQLServerResultSet.java:1018)
+                2020-12-19T15:49:54.7486880Z at
+                org.jdbi.v3.core.result.ResultSetResultIterator.safeNext(ResultSetResultIterator.java:106)
+                2020-12-19T15:49:54.7488169Z ... 31 more
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.SqlServerClient.java</file>
+            <file type="M">io.trino.plugin.sqlserver.BaseSqlServerTransactionIsolationTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerWithoutSnapshotIsolation.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerWithoutSnapshotIsolationAndReadCommittedSnapshot.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14605" opendate="2022-10-12 00:00:00" fixdate="2022-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Queries are occasionally getting stuck.
+            </summary>
+            <description>Manifests on the CI (for example
+                https://pipelines.actions.githubusercontent.com/serviceHosts/127fb2d0-0ed8-42e9-b060-7c4f23b9a844/_apis/pipelines/1/runs/133247/signedlogcontent/85?urlExpires=2022-10-12T22%3A16%3A33.7329214Z
+                urlSigningMethod=HMACV1urlSignature=BdhvMIRPxrk2hYFLkx7OmL9rPSLVFyQgNbLYFg8rbMo%3D).
+                The test that got stuck in this specific run is
+                io.trino.faulttolerant.iceberg.TestIcebergTaskFailureRecoveryTest.testExplainAnalyze.
+                Stack trace:
+                2022-10-12T20:36:49.8702056Z "pool-3-thread-2" prio=5 Id=17 RUNNABLE (in native)
+                2022-10-12T20:36:49.8702457Z at java.base@17.0.4/sun.nio.ch.Net.poll(Native Method)
+                2022-10-12T20:36:49.8702923Z at java.base@17.0.4/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:181)
+                2022-10-12T20:36:49.8703435Z at
+                java.base@17.0.4/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:285)
+                2022-10-12T20:36:49.8703969Z at
+                java.base@17.0.4/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+                2022-10-12T20:36:49.8704479Z at java.base@17.0.4/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+                2022-10-12T20:36:49.8704980Z at java.base@17.0.4/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+                2022-10-12T20:36:49.8705479Z at java.base@17.0.4/java.net.Socket$SocketInputStream.read(Socket.java:976)
+                2022-10-12T20:36:49.8705885Z at app//okio.Okio$2.read(Okio.java:140)
+                2022-10-12T20:36:49.8706261Z at app//okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+                2022-10-12T20:36:49.8706828Z at app//okio.RealBufferedSource.indexOf(RealBufferedSource.java:358)
+                2022-10-12T20:36:49.8707411Z at
+                app//okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:230)
+                2022-10-12T20:36:49.8708144Z at
+                app//okhttp3.internal.http1.Http1ExchangeCodec.readHeaderLine(Http1ExchangeCodec.java:242)
+                2022-10-12T20:36:49.8708882Z at
+                app//okhttp3.internal.http1.Http1ExchangeCodec.readResponseHeaders(Http1ExchangeCodec.java:213)
+                2022-10-12T20:36:49.8709584Z at
+                app//okhttp3.internal.connection.Exchange.readResponseHeaders(Exchange.java:115)
+                2022-10-12T20:36:49.8752415Z at
+                app//okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:94)
+                2022-10-12T20:36:49.8753116Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142)
+                2022-10-12T20:36:49.8753821Z at
+                app//okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:43)
+                2022-10-12T20:36:49.8754528Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142)
+                2022-10-12T20:36:49.8755204Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)
+                2022-10-12T20:36:49.8755860Z at
+                app//okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:94)
+                2022-10-12T20:36:49.8756520Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142)
+                2022-10-12T20:36:49.8757187Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)
+                2022-10-12T20:36:49.8757830Z at
+                app//okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+                2022-10-12T20:36:49.8758484Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142)
+                2022-10-12T20:36:49.8759238Z at
+                app//okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:88)
+                2022-10-12T20:36:49.8759970Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142)
+                2022-10-12T20:36:49.8760683Z at
+                app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:117)
+                2022-10-12T20:36:49.8761312Z at app//okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:229)
+                2022-10-12T20:36:49.8761821Z at app//okhttp3.RealCall.execute(RealCall.java:81)
+                2022-10-12T20:36:49.8762278Z at app//io.trino.client.JsonResponse.execute(JsonResponse.java:124)
+                2022-10-12T20:36:49.8762830Z at
+                app//io.trino.client.StatementClientV1.advance(StatementClientV1.java:378)
+                2022-10-12T20:36:49.8763493Z at
+                app//io.trino.testing.AbstractTestingTrinoClient.execute(AbstractTestingTrinoClient.java:98)
+                2022-10-12T20:36:49.8764188Z at
+                app//io.trino.testing.DistributedQueryRunner.execute(DistributedQueryRunner.java:480)
+                2022-10-12T20:36:49.8764947Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.lambda$execute$2(BaseFailureRecoveryTest.java:594)
+                2022-10-12T20:36:49.8766561Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert$$Lambda$4987/0x0000000802369a18.accept(Unknown
+                Source)
+                2022-10-12T20:36:49.8767176Z at java.base@17.0.4/java.util.Optional.ifPresent(Optional.java:178)
+                2022-10-12T20:36:49.8767820Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.execute(BaseFailureRecoveryTest.java:594)
+                2022-10-12T20:36:49.8768650Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.executeActual(BaseFailureRecoveryTest.java:585)
+                2022-10-12T20:36:49.8769529Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.executeActualNoRetries(BaseFailureRecoveryTest.java:570)
+                2022-10-12T20:36:49.8770436Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.lambda$failsWithoutRetries$11(BaseFailureRecoveryTest.java:733)
+                2022-10-12T20:36:49.8771245Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert$$Lambda$5097/0x0000000802396318.call(Unknown
+                Source)
+                2022-10-12T20:36:49.8772101Z at
+                app//org.assertj.core.api.ThrowableAssert.catchThrowable(ThrowableAssert.java:62)
+                2022-10-12T20:36:49.8772840Z at
+                app//org.assertj.core.api.AssertionsForClassTypes.catchThrowable(AssertionsForClassTypes.java:877)
+                2022-10-12T20:36:49.8773525Z at
+                app//org.assertj.core.api.Assertions.catchThrowable(Assertions.java:1306)
+                2022-10-12T20:36:49.8774227Z at
+                app//org.assertj.core.api.Assertions.assertThatThrownBy(Assertions.java:1178)
+                2022-10-12T20:36:49.8774998Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.failsWithoutRetries(BaseFailureRecoveryTest.java:733)
+                2022-10-12T20:36:49.8775857Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest$FailureRecoveryAssert.failsAlways(BaseFailureRecoveryTest.java:724)
+                2022-10-12T20:36:49.8776668Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest.testNonSelect(BaseFailureRecoveryTest.java:421)
+                2022-10-12T20:36:49.8777501Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest.testTableModification(BaseFailureRecoveryTest.java:400)
+                2022-10-12T20:36:49.8778366Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest.testTableModification(BaseFailureRecoveryTest.java:395)
+                2022-10-12T20:36:49.8779223Z at
+                app//io.trino.faulttolerant.BaseFailureRecoveryTest.testExplainAnalyze(BaseFailureRecoveryTest.java:359)
+                2022-10-12T20:36:49.8808360Z at
+                java.base@17.0.4/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                2022-10-12T20:36:49.8809234Z at
+                java.base@17.0.4/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+                2022-10-12T20:36:49.8810132Z at
+                java.base@17.0.4/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                2022-10-12T20:36:49.8810876Z at java.base@17.0.4/java.lang.reflect.Method.invoke(Method.java:568)
+                2022-10-12T20:36:49.8811602Z at
+                app//org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                2022-10-12T20:36:49.8812330Z at app//org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+                2022-10-12T20:36:49.8812964Z at app//org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+                2022-10-12T20:36:49.8813627Z at app//org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+                2022-10-12T20:36:49.8814347Z at
+                app//org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+                2022-10-12T20:36:49.8815074Z at app//org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+                2022-10-12T20:36:49.8815803Z at
+                java.base@17.0.4/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+                2022-10-12T20:36:49.8816541Z at
+                java.base@17.0.4/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+                2022-10-12T20:36:49.8817154Z at java.base@17.0.4/java.lang.Thread.run(Thread.java:833)
+
+                While the test is built to validate failure recovery capabilities in fault tolerant execution the actual
+                query that is getting stuck is not run with fault tolerant execution (see
+                FailureRecoveryAssert.failsWithoutRetries in the stack trace). There's a chance that something is broken
+                in the query failure path in pipelined execution.
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.execution.scheduler.PipelinedStageExecution.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2962" opendate="2020-02-27 00:00:00" fixdate="2020-03-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Possible Deadlock/Thead starvation between Hive loadPartitionByName and getTable.
+            </summary>
+            <description>We've seen an issue a couple times now where the Presto coordinator continues to queue queries,
+                but none get executed, I believe I've traced it back to a race condition that can cause a deadlock.
+                In a thread dump of the coordinator we saw that all 40 of our Hive Metastore refresh threads were
+                waiting on a getTable call from within the loadPartitionByName method:
+                hive-metastore-hive-15188" #2599434 daemon prio=5 os_prio=0 cpu=2.14ms elapsed=8545.48s
+                tid=0x00007fb098048000 nid=0x27b55f waiting on condition [0x00007fb06c40d000]
+                java.lang.Thread.State: WAITING (parking)
+                at jdk.internal.misc.Unsafe.park(java.base@11.0.6/Native Method)
+                - parking to wait for#0x00007fb9d2a1e350> (a com.google.common.util.concurrent.SettableFuture)
+                at java.util.concurrent.locks.LockSupport.park(java.base@11.0.6/LockSupport.java:194)
+                at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:502)
+                at com.google.common.util.concurrent.AbstractFuture$TrustedFuture.get(AbstractFuture.java:83)
+                at com.google.common.util.concurrent.Uninterruptibles.getUninterruptibly(Uninterruptibles.java:196)
+                at com.google.common.cache.LocalCache$LoadingValueReference.waitForValue(LocalCache.java:3581)
+                at com.google.common.cache.LocalCache$Segment.waitForLoadingValue(LocalCache.java:2174)
+                at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2038)
+                at com.google.common.cache.LocalCache.get(LocalCache.java:3952)
+                at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3974)
+                at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4958)
+                at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4964)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.get(CachingHiveMetastore.java:244)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.getTable(CachingHiveMetastore.java:296)
+                at
+                io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.loadPartitionByName(CachingHiveMetastore.java:668)
+                at
+                io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.access$200(CachingHiveMetastore.java:89)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore$2.load(CachingHiveMetastore.java:201)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore$2.load(CachingHiveMetastore.java:197)
+                at com.google.common.cache.CacheLoader.reload(CacheLoader.java:100)
+                at com.google.common.cache.CacheLoader$1$1.call(CacheLoader.java:198)
+                at java.util.concurrent.FutureTask.run(java.base@11.0.6/FutureTask.java:264)
+                at io.airlift.concurrent.BoundedExecutor.drainQueue(BoundedExecutor.java:78)
+                at io.airlift.concurrent.BoundedExecutor$$Lambda$5170/0x00007fb31459cc40.run(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.6/ThreadPoolExecutor.java:1128)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.6/ThreadPoolExecutor.java:628)
+                at java.lang.Thread.run(java.base@11.0.6/Thread.java:834)
+
+                I believe the issue is that all the executors in the thread pool are being used, leaving no open
+                executors to complete the loadTable call needed to fulfill getTable.
+                This behaviour seems to have been introduced by #1921 When loadPartitionByName was switched from using
+                delete directly to calling getTable
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastoreModule.java</file>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.ReentrantBoundedExecutor.java</file>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.TestReentrantBoundedExecutor.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
