@@ -1,0 +1,838 @@
+<bugrepository name="vertx">
+    <bug id="1247" opendate="2015-12-17 00:00:00" fixdate="2016-12-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>httpmethod channelhandlercontext invokechannelinactive contexttask lock multimap httpclient
+            </summary>
+            <description>httpmethod channelhandlercontext invokechannelinactive contexttask lock multimap httpclient
+                - io.vertx.core.http.impl.ClientConnection.close() @bci=0, line=352 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientImpl.close() @bci=46, line=642 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientImpl.checkClosed() @bci=0, line=791 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientImpl.doRequest(io.vertx.core.http.HttpMethod, java.lang.String, int, java.lang.String, io.vertx.core.MultiMap) @bci=23, line=782 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientImpl.request(io.vertx.core.http.HttpMethod, int, java.lang.String, java.lang.String) @bci=7, line=338 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientImpl.get(int, java.lang.String, java.lang.String) @bci=7, line=348 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientRequestImpl.lambda$exceptionHandler$78(io.vertx.core.Handler, java.lang.Throwable) @bci=6, line=262 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientRequestImpl$$Lambda$21.handle(java.lang.Object) @bci=12 (Interpreted frame)
+                - io.vertx.core.http.impl.HttpClientRequestImpl.handleException(java.lang.Throwable) @bci=21, line=384 (Interpreted frame)
+                - io.vertx.core.http.impl.ClientConnection.handleClosed() @bci=59, line=307 (Interpreted frame)
+                - io.vertx.core.net.impl.VertxHandler$$Lambda$43.run() @bci=4 (Interpreted frame)
+                - io.vertx.core.impl.ContextImpl.lambda$wrapTask$16(boolean, io.vertx.core.impl.ContextTask, io.vertx.core.Handler) @bci=167, line=333 (Compiled frame)
+                - io.vertx.core.impl.ContextImpl$$Lambda$15.run() @bci=16 (Compiled frame)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1302" opendate="2016-02-09 00:00:00" fixdate="2018-09-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>clusteredvertx vertx run handle source checker vertxexception blockedthreadchecker warn eventloop
+                stacktrace startup limit block
+            </summary>
+            <description>clusteredvertx vertx run handle source checker vertxexception blockedthreadchecker warn
+                eventloop stacktrace startup limit block
+                at com.hazelcast.spi.impl.operationservice.impl.InvocationFuture.pollResponse(InvocationFuture.java:299)
+                at com.hazelcast.spi.impl.operationservice.impl.InvocationFuture.waitForResponse(InvocationFuture.java:247)
+                at com.hazelcast.spi.impl.operationservice.impl.InvocationFuture.get(InvocationFuture.java:224)
+                at com.hazelcast.spi.impl.operationservice.impl.InvocationFuture.get(InvocationFuture.java:204)
+                at com.hazelcast.map.impl.proxy.MapProxySupport.invokeOperation(MapProxySupport.java:456)
+                at com.hazelcast.map.impl.proxy.MapProxySupport.putInternal(MapProxySupport.java:417)
+                at com.hazelcast.map.impl.proxy.MapProxyImpl.put(MapProxyImpl.java:97)
+                at com.hazelcast.map.impl.proxy.MapProxyImpl.put(MapProxyImpl.java:87)
+                at io.vertx.core.impl.HAManager.#init>(HAManager.java:145)
+                at io.vertx.core.impl.VertxImpl.lambda$new$270(VertxImpl.java:152)
+                at io.vertx.core.impl.VertxImpl$$Lambda$3/852445367.handle(Unknown Source)
+                at io.vertx.core.impl.FutureImpl.checkCallHandler(FutureImpl.java:158)
+                at io.vertx.core.impl.FutureImpl.setHandler(FutureImpl.java:100)
+                at io.vertx.core.impl.ContextImpl.lambda$null$16(ContextImpl.java:305)
+                at io.vertx.core.impl.ContextImpl$$Lambda$7/299713639.handle(Unknown Source)
+                at io.vertx.core.impl.ContextImpl.lambda$wrapTask$18(ContextImpl.java:335)
+                at io.vertx.core.impl.ContextImpl$$Lambda$8/977225900.run(Unknown Source)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.eventbus.impl.clustered.ClusteredEventBus.java</file>
+            <file type="M">io.vertx.core.impl.HAManager.java</file>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1355" opendate="2016-03-29 00:00:00" fixdate="2017-01-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ClientConnection HttpClientRequestImpl
+            </summary>
+            <description>ClientConnection HttpClientRequestImpl
+                io.vertx.core.net.impl.ConnectionBase.writeToChannel(java.lang.Object) @bci=0, line=113 (Compiled frame)
+                io.vertx.core.http.impl.HttpClientRequestImpl.writeHeadWithContent(io.netty.buffer.ByteBuf, boolean) @bci=24, line=678 (Compiled frame)
+                io.vertx.core.http.impl.HttpClientRequestImpl.connected(io.vertx.core.http.impl.ClientConnection) @bci=82, line=629 (Compiled frame)
+                io.vertx.core.http.impl.HttpClientRequestImpl.lambda$connect$82(io.vertx.core.http.impl.ClientConnection) @bci=27, line=593 (Compiled frame)
+                io.vertx.core.http.impl.HttpClientRequestImpl$$Lambda$190.handle(java.lang.Object) @bci=8 (Compiled frame)
+                io.vertx.core.http.impl.ConnectionManager$ConnQueue.lambda$responseEnded$66(io.vertx.core.http.impl.ConnectionManager$Waiter, io.vertx.core.http.impl.ClientConnection, java.lang.Void) @bci=5, line=129 (Compiled frame)
+                io.vertx.core.http.impl.ConnectionManager$ConnQueue$$Lambda$233.handle(java.lang.Object) @bci=12 (Compiled frame)
+                io.vertx.core.impl.ContextImpl.lambda$wrapTask$16(boolean, io.vertx.core.impl.ContextTask, io.vertx.core.Handler) @bci=177, line=335 (Compiled frame)
+                io.vertx.core.impl.ContextImpl$$Lambda$24.run() @bci=16 (Compiled frame)
+                io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(long) @bci=26, line=358 (Compiled frame)
+                io.netty.channel.nio.NioEventLoop.run() @bci=106, line=357 (Compiled frame)
+                io.netty.util.concurrent.SingleThreadEventExecutor$2.run() @bci=13, line=112 (Interpreted frame)
+                java.lang.Thread.run() @bci=11, line=745 (Interpreted frame)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1466" opendate="2016-06-13 00:00:00" fixdate="2016-12-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ServerConnection HttpClientRequestImpl
+            </summary>
+            <description>ServerConnection HttpClientRequestImpl
+                at io.vertx.core.http.impl.HttpServerResponseImpl.ended(HttpServerResponseImpl.java:346)
+                - waiting to lock#0x000000070d5fda10> (a io.vertx.core.http.impl.ServerConnection)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.lambda$exceptionHandler$80(HttpClientRequestImpl.java:262)
+                at io.vertx.core.http.impl.HttpClientRequestImpl$$Lambda$249/478457932.handle(Unknown Source)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.handleException(HttpClientRequestImpl.java:384)
+                - locked#0x0000000653c73ab0> (a io.vertx.core.http.impl.HttpClientRequestImpl)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.timeout(HttpClientRequestImpl.java:578)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.handleTimeout(HttpClientRequestImpl.java:563)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.lambda$setTimeout$81(HttpClientRequestImpl.java:337)
+                at io.vertx.core.http.impl.HttpClientRequestImpl$$Lambda$246/1883207809.handle(Unknown Source)
+                at io.vertx.core.impl.VertxImpl$InternalTimerHandler.handle(VertxImpl.java:738)
+                at io.vertx.core.impl.VertxImpl$InternalTimerHandler.handle(VertxImpl.java:709)
+                at io.vertx.core.impl.ContextImpl.lambda$wrapTask$18(ContextImpl.java:335)
+                at io.vertx.core.impl.ContextImpl$$Lambda$10/2081191879.run(Unknown Source)
+                at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:358)
+                at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:357)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1469" opendate="2016-06-14 00:00:00" fixdate="2016-06-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>otherwise ConnectionManager instance resource createendpoint getconnqueue constructor closeendpoint
+                none httpclientmetrics spi connqueue lead call leak endpoint queuemanager http client map queue
+            </summary>
+            <description>otherwise ConnectionManager instance resource createendpoint getconnqueue constructor
+                closeendpoint none httpclientmetrics spi connqueue lead call leak endpoint queuemanager http client map
+                queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1573" opendate="2016-08-17 00:00:00" fixdate="2016-08-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>asyncfile
+            </summary>
+            <description>asyncfile
+                at java.io.UnixFileSystem.getBooleanAttributes0(Native Method)
+                at java.io.UnixFileSystem.getBooleanAttributes(UnixFileSystem.java:242)
+                at java.io.File.exists(File.java:819)
+                at io.vertx.core.impl.FileResolver.resolveFile(FileResolver.java:103)
+                at io.vertx.core.impl.VertxImpl.resolveFile(VertxImpl.java:657)
+                at io.vertx.core.file.impl.FileSystemImpl$14.#init>(FileSystemImpl.java:736)
+                at io.vertx.core.file.impl.FileSystemImpl.openInternal(FileSystemImpl.java:735)
+                at io.vertx.core.file.impl.FileSystemImpl.open(FileSystemImpl.java:299)
+                at io.vertx.core.http.impl.HttpServerFileUploadImpl.streamToFileSystem(HttpServerFileUploadImpl.java:148)
+                io.vertx.core.VertxException: Thread blocked
+                at sun.nio.ch.WindowsAsynchronousFileChannelImpl.close0(Native Method)
+                at sun.nio.ch.WindowsAsynchronousFileChannelImpl.close(WindowsAsynchronousFileChannelImpl.java:142)
+                at io.vertx.core.file.impl.AsyncFileImpl.doClose(AsyncFileImpl.java:464)
+                at io.vertx.core.file.impl.AsyncFileImpl.closeInternal(AsyncFileImpl.java:480)
+                at io.vertx.core.file.impl.AsyncFileImpl.close(AsyncFileImpl.java:117)
+                at io.vertx.rxjava.core.file.AsyncFile.close(AsyncFile.java:143)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.core.file.impl.FileSystemImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1598" opendate="2016-08-31 00:00:00" fixdate="2016-09-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>aaa read address issue vertx checker vertxexception blockedthreadchecker async warn eventloop limit
+                block write
+            </summary>
+            <description>aaa read address issue vertx checker vertxexception blockedthreadchecker async warn eventloop
+                limit block write
+                at sun.nio.ch.WindowsAsynchronousFileChannelImpl.writeFile(Native Method)
+                at sun.nio.ch.WindowsAsynchronousFileChannelImpl.access$500(WindowsAsynchronousFileChannelImpl.java:41)
+                at sun.nio.ch.WindowsAsynchronousFileChannelImpl$WriteTask.run(WindowsAsynchronousFileChannelImpl.java:635)
+                at sun.nio.ch.WindowsAsynchronousFileChannelImpl.implWrite(WindowsAsynchronousFileChannelImpl.java:734)
+                at sun.nio.ch.AsynchronousFileChannelImpl.write(AsynchronousFileChannelImpl.java:251)
+                at io.vertx.core.file.impl.AsyncFileImpl.writeInternal(AsyncFileImpl.java:379)
+                at io.vertx.core.file.impl.AsyncFileImpl.doWrite(AsyncFileImpl.java:374)
+                at io.vertx.core.file.impl.AsyncFileImpl.doWrite(AsyncFileImpl.java:171)
+                at io.vertx.core.file.impl.AsyncFileImpl.write(AsyncFileImpl.java:179)
+                at io.vertx.core.file.impl.AsyncFileImpl.write(AsyncFileImpl.java:57)
+                at io.vertx.core.file.impl.AsyncFileImpl.writeInternal(AsyncFileImpl.java:378)
+                at io.vertx.core.file.impl.AsyncFileImpl.doWrite(AsyncFileImpl.java:373)
+                at io.vertx.core.file.impl.AsyncFileImpl.doWrite(AsyncFileImpl.java:170)
+                at io.vertx.core.file.impl.AsyncFileImpl.write(AsyncFileImpl.java:178)
+                at io.vertx.core.file.impl.AsyncFileImpl.write(AsyncFileImpl.java:56)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.core.file.impl.FileSystemImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1633" opendate="2016-09-21 00:00:00" fixdate="2016-09-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>provide log context description executeblocking
+            </summary>
+            <description>provide log context description executeblocking
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.ContextImpl.java</file>
+            <file type="M">io.vertx.test.core.BlockedThreadCheckerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1742" opendate="2016-12-16 00:00:00" fixdate="2017-02-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum instance readfileblocking run caching file payload parallel copying action jar copy case
+                cache resource resolvefile sample filesystem async size verticle fileresolver
+            </summary>
+            <description>datum instance readfileblocking run caching file payload parallel copying action jar copy case
+                cache resource resolvefile sample filesystem async size verticle fileresolver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.FileResolver.java</file>
+            <file type="M">io.vertx.test.core.FileResolverTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1834" opendate="2017-02-21 00:00:00" fixdate="2018-01-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request handler httpserverrequest motivation change serverwebsocket sockjssocket deadlock tick call
+                reconnect loop websocket httpserver context lock create connection event netty
+            </summary>
+            <description>request handler httpserverrequest motivation change serverwebsocket sockjssocket deadlock tick
+                call reconnect loop websocket httpserver context lock create connection event netty
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.Http1xPool.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ConnectionBase.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.ServerConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.WebSocketImplBase.java</file>
+            <file type="M">io.vertx.core.net.impl.ConnectionBase.java</file>
+            <file type="M">io.vertx.test.core.Http2ClientTest.java</file>
+            <file type="M">io.vertx.test.core.Http2ServerTest.java</file>
+            <file type="M">io.vertx.test.core.HttpTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1892" opendate="2017-03-24 00:00:00" fixdate="2017-03-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>FutureImpl CompositeFutureImpl setHandler
+            </summary>
+            <description>FutureImpl CompositeFutureImpl setHandler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.FailedFuture.java</file>
+            <file type="M">io.vertx.core.impl.FutureFactoryImpl.java</file>
+            <file type="M">io.vertx.core.impl.FutureImpl.java</file>
+            <file type="M">io.vertx.core.impl.SucceededFuture.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2012" opendate="2017-06-08 00:00:00" fixdate="2017-06-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>caller condition race atomiclong writesoutstanding context asyncfileimpl counter state write
+            </summary>
+            <description>caller condition race atomiclong writesoutstanding context asyncfileimpl counter state write
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.test.core.FileSystemTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2370" opendate="2018-04-07 00:00:00" fixdate="2018-04-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>jvm resolver dns pool connectionprovider failure get host callback connection assume httpclient
+                case
+            </summary>
+            <description>jvm resolver dns pool connectionprovider failure get host callback connection assume httpclient
+                case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpChannelConnector.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionListener.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionProvider.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.Pool.java</file>
+            <file type="M">io.vertx.test.core.Http1xTest.java</file>
+            <file type="M">io.vertx.test.core.HttpTest.java</file>
+            <file type="M">io.vertx.test.core.net.ConnectionPoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2418" opendate="2018-04-25 00:00:00" fixdate="2018-09-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hazelcastclustermanager vertxoption clusteredvertx messagestosend settimer setclustermanager acuire
+                deploymentoption test_address override default_lock_timeout deadlock reproduce supplier verticle lock
+                igniteclustermanager consumer deployverticle
+            </summary>
+            <description>hazelcastclustermanager vertxoption clusteredvertx messagestosend settimer setclustermanager
+                acuire deploymentoption test_address override default_lock_timeout deadlock reproduce supplier verticle
+                lock igniteclustermanager consumer deployverticle
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.test.core.AsynchronousLockTest.java</file>
+            <file type="M">io.vertx.test.core.ClusteredAsynchronousLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2670" opendate="2018-10-16 00:00:00" fixdate="2018-10-16 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>boostrap vertx bootstrap notify notification expect loop failure context client globaleventexecutor
+                connection event netty
+            </summary>
+            <description>boostrap vertx bootstrap notify notification expect loop failure context client
+                globaleventexecutor connection event netty
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpChannelConnector.java</file>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+            <file type="M">io.vertx.core.net.impl.ChannelProvider.java</file>
+            <file type="M">io.vertx.core.net.impl.NetClientImpl.java</file>
+            <file type="M">io.vertx.core.net.impl.ProxyChannelProvider.java</file>
+            <file type="M">io.vertx.core.net.impl.transport.Transport.java</file>
+            <file type="M">io.vertx.core.impl.GlobalEventExecutorNotificationTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2684" opendate="2018-10-23 00:00:00" fixdate="2018-10-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>executeBlocking callback run on wrong thread asynchronous future resolution
+            </summary>
+            <description>executeBlocking callback run on wrong thread asynchronous future resolution
+                at io.vertx.ext.mongo.impl.MongoIterableStream.lambda$doRead$5(MongoIterableStream.java:120)
+                at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:125)
+                at io.vertx.core.impl.FutureImpl.complete(FutureImpl.java:86)
+                at io.vertx.ext.mongo.impl.MongoIterableStream.lambda$null$3(MongoIterableStream.java:112)
+                at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:49)
+                at com.mongodb.operation.AsyncQueryBatchCursor.handleGetMoreQueryResult(AsyncQueryBatchCursor.java:271)
+                at com.mongodb.operation.AsyncQueryBatchCursor.access$300(AsyncQueryBatchCursor.java:55)
+                at com.mongodb.operation.AsyncQueryBatchCursor$CommandResultSingleResultCallback.onResult(AsyncQueryBatchCursor.java:301)
+                at com.mongodb.operation.AsyncQueryBatchCursor$CommandResultSingleResultCallback.onResult(AsyncQueryBatchCursor.java:276)
+                at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:49)
+                at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor$2.onResult(DefaultServer.java:207)
+                at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:49)
+                at com.mongodb.connection.CommandProtocolImpl$1.onResult(CommandProtocolImpl.java:102)
+                at com.mongodb.connection.DefaultConnectionPool$PooledConnection$1.onResult(DefaultConnectionPool.java:458)
+                at com.mongodb.connection.UsageTrackingInternalConnection$2.onResult(UsageTrackingInternalConnection.java:110)
+                at com.mongodb.internal.async.ErrorHandlingResultCallback.onResult(ErrorHandlingResultCallback.java:49)
+                at com.mongodb.connection.InternalStreamConnection$2$1.onResult(InternalStreamConnection.java:381)
+                at com.mongodb.connection.InternalStreamConnection$2$1.onResult(InternalStreamConnection.java:359)
+                at com.mongodb.connection.InternalStreamConnection$MessageHeaderCallback$MessageCallback.onResult(InternalStreamConnection.java:651)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.ContextImpl.java</file>
+            <file type="M">io.vertx.core.ContextTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2773" opendate="2018-12-20 00:00:00" fixdate="2019-01-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>allow delivery request re check fact race pool multiple vertx deliver tick moment schedule
+                condition solution context client know connection avoid close situation httpclient
+            </summary>
+            <description>allow delivery request re check fact race pool multiple vertx deliver tick moment schedule
+                condition solution context client know connection avoid close situation httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+            <file type="M">io.vertx.core.http.impl.Http1xClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ConnectionBase.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpChannelConnector.java</file>
+            <file type="M">io.vertx.core.http.impl.VertxHttp2ConnectionHandler.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectResult.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionListener.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionProvider.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.Pool.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.Waiter.java</file>
+            <file type="M">io.vertx.core.net.impl.ConnectionBase.java</file>
+            <file type="M">io.vertx.core.net.impl.VertxHandler.java</file>
+            <file type="M">io.vertx.core.http.Http1xTest.java</file>
+            <file type="M">io.vertx.core.net.ConnectionPoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2916" opendate="2019-04-17 00:00:00" fixdate="2019-07-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>call handler lock http deadlock event remove
+            </summary>
+            <description>call handler lock http deadlock event remove
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.Http1xClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http1xServerConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ServerRequestImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpServerRequestImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.NettyFileUpload.java</file>
+            <file type="M">io.vertx.core.http.impl.VertxHttp2Stream.java</file>
+            <file type="M">io.vertx.core.net.impl.NetSocketImpl.java</file>
+            <file type="M">io.vertx.core.streams.impl.InboundBuffer.java</file>
+            <file type="M">io.vertx.core.http.Http1xTest.java</file>
+            <file type="M">io.vertx.core.http.HttpMetricsTestBase.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+            <file type="M">io.vertx.core.http.WebSocketTest.java</file>
+            <file type="M">io.vertx.core.spi.metrics.MetricsTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2982" opendate="2019-06-06 00:00:00" fixdate="2019-07-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>os_prio httpclientrequestimpl monitor deadlock entry appear eventloop threaddump http lock client
+                reproducer try state prio stuff
+            </summary>
+            <description>os_prio httpclientrequestimpl monitor deadlock entry appear eventloop threaddump http lock
+                client reproducer try state prio stuff
+                at io.vertx.core.http.impl.HttpClientRequestImpl.handleDrained(HttpClientRequestImpl.java:352)
+                - waiting to lock#0x00000000c5b865e0> (a io.vertx.core.http.impl.HttpClientRequestImpl)
+                at io.vertx.core.http.impl.Http1xClientConnection.handleInterestedOpsChanged(Http1xClientConnection.java:847)
+                - locked#0x00000000c541b4b8> (a io.vertx.core.http.impl.Http1xClientConnection)
+                at io.vertx.core.net.impl.VertxHandler.lambda$channelWritabilityChanged$3(VertxHandler.java:136)
+                at io.vertx.core.net.impl.VertxHandler$$Lambda$757/154866834.handle(Unknown Source)
+                at io.vertx.core.impl.ContextImpl.executeTask(ContextImpl.java:320)
+                at io.vertx.core.impl.EventLoopContext.execute(EventLoopContext.java:43)
+                at io.vertx.core.impl.ContextImpl.executeFromIO(ContextImpl.java:188)
+                at io.vertx.core.impl.ContextImpl.executeFromIO(ContextImpl.java:180)
+                at io.vertx.core.net.impl.VertxHandler.channelWritabilityChanged(VertxHandler.java:136)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelWritabilityChanged(AbstractChannelHandlerContext.java:434)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelWritabilityChanged(AbstractChannelHandlerContext.java:416)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelWritabilityChanged(AbstractChannelHandlerContext.java:409)
+                at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelWritabilityChanged(CombinedChannelDuplexHandler.java:450)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelWritabilityChanged(ChannelInboundHandlerAdapter.java:119)
+                at io.netty.channel.CombinedChannelDuplexHandler.channelWritabilityChanged(CombinedChannelDuplexHandler.java:273)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelWritabilityChanged(AbstractChannelHandlerContext.java:434)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelWritabilityChanged(AbstractChannelHandlerContext.java:416)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelWritabilityChanged(AbstractChannelHandlerContext.java:409)
+                at io.netty.channel.DefaultChannelPipeline$HeadContext.channelWritabilityChanged(DefaultChannelPipeline.java:1457)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelWritabilityChanged(AbstractChannelHandlerContext.java:434)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelWritabilityChanged(AbstractChannelHandlerContext.java:416)
+                at io.netty.channel.DefaultChannelPipeline.fireChannelWritabilityChanged(DefaultChannelPipeline.java:977)
+                at io.netty.channel.ChannelOutboundBuffer.fireChannelWritabilityChanged(ChannelOutboundBuffer.java:607)
+                at io.netty.channel.ChannelOutboundBuffer.setWritable(ChannelOutboundBuffer.java:573)
+                at io.netty.channel.ChannelOutboundBuffer.decrementPendingOutboundBytes(ChannelOutboundBuffer.java:194)
+                at io.netty.channel.ChannelOutboundBuffer.remove(ChannelOutboundBuffer.java:259)
+                at io.netty.channel.ChannelOutboundBuffer.removeBytes(ChannelOutboundBuffer.java:338)
+                at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:428)
+                at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:934)
+                at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:360)
+                at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:901)
+                at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1396)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:776)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:768)
+                at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:749)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.StreamResetException.java</file>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+            <file type="M">io.vertx.core.http.impl.Http1xClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2UpgradedClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientRequestBase.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientRequestImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientRequestPushPromise.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientStream.java</file>
+            <file type="M">io.vertx.core.http.Http1xTest.java</file>
+            <file type="M">io.vertx.core.http.Http2ClientTest.java</file>
+            <file type="M">io.vertx.core.http.Http2Test.java</file>
+            <file type="M">io.vertx.test.core.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3064" opendate="2019-08-13 00:00:00" fixdate="2019-08-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>mistake improvement result fail stream response httpserverresponse behaviour operation user
+                programming case
+            </summary>
+            <description>mistake improvement result fail stream response httpserverresponse behaviour operation user
+                programming case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.FileStreamChannel.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.Http2ServerTest.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+            <file type="M">io.vertx.test.core.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3140" opendate="2019-10-14 00:00:00" fixdate="2020-04-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>call handler file asyncfile lock synchronization block useful
+            </summary>
+            <description>call handler file asyncfile lock synchronization block useful
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.core.file.FileSystemTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3142" opendate="2019-10-14 00:00:00" fixdate="2019-10-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server instance regression verticle deadlock
+            </summary>
+            <description>server instance regression verticle deadlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpServerImpl.java</file>
+            <file type="M">io.vertx.core.net.impl.AsyncResolveConnectHelper.java</file>
+            <file type="M">io.vertx.core.net.impl.NetServerImpl.java</file>
+            <file type="M">io.vertx.core.SharedServersConcurrencyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3232" opendate="2019-12-16 00:00:00" fixdate="2020-04-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>handler shut vertx promise test output vertxtest blocking executor close rejectedexecutionexception
+                event debug work pool future sethandler callback complete first
+            </summary>
+            <description>handler shut vertx promise test output vertxtest blocking executor close
+                rejectedexecutionexception event debug work pool future sethandler callback complete first
+                at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:981)
+                at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:388)
+                at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:381)
+                at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:880)
+                at io.vertx.core.impl.EventLoopContext.execute(EventLoopContext.java:42)
+                at io.vertx.core.impl.EventLoopContext.dispatch(EventLoopContext.java:77)
+                at io.vertx.core.impl.EventLoopContext.dispatch(EventLoopContext.java:65)
+                at io.vertx.core.impl.FutureImpl.doDispatch(FutureImpl.java:125)
+                at io.vertx.core.impl.FutureImpl.dispatch(FutureImpl.java:119)
+                at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:149)
+                at io.vertx.core.Promise.complete(Promise.java:67)
+                at io.vertx.core.Promise.handle(Promise.java:52)
+                at io.vertx.core.Promise.handle(Promise.java:30)
+                at io.vertx.core.impl.VertxImpl$1$1.lambda$operationComplete$0(VertxImpl.java:919)
+                at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.base/java.lang.Thread.run(Thread.java:830)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+            <file type="M">io.vertx.core.VertxTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3335" opendate="2020-03-18 00:00:00" fixdate="2020-03-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>FileSystemImpl existsInternal
+            </summary>
+            <description>FileSystemImpl existsInternal
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.FileSystemImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3468" opendate="2020-06-29 00:00:00" fixdate="2020-06-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server test ubuntu getconnection httpclientdoublefail runtime source sharing bit httpclientrequest
+                mode openjdk environment eventloop limit block
+            </summary>
+            <description>server test ubuntu getconnection httpclientdoublefail runtime source sharing bit
+                httpclientrequest mode openjdk environment eventloop limit block
+                at io.vertx.core.net.impl.clientconnection.ConnectionManager.getConnection(ConnectionManager.java:46)
+                at io.vertx.core.http.impl.HttpClientImpl.getConnectionForRequest(HttpClientImpl.java:1288)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.connect(HttpClientRequestImpl.java:422)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.write(HttpClientRequestImpl.java:614)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.end(HttpClientRequestImpl.java:527)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.end(HttpClientRequestImpl.java:521)
+                at org.folio.okapi.common.HttpClientDoubleFail.lambda$test$2(HttpClientDoubleFail.java:45)
+                at org.folio.okapi.common.HttpClientDoubleFail$$Lambda$34/1409160703.handle(Unknown Source)
+                at io.vertx.core.impl.AbstractContext.emit(AbstractContext.java:181)
+                at io.vertx.core.impl.AbstractContext.lambda$dispatch$0(AbstractContext.java:84)
+                at io.vertx.core.impl.AbstractContext$$Lambda$52/1790422902.handle(Unknown Source)
+                at io.vertx.core.impl.EventLoopContext.schedule(EventLoopContext.java:59)
+                at io.vertx.core.impl.AbstractContext.schedule(AbstractContext.java:94)
+                at io.vertx.core.impl.AbstractContext.dispatch(AbstractContext.java:84)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.handleException(HttpClientRequestImpl.java:97)
+                at io.vertx.core.http.impl.HttpClientRequestImpl.lambda$connect$2(HttpClientRequestImpl.java:433)
+                at io.vertx.core.http.impl.HttpClientRequestImpl$$Lambda$37/2097905212.handle(Unknown Source)
+                at io.vertx.core.impl.AbstractContext.emit(AbstractContext.java:181)
+                at io.vertx.core.http.impl.HttpClientImpl.lambda$getConnectionForRequest$6(HttpClientImpl.java:1292)
+                at io.vertx.core.http.impl.HttpClientImpl$$Lambda$38/1265900909.handle(Unknown Source)
+                at io.vertx.core.net.impl.clientconnection.Endpoint.lambda$getConnection$0(Endpoint.java:51)
+                at io.vertx.core.net.impl.clientconnection.Endpoint$$Lambda$43/2130192211.handle(Unknown Source)
+                at io.vertx.core.net.impl.clientconnection.Pool.connectFailed(Pool.java:389)
+                at io.vertx.core.net.impl.clientconnection.Pool.access$600(Pool.java:89)
+                at io.vertx.core.net.impl.clientconnection.Pool$Holder.lambda$connect$0(Pool.java:130)
+                at io.vertx.core.net.impl.clientconnection.Pool$Holder$$Lambda$46/1046834544.handle(Unknown Source)
+                at io.vertx.core.impl.FutureImpl.doDispatch(FutureImpl.java:127)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.clientconnection.Endpoint.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3469" opendate="2020-06-29 00:00:00" fixdate="2020-06-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>failure pool host http client self callback deadlock close
+            </summary>
+            <description>failure pool host http client self callback deadlock close
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.clientconnection.Endpoint.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3658" opendate="2020-11-19 00:00:00" fixdate="2020-11-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>iscomplete promise mac result mode openjdk gap block class execution race test docomplete runtime
+                list tryfail environment unit condition future failure promise num_threads
+            </summary>
+            <description>iscomplete promise mac result mode openjdk gap block class execution race test docomplete
+                runtime list tryfail environment unit condition future failure promise num_threads
+                java.lang.IllegalStateException: Result is already complete: failed
+                at io.vertx.core.impl.CompositeFutureImpl.fail(CompositeFutureImpl.java:214)
+                at io.vertx.core.impl.CompositeFutureImpl.lambda$all$0(CompositeFutureImpl.java:46)
+                at io.vertx.core.impl.FutureImpl.tryFail(FutureImpl.java:195)
+                at io.vertx.core.impl.FutureImpl.tryFail(FutureImpl.java:202)
+                at io.vertx.core.impl.FutureImpl.fail(FutureImpl.java:132)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.future.CompositeFutureImpl.java</file>
+            <file type="M">io.vertx.core.CompositeFutureTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4024" opendate="2021-07-20 00:00:00" fixdate="2021-11-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stumble addlistener listener put predictable get context debugging term issue race tcpserverbase
+                dobind say concurrency field port future listen effect verticle dependen
+            </summary>
+            <description>stumble addlistener listener put predictable get context debugging term issue race
+                tcpserverbase dobind say concurrency field port future listen effect verticle dependen
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.TCPServerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4069" opendate="2021-08-18 00:00:00" fixdate="2021-08-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>workerexecutor instance backtrace vertx deadlock eventloop lock block copy vertximpl
+                createsharedworkerexecutor workerexecutorimpl issue level start monitor list closefuture callback
+                information
+            </summary>
+            <description>workerexecutor instance backtrace vertx deadlock eventloop lock block copy vertximpl
+                createsharedworkerexecutor workerexecutorimpl issue level start monitor list closefuture callback
+                information
+                at io.vertx.core.impl.WorkerExecutorImpl.close(WorkerExecutorImpl.java:90)
+                - waiting to lock0x00000000b3329eb8> (a io.vertx.core.impl.WorkerExecutorImpl)
+                at io.vertx.core.impl.CloseFuture.close(CloseFuture.java:117)
+                at io.vertx.core.impl.VertxImpl.close(VertxImpl.java:578)
+                - locked#0x00000000b3329f58> (a io.vertx.core.impl.VertxImpl)
+                at io.vertx.reactivex.core.Vertx.close(Vertx.java:433)
+                at io.vertx.core.impl.VertxImpl$SharedWorkerPool.close(VertxImpl.java:1080)
+                - waiting to lock#0x00000000b3329f58> (a io.vertx.core.impl.VertxImpl)
+                at io.vertx.core.impl.WorkerExecutorImpl.close(WorkerExecutorImpl.java:93)
+                - locked#0x00000000b3329eb8> (a io.vertx.core.impl.WorkerExecutorImpl)
+                at io.vertx.core.impl.WorkerExecutorImpl.close(WorkerExecutorImpl.java:78)
+                at io.vertx.core.impl.WorkerExecutorImpl.close(WorkerExecutorImpl.java:84)
+                at io.vertx.reactivex.core.WorkerExecutor.close(WorkerExecutor.java:207)
+                at io.vertx.reactivex.core.WorkerExecutor.close(WorkerExecutor.java:214)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+            <file type="M">io.vertx.core.impl.WorkerExecutorImpl.java</file>
+            <file type="M">io.vertx.core.VertxTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4104" opendate="2021-09-22 00:00:00" fixdate="2021-11-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>workerexecutor stack instance blockingcodehandler line intellij run deadlock ign asyncresulthandler
+                blocking contextscheduler lock block reproducer order workerexecutorimpl junit test timing requirement
+                breakpoint call executeblocking
+            </summary>
+            <description>workerexecutor stack instance blockingcodehandler line intellij run deadlock ign
+                asyncresulthandler blocking contextscheduler lock block reproducer order workerexecutorimpl junit test
+                timing requirement breakpoint call executeblocking
+                at io.vertx.core.impl.WorkerExecutorImpl.executeBlocking(WorkerExecutorImpl.java:69)
+                - waiting to lock0x00000000d60dd340> (a io.vertx.core.impl.WorkerExecutorImpl)
+                at io.vertx.reactivex.core.WorkerExecutor.executeBlocking(WorkerExecutor.java:118)
+                at io.vertx.reactivex.core.WorkerExecutor.lambda$rxExecuteBlocking$2(WorkerExecutor.java:166)
+                at io.vertx.reactivex.core.WorkerExecutor$$Lambda$1166/0x0000000840a2b440.accept(Unknown Source)
+                at io.vertx.reactivex.impl.AsyncResultMaybe.subscribeActual(AsyncResultMaybe.java:44)
+                at io.reactivex.Maybe.subscribe(Maybe.java:4174)
+                at io.reactivex.internal.operators.maybe.MaybeFlatten$FlatMapMaybeObserver$InnerObserver.onComplete(MaybeFlatten.java:129)
+                at io.reactivex.internal.operators.maybe.MaybeFilter$FilterMaybeObserver.onComplete(MaybeFilter.java:102)
+                at io.vertx.reactivex.impl.AsyncResultMaybe.lambda$subscribeActual$0(AsyncResultMaybe.java:52)
+                at io.vertx.reactivex.impl.AsyncResultMaybe$$Lambda$325/0x0000000840303840.handle(Unknown Source)
+                at io.vertx.core.impl.future.FutureImpl$3.onSuccess(FutureImpl.java:124)
+                at io.vertx.core.impl.future.FutureBase.emitSuccess(FutureBase.java:62)
+                at io.vertx.core.impl.future.FutureImpl.addListener(FutureImpl.java:164)
+                at io.vertx.core.impl.future.PromiseImpl.addListener(PromiseImpl.java:23)
+                at io.vertx.core.impl.future.FutureImpl.onComplete(FutureImpl.java:132)
+                at io.vertx.core.impl.future.PromiseImpl.onComplete(PromiseImpl.java:23)
+                at io.vertx.core.impl.WorkerExecutorImpl.executeBlocking(WorkerExecutorImpl.java:71)
+                - locked0x00000000d8e22a10> (a io.vertx.core.impl.WorkerExecutorImpl)
+                at io.vertx.reactivex.core.WorkerExecutor.executeBlocking(WorkerExecutor.java:118)
+                at io.vertx.reactivex.core.WorkerExecutor.lambda$rxExecuteBlocking$2(WorkerExecutor.java:166)
+                at io.vertx.reactivex.core.WorkerExecutor$$Lambda$1166/0x0000000840a2b440.accept(Unknown Source)
+                at io.vertx.reactivex.impl.AsyncResultMaybe.subscribeActual(AsyncResultMaybe.java:44)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.WorkerExecutorImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4221" opendate="2022-01-03 00:00:00" fixdate="2022-01-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>happen npe race pool deliver slot meantime lead post action create connection comment lease
+                httpclient
+            </summary>
+            <description>happen npe race pool deliver slot meantime lead post action create connection comment lease
+                httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.pool.SimpleConnectionPool.java</file>
+            <file type="M">io.vertx.core.net.impl.pool.ConnectionPoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4275" opendate="2022-02-10 00:00:00" fixdate="2022-02-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ConnectionBase handler called within synchronized block
+            </summary>
+            <description>ConnectionBase handler called within synchronized block
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.ConnectionBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4278" opendate="2022-02-14 00:00:00" fixdate="2022-03-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>vertex error attempt thanks openjdk startup deploymentmanager class concurrentmodificationexception
+                arraylist collection analysis concurrency registerverticlefactory deploymentoptions name verticle
+                information option
+            </summary>
+            <description>vertex error attempt thanks openjdk startup deploymentmanager class
+                concurrentmodificationexception arraylist collection analysis concurrency registerverticlefactory
+                deploymentoptions name verticle information option
+                java.util.ConcurrentModificationException: null
+                at java.base/java.util.ArrayList.sort(ArrayList.java:1752)
+                at io.vertx.core.impl.DeploymentManager.registerVerticleFactory(DeploymentManager.java:320)
+                at io.vertx.core.impl.VertxImpl.registerVerticleFactory(VertxImpl.java:743)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.DeploymentManager.java</file>
+            <file type="M">io.vertx.core.VerticleFactoryTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

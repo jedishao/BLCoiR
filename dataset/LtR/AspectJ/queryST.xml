@@ -1,0 +1,207 @@
+<bugrepository name="ASPECTJ">
+    <bug id="59599" opendate="2004-04-22 06:03:23" fixdate="2004-10-21 04:31:19" resolution="Fixed">
+        <buginformation>
+            <summary>pointer test race directory andy home appear candidate condition environment desktop suite fix
+                compilation contents xml machine linux
+            </summary>
+            <description>pointer test race directory andy home appear candidate condition environment desktop suite fix
+                compilation contents xml machine linux
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.testing.harness.bridge.DirChanges.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="59909" opendate="2004-04-26 05:40:05" fixdate="2012-04-03 15:52:45" resolution="Fixed">
+        <buginformation>
+            <summary>memory production project sum lateproblem error cycle cflowstack remove running lot patch result
+                hashtable varaibles free table case call size getthreadstack
+            </summary>
+            <description>memory production project sum lateproblem error cycle cflowstack remove running lot patch
+                result hashtable varaibles free table case call size getthreadstack
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.runtime.internal.CFlowStack.java</file>
+            <file type="M">org.aspectj.runtime.internal.cflowstack.ThreadStack.java</file>
+            <file type="M">org.aspectj.runtime.internal.cflowstack.ThreadStackFactory.java</file>
+            <file type="M">org.aspectj.runtime.internal.cflowstack.ThreadStackFactoryImpl.java</file>
+            <file type="M">org.aspectj.runtime.internal.cflowstack.ThreadStackFactoryImpl11.java</file>
+            <file type="M">org.aspectj.runtime.internal.cflowstack.ThreadStackImpl11.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="155148" opendate="2006-08-24 20:59:00" fixdate="2012-04-03 15:28:08" resolution="Fixed">
+        <buginformation>
+            <summary>server argument ctrl classloader deadlock identity licyclassloader httpserver lock class oracle
+                policyclassloader hashcode monitor arraylist filehandler workconsumer system information
+                workexecutorworkerthread tostring
+            </summary>
+            <description>server argument ctrl classloader deadlock identity licyclassloader httpserver lock class oracle
+                policyclassloader hashcode monitor arraylist filehandler workconsumer system information
+                workexecutorworkerthread tostring
+                at oracle.classloader.SearchPolicy.loadClass(SearchPolicy.java:641)
+                - waiting to lock#0x05239e48> (a oracle.classloader.PolicyClassLoader)
+                at oracle.classloader.PolicyClassLoader.askParentForClass(PolicyClassLoa der.java:1284)
+                at oracle.classloader.SearchPolicy$AskParent.getClass(SearchPolicy.java:69)
+                at oracle.classloader.SearchSequence.getClass(SearchSequence.java:119)
+                at oracle.classloader.SearchPolicy.loadClass(SearchPolicy.java:642)
+                - locked#0x0554f0e8> (a oracle.classloader.PolicyClassLoader)
+                at oracle.classloader.PolicyClassLoader.askParentForClass(PolicyClassLoader.java:1284)
+                at oracle.classloader.SearchPolicy$AskParent.getClass(SearchPolicy.java:69)
+                at oracle.classloader.SearchSequence.getClass(SearchSequence.java:119)
+                at oracle.classloader.PolicyClassLoader.internalLoadClass(PolicyClassLoader.java:1660)
+                - locked#0x056a9ed0> (a oracle.classloader.PolicyClassLoader)
+                at oracle.classloader.PolicyClassLoader.loadClass(PolicyClassLoader.java:1621)
+                at oracle.classloader.PolicyClassLoader.loadClass(PolicyClassLoader.java:1606)
+                at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+                - locked#0x056a9ed0> (a oracle.classloader.PolicyClassLoader)
+                at oracle.j2ee.ra.jms.generic.WorkConsumer.doReceive(WorkConsumer.java:987)
+                at oracle.j2ee.ra.jms.generic.WorkConsumer.run(WorkConsumer.java:215)
+                - locked#0x05de2718> (a oracle.j2ee.ra.jms.generic.WorkConsumer)
+                at oracle.j2ee.connector.work.WorkWrapper.runTargetWork(WorkWrapper.java:242)
+                at oracle.j2ee.connector.work.WorkWrapper.doWork(WorkWrapper.java:215)
+                at oracle.j2ee.connector.work.WorkWrapper.run(WorkWrapper.java:190)
+                at EDU.oswego.cs.dl.util.concurrent.PooledExecutor$Worker.run(PooledExecutor.java:814)
+                at java.lang.Thread.run(Thread.java:595)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.weaver.loadtime.DefaultWeavingContext.java</file>
+            <file type="M">org.aspectj.weaver.tools.AbstractTrace.java</file>
+            <file type="M">org.aspectj.weaver.AbstractTraceTest.java</file>
+            <file type="M">org.aspectj.weaver.tools.Jdk14Trace.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="269867" opendate="2009-03-24 14:16:04" fixdate="2016-06-30 10:03:06" resolution="Fixed">
+        <buginformation>
+            <summary>static instance access line show system loop get state prio getajtype clazz weakhashmap
+            </summary>
+            <description>static instance access line show system loop get state prio getajtype clazz weakhashmap
+                at java.util.WeakHashMap.get(WeakHashMap.java:355)
+                at org.aspectj.lang.reflect.AjTypeSystem.getAjType(AjTypeSystem.java:37)
+                at org.aspectj.weaver.reflect.Java15ReflectionBasedReferenceTypeDelegate.initialize(Java15ReflectionBasedReferenceTypeDelegate.java:66)
+                at org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.create15Delegate(ReflectionBasedReferenceTypeDelegateFactory.java:56)
+                at org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.createDelegate(ReflectionBasedReferenceTypeDelegateFactory.java:42)
+                at org.aspectj.weaver.reflect.ReflectionWorld.resolveDelegate(ReflectionWorld.java:111)
+                at org.aspectj.weaver.World.resolveToReferenceType(World.java:388)
+                at org.aspectj.weaver.World.resolve(World.java:279)
+                at org.aspectj.weaver.World.resolve(World.java:199)
+                at org.aspectj.weaver.World.resolve(World.java:348)
+                at org.aspectj.weaver.reflect.ReflectionWorld.resolve(ReflectionWorld.java:103)
+                at org.aspectj.weaver.reflect.ReflectionWorld.resolve(ReflectionWorld.java:93)
+                at org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.toResolvedTypeArray(ReflectionBasedReferenceTypeDelegateFactory.java:214)
+                at org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.createResolvedMethod(ReflectionBasedReferenceTypeDelegateFactory.java:107)
+                at org.aspectj.weaver.reflect.ReflectionBasedReferenceTypeDelegateFactory.createResolvedMember(ReflectionBasedReferenceTypeDelegateFactory.java:98)
+                at org.aspectj.weaver.reflect.ReflectionShadow.makeExecutionShadow(ReflectionShadow.java:53)
+                at org.aspectj.weaver.internal.tools.PointcutExpressionImpl.matchesExecution(PointcutExpressionImpl.java:100)
+                at org.aspectj.weaver.internal.tools.PointcutExpressionImpl.matchesMethodExecution(PointcutExpressionImpl.java:92)
+                at org.springframework.aop.aspectj.AspectJExpressionPointcut.getShadowMatch(AspectJExpressionPointcut.java:370)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.lang.reflect.AjTypeSystem.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="318878" opendate="2010-07-05 07:23:40" fixdate="2013-02-25 18:27:08" resolution="Fixed">
+        <buginformation>
+            <summary>synchronizedset foo main gmt mode jan aspect friday ajc ajcmighthaveaspect case pertarget static
+                test runtime trigger target environment obj
+            </summary>
+            <description>synchronizedset foo main gmt mode jan aspect friday ajc ajcmighthaveaspect case pertarget
+                static test runtime trigger target environment obj
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.weaver.AjcMemberMaker.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="320468" opendate="2010-07-21 04:22:43" fixdate="2010-08-26 11:21:18" resolution="Fixed">
+        <buginformation>
+            <summary>ModifiersPattern getModifierFlag
+            </summary>
+            <description>ModifiersPattern getModifierFlag
+                at org.springframework.beans.factory.support.FactoryBeanRegistrySupport$1.run(FactoryBeanRegistrySupport.java:142)
+                at java.security.AccessController.doPrivileged(AccessController.java:219)
+                at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.doGetObjectFromFactoryBean(FactoryBeanRegistrySupport.java:116)
+                at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getObjectFromFactoryBean(FactoryBeanRegistrySupport.java:91)
+                at org.springframework.beans.factory.support.AbstractBeanFactory.getObjectForBeanInstance(AbstractBeanFactory.java:1288)
+                at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:217)
+                at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+                at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+                at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:425)
+                at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+                at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.access$1600(AbstractDelegatedExecutionApplicationContext.java:69)
+                at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext$4.run(AbstractDelegatedExecutionApplicationContext.java:355)
+                at org.springframework.osgi.util.internal.PrivilegedUtils.executeWithCustomTCCL(PrivilegedUtils.java:85)
+                at org.springframework.osgi.context.support.AbstractDelegatedExecutionApplicationContext.completeRefresh(AbstractDelegatedExecutionApplicationContext.java:320)
+                at org.springframework.osgi.extender.internal.dependencies.startup.DependencyWaiterApplicationContextExecutor$CompleteRefreshTask.run(DependencyWaiterApplicationContextExecutor.java:136)
+                at java.lang.Thread.run(Thread.java:811)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.weaver.patterns.ModifiersPattern.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="340806" opendate="2011-03-23 16:35:10" fixdate="2012-10-31 18:00:52" resolution="Fixed">
+        <buginformation>
+            <summary>JavaLangTypeToResolvedTypeConverter
+            </summary>
+            <description>JavaLangTypeToResolvedTypeConverter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.weaver.reflect.JavaLangTypeToResolvedTypeConverter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="408721" opendate="2013-05-22 12:10:52" fixdate="2013-06-26 18:08:38" resolution="Fixed">
+        <buginformation>
+            <summary>aspectj checkforcomodification source state weaver
+            </summary>
+            <description>aspectj checkforcomodification source state weaver
+                at java.util.ArrayList$Itr.checkForComodification(Unknown Source)
+                at java.util.ArrayList$Itr.next(Unknown Source)
+                at org.aspectj.weaver.ReferenceType.findDerivativeType(ReferenceType.java:1122)
+                at org.aspectj.weaver.TypeFactory.createParameterizedType(TypeFactory.java:44)
+                at org.aspectj.weaver.ResolvedType.parameterize(ResolvedType.java:2479)
+                at org.aspectj.weaver.ReferenceType.getDeclaredInterfaces(ReferenceType.java:673)
+                at org.aspectj.weaver.ResolvedType.getDirectSupertypes(ResolvedType.java:82)
+                at org.aspectj.weaver.patterns.TypePattern.matchesSubtypes(TypePattern.java:178)
+                at org.aspectj.weaver.patterns.ExactTypePattern.matchesSubtypes(ExactTypePattern.java:74)
+                at org.aspectj.weaver.patterns.TypePattern.matchesStatically(TypePattern.java:130)
+                at org.aspectj.weaver.patterns.KindedPointcut.fastMatch(KindedPointcut.java:130)
+                at org.aspectj.weaver.internal.tools.PointcutExpressionImpl.couldMatchJoinPointsInType(PointcutExpressionImpl.java:84)
+                at org.springframework.aop.aspectj.AspectJExpressionPointcut.matches(AspectJExpressionPointcut.java:250)
+                at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:208)
+                at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:262)
+                at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:294)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.aspectj.weaver.ReferenceType.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

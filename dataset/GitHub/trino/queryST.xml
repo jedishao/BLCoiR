@@ -1,0 +1,282 @@
+<bugrepository name="trino">
+    <bug id="2962" opendate="2020-02-27 00:00:00" fixdate="2020-03-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>loadpartitionbyname couple waiting thead gettable deadlock executor prio metastore coordinator race
+                issue pool cpu settablefuture daemon call condition queue presto
+            </summary>
+            <description>loadpartitionbyname couple waiting thead gettable deadlock executor prio metastore coordinator
+                race issue pool cpu settablefuture daemon call condition queue presto
+                at jdk.internal.misc.Unsafe.park(java.base@11.0.6/Native Method)
+                - parking to wait for#0x00007fb9d2a1e350> (a com.google.common.util.concurrent.SettableFuture)
+                at java.util.concurrent.locks.LockSupport.park(java.base@11.0.6/LockSupport.java:194)
+                at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:502)
+                at com.google.common.util.concurrent.AbstractFuture$TrustedFuture.get(AbstractFuture.java:83)
+                at com.google.common.util.concurrent.Uninterruptibles.getUninterruptibly(Uninterruptibles.java:196)
+                at com.google.common.cache.LocalCache$LoadingValueReference.waitForValue(LocalCache.java:3581)
+                at com.google.common.cache.LocalCache$Segment.waitForLoadingValue(LocalCache.java:2174)
+                at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2038)
+                at com.google.common.cache.LocalCache.get(LocalCache.java:3952)
+                at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3974)
+                at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4958)
+                at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4964)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.get(CachingHiveMetastore.java:244)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.getTable(CachingHiveMetastore.java:296)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.loadPartitionByName(CachingHiveMetastore.java:668)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore.access$200(CachingHiveMetastore.java:89)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore$2.load(CachingHiveMetastore.java:201)
+                at io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastore$2.load(CachingHiveMetastore.java:197)
+                at com.google.common.cache.CacheLoader.reload(CacheLoader.java:100)
+                at com.google.common.cache.CacheLoader$1$1.call(CacheLoader.java:198)
+                at java.util.concurrent.FutureTask.run(java.base@11.0.6/FutureTask.java:264)
+                at io.airlift.concurrent.BoundedExecutor.drainQueue(BoundedExecutor.java:78)
+                at io.airlift.concurrent.BoundedExecutor$$Lambda$5170/0x00007fb31459cc40.run(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.6/ThreadPoolExecutor.java:1128)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.6/ThreadPoolExecutor.java:628)
+                at java.lang.Thread.run(java.base@11.0.6/Thread.java:834)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastoreModule.java</file>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.ReentrantBoundedExecutor.java</file>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.TestReentrantBoundedExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6202" opendate="2020-12-04 00:00:00" fixdate="2021-06-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor include hang test logtestdurationlistener pool monitor number stacktrace
+                synchronizer block information prio present frame
+            </summary>
+            <description>threadpoolexecutor include hang test logtestdurationlistener pool monitor number stacktrace
+                synchronizer block information prio present frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.tests.product.launcher.cli.SuiteRun.java</file>
+            <file type="M">io.trino.jvm.Threads.java</file>
+            <file type="M">io.trino.testng.services.LogTestDurationListener.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6389" opendate="2020-12-19 00:00:00" fixdate="2021-05-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>process argument sqlserverexception dbo,table_name query gettableproperty deadlock error finder
+                result partition_schemes resultsetexception partition testsqlserverintegrationsmoketest failure
+                schema_id name lock victim data_compression_desc transaction table
+            </summary>
+            <description>process argument sqlserverexception dbo,table_name query gettableproperty deadlock error finder
+                result partition_schemes resultsetexception partition testsqlserverintegrationsmoketest failure
+                schema_id name lock victim data_compression_desc transaction table
+                at io.prestosql.testing.AbstractTestingPrestoClient.execute(AbstractTestingPrestoClient.java:115)
+                at io.prestosql.testing.DistributedQueryRunner.execute(DistributedQueryRunner.java:462)
+                at io.prestosql.sql.query.QueryAssertions$QueryAssert.verifyResultsWithPushdownDisabled(QueryAssertions.java:396)
+                at io.prestosql.sql.query.QueryAssertions$QueryAssert.isFullyPushedDown(QueryAssertions.java:346)
+                at io.prestosql.plugin.sqlserver.TestSqlServerIntegrationSmokeTest.testStddevPushdown(TestSqlServerIntegrationSmokeTest.java:191)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+                at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+                at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+                at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+                at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.SqlServerClient.java</file>
+            <file type="M">io.trino.plugin.sqlserver.BaseSqlServerTransactionIsolationTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerWithoutSnapshotIsolation.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerWithoutSnapshotIsolationAndReadCommittedSnapshot.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7454" opendate="2021-03-30 00:00:00" fixdate="2021-04-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>spill spilledpartition call unspillingrequested disk condition spilledpartitions build
+                hashbuilderoperator setpartitionspilledlookupsourcehandle isblocked
+            </summary>
+            <description>spill spilledpartition call unspillingrequested disk condition spilledpartitions build
+                hashbuilderoperator setpartitionspilledlookupsourcehandle isblocked
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.operator.PartitionedLookupSourceFactory.java</file>
+            <file type="M">io.trino.sql.planner.LocalExecutionPlanner.java</file>
+            <file type="M">io.trino.operator.TestHashJoinOperator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7872" opendate="2021-05-10 00:00:00" fixdate="2021-05-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>process issue resource sqlserverexception read_committed_snapshot testsqlservertypemapping deadlock
+                error rerun elapse database failure statement lock runtimeexception victim transaction
+            </summary>
+            <description>process issue resource sqlserverexception read_committed_snapshot testsqlservertypemapping
+                deadlock error rerun elapse database failure statement lock runtimeexception victim transaction
+                at io.trino.plugin.sqlserver.TestingSqlServer.execute(TestingSqlServer.java:69)
+                at io.trino.plugin.sqlserver.TestingSqlServer.setUpDatabase(TestingSqlServer.java:106)
+                at io.trino.plugin.sqlserver.TestingSqlServer.start(TestingSqlServer.java:82)
+                at io.trino.plugin.sqlserver.TestSqlServerTypeMapping.createQueryRunner(TestSqlServerTypeMapping.java:33)
+                at io.trino.testing.AbstractTestQueryFramework.init(AbstractTestQueryFramework.java:90)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+                at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+                at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
+                at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:169)
+                at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9741" opendate="2021-10-22 00:00:00" fixdate="2022-02-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sqlserver TestSqlServerConnectorTest SqlServerConnectorTest testSelectInformationSchemaColumns
+                deadlock
+            </summary>
+            <description>sqlserver TestSqlServerConnectorTest SqlServerConnectorTest testSelectInformationSchemaColumns
+                deadlock
+                at org.testng.Assert.fail(Assert.java:83)
+                at io.trino.testing.QueryAssertions.assertQuerySucceeds(QueryAssertions.java:278)
+                at io.trino.testing.AbstractTestQueryFramework.assertQuerySucceeds(AbstractTestQueryFramework.java:269)
+                at io.trino.testing.AbstractTestQueryFramework.assertQuerySucceeds(AbstractTestQueryFramework.java:264)
+                at io.trino.testing.BaseConnectorTest.testSelectInformationSchemaColumns(BaseConnectorTest.java:991)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+                at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+                at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+                at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+                at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+                Caused by: java.lang.RuntimeException: Transaction (Process ID 60) was deadlocked on lock resources with
+                another process and has been chosen as the deadlock victim. Rerun the transaction.
+                at io.trino.testing.AbstractTestingTrinoClient.execute(AbstractTestingTrinoClient.java:121)
+                at io.trino.testing.DistributedQueryRunner.execute(DistributedQueryRunner.java:476)
+                at io.trino.testing.QueryAssertions.assertQuerySucceeds(QueryAssertions.java:275)
+                ... 16 more
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.BaseSqlServerConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.SqlServerQueryRunner.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerLatestConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11798" opendate="2022-04-05 00:00:00" fixdate="2022-06-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hive shared_read datum waiting sghildiyal release run workaround reproduce losipiuk spark lock
+                state value table timestamp coordinator acquired_at somenath query findepi trino null beherasa step
+            </summary>
+            <description>hive shared_read datum waiting sghildiyal release run workaround reproduce losipiuk spark lock
+                state value table timestamp coordinator acquired_at somenath query findepi trino null beherasa step
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.hive.metastore.SemiTransactionalHiveMetastore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13212" opendate="2022-07-18 00:00:00" fixdate="2022-07-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>likely pollpage addpages directexchangeclient lock section setbyte congestion
+            </summary>
+            <description>likely pollpage addpages directexchangeclient lock section setbyte congestion
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.operator.DirectExchangeClient.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14132" opendate="2022-09-14 00:00:00" fixdate="2022-10-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hive metastore metadata release query format aquirelock hms releaselock path file iceberg
+                nosuchlockexception name runtimeexception lock block step location row hivemetastoretableoperations
+                table tbl snap
+            </summary>
+            <description>hive metastore metadata release query format aquirelock hms releaselock path file iceberg
+                nosuchlockexception name runtimeexception lock block step location row hivemetastoretableoperations
+                table tbl snap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.HiveMetastoreTableOperations.java</file>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.TestIcebergHiveMetastoreTableOperationsReleaseLockFailure.java</file>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.TestingIcebergHiveMetastoreCatalogModule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14605" opendate="2022-10-12 00:00:00" fixdate="2022-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>execution stack chance test query pool fault run recovery failswithoutretry something path runnable
+                trace capability testexplainanalyze build failure get prio
+            </summary>
+            <description>execution stack chance test query pool fault run recovery failswithoutretry something path
+                runnable trace capability testexplainanalyze build failure get prio
+                at java.base@17.0.4/sun.nio.ch.Net.poll(Native Method)
+                at java.base@17.0.4/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:181)
+                at java.base@17.0.4/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:285)
+                at java.base@17.0.4/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+                at java.base@17.0.4/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+                at java.base@17.0.4/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+                at java.base@17.0.4/java.net.Socket$SocketInputStream.read(Socket.java:976)
+                at app//okio.Okio$2.read(Okio.java:140)
+                at app//okio.AsyncTimeout$2.read(AsyncTimeout.java:237)
+                at app//okio.RealBufferedSource.indexOf(RealBufferedSource.java:358)
+                at app//okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:230)
+                at app//okhttp3.internal.http1.Http1ExchangeCodec.readHeaderLine(Http1ExchangeCodec.java:242)
+                at app//okhttp3.internal.http1.Http1ExchangeCodec.readResponseHeaders(Http1ExchangeCodec.java:213)
+                at app//okhttp3.internal.connection.Exchange.readResponseHeaders(Exchange.java:115)
+                at app//okhttp3.internal.http.CallServerInterceptor.intercept(CallServerInterceptor.java:94)
+                at app//okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:142)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.execution.scheduler.PipelinedStageExecution.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
