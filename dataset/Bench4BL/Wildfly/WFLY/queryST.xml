@@ -1,0 +1,946 @@
+<bugrepository name="WFLY">
+    <bug id="1810" opendate="2013-08-02 12:28:58" fixdate="2013-08-09 13:15:26" resolution="Fixed">
+        <buginformation>
+            <summary>stack ownablereentrantlock ownership release sfsb lock synchronization callback push
+            </summary>
+            <description>stack ownablereentrantlock ownership release sfsb lock synchronization callback push
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2016" opendate="2013-09-06 07:22:22" fixdate="2013-10-31 15:16:42" resolution="Fixed">
+        <buginformation>
+            <summary>however role securitycontext instance corrupt servlet foo update association run async invocation
+                caller security now context behaviour let attribute consider ejb
+            </summary>
+            <description>however role securitycontext instance corrupt servlet foo update association run async
+                invocation caller security now context behaviour let attribute consider ejb
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.component.interceptors.AsyncFutureInterceptorFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2065" opendate="2013-09-13 10:06:10" fixdate="2013-09-18 19:50:54" resolution="Fixed">
+        <buginformation>
+            <summary>include test testing update reaper interface spi suite jboss aftercompletion name integration
+                callback jpa jar synchonization brittle job transaction jira
+            </summary>
+            <description>include test testing update reaper interface spi suite jboss aftercompletion name integration
+                callback jpa jar synchonization brittle job transaction jira
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.test.integration.jpa.mockprovider.txtimeout.TxTimeoutTestCase.java</file>
+            <file type="M">org.jboss.as.test.integration.jpa.mockprovider.txtimeout.SFSB1.java</file>
+            <file type="M">org.jboss.as.test.integration.jpa.mockprovider.txtimeout.TestEntityManager.java</file>
+            <file type="M">org.jboss.as.jpa.transaction.TransactionUtil.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2458" opendate="2013-11-07 10:50:39" fixdate="2013-11-12 22:11:36" resolution="Fixed">
+        <buginformation>
+            <summary>appone cacheexception beanmanager deploymentcompleteservice transactionsynchronizationregistry
+                channel moduledeploymentruntimeinformation remote illegalstateexception startexception ear apponebean
+                moduledeploymentruntimeinformationstart dependent deployment jndibindingsservice weldinstantiator pool
+                start cdi jndidependencyservice jgroups rpcdispatcher weld ejbjndibindingsdeploymentunitprocessor
+                embeddedcachemanagerstartupexception service defaultmanagedthreadfactory processing
+            </summary>
+            <description>appone cacheexception beanmanager deploymentcompleteservice transactionsynchronizationregistry
+                channel moduledeploymentruntimeinformation remote illegalstateexception startexception ear apponebean
+                moduledeploymentruntimeinformationstart dependent deployment jndibindingsservice weldinstantiator pool
+                start cdi jndidependencyservice jgroups rpcdispatcher weld ejbjndibindingsdeploymentunitprocessor
+                embeddedcachemanagerstartupexception service defaultmanagedthreadfactory processing
+                at org.jboss.as.clustering.msc.AsynchronousService$1.run(AsynchronousService.java:91)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:724)
+                at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+                Caused by: org.infinispan.manager.EmbeddedCacheManagerStartupException: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type JGroupsTransport
+                at org.infinispan.factories.GlobalComponentRegistry.start(GlobalComponentRegistry.java:241)
+                at org.jboss.as.clustering.infinispan.subsystem.GlobalComponentRegistryService.start(GlobalComponentRegistryService.java:33)
+                at org.jboss.as.clustering.msc.AsynchronousService$1.run(AsynchronousService.java:86)
+                ... 4 more
+                Caused by: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type JGroupsTransport
+                at org.infinispan.commons.util.ReflectionUtil.invokeAccessibly(ReflectionUtil.java:185)
+                at org.infinispan.factories.AbstractComponentRegistry$PrioritizedMethod.invoke(AbstractComponentRegistry.java:869)
+                at org.infinispan.factories.AbstractComponentRegistry.invokeStartMethods(AbstractComponentRegistry.java:638)
+                at org.infinispan.factories.AbstractComponentRegistry.internalStart(AbstractComponentRegistry.java:627)
+                at org.infinispan.factories.AbstractComponentRegistry.start(AbstractComponentRegistry.java:530)
+                at org.infinispan.factories.GlobalComponentRegistry.start(GlobalComponentRegistry.java:219)
+                ... 6 more
+                at org.infinispan.remoting.transport.jgroups.JGroupsTransport.startJGroupsChannelIfNeeded(JGroupsTransport.java:196)
+                at org.infinispan.remoting.transport.jgroups.JGroupsTransport.start(JGroupsTransport.java:185)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:606) [rt.jar:1.7.0_25]
+                at org.infinispan.commons.util.ReflectionUtil.invokeAccessibly(ReflectionUtil.java:183)
+                ... 11 more
+                at org.jgroups.JChannel.checkClosed(JChannel.java:902)
+                at org.jgroups.JChannel._preConnect(JChannel.java:522)
+                at org.jgroups.JChannel.connect(JChannel.java:284)
+                at org.jgroups.JChannel.connect(JChannel.java:275)
+                at org.infinispan.remoting.transport.jgroups.JGroupsTransport.startJGroupsChannelIfNeeded(JGroupsTransport.java:194)
+                ... 17 more
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.clustering.jgroups.subsystem.ChannelService.java</file>
+            <file type="M">org.jboss.as.clustering.jgroups.MuxChannel.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.subsystem.CacheContainerAdd.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2467" opendate="2013-11-07 20:14:54" fixdate="2013-11-12 22:07:22" resolution="Fixed">
+        <buginformation>
+            <summary>infinispan cachescacheconfigurationservice startup wrapper deadlock asynchronousservice
+            </summary>
+            <description>infinispan cachescacheconfigurationservice startup wrapper deadlock asynchronousservice
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.clustering.infinispan.subsystem.CacheAdd.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2954" opendate="2014-02-18 11:43:28" fixdate="2014-03-05 09:15:13" resolution="Fixed">
+        <buginformation>
+            <summary>JMSContext JMSContextProducer
+            </summary>
+            <description>JMSContext JMSContextProducer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.test.integration.messaging.jms.context.InjectedJMSContextTestCase.java</file>
+            <file type="M">org.jboss.as.messaging.deployment.JMSContextProducer.java</file>
+            <file type="M">org.jboss.as.messaging.deployment.CDIDeploymentProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3259" opendate="2014-04-15 06:55:05" fixdate="2014-04-29 16:10:14" resolution="Fixed">
+        <buginformation>
+            <summary>ServletContextListeners WeldComponentIntegrationProcessor WeldStartService
+                UndertowDeploymentService
+            </summary>
+            <description>ServletContextListeners WeldComponentIntegrationProcessor WeldStartService
+                UndertowDeploymentService
+                at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.startContext(UndertowDeploymentService.java:86)
+                at org.wildfly.extension.undertow.deployment.UndertowDeploymentService.start(UndertowDeploymentService.java:71)
+                at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948)
+                at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881)
+                ... 3 more
+                Caused by: java.lang.RuntimeException: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+                at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:274)
+                at io.undertow.servlet.core.ApplicationListeners.contextInitialized(ApplicationListeners.java:173)
+                at io.undertow.servlet.core.DeploymentManagerImpl.deploy(DeploymentManagerImpl.java:189)
+                ... 7 more
+                Caused by: org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.faces.flow.builder.FlowDefinition
+                at org.jboss.weld.manager.BeanManagerImpl.getContext(BeanManagerImpl.java:684)
+                at org.jboss.weld.util.ForwardingBeanManager.getContext(ForwardingBeanManager.java:181)
+                at com.sun.faces.application.ApplicationAssociate$PostConstructApplicationListener.loadFlows(ApplicationAssociate.java:323)
+                at com.sun.faces.application.ApplicationAssociate$PostConstructApplicationListener.processEvent(ApplicationAssociate.java:303)
+                at javax.faces.event.SystemEvent.processListener(SystemEvent.java:108)
+                at com.sun.faces.application.ApplicationImpl.processListeners(ApplicationImpl.java:2187)
+                at com.sun.faces.application.ApplicationImpl.invokeListenersFor(ApplicationImpl.java:2163)
+                at com.sun.faces.application.ApplicationImpl.publishEvent(ApplicationImpl.java:296)
+                at org.jboss.as.jsf.injection.weld.ForwardingApplication.publishEvent(ForwardingApplication.java:294)
+                at com.sun.faces.config.ConfigManager.publishPostConfigEvent(ConfigManager.java:692)
+                at com.sun.faces.config.ConfigureListener.contextInitialized(ConfigureListener.java:254)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.web.common.WarMetaData.java</file>
+            <file type="M">org.wildfly.extension.undertow.deployment.UndertowDeploymentProcessor.java</file>
+            <file type="M">org.jboss.as.weld.deployment.processors.WebIntegrationProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3280" opendate="2014-04-23 07:12:22" fixdate="2014-05-16 16:39:22" resolution="Fixed">
+        <buginformation>
+            <summary>deploymentrepository service integration starting
+            </summary>
+            <description>deploymentrepository service integration starting
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.deployment.DeploymentRepository.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3338" opendate="2014-05-12 21:07:31" fixdate="2014-07-18 07:27:46" resolution="Fixed">
+        <buginformation>
+            <summary>session line usage section getdelegate spec managedthreadfactory lot jms default jta
+                jmscontextproducer client bean lookup sessions test warn jmscontext producer topic wildfly transaction
+            </summary>
+            <description>session line usage section getdelegate spec managedthreadfactory lot jms default jta
+                jmscontextproducer client bean lookup sessions test warn jmscontext producer topic wildfly transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.messaging.deployment.JMSContextProducer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3381" opendate="2014-05-20 16:54:43" fixdate="2014-06-02 14:31:15" resolution="Fixed">
+        <buginformation>
+            <summary>rollback request fail process cancellation activeoperation race domain receipt possible operation
+            </summary>
+            <description>rollback request fail process cancellation activeoperation race domain receipt possible
+                operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.protocol.mgmt.ManagementRequestHandlerFactory.java</file>
+            <file type="M">org.jboss.as.controller.logging.ControllerLogger.java</file>
+            <file type="M">org.jboss.as.controller.remote.TransactionalProtocolOperationHandler.java</file>
+            <file type="M">org.jboss.as.protocol.mgmt.ActiveOperationSupport.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3396" opendate="2014-05-23 08:36:49" fixdate="2014-06-17 13:29:36" resolution="Fixed">
+        <buginformation>
+            <summary>TimerResourceDefinition
+            </summary>
+            <description>TimerResourceDefinition
+                at org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition$10.readAttribute(TimerResourceDefinition.java:268)
+                at org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition$AbstractReadAttributeHandler.executeRuntime(TimerResourceDefinition.java:364)
+                at org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition$AbstractTimerHandler$1.execute(TimerResourceDefinition.java:330)
+                at org.jboss.as.controller.AbstractOperationContext.executeStep(AbstractOperationContext.java:606)
+                at org.jboss.as.controller.AbstractOperationContext.doCompleteStep(AbstractOperationContext.java:484)
+                at org.jboss.as.controller.AbstractOperationContext.completeStepInternal(AbstractOperationContext.java:281)
+                at org.jboss.as.controller.AbstractOperationContext.executeOperation(AbstractOperationContext.java:276)
+                at org.jboss.as.controller.ModelControllerImpl.internalExecute(ModelControllerImpl.java:271)
+                at org.jboss.as.controller.ModelControllerImpl.execute(ModelControllerImpl.java:145)
+                at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler.doExecute(ModelControllerClientOperationHandler.java:199)
+                at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler.access$300(ModelControllerClientOperationHandler.java:130)
+                at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler$1$1.run(ModelControllerClientOperationHandler.java:150)
+                at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler$1$1.run(ModelControllerClientOperationHandler.java:146)
+                at java.security.AccessController.doPrivileged(Native Method)
+                at javax.security.auth.Subject.doAs(Subject.java:415)
+                at org.jboss.as.controller.AccessAuditContext.doAs(AccessAuditContext.java:94) [wildfly-controller-8.1.0.CR2.jar:8.1.0.CR2]
+                at org.jboss.as.controller.remote.ModelControllerClientOperationHandler$ExecuteRequestHandler$1.execute(ModelControllerClientOperationHandler.java:146)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler$2$1.doExecute(AbstractMessageHandler.java:283)
+                at org.jboss.as.protocol.mgmt.AbstractMessageHandler$AsyncTaskRunner.run(AbstractMessageHandler.java:504)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+                at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.subsystem.deployment.TimerResourceDefinition.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3517" opendate="2014-06-18 14:38:33" fixdate="2014-06-24 16:17:28" resolution="Fixed">
+        <buginformation>
+            <summary>leak reload effect pool start oom newscheduledthreadpool command deploymentmountprovider
+            </summary>
+            <description>leak reload effect pool start oom newscheduledthreadpool command deploymentmountprovider
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.server.deployment.DeploymentMountProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3548" opendate="2014-06-25 12:15:14" fixdate="2015-01-08 09:28:43" resolution="Fixed">
+        <buginformation>
+            <summary>container namenotfoundexception requestprocessor classloader result tcclit jta get context
+                tcclsingleton deployment singleton comp lookup means usertransaction tccl weld invocation throw jndi
+                synchronization ise transaction
+            </summary>
+            <description>container namenotfoundexception requestprocessor classloader result tcclit jta get context
+                tcclsingleton deployment singleton comp lookup means usertransaction tccl weld invocation throw jndi
+                synchronization ise transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.weld.WeldSubsystemAdd.java</file>
+            <file type="M">org.jboss.as.weld.services.bootstrap.WeldTransactionServices.java</file>
+            <file type="M">org.jboss.as.weld.deployment.processors.WeldDeploymentProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3695" opendate="2014-07-30 19:19:15" fixdate="2014-08-06 02:08:29" resolution="Fixed">
+        <buginformation>
+            <summary>employ session setexecuteexistingdelayedtasksaftershutdownpolicy scheduledexecutorservice pool
+                sessionexpirationscheduler undeploythe leak task web expiration
+            </summary>
+            <description>employ session setexecuteexistingdelayedtasksaftershutdownpolicy scheduledexecutorservice pool
+                sessionexpirationscheduler undeploythe leak task web expiration
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.cache.simple.SimpleCacheFactoryBuilderService.java</file>
+            <file type="M">org.jboss.as.clustering.concurrent.RemoveOnCancelScheduledExecutorService.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.logging.InfinispanEjbLogger.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.logging.InfinispanWebLogger.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBeanManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanExpirationScheduler.java</file>
+            <file type="M">org.jboss.as.clustering.concurrent.CachedThreadPoolExecutorService.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionExpirationScheduler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3715" opendate="2014-08-06 14:25:29" fixdate="2014-09-02 20:45:54" resolution="Fixed">
+        <buginformation>
+            <summary>happen session servlet module refactor timeout local async infinispan capability batchcontainer web
+                lock clustering ejb batcher
+            </summary>
+            <description>happen session servlet module refactor timeout local async infinispan capability batchcontainer
+                web lock clustering ejb batcher
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanCacheConfigurationService.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.InfinispanBatcherTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.sso.SSOManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionEvictionContext.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSessionManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.sso.InfinispanSSOManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionEvictionScheduler.java</file>
+            <file type="M">org.wildfly.clustering.server.provider.CacheServiceProviderRegistrationFactory.java</file>
+            <file type="M">org.wildfly.clustering.server.provider.CacheServiceProviderRegistrationFactoryService.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOnTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.InfinispanBatcher.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOnManagerFactoryBuilder.java</file>
+            <file type="M">org.jboss.as.ejb3.cache.distributable.DistributableCache.java</file>
+            <file type="M">org.wildfly.clustering.web.sso.SSOManager.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.sso.SSOCacheConfigurationService.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.subsystem.CacheAddHandler.java</file>
+            <file type="M">org.wildfly.clustering.server.registry.CacheRegistryFactoryConfiguration.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.CacheEntryMutator.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSession.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.AbstractDistributableSession.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSessionTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionEvictionSchedulerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.UndertowSessionManager.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOn.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.TransactionBatch.java</file>
+            <file type="M">org.wildfly.clustering.web.session.SessionManagerFactoryBuilderValue.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableImmutableSession.java</file>
+            <file type="M">org.wildfly.clustering.server.registry.CacheRegistryFactoryService.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.sso.InfinispanSSOManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBeanManagerFactoryBuilder.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.subsystem.CacheService.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOnManagerFactoryService.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionExpirationSchedulerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBatcher.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBeanManager.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanSessionManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.web.session.SessionManager.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanExpirationSchedulerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSessionManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.session.SessionManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.ejb.BeanManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.ejb.Batcher.java</file>
+            <file type="M">org.wildfly.clustering.ejb.BeanManager.java</file>
+            <file type="M">org.wildfly.clustering.web.Batcher.java</file>
+            <file type="M">org.jboss.as.test.clustering.cluster.web.ReplicationForNegotiationAuthenticatorTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanSessionManager.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSessionManager.java</file>
+            <file type="M">org.wildfly.clustering.ejb.BeanManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanSessionManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.session.SessionManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.server.registry.CacheRegistry.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSessionManagerFactoryService.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.CacheContainer.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.DefaultEmbeddedCacheManagerTest.java</file>
+            <file type="M">org.wildfly.clustering.web.sso.SSOManagerFactoryBuilderService.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBeanManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanExpirationScheduler.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanEvictionScheduler.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanSessionManagerConfiguration.java</file>
+            <file type="M">org.wildfly.clustering.ejb.Batch.java</file>
+            <file type="M">org.jboss.as.ejb3.cache.distributable.DistributableCacheFactoryService.java</file>
+            <file type="M">org.wildfly.clustering.web.sso.SSOManagerFactoryBuilder.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOnManagerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.ejb.BeanManagerFactoryBuilderProvider.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanEvictionSchedulerTestCase.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.invoker.BatchCacheInvoker.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.sso.InfinispanSSOManager.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBatcherTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.session.DistributableSessionManagerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionCacheConfigurationService.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOnManager.java</file>
+            <file type="M">org.jboss.as.ejb3.cache.distributable.DistributableCacheFactoryBuilderService.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.CacheEntryMutatorTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionEvictionCommand.java</file>
+            <file type="M">org.wildfly.clustering.web.undertow.sso.DistributableSingleSignOnManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.server.provider.CacheServiceProviderRegistrationFactoryConfiguration.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBeanManagerFactoryBuilderProvider.java</file>
+            <file type="M">org.wildfly.clustering.ejb.BatchContext.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanEvictionContext.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.BeanEvictionCommand.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.DefaultCacheContainer.java</file>
+            <file type="M">org.wildfly.clustering.web.Batch.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionExpirationScheduler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3727" opendate="2014-08-11 17:54:06" fixdate="2014-09-02 20:45:48" resolution="Fixed">
+        <buginformation>
+            <summary>fact channel type up_prot error startupmy jchannel creation registry npe race pool start jgroups
+                nullpointerexception component embeddedcachemanagerstartupexception channeltransport service variable
+                wildfly serverservice
+            </summary>
+            <description>fact channel type up_prot error startupmy jchannel creation registry npe race pool start
+                jgroups nullpointerexception component embeddedcachemanagerstartupexception channeltransport service
+                variable wildfly serverservice
+                at org.jboss.as.clustering.msc.AsynchronousService$1.run(AsynchronousService.java:91)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:744)
+                at org.jboss.threads.JBossThread.run(JBossThread.java:122)
+                Caused by: org.infinispan.manager.EmbeddedCacheManagerStartupException: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type ChannelTransport
+                at org.infinispan.factories.GlobalComponentRegistry.start(GlobalComponentRegistry.java:241)
+                at org.jboss.as.clustering.infinispan.subsystem.GlobalComponentRegistryService.start(GlobalComponentRegistryService.java:33)
+                at org.jboss.as.clustering.msc.AsynchronousService$1.run(AsynchronousService.java:86)
+                ... 4 more
+                Caused by: org.infinispan.commons.CacheException: Unable to invoke method public void org.infinispan.remoting.transport.jgroups.JGroupsTransport.start() on object of type ChannelTransport
+                at org.infinispan.commons.util.ReflectionUtil.invokeAccessibly(ReflectionUtil.java:185)
+                at org.infinispan.factories.AbstractComponentRegistry$PrioritizedMethod.invoke(AbstractComponentRegistry.java:869)
+                at org.infinispan.factories.AbstractComponentRegistry.invokeStartMethods(AbstractComponentRegistry.java:638)
+                at org.infinispan.factories.AbstractComponentRegistry.internalStart(AbstractComponentRegistry.java:627)
+                at org.infinispan.factories.AbstractComponentRegistry.start(AbstractComponentRegistry.java:530)
+                at org.infinispan.factories.GlobalComponentRegistry.start(GlobalComponentRegistry.java:219)
+                ... 6 more
+                Caused by: org.infinispan.commons.CacheException: Unable to start JGroups Channel
+                at org.infinispan.remoting.transport.jgroups.JGroupsTransport.startJGroupsChannelIfNeeded(JGroupsTransport.java:198)
+                at org.infinispan.remoting.transport.jgroups.JGroupsTransport.start(JGroupsTransport.java:187)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:606)
+                at org.infinispan.commons.util.ReflectionUtil.invokeAccessibly(ReflectionUtil.java:183)
+                ... 11 more
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.clustering.infinispan.ChannelTransport.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.subsystem.CacheContainerAddHandler.java</file>
+            <file type="M">org.jboss.as.clustering.infinispan.subsystem.EmbeddedCacheManagerConfigurationService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3731" opendate="2014-08-13 15:01:26" fixdate="2014-09-05 10:41:08" resolution="Fixed">
+        <buginformation>
+            <summary>StatefulSessionSynchronizationInterceptor
+            </summary>
+            <description>StatefulSessionSynchronizationInterceptor
+                at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.getTransactionImple(TransactionSynchronizationRegistryImple.java:228)
+                at com.arjuna.ats.internal.jta.transaction.arjunacore.TransactionSynchronizationRegistryImple.registerInterposedSynchronization(TransactionSynchronizationRegistryImple.java:136)
+                at org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.processInvocation(StatefulSessionSynchronizationInterceptor.java:111)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.InterceptorContext$Invocation.proceed(InterceptorContext.java:407)
+                at org.jboss.weld.ejb.AbstractEJBRequestScopeActivationInterceptor.aroundInvoke(AbstractEJBRequestScopeActivationInterceptor.java:46)
+                at org.jboss.as.weld.ejb.EjbRequestScopeActivationInterceptor.processInvocation(EjbRequestScopeActivationInterceptor.java:83)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ee.concurrent.ConcurrentContextInterceptor.processInvocation(ConcurrentContextInterceptor.java:45)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.InitialInterceptor.processInvocation(InitialInterceptor.java:21)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+                at org.jboss.as.ee.component.interceptors.ComponentDispatcherInterceptor.processInvocation(ComponentDispatcherInterceptor.java:52)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.component.stateful.StatefulComponentInstanceInterceptor.processInvocation(StatefulComponentInstanceInterceptor.java:65)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.tx.CMTTxInterceptor.invokeInCallerTx(CMTTxInterceptor.java:252)
+                at org.jboss.as.ejb3.tx.CMTTxInterceptor.required(CMTTxInterceptor.java:343)
+                at org.jboss.as.ejb3.tx.CMTTxInterceptor.processInvocation(CMTTxInterceptor.java:240)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.component.interceptors.CurrentInvocationContextInterceptor.processInvocation(CurrentInvocationContextInterceptor.java:41)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.component.invocationmetrics.WaitTimeInterceptor.processInvocation(WaitTimeInterceptor.java:43)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.security.SecurityContextInterceptor.processInvocation(SecurityContextInterceptor.java:100)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.component.interceptors.ShutDownInterceptorFactory$1.processInvocation(ShutDownInterceptorFactory.java:64)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.component.interceptors.LoggingInterceptor.processInvocation(LoggingInterceptor.java:59)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ee.component.NamespaceContextInterceptor.processInvocation(NamespaceContextInterceptor.java:50)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.as.ejb3.component.interceptors.AdditionalSetupInterceptor.processInvocation(AdditionalSetupInterceptor.java:55)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.ContextClassLoaderInterceptor.processInvocation(ContextClassLoaderInterceptor.java:64)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:326)
+                at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:448)
+                at org.jboss.invocation.AccessCheckingInterceptor.processInvocation(AccessCheckingInterceptor.java:61)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.InterceptorContext.run(InterceptorContext.java:326)
+                at org.jboss.invocation.PrivilegedWithCombinerInterceptor.processInvocation(PrivilegedWithCombinerInterceptor.java:80)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+                at org.jboss.as.ee.component.ViewService$View.invoke(ViewService.java:185)
+                at org.jboss.as.ee.component.ViewDescription$1.processInvocation(ViewDescription.java:182)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:309)
+                at org.jboss.invocation.ChainedInterceptor.processInvocation(ChainedInterceptor.java:61)
+                at org.jboss.as.ee.component.ProxyInvocationHandler.invoke(ProxyInvocationHandler.java:73)
+                at org.jboss.as.test.integration.jpa.txtimeout.SFSB1$$$view1.createEmployee(Unknown Source)
+                at org.jboss.as.test.integration.jpa.txtimeout.SimpleServlet.doGet(SimpleServlet.java:72)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+                at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+                at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:61)
+                at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+                at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+                at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+                at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+                at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:56)
+                at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+                at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:45)
+                at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:61)
+                at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:58)
+                at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:70)
+                at io.undertow.security.handlers.SecurityInitialHandler.handleRequest(SecurityInitialHandler.java:76)
+                at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+                at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+                at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+                at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+                at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:247)
+                at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:234)
+                at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:76)
+                at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:153)
+                at io.undertow.server.Connectors.executeRootHandler(Connectors.java:197)
+                at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:737)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3942" opendate="2014-10-07 12:51:28" fixdate="2014-10-10 10:46:46" resolution="Fixed">
+        <buginformation>
+            <summary>exist condition mod_cluster race issue session logic
+            </summary>
+            <description>exist condition mod_cluster race issue session logic
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.wildfly.mod_cluster.undertow.metric.UndertowBoottimeHandler.java</file>
+            <file type="M">org.wildfly.mod_cluster.undertow.metric.MetricDeploymentProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4133" opendate="2014-11-27 16:28:38" fixdate="2014-12-15 22:27:08" resolution="Fixed">
+        <buginformation>
+            <summary>timer server hang service ejb worker timeout deployment
+            </summary>
+            <description>timer server hang service ejb worker timeout deployment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.timerservice.TimerServiceImpl.java</file>
+            <file type="M">org.jboss.as.ejb3.component.EJBComponent.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4310" opendate="2015-02-04 08:16:18" fixdate="2015-02-11 01:34:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack log release document description ironjacamar illegalstateexception random jboss xml block
+                reproducer class generation raservicesfactory adapter issue race resource
+                abstractresourceadapterdeploymentservicelistener redhat improvement service excerpt byteman apos
+            </summary>
+            <description>stack log release document description ironjacamar illegalstateexception random jboss xml block
+                reproducer class generation raservicesfactory adapter issue race resource
+                abstractresourceadapterdeploymentservicelistener redhat improvement service excerpt byteman apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.connector.deployers.ra.processors.AbstractResourceAdapterDeploymentServiceListener.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4511" opendate="2015-04-14 05:48:01" fixdate="2015-04-19 05:50:18" resolution="Fixed">
+        <buginformation>
+            <summary>note release attempt artifact result reproduce number git eap block applicationdeadlockexception
+                applicationdeadlockexceptiondescription inspection contain reproducible invokeinourtx beforecompletion
+                component failure synchronization transaction
+            </summary>
+            <description>note release attempt artifact result reproduce number git eap block
+                applicationdeadlockexception applicationdeadlockexceptiondescription inspection contain reproducible
+                invokeinourtx beforecompletion component failure synchronization transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.tx.CMTTxInterceptor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4844" opendate="2015-06-29 18:21:46" fixdate="2015-07-20 23:16:31" resolution="Fixed">
+        <buginformation>
+            <summary>CMTTxInterceptor ContainerManagedConcurrencyInterceptor
+            </summary>
+            <description>CMTTxInterceptor ContainerManagedConcurrencyInterceptor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.component.singleton.SingletonComponent.java</file>
+            <file type="M">org.jboss.as.ejb3.concurrency.ContainerManagedConcurrencyInterceptorFactory.java</file>
+            <file type="M">org.jboss.as.ejb3.concurrency.LockableComponent.java</file>
+            <file type="M">org.jboss.as.ejb3.component.singleton.SingletonComponentDescription.java</file>
+            <file type="M">org.jboss.as.ee.component.interceptors.InterceptorOrder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5186" opendate="2015-08-24 13:47:07" fixdate="2015-10-22 21:05:58" resolution="Fixed">
+        <buginformation>
+            <summary>server flag millisecond dist run error secondsseen default timeoutexception scenario lock warning
+                unlock nontotalorderpercacheinboundinvocationhandler ignore_return_values sync command requestor warn
+                node failover invocationcontextinterceptor globaltransaction
+            </summary>
+            <description>server flag millisecond dist run error secondsseen default timeoutexception scenario lock
+                warning unlock nontotalorderpercacheinboundinvocationhandler ignore_return_values sync command requestor
+                warn node failover invocationcontextinterceptor
+                at org.infinispan.util.concurrent.locks.LockManagerImpl.lock(LockManagerImpl.java:198)
+                at org.infinispan.util.concurrent.locks.LockManagerImpl.acquireLock(LockManagerImpl.java:171)
+                at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockKeyAndCheckOwnership(AbstractTxLockingInterceptor.java:180)
+                at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockAndRegisterBackupLock(AbstractTxLockingInterceptor.java:118)
+                at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.visitLockControlCommand(PessimisticLockingInterceptor.java:200)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+                at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+                at org.infinispan.interceptors.TxInterceptor.invokeNextInterceptorAndVerifyTransaction(TxInterceptor.java:141)
+                at org.infinispan.interceptors.TxInterceptor.visitLockControlCommand(TxInterceptor.java:199)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+                at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+                at org.infinispan.statetransfer.TransactionSynchronizerInterceptor.visitLockControlCommand(TransactionSynchronizerInterceptor.java:75)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+                at org.infinispan.statetransfer.StateTransferInterceptor.handleTxCommand(StateTransferInterceptor.java:196)
+                at org.infinispan.statetransfer.StateTransferInterceptor.visitLockControlCommand(StateTransferInterceptor.java:99)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:111)
+                at org.infinispan.commands.AbstractVisitor.visitLockControlCommand(AbstractVisitor.java:174)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:97)
+                at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+                at org.infinispan.interceptors.InvocationContextInterceptor.visitLockControlCommand(InvocationContextInterceptor.java:76)
+                at org.infinispan.commands.control.LockControlCommand.acceptVisitor(LockControlCommand.java:110)
+                at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+                at org.infinispan.commands.control.LockControlCommand.perform(LockControlCommand.java:129)
+                at org.infinispan.remoting.inboundhandler.BasePerCacheInboundInvocationHandler.invokePerform(BasePerCacheInboundInvocationHandler.java:85)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanSessionManagerFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanSessionManager.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.ScheduleSchedulerCommand.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionEvictionScheduler.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionExpirationSchedulerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.ExpiredSessionRemover.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionExpirationScheduler.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionEvictionSchedulerTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.MockImmutableSession.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.coarse.CoarseSessionEntry.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.fine.FineSessionFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.coarse.CoarseSessionFactory.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.ExpiredSessionRemoverTestCase.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.Scheduler.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.fine.FineSessionEntry.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.SessionCreationMetaDataEntry.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5449" opendate="2015-10-02 03:22:45" fixdate="2015-11-04 16:10:01" resolution="Fixed">
+        <buginformation>
+            <summary>factory race correctlywildfly custom channel subsystem transport jgroups jchannel condition
+                jchannelfactory socket
+            </summary>
+            <description>factory race correctlywildfly custom channel subsystem transport jgroups jchannel condition
+                jchannelfactory socket
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.clustering.jgroups.JChannelFactory.java</file>
+            <file type="M">org.jboss.as.clustering.jgroups.ManagedSocketFactoryTest.java</file>
+            <file type="M">org.jboss.as.clustering.jgroups.ManagedSocketFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5596" opendate="2015-10-28 04:19:32" fixdate="2015-12-23 06:09:44" resolution="Fixed">
+        <buginformation>
+            <summary>container flag atomicboolean protection deadlock recovery functionality safewfly
+                messagedrivencomponent endpoint solution startdelivery lock block deactivation order adapter resource
+                change non container mdb call effect stopdelivery activation
+            </summary>
+            <description>container flag atomicboolean protection deadlock recovery functionality safewfly
+                messagedrivencomponent endpoint solution startdelivery lock block deactivation order adapter resource
+                change non container mdb call effect stopdelivery activation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.component.messagedriven.MessageDrivenComponent.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5770" opendate="2015-12-03 14:49:15" fixdate="2015-12-07 09:30:08" resolution="Fixed">
+        <buginformation>
+            <summary>Lock TimeoutException CacheRegistry close Just happened node shutdown testing locally
+            </summary>
+            <description>Lock TimeoutException CacheRegistry close Just happened node shutdown testing locally
+                at org.infinispan.util.concurrent.locks.impl.DefaultPendingLockManager.timeout(DefaultPendingLockManager.java:224)
+                at org.infinispan.util.concurrent.locks.impl.DefaultPendingLockManager.checkForPendingLock(DefaultPendingLockManager.java:196)
+                at org.infinispan.util.concurrent.locks.impl.DefaultPendingLockManager.awaitPendingTransactionsForKey(DefaultPendingLockManager.java:115)
+                at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.checkPendingAndLockKey(AbstractTxLockingInterceptor.java:190)
+                at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockOrRegisterBackupLock(AbstractTxLockingInterceptor.java:115)
+                at org.infinispan.interceptors.locking.PessimisticLockingInterceptor.visitDataWriteCommand(PessimisticLockingInterceptor.java:121)
+                at org.infinispan.interceptors.locking.AbstractLockingInterceptor.visitRemoveCommand(AbstractLockingInterceptor.java:71)
+                at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+                at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+                at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.TxInterceptor.enlistWriteAndInvokeNext(TxInterceptor.java:366)
+                at org.infinispan.interceptors.TxInterceptor.visitRemoveCommand(TxInterceptor.java:230)
+                at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+                at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+                at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.statetransfer.StateTransferInterceptor.handleTxWriteCommand(StateTransferInterceptor.java:304)
+                at org.infinispan.statetransfer.StateTransferInterceptor.handleWriteCommand(StateTransferInterceptor.java:286)
+                at org.infinispan.statetransfer.StateTransferInterceptor.visitRemoveCommand(StateTransferInterceptor.java:123)
+                at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:102)
+                at org.infinispan.interceptors.InvocationContextInterceptor.handleDefault(InvocationContextInterceptor.java:71)
+                at org.infinispan.commands.AbstractVisitor.visitRemoveCommand(AbstractVisitor.java:48)
+                at org.infinispan.commands.write.RemoveCommand.acceptVisitor(RemoveCommand.java:59)
+                at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+                at org.infinispan.cache.impl.CacheImpl.executeCommandAndCommitIfNeeded(CacheImpl.java:1634)
+                at org.infinispan.cache.impl.CacheImpl.removeInternal(CacheImpl.java:558)
+                at org.infinispan.cache.impl.CacheImpl.remove(CacheImpl.java:549)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.wildfly.clustering.server.registry.LocalRegistryFactory.java</file>
+            <file type="M">org.jboss.as.test.clustering.cluster.registry.bean.RegistryBean.java</file>
+            <file type="M">org.wildfly.clustering.provider.ServiceProviderRegistrationFactory.java</file>
+            <file type="M">org.wildfly.clustering.server.registry.CacheRegistry.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.InfinispanRouteLocator.java</file>
+            <file type="M">org.wildfly.clustering.ejb.infinispan.InfinispanBeanManager.java</file>
+            <file type="M">org.wildfly.clustering.server.registry.LocalRegistry.java</file>
+            <file type="M">org.wildfly.clustering.registry.Registry.java</file>
+            <file type="M">org.wildfly.clustering.server.provider.ServiceProviderRegistrationFactoryAdapter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6127" opendate="2016-02-04 13:32:41" fixdate="2016-08-19 03:48:29" resolution="Fixed">
+        <buginformation>
+            <summary>container synchronized contextspec session specify type illegalstateexception target call
+                unsynchronized component throw jta context persistence propagate transaction bean
+            </summary>
+            <description>container synchronized contextspec session specify type illegalstateexception target call
+                unsynchronized component throw jta context persistence propagate transaction bean
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.test.integration.jpa.transaction.TransactionTestCase.java</file>
+            <file type="M">org.jboss.as.jpa.transaction.TransactionUtil.java</file>
+            <file type="M">org.jboss.as.jpa.messages.JpaLogger.java</file>
+            <file type="M">org.jboss.as.jpa.container.TransactionScopedEntityManager.java</file>
+            <file type="M">org.jboss.as.test.integration.jpa.transaction.UnsynchronizedSFSB.java</file>
+            <file type="M">org.jboss.as.jpa.container.ExtendedEntityManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6215" opendate="2016-02-15 16:03:03" fixdate="2016-07-20 18:49:44" resolution="Fixed">
+        <buginformation>
+            <summary>container allow access sessionsynchronization reaper possible interface sfsbissue manage jbpapp
+                timesout continue sfsb callback implement worker assume transaction bean customer
+            </summary>
+            <description>container allow access sessionsynchronization reaper possible interface sfsbissue manage jbpapp
+                timesout continue sfsb callback implement worker assume transaction bean customer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.java</file>
+            <file type="M">org.jboss.as.ejb3.component.stateful.StatefulComponentInstanceInterceptor.java</file>
+            <file type="M">org.jboss.as.ejb3.component.stateful.StatefulSessionComponentInstance.java</file>
+            <file type="M">org.jboss.as.ejb3.component.stateful.StatefulSessionComponent.java</file>
+            <file type="M">org.jboss.as.ejb3.logging.EjbLogger.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6405" opendate="2016-03-17 21:57:55" fixdate="2016-07-07 16:40:53" resolution="Fixed">
+        <buginformation>
+            <summary>WeldDeployment getBeanDeploymentArchive
+            </summary>
+            <description>WeldDeployment getBeanDeploymentArchive
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.weld.deployment.WeldDeployment.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6776" opendate="2016-06-27 06:00:57" fixdate="2016-11-18 12:09:50" resolution="Fixed">
+        <buginformation>
+            <summary>server illegalargumentexception log configuration subsystem description jca error type running
+                default get workmanagerwhen manager max work custom change pool length message failure obvious
+                workmanager queue
+            </summary>
+            <description>server illegalargumentexception log configuration subsystem description jca error type running
+                default get workmanagerwhen manager max work custom change pool length message failure obvious
+                workmanager queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.connector.subsystems.jca.JcaWorkManagerDefinition.java</file>
+            <file type="M">org.jboss.as.connector.logging.ConnectorLogger.java</file>
+            <file type="M">org.jboss.as.connector.subsystems.jca.JcaDistributedWorkManagerDefinition.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6877" opendate="2016-07-25 03:30:17" fixdate="2016-07-28 06:32:33" resolution="Fixed">
+        <buginformation>
+            <summary>session putkeyvaluecommand trace timeoutexception web defaultlockmanager onephasecommit yyy lock
+                embeddedexpirablemetadata value key valuematcher force_synchronous maxidle cache locking topologyid
+                preparecommand ignore_return_values immutable xxx wildfly zzz secondsour putifabsent globaltransaction
+            </summary>
+            <description>session putkeyvaluecommand trace timeoutexception web defaultlockmanager onephasecommit yyy
+                lock embeddedexpirablemetadata value key valuematcher force_synchronous maxidle cache locking topologyid
+                preparecommand ignore_return_values immutable xxx wildfly zzz secondsour putifabsent globaltransaction
+                at org.infinispan.util.concurrent.locks.impl.DefaultLockManager$KeyAwareExtendedLockPromise.lock(DefaultLockManager.java:236)
+                at org.infinispan.util.concurrent.locks.impl.DefaultLockManager$CompositeLockPromise.lock(DefaultLockManager.java:305)
+                at org.infinispan.interceptors.locking.AbstractLockingInterceptor.lockAllAndRecord(AbstractLockingInterceptor.java:199)
+                at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.checkPendingAndLockAllKeys(AbstractTxLockingInterceptor.java:199)
+                at org.infinispan.interceptors.locking.AbstractTxLockingInterceptor.lockAllOrRegisterBackupLock(AbstractTxLockingInterceptor.java:165)
+                at org.infinispan.interceptors.locking.OptimisticLockingInterceptor.visitPrepareCommand(OptimisticLockingInterceptor.java:69)
+                at org.infinispan.commands.tx.PrepareCommand.acceptVisitor(PrepareCommand.java:173)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.TxInterceptor.invokeNextInterceptorAndVerifyTransaction(TxInterceptor.java:157)
+                at org.infinispan.interceptors.TxInterceptor.visitPrepareCommand(TxInterceptor.java:144)
+                at org.infinispan.commands.tx.PrepareCommand.acceptVisitor(PrepareCommand.java:173)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+                at org.infinispan.commands.AbstractVisitor.visitPrepareCommand(AbstractVisitor.java:112)
+                at org.infinispan.statetransfer.TransactionSynchronizerInterceptor.visitPrepareCommand(TransactionSynchronizerInterceptor.java:42)
+                at org.infinispan.commands.tx.PrepareCommand.acceptVisitor(PrepareCommand.java:173)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.statetransfer.StateTransferInterceptor.handleTxCommand(StateTransferInterceptor.java:238)
+                at org.infinispan.statetransfer.StateTransferInterceptor.visitPrepareCommand(StateTransferInterceptor.java:87)
+                at org.infinispan.commands.tx.PrepareCommand.acceptVisitor(PrepareCommand.java:173)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.InvocationContextInterceptor.handleAll(InvocationContextInterceptor.java:107)
+                at org.infinispan.interceptors.InvocationContextInterceptor.handleDefault(InvocationContextInterceptor.java:76)
+                at org.infinispan.commands.AbstractVisitor.visitPrepareCommand(AbstractVisitor.java:112)
+                at org.infinispan.commands.tx.PrepareCommand.acceptVisitor(PrepareCommand.java:173)
+                at org.infinispan.interceptors.base.CommandInterceptor.invokeNextInterceptor(CommandInterceptor.java:99)
+                at org.infinispan.interceptors.base.CommandInterceptor.handleDefault(CommandInterceptor.java:113)
+                at org.infinispan.commands.AbstractVisitor.visitPrepareCommand(AbstractVisitor.java:112)
+                at org.infinispan.commands.tx.PrepareCommand.acceptVisitor(PrepareCommand.java:173)
+                at org.infinispan.interceptors.InterceptorChain.invoke(InterceptorChain.java:336)
+                at org.infinispan.transaction.impl.TransactionCoordinator.commit(TransactionCoordinator.java:157)
+                at org.infinispan.transaction.xa.TransactionXaAdapter.commit(TransactionXaAdapter.java:114)
+                at org.infinispan.transaction.tm.DummyTransaction.finishResource(DummyTransaction.java:389)
+                at org.infinispan.transaction.tm.DummyTransaction.commitResources(DummyTransaction.java:435)
+                at org.infinispan.transaction.tm.DummyTransaction.runCommit(DummyTransaction.java:314)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.fine.FineSessionAttributes.java</file>
+            <file type="M">org.wildfly.clustering.web.infinispan.session.coarse.CoarseSessionAttributes.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7282" opendate="2016-10-11 05:53:45" fixdate="2016-10-17 13:15:08" resolution="Fixed">
+        <buginformation>
+            <summary>EJBRemoteTransactionPropagatingInterceptor
+            </summary>
+            <description>EJBRemoteTransactionPropagatingInterceptor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.ejb3.remote.EJBRemoteTransactionPropagatingInterceptor.java</file>
+            <file type="M">org.jboss.as.ejb3.remote.EJBRemoteTransactionsRepository.java</file>
+            <file type="M">org.jboss.as.ejb3.subsystem.EJB3RemoteServiceAdd.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
