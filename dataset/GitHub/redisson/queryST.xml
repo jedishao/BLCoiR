@@ -1,0 +1,996 @@
+<bugrepository name="redisson">
+    <bug id="39" opendate="2014-07-10 00:00:00" fixdate="2014-07-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request unlock resource work while point crash illegalstateexception view system attachment jersey
+                loop lock try user stuff
+            </summary>
+            <description>request unlock resource work while point crash illegalstateexception view system attachment
+                jersey loop lock try user stuff
+                java.lang.IllegalStateException: complete already: DefaultPromise@3c519764(incomplete)
+                at io.netty.util.concurrent.DefaultPromise.setSuccess(DefaultPromise.java:406)
+                at org.redisson.RedissonLock$1.subscribed(RedissonLock.java:177)
+                at com.lambdaworks.redis.pubsub.RedisPubSubConnection.channelRead(RedisPubSubConnection.java:132)
+                at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+                at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+                at com.lambdaworks.redis.pubsub.PubSubCommandHandler.decode(PubSubCommandHandler.java:46)
+                at com.lambdaworks.redis.protocol.CommandHandler.channelRead(CommandHandler.java:52)
+                at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+                at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+                at io.netty.channel.DefaultChannelHandlerContext.invokeChannelRead(DefaultChannelHandlerContext.java:341)
+                at io.netty.channel.DefaultChannelHandlerContext.fireChannelRead(DefaultChannelHandlerContext.java:327)
+                at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:785)
+                at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:126)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:507)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:464)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:378)
+                at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:350)
+                at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+                at java.lang.Thread.run(Thread.java:722)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.lambdaworks.redis.pubsub.RedisPubSubConnection.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.connection.ConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+            <file type="M">org.redisson.connection.PubSubConnectionEntry.java</file>
+            <file type="M">org.redisson.RedissonLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="40" opendate="2014-07-10 00:00:00" fixdate="2014-07-16 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>add resource deadlock ttl trylock confuse refer lock plan operation situation
+            </summary>
+            <description>add resource deadlock ttl trylock confuse refer lock plan operation situation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.lambdaworks.redis.RedisAsyncConnection.java</file>
+            <file type="M">com.lambdaworks.redis.RedisConnection.java</file>
+            <file type="M">com.lambdaworks.redis.protocol.CommandType.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.core.RLock.java</file>
+            <file type="M">org.redisson.RedissonLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="67" opendate="2014-08-15 00:00:00" fixdate="2018-01-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>redissonlist concurrency call invocation iterator size sublist mean safe hasnext value
+            </summary>
+            <description>redissonlist concurrency call invocation iterator size sublist mean safe hasnext value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonList.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="83" opendate="2014-10-16 00:00:00" fixdate="2014-11-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>waiting redisson deadlock redis lock stick state prio key info jvm obtain cli monitor list daemon
+                defaultpromise name http
+            </summary>
+            <description>waiting redisson deadlock redis lock stick state prio key info jvm obtain cli monitor list
+                daemon defaultpromise name http
+                INFO | jvm 1 | 2014/10/16 17:41:57 | "http-8080-exec-156" daemon prio=10 tid=0x00000000022ab800
+                nid=0x6535 in Object.wait() [0x00007f5799130000]
+                INFO | jvm 1 | 2014/10/16 17:41:57 | java.lang.Thread.State: WAITING (on object monitor)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at java.lang.Object.wait(Native Method)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at java.lang.Object.wait(Object.java:503)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at
+                io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(DefaultPromise.java:286)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | - locked#0x00000006793b7dc0> (a
+                io.netty.util.concurrent.DefaultPromise)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at
+                io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(DefaultPromise.java:32)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at
+                org.redisson.RedissonLock.lockInterruptibly(RedissonLock.java:233)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at
+                org.redisson.RedissonLock.lockInterruptibly(RedissonLock.java:226)
+                INFO | jvm 1 | 2014/10/16 17:41:57 | at org.redisson.RedissonLock.lock(RedissonLock.java:206)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="89" opendate="2014-11-03 00:00:00" fixdate="2014-11-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>lock production RedissonLock lockInterruptibly
+            </summary>
+            <description>lock production RedissonLock lockInterruptibly
+                java.lang.Object.wait(long) @bci=0 (Compiled frame; information may be imprecise)
+                java.lang.Object.wait(long, int) @bci=58, line=461 (Compiled frame)
+                io.netty.util.concurrent.DefaultPromise.await0(long, boolean) @bci=137, line=361 (Compiled frame)
+                io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(long, java.util.concurrent.TimeUnit) @bci=7, line=312 (Compiled frame) com.lambdaworks.redis.RedisAsyncConnection.await(io.netty.util.concurrent.Future, long,
+                java.util.concurrent.TimeUnit) @bci=4, line=1231 (Compiled frame)
+                com.lambdaworks.redis.RedisConnection.await(io.netty.util.concurrent.Future) @bci=13, line=864 (Compiled frame)
+                com.lambdaworks.redis.RedisConnection.multi() @bci=8, line=408 (Compiled frame)
+                org.redisson.RedissonLock.unlock(com.lambdaworks.redis.RedisConnection) @bci=8, line=391 (Compiled frame)
+                org.redisson.RedissonLock.access$300(org.redisson.RedissonLock, com.lambdaworks.redis.RedisConnection) @bci=2, line=45 (Compiled frame)
+                org.redisson.RedissonLock$4.execute(com.lambdaworks.redis.RedisConnection) @bci=84, line=374 (Compiledframe)
+                org.redisson.RedissonLock$4.execute(com.lambdaworks.redis.RedisConnection) @bci=2, line=363 (Compiled frame)
+                org.redisson.connection.MasterSlaveConnectionManager.write(org.redisson.async.SyncOperation, int) @bci=7, line=255 (Compiled frame)
+                org.redisson.connection.MasterSlaveConnectionManager.write(org.redisson.async.SyncOperation) @bci=3, line=248 (Compiled frame)
+                org.redisson.RedissonLock.unlock() @bci=12, line=363 (Compiled frame)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.connection.ClusterPartition.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="106" opendate="2014-12-17 00:00:00" fixdate="2015-09-04 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>date datum iterator condition redissonlist race hasnext list
+            </summary>
+            <description>date datum iterator condition redissonlist race hasnext list
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonList.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="169" opendate="2015-05-31 00:00:00" fixdate="2015-06-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ConnectionManager CommandHandler MasterSlaveConnectionManager
+            </summary>
+            <description>ConnectionManager CommandHandler MasterSlaveConnectionManager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.lambdaworks.redis.protocol.Command.java</file>
+            <file type="M">com.lambdaworks.redis.protocol.CommandOutput.java</file>
+            <file type="M">com.lambdaworks.redis.protocol.RedisStateMachine.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+            <file type="M">org.redisson.RedissonMapTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="199" opendate="2015-07-29 00:00:00" fixdate="2015-08-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>handler stack nioeventloopgroup range redisson slot deque number newfixedthreadpool trace event
+                info tail defaultchannelpipeline clusterconnectionmanager concurrency pipeline warn performance million
+                exceptioncaught runnables
+            </summary>
+            <description>handler stack nioeventloopgroup range redisson slot deque number newfixedthreadpool trace event
+                info tail defaultchannelpipeline clusterconnectionmanager concurrency pipeline warn performance million
+                exceptioncaught runnables
+                at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:425)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:230)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+                at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+                at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+                at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+                at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+                at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonList.java</file>
+            <file type="M">org.redisson.client.handler.CommandDecoder.java</file>
+            <file type="M">org.redisson.connection.ClusterConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="254" opendate="2015-10-02 00:00:00" fixdate="2015-10-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>eofexception handler nioeventloopgroup redisson sec default lock event unlock rlock issue tail
+                countdown defaultchannelpipeline serializationcodec sync pipeline warn environment exceptioncaught
+                jsonjacksoncodec expiration
+            </summary>
+            <description>eofexception handler nioeventloopgroup redisson sec default lock event unlock rlock issue tail
+                countdown defaultchannelpipeline serializationcodec sync pipeline warn environment exceptioncaught
+                jsonjacksoncodec expiration
+                at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:425)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:230)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+                at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+                at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+                at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+                at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:110)
+                at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonCountDownLatch.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.client.protocol.RedisCommands.java</file>
+            <file type="M">org.redisson.client.protocol.RedisStrictCommand.java</file>
+            <file type="M">org.redisson.BaseTest.java</file>
+            <file type="M">org.redisson.RedissonTwoLockedThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="455" opendate="2016-03-29 00:00:00" fixdate="2016-06-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>waiting latecy latency project redisson percent redi redis network mode load lock place prio issue
+                test query suggestion monitor check processor call defaultpromise
+            </summary>
+            <description>waiting latecy latency project redisson percent redi redis network mode load lock place prio
+                issue test query suggestion monitor check processor call defaultpromise
+                at java.lang.Object.wait(Native Method)
+                at java.lang.Object.wait(Object.java:503)
+                at io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(DefaultPromise.java:286)
+                - locked#0x0000000600aa3e50> (a io.netty.util.concurrent.DefaultPromise)
+                at io.netty.util.concurrent.DefaultPromise.awaitUninterruptibly(DefaultPromise.java:32)
+                at org.redisson.command.CommandAsyncService.get(CommandAsyncService.java:84)
+                at org.redisson.RedissonObject.get(RedissonObject.java:49)
+                at org.redisson.RedissonLock.tryAcquire(RedissonLock.java:139)
+                at org.redisson.RedissonLock.tryLock(RedissonLock.java:225)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.connection.ConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveEntry.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribe.java</file>
+            <file type="M">org.redisson.RedissonLockHeavyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="486" opendate="2016-05-05 00:00:00" fixdate="2016-06-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster latency run reddison redis thanks lock key zhxjouc unlock rlock issue unlocking pool help
+                performance delay size setup
+            </summary>
+            <description>cluster latency run reddison redis thanks lock key zhxjouc unlock rlock issue unlocking pool
+                help performance delay size setup
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.connection.ConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveEntry.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribe.java</file>
+            <file type="M">org.redisson.RedissonLockHeavyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="491" opendate="2016-05-16 00:00:00" fixdate="2016-06-16 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request listener channel subscription timeout result prevent unsubscribe loop get lock netty
+                algorithm work ttl way concurrency opinion response step lease position
+            </summary>
+            <description>request listener channel subscription timeout result prevent unsubscribe loop get lock netty
+                algorithm work ttl way concurrency opinion response step lease position
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.cluster.ClusterConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="530" opendate="2016-06-15 00:00:00" fixdate="2016-07-04 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server deal line claster run promise deadlock load rate function get lock client connection end
+                state nobody redirection junit test issue nightmare something exit future logic headache
+            </summary>
+            <description>server deal line claster run promise deadlock load rate function get lock client connection end
+                state nobody redirection junit test issue nightmare something exit future logic headache
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.pubsub.PublishSubscribe.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="533" opendate="2016-06-23 00:00:00" fixdate="2016-06-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>RedissonMultiLock
+            </summary>
+            <description>RedissonMultiLock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonWriteLock.java</file>
+            <file type="M">org.redisson.core.RLock.java</file>
+            <file type="M">org.redisson.core.RedissonMultiLock.java</file>
+            <file type="M">org.redisson.core.RedissonRedLock.java</file>
+            <file type="M">org.redisson.RedissonMultiLockTest.java</file>
+            <file type="M">org.redisson.RedissonRedLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="543" opendate="2016-06-30 00:00:00" fixdate="2016-08-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster note stack instance timeout lot trylock block prio elasticache rlock pool monitor command
+                way entry environment lockpubsub aws
+            </summary>
+            <description>cluster note stack instance timeout lot trylock block prio elasticache rlock pool monitor
+                command way entry environment lockpubsub aws
+                java.lang.Thread.State: BLOCKED (on object monitor)
+                at org.redisson.pubsub.PublishSubscribe.subscribe(PublishSubscribe.java:53)
+                - waiting to lock#0x00000000dd405ea0> (a org.redisson.pubsub.LockPubSub)
+                at org.redisson.pubsub.LockPubSub.subscribe(LockPubSub.java:22)
+                at org.redisson.RedissonLock.subscribe(RedissonLock.java:311)
+                at org.redisson.RedissonLock.tryLock(RedissonLock.java:264)
+                at c.v.w.utils.caching.redis.RedisLock.tryLock(RedisLock.java:36)
+                at c.v.w.utils.caching.LeasedLock.tryLock(LeasedLock.java:19)
+                at c.v.w.eventprocessor.core.service.impl.JobProcessor.getProcessingLock(JobProcessor.java:130)
+                at c.v.w.eventprocessor.core.service.impl.JobProcessor.access$000(JobProcessor.java:47)
+                at c.v.w.webscan.eventprocessor.core.service.impl.JobProcessor$Processor.execute(JobProcessor.java:193)
+                at c.v.w.service.integration.core.DataContextAwareTask.run(DataContextAwareTask.java:59)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonPatternTopic.java</file>
+            <file type="M">org.redisson.RedissonTopic.java</file>
+            <file type="M">org.redisson.connection.ConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+            <file type="M">org.redisson.connection.MasterSlaveEntry.java</file>
+            <file type="M">org.redisson.connection.PubSubConnectionEntry.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribe.java</file>
+            <file type="M">org.redisson.reactive.RedissonPatternTopicReactive.java</file>
+            <file type="M">org.redisson.reactive.RedissonTopicReactive.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="757" opendate="2017-01-28 00:00:00" fixdate="2017-10-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>unlock static test log logger test example clase delay fairlock executor lock info
+            </summary>
+            <description>unlock static test log logger test example clase delay fairlock executor lock info
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonFairLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="758" opendate="2017-01-29 00:00:00" fixdate="2022-07-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>rreadwritelock configuration reentrantreadwritelock wiki redisson readwritelock acquire
+                redislockservice javadoc emphasis lock end write case clause mine reentrancy issue warn success vice
+                versa page writer reentrant
+            </summary>
+            <description>rreadwritelock configuration reentrantreadwritelock wiki redisson readwritelock acquire
+                redislockservice javadoc emphasis lock end write case clause mine reentrancy issue warn success vice
+                versa page writer reentrant
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonWriteLock.java</file>
+            <file type="M">org.redisson.RedissonReadWriteLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="775" opendate="2017-02-17 00:00:00" fixdate="2017-06-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>gun server chaos keys channel update redistimeoutexception argv redis timeout hexist slave
+                redissonlock failover param lock block expiration pixel key
+            </summary>
+            <description>gun server chaos keys channel update redistimeoutexception argv redis timeout hexist slave
+                redissonlock failover param lock block expiration pixel key
+                at org.redisson.command.CommandAsyncService$10.run(CommandAsyncService.java:647)
+                at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:581)
+                at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:656)
+                at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:367)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.config.Config.java</file>
+            <file type="M">org.redisson.RedissonFairLockTest.java</file>
+            <file type="M">org.redisson.RedissonLockTest.java</file>
+            <file type="M">org.redisson.RedissonReadWriteLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="828" opendate="2017-03-30 00:00:00" fixdate="2017-04-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster handler factory test uribuilder replaceurlfactory good url newfactory call url factory
+                restoreurlfactory null scenario ebersb setup create value currentfactory case
+            </summary>
+            <description>cluster handler factory test uribuilder replaceurlfactory good url newfactory call url factory
+                restoreurlfactory null scenario ebersb setup create value currentfactory case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.misc.URLBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="889" opendate="2017-05-24 00:00:00" fixdate="2018-09-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor parking waiting redisson provider collections executor lock
+                abstractqueuedsynchronizer jcache ejb netty cache issue pool timed_waiting warn async semaphore http
+                selectedselectionkeyset cacheresultinterceptor epollselectorimpl
+            </summary>
+            <description>threadpoolexecutor parking waiting redisson provider collections executor lock
+                abstractqueuedsynchronizer jcache ejb netty cache issue pool timed_waiting warn async semaphore http
+                selectedselectionkeyset cacheresultinterceptor epollselectorimpl
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1033)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1326)
+                at java.util.concurrent.Semaphore.tryAcquire(Semaphore.java:414)
+                at org.redisson.RedissonLock.lockInterruptibly(RedissonLock.java:133)
+                at org.redisson.RedissonLock.lock(RedissonLock.java:99)
+                at org.redisson.jcache.JCache.getLockedLock(JCache.java:746)
+                at org.redisson.jcache.JCache.get(JCache.java:194)
+                at com.contaazul.cache.FailSafeCache.get(FailSafeCache.java:21)
+                at org.jsr107.ri.annotations.AbstractCacheResultInterceptor.cacheResult(AbstractCacheResultInterceptor.java:71)
+                at com.contaazul.cache.cdi.interceptor.CacheResultInterceptor.cacheResult(CacheResultInterceptor.java:28)
+                at sun.reflect.GeneratedMethodAccessor141.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:606)
+                at org.jboss.weld.interceptor.proxy.SimpleMethodInvocation.invoke(SimpleMethodInvocation.java:30)
+                at org.jboss.weld.interceptor.proxy.SimpleInterceptionChain.invokeNextInterceptor(SimpleInterceptionChain.java:69)
+                at org.jboss.weld.bean.InterceptorImpl.intercept(InterceptorImpl.java:92)
+                at org.jboss.as.weld.ejb.DelegatingInterceptorInvocationContext.proceed(DelegatingInterceptorInvocationContext.java:71)
+                at org.jboss.as.weld.ejb.Jsr299BindingsInterceptor.delegateInterception(Jsr299BindingsInterceptor.java:72)
+                at org.jboss.as.weld.ejb.Jsr299BindingsInterceptor.doMethodInterception(Jsr299BindingsInterceptor.java:84)
+                at org.jboss.as.weld.ejb.Jsr299BindingsInterceptor.processInvocation(Jsr299BindingsInterceptor.java:97)
+                at org.jboss.as.ee.component.interceptors.UserInterceptorFactory$1.processInvocation(UserInterceptorFactory.java:63)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+                at org.jboss.invocation.WeavedInterceptor.processInvocation(WeavedInterceptor.java:53)
+                at org.jboss.as.ee.component.interceptors.UserInterceptorFactory$1.processInvocation(UserInterceptorFactory.java:63)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+                at org.jboss.as.ejb3.component.invocationmetrics.ExecutionTimeInterceptor.processInvocation(ExecutionTimeInterceptor.java:43)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+                at org.jboss.as.jpa.interceptor.SBInvocationInterceptor.processInvocation(SBInvocationInterceptor.java:47)
+                at org.jboss.invocation.InterceptorContext.proceed(InterceptorContext.java:288)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonMap.java</file>
+            <file type="M">org.redisson.BaseMapTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="891" opendate="2017-05-25 00:00:00" fixdate="2017-10-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>rreadwritelock unlock read check while way yesterday holding incompatible environment confuse sorry
+                throw lock logic describe illegalmonitorexception write reentry
+            </summary>
+            <description>rreadwritelock unlock read check while way yesterday holding incompatible environment confuse
+                sorry throw lock logic describe illegalmonitorexception write reentry
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonReadWriteLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1048" opendate="2017-09-12 00:00:00" fixdate="2017-10-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hang test batch show redisson stacktrack error command timeout rbatch lockwatchdogtimeout client
+                try
+            </summary>
+            <description>hang test batch show redisson stacktrack error command timeout rbatch lockwatchdogtimeout
+                client try
+                at org.redisson.connection.MasterSlaveConnectionManager.getEntry(MasterSlaveConnectionManager.java:684)
+                at org.redisson.connection.MasterSlaveConnectionManager.connectionWriteOp(MasterSlaveConnectionManager.java:674)
+                at org.redisson.command.CommandBatchService.execute(CommandBatchService.java:258)
+                at org.redisson.command.CommandBatchService.access$100(CommandBatchService.java:59) ~[Redisson-3.x.jar:?]
+                at org.redisson.command.CommandBatchService$5.operationComplete(CommandBatchService.java:331)
+                at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:507)
+                at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:500)
+                at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:479)
+                at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:420)
+                at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:122)
+                at org.redisson.misc.RedissonPromise.tryFailure(RedissonPromise.java:98)
+                at org.redisson.client.handler.CommandDecoder.decodeCommandBatch(CommandDecoder.java:207)
+                at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:135)
+                at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
+                at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:367)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+                at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:86)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1104" opendate="2017-10-18 00:00:00" fixdate="2019-05-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>dst production redisson mylock dfaa timeout redis gmt redisson_lock_timeout pst redisson_lock_queue
+                rfairlock hour lock operating key issue locking zscore tuesday withscore future october queue
+            </summary>
+            <description>dst production redisson mylock dfaa timeout redis gmt redisson_lock_timeout pst
+                redisson_lock_queue rfairlock hour lock operating key issue locking zscore tuesday withscore future
+                october queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonFairLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1268" opendate="2018-01-30 00:00:00" fixdate="2018-03-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>RedissonTopic removeAllListeners blocked CountDownLatch
+            </summary>
+            <description>RedissonTopic removeAllListeners blocked CountDownLatch
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x00000006cc5406a8> (a java.util.concurrent.CountDownLatch$Sync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:997)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1304)
+                at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:231)
+                at org.redisson.pubsub.AsyncSemaphore.acquireUninterruptibly(AsyncSemaphore.java:49)
+                at org.redisson.RedissonTopic.removeAllListeners(RedissonTopic.java:89)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.connection.MasterSlaveConnectionManager.java</file>
+            <file type="M">org.redisson.RedissonPatternTopic.java</file>
+            <file type="M">org.redisson.RedissonTopic.java</file>
+            <file type="M">org.redisson.pubsub.AsyncSemaphore.java</file>
+            <file type="M">org.redisson.reactive.RedissonPatternTopicReactive.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1433" opendate="2018-05-10 00:00:00" fixdate="2019-02-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Concurrent calls to RemoteService should not result in an exception
+            </summary>
+            <description>Concurrent calls to RemoteService should not result in an exception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonRemoteServiceTest.java</file>
+            <file type="M">org.redisson.remote.RemoteServiceResponse.java</file>
+            <file type="M">org.redisson.BaseRemoteService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1602" opendate="2018-08-24 00:00:00" fixdate="2018-09-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>configuration redisson recovery redis timeout network database password client connectionpoolsize
+                behavior case connecttimeout unlock address expirationrenewal execute connectionminimumidlesize fail
+                throw service success
+            </summary>
+            <description>configuration redisson recovery redis timeout network database password client
+                connectionpoolsize behavior case connecttimeout unlock address expirationrenewal execute
+                connectionminimumidlesize fail throw service success
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonWriteLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1626" opendate="2018-09-06 00:00:00" fixdate="2018-09-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>illegalmonitorstateexception sibjapgtpcxab com instance redisson deadlock redistimeoutexception
+                redis timeout qsw param lockwatchdogtimeout lock jcache case key elasticache sibjapgtpcxa unlock issue
+                sibjapgtpcx watchdog redissonlock lease aws
+            </summary>
+            <description>illegalmonitorstateexception sibjapgtpcxab com instance redisson deadlock redistimeoutexception
+                redis timeout qsw param lockwatchdogtimeout lock jcache case key elasticache sibjapgtpcxa unlock issue
+                sibjapgtpcx watchdog redissonlock lease aws
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonWriteLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1950" opendate="2019-03-04 00:00:00" fixdate="2019-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>priorityblockingqueue longcodec immediateeventexecutor keys redisson promise decode error argv
+                redis network lock commanddata blow case netty redisson_sortedset_lock serverconfig
+                cancellationexception command hexist masterslaveserversconfig redissonpromise
+            </summary>
+            <description>priorityblockingqueue longcodec immediateeventexecutor keys redisson promise decode error argv
+                redis network lock commanddata blow case netty redisson_sortedset_lock serverconfig
+                cancellationexception command hexist masterslaveserversconfig redissonpromise
+                at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2263)
+                at org.redisson.misc.RedissonPromise.cancel(RedissonPromise.java:239)
+                at org.redisson.command.CommandAsyncService$13.run(CommandAsyncService.java:941)
+                at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:682)
+                at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:757)
+                at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:485)
+                at java.lang.Thread.run(Thread.java:745)
+                at java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2263)
+                at org.redisson.misc.RedissonPromise.cancel(RedissonPromise.java:239)
+                at org.redisson.command.CommandAsyncService$13.run(CommandAsyncService.java:941)
+                at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:682)
+                at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:757)
+                at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:485)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1966" opendate="2019-03-08 00:00:00" fixdate="2021-06-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server configuration redisson section run deadlock attempt redis timeout default feature lock
+                client enter behavior case add unlock start pause command task response operation
+            </summary>
+            <description>server configuration redisson section run deadlock attempt redis timeout default feature lock
+                client enter behavior case add unlock start pause command task response operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2099" opendate="2019-05-09 00:00:00" fixdate="2019-08-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server testtimeoutdrift redisson deadlock redis timeout redisson_lock_timeout redissonfairlock
+                example trylock redisson_lock_queue lock acquirefailedasync day case example_fair_lock hgetall issue
+                threadid delay future redissonfairlocktest queue
+            </summary>
+            <description>server testtimeoutdrift redisson deadlock redis timeout redisson_lock_timeout redissonfairlock
+                example trylock redisson_lock_queue lock acquirefailedasync day case example_fair_lock hgetall issue
+                threadid delay future redissonfairlocktest queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonFairLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2278" opendate="2019-08-27 00:00:00" fixdate="2019-10-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor configuration millisecond redisson deadlock acquire redis redissonfairlock sleep
+                default relate load fairlock stuck lock client behavior case key change executorservice system lease
+                max_value
+            </summary>
+            <description>threadpoolexecutor configuration millisecond redisson deadlock acquire redis redissonfairlock
+                sleep default relate load fairlock stuck lock client behavior case key change executorservice system
+                lease max_value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonFairLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2355" opendate="2019-10-10 00:00:00" fixdate="2020-12-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>RedissonLock unlock hangs infinitely waiting for RedissonPromise
+            </summary>
+            <description>RedissonLock unlock hangs infinitely waiting for RedissonPromise
+                at org.redisson.misc.RedissonPromise$$Lambda$50/265319658.operationComplete()
+                at org.redisson.RedissonLock.cancelExpirationRenewal(RedissonLock.java:330)
+                at org.redisson.RedissonLock.lambda$unlockAsync$3(RedissonLock.java:583)
+                at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:187)
+                at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+                at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+                at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+                at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+                at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+                at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:604)
+                at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:104)
+                at org.redisson.misc.RedissonPromise.trySuccess(RedissonPromise.java:82)
+                at org.redisson.command.RedisExecutor.handleReference(RedisExecutor.java:505)
+                at org.redisson.command.RedisExecutor.handleSuccess(RedisExecutor.java:498)
+                at org.redisson.command.RedisExecutor.handleResult(RedisExecutor.java:483)
+                at org.redisson.command.RedisExecutor.checkAttemptPromise(RedisExecutor.java:469)
+                at org.redisson.command.RedisExecutor.lambda$execute$3(RedisExecutor.java:187)
+                at org.redisson.misc.RedissonPromise.lambda$onComplete$0(RedissonPromise.java:187)
+                at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:577)
+                at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:570)
+                at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:549)
+                at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:490)
+                at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:615)
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2575" opendate="2020-02-07 00:00:00" fixdate="2022-01-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sub server ping channel redisson subscription error redis timeout workaround number leak leasetime
+                lock connection case order subscribe pool timeunit lockinterruptibly unit redissonlock size pub minimum
+            </summary>
+            <description>sub server ping channel redisson subscription error redis timeout workaround number leak
+                leasetime lock connection case order subscribe pool timeunit lockinterruptibly unit redissonlock size
+                pub minimum
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLockEntry.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribe.java</file>
+            <file type="M">org.redisson.RedissonLockTest.java</file>
+            <file type="M">org.redisson.command.CommandAsyncService.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribeService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2690" opendate="2020-04-13 00:00:00" fixdate="2020-04-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>npe race issue redissonsessionrepository session listener nullpointerexception matching spring
+                onmessage condition startup topic initialization initialize order
+            </summary>
+            <description>npe race issue redissonsessionrepository session listener nullpointerexception matching spring
+                onmessage condition startup topic initialization initialize order
+                at org.redisson.spring.session.RedissonSessionRepository.onMessage(RedissonSessionRepository.java:303)
+                at org.redisson.spring.session.RedissonSessionRepository.onMessage(RedissonSessionRepository.java:58)
+                at org.redisson.PubSubPatternMessageListener.onPatternMessage(PubSubPatternMessageListener.java:83)
+                at org.redisson.client.RedisPubSubConnection.onMessage(RedisPubSubConnection.java:84)
+                at org.redisson.client.handler.CommandPubSubDecoder.lambda$enqueueMessage$0(CommandPubSubDecoder.java:181)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.lang.Thread.run(Thread.java:748)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.spring.session.RedissonSessionRepository.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2692" opendate="2020-04-13 00:00:00" fixdate="2020-04-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>redisexception server changesessionid instance pooledunsafedirectbytebuf production redissonsession
+                session psetex pttl channel spring widx number cap param expiredkey err race changesessionid command
+                condition ridx
+            </summary>
+            <description>redisexception server changesessionid instance pooledunsafedirectbytebuf production
+                redissonsession session psetex pttl channel spring widx number cap param expiredkey err race
+                changesessionid command condition ridx
+                at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:355)
+                at org.redisson.client.handler.CommandDecoder.decodeCommandBatch(CommandDecoder.java:266)
+                at org.redisson.client.handler.CommandDecoder.decodeCommand(CommandDecoder.java:207)
+                at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:134)
+                at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:104)
+                at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+                at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:366)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+                at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1486)
+                at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1235)
+                at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1282)
+                at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+                at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+                at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+                at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+                at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+                at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.spring.session.RedissonSessionRepository.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2714" opendate="2020-04-21 00:00:00" fixdate="2022-06-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>RedissonLock tryLock interrupted keep renew lock
+            </summary>
+            <description>RedissonLock tryLock interrupted keep renew lock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonBaseLock.java</file>
+            <file type="M">org.redisson.command.CommandAsyncService.java</file>
+            <file type="M">org.redisson.RedissonLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2883" opendate="2020-07-02 00:00:00" fixdate="2021-07-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>test starter redisson deadlock program executorservice redis redissonfairlock redisson_lock_timeout
+                spring sleep running redisson_lock_queue redissonlock withscore endlok boot testredisson case max_value
+            </summary>
+            <description>test starter redisson deadlock program executorservice redis redissonfairlock
+                redisson_lock_timeout spring sleep running redisson_lock_queue redissonlock withscore endlok boot
+                testredisson case max_value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonFairLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3484" opendate="2021-03-16 00:00:00" fixdate="2021-03-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>instance keys subject pttl internallockleasetime argv cam redis trylockinnerasync nil leasetime
+                lock end invaild hincrby pexpire command concurrency getname call hexist watchdog redissonlock
+            </summary>
+            <description>instance keys subject pttl internallockleasetime argv cam redis trylockinnerasync nil leasetime
+                lock end invaild hincrby pexpire command concurrency getname call hexist watchdog redissonlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonReadLock.java</file>
+            <file type="M">org.redisson.RedissonWriteLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4033" opendate="2021-12-19 00:00:00" fixdate="2022-04-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server debug rlock configuration line redisson waittime redis fail success redissonmultilock
+                remaintime currenttimemilli lock step behavior multilock case flow
+            </summary>
+            <description>server debug rlock configuration line redisson waittime redis fail success redissonmultilock
+                remaintime currenttimemilli lock step behavior multilock case flow
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLock.java</file>
+            <file type="M">org.redisson.RedissonMultiLock.java</file>
+            <file type="M">org.redisson.RedissonFairLock.java</file>
+            <file type="M">org.redisson.RedissonSpinLock.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4064" opendate="2022-01-07 00:00:00" fixdate="2022-01-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>unlock lockkey test locking pool channel redisson redisson_lock error redis timeout redissonlock
+                lock pub key case reddistest info
+            </summary>
+            <description>unlock lockkey test locking pool channel redisson redisson_lock error redis timeout
+                redissonlock lock pub key case reddistest info
+                at org.redisson.command.CommandAsyncService.syncSubscription(CommandAsyncService.java:88)
+                at org.redisson.RedissonLock.lock(RedissonLock.java:107)
+                at org.redisson.RedissonLock.lock(RedissonLock.java:69)
+                at com.bprocare.atc.ReddisTest.lambda$main$0(ReddisTest.java:33)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at java.lang.Thread.run(Thread.java:748)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.redisson.RedissonLockEntry.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribe.java</file>
+            <file type="M">org.redisson.RedissonLockTest.java</file>
+            <file type="M">org.redisson.command.CommandAsyncService.java</file>
+            <file type="M">org.redisson.pubsub.PublishSubscribeService.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

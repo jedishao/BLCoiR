@@ -1,0 +1,1681 @@
+<bugrepository name="tomcat70">
+    <bug id="39769" opendate="2006-06-09 20:09:27" fixdate="2006-06-15 22:21:01" resolution="Fixed">
+        <buginformation>
+            <summary>myServlet destroy StandardWrapper StandardCalssLoader swallowOutput
+            </summary>
+            <description>myServlet destroy StandardWrapper StandardCalssLoader swallowOutput
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardWrapper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="40380" opendate="2006-08-31 18:57:30" fixdate="2009-07-17 04:16:21" resolution="Fixed">
+        <buginformation>
+            <summary>syncro manager null expiring StandardSessio
+            </summary>
+            <description>syncro manager null expiring StandardSessio
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.session.StandardSession.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="42530" opendate="2007-05-27 21:26:55" fixdate="2008-10-08 07:15:05" resolution="Fixed">
+        <buginformation>
+            <summary>request tomcat session line manner httpservletrequest remove backgroundprocess result findsession
+                lock hashmap doget add think managerbase invalidate nullpointerexception processexpire toarray
+                concurrenthashmap servlets operation
+            </summary>
+            <description>request tomcat session line manner httpservletrequest remove backgroundprocess result
+                findsession lock hashmap doget add think managerbase invalidate nullpointerexception processexpire
+                toarray concurrenthashmap servlets operation
+                at org.apache.catalina.session.ManagerBase.processExpires(ManagerBase.java:682)
+                at org.apache.catalina.session.ManagerBase.backgroundProcess(ManagerBase.java:667)
+                at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1316)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1601)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1610)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1610)
+                at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1590)
+                at java.lang.Thread.run(Thread.java:595)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.session.ManagerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="45453" opendate="2008-07-22 02:25:02" fixdate="2008-08-14 02:37:32" resolution="Fixed">
+        <buginformation>
+            <summary>allow server cache jdbcrealm digestauthenticator jdbc executequery observe setstring
+                preparedstatement confuse preparedroles driver postgresql response digest synchronization case getrole
+                username authentication
+            </summary>
+            <description>allow server cache jdbcrealm digestauthenticator jdbc executequery observe setstring
+                preparedstatement confuse preparedroles driver postgresql response digest synchronization case getrole
+                username authentication
+                org.postgresql.jdbc2.AbstractJdbc2Statement.execute(AbstractJdbc2Statement.java:451)
+                org.postgresql.jdbc2.AbstractJdbc2Statement.executeWithFlags(AbstractJdbc2Statement.java:350)
+                org.postgresql.jdbc2.AbstractJdbc2Statement.executeQuery(AbstractJdbc2Statement.java:254)
+                org.apache.catalina.realm.JDBCRealm.getRoles(JDBCRealm.java:631)
+                org.apache.catalina.realm.JDBCRealm.getPrincipal(JDBCRealm.java:596)
+                org.apache.catalina.realm.RealmBase.authenticate(RealmBase.java:399)
+                org.apache.catalina.authenticator.DigestAuthenticator.findPrincipal(DigestAuthenticator.java:283)
+                org.apache.catalina.authenticator.DigestAuthenticator.authenticate(DigestAuthenticator.java:176)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.realm.JDBCRealm.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="47158" opendate="2009-05-05 15:12:45" fixdate="2009-11-02 13:58:48" resolution="Fixed">
+        <buginformation>
+            <summary>accesslogvalve think condition race variable class article
+            </summary>
+            <description>accesslogvalve think condition race variable class article
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.valves.AccessLogValve.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="47524" opendate="2009-07-14 06:20:02" fixdate="2009-07-17 01:42:36" resolution="Fixed">
+        <buginformation>
+            <summary>McastServiceImpl executor ReceiverBase
+            </summary>
+            <description>McastServiceImpl executor ReceiverBase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.membership.McastServiceImpl.java</file>
+            <file type="M">org.apache.catalina.tribes.transport.ReceiverBase.java</file>
+            <file type="M">org.apache.catalina.tribes.util.ExecutorFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48172" opendate="2009-11-11 03:23:50" fixdate="2009-11-18 15:35:24" resolution="Fixed">
+        <buginformation>
+            <summary>synch getter instance classpath codesource constructor say jspreloadcount getjspreloadcount javadoc
+                field synchronise final jspruntimecontext atomicinteger value
+            </summary>
+            <description>synch getter instance classpath codesource constructor say jspreloadcount getjspreloadcount
+                javadoc field synchronise final jspruntimecontext atomicinteger value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.jasper.compiler.JspRuntimeContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48234" opendate="2009-11-18 17:41:42" fixdate="2009-11-18 18:26:18" resolution="Fixed">
+        <buginformation>
+            <summary>synch parent private access apply logname logger getlogger unsynch javadoc subclass consideration
+                state
+            </summary>
+            <description>synch parent private access apply logname logger getlogger unsynch javadoc subclass
+                consideration state
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ContainerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48248" opendate="2009-11-20 04:56:14" fixdate="2009-11-22 16:31:47" resolution="Fixed">
+        <buginformation>
+            <summary>MessageDispatchInterceptor volatile
+            </summary>
+            <description>MessageDispatchInterceptor volatile
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.group.GroupChannel.java</file>
+            <file type="M">org.apache.catalina.tribes.group.interceptors.MessageDispatchInterceptor.java</file>
+            <file type="M">org.apache.catalina.tribes.group.interceptors.TcpPingInterceptor.java</file>
+            <file type="M">org.apache.catalina.tribes.membership.McastServiceImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48249" opendate="2009-11-20 05:06:47" fixdate="2009-11-22 16:28:11" resolution="Fixed">
+        <buginformation>
+            <summary>BlockPoller volatile
+            </summary>
+            <description>BlockPoller volatile
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.NioBlockingSelector.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48399" opendate="2009-12-16 19:20:55" fixdate="2009-12-19 19:46:09" resolution="Fixed">
+        <buginformation>
+            <summary>DeltaSession diffLock
+            </summary>
+            <description>DeltaSession diffLock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.ha.session.DeltaSession.java</file>
+            <file type="M">org.apache.catalina.tribes.group.interceptors.OrderInterceptor.java</file>
+            <file type="M">modules.jdbc-pool.java.org.apache.tomcat.jdbc.pool.MultiLockFairBlockingQueue.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48790" opendate="2010-02-22 03:41:21" fixdate="2010-04-11 09:49:24" resolution="Fixed">
+        <buginformation>
+            <summary>ManagerBase maxActive
+            </summary>
+            <description>ManagerBase maxActive
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.ha.session.DeltaManager.java</file>
+            <file type="M">org.apache.catalina.session.ManagerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48843" opendate="2010-03-02 17:43:49" fixdate="2010-06-22 04:55:08" resolution="Fixed">
+        <buginformation>
+            <summary>request workerthread stack waiting tomcat section mailing while curthreadsbusy block event class
+                acceptor archive maxthread recycleworkerthread list getworkerthread sequence service processsocket http
+                createworkerthread
+            </summary>
+            <description>request workerthread stack waiting tomcat section mailing while curthreadsbusy block event
+                class acceptor archive maxthread recycleworkerthread list getworkerthread sequence service processsocket
+                http createworkerthread
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.AprEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48895" opendate="2010-03-11 22:20:01" fixdate="2010-10-27 15:32:18" resolution="Fixed">
+        <buginformation>
+            <summary>date webapp request memory instance production tomcat webappclassloader remove leak default barrier
+                state worker expungestaleentry structure clearing threadlocal concurrency threadlocalmap
+                clearthreadlocalmap background clearreferencesthreadlocal
+            </summary>
+            <description>date webapp request memory instance production tomcat webappclassloader remove leak default
+                barrier state worker expungestaleentry structure clearing threadlocal concurrency threadlocalmap
+                clearthreadlocalmap background clearreferencesthreadlocal
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardContext.java</file>
+            <file type="M">org.apache.catalina.loader.WebappClassLoader.java</file>
+            <file type="M">org.apache.catalina.loader.WebappLoader.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49129" opendate="2010-04-14 19:09:31" fixdate="2010-04-14 19:13:50" resolution="Fixed">
+        <buginformation>
+            <summary>DigestAuthenticator md5Helper
+            </summary>
+            <description>DigestAuthenticator md5Helper
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.authenticator.DigestAuthenticator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49144" opendate="2010-04-16 21:47:20" fixdate="2010-04-23 10:00:45" resolution="Fixed">
+        <buginformation>
+            <summary>static contain visible futher contextdigester update say store good something setting daemon
+                findbugs field initialization multithreading location value
+            </summary>
+            <description>static contain visible futher contextdigester update say store good something setting daemon
+                findbugs field initialization multithreading location value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.startup.Bootstrap.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49567" opendate="2010-07-07 09:22:22" fixdate="2010-10-10 17:11:27" resolution="Fixed">
+        <buginformation>
+            <summary>server amount tomcat error startasync testcase async attachment detail demonstrate generate dopost
+                status
+            </summary>
+            <description>server amount tomcat error startasync testcase async attachment detail demonstrate generate
+                dopost status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.connector.CoyoteAdapter.java</file>
+            <file type="M">org.apache.catalina.connector.Request.java</file>
+            <file type="M">org.apache.catalina.core.AsyncContextImpl.java</file>
+            <file type="M">org.apache.coyote.http11.Http11Processor.java</file>
+            <file type="M">org.apache.catalina.core.TestAsyncContextImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49730" opendate="2010-08-09 16:16:04" fixdate="2010-11-04 10:28:20" resolution="Fixed">
+        <buginformation>
+            <summary>StandardThreadExecutor TaskQueue offer minSpareThreads
+            </summary>
+            <description>StandardThreadExecutor TaskQueue offer minSpareThreads
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.threads.TaskQueue.java</file>
+            <file type="M">org.apache.tomcat.util.threads.ThreadPoolExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49905" opendate="2010-09-09 07:22:00" fixdate="2010-10-07 07:06:56" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor setcontextclassloader memory instance log webappclassloader bindthread creditdev
+                error deltamanager newthread patch leak webapplication attachment solution executor context
+                contextclassloader pool addifundercorepoolsize message jdk node tribe
+            </summary>
+            <description>threadpoolexecutor setcontextclassloader memory instance log webappclassloader bindthread
+                creditdev error deltamanager newthread patch leak webapplication attachment solution executor context
+                contextclassloader pool addifundercorepoolsize message jdk node tribe
+                at java.util.concurrent.ThreadPoolExecutor.addThread(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor.addIfUnderCorePoolSize(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor.execute(Unknown Source)
+                at org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor.addToQueue(MessageDispatch15Interceptor.java:67)
+                at org.apache.catalina.tribes.group.interceptors.MessageDispatchInterceptor.sendMessage(MessageDispatchInterceptor.java:68)
+                at org.apache.catalina.tribes.group.ChannelInterceptorBase.sendMessage(ChannelInterceptorBase.java:75)
+                at org.apache.catalina.tribes.group.interceptors.TcpFailureDetector.sendMessage(TcpFailureDetector.java:87)
+                at org.apache.catalina.tribes.group.ChannelInterceptorBase.sendMessage(ChannelInterceptorBase.java:75)
+                at org.apache.catalina.tribes.group.GroupChannel.send(GroupChannel.java:216)
+                at org.apache.catalina.tribes.group.GroupChannel.send(GroupChannel.java:175)
+                at org.apache.catalina.ha.tcp.SimpleTcpCluster.send(SimpleTcpCluster.java:813)
+                at org.apache.catalina.ha.session.DeltaManager.getAllClusterSessions(DeltaManager.java:959)
+                at org.apache.catalina.ha.session.DeltaManager.start(DeltaManager.java:930)
+                at org.apache.catalina.core.ContainerBase.setManager(ContainerBase.java:438)
+                at org.apache.catalina.core.StandardContext.start(StandardContext.java:4559)
+                at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:791)
+                at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:771)
+                at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:546)
+                at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:637)
+                at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:563)
+                at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:498)
+                at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1277)
+                at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:321)
+                at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:119)
+                at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1053)
+                at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+                at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+                at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+                at org.apache.catalina.core.StandardService.start(StandardService.java:519)
+                at org.apache.catalina.core.StandardServer.start(StandardServer.java:710)
+                at org.apache.catalina.startup.Catalina.start(Catalina.java:581)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+                at java.lang.reflect.Method.invoke(Unknown Source)
+                at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:289)
+                at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:414)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+                at java.lang.reflect.Method.invoke(Unknown Source)
+                at org.tanukisoftware.wrapper.WrapperStartStopApp.run(WrapperStartStopApp.java:243)
+                at java.lang.Thread.run(Unknown Source)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.group.interceptors.MessageDispatch15Interceptor.java</file>
+            <file type="M">org.apache.catalina.tribes.util.TcclThreadFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49985" opendate="2010-09-23 08:55:42" fixdate="2010-10-04 17:16:33" resolution="Fixed">
+        <buginformation>
+            <summary>getstring datum init getinteger read getfloatingpoint race lazy line astfloatingpoint aststring
+                number astinteger synchronization initialization consider write
+            </summary>
+            <description>getstring datum init getinteger read getfloatingpoint race lazy line astfloatingpoint aststring
+                number astinteger synchronization initialization consider write
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.el.parser.AstString.java</file>
+            <file type="M">org.apache.el.parser.AstInteger.java</file>
+            <file type="M">org.apache.el.parser.AstFloatingPoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="49987" opendate="2010-09-23 10:16:06" fixdate="2010-10-13 10:42:37" resolution="Fixed">
+        <buginformation>
+            <summary>datum result read race null parameter map write applicationcontext
+            </summary>
+            <description>datum result read race null parameter map write applicationcontext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardContext.java</file>
+            <file type="M">org.apache.catalina.core.ApplicationContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50138" opendate="2010-10-21 09:22:56" fixdate="2010-10-27 02:44:00" resolution="Fixed">
+        <buginformation>
+            <summary>security SecurityUtil SecurityUtil objectCache
+            </summary>
+            <description>security SecurityUtil SecurityUtil objectCache
+                at java.util.HashMap.getEntry(HashMap.java:347)
+                at java.util.HashMap.containsKey(HashMap.java:335)
+                at org.apache.catalina.security.SecurityUtil.doAsPrivilege(SecurityUtil.java:227)
+                at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+                at org.apache.catalina.core.ApplicationFilterChain.access$000(ApplicationFilterChain.java:56)
+                at org.apache.catalina.core.ApplicationFilterChain$1.run(ApplicationFilterChain.java:189)
+                at java.security.AccessController.doPrivileged(Native Method)
+                at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:185)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.security.SecurityUtil.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50293" opendate="2010-11-18 16:58:18" fixdate="2012-02-05 19:18:05" resolution="Fixed">
+        <buginformation>
+            <summary>el CompositeELResolver ELResolver
+            </summary>
+            <description>el CompositeELResolver ELResolver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">javax.el.CompositeELResolver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50352" opendate="2010-11-27 16:30:59" fixdate="2010-11-29 12:00:30" resolution="Fixed">
+        <buginformation>
+            <summary>request webservlet servlet override myservlet httpservletrequest example call async feature
+                oncomplete asynclistener value doget
+            </summary>
+            <description>request webservlet servlet override myservlet httpservletrequest example call async feature
+                oncomplete asynclistener value doget
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.TestAsyncContextImpl.java</file>
+            <file type="M">org.apache.coyote.AsyncStateMachine.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50353" opendate="2010-11-27 17:45:41" fixdate="2011-08-15 18:53:33" resolution="Fixed">
+        <buginformation>
+            <summary>asyncContext getResponse
+            </summary>
+            <description>asyncContext getResponse
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.AsyncContextImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50459" opendate="2010-12-11 19:06:16" fixdate="2011-01-05 09:18:11" resolution="Fixed">
+        <buginformation>
+            <summary>StandardContext bindThread unbindThread DirContextURLStreamHandler
+            </summary>
+            <description>StandardContext bindThread unbindThread DirContextURLStreamHandler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50547" opendate="2011-01-06 03:48:03" fixdate="2011-01-20 14:24:04" resolution="Fixed">
+        <buginformation>
+            <summary>DeltaManager
+            </summary>
+            <description>DeltaManager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.ha.session.DeltaManager.java</file>
+            <file type="M">webapps.docs.changelog.xml</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50554" opendate="2011-01-06 14:38:25" fixdate="2011-01-07 05:32:45" resolution="Fixed">
+        <buginformation>
+            <summary>javaurlcontextfactory instance getclass pattern suggest concurrency hashtable future
+                getinitialcontext subclass lock block behavior class
+            </summary>
+            <description>javaurlcontextfactory instance getclass pattern suggest concurrency hashtable future
+                getinitialcontext subclass lock block behavior class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.naming.java.javaURLContextFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="50629" opendate="2011-01-21 07:23:54" fixdate="2011-01-21 08:17:49" resolution="Fixed">
+        <buginformation>
+            <summary>container tomcat loadonstartup work bindthread listener start filter thanks unbindthread
+                initialization protect mark
+            </summary>
+            <description>container tomcat loadonstartup work bindthread listener start filter thanks unbindthread
+                initialization protect mark
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="51185" opendate="2011-05-11 10:21:44" fixdate="2011-05-20 22:03:36" resolution="Fixed">
+        <buginformation>
+            <summary>getter tomcat createpool synchro jdbc enhancement concern lot datasourceproxy creation impact
+                grained pool philippe look regards something synchronisation call createpool component performance know
+                hello
+            </summary>
+            <description>getter tomcat createpool synchro jdbc enhancement concern lot datasourceproxy creation impact
+                grained pool philippe look regards something synchronisation call createpool component performance know
+                hello
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.jdbc.pool.DataSourceProxy.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="51197" opendate="2011-05-13 12:50:26" fixdate="2012-03-05 12:25:29" resolution="Fixed">
+        <buginformation>
+            <summary>sendError sendRedirect AsyncContext
+            </summary>
+            <description>sendError sendRedirect AsyncContext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.valves.ErrorReportValve.java</file>
+            <file type="M">org.apache.catalina.core.TestAsyncContextImpl.java</file>
+            <file type="M">org.apache.catalina.connector.CoyoteAdapter.java</file>
+            <file type="M">org.apache.catalina.core.TestAsyncContextImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="51212" opendate="2011-05-17 16:25:52" fixdate="2011-05-18 17:46:16" resolution="Fixed">
+        <buginformation>
+            <summary>reason querystats approach result patch number load attachment synchronize add execution mouawad
+                issue test query philippe regards way performance field synchornisation slowqueryreport failure atomic
+            </summary>
+            <description>reason querystats approach result patch number load attachment synchronize add execution
+                mouawad issue test query philippe regards way performance field synchornisation slowqueryreport failure
+                atomic
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="51467" opendate="2011-07-03 10:19:46" fixdate="2011-07-04 18:50:13" resolution="Fixed">
+        <buginformation>
+            <summary>mistake completion line usage standardcontext start run remove
+            </summary>
+            <description>mistake completion line usage standardcontext start run remove
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="51545" opendate="2011-07-23 09:07:02" fixdate="2011-07-26 09:43:49" resolution="Fixed">
+        <buginformation>
+            <summary>ExtendedAccessLogValve
+            </summary>
+            <description>ExtendedAccessLogValve
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.valves.ExtendedAccessLogValve.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="51688" opendate="2011-08-19 14:49:17" fixdate="2011-08-25 13:39:54" resolution="Fixed">
+        <buginformation>
+            <summary>webapp memory contextclassloader jrememoryleakpreventionlistener launch getdefaulttoolkit windows
+                alleviate condition protect xawt creation awt addition undeploy
+            </summary>
+            <description>webapp memory contextclassloader jrememoryleakpreventionlistener launch getdefaulttoolkit
+                windows alleviate condition protect xawt creation awt addition undeploy
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.JreMemoryLeakPreventionListener.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52055" opendate="2011-10-18 21:53:21" fixdate="2012-10-06 14:50:06" resolution="Fixed">
+        <buginformation>
+            <summary>request server reuse flag tomcat servlet chunkedinputfilter result inputstream post nextrequest
+                stream chunking recycle debugging buffer side read byte something input async abstractinputbuffer http
+                endchunk
+            </summary>
+            <description>request server reuse flag tomcat servlet chunkedinputfilter result inputstream post nextrequest
+                stream chunking recycle debugging buffer side read byte something input async abstractinputbuffer http
+                endchunk
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.coyote.http11.filters.ChunkedInputFilter.java</file>
+            <file type="M">org.apache.coyote.http11.AbstractInputBuffer.java</file>
+            <file type="M">org.apache.coyote.http11.InternalNioInputBuffer.java</file>
+            <file type="M">org.apache.coyote.http11.AbstractHttp11Processor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52091" opendate="2011-10-26 10:39:01" fixdate="2011-11-10 11:18:43" resolution="Fixed">
+        <buginformation>
+            <summary>instance resolve log reentrantreadwritelock standardwrapper patch web parameter lock block policy
+                taghandlerpool stress static issue test getinitparameter occur change say profiler environment field
+                slow following
+            </summary>
+            <description>instance resolve log reentrantreadwritelock standardwrapper patch web parameter lock block
+                policy taghandlerpool stress static issue test getinitparameter occur change say profiler environment
+                field slow following
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.StandardWrapper.java</file>
+            <file type="M">org.apache.jasper.runtime.TagHandlerPool.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52213" opendate="2011-11-18 23:29:32" fixdate="2011-12-23 21:16:31" resolution="Fixed">
+        <buginformation>
+            <summary>FastQueue enabled
+            </summary>
+            <description>FastQueue enabled
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.transport.bio.util.FastQueue.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52259" opendate="2011-11-28 19:32:12" fixdate="2011-12-02 08:58:03" resolution="Fixed">
+        <buginformation>
+            <summary>synchonization dead lock realm presented configuration
+            </summary>
+            <description>synchonization dead lock realm presented configuration
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ContainerBase.java</file>
+            <file type="M">org.apache.catalina.core.StandardContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52356" opendate="2011-12-18 23:41:25" fixdate="2011-12-24 00:08:34" resolution="Fixed">
+        <buginformation>
+            <summary>FastQueue size
+            </summary>
+            <description>FastQueue size
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.transport.bio.util.FastQueue.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52777" opendate="2012-02-27 03:30:27" fixdate="2012-09-08 21:12:42" resolution="Fixed">
+        <buginformation>
+            <summary>Automatically shut down old versions parallel deployment
+            </summary>
+            <description>Automatically shut down old versions parallel deployment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.Host.java</file>
+            <file type="M">org.apache.catalina.core.StandardHost.java</file>
+            <file type="M">org.apache.catalina.startup.HostConfig.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52999" opendate="2012-03-28 21:31:42" fixdate="2012-06-12 12:40:15" resolution="Fixed">
+        <buginformation>
+            <summary>container request access tomcat session firecontainerevent listener standardsession section
+                readwritelock enhancement put myface candidate helper dev array attribute copy write
+                getapplicationeventlistener locking testing list performance operation
+            </summary>
+            <description>container request access tomcat session firecontainerevent listener standardsession section
+                readwritelock enhancement put myface candidate helper dev array attribute copy write
+                getapplicationeventlistener locking testing list performance operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ContainerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="53173" opendate="2012-05-01 13:54:22" fixdate="2013-11-09 03:56:51" resolution="Fixed">
+        <buginformation>
+            <summary>parking waiting limitlatch connectiontimeout minsparethread socketstatus socket jio maxconnection
+                nio executor tomcatthreadpool rejectedexecutionexception nameprefix state case jioendpoint
+                maxkeepaliverequest acceptor redirectport socketwrapper acceptcount maxthread sync connector
+                maxqueuesize http
+            </summary>
+            <description>parking waiting limitlatch connectiontimeout minsparethread socketstatus socket jio
+                maxconnection nio executor tomcatthreadpool rejectedexecutionexception nameprefix state case jioendpoint
+                maxkeepaliverequest acceptor redirectport socketwrapper acceptcount maxthread sync connector
+                maxqueuesize http
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#xXXXXXXXX> (a org.apache.tomcat.util.threads.LimitLatch$Sync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:747)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedInterruptibly(AbstractQueuedSynchronizer.java:905)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireSharedInterruptibly(AbstractQueuedSynchronizer.java:1217)
+                at org.apache.tomcat.util.threads.LimitLatch.countUpOrAwait(LimitLatch.java:99)
+                at org.apache.tomcat.util.net.AbstractEndpoint.countUpOrAwaitConnection(AbstractEndpoint.java:660)
+                at org.apache.tomcat.util.net.JIoEndpoint$Acceptor.run(JIoEndpoint.java:210)
+                at java.lang.Thread.run(Thread.java:619)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.AprEndpoint.java</file>
+            <file type="M">org.apache.coyote.AbstractProtocol.java</file>
+            <file type="M">org.apache.tomcat.util.net.AbstractEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.AprEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.JIoEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.NioEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.threads.LimitLatch.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="53450" opendate="2012-06-21 18:22:10" fixdate="2012-06-25 16:41:00" resolution="Fixed">
+        <buginformation>
+            <summary>container parking allow hang waiting tomcat startstop reentrantreadwritelock listener run tread
+                root violeta context lock event prio write deployment localhost reentrancy upgrade daemon condition
+            </summary>
+            <description>container parking allow hang waiting tomcat startstop reentrantreadwritelock listener run tread
+                root violeta context lock event prio write deployment localhost reentrancy upgrade daemon condition
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#x00000007d80f0108> (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:158)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:811)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:842)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1178)
+                at java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.lock(ReentrantReadWriteLock.java:807)
+                at org.apache.catalina.core.ContainerBase.removeContainerListener(ContainerBase.java:1071)
+                at org.apache.catalina.core.StandardEngine$AccessLogListener.uninstall(StandardEngine.java:463)
+                at org.apache.catalina.core.StandardEngine$AccessLogListener.containerEvent(StandardEngine.java:505)
+                at org.apache.catalina.core.ContainerBase.fireContainerEvent(ContainerBase.java:1431)
+                at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:907)
+                at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:875)
+                at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:618)
+                at org.apache.catalina.startup.HostConfig.deployDirectory(HostConfig.java:1100)
+                at org.apache.catalina.startup.HostConfig$DeployDirectory.run(HostConfig.java:1618)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:441)
+                at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+                at java.lang.Thread.run(Thread.java:662)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ContainerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="53498" opendate="2012-07-02 21:19:45" fixdate="2012-08-03 18:02:06" resolution="Fixed">
+        <buginformation>
+            <summary>ConcurrentHashMap ApplicationContext
+            </summary>
+            <description>ConcurrentHashMap ApplicationContext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ApplicationContext.java</file>
+            <file type="M">org.apache.catalina.ha.context.ReplicatedContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="53624" opendate="2012-07-30 19:07:39" fixdate="2012-08-14 22:50:45" resolution="Fixed">
+        <buginformation>
+            <summary>setupredirectscenario tomcat servlet jsp asynccontext sendredirect forwardingasyncservlet
+                dispatchingasyncservlet servletcontext
+            </summary>
+            <description>setupredirectscenario tomcat servlet jsp asynccontext sendredirect forwardingasyncservlet
+                dispatchingasyncservlet servletcontext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ApplicationDispatcher.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="53843" opendate="2012-09-08 00:42:57" fixdate="2012-09-20 09:57:23" resolution="Fixed">
+        <buginformation>
+            <summary>container however dispatch dispatchertype start say spec call async that isasyncstarted processing
+                value operation case
+            </summary>
+            <description>container however dispatch dispatchertype start say spec call async that isasyncstarted
+                processing value operation case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.coyote.AsyncStateMachine.java</file>
+            <file type="M">org.apache.catalina.core.TestAsyncContextImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="54045" opendate="2012-10-23 16:03:53" fixdate="2013-02-15 20:27:16" resolution="Fixed">
+        <buginformation>
+            <summary>cluster note stack tomcat configuration heartbeat performbasiccheck membership performforcedcheck
+                send_options_use_ack fix member value map abstractreplicatedmap static issue replicatedmap message list
+                call node tcppinginterceptor tribe tcpfailuredetector acknoledge
+            </summary>
+            <description>cluster note stack tomcat configuration heartbeat performbasiccheck membership
+                performforcedcheck send_options_use_ack fix member value map abstractreplicatedmap static issue
+                replicatedmap message list call node tcppinginterceptor tribe tcpfailuredetector acknoledge
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.group.interceptors.TcpFailureDetector.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="54086" opendate="2012-11-01 13:32:28" fixdate="2013-07-01 13:09:45" resolution="Fixed">
+        <buginformation>
+            <summary>cluster access log session remove unable iterator get selector solaris key
+                concurrentmodificationexception nioreceiver replication receiver briefly way jdk node selectionkey
+                clustering
+            </summary>
+            <description>cluster access log session remove unable iterator get selector solaris key
+                concurrentmodificationexception nioreceiver replication receiver briefly way jdk node selectionkey
+                clustering
+                java.util.ConcurrentModificationException
+                java.util.HashMap$HashIterator.nextEntry(HashMap.java:894)
+                java.util.HashMap$KeyIterator.next(HashMap.java:928)
+                java.util.Collections$UnmodifiableCollection$1.next(Collections.java:1067)
+                org.apache.catalina.tribes.transport.nio.NioReceiver.closeSelector(NioReceiver.java:382)
+                org.apache.catalina.tribes.transport.nio.NioReceiver.stopListening(NioReceiver.java:365)
+                org.apache.catalina.tribes.transport.nio.NioReceiver.stop(NioReceiver.java:86)
+                org.apache.catalina.tribes.group.ChannelCoordinator.internalStop(ChannelCoordinator.java:203)
+                org.apache.catalina.tribes.group.ChannelCoordinator.stop(ChannelCoordinator.java:115)
+                org.apache.catalina.tribes.group.ChannelInterceptorBase.stop(ChannelInterceptorBase.java:178)
+                org.apache.catalina.tribes.group.ChannelInterceptorBase.stop(ChannelInterceptorBase.java:178)
+                org.apache.catalina.tribes.group.ChannelInterceptorBase.stop(ChannelInterceptorBase.java:178)
+                org.apache.catalina.tribes.group.interceptors.MessageDispatchInterceptor.stop(MessageDispatchInterceptor.java:172)
+                org.apache.catalina.tribes.group.ChannelInterceptorBase.stop(ChannelInterceptorBase.java:178)
+                org.apache.catalina.tribes.group.ChannelInterceptorBase.stop(ChannelInterceptorBase.java:178)
+                org.apache.catalina.tribes.group.GroupChannel.stop(GroupChannel.java:438)
+                org.apache.catalina.ha.tcp.SimpleTcpCluster.stopInternal(SimpleTcpCluster.java:744)
+                org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+                org.apache.catalina.core.ContainerBase.stopInternal(ContainerBase.java:1199)
+                org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+                org.apache.catalina.core.StandardService.stopInternal(StandardService.java:502)
+                org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+                org.apache.catalina.core.StandardServer.stopInternal(StandardServer.java:753)
+                org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:232)
+                org.apache.catalina.startup.Catalina.stop(Catalina.java:751)
+                org.apache.catalina.startup.Catalina.start(Catalina.java:713)
+                sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+                sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                java.lang.reflect.Method.invoke(Method.java:601)
+                org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:322)
+                org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:451)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.tribes.transport.nio.NioReceiver.java</file>
+            <file type="M">org.apache.catalina.tribes.transport.ReceiverBase.java</file>
+            <file type="M">org.apache.catalina.tribes.transport.nio.NioReceiver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="54521" opendate="2013-02-04 10:54:16" fixdate="2013-02-08 08:41:43" resolution="Fixed">
+        <buginformation>
+            <summary>datum request instance millisecond consequently when conclusion array scenario digest client
+                generatenonce map case key authentication cache digestauthenticator length count nonce nonceinfo header
+            </summary>
+            <description>datum request instance millisecond consequently when conclusion array scenario digest client
+                generatenonce map case key authentication cache digestauthenticator length count nonce nonceinfo header
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.authenticator.DigestAuthenticator.java</file>
+            <file type="M">org.apache.catalina.authenticator.TestDigestAuthenticator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55267" opendate="2013-07-15 11:38:25" fixdate="2013-07-24 15:02:59" resolution="Fixed">
+        <buginformation>
+            <summary>load test nio lock user simulate
+            </summary>
+            <description>load test nio lock user simulate
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.coyote.ajp.AjpNioProcessor.java</file>
+            <file type="M">org.apache.coyote.http11.InternalNioOutputBuffer.java</file>
+            <file type="M">org.apache.tomcat.util.net.NioEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55309" opendate="2013-07-26 04:38:23" fixdate="2013-07-29 21:04:00" resolution="Fixed">
+        <buginformation>
+            <summary>TagPluginManager ServletContext PageInfo
+            </summary>
+            <description>TagPluginManager ServletContext PageInfo
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.jasper.compiler.TagPluginManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55521" opendate="2013-09-04 10:24:05" fixdate="2013-09-05 16:28:21" resolution="Fixed">
+        <buginformation>
+            <summary>sessionfixationprotectionstrategy HttpSession invalidate HttpServletRequest getSession
+            </summary>
+            <description>sessionfixationprotectionstrategy HttpSession invalidate HttpServletRequest getSession
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.ha.session.DeltaSession.java</file>
+            <file type="M">org.apache.catalina.session.StandardSession.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55524" opendate="2013-09-04 23:34:13" fixdate="2014-09-18 03:09:51" resolution="Fixed">
+        <buginformation>
+            <summary>atmosphere shared stack wsoutbound tomcat deadlock asyncop duscuss scheduler attachment websocket
+                atmosphereresourceimpl lock write issue level monitor information operation
+            </summary>
+            <description>atmosphere shared stack wsoutbound tomcat deadlock asyncop duscuss scheduler attachment
+                websocket atmosphereresourceimpl lock write issue level monitor information operation
+                at org.apache.catalina.websocket.WsOutbound.writeTextMessage(WsOutbound.java:165)
+                - waiting to lock#x00000005ef4c6988> (a org.apache.catalina.websocket.WsOutbound)
+                at org.atmosphere.container.version.TomcatWebSocket.write(TomcatWebSocket.java:49)
+                at org.atmosphere.websocket.WebSocket.write(WebSocket.java:199)
+                at org.atmosphere.websocket.WebSocket.write(WebSocket.java:168)
+                at org.atmosphere.websocket.WebSocket.write(WebSocket.java:40)
+                at org.atmosphere.cpr.AtmosphereResponse$2.write(AtmosphereResponse.java:574)
+                at org.atmosphere.handler.AbstractReflectorAtmosphereHandler.onStateChange(AbstractReflectorAtmosphereHandler.java:169)
+                at org.atmosphere.cpr.DefaultBroadcaster.invokeOnStateChange(DefaultBroadcaster.java:1027)
+                at org.atmosphere.cpr.DefaultBroadcaster.prepareInvokeOnStateChange(DefaultBroadcaster.java:1047)
+                at org.atmosphere.cpr.DefaultBroadcaster.executeAsyncWrite(DefaultBroadcaster.java:921)
+                at org.atmosphere.cpr.DefaultBroadcaster$3.run(DefaultBroadcaster.java:580)
+                - locked#x00000005ef4b77f8> (a org.atmosphere.cpr.AtmosphereResourceImpl)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+                at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:724)
+                "Atmosphere-Scheduler-2":
+                at org.atmosphere.cpr.AsynchronousProcessor.completeLifecycle(AsynchronousProcessor.java:476)
+                - waiting to lock#x00000005ef4b77f8> (a org.atmosphere.cpr.AtmosphereResourceImpl)
+                at org.atmosphere.cpr.AsynchronousProcessor.timedout(AsynchronousProcessor.java:437)
+                at org.atmosphere.cpr.AsynchronousProcessor$AsynchronousProcessorHook.timedOut(AsynchronousProcessor.java:633)
+                at org.atmosphere.websocket.DefaultWebSocketProcessor.close(DefaultWebSocketProcessor.java:483)
+                at org.atmosphere.container.TomcatWebSocketHandler.onClose(TomcatWebSocketHandler.java:80)
+                at org.apache.catalina.websocket.StreamInbound.doOnClose(StreamInbound.java:222)
+                at org.apache.catalina.websocket.WsOutbound.doWriteBytes(WsOutbound.java:423)
+                at org.apache.catalina.websocket.WsOutbound.doWriteText(WsOutbound.java:442)
+                at org.apache.catalina.websocket.WsOutbound.writeTextMessage(WsOutbound.java:174)
+                - locked#x00000005ef4c6988> (a org.apache.catalina.websocket.WsOutbound)
+                at org.atmosphere.container.version.TomcatWebSocket.write(TomcatWebSocket.java:49)
+                at org.atmosphere.websocket.WebSocket.write(WebSocket.java:199)
+                at org.atmosphere.websocket.WebSocket.write(WebSocket.java:168)
+                at org.atmosphere.websocket.WebSocket.write(WebSocket.java:40)
+                at org.atmosphere.cpr.AtmosphereResponse$2.write(AtmosphereResponse.java:574)
+                at org.atmosphere.cpr.AtmosphereResponse.write(AtmosphereResponse.java:992)
+                at org.atmosphere.interceptor.HeartbeatInterceptor$1$1.call(HeartbeatInterceptor.java:104)
+                at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:334)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:166)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:178)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:292)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:724)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.websocket.WsOutbound.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55582" opendate="2013-09-22 10:00:36" fixdate="2013-09-23 13:57:43" resolution="Fixed">
+        <buginformation>
+            <summary>TagFileProcessor RuntimeContext JspServletWrapper JspRuntimeContext spServletWrapper wrapper
+            </summary>
+            <description>TagFileProcessor RuntimeContext JspServletWrapper JspRuntimeContext spServletWrapper wrapper
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.jasper.compiler.TagFileProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55684" opendate="2013-10-21 16:30:04" fixdate="2013-10-29 09:56:13" resolution="Fixed">
+        <buginformation>
+            <summary>securityexception parent access tomcat want permission manage getthread root try threadgroup order
+            </summary>
+            <description>securityexception parent access tomcat want permission manage getthread root try threadgroup
+                order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.loader.LocalStrings.properties</file>
+            <file type="M">org.apache.catalina.loader.WebappClassLoader.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55799" opendate="2013-11-20 00:01:34" fixdate="2013-11-29 02:01:59" resolution="Fixed">
+        <buginformation>
+            <summary>RemoteEndpoint
+            </summary>
+            <description>RemoteEndpoint
+                at sun.nio.ch.SocketChannelImpl.ensureReadOpen(SocketChannelImpl.java:252)
+                at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:295)
+                at org.apache.tomcat.util.net.NioChannel.read(NioChannel.java:136)
+                at org.apache.coyote.http11.upgrade.NioServletInputStream.fillReadBuffer(NioServletInputStream.java:136)
+                at org.apache.coyote.http11.upgrade.NioServletInputStream.doIsReady(NioServletInputStream.java:49)
+                at org.apache.coyote.http11.upgrade.AbstractServletInputStream.isReady(AbstractServletInputStream.java:62)
+                at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:44)
+                at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler$WsReadListener.onDataAvailable(WsHttpUpgradeHandler.java:192)
+                at org.apache.coyote.http11.upgrade.AbstractServletInputStream.onDataAvailable(AbstractServletInputStream.java:180)
+                at org.apache.coyote.http11.upgrade.AbstractProcessor.upgradeDispatch(AbstractProcessor.java:95)
+                at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:640)
+                at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:223)
+                at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+                at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1555)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:744)
+                at org.apache.tomcat.websocket.pojo.PojoMessageHandlerWholeBase.onMessage(PojoMessageHandlerWholeBase.java:82)
+                at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:369)
+                at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:468)
+                at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:272)
+                at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:116)
+                at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:55)
+                at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler$WsReadListener.onDataAvailable(WsHttpUpgradeHandler.java:192)
+                at org.apache.coyote.http11.upgrade.AbstractServletInputStream.onDataAvailable(AbstractServletInputStream.java:180)
+                at org.apache.coyote.http11.upgrade.AbstractProcessor.upgradeDispatch(AbstractProcessor.java:95)
+                at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:640)
+                at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:223)
+                at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+                at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1555)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:744)
+                Caused by: java.lang.reflect.InvocationTargetException
+                at sun.reflect.GeneratedMethodAccessor38.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:606)
+                at org.apache.tomcat.websocket.pojo.PojoMessageHandlerWholeBase.onMessage(PojoMessageHandlerWholeBase.java:80)
+                ...
+                15 more
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.websocket.WsRemoteEndpointImplBase.java</file>
+            <file type="M">org.apache.tomcat.websocket.TestWsRemoteEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="55996" opendate="2014-01-13 06:12:37" fixdate="2014-01-14 19:18:58" resolution="Fixed">
+        <buginformation>
+            <summary>request server interruptedexception tomcat servlet asynccontext release continu run mon output
+                attachment problemservlet context variant client based side void message async processing http
+            </summary>
+            <description>request server interruptedexception tomcat servlet asynccontext release continu run mon output
+                attachment problemservlet context variant client based side void message async processing http
+                at org.apache.catalina.core.AsyncContextImpl.check(AsyncContextImpl.java:521)
+                at org.apache.catalina.core.AsyncContextImpl.getResponse(AsyncContextImpl.java:245)
+                at com.pg.orion.artcloopcheck.ProblemServlet$AsynRunnable.run(ProblemServlet.java:67)
+                at org.apache.catalina.core.AsyncContextImpl$RunnableWrapper.run(AsyncContextImpl.java:557)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:722)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.SocketWrapper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56042" opendate="2014-01-21 02:26:34" fixdate="2014-01-23 22:49:30" resolution="Fixed">
+        <buginformation>
+            <summary>reason request stack servlet bit error startasync spec illegalstateexception trace scenario complex
+                raise jetty state wonder asynccomplete issue work say involve must_dispatch async appear anyone response
+            </summary>
+            <description>reason request stack servlet bit error startasync spec illegalstateexception trace scenario
+                complex raise jetty state wonder asynccomplete issue work say involve must_dispatch async appear anyone
+                response
+                at org.apache.coyote.AsyncStateMachine.asyncComplete(AsyncStateMachine.java:227)
+                at org.apache.coyote.http11.Http11Processor.actionInternal(Http11Processor.java:358)
+                at org.apache.coyote.http11.AbstractHttp11Processor.action(AbstractHttp11Processor.java:871)
+                at org.apache.coyote.Request.action(Request.java:344)
+                at org.apache.catalina.core.AsyncContextImpl.complete(AsyncContextImpl.java:92)
+                at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:140)
+                at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)
+                at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+                at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)
+                at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)
+                at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+                at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:744)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.valves.ErrorReportValve.java</file>
+            <file type="M">org.apache.catalina.valves.TestErrorReportValve.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56082" opendate="2014-01-29 00:11:33" fixdate="2014-03-18 09:42:52" resolution="Fixed">
+        <buginformation>
+            <summary>ClassLoaderLogManager LogManager getLogManager
+            </summary>
+            <description>ClassLoaderLogManager LogManager getLogManager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.juli.TestClassLoaderLogManager.java</file>
+            <file type="M">org.apache.juli.ClassLoaderLogManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56518" opendate="2014-05-13 10:47:48" fixdate="2014-06-16 10:08:55" resolution="Fixed">
+        <buginformation>
+            <summary>webapp poller closedbyinterruptexception request tomcat hashset bio socketstatus maxconnection nio
+                html niochannel oracle flushbuffer countdown optional daemon jdk async connector selectionkey util
+                processsocket http e countdownconnection epollselectorimpl
+            </summary>
+            <description>webapp poller closedbyinterruptexception request tomcat hashset bio socketstatus maxconnection
+                nio html niochannel oracle flushbuffer countdown optional daemon jdk async connector selectionkey util
+                processsocket http e countdownconnection epollselectorimpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.connector.CoyoteAdapter.java</file>
+            <file type="M">org.apache.catalina.connector.CoyoteAdapter.java</file>
+            <file type="M">org.apache.coyote.AbstractProcessor.java</file>
+            <file type="M">org.apache.coyote.Adapter.java</file>
+            <file type="M">org.apache.coyote.Processor.java</file>
+            <file type="M">org.apache.coyote.ajp.AbstractAjpProcessor.java</file>
+            <file type="M">org.apache.coyote.ajp.AjpAprProcessor.java</file>
+            <file type="M">org.apache.coyote.ajp.AjpNioProcessor.java</file>
+            <file type="M">org.apache.coyote.ajp.AjpProcessor.java</file>
+            <file type="M">org.apache.coyote.http11.AbstractHttp11Processor.java</file>
+            <file type="M">org.apache.coyote.http11.Http11AprProcessor.java</file>
+            <file type="M">org.apache.coyote.http11.Http11NioProcessor.java</file>
+            <file type="M">org.apache.coyote.http11.upgrade.AbstractProcessor.java</file>
+            <file type="M">org.apache.coyote.http11.upgrade.UpgradeProcessor.java</file>
+            <file type="M">org.apache.tomcat.util.net.AbstractEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.NioChannel.java</file>
+            <file type="M">org.apache.tomcat.util.net.NioEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.SecureNioChannel.java</file>
+            <file type="M">org.apache.tomcat.util.net.SocketStatus.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56577" opendate="2014-05-29 19:17:17" fixdate="2014-06-05 20:32:02" resolution="Fixed">
+        <buginformation>
+            <summary>parking websocketserver stack corepoolsize maximumpoolsize sendasync example spring trace default
+                timeoutexception executor websocket context lock sendhandler prio test sync timed_waiting daemon
+                condition countdownlatch wsservercontainer
+            </summary>
+            <description>parking websocketserver stack corepoolsize maximumpoolsize sendasync example spring trace
+                default timeoutexception executor websocket context lock sendhandler prio test sync timed_waiting daemon
+                condition countdownlatch wsservercontainer
+                - parking to wait for#x000000075d52f018> (a java.util.concurrent.CountDownLatch$Sync)
+                at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:226)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.doAcquireSharedNanos(AbstractQueuedSynchronizer.java:1033)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.tryAcquireSharedNanos(AbstractQueuedSynchronizer.java:1326)
+                at java.util.concurrent.CountDownLatch.await(CountDownLatch.java:282)
+                at org.apache.tomcat.websocket.FutureToSendHandler.get(FutureToSendHandler.java:93)
+                at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.startMessageBlock(WsRemoteEndpointImplBase.java:238)
+                at org.apache.tomcat.websocket.WsSession.sendCloseMessage(WsSession.java:487)
+                at org.apache.tomcat.websocket.WsSession.doClose(WsSession.java:418)
+                - locked#x000000075d7dc388> (a java.lang.Object)
+                at org.apache.tomcat.websocket.WsSession.close(WsSession.java:395)
+                at org.apache.tomcat.websocket.WsSession.close(WsSession.java:389)
+                at com.tango.test.spring.test.service.DefaultSessionManager$CloseSessionHandler.onResult(DefaultSessionManager.java:133)
+                at org.apache.tomcat.websocket.WsRemoteEndpointImplBase$StateUpdateSendHandler.onResult(WsRemoteEndpointImplBase.java:1083)
+                at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.endMessage(WsRemoteEndpointImplBase.java:320)
+                at org.apache.tomcat.websocket.WsRemoteEndpointImplBase$EndMessageHandler.onResult(WsRemoteEndpointImplBase.java:468)
+                at org.apache.tomcat.websocket.server.WsRemoteEndpointImplServer$OnResultRunnable.run(WsRemoteEndpointImplServer.java:234)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.websocket.server.WsServerContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56653" opendate="2014-06-21 02:19:53" fixdate="2017-01-01 11:15:50" resolution="Fixed">
+        <buginformation>
+            <summary>Mapper ContextList removeContextVersion
+            </summary>
+            <description>Mapper ContextList removeContextVersion
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.http.mapper.Mapper.java</file>
+            <file type="M">org.apache.tomcat.util.http.mapper.TestMapper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56724" opendate="2014-07-15 12:29:23" fixdate="2019-08-09 17:28:28" resolution="Fixed">
+        <buginformation>
+            <summary>container onoutofmemoryerror stack flag death tomcat log admin mailing error backgroundprocess jmx
+                stackoverflowerror outofmemoryerror jvm issue restart nothing start list script delay background effect
+                containerbackgroundprocessor strategy
+            </summary>
+            <description>container onoutofmemoryerror stack flag death tomcat log admin mailing error backgroundprocess
+                jmx stackoverflowerror outofmemoryerror jvm issue restart nothing start list script delay background
+                effect containerbackgroundprocessor strategy
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ContainerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56746" opendate="2014-07-19 00:06:34" fixdate="2014-07-28 21:53:43" resolution="Fixed">
+        <buginformation>
+            <summary>AsyncChannelWrapperSecure
+            </summary>
+            <description>AsyncChannelWrapperSecure
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.websocket.AsyncChannelWrapperSecure.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56857" opendate="2014-08-14 21:42:28" fixdate="2014-09-03 11:06:32" resolution="Fixed">
+        <buginformation>
+            <summary>indicator webapp access sessionid userid lot safety get prio hashmap map servletcontext singleton
+                issue change cpu objectcache daemon connector applicationcontextfacade concurrenthashmap invokemethod
+                synchronization status
+            </summary>
+            <description>indicator webapp access sessionid userid lot safety get prio hashmap map servletcontext
+                singleton issue change cpu objectcache daemon connector applicationcontextfacade concurrenthashmap
+                invokemethod synchronization status
+                at org.apache.catalina.core.ApplicationContextFacade.invokeMethod(ApplicationContextFacade.java:789)
+                at org.apache.catalina.core.ApplicationContextFacade.doPrivileged(ApplicationContextFacade.java:767)
+                at org.apache.catalina.core.ApplicationContextFacade.getContextPath(ApplicationContextFacade.java:428)
+                at blackboard.portal.servlet.ModuleCustomizationServlet.service(ModuleCustomizationServlet.java:88)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:728)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ApplicationContextFacade.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="56907" opendate="2014-09-02 07:40:48" fixdate="2014-09-03 12:22:37" resolution="Fixed">
+        <buginformation>
+            <summary>clientendpointconfiguration jvisualvm program source error attempt result path newfixedthreadpool
+                endpoint websocket executor connection class situation creation issue kind asyncchannelwrappersecure
+                secureiothreadfactory executorservice url page leakage
+            </summary>
+            <description>clientendpointconfiguration jvisualvm program source error attempt result path
+                newfixedthreadpool endpoint websocket executor connection class situation creation issue kind
+                asyncchannelwrappersecure secureiothreadfactory executorservice url page leakage
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.websocket.WsWebSocketContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57265" opendate="2014-11-26 11:24:30" fixdate="2015-09-23 12:37:07" resolution="Fixed">
+        <buginformation>
+            <summary>server handler illegalargumentexception tomcat hiden occurrence lot output file nov nio rate buffer
+                move nginx race usesendfile script fail condition occurre connector http homepage
+            </summary>
+            <description>server handler illegalargumentexception tomcat hiden occurrence lot output file nov nio rate
+                buffer move nginx race usesendfile script fail condition occurre connector http homepage
+                at org.apache.tomcat.util.net.SecureNioChannel.write(SecureNioChannel.java:489)
+                at sun.nio.ch.FileChannelImpl.transferToArbitraryChannel(FileChannelImpl.java:534)
+                at sun.nio.ch.FileChannelImpl.transferTo(FileChannelImpl.java:583)
+                at org.apache.tomcat.util.net.NioEndpoint$Poller.processSendfile(NioEndpoint.java:1200)
+                at org.apache.tomcat.util.net.NioEndpoint$Poller.processKey(NioEndpoint.java:1122)
+                at org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:1087)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.NioEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.NioChannel.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57338" opendate="2014-12-10 17:58:51" fixdate="2015-04-22 10:36:46" resolution="Fixed">
+        <buginformation>
+            <summary>cluster cache replicate tomcat session clustersinglesignon sign sync look moment node startup
+                action singlesignonentry state valve synchronize
+            </summary>
+            <description>cluster cache replicate tomcat session clustersinglesignon sign sync look moment node startup
+                action singlesignonentry state valve synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.authenticator.SingleSignOn.java</file>
+            <file type="M">org.apache.catalina.authenticator.SingleSignOnEntry.java</file>
+            <file type="M">org.apache.catalina.authenticator.SingleSignOnSessionKey.java</file>
+            <file type="M">org.apache.catalina.ha.authenticator.ClusterSingleSignOn.java</file>
+            <file type="M">org.apache.catalina.ha.authenticator.ClusterSingleSignOnListener.java</file>
+            <file type="M">org.apache.catalina.ha.authenticator.SingleSignOnMessage.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57340" opendate="2014-12-11 11:20:44" fixdate="2015-10-25 18:40:12" resolution="Fixed">
+        <buginformation>
+            <summary>atmosphere poller tomcat channel nioconnector reference closing comet connection event close case
+                niochannel cache process read nginx socketchannel fork attachmentkey selectionkey nioendpoint stuff
+            </summary>
+            <description>atmosphere poller tomcat channel nioconnector reference closing comet connection event close
+                case niochannel cache process read nginx socketchannel fork attachmentkey selectionkey nioendpoint stuff
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.NioEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57420" opendate="2015-01-06 19:53:53" fixdate="2015-01-22 20:57:48" resolution="Fixed">
+        <buginformation>
+            <summary>DirContextURLConnection
+            </summary>
+            <description>DirContextURLConnection
+                at org.apache.naming.resources.DirContextURLConnection.getInputStream(DirContextURLConnection.java:389)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1994)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1986)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1986)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1986)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1986)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1986)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsJndi(ContextConfig.java:1986)
+                at org.apache.catalina.startup.ContextConfig.processAnnotationsUrl(ContextConfig.java:1902)
+                at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1298)
+                at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:876)
+                at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:374)
+                at org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:117)
+                at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)
+                at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5378)
+                at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+                at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:901)
+                at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:877)
+                at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:649)
+                at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:1083)
+                at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1880)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at java.lang.Thread.run(Thread.java:744)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.naming.resources.DirContextURLConnection.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57681" opendate="2015-03-09 22:34:15" fixdate="2015-09-08 14:20:09" resolution="Fixed">
+        <buginformation>
+            <summary>allow add tomcat loader source loading patch relate file attachment web port detail classloading
+                class
+            </summary>
+            <description>allow add tomcat loader source loading patch relate file attachment web port detail
+                classloading class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.loader.ParallelWebappClassLoader.java</file>
+            <file type="M">org.apache.catalina.loader.TestParallelWebappClassLoader.java</file>
+            <file type="M">org.apache.tomcat.util.compat.JreCompat.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57683" opendate="2015-03-10 14:54:40" fixdate="2015-03-11 22:19:18" resolution="Fixed">
+        <buginformation>
+            <summary>access software tomcat stockticket log asynccontext stockticker error crash example stockicker
+                abstractprocessor seterrorstate client connection press write mar console keyboard jdk async esc
+                response progress ise socket page
+            </summary>
+            <description>access software tomcat stockticket log asynccontext stockticker error crash example stockicker
+                abstractprocessor seterrorstate client connection press write mar console keyboard jdk async esc
+                response progress ise socket page
+                at java.net.SocketOutputStream.socketWrite0(Native Method)
+                at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+                at java.net.SocketOutputStream.write(SocketOutputStream.java:136)
+                at org.apache.coyote.http11.InternalOutputBuffer.realWriteBytes(InternalOutputBuffer.java:215)
+                at org.apache.tomcat.util.buf.ByteChunk.flushBuffer(ByteChunk.java:480)
+                at org.apache.coyote.http11.InternalOutputBuffer.flush(InternalOutputBuffer.java:119)
+                at org.apache.coyote.http11.AbstractHttp11Processor.action(AbstractHttp11Processor.java:800)
+                at org.apache.coyote.Response.action(Response.java:172)
+                at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:363)
+                at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:331)
+                at org.apache.catalina.connector.CoyoteWriter.flush(CoyoteWriter.java:98)
+                at async.AsyncStockServlet.writeStock(AsyncStockServlet.java:98)
+                at async.AsyncStockServlet.tick(AsyncStockServlet.java:81)
+                at async.Stockticker.run(Stockticker.java:84)
+                at java.lang.Thread.run(Thread.java:662)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">webapps.docs.changelog.xml</file>
+            <file type="M">webapps.examples.WEB-INF.classes.async.AsyncStockServlet.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57779" opendate="2015-03-30 12:22:29" fixdate="2015-04-01 13:01:57" resolution="Fixed">
+        <buginformation>
+            <summary>lock abstractqueuedsynchronizer client connection end socketwrapper monitor servletoutputstream
+                socket operation
+            </summary>
+            <description>lock abstractqueuedsynchronizer client connection end socketwrapper monitor servletoutputstream
+                socket operation
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#x00000000c3b273b8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+                ...
+                at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+                - locked#x00000000c38ef6d8> (a org.apache.tomcat.util.net.SocketWrapper)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+                at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+                at java.lang.Thread.run(Thread.java:745)
+                at org.apache.tomcat.util.net.JIoEndpoint.processSocketAsync(JIoEndpoint.java:560)
+                - waiting to lock#x00000000c38ef6d8> (a org.apache.tomcat.util.net.SocketWrapper)
+                at org.apache.coyote.AbstractProcessor.setErrorState(AbstractProcessor.java:84)
+                at org.apache.coyote.http11.AbstractHttp11Processor.action(AbstractHttp11Processor.java:802)
+                at org.apache.coyote.Response.action(Response.java:172)
+                at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:363)
+                at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:331)
+                at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:101)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.coyote.AbstractProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57943" opendate="2015-05-22 06:21:27" fixdate="2015-10-25 18:36:02" resolution="Fixed">
+        <buginformation>
+            <summary>poller request die process tomcat log error accept nio http connection catch nioendpoint
+                concurrentmodificationexception
+            </summary>
+            <description>poller request die process tomcat log error accept nio http connection catch nioendpoint
+                concurrentmodificationexception
+                at java.util.HashMap$HashIterator.nextEntry(HashMap.java:793)
+                at java.util.HashMap$KeyIterator.next(HashMap.java:828)
+                at java.util.Collections$UnmodifiableCollection$1.next(Collections.java:1010)
+                at org.apache.tomcat.util.net.NioEndpoint$Poller.timeout(NioEndpoint.java:1421)
+                at org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:1215)
+                at java.lang.Thread.run(Thread.java:662)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.tomcat.util.net.NioEndpoint.java</file>
+            <file type="M">org.apache.tomcat.util.net.res.LocalStrings.properties</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57959" opendate="2015-05-27 19:21:22" fixdate="2015-05-28 06:59:37" resolution="Fixed">
+        <buginformation>
+            <summary>race issue tomcat log remain deadlock way wrong condition file fix lock comment writer write order
+            </summary>
+            <description>race issue tomcat log remain deadlock way wrong condition file fix lock comment writer write
+                order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.juli.FileHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57977" opendate="2015-06-01 07:40:43" fixdate="2015-06-09 11:58:22" resolution="Fixed">
+        <buginformation>
+            <summary>PersistentValve invoke
+            </summary>
+            <description>PersistentValve invoke
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.valves.PersistentValve.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="58179" opendate="2015-07-24 14:54:37" fixdate="2015-07-27 10:25:45" resolution="Fixed">
+        <buginformation>
+            <summary>snippet atomicity university line bai research aftercontextattributereplaced singapore file
+                violation fellow name national fire attribute event beforecontextattributereplaced
+            </summary>
+            <description>snippet atomicity university line bai research aftercontextattributereplaced singapore file
+                violation fellow name national fire attribute event beforecontextattributereplaced
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ApplicationContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="58522" opendate="2015-10-22 19:54:03" fixdate="2015-10-23 18:40:47" resolution="Fixed">
+        <buginformation>
+            <summary>request other getresourcepath tomcat jsp run error directory result file array jasperexception zip
+                compliation resource war sort concurrency call entry http centos child
+            </summary>
+            <description>request other getresourcepath tomcat jsp run error directory result file array jasperexception
+                zip compliation resource war sort concurrency call entry http centos child
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.naming.resources.WARDirContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="58946" opendate="2016-01-30 12:05:04" fixdate="2016-02-01 09:43:15" resolution="Fixed">
+        <buginformation>
+            <summary>ApplicationHttpRequest
+            </summary>
+            <description>ApplicationHttpRequest
+                org.apache.catalina.util.ParameterMap.put(ParameterMap.java:164)
+                org.apache.jsp.test2_jsp._jspService(test2_jsp.java:115)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.core.ApplicationHttpRequest.java</file>
+            <file type="M">org.apache.catalina.core.TestApplicationHttpRequest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="59138" opendate="2016-03-07 17:48:07" fixdate="2016-03-08 20:18:29" resolution="Fixed">
+        <buginformation>
+            <summary>dlocalmapforleak mar info localhost positive list message threadlocal report name
+                checkthreadlocalmapforleaks config party
+            </summary>
+            <description>dlocalmapforleak mar info localhost positive list message threadlocal report name
+                checkthreadlocalmapforleaks config party
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.catalina.loader.WebappClassLoaderBase.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

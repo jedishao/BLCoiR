@@ -1,0 +1,115 @@
+<bugrepository name="rockermq">
+    <bug id="1986" opendate="2020-05-13 00:00:00" fixdate="2022-10-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>indexnum indexservice sub request blocker hashslotnum description readwritelock mailing feature fix
+                raise lock communication issue getandcreatelastindexfile getandcreatelastindexfile indexfile
+                lastupdateendphyoffset improvement separator environment filename report information step threadsafe
+                reputmessageservice
+            </summary>
+            <description>indexnum indexservice sub request blocker hashslotnum description readwritelock mailing feature
+                fix raise lock communication issue getandcreatelastindexfile getandcreatelastindexfile indexfile
+                lastupdateendphyoffset improvement separator environment filename report information step threadsafe
+                reputmessageservice
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.broker.filter.ConsumerFilterManager.java</file>
+            <file type="M">org.apache.rocketmq.common.message.MessageExt.java</file>
+            <file type="M">org.apache.rocketmq.store.StoreStatsService.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexService.java</file>
+            <file type="M">org.apache.rocketmq.store.StoreStatsServiceTest.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexServiceTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4143" opendate="2022-04-10 00:00:00" fixdate="2022-08-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>indexservice file filelock indexfile lock unnecessary
+            </summary>
+            <description>indexservice file filelock indexfile lock unnecessary
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.store.index.IndexFile.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexService.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexFileTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4686" opendate="2022-07-25 00:00:00" fixdate="2022-07-26 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>log release tell update explanation layer putkvconfig lock state value key case info putkvconfig
+                item issue suggestion environment namespace information step position config kvconfigmanager
+            </summary>
+            <description>log release tell update explanation layer putkvconfig lock state value key case info
+                putkvconfig item issue suggestion environment namespace information step position config kvconfigmanager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.namesrv.kvconfig.KVConfigManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5039" opendate="2022-09-09 00:00:00" fixdate="2022-09-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>os_prio instance idea construct localhostname brokeridentity brokercontroller lock inetaddress
+                state prio case
+            </summary>
+            <description>os_prio instance idea construct localhostname brokeridentity brokercontroller lock inetaddress
+                state prio case
+                at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+                at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+                at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+                at java.net.InetAddress.getLocalHost(InetAddress.java:1501)
+                - locked#0x00000006c00da5d0> (a java.lang.Object)
+                at org.apache.rocketmq.common.BrokerIdentity.localHostName(BrokerIdentity.java:104)
+                at org.apache.rocketmq.common.BrokerIdentity.#init>(BrokerIdentity.java:38)
+                at org.apache.rocketmq.broker.BrokerController.getBrokerIdentity(BrokerController.java:1998)
+                at org.apache.rocketmq.broker.BrokerController.doRegisterBrokerAll(BrokerController.java:1685)
+                at org.apache.rocketmq.broker.BrokerController.registerBrokerAll(BrokerController.java:1661)
+                - locked#0x00000006c0090950> (a org.apache.rocketmq.broker.BrokerController)
+                at org.apache.rocketmq.broker.BrokerController.start(BrokerController.java:1525)
+                at org.apache.rocketmq.test.base.IntegrationTestBase.createAndStartBroker(IntegrationTestBase.java:160)
+                at org.apache.rocketmq.test.base.IntegrationTestBase.createAndStartBroker(IntegrationTestBase.java:148)
+                at org.apache.rocketmq.test.base.BaseConf.#clinit>(BaseConf.java:86)
+                at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+                at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+                at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+                at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+                at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:250)
+                at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:260)
+                at org.junit.runners.BlockJUnit4ClassRunner$2.runReflectiveCall(BlockJUnit4ClassRunner.java:309)
+                at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+                at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:306)
+                at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+                at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+                at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+                at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+                at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+                at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+                at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+                at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+                at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+                at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+                at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+                at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+                at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+                at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
+                at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)
+                at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.common.BrokerIdentity.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

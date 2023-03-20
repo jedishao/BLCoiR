@@ -1,0 +1,1010 @@
+<bugrepository name="druid">
+    <bug id="582" opendate="2014-06-05 00:00:00" fixdate="2018-07-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster indexing race upload locking one mtime directory something path file druid solution jar
+                hadoop job jobhelper
+            </summary>
+            <description>cluster indexing race upload locking one mtime directory something path file druid solution jar
+                hadoop job jobhelper
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexer.DetermineHashedPartitionsJob.java</file>
+            <file type="M">org.apache.druid.indexer.DeterminePartitionsJob.java</file>
+            <file type="M">org.apache.druid.indexer.IndexGeneratorJob.java</file>
+            <file type="M">org.apache.druid.indexer.JobHelper.java</file>
+            <file type="M">org.apache.druid.indexer.updater.HadoopConverterJob.java</file>
+            <file type="M">org.apache.druid.indexer.HdfsClasspathSetupTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="812" opendate="2014-10-27 00:00:00" fixdate="2014-11-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>realtimeplumber abandonSegment
+            </summary>
+            <description>realtimeplumber abandonSegment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.segment.realtime.plumber.RealtimePlumber.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1014" opendate="2015-01-06 00:00:00" fixdate="2022-02-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request regexp race query show error message lead speed result filter node regex default condition
+                druid kafka dimension value
+            </summary>
+            <description>request regexp race query show error message lead speed result filter node regex default
+                condition druid kafka dimension value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.timeline.VersionedIntervalTimeline.java</file>
+            <file type="M">org.apache.druid.query.extraction.DimExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.extraction.JavascriptDimExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.extraction.MatchingDimExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.filter.BitmapIndexSelector.java</file>
+            <file type="M">org.apache.druid.query.timeseries.TimeseriesQuery.java</file>
+            <file type="M">org.apache.druid.query.timeseries.TimeseriesQueryEngine.java</file>
+            <file type="M">org.apache.druid.query.topn.DimExtractionTopNAlgorithm.java</file>
+            <file type="M">org.apache.druid.query.topn.TopNQueryQueryToolChest.java</file>
+            <file type="M">org.apache.druid.query.topn.TopNQueryRunnerFactory.java</file>
+            <file type="M">org.apache.druid.segment.ColumnSelectorBitmapIndexSelector.java</file>
+            <file type="M">org.apache.druid.segment.NullDimensionSelector.java</file>
+            <file type="M">org.apache.druid.segment.QueryableIndexStorageAdapter.java</file>
+            <file type="M">org.apache.druid.segment.filter.SelectorFilter.java</file>
+            <file type="M">org.apache.druid.segment.incremental.IncrementalIndex.java</file>
+            <file type="M">org.apache.druid.segment.incremental.IncrementalIndexStorageAdapter.java</file>
+            <file type="M">org.apache.druid.query.extraction.extraction.MatchingDimExtractionFnTest.java</file>
+            <file type="M">org.apache.druid.query.groupby.GroupByQueryRunnerTest.java</file>
+            <file type="M">org.apache.druid.query.timeseries.TimeseriesQueryRunnerTest.java</file>
+            <file type="M">org.apache.druid.query.topn.TopNQueryRunnerTest.java</file>
+            <file type="M">org.apache.druid.segment.NullDimensionSelectorTest.java</file>
+            <file type="M">org.apache.druid.segment.SchemalessTestFull.java</file>
+            <file type="M">org.apache.druid.server.initialization.ServerConfig.java</file>
+            <file type="M">org.apache.druid.server.metrics.NoopServiceEmitter.java</file>
+            <file type="M">services.src.main.java.org.apache.druid.guice.RealtimeModule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1210" opendate="2015-03-17 00:00:00" fixdate="2015-04-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sennectionstatemanager LoadQueuePeon curatorserviceannouncer coordinator race peonexec
+                druidcoordinator condition service crazy socket loggingemitter
+            </summary>
+            <description>sennectionstatemanager LoadQueuePeon curatorserviceannouncer coordinator race peonexec
+                druidcoordinator condition service crazy socket loggingemitter
+                com.metamx.emitter.core.LoggingEmitter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.coordinator.LoadQueuePeon.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1360" opendate="2015-05-13 00:00:00" fixdate="2020-01-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Race condition autoscaling terminates nodes just assigned tasks
+            </summary>
+            <description>Race condition autoscaling terminates nodes just assigned tasks
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.dimension.ExpressionDimensionSpec.java</file>
+            <file type="M">org.apache.druid.query.groupby.GroupByQueryRunnerGenericTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunner.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.ResourceManagementScheduler.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.ResourceManagementStrategy.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.SimpleResourceManagementStrategy.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.SimpleResourceManagementStrategyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1715" opendate="2015-09-09 00:00:00" fixdate="2018-07-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>execution request issue redacted tasklock index_realtime_redacted suffice taskqueue acquire task
+                cleanup failure zombie failing lock course remotetaskrunner tasklockbox worker qtpredacted overlord
+                status
+            </summary>
+            <description>execution request issue redacted tasklock index_realtime_redacted suffice taskqueue acquire
+                task cleanup failure zombie failing lock course remotetaskrunner tasklockbox worker qtpredacted overlord
+                status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.TaskLockbox.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.TaskQueue.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.TaskLockboxTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.http.OverlordResourceTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2793" opendate="2016-04-05 00:00:00" fixdate="2020-01-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>mysqlintegrityconstraintviolationexception argument redacted taskqueue status_payload error
+                retryutils attempt way entry diff payload datasource lock created_date ms
+                unabletoexecutestatementexception callbackfailedexception thing value primary
+            </summary>
+            <description>mysqlintegrityconstraintviolationexcepti on argument redacted taskqueue status_payload error
+                retryutils attempt way entry diff payload datasource lock created_date ms
+                unabletoexecutestatementexception callbackfailedexception thing value primary
+                at org.skife.jdbi.v2.DBI.withHandle(DBI.java:284)
+                at io.druid.metadata.SQLMetadataConnector$2.call(SQLMetadataConnector.java:110)
+                at com.metamx.common.RetryUtils.retry(RetryUtils.java:38)
+                at io.druid.metadata.SQLMetadataConnector.retryWithHandle(SQLMetadataConnector.java:115)
+                at io.druid.metadata.SQLMetadataStorageActionHandler.insert(SQLMetadataStorageActionHandler.java:97)
+                at io.druid.indexing.overlord.MetadataTaskStorage.insert(MetadataTaskStorage.java:134)
+                at io.druid.indexing.overlord.TaskQueue.add(TaskQueue.java:321)
+                at io.druid.indexing.overlord.http.OverlordResource$1.apply(OverlordResource.java:124)
+                at io.druid.indexing.overlord.http.OverlordResource$1.apply(OverlordResource.java:119)
+                at io.druid.indexing.overlord.http.OverlordResource.asLeaderWith(OverlordResource.java:518)
+                at io.druid.indexing.overlord.http.OverlordResource.taskPost(OverlordResource.java:116)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60)
+                at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205)
+                at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+                at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)
+                at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+                at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+                at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+                at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409)
+                at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409)
+                at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:558)
+                at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:733)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+                at com.google.inject.servlet.ServletDefinition.doServiceImpl(ServletDefinition.java:278)
+                at com.google.inject.servlet.ServletDefinition.doService(ServletDefinition.java:268)
+                at com.google.inject.servlet.ServletDefinition.service(ServletDefinition.java:180)
+                at com.google.inject.servlet.ManagedServletPipeline.service(ManagedServletPipeline.java:93)
+                at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:85)
+                at com.google.inject.servlet.ManagedFilterPipeline.dispatch(ManagedFilterPipeline.java:120)
+                at com.google.inject.servlet.GuiceFilter$1.call(GuiceFilter.java:132)
+                at com.google.inject.servlet.GuiceFilter$1.call(GuiceFilter.java:129)
+                at com.google.inject.servlet.GuiceFilter$Context.call(GuiceFilter.java:206)
+                at com.google.inject.servlet.GuiceFilter.doFilter(GuiceFilter.java:129)
+                at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+                at io.druid.server.http.RedirectFilter.doFilter(RedirectFilter.java:71)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.SQLMetadataConnector.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataStorageActionHandler.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataStorageActionHandlerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2842" opendate="2016-04-15 00:00:00" fixdate="2016-04-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>remotetaskrun npe assignment error nullpointerexception rtr task remotetask taskrunnerworkitem
+                remotetaskrunner runner
+            </summary>
+            <description>remotetaskrun npe assignment error nullpointerexception rtr task remotetask taskrunnerworkitem
+                remotetaskrunner runner
+                at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:229)
+                at io.druid.indexing.overlord.RemoteTaskRunner.tryAssignTask(RemoteTaskRunner.java:638)
+                at io.druid.indexing.overlord.RemoteTaskRunner.access$1400(RemoteTaskRunner.java:116)
+                at io.druid.indexing.overlord.RemoteTaskRunner$3.call(RemoteTaskRunner.java:568)
+                at io.druid.indexing.overlord.RemoteTaskRunner$3.call(RemoteTaskRunner.java:556)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+                2016-04-15T09:56:11,336 ERROR [rtr-pending-tasks-runner-2] io.druid.indexing.overlord.RemoteTaskRunner -
+                Exception in running pending tasks: {class=io.druid.indexing.overlord.RemoteTaskRun
+                ner, exceptionType=class java.lang.NullPointerException, exceptionMessage=taskRunnerWorkItem}
+                java.lang.NullPointerException: taskRunnerWorkItem
+                at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:229)
+                at io.druid.indexing.overlord.RemoteTaskRunner.taskComplete(RemoteTaskRunner.java:1048)
+                at io.druid.indexing.overlord.RemoteTaskRunner.access$1500(RemoteTaskRunner.java:116)
+                at io.druid.indexing.overlord.RemoteTaskRunner$3.call(RemoteTaskRunner.java:577)
+                at io.druid.indexing.overlord.RemoteTaskRunner$3.call(RemoteTaskRunner.java:556)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunner.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerRunPendingTasksConcurrencyTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerTestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2991" opendate="2016-05-19 00:00:00" fixdate="2016-05-26 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>OnheapIncrementalIndex addToFacts
+            </summary>
+            <description>OnheapIncrementalIndex addToFacts
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.segment.incremental.OnheapIncrementalIndex.java</file>
+            <file type="M">org.apache.druid.segment.incremental.OnheapIncrementalIndexTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3063" opendate="2016-06-02 00:00:00" fixdate="2016-06-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request flight reasonable listen number tie load post solution limit lock block jetty lookup
+                coordinator work forward query one druid queue stuff
+            </summary>
+            <description>request flight reasonable listen number tie load post solution limit lock block jetty lookup
+                coordinator work forward query one druid queue stuff
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManagerTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManager.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupModule.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManagerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3393" opendate="2016-08-24 00:00:00" fixdate="2022-02-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster server executionexception hundred instance channel run source channelexception
+                nettyhttpclient side chance race shape byte query pool broker condition druid future directdruidclient
+                callback thing httpclient
+            </summary>
+            <description>cluster server executionexception hundred instance channel run source channelexception
+                nettyhttpclient side chance race shape byte query pool broker condition druid future directdruidclient
+                callback thing httpclient
+                at io.druid.client.DirectDruidClient$JsonParserIterator.init(DirectDruidClient.java:498)
+                at io.druid.client.DirectDruidClient$JsonParserIterator.hasNext(DirectDruidClient.java:442)
+                at com.metamx.common.guava.BaseSequence.makeYielder(BaseSequence.java:103)
+                at com.metamx.common.guava.BaseSequence.toYielder(BaseSequence.java:81)
+                at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+                at com.metamx.common.guava.MergeSequence$2.accumulate(MergeSequence.java:66)
+                at com.metamx.common.guava.MergeSequence$2.accumulate(MergeSequence.java:62)
+                at com.metamx.common.guava.YieldingAccumulators$1.accumulate(YieldingAccumulators.java:32)
+                at com.metamx.common.guava.BaseSequence.makeYielder(BaseSequence.java:104)
+                at com.metamx.common.guava.BaseSequence.toYielder(BaseSequence.java:81)
+                at com.metamx.common.guava.BaseSequence.accumulate(BaseSequence.java:67)
+                at com.metamx.common.guava.MergeSequence.toYielder(MergeSequence.java:59)
+                at com.metamx.common.guava.LazySequence.toYielder(LazySequence.java:43)
+                at io.druid.query.RetryQueryRunner$1.toYielder(RetryQueryRunner.java:105)
+                at io.druid.common.guava.CombiningSequence.toYielder(CombiningSequence.java:79)
+                at com.metamx.common.guava.MappedSequence.toYielder(MappedSequence.java:46)
+                at io.druid.query.CPUTimeMetricQueryRunner$1.toYielder(CPUTimeMetricQueryRunner.java:93)
+                at com.metamx.common.guava.Sequences$1.toYielder(Sequences.java:98)
+                at io.druid.server.QueryResource.doPost(QueryResource.java:170)
+                at sun.reflect.GeneratedMethodAccessor52.invoke(Unknown Source) ~[?:?]
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_66]
+                at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_66]
+                at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60)
+                at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205)
+                at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+                at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)
+                at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+                at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205)
+                at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+                at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)
+                at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+                at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+                at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409)
+                at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409)
+                at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:558)
+                at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:733)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+                at com.google.inject.servlet.ServletDefinition.doServiceImpl(ServletDefinition.java:278)
+                at com.google.inject.servlet.ServletDefinition.doService(ServletDefinition.java:268)
+                at com.google.inject.servlet.ServletDefinition.service(ServletDefinition.java:180)
+                at com.google.inject.servlet.ManagedServletPipeline.service(ManagedServletPipeline.java:93)
+                at com.google.inject.servlet.FilterChainInvocation.doFilter(FilterChainInvocation.java:85)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.metamx.http.client.HttpClientConfig.java</file>
+            <file type="M">com.metamx.http.client.HttpClientInit.java</file>
+            <file type="M">com.metamx.http.client.pool.ResourcePool.java</file>
+            <file type="M">com.metamx.http.client.pool.ResourcePoolConfig.java</file>
+            <file type="M">com.metamx.http.client.pool.ResourcePoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3459" opendate="2016-09-14 00:00:00" fixdate="2022-02-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking lookup cache stack issue level query namespaceextractioncachemanager atomicboolean deadlock
+                topn_redacted kill hold node synchronizer lock information case reentrantlock
+            </summary>
+            <description>parking lookup cache stack issue level query namespaceextractioncachemanager atomicboolean
+                deadlock topn_redacted kill hold node synchronizer lock information case reentrantlock
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x00000004c42eaba8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+                at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+                at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+                at io.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.swapAndClearCache(OffHeapNamespaceExtractionCacheManager.java:112)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager$2.run(NamespaceExtractionCacheManager.java:173)
+                - locked#0x00000004c42c11a8> (a java.util.concurrent.atomic.AtomicBoolean)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager$4.run(NamespaceExtractionCacheManager.java:368)
+                at com.google.common.util.concurrent.MoreExecutors$ScheduledListeningDecorator$NeverSuccessfulListenableFutureTask.run(MoreExecutors.java:582)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+                "topN_REDACTED_[2016-09-01T15:00:00.000Z/2016-09-01T16:00:00.000Z]":
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x00000004c42eacc8> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+                at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+                at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+                at io.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.getCacheMap(OffHeapNamespaceExtractionCacheManager.java:170)
+                at io.druid.query.lookup.NamespaceLookupExtractorFactory.get(NamespaceLookupExtractorFactory.java:270)
+                at io.druid.query.lookup.NamespaceLookupExtractorFactory.get(NamespaceLookupExtractorFactory.java:50)
+                at io.druid.query.lookup.RegisteredLookupExtractionFn.ensureDelegate(RegisteredLookupExtractionFn.java:142)
+                - locked#0x00000005f4d39248> (a java.lang.Object)
+                at io.druid.query.lookup.RegisteredLookupExtractionFn.getCacheKey(RegisteredLookupExtractionFn.java:97)
+                at io.druid.query.dimension.ExtractionDimensionSpec.getCacheKey(ExtractionDimensionSpec.java:96)
+                at io.druid.query.topn.TopNQueryQueryToolChest$7.computeCacheKey(TopNQueryQueryToolChest.java:309)
+                at io.druid.query.topn.TopNQueryQueryToolChest$7.computeCacheKey(TopNQueryQueryToolChest.java:298)
+                at io.druid.client.CachingQueryRunner.run(CachingQueryRunner.java:103)
+                at io.druid.query.BySegmentQueryRunner.run(BySegmentQueryRunner.java:70)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupIntrospectHandler.java</file>
+            <file type="M">org.apache.druid.query.lookup.namespace.ExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.JDBCExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespaceExtractionModule.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.URIExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheHandler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheProxy.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheScheduler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OnHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.UpdateCounter.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespacedExtractorModuleTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.URIExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.JDBCExtractionNamespaceTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagerExecutorsTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagersTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManagerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3593" opendate="2016-10-19 00:00:00" fixdate="2022-02-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking cache stack namespaceextractioncachemanager qtl atomicboolean monitor deadlock offheap list
+                hold synchronizer lock information reentrantlock
+            </summary>
+            <description>parking cache stack namespaceextractioncachemanager qtl atomicboolean monitor deadlock offheap
+                list hold synchronizer lock information reentrantlock
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x00000004f0550030> (a java.util.concurrent.locks.ReentrantLock$NonfairSync)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(AbstractQueuedSynchronizer.java:836)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(AbstractQueuedSynchronizer.java:870)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(AbstractQueuedSynchronizer.java:1199)
+                at java.util.concurrent.locks.ReentrantLock$NonfairSync.lock(ReentrantLock.java:209)
+                at java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:285)
+                at io.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.swapAndClearCache(OffHeapNamespaceExtractionCacheManager.java:112)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager$2.run(NamespaceExtractionCacheManager.java:173)
+                - locked#0x00000004c38b04a8> (a java.util.concurrent.atomic.AtomicBoolean)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager$4.run(NamespaceExtractionCacheManager.java:368)
+                at com.google.common.util.concurrent.MoreExecutors$ScheduledListeningDecorator$NeverSuccessfulListenableFutureTask.run(MoreExecutors.java:582)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.removeNamespaceLocalMetadata(NamespaceExtractionCacheManager.java:304)
+                - waiting to lock#0x00000004c38b04a8> (a java.util.concurrent.atomic.AtomicBoolean)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.delete(NamespaceExtractionCacheManager.java:447)
+                at io.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.delete(OffHeapNamespaceExtractionCacheManager.java:139)
+                at io.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.scheduleAndWait(NamespaceExtractionCacheManager.java:254)
+                at io.druid.query.lookup.NamespaceLookupExtractorFactory.start(NamespaceLookupExtractorFactory.java:111)
+                at io.druid.query.lookup.LookupReferencesManager.updateIfNew(LookupReferencesManager.java:235)
+                at io.druid.query.lookup.LookupListeningResource$2.post(LookupModule.java:129)
+                at io.druid.server.listener.resource.AbstractListenerHandler.handlePOSTAll(AbstractListenerHandler.java:107)
+                at io.druid.server.listener.resource.ListenerResource.serviceAnnouncementPOSTAll(ListenerResource.java:92)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60)
+                at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205)
+                at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+                at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)
+                at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+                at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+                at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1409)
+                at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:409)
+                at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:558)
+                at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:733)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OnHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagerExecutorsTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupIntrospectHandler.java</file>
+            <file type="M">org.apache.druid.query.lookup.namespace.ExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.JDBCExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespaceExtractionModule.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheHandler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheProxy.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheScheduler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OnHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.UpdateCounter.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespacedExtractorModuleTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.URIExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.JDBCExtractionNamespaceTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagerExecutorsTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagersTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManagerTest.javaå</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3600" opendate="2016-10-20 00:00:00" fixdate="2017-07-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>kafkapartition finiteappenderatordriver metadata updatedatasourcemetadatawithhandle generating our
+                partition segment worker appenderatorimpl info partitionoffsetmap indexersqlmetadatastoragecoordinator
+                taskqueue channelresourcefactory task tasklocation kafkadatasourcemetadata datasource kafka
+                remotetaskrunner transaction status
+            </summary>
+            <description>kafkapartition finiteappenderatordriver metadata updatedatasourcemetadatawithhandle generating
+                our partition segment worker appenderatorimpl info partitionoffsetmap
+                indexersqlmetadatastoragecoordinator taskqueue channelresourcefactory task tasklocation
+                kafkadatasourcemetadata datasource kafka remotetaskrunner transaction status
+                at io.druid.indexing.kafka.KafkaIndexTask.run(KafkaIndexTask.java:524)
+                at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:436)
+                at io.druid.indexing.overlord.ThreadPoolTaskRunner$ThreadPoolTaskRunnerCallable.call(ThreadPoolTaskRunner.java:408)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.IndexerSQLMetadataStorageCoordinator.java</file>
+            <file type="M">org.apache.druid.metadata.RetryTransactionException.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataConnector.java</file>
+            <file type="M">org.apache.druid.metadata.IndexerSQLMetadataStorageCoordinatorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3608" opendate="2016-10-25 00:00:00" fixdate="2017-03-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>IngestSegmentFirehoseFactory race between tasks
+            </summary>
+            <description>IngestSegmentFirehoseFactory race between tasks
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.common.task.IndexTask.java</file>
+            <file type="M">org.apache.druid.indexing.firehose.IngestSegmentFirehoseFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3772" opendate="2016-12-12 00:00:00" fixdate="2021-09-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>condition race issue gvsmirnov comment kafkalookupextractorfactory order
+            </summary>
+            <description>condition race issue gvsmirnov comment kafkalookupextractorfactory order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4226" opendate="2017-04-28 00:00:00" fixdate="2017-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>defaultpasswordprovider advertiser_account_manager_id log connecturi aprox source pollperiod
+                chainedexecutionqueryrunner valuecolumn table createtable lookup factory realtime
+                jdbcextractionnamespacecachefactory tscolumn loading sequence node dbconnectorconfig task keycolumn
+                druid namespace connectorconfig
+            </summary>
+            <description>defaultpasswordprovider advertiser_account_manager_id log connecturi aprox source pollperiod
+                chainedexecutionqueryrunner valuecolumn table createtable lookup factory realtime
+                jdbcextractionnamespacecachefactory tscolumn loading sequence node dbconnectorconfig task keycolumn
+                druid namespace connectorconfig
+                at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:253) [guava-16.0.1.jar:?]
+                at io.druid.query.lookup.RegisteredLookupExtractionFn.ensureDelegate(RegisteredLookupExtractionFn.java:143)
+                at io.druid.query.lookup.RegisteredLookupExtractionFn.apply(RegisteredLookupExtractionFn.java:115)
+                at io.druid.segment.filter.InFilter$2$1.apply(InFilter.java:110)
+                at io.druid.segment.filter.InFilter$2$1.apply(InFilter.java:106)
+                at io.druid.segment.StringDimensionIndexer.makeIndexingValueMatcher(StringDimensionIndexer.java:532)
+                at io.druid.segment.incremental.IncrementalIndexStorageAdapter$CursorAndEntryHolderValueMatcherFactory.makeValueMatcher(IncrementalIndexStorageAdapter.java:647)
+                at io.druid.segment.filter.InFilter.makeMatcher(InFilter.java:88)
+                at io.druid.segment.filter.AndFilter.makeMatcher(AndFilter.java:75)
+                at io.druid.segment.incremental.IncrementalIndexStorageAdapter.makeFilterMatcher(IncrementalIndexStorageAdapter.java:558)
+                at io.druid.segment.incremental.IncrementalIndexStorageAdapter.access$000(IncrementalIndexStorageAdapter.java:67)
+                at io.druid.segment.incremental.IncrementalIndexStorageAdapter$1$1.#init(IncrementalIndexStorageAdapter.java:243)
+                at io.druid.segment.incremental.IncrementalIndexStorageAdapter$1.apply(IncrementalIndexStorageAdapter.java:241)
+                at io.druid.segment.incremental.IncrementalIndexStorageAdapter$1.apply(IncrementalIndexStorageAdapter.java:233)
+                at com.metamx.common.guava.MappingAccumulator.accumulate(MappingAccumulator.java:39)
+                at com.metamx.common.guava.BaseSequence.accumulate(BaseSequence.java:67)
+                at com.metamx.common.guava.MappedSequence.accumulate(MappedSequence.java:40)
+                at com.metamx.common.guava.MappedSequence.accumulate(MappedSequence.java:40)
+                at com.metamx.common.guava.FilteredSequence.accumulate(FilteredSequence.java:42)
+                at com.metamx.common.guava.ResourceClosingSequence.accumulate(ResourceClosingSequence.java:38)
+                at com.metamx.common.guava.Sequences.toList(Sequences.java:113)
+                at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:129)
+                at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:119)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.common.TestUtils.java</file>
+            <file type="M">org.apache.druid.query.dimension.DimensionSpec.java</file>
+            <file type="M">org.apache.druid.query.extraction.ExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupConfig.java</file>
+            <file type="M">org.apache.druid.query.expression.TestExprMacroTable.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupConfigTest.java</file>
+            <file type="M">org.apache.druid.query.dimension.LookupDimensionSpec.java</file>
+            <file type="M">org.apache.druid.query.expression.LookupExprMacro.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupModule.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManager.java</file>
+            <file type="M">org.apache.druid.query.lookup.RegisteredLookupExtractionFn.java</file>
+            <file type="M">org.apache.druid.server.http.LookupCoordinatorResource.java</file>
+            <file type="M">org.apache.druid.query.dimension.LookupDimensionSpecTest.java</file>
+            <file type="M">org.apache.druid.query.expression.ExprMacroTest.java</file>
+            <file type="M">org.apache.druid.query.expression.TestExpressionMacroTable.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManagerTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.RegisteredLookupExtractionFnTest.java</file>
+            <file type="M">org.apache.druid.server.http.LookupCoordinatorResourceTest.java</file>
+            <file type="M">org.apache.druid.sql.calcite.util.CalciteTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4296" opendate="2017-05-18 00:00:00" fixdate="2017-05-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>maxgcpausemillis fieldaccesspostaggregator fieldaccess sizebyte doublesumaggregatorfactory
+                middlemanager timeseriesquery javaopt chainedexecutionqueryrunner constantvalue arithmeticpostaggregator
+                aggregatorspec hyperuniquecardinality fnname basetaskdir postaggregatorspec numthread hll doublesum
+                multiplespecificsegmentspec hyperuniquesaggregatorfactory hyperunique constantpostaggregator queryid
+                fieldname middlemanger restoretasksonrestart datasource bufferunderflowexception segmentdescriptor
+            </summary>
+            <description>maxgcpausemillis fieldaccesspostaggregator fieldaccess sizebyte doublesumaggregatorfactory
+                middlemanager timeseriesquery javaopt chainedexecutionqueryrunner constantvalue arithmeticpostaggregator
+                aggregatorspec hyperuniquecardinality fnname basetaskdir postaggregatorspec numthread hll doublesum
+                multiplespecificsegmentspec hyperuniquesaggregatorfactory hyperunique constantpostaggregator queryid
+                fieldname middlemanger restoretasksonrestart datasource bufferunderflowexception segmentdescriptor
+                at java.nio.Buffer.nextGetIndex(Buffer.java:506)
+                at java.nio.DirectByteBuffer.getShort(DirectByteBuffer.java:590)
+                at io.druid.query.aggregation.hyperloglog.HyperLogLogCollector.fold(HyperLogLogCollector.java:398)
+                at io.druid.query.aggregation.hyperloglog.HyperUniquesAggregator.aggregate(HyperUniquesAggregator.java:48)
+                at io.druid.query.timeseries.TimeseriesQueryEngine$1.apply(TimeseriesQueryEngine.java:73)
+                at io.druid.query.timeseries.TimeseriesQueryEngine$1.apply(TimeseriesQueryEngine.java:57)
+                at io.druid.query.QueryRunnerHelper$1.apply(QueryRunnerHelper.java:80)
+                at io.druid.query.QueryRunnerHelper$1.apply(QueryRunnerHelper.java:75)
+                at com.metamx.common.guava.MappingAccumulator.accumulate(MappingAccumulator.java:39)
+                at com.metamx.common.guava.FilteringAccumulator.accumulate(FilteringAccumulator.java:40)
+                at com.metamx.common.guava.MappingAccumulator.accumulate(MappingAccumulator.java:39)
+                at com.metamx.common.guava.BaseSequence.accumulate(BaseSequence.java:67)
+                at com.metamx.common.guava.MappedSequence.accumulate(MappedSequence.java:40)
+                at com.metamx.common.guava.ResourceClosingSequence.accumulate(ResourceClosingSequence.java:38)
+                at com.metamx.common.guava.FilteredSequence.accumulate(FilteredSequence.java:42)
+                at com.metamx.common.guava.MappedSequence.accumulate(MappedSequence.java:40)
+                at com.metamx.common.guava.FilteredSequence.accumulate(FilteredSequence.java:42)
+                at com.metamx.common.guava.ResourceClosingSequence.accumulate(ResourceClosingSequence.java:38)
+                at com.metamx.common.guava.Sequences.toList(Sequences.java:113)
+                at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:129)
+                at io.druid.query.ChainedExecutionQueryRunner$1$1$1.call(ChainedExecutionQueryRunner.java:119)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at com.google.common.util.concurrent.MoreExecutors$SameThreadExecutorService.execute(MoreExecutors.java:297)
+                at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+                at com.google.common.util.concurrent.AbstractListeningExecutorService.submit(AbstractListeningExecutorService.java:58)
+                at io.druid.query.ChainedExecutionQueryRunner$1$1.apply(ChainedExecutionQueryRunner.java:117)
+                at io.druid.query.ChainedExecutionQueryRunner$1$1.apply(ChainedExecutionQueryRunner.java:109)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.aggregation.cardinality.CardinalityAggregator.java</file>
+            <file type="M">org.apache.druid.query.aggregation.hyperloglog.HyperUniquesAggregator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4984" opendate="2017-10-20 00:00:00" fixdate="2017-10-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster discover dgolitsyn race start constructor inventory serverinventoryview
+                balancerstrategyfactory number view balancer leventov segment initialization callback
+                cachingcostbalancerstrategyfactory cachingcost register
+            </summary>
+            <description>cluster discover dgolitsyn race start constructor inventory serverinventoryview
+                balancerstrategyfactory number view balancer leventov segment initialization callback
+                cachingcostbalancerstrategyfactory cachingcost register
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.coordinator.CachingCostBalancerStrategyFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5338" opendate="2018-02-02 00:00:00" fixdate="2018-02-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>line usage while anything reference loop executor state event class deployment concurrentbatch
+                issue batch cpu druidcoordinator concurrency in_java tryaddevents bci information httppostemitter
+                emitter frame
+            </summary>
+            <description>line usage while anything reference loop executor state event class deployment concurrentbatch
+                issue batch cpu druidcoordinator concurrency in_java tryaddevents bci information httppostemitter
+                emitter frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.java.util.emitter.core.Batch.java</file>
+            <file type="M">org.apache.druid.java.util.emitter.core.HttpPostEmitter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6020" opendate="2018-07-18 00:00:00" fixdate="2018-09-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>leader stack npe taskmaster race this optional taskqueue follow nullpointerexception taskrunner
+                trace variable gettaskrunner initialize becomeleader overlord
+            </summary>
+            <description>leader stack npe taskmaster race this optional taskqueue follow nullpointerexception taskrunner
+                trace variable gettaskrunner initialize becomeleader overlord
+                at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:213)
+                at com.google.common.base.Optional.of(Optional.java:85)
+                at io.druid.indexing.overlord.TaskMaster.getTaskRunner(TaskMaster.java:214)
+                at io.druid.indexing.overlord.http.OverlordResource.getWorkers(OverlordResource.java:810)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at com.sun.jersey.spi.container.JavaMethodInvokerFactory$1.invoke(JavaMethodInvokerFactory.java:60)
+                at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:205)
+                at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+                at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)
+                at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+                at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+                at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+                at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1542)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1473)
+                at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1419)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.TaskMaster.java</file>
+            <file type="M">org.apache.druid.server.coordinator.DruidCoordinator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6028" opendate="2018-07-20 00:00:00" fixdate="2018-08-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>drop argument deadlock error cycle sec sqltransactionrollbackexception payload lock victim row
+                standardexception table group sqlmetadatarulemanagertest test max syscolumns finder datasource failure
+                waiter unabletoexecutestatementexception tablelock
+            </summary>
+            <description>drop argument deadlock error cycle sec sqltransactionrollbackexception payload lock victim row
+                standardexception table group sqlmetadatarulemanagertest test max syscolumns finder datasource failure
+                waiter unabletoexecutestatementexception tablelock
+                at io.druid.metadata.SQLMetadataRuleManagerTest.dropTable(SQLMetadataRuleManagerTest.java:209)
+                at io.druid.metadata.SQLMetadataRuleManagerTest.cleanup(SQLMetadataRuleManagerTest.java:204)
+                at io.druid.metadata.SQLMetadataRuleManagerTest.dropTable(SQLMetadataRuleManagerTest.java:209)
+                at io.druid.metadata.SQLMetadataRuleManagerTest.cleanup(SQLMetadataRuleManagerTest.java:204)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.SQLMetadataRuleManager.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataSegmentManager.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataSegmentManagerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6139" opendate="2018-08-09 00:00:00" fixdate="2018-08-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>testCheckpointForUnknownTaskGroup KafkaSupervisorTest
+            </summary>
+            <description>testCheckpointForUnknownTaskGroup KafkaSupervisorTest
+                at io.druid.indexing.kafka.supervisor.KafkaSupervisor$CheckpointNotice.isValidTaskGroup(KafkaSupervisor.java:686)
+                at io.druid.indexing.kafka.supervisor.KafkaSupervisor$CheckpointNotice.handle(KafkaSupervisor.java:638)
+                at io.druid.indexing.kafka.supervisor.KafkaSupervisor$2.run(KafkaSupervisor.java:363)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at java.lang.Thread.run(Thread.java:748)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.kafka.supervisor.KafkaSupervisorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6201" opendate="2018-08-21 00:00:00" fixdate="2018-08-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster lifecyclelock httpremotetaskrunner os_prio test monitor deadlock sync daemon entry task
+                concurrenthashmap lock hrtr state worker prio runner overlord
+            </summary>
+            <description>cluster lifecyclelock httpremotetaskrunner os_prio test monitor deadlock sync daemon entry task
+                concurrenthashmap lock hrtr state worker prio runner overlord
+                at io.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.runTaskOnWorker(HttpRemoteTaskRunner.java:379)
+                - waiting to lock#0x00000000c1544c10> (a java.lang.Object)
+                at io.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.lambda$addPendingTaskToExecutor$7(HttpRemoteTaskRunner.java:1005)
+                at io.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner$$Lambda$133/748833484.run(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at java.lang.Thread.run(Thread.java:748)
+                java.lang.Thread.State: BLOCKED (on object monitor)
+                at io.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.getKnownTasks(HttpRemoteTaskRunner.java:1111)
+                - waiting to lock#0x00000000c1544c10> (a java.lang.Object)
+                at io.druid.indexing.overlord.TaskQueue.manage(TaskQueue.java:232)
+                at io.druid.indexing.overlord.TaskQueue.access$000(TaskQueue.java:69)
+                at io.druid.indexing.overlord.TaskQueue$1.run(TaskQueue.java:136)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at java.lang.Thread.run(Thread.java:748)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6287" opendate="2018-09-01 00:00:00" fixdate="2018-09-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>result condition indexing race issue verifyandmergecheckpoint firstkey service kafka sort
+                kafkasupervisor
+            </summary>
+            <description>result condition indexing race issue verifyandmergecheckpoint firstkey service kafka sort
+                kafkasupervisor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.kafka.supervisor.KafkaSupervisor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6826" opendate="2019-01-09 00:00:00" fixdate="2019-04-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>DruidSchema refreshSegmentsForDataSource
+            </summary>
+            <description>DruidSchema refreshSegmentsForDataSource
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.sql.calcite.schema.DruidSchema.java</file>
+            <file type="M">org.apache.druid.sql.calcite.schema.DruidSchemaTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6867" opendate="2019-01-16 00:00:00" fixdate="2019-01-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack level exhaust monitor deadlock druidstatement hold druidconnection lock information
+                connection hashmap
+            </summary>
+            <description>stack level exhaust monitor deadlock druidstatement hold druidconnection lock information
+                connection hashmap
+                at io.druid.sql.avatica.DruidStatement.close(DruidStatement.java:310)
+                - waiting to lock#0x00000000d6389830> (a java.lang.Object)
+                at io.druid.sql.avatica.DruidConnection.close(DruidConnection.java:150)
+                - locked#0x00000000d603e4b8> (a java.util.HashMap)
+                at io.druid.sql.avatica.DruidMeta.closeConnection(DruidMeta.java:120)
+                at io.druid.sql.avatica.DruidMeta.lambda$getDruidConnection$0(DruidMeta.java:588)
+                at io.druid.sql.avatica.DruidMeta$$Lambda$90/10531789.run(Unknown Source)
+                at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+                at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+                at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at java.lang.Thread.run(Thread.java:748)
+                at io.druid.sql.avatica.DruidConnection.lambda$createStatement$0(DruidConnection.java:107)
+                - waiting to lock#0x00000000d603e4b8> (a java.util.HashMap)
+                at io.druid.sql.avatica.DruidConnection$$Lambda$91/1439788572.run(Unknown Source)
+                at io.druid.sql.avatica.DruidStatement.close(DruidStatement.java:348)
+                - locked#0x00000000d6389830> (a java.lang.Object)
+                at io.druid.sql.avatica.DruidStatement.execute(DruidStatement.java:213)
+                - locked#0x00000000d6389830> (a java.lang.Object)
+                at io.druid.sql.avatica.DruidMeta.prepareAndExecute(DruidMeta.java:187)
+                at org.apache.calcite.avatica.remote.LocalService.apply(LocalService.java:206)
+                at org.apache.calcite.avatica.remote.Service$PrepareAndExecuteRequest.accept(Service.java:928)
+                at org.apache.calcite.avatica.remote.Service$PrepareAndExecuteRequest.accept(Service.java:880)
+                at org.apache.calcite.avatica.remote.AbstractHandler.apply(AbstractHandler.java:94)
+                at org.apache.calcite.avatica.remote.JsonHandler.apply(JsonHandler.java:52)
+                at org.apache.calcite.avatica.server.AvaticaJsonHandler.handle(AvaticaJsonHandler.java:130)
+                at io.druid.sql.avatica.DruidAvaticaHandler.handle(DruidAvaticaHandler.java:60)
+                at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+                at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+                at org.eclipse.jetty.server.Server.handle(Server.java:534)
+                at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+                at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+                at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:283)
+                at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:108)
+                at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.sql.avatica.DruidConnection.java</file>
+            <file type="M">org.apache.druid.sql.avatica.DruidStatement.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7400" opendate="2019-04-02 00:00:00" fixdate="2020-04-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>allow metadata credentials motivation description passwordprovider password database provider
+                property case race store way condition druid field build name passwordproviders user operation username
+            </summary>
+            <description>allow metadata credentials motivation description passwordprovider password database provider
+                property case race store way condition druid field build name passwordproviders user operation username
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.DynamicConfigProvider.java</file>
+            <file type="M">org.apache.druid.metadata.MapStringDynamicConfigProvider.java</file>
+            <file type="M">org.apache.druid.metadata.PasswordProvider.java</file>
+            <file type="M">org.apache.druid.metadata.MapStringDynamicConfigProviderTest.java</file>
+            <file type="M">org.apache.druid.indexing.kafka.KafkaRecordSupplier.java</file>
+            <file type="M">org.apache.druid.indexing.kafka.supervisor.KafkaSupervisorIOConfig.java</file>
+            <file type="M">org.apache.druid.indexing.kafka.KafkaRecordSupplierTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8622" opendate="2019-10-02 00:00:00" fixdate="2019-10-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster concept deadlock slot type interface parallelindexsupervisortask capacity delegate impl
+                middlemanager property staging test subtasks subtask task druid supervisorcapacity restriction http
+                remotetaskrunner comment style issupervisor config user supervisor
+            </summary>
+            <description>cluster concept deadlock slot type interface parallelindexsupervisortask capacity delegate impl
+                middlemanager property staging test subtasks subtask task druid supervisorcapacity restriction http
+                remotetaskrunner comment style issupervisor config user supervisor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.java.util.emitter.EmittingLogger.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.TaskRunnerWorkItem.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.config.HttpRemoteTaskRunnerConfig.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunnerResource.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.WorkerHolder.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunnerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9292" opendate="2020-01-30 00:00:00" fixdate="2020-02-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>CoordinatorRuleManager rules
+            </summary>
+            <description>CoordinatorRuleManager rules
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.router.CoordinatorRuleManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10005" opendate="2020-06-08 00:00:00" fixdate="2020-06-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum metadata week memory update sqlsegmentsmetadatamanager queryparam segment
+                forcemetadatarefresh end cache coordinator past query start datasourcename loadstatus task datasource
+                response interval nullabl pathparam ingestion
+            </summary>
+            <description>datum metadata week memory update sqlsegmentsmetadatamanager queryparam segment
+                forcemetadatarefresh end cache coordinator past query start datasourcename loadstatus task datasource
+                response interval nullabl pathparam ingestion
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.client.CoordinatorServerView.java</file>
+            <file type="M">org.apache.druid.metadata.SegmentsMetadataManager.java</file>
+            <file type="M">org.apache.druid.metadata.SqlSegmentsMetadataManager.java</file>
+            <file type="M">org.apache.druid.server.coordinator.DruidCoordinator.java</file>
+            <file type="M">org.apache.druid.server.http.DataSourcesResource.java</file>
+            <file type="M">org.apache.druid.metadata.SqlSegmentsMetadataManagerTest.java</file>
+            <file type="M">org.apache.druid.server.http.DataSourcesResourceTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

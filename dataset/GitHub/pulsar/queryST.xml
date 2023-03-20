@@ -1,0 +1,988 @@
+<bugrepository name="pulsar">
+    <bug id="1117" opendate="2018-01-26 00:00:00" fixdate="2022-05-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>boundary think cache illegalargumentexception prod race issue range netflix error result condition
+                split web namespace report place bundle pulsar
+            </summary>
+            <description>boundary think cache illegalargumentexception prod race issue range netflix error result
+                condition split web namespace report place bundle pulsar
+                at com.google.common.base.Preconditions.checkArgument(Preconditions.java:122)
+                at org.apache.pulsar.common.naming.NamespaceBundles.validateBundle(NamespaceBundles.java:110)
+                at org.apache.pulsar.broker.web.PulsarWebResource.validateNamespaceBundleRange(PulsarWebResource.java:378)
+                at org.apache.pulsar.broker.web.PulsarWebResource.validateNamespaceBundleOwnership(PulsarWebResource.java:404)
+                at org.apache.pulsar.broker.admin.Namespaces.splitNamespaceBundle(Namespaces.java:876)
+                at sun.reflect.GeneratedMethodAccessor127.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+                at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:143)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+                at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.cache.LocalZooKeeperCacheService.java</file>
+            <file type="M">org.apache.pulsar.broker.namespace.NamespaceService.java</file>
+            <file type="M">org.apache.pulsar.common.naming.NamespaceBundleFactory.java</file>
+            <file type="M">org.apache.pulsar.broker.admin.AdminApiTest.java</file>
+            <file type="M">org.apache.pulsar.broker.namespace.NamespaceServiceTest.java</file>
+            <file type="M">org.apache.pulsar.zookeeper.ZooKeeperDataCache.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2141" opendate="2018-07-12 00:00:00" fixdate="2018-07-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ledger sequenceidwitherrortest test race reconnection broker error condition failure producer topic
+                consumer case fencing
+            </summary>
+            <description>ledger sequenceidwitherrortest test race reconnection broker error condition failure producer
+                topic consumer case fencing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.SequenceIdWithErrorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3768" opendate="2019-03-06 00:00:00" fixdate="2022-12-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>PulsarWorkerAssignmentTest
+            </summary>
+            <description>PulsarWorkerAssignmentTest
+                at io.netty.channel.epoll.Native.eventFdWrite(Native Method)
+                at io.netty.channel.epoll.EpollEventLoop.wakeup(EpollEventLoop.java:169)
+                at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:799)
+                at io.netty.channel.AbstractChannelHandlerContext.safeExecute(AbstractChannelHandlerContext.java:1013)
+                at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:825)
+                at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:794)
+                at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:837)
+                at org.apache.pulsar.client.impl.ClientCnx.sendRequestWithId(ClientCnx.java:685)
+                at org.apache.pulsar.client.impl.ProducerImpl.closeAsync(ProducerImpl.java:609)
+                at org.apache.pulsar.functions.sink.PulsarSink$PulsarSinkProcessorBase.close(PulsarSink.java:130)
+                at org.apache.pulsar.functions.sink.PulsarSink.close(PulsarSink.java:306)
+                at org.apache.pulsar.functions.instance.JavaInstanceRunnable.close(JavaInstanceRunnable.java:482)
+                at org.apache.pulsar.functions.runtime.ThreadRuntime.stop(ThreadRuntime.java:128)
+                at org.apache.pulsar.functions.runtime.RuntimeSpawner.close(RuntimeSpawner.java:151)
+                at org.apache.pulsar.functions.worker.FunctionActioner.stopFunction(FunctionActioner.java:243)
+                at org.apache.pulsar.functions.worker.FunctionRuntimeManager.conditionallyStopFunction(FunctionRuntimeManager.java:868)
+                at org.apache.pulsar.functions.worker.FunctionRuntimeManager.stopFunction(FunctionRuntimeManager.java:441)
+                at org.apache.pulsar.functions.worker.FunctionRuntimeManager.lambda$stopAllOwnedFunctions$1(FunctionRuntimeManager.java:429)
+                at org.apache.pulsar.functions.worker.FunctionRuntimeManager$$Lambda$795/1890737615.accept(Unknown Source)
+                at java.util.HashMap$Values.forEach(HashMap.java:981)
+                at org.apache.pulsar.functions.worker.FunctionRuntimeManager.stopAllOwnedFunctions(FunctionRuntimeManager.java:426)
+                at org.apache.pulsar.functions.worker.FunctionRuntimeManager.close(FunctionRuntimeManager.java:813)
+                at org.apache.pulsar.functions.worker.WorkerService.stop(WorkerService.java:218)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.api.BrokerServiceLookupTest.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.PulsarWorkerAssignmentTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4447" opendate="2019-06-03 00:00:00" fixdate="2019-06-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking cluster server waiting release partitionstat broker way sata topicstats web stats linux ghz
+                completablefuture internalgetpartitionedstat centos pulsar base
+            </summary>
+            <description>parking cluster server waiting release partitionstat broker way sata topicstats web stats linux
+                ghz completablefuture internalgetpartitionedstat centos pulsar base
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x00007f512c8e2d80> (a java.util.concurrent.CompletableFuture$Signaller)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1693)
+                at java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3323)
+                at java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1729)
+                at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1895)
+                at org.apache.pulsar.client.admin.internal.TopicsImpl.getStats(TopicsImpl.java:380)
+                at org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.internalGetPartitionedStats(PersistentTopicsBase.java:610)
+                at org.apache.pulsar.broker.admin.v1.PersistentTopics.getPartitionedStats(PersistentTopics.java:279)
+                at sun.reflect.GeneratedMethodAccessor56.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+                at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+                at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+                at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.PulsarService.java</file>
+            <file type="M">org.apache.pulsar.client.admin.PulsarAdmin.java</file>
+            <file type="M">org.apache.pulsar.client.admin.PulsarAdminException.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BaseResource.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BookiesImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BrokerStatsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BrokersImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.ClustersImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.ComponentResource.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.FunctionsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.LookupImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.NamespacesImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.NonPersistentTopicsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.ResourceQuotasImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.SchemasImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.SinksImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.SourcesImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.TenantsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.TopicsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.WorkerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4635" opendate="2019-06-28 00:00:00" fixdate="2020-11-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster server zookeepersessionwatcher log session deadlock phenomenon error bookie timeout zoo
+                hardware watcher keeper broker message failure service pulsar
+            </summary>
+            <description>cluster server zookeepersessionwatcher log session deadlock phenomenon error bookie timeout zoo
+                hardware watcher keeper broker message failure service pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.namespace.NamespaceService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4707" opendate="2019-07-11 00:00:00" fixdate="2019-08-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster request auth kafkaproducer document replace javadoc feature pulsarkafkaproducer client
+                group junit athenz change message nullpointerexception kafka name topic pulsar
+            </summary>
+            <description>cluster request auth kafkaproducer document replace javadoc feature pulsarkafkaproducer client
+                group junit athenz change message nullpointerexception kafka name topic pulsar
+                at org.apache.kafka.clients.producer.internals.DefaultPartitioner.partition(DefaultPartitioner.java:56)
+                at org.apache.kafka.clients.producer.PulsarKafkaProducer.buildMessage(PulsarKafkaProducer.java:270)
+                at org.apache.kafka.clients.producer.PulsarKafkaProducer.send(PulsarKafkaProducer.java:172)
+                at Main.lambda$main$3(Main.java:156)
+                at java.lang.Thread.run(Thread.java:748)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.kafka.clients.producer.PulsarKafkaProducer.java</file>
+            <file type="M">org.apache.pulsar.tests.integration.compat.kafka.PulsarKafkaProducerThreadSafeTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5585" opendate="2019-11-07 00:00:00" fixdate="2019-11-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>nonpersistentreplicator log release sendasync num ack deadlock acquire put getnummessagesinbatch
+                producerimpl ackreceived replication nummessage process batch pendingmessages message batching int meta
+                effect topic producer semaphore pulsar
+            </summary>
+            <description>nonpersistentreplicator log release sendasync num ack deadlock acquire put
+                getnummessagesinbatch producerimpl ackreceived replication nummessage process batch pendingmessages
+                message batching int meta effect topic producer semaphore pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.ProducerSemaphoreTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ProducerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8050" opendate="2020-09-13 00:00:00" fixdate="2020-10-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>pulsarclientimpl replace list good reference performance pursue concurrenthashmap producer
+                newsetfrommap identityhashmap map value consumer pulsar
+            </summary>
+            <description>pulsarclientimpl replace list good reference performance pursue concurrenthashmap producer
+                newsetfrommap identityhashmap map value consumer pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.BrokerClientIntegrationTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.PulsarClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8293" opendate="2020-10-19 00:00:00" fixdate="2020-10-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>readposition setreadposition update discussion solution fix setacknowledgeposition slack context
+                lock state markdeleteposition opreadentry issue race change way concurrency getname condition field
+                synchronization read_position_updater conflict
+            </summary>
+            <description>readposition setreadposition update discussion solution fix setacknowledgeposition slack
+                context lock state markdeleteposition opreadentry issue race change way concurrency getname condition
+                field synchronization read_position_updater conflict
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.bookkeeper.mledger.impl.ManagedCursorImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9109" opendate="2021-01-03 00:00:00" fixdate="2021-03-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking milliseconds stack waiting reentrantreadwritelock timer seconds broker block consumer
+                redeliverunacknowledgedmessage subscriptionname pulsarclient unackedmessagetracker broker sample rateout
+                writelock deadletterpolicy topic step pulsar
+            </summary>
+            <description>parking milliseconds stack waiting reentrantreadwritelock timer seconds broker block consumer
+                redeliverunacknowledgedmessage subscriptionname pulsarclient unackedmessagetracker broker sample rateout
+                writelock deadletterpolicy topic step pulsar
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x00000000af9bbee8> (a java.util.concurrent.CompletableFuture$Signaller)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1693)
+                at java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3323)
+                at java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1729)
+                at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1895)
+                at org.apache.pulsar.client.impl.ProducerBase.send(ProducerBase.java:115)
+                at org.apache.pulsar.client.impl.TypedMessageBuilderImpl.send(TypedMessageBuilderImpl.java:89)
+                at org.apache.pulsar.client.impl.ConsumerImpl.processPossibleToDLQ(ConsumerImpl.java:1452)
+                at org.apache.pulsar.client.impl.ConsumerImpl.lambda$null$12(ConsumerImpl.java:1390)
+                at org.apache.pulsar.client.impl.ConsumerImpl$$Lambda$811/717118161.test(Unknown Source)
+                at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:174)
+                at java.util.Iterator.forEachRemaining(Iterator.java:116)
+                at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+                at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+                at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+                at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+                at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+                at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.UnAckedMessageTracker.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.api.DeadLetterTopicTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10170" opendate="2021-04-08 00:00:00" fixdate="2021-04-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>access log line description medium screenshot ios error authenticationathenz reproduce desktop
+                optimize context lock behavior add efficiency roletoken synchronization information
+            </summary>
+            <description>access log line description medium screenshot ios error authenticationathenz reproduce desktop
+                optimize context lock behavior add efficiency roletoken synchronization information
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.auth.AuthenticationAthenz.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10235" opendate="2021-04-14 00:00:00" fixdate="2021-05-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>LeaderService isLeader
+            </summary>
+            <description>LeaderService isLeader
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.functions.worker.ClusterServiceCoordinator.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.PulsarWorkerService.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.WorkerStatsManager.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.ClusterServiceCoordinatorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10767" opendate="2021-06-01 00:00:00" fixdate="2021-06-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking test issue level reentrantreadwritelock monitor deadlock consumerbatchreceivetest
+                fastthreadlocalthread timed_waiting timer synchronizer client lock information consumerimpl pulsar
+            </summary>
+            <description>parking test issue level reentrantreadwritelock monitor deadlock consumerbatchreceivetest
+                fastthreadlocalthread timed_waiting timer synchronizer client lock information consumerimpl pulsar
+                at org.apache.pulsar.client.impl.ConsumerImpl.redeliverUnacknowledgedMessages(ConsumerImpl.java:1578)
+                - waiting to lock#0x00000000c6094a00> (a org.apache.pulsar.client.impl.ConsumerImpl)
+                at org.apache.pulsar.client.impl.ConsumerImpl.redeliverUnacknowledgedMessages(ConsumerImpl.java:1619)
+                at org.apache.pulsar.client.impl.UnAckedMessageTracker$2.run(UnAckedMessageTracker.java:145)
+                at io.netty.util.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:672)
+                at io.netty.util.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:747)
+                at io.netty.util.HashedWheelTimer$Worker.run(HashedWheelTimer.java:472)
+                at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.lang.Thread.run(java.base@11.0.11/Thread.java:829)
+                "pulsar-client-internal-459-1":
+                at jdk.internal.misc.Unsafe.park(java.base@11.0.11/Native Method)
+                - parking to wait for#0x00000000c6094bf0> (a
+                java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
+                at java.util.concurrent.locks.LockSupport.park(java.base@11.0.11/LockSupport.java:194)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.parkAndCheckInterrupt(java.base@11.0.11/AbstractQueuedSynchronizer.java:885)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued(java.base@11.0.11/AbstractQueuedSynchronizer.java:917)
+                at java.util.concurrent.locks.AbstractQueuedSynchronizer.acquire(java.base@11.0.11/AbstractQueuedSynchronizer.java:1240)
+                at java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.lock(java.base@11.0.11/ReentrantReadWriteLock.java:959)
+                at org.apache.pulsar.client.impl.UnAckedMessageTracker.add(UnAckedMessageTracker.java:180)
+                at org.apache.pulsar.client.impl.ConsumerImpl.trackMessage(ConsumerImpl.java:1385)
+                at org.apache.pulsar.client.impl.ConsumerImpl.trackMessage(ConsumerImpl.java:1369)
+                at org.apache.pulsar.client.impl.ConsumerImpl.messageProcessed(ConsumerImpl.java:1362)
+                - locked#0x00000000c6094a00> (a org.apache.pulsar.client.impl.ConsumerImpl)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.UnAckedMessageTracker.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11379" opendate="2021-07-20 00:00:00" fixdate="2022-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>NarUnpacker
+            </summary>
+            <description>NarUnpacker
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                at org.apache.pulsar.functions.instance.JavaInstanceMain.main(JavaInstanceMain.java:100)
+                at org.apache.pulsar.common.nar.FileUtils.deleteFile(FileUtils.java:213)
+                at org.apache.pulsar.common.nar.FileUtils.deleteFiles(FileUtils.java:202)
+                at org.apache.pulsar.common.nar.FileUtils.deleteFile(FileUtils.java:209)
+                at org.apache.pulsar.common.nar.FileUtils.deleteFiles(FileUtils.java:202)
+                at org.apache.pulsar.common.nar.FileUtils.deleteFile(FileUtils.java:209)
+                at org.apache.pulsar.common.nar.NarUnpacker.unpackNar(NarUnpacker.java:72)
+                at org.apache.pulsar.common.nar.NarClassLoader.getFromArchive(NarClassLoader.java:159)
+                at org.apache.pulsar.functions.utils.functioncache.FunctionCacheEntry.#init>(FunctionCacheEntry.java:73)
+                at org.apache.pulsar.functions.utils.functioncache.FunctionCacheManagerImpl.registerFunctionInstanceWithArchive(FunctionCacheManagerImpl.java:129)
+                at org.apache.pulsar.functions.runtime.thread.ThreadRuntime.loadJars(ThreadRuntime.java:134)
+                at org.apache.pulsar.functions.runtime.thread.ThreadRuntime.getFunctionClassLoader(ThreadRuntime.java:119)
+                at org.apache.pulsar.functions.runtime.thread.ThreadRuntime.start(ThreadRuntime.java:165)
+                at org.apache.pulsar.functions.runtime.RuntimeSpawner.start(RuntimeSpawner.java:80)
+                at org.apache.pulsar.functions.runtime.JavaInstanceStarter.start(JavaInstanceStarter.java:232)
+                ... 5 more
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.common.nar.NarUnpacker.java</file>
+            <file type="M">org.apache.pulsar.common.nar.NarUnpackerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11605" opendate="2021-08-09 00:00:00" fixdate="2022-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>schema cluster nonode for abstracttopic phenomenon bookie example partition scenario deletion
+                deleteschema behavior deleteschemastorage ledger race broker condition schemaregistryservice service
+                schemas topic
+            </summary>
+            <description>schema cluster nonode for abstracttopic phenomenon bookie example partition scenario deletion
+                deleteschema behavior deleteschemastorage ledger race broker condition schemaregistryservice service
+                schemas topic
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.AbstractTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.service.schema.BookkeeperSchemaStorage.java</file>
+            <file type="M">org.apache.pulsar.broker.service.PersistentTopicE2ETest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11689" opendate="2021-08-17 00:00:00" fixdate="2021-08-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>batchreceive poll error sleep reproduce fix create block behavior consumer race issue message way
+                peek call entry condition pendingbatchreceive completablefuture peeknextbatchreceive queue
+            </summary>
+            <description>batchreceive poll error sleep reproduce fix create block behavior consumer race issue message
+                way peek call entry condition pendingbatchreceive completablefuture peeknextbatchreceive queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerBase.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.impl.MultiTopicsConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ZeroQueueConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ClientTestFixtures.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerImplTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.MultiTopicsConsumerImplTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ReaderImplTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11690" opendate="2021-08-17 00:00:00" fixdate="2022-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>fail revalidatelockondifferentsession test failure flaky lockmanagertest nosuchelementexception
+                error value example
+            </summary>
+            <description>fail revalidatelockondifferentsession test failure flaky lockmanagertest nosuchelementexception
+                error value example
+                at java.base/java.util.Optional.get(Optional.java:148)
+                at org.apache.pulsar.metadata.LockManagerTest.revalidateLockOnDifferentSession(LockManagerTest.java:229)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+                at org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:45)
+                at org.testng.internal.InvokeMethodRunnable.call(InvokeMethodRunnable.java:73)
+                at org.testng.internal.InvokeMethodRunnable.call(InvokeMethodRunnable.java:11)
+                at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.bookkeeper.mledger.impl.ManagedLedgerTest.java</file>
+            <file type="M">org.apache.pulsar.metadata.coordination.impl.LockManagerImpl.java</file>
+            <file type="M">org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.AbstractMetadataStore.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.LocalMemoryMetadataStore.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.ZKMetadataStore.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.ZKSessionWatcher.java</file>
+            <file type="M">org.apache.pulsar.metadata.LockManagerTest.java</file>
+            <file type="M">org.apache.pulsar.metadata.ZKSessionTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11966" opendate="2021-09-08 00:00:00" fixdate="2021-10-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>waiting configuration admin settimeout timeout example endpoint adminproxyhandler web connection
+                jetty state place arraydeque class monitor proxied servletconfig proxy base pulsar
+            </summary>
+            <description>waiting configuration admin settimeout timeout example endpoint adminproxyhandler web
+                connection jetty state place arraydeque class monitor proxied servletconfig proxy base pulsar
+                at java.lang.Object.wait(java.base@11.0.11/Native Method)
+                - waiting on
+                #no object reference available>
+                at java.lang.Object.wait(java.base@11.0.11/Object.java:328)
+                at org.eclipse.jetty.server.HttpInput.blockForContent(HttpInput.java:584)
+                at org.eclipse.jetty.server.HttpInput$1.blockForContent(HttpInput.java:1164)
+                at org.eclipse.jetty.server.HttpInput.read(HttpInput.java:330)
+                - waiting to re-lock in wait()#0x00000000d3269c28> (a java.util.ArrayDeque)
+                at java.io.InputStream.read(java.base@11.0.11/InputStream.java:205)
+                at
+                org.eclipse.jetty.client.util.InputStreamContentProvider$InputStreamContentProviderIterator.hasNext(InputStreamContentProvider.java:176)
+                at org.eclipse.jetty.client.HttpContent.advance(HttpContent.java:157)
+                at org.eclipse.jetty.client.HttpContent.advance(HttpContent.java:149)
+                at org.eclipse.jetty.client.http.HttpSenderOverHTTP$HeadersCallback.#init>(HttpSenderOverHTTP.java:206)
+                at org.eclipse.jetty.client.http.HttpSenderOverHTTP.sendHeaders(HttpSenderOverHTTP.java:65)
+                at org.eclipse.jetty.client.HttpSender.send(HttpSender.java:212)
+                at org.eclipse.jetty.client.http.HttpChannelOverHTTP.send(HttpChannelOverHTTP.java:84)
+                at org.eclipse.jetty.client.HttpChannel.send(HttpChannel.java:125)
+                at org.eclipse.jetty.client.HttpConnection.send(HttpConnection.java:241)
+                at org.eclipse.jetty.client.http.HttpConnectionOverHTTP$Delegate.send(HttpConnectionOverHTTP.java:269)
+                at org.eclipse.jetty.client.http.HttpConnectionOverHTTP.send(HttpConnectionOverHTTP.java:125)
+                at org.eclipse.jetty.client.http.HttpDestinationOverHTTP.send(HttpDestinationOverHTTP.java:38)
+                at org.eclipse.jetty.client.HttpDestination.process(HttpDestination.java:377)
+                at org.eclipse.jetty.client.HttpDestination.process(HttpDestination.java:332)
+                at org.eclipse.jetty.client.HttpDestination.send(HttpDestination.java:311)
+                at org.eclipse.jetty.client.HttpDestination.send(HttpDestination.java:305)
+                at org.eclipse.jetty.client.HttpDestination.send(HttpDestination.java:282)
+                at org.eclipse.jetty.client.HttpDestination.send(HttpDestination.java:262)
+                at org.eclipse.jetty.client.HttpClient.send(HttpClient.java:600)
+                at org.eclipse.jetty.client.HttpRequest$$Lambda$373/0x0000000840538c40.accept(Unknown Source)
+                at org.eclipse.jetty.client.HttpRequest.sendAsync(HttpRequest.java:778)
+                at org.eclipse.jetty.client.HttpRequest.send(HttpRequest.java:765)
+                at org.eclipse.jetty.proxy.AbstractProxyServlet.sendProxyRequest(AbstractProxyServlet.java:618)
+                at org.eclipse.jetty.proxy.ProxyServlet.service(ProxyServlet.java:114)
+                at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+                at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+                at org.eclipse.jetty.servlet.ServletHandler$ChainEnd.doFilter(ServletHandler.java:1626)
+                at org.apache.pulsar.broker.web.AuthenticationFilter.doFilter(AuthenticationFilter.java:82)
+                at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:193)
+                at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1601)
+                at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:548)
+                at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+                at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+                at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+                at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1435)
+                at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+                at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.proxy.server.AdminProxyHandler.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConfiguration.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12723" opendate="2021-11-10 00:00:00" fixdate="2021-12-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cursor addreplicationcluster localcluster concurrentopenhashmap persistenttopic thead
+                persistentreplicator screenshot delete mac remove nop condiftion desktop class race condition measure
+                field replicator non null information addreplicationcluster
+            </summary>
+            <description>cursor addreplicationcluster localcluster concurrentopenhashmap persistenttopic thead
+                persistentreplicator screenshot delete mac remove nop condiftion desktop class race condition measure
+                field replicator non null information addreplicationcluster
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.common.util.collections.ConcurrentOpenHashMap.java</file>
+            <file type="M">org.apache.pulsar.common.util.collections.ConcurrentOpenHashMapTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12885" opendate="2021-11-19 00:00:00" fixdate="2022-02-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>persistentstickykeydispatchermultipleconsumers test havependingreplayread addmessagetoreplay
+                readmoreentry removeconsumer replay asyncreplayentry subscription message testremovefirstconsumer
+                persistentdispatchermultipleconsumers readentriescomplete keysharedsubscriptiontest desktop
+                getmessagestoreplaynow calculatetoread macos testremovefirstconsumer consumer case
+            </summary>
+            <description>persistentstickykeydispatchermultipleconsumers test havependingreplayread addmessagetoreplay
+                readmoreentry removeconsumer replay asyncreplayentry subscription message testremovefirstconsumer
+                persistentdispatchermultipleconsumers readentriescomplete keysharedsubscriptiontest desktop
+                getmessagestoreplaynow calculatetoread macos testremovefirstconsumer consumer case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentDispatcherMultipleConsumers.java</file>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentStickyKeyDispatcherMultipleConsumers.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12929" opendate="2021-11-22 00:00:00" fixdate="2021-12-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>internalDeleteSubscription
+            </summary>
+            <description>internalDeleteSubscription
+                at jdk.internal.misc.Unsafe.park(java.base@11.0.12/Native Method)
+                - parking to wait for#0x00000000ffe95e98> (a java.util.concurrent.CompletableFuture$Signaller)
+                at java.util.concurrent.locks.LockSupport.park(java.base@11.0.12/LockSupport.java:194)
+                at java.util.concurrent.CompletableFuture$Signaller.block(java.base@11.0.12/CompletableFuture.java:1796)
+                at java.util.concurrent.ForkJoinPool.managedBlock(java.base@11.0.12/ForkJoinPool.java:3128)
+                at java.util.concurrent.CompletableFuture.waitingGet(java.base@11.0.12/CompletableFuture.java:1823)
+                at java.util.concurrent.CompletableFuture.get(java.base@11.0.12/CompletableFuture.java:1998)
+                at org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.internalDeleteSubscriptionForNonPartitionedTopic(PersistentTopicsBase.java:1454)
+                at org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.lambda$internalDeleteSubscription$69(PersistentTopicsBase.java:1431)
+                at org.apache.pulsar.broker.admin.impl.PersistentTopicsBase$$Lambda$1126/0x000000084080a840.accept(Unknown Source)
+                at java.util.concurrent.CompletableFuture$UniAccept.tryFire(java.base@11.0.12/CompletableFuture.java:714)
+                at java.util.concurrent.CompletableFuture.postComplete(java.base@11.0.12/CompletableFuture.java:506)
+                at java.util.concurrent.CompletableFuture.complete(java.base@11.0.12/CompletableFuture.java:2073)
+                at org.apache.pulsar.metadata.impl.ZKMetadataStore.lambda$null$7(ZKMetadataStore.java:158)
+                at org.apache.pulsar.metadata.impl.ZKMetadataStore$$Lambda$220/0x000000084033bc40.run(Unknown Source)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.12/ThreadPoolExecutor.java:1128)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.12/ThreadPoolExecutor.java:628)
+                at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.lang.Thread.run(java.base@11.0.12/Thread.java:829)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13004" opendate="2021-11-28 00:00:00" fixdate="2021-11-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack acquirewithnorevalidation updatevalue lockmanagerimpl ios error path
+                delayinjectionmetadatastore desktop metadatastore lockwasinvalidated metadatastoreexception behavior
+                event case resourcelockimpl race resource get updatevaluewhenkeydisappears node condition
+                lockmanagertest revalidate lockbusyexception
+            </summary>
+            <description>stack acquirewithnorevalidation updatevalue lockmanagerimpl ios error path
+                delayinjectionmetadatastore desktop metadatastore lockwasinvalidated metadatastoreexception behavior
+                event case resourcelockimpl race resource get updatevaluewhenkeydisappears node condition
+                lockmanagertest revalidate lockbusyexception
+                at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:331)
+                at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:346)
+                at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:777)
+                at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+                at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2088)
+                at org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl.lambda$acquireWithNoRevalidation$7(ResourceLockImpl.java:167)
+                at java.base/java.util.concurrent.CompletableFuture.uniExceptionally(CompletableFuture.java:986)
+                at java.base/java.util.concurrent.CompletableFuture$UniExceptionally.tryFire(CompletableFuture.java:970)
+                at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+                at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+                at org.apache.pulsar.metadata.impl.DelayInjectionMetadataStore.lambda$getRandomDelayStage$0(DelayInjectionMetadataStore.java:83)
+                at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+                at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+                at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+                at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.base/java.lang.Thread.run(Thread.java:829)
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13923" opendate="2022-01-24 00:00:00" fixdate="2022-02-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>unsupportedoperationexceptions handler cluster role log hasproxytobrokerurl geo partition
+                connection info replication new init race issue defaultchannelpipeline pipeline proxy warn condition
+                exceptioncaught namespace topic superuser pulsar
+            </summary>
+            <description>unsupportedoperationexceptions handler cluster role log hasproxytobrokerurl geo partition
+                connection info replication new init race issue defaultchannelpipeline pipeline proxy warn condition
+                exceptioncaught namespace topic superuser pulsar
+                at org.apache.pulsar.common.protocol.PulsarDecoder.handleProducer(PulsarDecoder.java:479)
+                at org.apache.pulsar.common.protocol.PulsarDecoder.channelRead(PulsarDecoder.java:193)
+                at org.apache.pulsar.proxy.server.ProxyConnection.channelRead(ProxyConnection.java:193)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+                at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+                at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1371)
+                at io.netty.handler.ssl.SslHandler.decodeNonJdkCompatible(SslHandler.java:1245)
+                at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1285)
+                at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:507)
+                at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:446)
+                at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+                at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+                at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.authentication.ProxySaslAuthenticationTest.java</file>
+            <file type="M">org.apache.pulsar.common.protocol.PulsarHandler.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.BrokerProxyValidator.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.DirectProxyHandler.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConfiguration.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConnection.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyService.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ServiceChannelInitializer.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.TargetAddressDeniedException.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.AuthedAdminProxyHandlerTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.BrokerProxyValidatorTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyAdditionalServletTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyAuthenticatedProducerConsumerTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyAuthenticationTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConnectionTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyEnableHAProxyProtocolTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyKeyStoreTlsTestWithoutAuth.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyTlsTestWithAuth.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyWithAuthorizationTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13964" opendate="2022-01-26 00:00:00" fixdate="2022-12-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Flaky tests PulsarClientImpl close hangs forever
+            </summary>
+            <description>Flaky tests PulsarClientImpl close hangs forever
+                at jdk.internal.misc.Unsafe.park(java.base@11.0.13/Native Method)
+                - parking to wait for#0x00000000dde38ad0> (a java.util.concurrent.CompletableFuture$Signaller)
+                at java.util.concurrent.locks.LockSupport.park(java.base@11.0.13/LockSupport.java:194)
+                at java.util.concurrent.CompletableFuture$Signaller.block(java.base@11.0.13/CompletableFuture.java:1796)
+                at java.util.concurrent.ForkJoinPool.managedBlock(java.base@11.0.13/ForkJoinPool.java:3128)
+                at java.util.concurrent.CompletableFuture.waitingGet(java.base@11.0.13/CompletableFuture.java:1823)
+                at java.util.concurrent.CompletableFuture.get(java.base@11.0.13/CompletableFuture.java:1998)
+                at org.apache.pulsar.client.impl.PulsarClientImpl.close(PulsarClientImpl.java:685)
+                at org.apache.pulsar.client.api.ClientDeduplicationFailureTest.shutdown(ClientDeduplicationFailureTest.java:131)
+                at java.lang.Object.wait(java.base@11.0.13/Native Method)
+                at java.lang.Object.wait(java.base@11.0.13/Object.java:328)
+                at io.netty.util.concurrent.DefaultPromise.await(DefaultPromise.java:253)
+                at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:337)
+                at org.apache.pulsar.client.impl.PulsarClientImpl.shutdownEventLoopGroup(PulsarClientImpl.java:811)
+                at org.apache.pulsar.client.impl.PulsarClientImpl.shutdown(PulsarClientImpl.java:757)
+                at org.apache.pulsar.client.impl.PulsarClientImpl.lambda$closeAsync$20(PulsarClientImpl.java:719)
+                at org.apache.pulsar.client.impl.PulsarClientImpl$$Lambda$943/0x00000001009c3040.run(Unknown Source)
+                at java.lang.Thread.run(java.base@11.0.13/Thread.java:829)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.PulsarClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13986" opendate="2022-01-27 00:00:00" fixdate="2022-01-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request transactionbufferhandler run enhancement sync timeout transactiion performance relate
+                solution bottleneck lock synchronization processing describe
+            </summary>
+            <description>request transactionbufferhandler run enhancement sync timeout transactiion performance relate
+                solution bottleneck lock synchronization processing describe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.transaction.buffer.impl.TransactionBufferHandlerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14362" opendate="2022-02-17 00:00:00" fixdate="2022-04-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Broker Healthcheck Endpoint Exposes Race Conditions
+            </summary>
+            <description>Broker Healthcheck Endpoint Exposes Race Conditions
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.common.util.FutureUtil.java</file>
+            <file type="M">org.apache.pulsar.broker.admin.AdminApiHealthCheckTest.java</file>
+            <file type="M">org.apache.pulsar.broker.web.PulsarWebResource.java</file>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.service.nonpersistent.NonPersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.admin.impl.BrokersBase.java</file>
+            <file type="M">org.apache.pulsar.broker.PulsarService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14413" opendate="2022-02-22 00:00:00" fixdate="2022-03-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>metadata signature part project deadlock result fix blocking block behavior netty
+                consumerbuilderimpl enableretry breaking lookup chain custom pool dlq check getpartitionedtopicmetadata
+                subscribeasync naming deadletterpolicy compatibility pulsar
+            </summary>
+            <description>metadata signature part project deadlock result fix blocking block behavior netty
+                consumerbuilderimpl enableretry breaking lookup chain custom pool dlq check getpartitionedtopicmetadata
+                subscribeasync naming deadletterpolicy compatibility pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerBuilderImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14438" opendate="2022-02-24 00:00:00" fixdate="2022-08-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking os_prio waiting line scene condition web block completablefuture state prio pulsar
+            </summary>
+            <description>parking os_prio waiting line scene condition web block completablefuture state prio pulsar
+                at sun.misc.Unsafe.park(Native Method)
+                - parking to wait for#0x000000073d14e618> (a java.util.concurrent.CompletableFuture$Signaller)
+                at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+                at java.util.concurrent.CompletableFuture$Signaller.block(CompletableFuture.java:1693)
+                at java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3323)
+                at java.util.concurrent.CompletableFuture.waitingGet(CompletableFuture.java:1729)
+                at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1895)
+                at org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.internalDeleteTopicForcefully(PersistentTopicsBase.java:379)
+                at org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.internalDeleteTopic(PersistentTopicsBase.java:961)
+                at org.apache.pulsar.broker.admin.v2.PersistentTopics.deleteTopic(PersistentTopics.java:889)
+                at sun.reflect.GeneratedMethodAccessor241.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:52)
+                at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$$Lambda$419/1877964230.invoke(Unknown Source)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:124)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:167)
+                at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$VoidOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:159)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:79)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:475)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:397)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:81)
+                at org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:255)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.service.PersistentTopicE2ETest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14633" opendate="2022-03-10 00:00:00" fixdate="2022-03-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>setuptopicpublishratelimitermonitor metadata production line deadlock reproduce brokerservice block
+                state prio deployment cpu monitor store way entry operation
+            </summary>
+            <description>setuptopicpublishratelimitermonitor metadata production line deadlock reproduce brokerservice
+                block state prio deployment cpu monitor store way entry operation
+                at org.apache.pulsar.broker.service.BrokerService.setupTopicPublishRateLimiterMonitor(BrokerService.java:562)
+                - waiting to lock#0x00000003018b1c30> (a org.apache.pulsar.broker.service.BrokerService)
+                at org.apache.pulsar.broker.service.AbstractTopic.updatePublishDispatcher(AbstractTopic.java:920)
+                at org.apache.pulsar.broker.service.AbstractTopic.updatePublishDispatcher(AbstractTopic.java:807)
+                at org.apache.pulsar.broker.service.AbstractTopic.updateMaxPublishRate(AbstractTopic.java:770)
+                at org.apache.pulsar.broker.service.persistent.PersistentTopic.onPoliciesUpdate(PersistentTopic.java:2424)
+                at org.apache.pulsar.broker.service.BrokerService.lambda$null$81(BrokerService.java:1807)
+                at org.apache.pulsar.broker.service.BrokerService$$Lambda$1326/0x00000008408bc440.accept(Unknown Source)
+                at java.util.Optional.ifPresent(java.base@11.0.13/Optional.java:183)
+                at org.apache.pulsar.broker.service.BrokerService.lambda$null$82(BrokerService.java:1807)
+                at org.apache.pulsar.broker.service.BrokerService$$Lambda$1325/0x00000008408bc040.accept(Unknown Source)
+                at java.util.concurrent.CompletableFuture.uniAcceptNow(java.base@11.0.13/CompletableFuture.java:753)
+                at java.util.concurrent.CompletableFuture.uniAcceptStage(java.base@11.0.13/CompletableFuture.java:731)
+                at java.util.concurrent.CompletableFuture.thenAccept(java.base@11.0.13/CompletableFuture.java:2108)
+                at org.apache.pulsar.broker.service.BrokerService.lambda$null$83(BrokerService.java:1802)
+                at org.apache.pulsar.broker.service.BrokerService$$Lambda$678/0x0000000840655840.accept(Unknown Source)
+                at org.apache.pulsar.common.util.collections.ConcurrentOpenHashMap$Section.forEach(ConcurrentOpenHashMap.java:387)
+                at org.apache.pulsar.common.util.collections.ConcurrentOpenHashMap.forEach(ConcurrentOpenHashMap.java:159)
+                at org.apache.pulsar.broker.service.BrokerService.lambda$handlePoliciesUpdates$84(BrokerService.java:1798)
+                at org.apache.pulsar.broker.service.BrokerService$$Lambda$677/0x0000000840655440.accept(Unknown Source)
+                at java.util.concurrent.CompletableFuture$UniAccept.tryFire(java.base@11.0.13/CompletableFuture.java:714)
+                at java.util.concurrent.CompletableFuture.postComplete(java.base@11.0.13/CompletableFuture.java:506)
+                at java.util.concurrent.CompletableFuture.complete(java.base@11.0.13/CompletableFuture.java:2073)
+                at org.apache.pulsar.metadata.impl.ZKMetadataStore.lambda$null$7(ZKMetadataStore.java:139)
+                at org.apache.pulsar.metadata.impl.ZKMetadataStore$$Lambda$226/0x000000084034fc40.run(Unknown Source)
+                at org.apache.pulsar.metadata.impl.AbstractMetadataStore$TaskWrapper.run(AbstractMetadataStore.java:99)
+                at java.util.concurrent.Executors$RunnableAdapter.call(java.base@11.0.13/Executors.java:515)
+                at java.util.concurrent.FutureTask.run(java.base@11.0.13/FutureTask.java:264)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(java.base@11.0.13/ThreadPoolExecutor.java:1128)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(java.base@11.0.13/ThreadPoolExecutor.java:628)
+                at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.lang.Thread.run(java.base@11.0.13/Thread.java:829)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.admin.impl.BrokersBase.java</file>
+            <file type="M">org.apache.pulsar.broker.service.BrokerService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="17446" opendate="2022-09-03 00:00:00" fixdate="2022-10-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>reason line willing sendasync chunk deadlock acquire anything reproduce number search chunking
+                block maxpendingmessages chunkmaxmessagesize blockifqueuefull issue nothing message way enablechunking
+                producer semaphore risk
+            </summary>
+            <description>reason line willing sendasync chunk deadlock acquire anything reproduce number search chunking
+                block maxpendingmessages chunkmaxmessagesize blockifqueuefull issue nothing message way enablechunking
+                producer semaphore risk
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.MessageChunkingTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ProducerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="17913" opendate="2022-10-03 00:00:00" fixdate="2022-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>schema parking fact waiting deadlock pulsarregistrationclient client prio issue bookkeeper nothing
+                metadatacache cpu broker eventthread daemon condition driver registration completablefuture
+            </summary>
+            <description>schema parking fact waiting deadlock pulsarregistrationclient client prio issue bookkeeper
+                nothing metadatacache cpu broker eventthread daemon condition driver registration completablefuture
+                at jdk.internal.misc.Unsafe.park(java.base@11.0.15.0.1/Native Method)
+                - parking to wait for#0x00000007f28a3860> (a java.util.concurrent.CompletableFuture$Signaller)
+                at java.util.concurrent.locks.LockSupport.park(java.base@11.0.15.0.1/LockSupport.java:194)
+                at java.util.concurrent.CompletableFuture$Signaller.block(java.base@11.0.15.0.1/CompletableFuture.java:1796)
+                at java.util.concurrent.ForkJoinPool.managedBlock(java.base@11.0.15.0.1/ForkJoinPool.java:3128)
+                at java.util.concurrent.CompletableFuture.waitingGet(java.base@11.0.15.0.1/CompletableFuture.java:1823)
+                at java.util.concurrent.CompletableFuture.get(java.base@11.0.15.0.1/CompletableFuture.java:1998)
+                at org.apache.bookkeeper.common.concurrent.FutureUtils.result(FutureUtils.java:72)
+                at org.apache.bookkeeper.common.concurrent.FutureUtils.result(FutureUtils.java:61)
+                at org.apache.bookkeeper.client.DefaultBookieAddressResolver.resolve(DefaultBookieAddressResolver.java:43)
+                at org.apache.bookkeeper.proto.PerChannelBookieClient.connect(PerChannelBookieClient.java:532)
+                at org.apache.bookkeeper.proto.PerChannelBookieClient.connectIfNeededAndDoOp(PerChannelBookieClient.java:658)
+                at org.apache.bookkeeper.proto.DefaultPerChannelBookieClientPool.initialize(DefaultPerChannelBookieClientPool.java:92)
+                at org.apache.bookkeeper.proto.BookieClientImpl.lookupClient(BookieClientImpl.java:217)
+                at org.apache.bookkeeper.proto.BookieClientImpl.isWritable(BookieClientImpl.java:170)
+                at org.apache.bookkeeper.client.LedgerHandle.isWriteSetWritable(LedgerHandle.java:1227)
+                at org.apache.bookkeeper.client.LedgerHandle.waitForWritable(LedgerHandle.java:1249)
+                at org.apache.bookkeeper.client.LedgerHandle.readEntriesInternalAsync(LedgerHandle.java:883)
+                at org.apache.bookkeeper.client.LedgerHandle.asyncReadEntriesInternal(LedgerHandle.java:800)
+                at org.apache.bookkeeper.client.LedgerHandle.asyncReadEntries(LedgerHandle.java:694)
+                at org.apache.pulsar.broker.service.schema.BookkeeperSchemaStorage$Functions.getLedgerEntry(BookkeeperSchemaStorage.java:646)
+
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.metadata.bookkeeper.BookieServiceInfoSerde.java</file>
+            <file type="M">org.apache.pulsar.metadata.bookkeeper.PulsarRegistrationClient.java</file>
+            <file type="M">org.apache.pulsar.metadata.bookkeeper.PulsarRegistrationClientTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="18196" opendate="2022-10-26 00:00:00" fixdate="2022-10-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>issue willing nothing remove ownershipcache anything leak expect search review response
+                locallyacquiredlock ask step bundle
+            </summary>
+            <description>issue willing nothing remove ownershipcache anything leak expect search review response
+                locallyacquiredlock ask step bundle
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.namespace.OwnershipCache.java</file>
+            <file type="M">org.apache.pulsar.broker.service.persistent.SimpleProducerConsumerTestStreamingDispatcherTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="18988" opendate="2022-12-19 00:00:00" fixdate="2022-12-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>metadata stdout issue willing nothing deadlock store believe anything expect search response get
+                transaction pulsar
+            </summary>
+            <description>metadata stdout issue willing nothing deadlock store believe anything expect search response
+                get transaction pulsar
+                at app//io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+                at java.base@11.0.17/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+                at java.base@11.0.17/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+                at java.base@11.0.17/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+                at java.base@11.0.17/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+                at java.base@11.0.17/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+                at app//org.apache.pulsar.metadata.impl.ZKMetadataStore$Lambda$350/0x00000008404b5840.run(Unknown Source)
+                at app//org.apache.pulsar.metadata.impl.ZKMetadataStore.lambda$existsFromStore$9(ZKMetadataStore.java:320)
+                at java.base@11.0.17/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+                at java.base@11.0.17/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+                at java.base@11.0.17/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:714)
+                at app//org.apache.pulsar.broker.transaction.pendingack.impl.PendingAckHandleImpl$Lambda$1033/0x000000084092d440.accept(Unknown Source)
+                at app//org.apache.pulsar.broker.transaction.pendingack.impl.PendingAckHandleImpl.lambda$new$0(PendingAckHandleImpl.java:148)
+                org.apache.pulsar.broker.transaction.pendingack.impl.PendingAckHandleImpl@1289d850
+                at app//org.apache.pulsar.broker.transaction.pendingack.impl.PendingAckHandleImpl.completeHandleFuture(PendingAckHandleImpl.java:904)
+                at java.base@11.0.17/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+                at java.base@11.0.17/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.transaction.pendingack.impl.PendingAckHandleImpl.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

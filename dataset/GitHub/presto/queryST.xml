@@ -1,0 +1,515 @@
+<bugrepository name="presto">
+    <bug id="1614" opendate="2014-08-30 00:00:00" fixdate="2014-09-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hang unlock race tasksource query update source believe message processnewsource newsources
+                nomoresplit newsource call task driver flawed machine leave design lock state
+            </summary>
+            <description>hang unlock race tasksource query update source believe message processnewsource newsources
+                nomoresplit newsource call task driver flawed machine leave design lock state
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.Driver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1689" opendate="2014-09-19 00:00:00" fixdate="2014-09-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>happen stack test issue race query illegalstateexception output condition trace task buffer
+            </summary>
+            <description>happen stack test issue race query illegalstateexception output condition trace task buffer
+                at com.google.common.base.Preconditions.checkState(Preconditions.java:200)
+                at com.facebook.presto.server.StatementResource$Query.updateExchangeClient(StatementResource.java:431)
+                at com.facebook.presto.server.StatementResource$Query.getData(StatementResource.java:395)
+                at com.facebook.presto.server.StatementResource$Query.getNextResults(StatementResource.java:314)
+                at com.facebook.presto.server.StatementResource$Query.getResults(StatementResource.java:308)
+                at com.facebook.presto.server.StatementResource.getQueryResults(StatementResource.java:221)
+                at sun.reflect.GeneratedMethodAccessor521.invoke(Unknown Source)
+                at com.facebook.presto.server.HttpRemoteTask$SimpleHttpResponseHandler.onSuccess(HttpRemoteTask.java:748)
+                at com.facebook.presto.server.HttpRemoteTask$SimpleHttpResponseHandler.onSuccess(HttpRemoteTask.java:717)
+                at com.google.common.util.concurrent.Futures$4.run(Futures.java:1181)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+                at java.lang.Thread.run(Thread.java:722)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.server.StatementResource.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3629" opendate="2015-09-18 00:00:00" fixdate="2015-09-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sec happen fail elapse race testsetif kind failure assertionerror travis teststatemachine
+            </summary>
+            <description>sec happen fail elapse race testsetif kind failure assertionerror travis teststatemachine
+                at org.testng.Assert.fail(Assert.java:94)
+                at org.testng.Assert.failNotEquals(Assert.java:494)
+                at org.testng.Assert.assertEquals(Assert.java:123)
+                at org.testng.Assert.assertEquals(Assert.java:286)
+                at org.testng.Assert.assertEquals(Assert.java:296)
+                at com.facebook.presto.execution.TestStateMachine.assertNoStateChange(TestStateMachine.java:312)
+                at com.facebook.presto.execution.TestStateMachine.testSetIf(TestStateMachine.java:222)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.TestStateMachine.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3647" opendate="2015-09-22 00:00:00" fixdate="2015-10-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>BlackHoleMetadata ConcurrentHashMap
+            </summary>
+            <description>BlackHoleMetadata ConcurrentHashMap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.plugin.blackhole.BlackHoleMetadata.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4869" opendate="2016-03-24 00:00:00" fixdate="2016-03-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>date broadcast orderkey orderstatus source deadlock orderdate orderpriority output scheduler edge
+                remotesource originalconstraint custkey tpch scheduling bigint value comm dependency totalprice varchar
+                shippriority graph clerk field stage build comment
+            </summary>
+            <description>date broadcast orderkey orderstatus source deadlock orderdate orderpriority output scheduler
+                edge remotesource originalconstraint custkey tpch scheduling bigint value comm dependency totalprice
+                varchar shippriority graph clerk field stage build comment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.scheduler.PhasedExecutionSchedule.java</file>
+            <file type="M">com.facebook.presto.execution.scheduler.TestPhasedExecutionSchedule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5005" opendate="2016-04-12 00:00:00" fixdate="2019-04-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cancel handler flag thought interruptedioexception advance hook loop client case synch cli race
+                issue query one change call async electrum http presto status
+            </summary>
+            <description>cancel handler flag thought interruptedioexception advance hook loop client case synch cli race
+                issue query one change call async electrum http presto status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.cli.Query.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5110" opendate="2016-04-25 00:00:00" fixdate="2016-04-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ScanFilterAndProjectOperator fail condition size array array_concat map presto
+            </summary>
+            <description>ScanFilterAndProjectOperator fail condition size array array_concat map presto
+                at com.facebook.presto.spi.block.InterleavedBlockBuilder.closeEntry(InterleavedBlockBuilder.java:212)
+                at com.facebook.presto.spi.block.ArrayElementBlockWriter.closeEntry(ArrayElementBlockWriter.java:127)
+                at com.facebook.presto.spi.block.AbstractArrayBlock.writePositionTo(AbstractArrayBlock.java:155)
+                at com.facebook.presto.type.MapType.appendTo(MapType.java:192)
+                at com.facebook.presto.operator.scalar.ArrayConcatFunction.concat(ArrayConcatFunction.java:53)
+                at com_facebook_presto_$gen_CursorProcessor_37019.project_0(Unknown Source)
+                at com_facebook_presto_$gen_CursorProcessor_37019.process(Unknown Source)
+                at com.facebook.presto.operator.ScanFilterAndProjectOperator.getOutput(ScanFilterAndProjectOperator.java:215)
+                at com.facebook.presto.operator.Driver.processInternal(Driver.java:380)
+                at com.facebook.presto.operator.Driver.processFor(Driver.java:303)
+                at com.facebook.presto.execution.SqlTaskExecution$DriverSplitRunner.processFor(SqlTaskExecution.java:577)
+                at com.facebook.presto.execution.TaskExecutor$PrioritizedSplitRunner.process(TaskExecutor.java:529)
+                at com.facebook.presto.execution.TaskExecutor$Runner.run(TaskExecutor.java:665)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+                at java.lang.Thread.run(Thread.java:745)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.hive.TestOrcPageSourceMemoryTracking.java</file>
+            <file type="M">com.facebook.presto.operator.ScanFilterAndProjectOperator.java</file>
+            <file type="M">com.facebook.presto.sql.gen.ExpressionCompiler.java</file>
+            <file type="M">com.facebook.presto.sql.planner.LocalExecutionPlanner.java</file>
+            <file type="M">com.facebook.presto.operator.TestScanFilterAndProjectOperator.java</file>
+            <file type="M">com.facebook.presto.operator.scalar.FunctionAssertions.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5116" opendate="2016-04-25 00:00:00" fixdate="2016-04-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TestTaskExecutor testTaskHandle
+            </summary>
+            <description>TestTaskExecutor testTaskHandle
+                at org.testng.Assert.fail(Assert.java:94)
+                at org.testng.Assert.failNotEquals(Assert.java:494)
+                at org.testng.Assert.assertEquals(Assert.java:123)
+                at org.testng.Assert.assertEquals(Assert.java:370)
+                at org.testng.Assert.assertEquals(Assert.java:380)
+                at com.facebook.presto.execution.TestTaskExecutor.testTaskHandle(TestTaskExecutor.java:141)
+                at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+                at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+                at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+                at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+                at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+                at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+                at org.testng.TestRunner.privateRun(TestRunner.java:767)
+                at org.testng.TestRunner.run(TestRunner.java:617)
+                at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+                at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+                at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+                at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+                at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+                at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+                at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+                at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+                at org.testng.TestNG.run(TestNG.java:1057)
+                at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:74)
+                at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:121)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:497)
+                at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.TaskExecutor.java</file>
+            <file type="M">com.facebook.presto.execution.TestTaskExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5735" opendate="2016-07-22 00:00:00" fixdate="2016-08-26 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cberner memory delta example transfermemorytotaskcontext operatorcontext class void
+                newmemoryreservation work query impact setmemoryreservation trysetmemoryreservation caller performance
+                driver atomiclong memoryreservation threadsafe thing
+            </summary>
+            <description>cberner memory delta example transfermemorytotaskcontext operatorcontext class void
+                newmemoryreservation work query impact setmemoryreservation trysetmemoryreservation caller performance
+                driver atomiclong memoryreservation threadsafe thing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.DriverContext.java</file>
+            <file type="M">com.facebook.presto.operator.OperatorContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6196" opendate="2016-09-27 00:00:00" fixdate="2016-10-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack production prestodb deadlock resourcegroupmanager continuoustaskstatusfetcher lock client
+                worker info sqlstageexecution github resourcegroup issue level query one monitor task httpremotetask
+                http information presto
+            </summary>
+            <description>stack production prestodb deadlock resourcegroupmanager continuoustaskstatusfetcher lock client
+                worker info sqlstageexecution github resourcegroup issue level query one monitor task httpremotetask
+                http information presto
+                at com.facebook.presto.execution.resourceGroups.ResourceGroup.run(ResourceGroup.java:322)
+                - waiting to lock#0x00007f9615a7e020> (a com.facebook.presto.execution.resourceGroups.ResourceGroup$RootResourceGroup)
+                at com.facebook.presto.execution.resourceGroups.ResourceGroupManager.submit(ResourceGroupManager.java:89)
+                at com.facebook.presto.execution.SqlQueryManager.createQuery(SqlQueryManager.java:348)
+                at com.facebook.presto.server.StatementResource$Query.#init>(StatementResource.java:308)
+                at com.facebook.presto.server.StatementResource.createQuery(StatementResource.java:171)
+                at sun.reflect.GeneratedMethodAccessor1181.invoke(Unknown Source)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+                at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)
+                at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+                at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+                at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+                at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+                at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+                at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+                at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+                at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+                at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+                at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+                at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+                at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+                at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+                at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+                at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+                at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+                at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:845)
+                at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1689)
+                at io.airlift.http.server.TraceTokenFilter.doFilter(TraceTokenFilter.java:63)
+                at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+                at io.airlift.http.server.TimingFilter.doFilter(TimingFilter.java:52)
+                at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1676)
+                at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:581)
+                at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+                at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:396)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.server.remotetask.ContinuousTaskStatusFetcher.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6319" opendate="2016-10-10 00:00:00" fixdate="2016-10-31 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>IndexLookup AccumuloClient getTabletSplits
+            </summary>
+            <description>IndexLookup AccumuloClient getTabletSplits
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.accumulo.AccumuloClient.java</file>
+            <file type="M">com.facebook.presto.accumulo.index.ColumnCardinalityCache.java</file>
+            <file type="M">com.facebook.presto.accumulo.index.IndexLookup.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6755" opendate="2016-12-02 00:00:00" fixdate="2016-12-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cberner configuregroup manager resource generalpoolmemoryfraction pool deadlock
+                dbresourcegroupconfigurationmanager abstractresourceconfigurationmanager something hit file
+                memory_change_listener_lambda root internalresourcegroup setsoftmemorylimit lock clustermemorymanager
+                configurechangedgroup config situation group
+            </summary>
+            <description>cberner configuregroup manager resource generalpoolmemoryfraction pool deadlock
+                dbresourcegroupconfigurationmanager abstractresourceconfigurationmanager something hit file
+                memory_change_listener_lambda root internalresourcegroup setsoftmemorylimit lock clustermemorymanager
+                configurechangedgroup config situation group
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.resourceGroups.AbstractResourceConfigurationManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6923" opendate="2016-12-19 00:00:00" fixdate="2017-01-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>web_sales store_sales usage outerlookupsource kbp task_concurrency outerpositiontracker
+                positionvisited factor locking outer count cpu visitedposition partitionedlookupsource core performance
+                profiling partitioning synchronization hash full
+            </summary>
+            <description>web_sales store_sales usage outerlookupsource kbp task_concurrency outerpositiontracker
+                positionvisited factor locking outer count cpu visitedposition partitionedlookupsource core performance
+                profiling partitioning synchronization hash full
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.JoinHash.java</file>
+            <file type="M">com.facebook.presto.operator.LookupJoinOperator.java</file>
+            <file type="M">com.facebook.presto.operator.LookupSource.java</file>
+            <file type="M">com.facebook.presto.operator.OuterLookupSource.java</file>
+            <file type="M">com.facebook.presto.operator.PartitionedLookupSource.java</file>
+            <file type="M">com.facebook.presto.operator.index.IndexLoader.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7667" opendate="2017-03-24 00:00:00" fixdate="2017-04-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TestQueues testBasic waitForQueryState
+            </summary>
+            <description>TestQueues testBasic waitForQueryState
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.resourceGroups.db.TestQueues.java</file>
+            <file type="M">com.facebook.presto.transaction.TransactionBuilder.java</file>
+            <file type="M">com.facebook.presto.transaction.TransactionManager.java</file>
+            <file type="M">com.facebook.presto.execution.TestCommitTask.java</file>
+            <file type="M">com.facebook.presto.execution.TestRollbackTask.java</file>
+            <file type="M">com.facebook.presto.spi.StandardErrorCode.java</file>
+            <file type="M">com.facebook.presto.execution.QueryRunnerUtil.java</file>
+            <file type="M">com.facebook.presto.execution.TestConcurrentQueriesInSingleTransaction.java</file>
+            <file type="M">com.facebook.presto.execution.TestQueues.java</file>
+            <file type="M">com.facebook.presto.execution.TestingSessionFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7689" opendate="2017-03-28 00:00:00" fixdate="2017-11-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>add execution issue test race change query listener counter sleep async condition assert variable
+                callback assertion state case testqueryloggingcount
+            </summary>
+            <description>add execution issue test race change query listener counter sleep async condition assert
+                variable callback assertion state case testqueryloggingcount
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.transaction.TransactionBuilder.java</file>
+            <file type="M">com.facebook.presto.transaction.TransactionManager.java</file>
+            <file type="M">com.facebook.presto.execution.TestCommitTask.java</file>
+            <file type="M">com.facebook.presto.execution.TestRollbackTask.java</file>
+            <file type="M">com.facebook.presto.spi.StandardErrorCode.java</file>
+            <file type="M">com.facebook.presto.execution.QueryRunnerUtil.java</file>
+            <file type="M">com.facebook.presto.execution.TestConcurrentQueriesInSingleTransaction.java</file>
+            <file type="M">com.facebook.presto.execution.TestQueues.java</file>
+            <file type="M">com.facebook.presto.execution.TestingSessionFactory.java</file>
+            <file type="M">com.facebook.presto.metadata.MetadataManager.java</file>
+            <file type="M">com.facebook.presto.sql.planner.optimizations.AddExchanges.java
+            </file>
+        </fixedFiles>
+    </bug>
+    <bug id="8716" opendate="2017-08-10 00:00:00" fixdate="2017-09-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>proposal hang abstracttransfer race upload affect uploadobject update setfuture call condition load
+                waitforcompletion loop waitforcompletion sdk uploadmonitor aws copymonitor
+            </summary>
+            <description>proposal hang abstracttransfer race upload affect uploadobject update setfuture call condition
+                load waitforcompletion loop waitforcompletion sdk uploadmonitor aws copymonitor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.hive.MockAmazonS3.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9881" opendate="2018-02-02 00:00:00" fixdate="2018-02-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>think stack race query count verifyexception error reference iterator condition limit
+                outerpositiontracker position
+            </summary>
+            <description>think stack race query count verifyexception error reference iterator condition limit
+                outerpositiontracker position
+                at com.google.common.base.Verify.verify(Verify.java:99)
+                at com.facebook.presto.operator.PartitionedLookupSource$OuterPositionTracker$Factory.getOuterPositionIterator(PartitionedLookupSource.java:299)
+                at com.facebook.presto.operator.PartitionedLookupSource$1.getOuterPositionIterator(PartitionedLookupSource.java:65)
+                at com.facebook.presto.operator.PartitionedLookupSourceFactory.getOuterPositionIterator(PartitionedLookupSourceFactory.java:362)
+                at com.facebook.presto.operator.LookupJoinOperatorFactory$PerLifespanData.lambda$new$1(LookupJoinOperatorFactory.java:315)
+                at com.google.common.util.concurrent.AbstractTransformFuture$TransformFuture.doTransform(AbstractTransformFuture.java:239)
+                at com.google.common.util.concurrent.AbstractTransformFuture$TransformFuture.doTransform(AbstractTransformFuture.java:229)
+                at com.google.common.util.concurrent.AbstractTransformFuture.run(AbstractTransformFuture.java:130)
+                at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+                at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:902)
+                at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:813)
+                at com.google.common.util.concurrent.AbstractFuture.setFuture(AbstractFuture.java:713)
+                at com.google.common.util.concurrent.AbstractTransformFuture$AsyncTransformFuture.setResult(AbstractTransformFuture.java:221)
+                at com.google.common.util.concurrent.AbstractTransformFuture$AsyncTransformFuture.setResult(AbstractTransformFuture.java:200)
+                at com.google.common.util.concurrent.AbstractTransformFuture.run(AbstractTransformFuture.java:177)
+                at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+                at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:902)
+                at com.google.common.util.concurrent.AbstractFuture.complete(AbstractFuture.java:813)
+                at com.google.common.util.concurrent.AbstractFuture.set(AbstractFuture.java:655)
+                at com.google.common.util.concurrent.SettableFuture.set(SettableFuture.java:48)
+                at com.facebook.presto.operator.ReferenceCount.release(ReferenceCount.java:55)
+                at com.google.common.io.Closer.close(Closer.java:216)
+                at com.facebook.presto.operator.LookupJoinOperator.close(LookupJoinOperator.java:514)
+                at com.facebook.presto.operator.Driver.destroyIfNecessary(Driver.java:496)
+                at com.facebook.presto.operator.Driver.tryWithLock(Driver.java:667)
+                at com.facebook.presto.operator.Driver.processFor(Driver.java:272)
+                at com.facebook.presto.execution.SqlTaskExecution$DriverSplitRunner.processFor(SqlTaskExecution.java:975)
+                at com.facebook.presto.execution.executor.PrioritizedSplitRunner.process(PrioritizedSplitRunner.java:163)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.LookupJoinOperator.java</file>
+            <file type="M">com.facebook.presto.operator.LookupJoinOperatorFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11253" opendate="2018-08-13 00:00:00" fixdate="2020-10-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>splits addexchangelocation queueddrivers scan queueddriver deadlock nomoresplit driversplitrunner
+                scheduletask getpipelinestatus split scheduling client finish term worker order schedulingcomplete
+                sqlstageexecution completesource assignment drivercontexts schedulepartitionedsource node fragment
+                pendingsplitsbyplannode selectdistributionnode stage driver
+            </summary>
+            <description>splits addexchangelocation queueddrivers scan queueddriver deadlock nomoresplit
+                driversplitrunner scheduletask getpipelinestatus split scheduling client finish term worker order
+                schedulingcomplete sqlstageexecution completesource assignment drivercontexts schedulepartitionedsource
+                node fragment pendingsplitsbyplannode selectdistributionnode stage driver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.SqlStageExecution.java</file>
+            <file type="M">com.facebook.presto.execution.scheduler.FixedSourcePartitionedScheduler.java</file>
+            <file type="M">com.facebook.presto.execution.scheduler.SourcePartitionedScheduler.java</file>
+            <file type="M">com.facebook.presto.server.remotetask.HttpRemoteTask.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13142" opendate="2019-07-29 00:00:00" fixdate="2019-07-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>QueryStateTimer trinodb TestQueuesDb
+            </summary>
+            <description>QueryStateTimer trinodb TestQueuesDb
+                at io.airlift.units.Preconditions.checkArgument(Preconditions.java:26)
+                at io.airlift.units.Duration.#init>(Duration.java:69)
+                at io.airlift.units.Duration.succinctDuration(Duration.java:59)
+                at io.airlift.units.Duration.succinctNanos(Duration.java:54)
+                at com.facebook.presto.execution.QueryStateTimer.nanosSince(QueryStateTimer.java:237)
+                at com.facebook.presto.execution.QueryStateTimer.nanosSince(QueryStateTimer.java:232)
+                at com.facebook.presto.execution.QueryStateTimer.beginStarting(QueryStateTimer.java:93)
+                at com.facebook.presto.execution.QueryStateTimer.beginRunning(QueryStateTimer.java:103)
+                at com.facebook.presto.execution.QueryStateTimer.beginFinishing(QueryStateTimer.java:113)
+                at com.facebook.presto.execution.QueryStateTimer.endQuery(QueryStateTimer.java:124)
+                at com.facebook.presto.execution.QueryStateTimer.endQuery(QueryStateTimer.java:119)
+                at com.facebook.presto.execution.QueryStateMachine.transitionToCanceled(QueryStateMachine.java:821)
+                at com.facebook.presto.execution.SqlQueryExecution.cancelQuery(SqlQueryExecution.java:522)
+                at java.util.Optional.ifPresent(Optional.java:159)
+                at com.facebook.presto.execution.SqlQueryManager.cancelQuery(SqlQueryManager.java:463)
+                at com.facebook.presto.tests.DistributedQueryRunner.cancelAllQueries(DistributedQueryRunner.java:463)
+                at com.facebook.presto.tests.DistributedQueryRunner.close(DistributedQueryRunner.java:449)
+                at com.facebook.presto.execution.resourceGroups.db.TestQueuesDb.tearDown(TestQueuesDb.java:86)
+                at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+                at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+                at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+                at java.lang.reflect.Method.invoke(Method.java:498)
+                at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+                at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+                at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+                at org.testng.internal.Invoker.invokeMethod(Invoker.java:712)
+                at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+                at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+                at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+                at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+                at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+                at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+                at java.lang.Thread.run(Thread.java:748)
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.QueryStateTimer.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>
