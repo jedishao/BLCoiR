@@ -1,2 +1,2 @@
-374	0	0.8	org.springframework.data.hadoop.store.output.AbstractDataStreamWriter.java
-374	253	0.0	org.springframework.data.hadoop.store.support.OutputStoreObjectSupport.java
+374	1
+374	254
