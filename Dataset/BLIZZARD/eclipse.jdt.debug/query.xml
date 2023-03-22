@@ -1,0 +1,511 @@
+<bugrepository name="eclipse.jdt.debug">
+    <bug id="7392" opendate="2002-01-09 13:00:02" fixdate="2002-01-10 16:10:54" resolution="Fixed">
+        <buginformation>
+            <summary>synch stack jdithread startup show model state frame
+            </summary>
+            <description>synch stack jdithread startup show model state frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">oorg.eclipse.jdi.internal.ThreadReferenceImpl.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8683" opendate="2002-01-29 11:32:54" fixdate="2002-02-07 10:44:42" resolution="Fixed">
+        <buginformation>
+            <summary>suspend stack npe select nullpointerexception hit system step signaldispatcher assume frame
+            </summary>
+            <description>suspend stack npe select nullpointerexception hit system step signaldispatcher assume frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12695" opendate="2002-04-03 10:55:18" fixdate="2002-04-06 21:13:41" resolution="Fixed">
+        <buginformation>
+            <summary>adapter debug list breakpoint top spot get event user order
+            </summary>
+            <description>adapter debug list breakpoint top spot get event user order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.snippeteditor.JavaSnippetEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16930" opendate="2002-05-22 13:43:39" fixdate="2002-05-28 21:08:13" resolution="Fixed">
+        <buginformation>
+            <summary>invalidthreadstateexception area error message breakpoint evaluation eval provide get step state
+                tostring user
+            </summary>
+            <description>invalidthreadstateexception area error message breakpoint evaluation eval provide get step
+                state tostring user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.actions.EvaluateAction.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="21801" opendate="2002-07-23 08:46:13" fixdate="2002-07-31 10:29:51" resolution="Fixed">
+        <buginformation>
+            <summary>datum parent cache command number modify library threadgroupreference name client send group base
+            </summary>
+            <description>datum parent cache command number modify library threadgroupreference name client send group
+                base
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdi.internal.ThreadGroupReferenceImpl.java</file>
+            <file type="M">rg.eclipse.jdi.internal.ThreadReferenceImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="22005" opendate="2002-07-29 12:04:22" fixdate="2002-08-12 16:15:41" resolution="Fixed">
+        <buginformation>
+            <summary>call runnable performance review asynchexec synchexec Display
+            </summary>
+            <description>call runnable performance review asynchexec synchexec Display
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaHotCodeReplaceListener.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.ErrorDialogWithToggle.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="24579" opendate="2002-10-09 10:33:11" fixdate="2002-10-11 12:04:15" resolution="Fixed">
+        <buginformation>
+            <summary>note modalcontext box attempt path lock perspective checkout development preferences control check
+                core plugin someone build step syncexec
+            </summary>
+            <description>note modalcontext box attempt path lock perspective checkout development preferences control
+                check core plugin someone build step syncexec
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.launching.LaunchingPlugin.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="33297" opendate="2003-02-26 12:18:32" fixdate="2003-03-05 15:55:33" resolution="Fixed">
+        <buginformation>
+            <summary>manager evaluationcomplete log evaluationlistener error formatter evaluation detail place tostring
+                resolveformatter user
+            </summary>
+            <description>manager evaluationcomplete log evaluationlistener error formatter evaluation detail place
+                tostring resolveformatter user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="33712" opendate="2003-03-03 17:57:42" fixdate="2003-03-03 20:39:34" resolution="Fixed">
+        <buginformation>
+            <summary>JavaDebugOptionsManager modifications
+            </summary>
+            <description>JavaDebugOptionsManager modifications
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.debug.tests.core.BreakpointListenerTests.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="43197" opendate="2003-09-17 00:54:49" fixdate="2004-11-16 15:57:14" resolution="Fixed">
+        <buginformation>
+            <summary>mirror line listener lineappended get tracker action term event worker termination console init
+                process debug race launch message way call condition plugin logic job thing care
+            </summary>
+            <description>mirror line listener lineappended get tracker action term event worker termination console init
+                process debug race launch message way call condition plugin logic job thing care
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.debug.tests.AutomatedSuite.java</file>
+            <file type="M">org.eclipse.jdt.debug.tests.core.LineTrackerTests.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.console.J9ConsoleTracker.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.console.JavaConsoleTracker.java</file>
+            <file type="M">org.eclipse.jdt.debug.tests.ProjectCreationDecorator.java</file>
+            <file type="M">org.eclipse.jdt.debug.testplugin.ConsoleLineTracker.java</file>
+            <file type="M">org.eclipse.jdt.debug.tests.testprograms.FloodConsole.java</file>
+            <file type="M">org.eclipse.jdt.debug.tests.core.CommandArgumentTests.java</file>
+            <file type="M">org.eclipse.jdt.debug.tests.AbstractDebugTest.java</file>
+            <file type="M">org.eclipse.jdt.debug.tests.testprograms.OneToTenPrint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="52474" opendate="2004-02-19 08:45:49" fixdate="2004-05-25 17:21:04" resolution="Fixed">
+        <buginformation>
+            <summary>note fact pattern project repository attempt platform point switch number dialog scenario
+                perspective lock block workbench checkout cvs work module start check eclipse build
+            </summary>
+            <description>note fact pattern project repository attempt platform point switch number dialog scenario
+                perspective lock block workbench checkout cvs work module start check eclipse build
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.launching.LaunchingPlugin.java</file>
+            <file type="M">org.eclipse.jdt.launching.JavaRuntime.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="57467" opendate="2004-04-05 11:42:16" fixdate="2004-04-13 19:18:02" resolution="Fixed">
+        <buginformation>
+            <summary>stack compare attempt fix flastmethod computestackframe tos lastmethod case info debug jdithread
+                transisent race test issue index label requestor something condition background logic frame
+            </summary>
+            <description>stack compare attempt fix flastmethod computestackframe tos lastmethod case info debug
+                jdithread transisent race test issue index label requestor something condition background logic frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIStackFrame.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="64951" opendate="2004-06-01 10:06:31" fixdate="2004-07-29 19:39:40" resolution="Fixed">
+        <buginformation>
+            <summary>condition screen label shot breakpoint debugging tostring stack variables select
+            </summary>
+            <description>condition screen label shot breakpoint debugging tostring stack variables select
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.core.breakpoints.JavaLineBreakpoint.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="65107" opendate="2004-06-01 14:38:06" fixdate="2004-12-27 16:01:25" resolution="Fixed">
+        <buginformation>
+            <summary>note classcastexception stack jun debug debugview error switch breakpoint reproduce async total
+                watch processing queue frame
+            </summary>
+            <description>note classcastexception stack jun debug debugview error switch breakpoint reproduce async total
+                watch processing queue frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.eval.ast.engine.EvaluationSourceGenerator.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.eval.ast.engine.SourceBasedSourceGenerator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="65149" opendate="2004-06-01 16:10:13" fixdate="2004-06-10 14:26:46" resolution="Fixed">
+        <buginformation>
+            <summary>JavaDebugOptionsManager initializeProblemHandling
+            </summary>
+            <description>JavaDebugOptionsManager initializeProblemHandling
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.DebugUIMessages.properties</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="66413" opendate="2004-06-09 16:27:38" fixdate="2004-06-15 18:16:06" resolution="Fixed">
+        <buginformation>
+            <summary>log work error target dialog strangeness condition startup state condition
+            </summary>
+            <description>log work error target dialog strangeness condition startup state condition
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIStackFrame.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.breakpoints.JavaLineBreakpoint.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="78534" opendate="2004-11-12 13:13:10" fixdate="2005-01-26 17:03:49" resolution="Fixed">
+        <buginformation>
+            <summary>stack debug test occur message entry core apparently get threadmonitormanager event clone hashmap
+                case concurrentmodificationexception
+            </summary>
+            <description>stack debug test occur message entry core apparently get threadmonitormanager event clone
+                hashmap case concurrentmodificationexception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.monitors.ThreadMonitorManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="88923" opendate="2005-03-23 15:23:25" fixdate="2009-08-30 02:16:44" resolution="Fixed">
+        <buginformation>
+            <summary>evaluation ievaluationengine expression processing create evaluate
+            </summary>
+            <description>evaluation ievaluationengine expression processing create evaluate
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.actions.JavaObjectValueEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.actions.EvaluateAction.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="101118" opendate="2005-06-21 15:33:15" fixdate="2005-06-23 10:56:03" resolution="Fixed">
+        <buginformation>
+            <summary>debug buildid source message sun eclipse entry async bootloader processing
+            </summary>
+            <description>debug buildid source message sun eclipse entry async bootloader processing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="125868" opendate="2006-01-31 12:12:52" fixdate="2006-05-04 15:30:13" resolution="Fixed">
+        <buginformation>
+            <summary>access debug restart session start launch head result jdt
+            </summary>
+            <description>access debug restart session start launch head result jdt
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="148006" opendate="2006-06-21 05:10:06" fixdate="2006-07-13 15:47:40" resolution="Fixed">
+        <buginformation>
+            <summary>execution stack level monitor autobuild mode consoledocument build lock client plug information
+                worker
+            </summary>
+            <description>execution stack level monitor autobuild mode consoledocument build lock client plug information
+                worker
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.console.JavaStackTraceConsole.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="161781" opendate="2006-10-20 15:36:59" fixdate="2008-04-16 15:46:44" resolution="Fixed">
+        <buginformation>
+            <summary>suspendcount idea debugger concept book show waitfordebugger running function connection state
+                order resume query count message call condition socket status
+            </summary>
+            <description>suspendcount idea debugger concept book show waitfordebugger running function connection state
+                order resume query count message call condition socket status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.core.breakpoints.JavaBreakpoint.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="165174" opendate="2006-11-20 11:40:44" fixdate="2006-11-20 17:22:56" resolution="Fixed">
+        <buginformation>
+            <summary>view selection lose show launch block monitor screenshot sync synchronized
+            </summary>
+            <description>view selection lose show launch block monitor screenshot sync synchronized
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.threadgroups.JavaThreadEventHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="169542" opendate="2007-01-04 08:00:08" fixdate="2007-04-25 17:45:04" resolution="Fixed">
+        <buginformation>
+            <summary>displayed Debug view parent contain Build ID Create ThreadGroup correct traversable Variables
+                correctly
+            </summary>
+            <description>displayed Debug view parent contain Build ID Create ThreadGroup correct traversable Variables
+                correctly
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIDebugTarget.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="178912" opendate="2007-03-22 18:20:53" fixdate="2014-04-16 01:54:35" resolution="Fixed">
+        <buginformation>
+            <summary>access getter fvms type impl safety member block createvminstall race everyone ivminstalltype
+                runtime right list call condition abstractvminstalltype variable name synchronization setter
+            </summary>
+            <description>access getter fvms type impl safety member block createvminstall race everyone ivminstalltype
+                runtime right list call condition abstractvminstalltype variable name synchronization setter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.launching.AbstractVMInstallType.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="182237" opendate="2007-04-12 17:52:57" fixdate="2007-04-26 10:46:04" resolution="Fixed">
+        <buginformation>
+            <summary>view access get variable
+            </summary>
+            <description>view access get variable
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JDIModelPresentation.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.variables.JavaVariableLabelProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="187000" opendate="2007-05-15 09:21:00" fixdate="2007-05-24 20:32:58" resolution="Fixed">
+        <buginformation>
+            <summary>stack release debugger focus lot mouse stick press worker tree start selection stacktrace machine
+                loose step information window collapse
+            </summary>
+            <description>stack release debugger focus lot mouse stick press worker tree start selection stacktrace
+                machine loose step information window collapse
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.monitors.JavaThreadContentProvider.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JavaDetailFormattersManager.java</file>
+            <file type="M">org.eclipse.jdt.internal.debug.core.model.JDIThread.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="229394" opendate="2008-04-29 12:46:17" fixdate="2008-05-29 12:16:24" resolution="Fixed">
+        <buginformation>
+            <summary>jface tue buildid program cell error type sun view array bootloader value editor npe var check
+                entry cdt en_us char variable plug location arch
+            </summary>
+            <description>jface tue buildid program cell error type sun view array bootloader value editor npe var check
+                entry cdt en_us char variable plug location arch
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.actions.JavaObjectValueEditor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="312038" opendate="2010-05-07 06:33:40" fixdate="2011-04-21 05:28:31" resolution="Fixed">
+        <buginformation>
+            <summary>hang automount automounter pid source directory example lockup isexpandable attachment isfile lock
+                jar zip stat jrecontainer start tree way eclipse performance nfs jdt haschildren
+            </summary>
+            <description>hang automount automounter pid source directory example lockup isexpandable attachment isfile
+                lock jar zip stat jrecontainer start tree way eclipse performance nfs jdt haschildren
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.launching.StandardVMType.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="343039" opendate="2011-04-16 10:39:25" fixdate="2012-02-29 12:50:50" resolution="Fixed">
+        <buginformation>
+            <summary>race session debugger monitor deadlock turn how default person debugging jdt ability consider
+                option
+            </summary>
+            <description>race session debugger monitor deadlock turn how default person debugging jdt ability consider
+                option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.debug.ui.JDIDebugUIPreferenceInitializer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="446040" opendate="2014-10-06 08:33:35" fixdate="2014-11-17 10:08:51" resolution="Fixed">
+        <buginformation>
+            <summary>RuntimeClasspathViewer preferenceChange
+            </summary>
+            <description>RuntimeClasspathViewer preferenceChange
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">.org.eclipse.jdt.internal.debug.ui.classpath.RuntimeClasspathViewer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="506865" opendate="2016-11-01 18:56:48" fixdate="2016-11-18 14:16:52" resolution="Fixed">
+        <buginformation>
+            <summary>AbstractVMInstallType createVMInstall
+            </summary>
+            <description>AbstractVMInstallType createVMInstall
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.launching.AbstractVMInstallType.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

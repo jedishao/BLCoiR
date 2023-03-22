@@ -1,0 +1,2 @@
+org.apache.catalina.authenticator.DigestAuthenticator.java
+org.apache.catalina.authenticator.TestDigestAuthenticator.java

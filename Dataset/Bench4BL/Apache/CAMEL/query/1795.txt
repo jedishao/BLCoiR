@@ -1,0 +1,1 @@
+default camel listener maxmessagespertask messagejmsconfiguratiuon defaultmessagelistenercontainer message

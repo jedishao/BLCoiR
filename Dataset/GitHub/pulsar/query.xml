@@ -1,0 +1,625 @@
+<bugrepository name="pulsar">
+    <bug id="1117" opendate="2018-01-26 00:00:00" fixdate="2022-05-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>boundary think cache illegalargumentexception prod race issue range netflix error result condition
+                split web namespace report place bundle pulsar
+            </summary>
+            <description>boundary think cache illegalargumentexception prod race issue range netflix error result
+                condition split web namespace report place bundle pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.cache.LocalZooKeeperCacheService.java</file>
+            <file type="M">org.apache.pulsar.broker.namespace.NamespaceService.java</file>
+            <file type="M">org.apache.pulsar.common.naming.NamespaceBundleFactory.java</file>
+            <file type="M">org.apache.pulsar.broker.admin.AdminApiTest.java</file>
+            <file type="M">org.apache.pulsar.broker.namespace.NamespaceServiceTest.java</file>
+            <file type="M">org.apache.pulsar.zookeeper.ZooKeeperDataCache.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2141" opendate="2018-07-12 00:00:00" fixdate="2018-07-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ledger sequenceidwitherrortest test race reconnection broker error condition failure producer topic
+                consumer case fencing
+            </summary>
+            <description>ledger sequenceidwitherrortest test race reconnection broker error condition failure producer
+                topic consumer case fencing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.SequenceIdWithErrorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3768" opendate="2019-03-06 00:00:00" fixdate="2022-12-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>PulsarWorkerAssignmentTest
+            </summary>
+            <description>PulsarWorkerAssignmentTest
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.api.BrokerServiceLookupTest.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.PulsarWorkerAssignmentTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4447" opendate="2019-06-03 00:00:00" fixdate="2019-06-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking cluster server waiting release partitionstat broker way sata topicstats web stats linux ghz
+                completablefuture internalgetpartitionedstat centos pulsar base
+            </summary>
+            <description>parking cluster server waiting release partitionstat broker way sata topicstats web stats linux
+                ghz completablefuture internalgetpartitionedstat centos pulsar base
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.PulsarService.java</file>
+            <file type="M">org.apache.pulsar.client.admin.PulsarAdmin.java</file>
+            <file type="M">org.apache.pulsar.client.admin.PulsarAdminException.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BaseResource.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BookiesImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BrokerStatsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.BrokersImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.ClustersImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.ComponentResource.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.FunctionsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.LookupImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.NamespacesImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.NonPersistentTopicsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.ResourceQuotasImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.SchemasImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.SinksImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.SourcesImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.TenantsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.TopicsImpl.java</file>
+            <file type="M">org.apache.pulsar.client.admin.internal.WorkerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4635" opendate="2019-06-28 00:00:00" fixdate="2020-11-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster server zookeepersessionwatcher log session deadlock phenomenon error bookie timeout zoo
+                hardware watcher keeper broker message failure service pulsar
+            </summary>
+            <description>cluster server zookeepersessionwatcher log session deadlock phenomenon error bookie timeout zoo
+                hardware watcher keeper broker message failure service pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.namespace.NamespaceService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4707" opendate="2019-07-11 00:00:00" fixdate="2019-08-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster request auth kafkaproducer document replace javadoc feature pulsarkafkaproducer client
+                group junit athenz change message nullpointerexception kafka name topic pulsar
+            </summary>
+            <description>cluster request auth kafkaproducer document replace javadoc feature pulsarkafkaproducer client
+                group junit athenz change message nullpointerexception kafka name topic pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.kafka.clients.producer.PulsarKafkaProducer.java</file>
+            <file type="M">org.apache.pulsar.tests.integration.compat.kafka.PulsarKafkaProducerThreadSafeTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5585" opendate="2019-11-07 00:00:00" fixdate="2019-11-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>nonpersistentreplicator log release sendasync num ack deadlock acquire put getnummessagesinbatch
+                producerimpl ackreceived replication nummessage process batch pendingmessages message batching int meta
+                effect topic producer semaphore pulsar
+            </summary>
+            <description>nonpersistentreplicator log release sendasync num ack deadlock acquire put
+                getnummessagesinbatch producerimpl ackreceived replication nummessage process batch pendingmessages
+                message batching int meta effect topic producer semaphore pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.ProducerSemaphoreTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ProducerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8050" opendate="2020-09-13 00:00:00" fixdate="2020-10-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>pulsarclientimpl replace list good reference performance pursue concurrenthashmap producer
+                newsetfrommap identityhashmap map value consumer pulsar
+            </summary>
+            <description>pulsarclientimpl replace list good reference performance pursue concurrenthashmap producer
+                newsetfrommap identityhashmap map value consumer pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.BrokerClientIntegrationTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.PulsarClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8293" opendate="2020-10-19 00:00:00" fixdate="2020-10-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>readposition setreadposition update discussion solution fix setacknowledgeposition slack context
+                lock state markdeleteposition opreadentry issue race change way concurrency getname condition field
+                synchronization read_position_updater conflict
+            </summary>
+            <description>readposition setreadposition update discussion solution fix setacknowledgeposition slack
+                context lock state markdeleteposition opreadentry issue race change way concurrency getname condition
+                field synchronization read_position_updater conflict
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.bookkeeper.mledger.impl.ManagedCursorImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9109" opendate="2021-01-03 00:00:00" fixdate="2021-03-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking milliseconds stack waiting reentrantreadwritelock timer seconds broker block consumer
+                redeliverunacknowledgedmessage subscriptionname pulsarclient unackedmessagetracker broker sample rateout
+                writelock deadletterpolicy topic step pulsar
+            </summary>
+            <description>parking milliseconds stack waiting reentrantreadwritelock timer seconds broker block consumer
+                redeliverunacknowledgedmessage subscriptionname pulsarclient unackedmessagetracker broker sample rateout
+                writelock deadletterpolicy topic step pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.UnAckedMessageTracker.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.api.DeadLetterTopicTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10170" opendate="2021-04-08 00:00:00" fixdate="2021-04-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>access log line description medium screenshot ios error authenticationathenz reproduce desktop
+                optimize context lock behavior add efficiency roletoken synchronization information
+            </summary>
+            <description>access log line description medium screenshot ios error authenticationathenz reproduce desktop
+                optimize context lock behavior add efficiency roletoken synchronization information
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.auth.AuthenticationAthenz.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10235" opendate="2021-04-14 00:00:00" fixdate="2021-05-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>LeaderService isLeader
+            </summary>
+            <description>LeaderService isLeader
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.functions.worker.ClusterServiceCoordinator.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.PulsarWorkerService.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.WorkerStatsManager.java</file>
+            <file type="M">org.apache.pulsar.functions.worker.ClusterServiceCoordinatorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10767" opendate="2021-06-01 00:00:00" fixdate="2021-06-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking test issue level reentrantreadwritelock monitor deadlock consumerbatchreceivetest
+                fastthreadlocalthread timed_waiting timer synchronizer client lock information consumerimpl pulsar
+            </summary>
+            <description>parking test issue level reentrantreadwritelock monitor deadlock consumerbatchreceivetest
+                fastthreadlocalthread timed_waiting timer synchronizer client lock information consumerimpl pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.UnAckedMessageTracker.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11379" opendate="2021-07-20 00:00:00" fixdate="2022-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>NarUnpacker
+            </summary>
+            <description>NarUnpacker
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.common.nar.NarUnpacker.java</file>
+            <file type="M">org.apache.pulsar.common.nar.NarUnpackerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11605" opendate="2021-08-09 00:00:00" fixdate="2022-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>schema cluster nonode for abstracttopic phenomenon bookie example partition scenario deletion
+                deleteschema behavior deleteschemastorage ledger race broker condition schemaregistryservice service
+                schemas topic
+            </summary>
+            <description>schema cluster nonode for abstracttopic phenomenon bookie example partition scenario deletion
+                deleteschema behavior deleteschemastorage ledger race broker condition schemaregistryservice service
+                schemas topic
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.AbstractTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.service.schema.BookkeeperSchemaStorage.java</file>
+            <file type="M">org.apache.pulsar.broker.service.PersistentTopicE2ETest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11689" opendate="2021-08-17 00:00:00" fixdate="2021-08-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>batchreceive poll error sleep reproduce fix create block behavior consumer race issue message way
+                peek call entry condition pendingbatchreceive completablefuture peeknextbatchreceive queue
+            </summary>
+            <description>batchreceive poll error sleep reproduce fix create block behavior consumer race issue message
+                way peek call entry condition pendingbatchreceive completablefuture peeknextbatchreceive queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerBase.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.impl.MultiTopicsConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ZeroQueueConsumerImpl.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ClientTestFixtures.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerImplTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.MultiTopicsConsumerImplTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ReaderImplTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11690" opendate="2021-08-17 00:00:00" fixdate="2022-03-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>fail revalidatelockondifferentsession test failure flaky lockmanagertest nosuchelementexception
+                error value example
+            </summary>
+            <description>fail revalidatelockondifferentsession test failure flaky lockmanagertest nosuchelementexception
+                error value example
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.bookkeeper.mledger.impl.ManagedLedgerTest.java</file>
+            <file type="M">org.apache.pulsar.metadata.coordination.impl.LockManagerImpl.java</file>
+            <file type="M">org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.AbstractMetadataStore.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.LocalMemoryMetadataStore.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.ZKMetadataStore.java</file>
+            <file type="M">org.apache.pulsar.metadata.impl.ZKSessionWatcher.java</file>
+            <file type="M">org.apache.pulsar.metadata.LockManagerTest.java</file>
+            <file type="M">org.apache.pulsar.metadata.ZKSessionTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11966" opendate="2021-09-08 00:00:00" fixdate="2021-10-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>waiting configuration admin settimeout timeout example endpoint adminproxyhandler web connection
+                jetty state place arraydeque class monitor proxied servletconfig proxy base pulsar
+            </summary>
+            <description>waiting configuration admin settimeout timeout example endpoint adminproxyhandler web
+                connection jetty state place arraydeque class monitor proxied servletconfig proxy base pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.proxy.server.AdminProxyHandler.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConfiguration.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12723" opendate="2021-11-10 00:00:00" fixdate="2021-12-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cursor addreplicationcluster localcluster concurrentopenhashmap persistenttopic thead
+                persistentreplicator screenshot delete mac remove nop condiftion desktop class race condition measure
+                field replicator non null information addreplicationcluster
+            </summary>
+            <description>cursor addreplicationcluster localcluster concurrentopenhashmap persistenttopic thead
+                persistentreplicator screenshot delete mac remove nop condiftion desktop class race condition measure
+                field replicator non null information addreplicationcluster
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.common.util.collections.ConcurrentOpenHashMap.java</file>
+            <file type="M">org.apache.pulsar.common.util.collections.ConcurrentOpenHashMapTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12885" opendate="2021-11-19 00:00:00" fixdate="2022-02-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>persistentstickykeydispatchermultipleconsumers test havependingreplayread addmessagetoreplay
+                readmoreentry removeconsumer replay asyncreplayentry subscription message testremovefirstconsumer
+                persistentdispatchermultipleconsumers readentriescomplete keysharedsubscriptiontest desktop
+                getmessagestoreplaynow calculatetoread macos testremovefirstconsumer consumer case
+            </summary>
+            <description>persistentstickykeydispatchermultipleconsumers test havependingreplayread addmessagetoreplay
+                readmoreentry removeconsumer replay asyncreplayentry subscription message testremovefirstconsumer
+                persistentdispatchermultipleconsumers readentriescomplete keysharedsubscriptiontest desktop
+                getmessagestoreplaynow calculatetoread macos testremovefirstconsumer consumer case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentDispatcherMultipleConsumers.java</file>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentStickyKeyDispatcherMultipleConsumers.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="12929" opendate="2021-11-22 00:00:00" fixdate="2021-12-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>internalDeleteSubscription
+            </summary>
+            <description>internalDeleteSubscription
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.admin.impl.PersistentTopicsBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13004" opendate="2021-11-28 00:00:00" fixdate="2021-11-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack acquirewithnorevalidation updatevalue lockmanagerimpl ios error path
+                delayinjectionmetadatastore desktop metadatastore lockwasinvalidated metadatastoreexception behavior
+                event case resourcelockimpl race resource get updatevaluewhenkeydisappears node condition
+                lockmanagertest revalidate lockbusyexception
+            </summary>
+            <description>stack acquirewithnorevalidation updatevalue lockmanagerimpl ios error path
+                delayinjectionmetadatastore desktop metadatastore lockwasinvalidated metadatastoreexception behavior
+                event case resourcelockimpl race resource get updatevaluewhenkeydisappears node condition
+                lockmanagertest revalidate lockbusyexception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.metadata.coordination.impl.ResourceLockImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13923" opendate="2022-01-24 00:00:00" fixdate="2022-02-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>unsupportedoperationexceptions handler cluster role log hasproxytobrokerurl geo partition
+                connection info replication new init race issue defaultchannelpipeline pipeline proxy warn condition
+                exceptioncaught namespace topic superuser pulsar
+            </summary>
+            <description>unsupportedoperationexceptions handler cluster role log hasproxytobrokerurl geo partition
+                connection info replication new init race issue defaultchannelpipeline pipeline proxy warn condition
+                exceptioncaught namespace topic superuser pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.authentication.ProxySaslAuthenticationTest.java</file>
+            <file type="M">org.apache.pulsar.common.protocol.PulsarHandler.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.BrokerProxyValidator.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.DirectProxyHandler.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConfiguration.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConnection.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyService.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ServiceChannelInitializer.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.TargetAddressDeniedException.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.AuthedAdminProxyHandlerTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.BrokerProxyValidatorTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyAdditionalServletTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyAuthenticatedProducerConsumerTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyAuthenticationTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyConnectionTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyEnableHAProxyProtocolTest.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyKeyStoreTlsTestWithoutAuth.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyTlsTestWithAuth.java</file>
+            <file type="M">org.apache.pulsar.proxy.server.ProxyWithAuthorizationTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13964" opendate="2022-01-26 00:00:00" fixdate="2022-12-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Flaky tests PulsarClientImpl close hangs forever
+            </summary>
+            <description>Flaky tests PulsarClientImpl close hangs forever
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.PulsarClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13986" opendate="2022-01-27 00:00:00" fixdate="2022-01-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request transactionbufferhandler run enhancement sync timeout transactiion performance relate
+                solution bottleneck lock synchronization processing describe
+            </summary>
+            <description>request transactionbufferhandler run enhancement sync timeout transactiion performance relate
+                solution bottleneck lock synchronization processing describe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.transaction.buffer.impl.TransactionBufferHandlerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14362" opendate="2022-02-17 00:00:00" fixdate="2022-04-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Broker Healthcheck Endpoint Exposes Race Conditions
+            </summary>
+            <description>Broker Healthcheck Endpoint Exposes Race Conditions
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.common.util.FutureUtil.java</file>
+            <file type="M">org.apache.pulsar.broker.admin.AdminApiHealthCheckTest.java</file>
+            <file type="M">org.apache.pulsar.broker.web.PulsarWebResource.java</file>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.service.nonpersistent.NonPersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.admin.impl.BrokersBase.java</file>
+            <file type="M">org.apache.pulsar.broker.PulsarService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14413" opendate="2022-02-22 00:00:00" fixdate="2022-03-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>metadata signature part project deadlock result fix blocking block behavior netty
+                consumerbuilderimpl enableretry breaking lookup chain custom pool dlq check getpartitionedtopicmetadata
+                subscribeasync naming deadletterpolicy compatibility pulsar
+            </summary>
+            <description>metadata signature part project deadlock result fix blocking block behavior netty
+                consumerbuilderimpl enableretry breaking lookup chain custom pool dlq check getpartitionedtopicmetadata
+                subscribeasync naming deadletterpolicy compatibility pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.ConsumerBuilderImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14438" opendate="2022-02-24 00:00:00" fixdate="2022-08-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking os_prio waiting line scene condition web block completablefuture state prio pulsar
+            </summary>
+            <description>parking os_prio waiting line scene condition web block completablefuture state prio pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.service.persistent.PersistentTopic.java</file>
+            <file type="M">org.apache.pulsar.broker.service.PersistentTopicE2ETest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14633" opendate="2022-03-10 00:00:00" fixdate="2022-03-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>setuptopicpublishratelimitermonitor metadata production line deadlock reproduce brokerservice block
+                state prio deployment cpu monitor store way entry operation
+            </summary>
+            <description>setuptopicpublishratelimitermonitor metadata production line deadlock reproduce brokerservice
+                block state prio deployment cpu monitor store way entry operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.admin.impl.BrokersBase.java</file>
+            <file type="M">org.apache.pulsar.broker.service.BrokerService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="17446" opendate="2022-09-03 00:00:00" fixdate="2022-10-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>reason line willing sendasync chunk deadlock acquire anything reproduce number search chunking
+                block maxpendingmessages chunkmaxmessagesize blockifqueuefull issue nothing message way enablechunking
+                producer semaphore risk
+            </summary>
+            <description>reason line willing sendasync chunk deadlock acquire anything reproduce number search chunking
+                block maxpendingmessages chunkmaxmessagesize blockifqueuefull issue nothing message way enablechunking
+                producer semaphore risk
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.client.impl.MessageChunkingTest.java</file>
+            <file type="M">org.apache.pulsar.client.impl.ProducerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="17913" opendate="2022-10-03 00:00:00" fixdate="2022-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>schema parking fact waiting deadlock pulsarregistrationclient client prio issue bookkeeper nothing
+                metadatacache cpu broker eventthread daemon condition driver registration completablefuture
+            </summary>
+            <description>schema parking fact waiting deadlock pulsarregistrationclient client prio issue bookkeeper
+                nothing metadatacache cpu broker eventthread daemon condition driver registration completablefuture
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.metadata.bookkeeper.BookieServiceInfoSerde.java</file>
+            <file type="M">org.apache.pulsar.metadata.bookkeeper.PulsarRegistrationClient.java</file>
+            <file type="M">org.apache.pulsar.metadata.bookkeeper.PulsarRegistrationClientTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="18196" opendate="2022-10-26 00:00:00" fixdate="2022-10-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>issue willing nothing remove ownershipcache anything leak expect search review response
+                locallyacquiredlock ask step bundle
+            </summary>
+            <description>issue willing nothing remove ownershipcache anything leak expect search review response
+                locallyacquiredlock ask step bundle
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.namespace.OwnershipCache.java</file>
+            <file type="M">org.apache.pulsar.broker.service.persistent.SimpleProducerConsumerTestStreamingDispatcherTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="18988" opendate="2022-12-19 00:00:00" fixdate="2022-12-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>metadata stdout issue willing nothing deadlock store believe anything expect search response get
+                transaction pulsar
+            </summary>
+            <description>metadata stdout issue willing nothing deadlock store believe anything expect search response
+                get transaction pulsar
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.pulsar.broker.transaction.pendingack.impl.PendingAckHandleImpl.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

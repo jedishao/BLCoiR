@@ -1,0 +1,1 @@
+controller checkauthenticationallowed access ensure session clear abstractauthenticationmanager control check pull abstractuserdetailsauthenticationprovider copydetail casauthenticationprovider provider copy place providermanager class authentication

@@ -1,0 +1,1 @@
+instance logger invoke body error cxfclientcallback cxf default inputstream camel end workqueue info clientcallback test race message cxfwsdlonlytest condition exchange nosuchelementexception expectedrun

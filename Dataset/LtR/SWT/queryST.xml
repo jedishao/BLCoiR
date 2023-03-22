@@ -1,0 +1,78 @@
+<bugrepository name="SWT">
+    <bug id="176792" opendate="2007-03-09 03:25:55" fixdate="2007-04-03 15:38:31" resolution="Fixed">
+        <buginformation>
+            <summary>ComObject ObjectMap Callbacks
+            </summary>
+            <description>ComObject ObjectMap Callbacks
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.swt.internal.ole.win32.COMObject.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="183830" opendate="2007-04-24 13:21:28" fixdate="2005-01-27 10:24:22" resolution="Fixed">
+        <buginformation>
+            <summary>glxmakecurrent glx glxmakecurrent debugger deadlock program opengl stderr int async print xlib
+                linux lock reply
+            </summary>
+            <description>glxmakecurrent glx glxmakecurrent debugger deadlock program opengl stderr int async print xlib
+                linux lock reply
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.swt.internal.opengl.glx.GLX.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="188320" opendate="2007-05-22 10:17:23" fixdate="2009-09-02 07:58:53" resolution="Fixed">
+        <buginformation>
+            <summary>snippet jface argument run deadlock sleep swt continueEventDispatching readanddispatch fix linux
+                block modalcontextbuild continueeventdispatching event class modalcontextthread case gtk execution look
+                synchronisation asyncexec task
+            </summary>
+            <description>snippet jface argument run deadlock sleep swt continueEventDispatching readanddispatch fix
+                linux block modalcontextbuild continueeventdispatching event class modalcontextthread case gtk execution
+                look synchronisation asyncexec task
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.swt.widgets.Synchronizer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="264399" opendate="2009-02-10 13:22:56" fixdate="2009-02-23 10:32:21" resolution="Fixed">
+        <buginformation>
+            <summary>swt occur linux testing deadlock gtk
+            </summary>
+            <description>swt occur linux testing deadlock gtk
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.swt.widgets.Control.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="338965" opendate="2011-03-04 13:29:18" fixdate="2011-12-15 15:36:54" resolution="Fixed">
+        <buginformation>
+            <summary>deadlock UI
+            </summary>
+            <description>deadlock UI
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.swt.widgets.MessageBox.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

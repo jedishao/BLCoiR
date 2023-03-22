@@ -1,0 +1,1 @@
+snippet jface argument run deadlock sleep swt continueEventDispatching readanddispatch fix linux block modalcontextbuild continueeventdispatching event class modalcontextthread case gtk execution look synchronisation asyncexec task

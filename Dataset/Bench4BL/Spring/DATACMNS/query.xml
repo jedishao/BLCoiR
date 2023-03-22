@@ -1,0 +1,73 @@
+<bugrepository name="DATACMNS">
+    <bug id="65" opendate="2011-08-23 00:48:49" fixdate="2011-08-23 11:19:12" resolution="Fixed">
+        <buginformation>
+            <summary>type point reference dowithproperty mappingcontext scenario property map
+                concurrentmodificationexception algorithm addpersistententity persistentproperty mongotemplate
+                persistententity basicpersistententity concurrency persistentproperties persistententities
+                getpersistententity self entity
+            </summary>
+            <description>type point reference dowithproperty mappingcontext scenario property map
+                concurrentmodificationexception algorithm addpersistententity persistentproperty mongotemplate
+                persistententity basicpersistententity concurrency persistentproperties persistententities
+                getpersistententity self entity
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mapping.context.AbstractMappingContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="362" opendate="2013-08-26 09:26:53" fixdate="2013-08-26 10:20:52" resolution="Fixed">
+        <buginformation>
+            <summary>repositoryinformation instance issue pass repositoriesgetrepoinfofor repository concurrency
+                variable block lookuprepositoryfactoryinformationfor concurrentmodificationexception iterate
+            </summary>
+            <description>repositoryinformation instance issue pass repositoriesgetrepoinfofor repository concurrency
+                variable block lookuprepositoryfactoryinformationfor concurrentmodificationexception iterate
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.repository.support.Repositories.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="390" opendate="2013-10-28 09:07:46" fixdate="2013-11-04 02:33:59" resolution="Fixed">
+        <buginformation>
+            <summary>data log remove spring result iterator lock iteration hashmap value possibility map case
+                concurrentmodificationexception issue race persistententity collection look values getpersistententities
+                stacktrace resolvetypefrom progress operation abstractmappingcontext
+            </summary>
+            <description>data log remove spring result iterator lock iteration hashmap value possibility map case
+                concurrentmodificationexception issue race persistententity collection look values getpersistententities
+                stacktrace resolvetypefrom progress operation abstractmappingcontext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mapping.context.AbstractMappingContextUnitTests.java</file>
+            <file type="M">org.springframework.data.mapping.context.AbstractMappingContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="831" opendate="2016-03-23 19:22:03" fixdate="2016-05-31 17:05:26" resolution="Fixed">
+        <buginformation>
+            <summary>addpersistententity race beginning one persistententity type call condition fix getpersistententity
+                property lock write class entity abstractmappingcontext
+            </summary>
+            <description>addpersistententity race beginning one persistententity type call condition fix
+                getpersistententity property lock write class entity abstractmappingcontext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mapping.context.AbstractMappingContext.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

@@ -1,0 +1,1 @@
+Synchronize JDT added ability batch compiler specify instead PDE Build add build properties support exists project specific settings warning error levels msynchronize build properties file

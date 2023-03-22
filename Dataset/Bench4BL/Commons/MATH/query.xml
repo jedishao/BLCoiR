@@ -1,0 +1,68 @@
+<bugrepository name="MATH">
+    <bug id="505" opendate="2011-02-01 00:28:56" fixdate="2011-02-01 18:58:30" resolution="Fixed">
+        <buginformation>
+            <summary>TestUtils volatile synchronized
+            </summary>
+            <description>TestUtils volatile synchronized
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.math.stat.inference.ChiSquareFactoryTest.java</file>
+            <file type="M">org.apache.commons.math.stat.inference.TTestFactoryTest.java</file>
+            <file type="M">org.apache.commons.math.stat.inference.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="899" opendate="2012-11-16 08:08:22" fixdate="2012-11-18 21:40:15" resolution="Fixed">
+        <buginformation>
+            <summary>mersennetwister generatorthere probability line upd generator arrayindexoutofboundsexception error
+                crash mode random multy
+            </summary>
+            <description>mersennetwister generatorthere probability line upd generator arrayindexoutofboundsexception
+                error crash mode random multy
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.math3.random.SynchronizedRandomGenerator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1134" opendate="2014-06-30 19:35:24" fixdate="2015-02-27 14:13:19" resolution="Fixed">
+        <buginformation>
+            <summary>however other computepartialderivative bicubicsplineinterpolatingfunction partialderivative
+                constructor start derivative check appear null array function initialization
+            </summary>
+            <description>however other computepartialderivative bicubicsplineinterpolatingfunction partialderivative
+                constructor start derivative check appear null array function initialization
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.math3.analysis.interpolation.TricubicSplineInterpolator.java</file>
+            <file type="M">org.apache.commons.math3.analysis.interpolation.BicubicSplineInterpolator.java</file>
+            <file type="M">org.apache.commons.math3.analysis.interpolation.BicubicSplineInterpolatingFunction.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1294" opendate="2015-11-22 18:38:53" fixdate="2015-11-23 22:20:08" resolution="Fixed">
+        <buginformation>
+            <summary>datum access race buildpolynomial occur degree list explanation polynomialutil building
+                polynomialutilstest coefficient create block comparisonfailure
+            </summary>
+            <description>datum access race buildpolynomial occur degree list explanation polynomialutil building
+                polynomialutilstest coefficient create block comparisonfailure
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.math4.analysis.polynomials.PolynomialsUtils.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

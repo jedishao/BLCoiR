@@ -1,0 +1,3 @@
+org.apache.coyote.ajp.AjpNioProcessor.java
+org.apache.coyote.http11.InternalNioOutputBuffer.java
+org.apache.tomcat.util.net.NioEndpoint.java

@@ -1,0 +1,1 @@
+allow jms endpoint camel rabbitmq consumer queue

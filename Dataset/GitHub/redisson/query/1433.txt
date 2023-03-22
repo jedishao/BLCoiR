@@ -1,0 +1,1 @@
+Concurrent calls to RemoteService should not result in an exception

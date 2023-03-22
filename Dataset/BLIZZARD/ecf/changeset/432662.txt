@@ -1,0 +1,5 @@
+org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.java
+org.eclipse.ecf.internal.provider.filetransfer.httpclient4.Activator.java
+org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientDefaultSSLSocketFactoryModifier.java
+org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientDefaultSSLSocketFactoryModifier.java
+org.eclipse.ecf.internal.provider.filetransfer.httpclient.Activator.java

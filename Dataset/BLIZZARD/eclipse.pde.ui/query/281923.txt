@@ -1,0 +1,1 @@
+line run box platform mode testapplication parameter end workbench junit test sense launch come ide check command target headless nonuithreadtestapplication plug coretestapplication

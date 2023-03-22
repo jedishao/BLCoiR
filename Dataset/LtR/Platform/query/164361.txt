@@ -1,0 +1,1 @@
+handler isvisible happy show dialog setmessage optimization trimming swt show address race one label check suggest message appear begintask condition task milestone configureshell name true progressmonitordialog progress avoid job user

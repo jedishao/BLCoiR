@@ -1,0 +1,1 @@
+XML Datasource is not Thread Safe when passing data as InputStream

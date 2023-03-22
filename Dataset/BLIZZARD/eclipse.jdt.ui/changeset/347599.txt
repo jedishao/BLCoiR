@@ -1,0 +1,14 @@
+org.eclipse.jdt.ui.examples.TestMoveDescriptorAction.java
+org.eclipse.jdt.internal.ui.refactoring.binary.BinaryRefactoringHistoryWizard.java
+org.eclipse.ltk.core.refactoring.tests.AllTests.java
+org.eclipse.ltk.core.refactoring.tests.RefactoringContextTest.java
+org.eclipse.ltk.core.refactoring.tests.resource.ResourceRefactoringTests.java
+org.eclipse.ltk.core.refactoring.tests.resource.ResourceRefactoringUndoTests.java
+org.eclipse.ltk.core.refactoring.PerformRefactoringHistoryOperation.java
+org.eclipse.ltk.core.refactoring.PerformRefactoringOperation.java
+org.eclipse.ltk.core.refactoring.Refactoring.java
+org.eclipse.ltk.core.refactoring.RefactoringContext.java
+org.eclipse.ltk.core.refactoring.RefactoringDescriptor.java
+org.eclipse.ltk.ui.refactoring.RefactoringWizard.java
+org.eclipse.ltk.ui.refactoring.RefactoringWizardOpenOperation.java
+org.eclipse.ltk.ui.refactoring.history.RefactoringHistoryWizard.java

@@ -1,0 +1,1 @@
+drop argument deadlock error cycle sec sqltransactionrollbackexception payload lock victim row standardexception table group sqlmetadatarulemanagertest test max syscolumns finder datasource failure waiter unabletoexecutestatementexception tablelock

@@ -1,0 +1,1 @@
+heartbeat acid result impl streaming endpoint client create case metastore rpc batch txn follow sample call sequence provide response vice versa synchronization

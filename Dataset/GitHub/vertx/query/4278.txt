@@ -1,0 +1,1 @@
+vertex error attempt thanks openjdk startup deploymentmanager class concurrentmodificationexception arraylist collection analysis concurrency registerverticlefactory deploymentoptions name verticle information option

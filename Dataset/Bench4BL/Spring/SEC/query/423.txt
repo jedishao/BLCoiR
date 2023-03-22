@@ -1,0 +1,1 @@
+request securitycontext access read securitycontextholder httpsessioncontextintegrationfilter session introduce change run functionality example sec leak mean abstractsecurityinterceptor context http  setcontext authentication

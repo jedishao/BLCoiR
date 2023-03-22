@@ -1,0 +1,3 @@
+org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.JmDNSImpl.java
+org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.tasks.Canceler.java
+org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.JmDNSImpl.java

@@ -1,0 +1,9 @@
+org.eclipse.jdt.compiler.apt.tests.processors.elements.Java8ElementProcessor.java
+org.eclipse.jdt.compiler.apt.tests.resources.targets.model8.InterfaceTest.java
+org.eclipse.jdt.compiler.apt.tests.resources.targets.model8.a.TypeParameterTest.java
+org.eclipse.jdt.compiler.apt.tests.Java8ElementsTests.java
+org.eclipse.jdt.internal.compiler.lookup.AptSourceLocalVariableBinding.java
+org.eclipse.jdt.internal.compiler.ast.ASTNode.java
+org.eclipse.jdt.internal.compiler.ast.Argument.java
+org.eclipse.jdt.internal.compiler.lookup.LocalVariableBinding.java
+org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.java

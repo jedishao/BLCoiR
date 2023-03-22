@@ -1,0 +1,1 @@
+datum metadata week memory update sqlsegmentsmetadatamanager  queryparam segment forcemetadatarefresh end cache coordinator past query start datasourcename loadstatus task datasource response interval  nullabl  pathparam ingestion

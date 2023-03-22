@@ -1,0 +1,487 @@
+<bugrepository name="Platform">
+    <bug id="6623" opendate="2001-12-06 05:34:27" fixdate="2002-01-29 11:58:39" resolution="Fixed">
+        <buginformation>
+            <summary>AbstractUIPlugin refreshPluginActions
+            </summary>
+            <description>AbstractUIPlugin refreshPluginActions
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.plugin.AbstractUIPlugin.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15379" opendate="2002-05-06 17:33:48" fixdate="2002-05-07 18:50:55" resolution="Fixed">
+        <buginformation>
+            <summary>WorkingSetManager
+            </summary>
+            <description>WorkingSetManager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.WorkingSetManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="33942" opendate="2003-03-05 23:35:09" fixdate="2005-05-10 14:54:15" resolution="Fixed">
+        <buginformation>
+            <summary>IDecoratorManager update
+            </summary>
+            <description>IDecoratorManager update
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.IDecoratorManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="46562" opendate="2003-11-13 05:57:26" fixdate="2005-05-10 14:56:21" resolution="Fixed">
+        <buginformation>
+            <summary>modalcontext periodic deadlock dirtyregionqueue reference runnablelock view referencequeue lock
+                prio dispatcher signal cvs finalizer resource sync task semaphore javareconciler workerpool
+            </summary>
+            <description>modalcontext periodic deadlock dirtyregionqueue reference runnablelock view referencequeue lock
+                prio dispatcher signal cvs finalizer resource sync task semaphore javareconciler workerpool
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="48382" opendate="2003-12-09 19:14:18" fixdate="2004-01-07 18:55:08" resolution="Fixed">
+        <buginformation>
+            <summary>stack test work pattern recommend deadlock ilock fail trace view build marker job worker
+            </summary>
+            <description>stack test work pattern recommend deadlock ilock fail trace view build marker job worker
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.views.markers.internal.TableContentProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="54450" opendate="2004-03-11 08:49:20" fixdate="2004-06-29 09:31:58" resolution="Fixed">
+        <buginformation>
+            <summary>request purpose debugger inui uijob error getcode dialog eclipsecon requestinui development race
+                work jobs message call async response getworkbench hint non null logic job choice user fun
+            </summary>
+            <description>request purpose debugger inui uijob error getcode dialog eclipsecon requestinui development
+                race work jobs message call async response getworkbench hint non null logic job choice user fun
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressFeedbackManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="59782" opendate="2004-04-23 10:19:09" fixdate="2004-05-18 11:41:34" resolution="Fixed">
+        <buginformation>
+            <summary>ImplicitJobs ThreadJob IndexManager eventmgr EventThread
+            </summary>
+            <description>ImplicitJobs ThreadJob IndexManager eventmgr EventThread
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.dialogs.EventLoopProgressMonitor.java</file>
+            <file type="M">org.eclipse.ui.internal.progress.BlockedJobsDialog.java</file>
+            <file type="M">org.eclipse.ui.internal.progress.ErrorNotificationDialog.java</file>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressManager.java</file>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressManagerUtil.java</file>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressMonitorFocusJobDialog.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="67053" opendate="2004-06-14 13:51:58" fixdate="2004-12-15 14:54:59" resolution="Fixed">
+        <buginformation>
+            <summary>IDEApplication
+            </summary>
+            <description>IDEApplication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.ide.IDEApplication.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="74185" opendate="2004-09-17 10:44:34" fixdate="2004-09-23 13:16:25" resolution="Fixed">
+        <buginformation>
+            <summary>uijobtest flag test volatile check while processor remove concurrency boolean fix failure loop
+                testjobran assertion copy testjob job complete
+            </summary>
+            <description>uijobtest flag test volatile check while processor remove concurrency boolean fix failure loop
+                testjobran assertion copy testjob job complete
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.tests.api.UIJobTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="76378" opendate="2004-10-15 13:44:23" fixdate="2005-03-14 16:56:36" resolution="Fixed">
+        <buginformation>
+            <summary>uilocklistener request modalcontext notifyjob deadlock patch notification lock include junit test
+                uithread timing occur change background interaction syncexec operation
+            </summary>
+            <description>uilocklistener request modalcontext notifyjob deadlock patch notification lock include junit
+                test uithread timing occur change background interaction syncexec operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.UILockListener.java</file>
+            <file type="M">org.eclipse.ui.tests.UiTestSuite.java</file>
+            <file type="M">org.eclipse.ui.tests.deadlock.NestedSyncExecDeadlockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="84141" opendate="2005-02-01 10:43:37" fixdate="2005-02-16 14:38:14" resolution="Fixed">
+        <buginformation>
+            <summary>DecorationScheduler
+            </summary>
+            <description>DecorationScheduler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.decorators.DecorationScheduler.java</file>
+            <file type="M">org.eclipse.ui.internal.decorators.DecoratorManager.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.DecoratorTableTreeTest.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.DecoratorTableTreeView.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.DecoratorTableView.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.DecoratorTestPart.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.DecoratorTreeView.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.DecoratorViewerTest.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.FontDecorator.java</file>
+            <file type="M">org.eclipse.ui.tests.decorators.ForegroundColorDecorator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="108162" opendate="2005-08-26 14:27:00" fixdate="2008-10-16 10:07:01" resolution="Fixed">
+        <buginformation>
+            <summary>copyresource package resource line deadlock participant refactoring provide action plug
+                movefilesandfoldersoperation class
+            </summary>
+            <description>copyresource package resource line deadlock participant refactoring provide action plug
+                movefilesandfoldersoperation class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.actions.WorkspaceModifyOperation.java</file>
+            <file type="M">org.eclipse.ui.tests.concurrency.ConcurrencyTestSuite.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="113582" opendate="2005-10-24 15:13:12" fixdate="2005-11-01 09:41:21" resolution="Fixed">
+        <buginformation>
+            <summary>per compilationunit level jobs framework task monoreconciler marker semaphore john javareconciler
+                party
+            </summary>
+            <description>per compilationunit level jobs framework task monoreconciler marker semaphore john
+                javareconciler party
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.views.markers.internal.MarkerAdapter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="114527" opendate="2005-11-01 09:54:29" fixdate="2005-12-13 11:08:48" resolution="Fixed">
+        <buginformation>
+            <summary>condition startup workbench lead crash Workbench
+            </summary>
+            <description>condition startup workbench lead crash Workbench
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.Workbench.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="114813" opendate="2005-11-02 13:55:44" fixdate="2005-12-13 11:14:33" resolution="Fixed">
+        <buginformation>
+            <summary>removebundle instance listener getbundle dynamicpluginstestsuite dynamictestcase dosetup solution
+                event mechanism bundle testviewercontribution addition begining registry chain junit process work lead
+                fail provide failure synchronization dynamicplugin
+            </summary>
+            <description>removebundle instance listener getbundle dynamicpluginstestsuite dynamictestcase dosetup
+                solution event mechanism bundle testviewercontribution addition begining registry chain junit process
+                work lead fail provide failure synchronization dynamicplugin
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.tests.dynamicplugins.DynamicTestCase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="118414" opendate="2005-11-29 09:06:14" fixdate="2005-12-13 16:03:40" resolution="Fixed">
+        <buginformation>
+            <summary>AbstractWorkingSetManager
+            </summary>
+            <description>AbstractWorkingSetManager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.AbstractWorkingSetManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="136855" opendate="2006-04-14 11:58:06" fixdate="2006-05-26 14:52:21" resolution="Fixed">
+        <buginformation>
+            <summary>IDEIdleHelper ThreadingModel Apartment HeapStatus
+            </summary>
+            <description>IDEIdleHelper ThreadingModel Apartment HeapStatus
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.ide.IDEIdleHelper.java</file>
+            <file type="M">org.eclipse.ui.internal.ide.IDEWorkbenchMessages.java</file>
+            <file type="M">org.eclipse.ui.internal.HeapStatus.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="164361" opendate="2006-11-13 12:48:31" fixdate="2007-01-30 08:22:01" resolution="Fixed">
+        <buginformation>
+            <summary>handler isvisible happy show dialog setmessage optimization trimming swt show address race one
+                label check suggest message appear begintask condition task milestone configureshell name true
+                progressmonitordialog progress avoid job user
+            </summary>
+            <description>handler isvisible happy show dialog setmessage optimization trimming swt show address race one
+                label check suggest message appear begintask condition task milestone configureshell name true
+                progressmonitordialog progress avoid job user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jface.dialogs.ProgressMonitorDialog.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="168806" opendate="2006-12-20 22:23:09" fixdate="2006-12-20 22:52:07" resolution="Fixed">
+        <buginformation>
+            <summary>Realm ensureWorkerThreadIsRunning
+            </summary>
+            <description>Realm ensureWorkerThreadIsRunning
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.core.databinding.observable.Realm.java</file>
+            <file type="M">org.eclipse.core.databinding.observable.Realm.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="171452" opendate="2007-01-23 15:35:53" fixdate="2007-02-06 10:45:03" resolution="Fixed">
+        <buginformation>
+            <summary>handler appear trace couple startup get deadlock splash syncexec
+            </summary>
+            <description>handler appear trace couple startup get deadlock splash syncexec
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.splash.AbstractSplashHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="230472" opendate="2008-05-06 15:38:13" fixdate="2008-05-20 10:29:12" resolution="Fixed">
+        <buginformation>
+            <summary>expression activity list synchronize
+            </summary>
+            <description>expression activity list synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.ActivityPersistanceHelper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="248908" opendate="2008-09-29 05:42:27" fixdate="2009-06-08 10:28:36" resolution="Fixed">
+        <buginformation>
+            <summary>BusyIndicator
+            </summary>
+            <description>BusyIndicator
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.forms.widgets.BusyIndicator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="258352" opendate="2008-12-10 15:15:42" fixdate="2012-12-03 18:21:05" resolution="Fixed">
+        <buginformation>
+            <summary>synchronized progressmanager
+            </summary>
+            <description>synchronized progressmanager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressManager.java</file>
+            <file type="M">org.eclipse.ui.internal.progress.ProgressViewUpdater.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="262032" opendate="2009-01-22 11:03:28" fixdate="2011-07-18 04:09:40" resolution="Fixed">
+        <buginformation>
+            <summary>create deadlock deadlockdetector
+            </summary>
+            <description>create deadlock deadlockdetector
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.tests.concurrency.Bug_262032.java</file>
+            <file type="M">org.eclipse.ui.tests.concurrency.ConcurrencyTestSuite.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="273752" opendate="2009-04-26 19:12:02" fixdate="2009-04-26 19:35:20" resolution="Fixed">
+        <buginformation>
+            <summary>NavigatorContentService getSourceOfContribution
+            </summary>
+            <description>NavigatorContentService getSourceOfContribution
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.navigator.NavigatorContentService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="296056" opendate="2009-11-24 16:02:10" fixdate="2009-11-25 15:38:32" resolution="Fixed">
+        <buginformation>
+            <summary>beginrulethe scheduling rule deadlock syncexec attempt produce case
+            </summary>
+            <description>beginrulethe scheduling rule deadlock syncexec attempt produce case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.tests.concurrency.ConcurrencyTestSuite.java</file>
+            <file type="M">org.eclipse.ui.tests.concurrency.SyncExecWhileUIThreadWaitsForRuleTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="296822" opendate="2009-12-03 10:47:18" fixdate="2019-11-15 04:30:50" resolution="Fixed">
+        <buginformation>
+            <summary>access work usage monitor poll check nullprogressmonitor progress setcanceled
+            </summary>
+            <description>access work usage monitor poll check nullprogressmonitor progress setcanceled
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jface.action.StatusLine.java</file>
+            <file type="M">org.eclipse.jface.dialogs.ProgressMonitorDialog.java</file>
+            <file type="M">org.eclipse.jface.wizard.ProgressMonitorPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="302536" opendate="2010-02-10 22:19:18" fixdate="2013-10-29 09:49:23" resolution="Fixed">
+        <buginformation>
+            <summary>locking markersupportregistry
+            </summary>
+            <description>locking markersupportregistry
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.views.markers.internal.MarkerSupportRegistry.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="306738" opendate="2010-03-22 12:37:09" fixdate="2010-03-24 14:48:09" resolution="Fixed">
+        <buginformation>
+            <summary>item toolitem renderer mtoolbar change delta type upon tool radio toolbar button result
+                mtoolitembuild selection state synchronize
+            </summary>
+            <description>item toolitem renderer mtoolbar change delta type upon tool radio toolbar button result
+                mtoolitembuild selection state synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.e4.workbench.ui.renderers.swt.MenuItemRenderer.java</file>
+            <file type="M">org.eclipse.e4.workbench.ui.renderers.swt.ToolItemRenderer.java</file>
+            <file type="M">org.eclipse.e4.ui.tests.workbench.MMenuItemTest.java</file>
+            <file type="M">org.eclipse.e4.ui.tests.workbench.MToolItemTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="307405" opendate="2010-03-29 11:06:29" fixdate="2010-04-27 16:09:36" resolution="Fixed">
+        <buginformation>
+            <summary>stack navigator navigatorcontentservicecontentprovider trace event dispatcher
+            </summary>
+            <description>stack navigator navigatorcontentservicecontentprovider trace event dispatcher
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ui.internal.navigator.NavigatorContentService.java</file>
+            <file type="M">org.eclipse.ui.internal.navigator.NavigatorContentServiceContentProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="312063" opendate="2010-05-07 09:49:37" fixdate="2010-05-07 10:39:14" resolution="Fixed">
+        <buginformation>
+            <summary>listenerlist safe hashsethashsets event selectionserviceimpl order
+            </summary>
+            <description>listenerlist safe hashsethashsets event selectionserviceimpl order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.e4.workbench.ui.internal.SelectionServiceImpl.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

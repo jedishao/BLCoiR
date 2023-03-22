@@ -1,0 +1,1 @@
+stack mode trace perprojectinfo lock addpackagefragmentroot block product addtoparentinfo javamodelmanager monitor adopter deltaprocessingstate

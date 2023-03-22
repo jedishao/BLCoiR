@@ -1,0 +1,1 @@
+session line usage section getdelegate spec managedthreadfactory lot jms default jta jmscontextproducer client bean lookup sessions test warn jmscontext producer topic wildfly transaction

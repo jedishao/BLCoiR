@@ -1,0 +1,68 @@
+<bugrepository name="DATAMONGO">
+    <bug id="199" opendate="2011-07-19 05:40:40" fixdate="2011-12-06 04:46:47" resolution="Fixed">
+        <buginformation>
+            <summary>stack test query jmeter observe synchronisation performance field http carry state exec status
+            </summary>
+            <description>stack test query jmeter observe synchronisation performance field http carry state exec status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.mapping.CachingMongoPersistentProperty.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="532" opendate="2012-09-07 03:49:02" fixdate="2012-09-12 04:06:56" resolution="Fixed">
+        <buginformation>
+            <summary>mongo authenticate isauthenticated spring password database git fix dev block multithreading
+                dogetdb authentication issue mongodbutils check call cannotgetmongodbconnectionexception driver
+                databasename
+            </summary>
+            <description>mongo authenticate isauthenticated spring password database git fix dev block multithreading
+                dogetdb authentication issue mongodbutils check call cannotgetmongodbconnectionexception driver
+                databasename
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.MongoDbUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="622" opendate="2013-02-26 01:40:45" fixdate="2013-03-05 00:52:23" resolution="Fixed">
+        <buginformation>
+            <summary>condition race insert create doinsert dosave dosaveversioned
+            </summary>
+            <description>condition race insert create doinsert dosave dosaveversioned
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.MongoTemplateTests.java</file>
+            <file type="M">org.springframework.data.mongodb.core.MongoTemplate.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="737" opendate="2013-08-01 21:18:51" fixdate="2013-08-12 00:53:30" resolution="Fixed">
+        <buginformation>
+            <summary>mongo stack mongosynchronizations unbindresource illegalstateexception patch datamongo database
+                trace committer extra triggerbeforecompletion dogetdb value key localhost issue test mongodbutils holder
+                community transactionsynchronizationmanager beforecompletion interaction thing transaction
+            </summary>
+            <description>mongo stack mongosynchronizations unbindresource illegalstateexception patch datamongo database
+                trace committer extra triggerbeforecompletion dogetdb value key localhost issue test mongodbutils holder
+                community transactionsynchronizationmanager beforecompletion interaction thing transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.mongodb.core.MongoDbUtils.java</file>
+            <file type="M">org.springframework.data.mongodb.core.MongoDbUtilsUnitTests.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

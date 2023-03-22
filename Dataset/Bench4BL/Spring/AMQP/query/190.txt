@@ -1,0 +1,1 @@
+rabbittemplate channeltransacted channel supply observe reference messagelistenercontainer spring leak rabbit context tag publishing consumer info side pool message forum transactionmanager convertandsend integration exchange transaction

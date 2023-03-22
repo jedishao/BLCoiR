@@ -1,0 +1,1 @@
+fact channel type up_prot error startupmy jchannel creation registry npe race pool start jgroups nullpointerexception component embeddedcachemanagerstartupexception channeltransport service variable wildfly serverservice

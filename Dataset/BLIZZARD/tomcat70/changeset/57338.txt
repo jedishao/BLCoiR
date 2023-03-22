@@ -1,0 +1,6 @@
+org.apache.catalina.authenticator.SingleSignOn.java
+org.apache.catalina.authenticator.SingleSignOnEntry.java
+org.apache.catalina.authenticator.SingleSignOnSessionKey.java
+org.apache.catalina.ha.authenticator.ClusterSingleSignOn.java
+org.apache.catalina.ha.authenticator.ClusterSingleSignOnListener.java
+org.apache.catalina.ha.authenticator.SingleSignOnMessage.java

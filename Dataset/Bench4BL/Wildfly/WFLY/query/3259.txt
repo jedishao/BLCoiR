@@ -1,0 +1,1 @@
+ServletContextListeners WeldComponentIntegrationProcessor WeldStartService UndertowDeploymentService

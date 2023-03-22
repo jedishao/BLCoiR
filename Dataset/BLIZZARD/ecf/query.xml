@@ -1,0 +1,321 @@
+<bugrepository name="ecf">
+    <bug id="125572" opendate="2006-01-27 16:32:14" fixdate="2006-01-28 15:37:40" resolution="Fixed">
+        <buginformation>
+            <summary>clientsocontainer server ecf mutex provider lock client interlock
+            </summary>
+            <description>clientsocontainer server ecf mutex provider lock client interlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.generic.ClientSOContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="223484" opendate="2008-03-21 07:36:26" fixdate="2008-12-13 20:39:22" resolution="Fixed">
+        <buginformation>
+            <summary>ichannelcontaineradapter server data run viewshare xmpp running urlshare timer file repeat docshare
+                state event worker screencaptureshare dispatcher bundle connect consoleshare manager level start jmdns
+                socketlistener daemon framework discovery
+            </summary>
+            <description>ichannelcontaineradapter server data run viewshare xmpp running urlshare timer file repeat
+                docshare state event worker screencaptureshare dispatcher bundle connect consoleshare manager level
+                start jmdns socketlistener daemon framework discovery
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.presence.ui.MultiRosterAccount.java</file>
+            <file type="M">org.eclipse.ecf.internal.docshare.ECFStart.java</file>
+            <file type="M">org.eclipse.ecf.presence.ui.MultiRosterView.java</file>
+            <file type="M">org.eclipse.ecf.datashare.AbstractShare.java</file>
+            <file type="M">org.eclipse.ecf.internal.presence.collab.ui.ShareReceiversECFStart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="229237" opendate="2008-04-29 03:47:59" fixdate="2013-03-28 11:13:16" resolution="Fixed">
+        <buginformation>
+            <summary>container setuptreeviewer existence deadlock mrv addcontainer xmpp xmpps view openview provider
+                addcontainer contact block side retrieveservice view_id remy check list mrv retrieveservices call
+                performfinish asyncexec effect syncexec account ipresenceservice
+            </summary>
+            <description>container setuptreeviewer existence deadlock mrv addcontainer xmpp xmpps view openview provider
+                addcontainer contact block side retrieveservice view_id remy check list mrv retrieveservices call
+                performfinish asyncexec effect syncexec account ipresenceservice
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.presence.ui.MultiRosterView.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="232530" opendate="2008-05-16 12:09:46" fixdate="2008-05-18 14:27:43" resolution="Fixed">
+        <buginformation>
+            <summary>msg exception charset read death session utf mime ecf index range message content
+                stringindexoutofboundsexception plain subclass text behavior whitespace case
+            </summary>
+            <description>msg exception charset read death session utf mime ecf index range message content
+                stringindexoutofboundsexception plain subclass text behavior whitespace case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.protocol.msn.ChatSession.java</file>
+            <file type="M">org.eclipse.ecf.protocol.msn.DispatchSession.java</file>
+            <file type="M">org.eclipse.ecf.protocol.msn.Session.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="265413" opendate="2009-02-19 02:27:38" fixdate="2009-02-19 02:33:18" resolution="Fixed">
+        <buginformation>
+            <summary>call issue lock jmdnsdiscoverycontainer object
+            </summary>
+            <description>call issue lock jmdnsdiscoverycontainer object
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.jmdns.container.JMDNSDiscoveryContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="265415" opendate="2009-02-19 02:37:58" fixdate="2009-02-19 02:39:29" resolution="Fixed">
+        <buginformation>
+            <summary>jmdnsimpl occur lock synchronization serviceinfo unregisterservice canceler object
+            </summary>
+            <description>jmdnsimpl occur lock synchronization serviceinfo unregisterservice canceler object
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.JmDNSImpl.java</file>
+            <file type="M">org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.tasks.Canceler.java</file>
+            <file type="M">org.eclipse.ecf.provider.jmdns.jmdns.javax.jmdns.impl.JmDNSImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="267035" opendate="2009-03-04 10:24:05" fixdate="2009-03-05 02:38:31" resolution="Fixed">
+        <buginformation>
+            <summary>tostring replicasharedobjectdescription information synchronize
+            </summary>
+            <description>tostring replicasharedobjectdescription information synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.core.sharedobject.ReplicaSharedObjectDescription.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="273357" opendate="2009-04-22 18:57:22" fixdate="2009-04-28 16:53:18" resolution="Fixed">
+        <buginformation>
+            <summary>datum handshake sendmessage isopen targetid data channel alice niodatasharecontainer nio blocking
+                map datashare niochannel sendrequest byte bytebuffer newchannelconfig socketchannel serversocketchannel
+                abstract ichannellistener bob socket createchannel channelid
+            </summary>
+            <description>datum handshake sendmessage isopen targetid data channel alice niodatasharecontainer nio
+                blocking map datashare niochannel sendrequest byte bytebuffer newchannelconfig socketchannel
+                serversocketchannel abstract ichannellistener bob socket createchannel channelid
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.ConcreteNIOChannel.java</file>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.ConcreteNIODatashareContainer.java</file>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.ContainerImpl.java</file>
+            <file type="M">org.eclipse.ecf.tests.provider.datashare.nio.NIODatashareTest.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.ChannelData.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.NIOChannel.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.NIODatashareContainer.java</file>
+            <file type="M">org.eclipse.ecf.provider.datashare.nio.Util.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="273819" opendate="2009-04-27 07:24:25" fixdate="2011-08-09 01:01:30" resolution="Fixed">
+        <buginformation>
+            <summary>container instantiate dialog wizard containers dispose user open
+            </summary>
+            <description>container instantiate dialog wizard containers dispose user open
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.irc.ui.Activator.java</file>
+            <file type="M">org.eclipse.ecf.internal.irc.ui.wizards.IRCConnectWizard.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.xmpp.ui.wizards.XMPPConnectWizard.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="299849" opendate="2010-01-16 11:33:20" fixdate="2010-01-16 12:01:20" resolution="Fixed">
+        <buginformation>
+            <summary>container xmppremoteserviceadapterfactory invoke handleaddregistrationcan xmppregistrysharedobject
+                get remoteserverid getlocalcontainerid connection handleaddregistration situation receive npe occur
+                packet message throw registrysharedobject getlocalcontainerid
+            </summary>
+            <description>container xmppremoteserviceadapterfactory invoke handleaddregistrationcan
+                xmppregistrysharedobject get remoteserverid getlocalcontainerid connection handleaddregistration
+                situation receive npe occur packet message throw registrysharedobject getlocalcontainerid
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="321468" opendate="2010-08-01 19:30:47" fixdate="2010-08-01 19:46:59" resolution="Fixed">
+        <buginformation>
+            <summary>dispatch iremoteservicelistener synchronous listenerqueue listener deadlock
+                fireremoteservicelistener result call fix service registrysharedobject event
+            </summary>
+            <description>dispatch iremoteservicelistener synchronous listenerqueue listener deadlock
+                fireremoteservicelistener result call fix service registrysharedobject event
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="321469" opendate="2010-08-01 21:10:56" fixdate="2010-08-01 21:13:06" resolution="Fixed">
+        <buginformation>
+            <summary>discoveredservicetracker cleanup listenerqueue threadgroup distribution bundle
+            </summary>
+            <description>discoveredservicetracker cleanup listenerqueue threadgroup distribution bundle
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl.java</file>
+            <file type="M">org.eclipse.ecf.internal.osgi.services.distribution.Activator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="323208" opendate="2010-08-19 23:02:56" fixdate="2010-09-26 02:34:17" resolution="Fixed">
+        <buginformation>
+            <summary>exception workspace discoveredservicetrackerimpl ecf deadlock distribution sec attachment startup
+                root host jar state event dispatcher bundle class bundleexception level change start abstractbundle
+                loading eclipse discovery progress
+            </summary>
+            <description>exception workspace discoveredservicetrackerimpl ecf deadlock distribution sec attachment
+                startup root host jar state event dispatcher bundle class bundleexception level change start
+                abstractbundle loading eclipse discovery progress
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.osgi.services.distribution.Activator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="326949" opendate="2010-10-04 13:05:02" fixdate="2010-10-04 13:05:02" resolution="Fixed">
+        <buginformation>
+            <summary>add getRemoteServiceReferences remote service container adapter api
+            </summary>
+            <description>add getRemoteServiceReferences remote service container adapter api
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.riena.container.RienaContainer.java</file>
+            <file type="M">org.eclipse.ecf.remoteservice.IRemoteServiceContainerAdapter.java</file>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RemoteServiceContainer.java</file>
+            <file type="M">org.eclipse.ecf.remoteservice.client.AbstractClientContainer.java</file>
+            <file type="M">org.eclipse.ecf.remoteservice.client.RemoteServiceClientRegistry.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.local.container.LocalRemoteServiceContainer.java</file>
+            <file type="M">org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.r_osgi.R_OSGiRemoteServiceContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="337973" opendate="2011-02-23 09:09:05" fixdate="2011-03-14 04:37:10" resolution="Fixed">
+        <buginformation>
+            <summary>readkeeper argument watchmanager error major watchedevent removezookeeper state case process
+                zookeeper race zoodiscovery pool list undiscovery concurrency exit addzookeeper build syncconnected
+                service effect nioservercnxn
+            </summary>
+            <description>readkeeper argument watchmanager error major watchedevent removezookeeper state case process
+                zookeeper race zoodiscovery pool list undiscovery concurrency exit addzookeeper build syncconnected
+                service effect nioservercnxn
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.zookeeper.node.internal.ReadRoot.java</file>
+            <file type="M">org.eclipse.ecf.provider.zookeeper.core.internal.IService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="341818" opendate="2011-04-04 12:18:56" fixdate="2011-05-11 10:48:13" resolution="Fixed">
+        <buginformation>
+            <summary>r_osgi ecf invoke error recive reproduce unable provider loop consumer enhance identifier
+                reproducible resource occur sample execute call proxy system build sdk
+            </summary>
+            <description>r_osgi ecf invoke error recive reproduce unable provider loop consumer enhance identifier
+                reproducible resource occur sample execute call proxy system build sdk
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.internal.provider.r_osgi.Activator.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.r_osgi.RemoteServiceImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="348487" opendate="2011-06-06 20:40:02" fixdate="2011-11-30 14:16:38" resolution="Fixed">
+        <buginformation>
+            <summary>memory waiting periodic reference referencequeue lock dump dispatcher signal parallelgc
+                simplefifoqueue finalizer monitor timed_waiting daemon multithreadedhttpconnectionmanager task discovery
+                idleconnectiontimeoutthread
+            </summary>
+            <description>memory waiting periodic reference referencequeue lock dump dispatcher signal parallelgc
+                simplefifoqueue finalizer monitor timed_waiting daemon multithreadedhttpconnectionmanager task discovery
+                idleconnectiontimeoutthread
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.core.sharedobject.util.SimpleFIFOQueue.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="432662" opendate="2014-04-12 01:58:25" fixdate="2014-07-10 09:41:54" resolution="Fixed">
+        <buginformation>
+            <summary>exception ecfruntimeexception add modifier getlogservice printstacktrace startup get safe activator
+                httpclient
+            </summary>
+            <description>exception ecfruntimeexception add modifier getlogservice printstacktrace startup get safe
+                activator httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.filetransfer.httpclient4.Activator.java</file>
+            <file type="M">org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientDefaultSSLSocketFactoryModifier.java</file>
+            <file type="M">org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientDefaultSSLSocketFactoryModifier.java</file>
+            <file type="M">org.eclipse.ecf.internal.provider.filetransfer.httpclient.Activator.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

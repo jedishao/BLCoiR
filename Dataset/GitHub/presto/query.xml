@@ -1,0 +1,345 @@
+<bugrepository name="presto">
+    <bug id="1614" opendate="2014-08-30 00:00:00" fixdate="2014-09-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hang unlock race tasksource query update source believe message processnewsource newsources
+                nomoresplit newsource call task driver flawed machine leave design lock state
+            </summary>
+            <description>hang unlock race tasksource query update source believe message processnewsource newsources
+                nomoresplit newsource call task driver flawed machine leave design lock state
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.Driver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1689" opendate="2014-09-19 00:00:00" fixdate="2014-09-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>happen stack test issue race query illegalstateexception output condition trace task buffer
+            </summary>
+            <description>happen stack test issue race query illegalstateexception output condition trace task buffer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.server.StatementResource.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3629" opendate="2015-09-18 00:00:00" fixdate="2015-09-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sec happen fail elapse race testsetif kind failure assertionerror travis teststatemachine
+            </summary>
+            <description>sec happen fail elapse race testsetif kind failure assertionerror travis teststatemachine
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.TestStateMachine.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3647" opendate="2015-09-22 00:00:00" fixdate="2015-10-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>BlackHoleMetadata ConcurrentHashMap
+            </summary>
+            <description>BlackHoleMetadata ConcurrentHashMap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.plugin.blackhole.BlackHoleMetadata.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4869" opendate="2016-03-24 00:00:00" fixdate="2016-03-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>date broadcast orderkey orderstatus source deadlock orderdate orderpriority output scheduler edge
+                remotesource originalconstraint custkey tpch scheduling bigint value comm dependency totalprice varchar
+                shippriority graph clerk field stage build comment
+            </summary>
+            <description>date broadcast orderkey orderstatus source deadlock orderdate orderpriority output scheduler
+                edge remotesource originalconstraint custkey tpch scheduling bigint value comm dependency totalprice
+                varchar shippriority graph clerk field stage build comment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.scheduler.PhasedExecutionSchedule.java</file>
+            <file type="M">com.facebook.presto.execution.scheduler.TestPhasedExecutionSchedule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5005" opendate="2016-04-12 00:00:00" fixdate="2019-04-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cancel handler flag thought interruptedioexception advance hook loop client case synch cli race
+                issue query one change call async electrum http presto status
+            </summary>
+            <description>cancel handler flag thought interruptedioexception advance hook loop client case synch cli race
+                issue query one change call async electrum http presto status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.cli.Query.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5110" opendate="2016-04-25 00:00:00" fixdate="2016-04-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ScanFilterAndProjectOperator fail condition size array array_concat map presto
+            </summary>
+            <description>ScanFilterAndProjectOperator fail condition size array array_concat map presto
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.hive.TestOrcPageSourceMemoryTracking.java</file>
+            <file type="M">com.facebook.presto.operator.ScanFilterAndProjectOperator.java</file>
+            <file type="M">com.facebook.presto.sql.gen.ExpressionCompiler.java</file>
+            <file type="M">com.facebook.presto.sql.planner.LocalExecutionPlanner.java</file>
+            <file type="M">com.facebook.presto.operator.TestScanFilterAndProjectOperator.java</file>
+            <file type="M">com.facebook.presto.operator.scalar.FunctionAssertions.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5116" opendate="2016-04-25 00:00:00" fixdate="2016-04-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TestTaskExecutor testTaskHandle
+            </summary>
+            <description>TestTaskExecutor testTaskHandle
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.TaskExecutor.java</file>
+            <file type="M">com.facebook.presto.execution.TestTaskExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5735" opendate="2016-07-22 00:00:00" fixdate="2016-08-26 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cberner memory delta example transfermemorytotaskcontext operatorcontext class void
+                newmemoryreservation work query impact setmemoryreservation trysetmemoryreservation caller performance
+                driver atomiclong memoryreservation threadsafe thing
+            </summary>
+            <description>cberner memory delta example transfermemorytotaskcontext operatorcontext class void
+                newmemoryreservation work query impact setmemoryreservation trysetmemoryreservation caller performance
+                driver atomiclong memoryreservation threadsafe thing
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.DriverContext.java</file>
+            <file type="M">com.facebook.presto.operator.OperatorContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6196" opendate="2016-09-27 00:00:00" fixdate="2016-10-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack production prestodb deadlock resourcegroupmanager continuoustaskstatusfetcher lock client
+                worker info sqlstageexecution github resourcegroup issue level query one monitor task httpremotetask
+                http information presto
+            </summary>
+            <description>stack production prestodb deadlock resourcegroupmanager continuoustaskstatusfetcher lock client
+                worker info sqlstageexecution github resourcegroup issue level query one monitor task httpremotetask
+                http information presto
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.server.remotetask.ContinuousTaskStatusFetcher.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6319" opendate="2016-10-10 00:00:00" fixdate="2016-10-31 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>IndexLookup AccumuloClient getTabletSplits
+            </summary>
+            <description>IndexLookup AccumuloClient getTabletSplits
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.accumulo.AccumuloClient.java</file>
+            <file type="M">com.facebook.presto.accumulo.index.ColumnCardinalityCache.java</file>
+            <file type="M">com.facebook.presto.accumulo.index.IndexLookup.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6755" opendate="2016-12-02 00:00:00" fixdate="2016-12-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cberner configuregroup manager resource generalpoolmemoryfraction pool deadlock
+                dbresourcegroupconfigurationmanager abstractresourceconfigurationmanager something hit file
+                memory_change_listener_lambda root internalresourcegroup setsoftmemorylimit lock clustermemorymanager
+                configurechangedgroup config situation group
+            </summary>
+            <description>cberner configuregroup manager resource generalpoolmemoryfraction pool deadlock
+                dbresourcegroupconfigurationmanager abstractresourceconfigurationmanager something hit file
+                memory_change_listener_lambda root internalresourcegroup setsoftmemorylimit lock clustermemorymanager
+                configurechangedgroup config situation group
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.resourceGroups.AbstractResourceConfigurationManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6923" opendate="2016-12-19 00:00:00" fixdate="2017-01-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>web_sales store_sales usage outerlookupsource kbp task_concurrency outerpositiontracker
+                positionvisited factor locking outer count cpu visitedposition partitionedlookupsource core performance
+                profiling partitioning synchronization hash full
+            </summary>
+            <description>web_sales store_sales usage outerlookupsource kbp task_concurrency outerpositiontracker
+                positionvisited factor locking outer count cpu visitedposition partitionedlookupsource core performance
+                profiling partitioning synchronization hash full
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.JoinHash.java</file>
+            <file type="M">com.facebook.presto.operator.LookupJoinOperator.java</file>
+            <file type="M">com.facebook.presto.operator.LookupSource.java</file>
+            <file type="M">com.facebook.presto.operator.OuterLookupSource.java</file>
+            <file type="M">com.facebook.presto.operator.PartitionedLookupSource.java</file>
+            <file type="M">com.facebook.presto.operator.index.IndexLoader.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7667" opendate="2017-03-24 00:00:00" fixdate="2017-04-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TestQueues testBasic waitForQueryState
+            </summary>
+            <description>TestQueues testBasic waitForQueryState
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.resourceGroups.db.TestQueues.java</file>
+            <file type="M">com.facebook.presto.transaction.TransactionBuilder.java</file>
+            <file type="M">com.facebook.presto.transaction.TransactionManager.java</file>
+            <file type="M">com.facebook.presto.execution.TestCommitTask.java</file>
+            <file type="M">com.facebook.presto.execution.TestRollbackTask.java</file>
+            <file type="M">com.facebook.presto.spi.StandardErrorCode.java</file>
+            <file type="M">com.facebook.presto.execution.QueryRunnerUtil.java</file>
+            <file type="M">com.facebook.presto.execution.TestConcurrentQueriesInSingleTransaction.java</file>
+            <file type="M">com.facebook.presto.execution.TestQueues.java</file>
+            <file type="M">com.facebook.presto.execution.TestingSessionFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7689" opendate="2017-03-28 00:00:00" fixdate="2017-11-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>add execution issue test race change query listener counter sleep async condition assert variable
+                callback assertion state case testqueryloggingcount
+            </summary>
+            <description>add execution issue test race change query listener counter sleep async condition assert
+                variable callback assertion state case testqueryloggingcount
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.transaction.TransactionBuilder.java</file>
+            <file type="M">com.facebook.presto.transaction.TransactionManager.java</file>
+            <file type="M">com.facebook.presto.execution.TestCommitTask.java</file>
+            <file type="M">com.facebook.presto.execution.TestRollbackTask.java</file>
+            <file type="M">com.facebook.presto.spi.StandardErrorCode.java</file>
+            <file type="M">com.facebook.presto.execution.QueryRunnerUtil.java</file>
+            <file type="M">com.facebook.presto.execution.TestConcurrentQueriesInSingleTransaction.java</file>
+            <file type="M">com.facebook.presto.execution.TestQueues.java</file>
+            <file type="M">com.facebook.presto.execution.TestingSessionFactory.java</file>
+            <file type="M">com.facebook.presto.metadata.MetadataManager.java</file>
+            <file type="M">com.facebook.presto.sql.planner.optimizations.AddExchanges.java
+            </file>
+        </fixedFiles>
+    </bug>
+    <bug id="8716" opendate="2017-08-10 00:00:00" fixdate="2017-09-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>proposal hang abstracttransfer race upload affect uploadobject update setfuture call condition load
+                waitforcompletion loop waitforcompletion sdk uploadmonitor aws copymonitor
+            </summary>
+            <description>proposal hang abstracttransfer race upload affect uploadobject update setfuture call condition
+                load waitforcompletion loop waitforcompletion sdk uploadmonitor aws copymonitor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.hive.MockAmazonS3.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9881" opendate="2018-02-02 00:00:00" fixdate="2018-02-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>think stack race query count verifyexception error reference iterator condition limit
+                outerpositiontracker position
+            </summary>
+            <description>think stack race query count verifyexception error reference iterator condition limit
+                outerpositiontracker position
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.operator.LookupJoinOperator.java</file>
+            <file type="M">com.facebook.presto.operator.LookupJoinOperatorFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11253" opendate="2018-08-13 00:00:00" fixdate="2020-10-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>splits addexchangelocation queueddrivers scan queueddriver deadlock nomoresplit driversplitrunner
+                scheduletask getpipelinestatus split scheduling client finish term worker order schedulingcomplete
+                sqlstageexecution completesource assignment drivercontexts schedulepartitionedsource node fragment
+                pendingsplitsbyplannode selectdistributionnode stage driver
+            </summary>
+            <description>splits addexchangelocation queueddrivers scan queueddriver deadlock nomoresplit
+                driversplitrunner scheduletask getpipelinestatus split scheduling client finish term worker order
+                schedulingcomplete sqlstageexecution completesource assignment drivercontexts schedulepartitionedsource
+                node fragment pendingsplitsbyplannode selectdistributionnode stage driver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.SqlStageExecution.java</file>
+            <file type="M">com.facebook.presto.execution.scheduler.FixedSourcePartitionedScheduler.java</file>
+            <file type="M">com.facebook.presto.execution.scheduler.SourcePartitionedScheduler.java</file>
+            <file type="M">com.facebook.presto.server.remotetask.HttpRemoteTask.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13142" opendate="2019-07-29 00:00:00" fixdate="2019-07-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>QueryStateTimer trinodb TestQueuesDb
+            </summary>
+            <description>QueryStateTimer trinodb TestQueuesDb
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.facebook.presto.execution.QueryStateTimer.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

@@ -1,0 +1,719 @@
+<bugrepository name="HBASE">
+    <bug id="543" opendate="2008-03-24 22:26:42" fixdate="2008-12-24 01:38:25" resolution="Fixed">
+        <buginformation>
+            <summary>access lot patch pendingregion solution state place class map possibility hbase hmaster race kind
+                regionstodelete change closingregion collection trunk structure unassignedregion hole regionmanager
+                condition regionstoclose region apos
+            </summary>
+            <description>access lot patch pendingregion solution state place class map possibility hbase hmaster race
+                kind regionstodelete change closingregion collection trunk structure unassignedregion hole regionmanager
+                condition regionstoclose region apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.MetaScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.RegionManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ServerManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.HMaster.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.BaseScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.ServerConnection.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ChangeTableState.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ProcessRegionClose.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ProcessServerShutdown.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.HConnectionManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ProcessRegionOpen.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="659" opendate="2008-05-30 20:35:11" fixdate="2008-06-01 05:21:37" resolution="Fixed">
+        <buginformation>
+            <summary>splitting cache compactor enwiki integer hlog daemon call regionserver condition closing size
+                scanner lock memcache row batchupdate region ipc retiringregion cacheflushlock
+            </summary>
+            <description>splitting cache compactor enwiki integer hlog daemon call regionserver condition closing size
+                scanner lock memcache row batchupdate region ipc retiringregion cacheflushlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.TableOperation.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.TableDelete.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ChangeTableState.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.ColumnOperation.java</file>
+            <file type="M">org.apache.hadoop.hbase.util.MetaUtils.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFileScanner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="663" opendate="2008-06-03 18:32:48" fixdate="2008-06-03 19:28:07" resolution="Fixed">
+        <buginformation>
+            <summary>cache log update guarantee skip hregion number sequence startup ask lock assumption reconstruction
+                hstore flushan updateslock write snapshot
+            </summary>
+            <description>cache log update guarantee skip hregion number sequence startup ask lock assumption
+                reconstruction hstore flushan updateslock write snapshot
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="699" opendate="2008-06-19 05:49:29" fixdate="2008-06-19 07:14:53" resolution="Fixed">
+        <buginformation>
+            <summary>process hang address waiting scan testmigrate hudson good relocateregion fix threaddump try catch
+                region table hbase unix hudsonits
+            </summary>
+            <description>process hang address waiting scan testmigrate hudson good relocateregion fix threaddump try
+                catch region table hbase unix hudsonits
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.HConnectionManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.util.TestMigrate.java</file>
+            <file type="M">org.apache.hadoop.hbase.HBaseClusterTestCase.java</file>
+            <file type="M">org.apache.hadoop.hbase.HMerge.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.HTable.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="818" opendate="2008-08-11 23:53:09" fixdate="2008-08-12 16:22:05" resolution="Fixed">
+        <buginformation>
+            <summary>server handler stack level hashset monitor run deadlock hregion hold flushsomeregion regionserver
+                lock information uploading flusher region ipc
+            </summary>
+            <description>server handler stack level hashset monitor run deadlock hregion hold flushsomeregion
+                regionserver lock information uploading flusher region ipc
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="950" opendate="2008-10-22 21:59:43" fixdate="2008-10-22 23:49:10" resolution="Fixed">
+        <buginformation>
+            <summary>hang rowlock lock update ignore row apiintroduced rowlocks hbase
+            </summary>
+            <description>hang rowlock lock update ignore row apiintroduced rowlocks hbase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.BatchUpdate.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.HTable.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1569" opendate="2009-06-23 07:42:47" fixdate="2009-06-25 23:57:37" resolution="Fixed">
+        <buginformation>
+            <summary>cluster regionserver happen take condition import race load hour illegalaccesserror
+            </summary>
+            <description>cluster regionserver happen take condition import race load hour illegalaccesserror
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Store.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFile.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1740" opendate="2009-08-04 00:00:29" fixdate="2009-09-11 21:46:31" resolution="Fixed">
+        <buginformation>
+            <summary>correct production scan hfile attempt put result load fix get memcache icv value timestamp happen
+                issue race level one keyvalue start memstore condition know demonstrate snapshot
+            </summary>
+            <description>correct production scan hfile attempt put result load fix get memcache icv value timestamp
+                happen issue race level one keyvalue start memstore condition know demonstrate snapshot
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestHRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MemStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Store.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1840" opendate="2009-09-15 19:29:23" fixdate="2009-09-15 20:23:27" resolution="Fixed">
+        <buginformation>
+            <summary>note indextablethe debug test line sense number fail unit stacktrace load fix rowlock indexedtable
+                lock row ioexception apos info
+            </summary>
+            <description>note indextablethe debug test line sense number fail unit stacktrace load fix rowlock
+                indexedtable lock row ioexception apos info
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.tableindexed.TestIndexedTable.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1869" opendate="2009-09-25 19:46:24" fixdate="2009-09-25 23:22:21" resolution="Fixed">
+        <buginformation>
+            <summary>void test testing testlockedrowdelete packaging svn patch fail conjunction rowlock indexedtable
+                lock create row ioexception testindexedtable
+            </summary>
+            <description>void test testing testlockedrowdelete packaging svn patch fail conjunction rowlock indexedtable
+                lock create row ioexception testindexedtable
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.tableindexed.TestIndexedTable.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.tableindexed.IndexedRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2023" opendate="2009-12-01 22:21:04" fixdate="2010-03-12 07:24:05" resolution="Fixed">
+        <buginformation>
+            <summary>server request access issue userregionlock its encounter sync locateregioninmeta solution
+                otherstake thrift lock client block stick region table synchronize
+            </summary>
+            <description>server request access issue userregionlock its encounter sync locateregioninmeta solution
+                otherstake thrift lock client block stick region table synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.HConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6565" opendate="2012-08-13 06:18:42" fixdate="2012-08-16 18:49:09" resolution="Fixed">
+        <buginformation>
+            <summary>Coprocessor exec result Map thread safe
+            </summary>
+            <description>Coprocessor exec result Map thread safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.HTable.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8923" opendate="2013-07-10 22:40:57" fixdate="2013-07-11 01:47:46" resolution="Fixed">
+        <buginformation>
+            <summary>cluster process test race boom chaosmonkey recovery moment exitcodeexception fail teardown status
+            </summary>
+            <description>cluster process test race boom chaosmonkey recovery moment exitcodeexception fail teardown
+                status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.HBaseTestingUtility.java</file>
+            <file type="M">org.apache.hadoop.hbase.DistributedHBaseCluster.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13606" opendate="2015-05-01 07:44:58" fixdate="2015-05-11 23:18:00" resolution="Fixed">
+        <buginformation>
+            <summary>server bulkassignthresholdregion void invokeassign sync bulkassign robin async path pathfrom
+                comment region behavior waituntildone assign
+            </summary>
+            <description>server bulkassignthresholdregion void invokeassign sync bulkassign robin async path pathfrom
+                comment region behavior waituntildone assign
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.AssignmentManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.GeneralBulkAssigner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13662" opendate="2015-05-11 18:00:26" fixdate="2015-05-12 16:48:38" resolution="Fixed">
+        <buginformation>
+            <summary>date request stack outoforderscannernextexception thought heartbeat scan discussion error
+                hasnextcallseq patch outoforder failurewhile scanner client end hbase nextcallseq question
+                outoforderscannernext callseq throw failure
+            </summary>
+            <description>date request stack outoforderscannernextexception thought heartbeat scan discussion error
+                hasnextcallseq patch outoforder failurewhile scanner client end hbase nextcallseq question
+                outoforderscannernext callseq throw failure
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.RSRpcServices.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13959" opendate="2015-06-24 04:04:47" fixdate="2015-06-30 01:25:54" resolution="Fixed">
+        <buginformation>
+            <summary>part threadpool reference number split file fix client ten write table retry case splitting
+                notservingregionexception column exhaust workload store concurrency environment size setup region
+                storefile family operation
+            </summary>
+            <description>part threadpool reference number split file fix client ten write table retry case splitting
+                notservingregionexception column exhaust workload store concurrency environment size setup region
+                storefile family operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.SplitTransactionImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.HConstants.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13988" opendate="2015-06-29 13:20:55" fixdate="2015-07-07 02:28:30" resolution="Fixed">
+        <buginformation>
+            <summary>add handler server cluster prod debug log hbaseserver exit logroller stop future root lease region
+                info hregionserver memstoreflusher
+            </summary>
+            <description>add handler server cluster prod debug log hbaseserver exit logroller stop future root lease
+                region info hregionserver memstoreflusher
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14178" opendate="2015-08-02 07:51:58" fixdate="2015-08-06 09:22:39" resolution="Fixed">
+        <buginformation>
+            <summary>handler waiting hregion timeout lot offsetlock lock client block prio table cache os_prio rpc below
+                idlock monitor daemon regionserver entry port infomation queue reentrantlock
+            </summary>
+            <description>handler waiting hregion timeout lot offsetlock lock client block prio table cache os_prio rpc
+                below idlock monitor daemon regionserver entry port infomation queue reentrantlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.HFileReaderImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.CacheConfig.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14241" opendate="2015-08-18 19:20:50" fixdate="2015-08-19 16:02:05" resolution="Fixed">
+        <buginformation>
+            <summary>master_meta_server_operations cluster stack metaservershutdownhandler debug level closecaught
+                monitor deadlock output rpcclientimpl poolmap testmastermetricswrapper root lock connection
+                setupiostreams
+            </summary>
+            <description>master_meta_server_operations cluster stack metaservershutdownhandler debug level closecaught
+                monitor deadlock output rpcclientimpl poolmap testmastermetricswrapper root lock connection
+                setupiostreams
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14359" opendate="2015-09-03 11:17:39" fixdate="2015-09-04 01:45:43" resolution="Fixed">
+        <buginformation>
+            <summary>datum waituntildone tasksent recommendation error autoflush taskdone hour close client
+                rejectedexecutionexception table outofmemoryerror clause product rpc flushcommit env
+                sendmultiactioncurrently htable call sendmultiaction task rpctimeout asyncprocess dectaskcounter
+            </summary>
+            <description>datum waituntildone tasksent recommendation error autoflush taskdone hour close client
+                rejectedexecutionexception table outofmemoryerror clause product rpc flushcommit env
+                sendmultiactioncurrently htable call sendmultiaction task rpctimeout asyncprocess dectaskcounter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.AsyncProcess.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14463" opendate="2015-09-22 13:48:36" fixdate="2015-11-25 03:37:48" resolution="Fixed">
+        <buginformation>
+            <summary>datum bucketcache hundred getlockentry bucketcachewe getblock search len feature array root
+                idreadwritelock lock rowkey copy hbase reentrancereadwritelock item idlock store cachedblock performance
+                machine yarn analytic lrucache
+            </summary>
+            <description>datum bucketcache hundred getlockentry bucketcachewe getblock search len feature array root
+                idreadwritelock lock rowkey copy hbase reentrancereadwritelock item idlock store cachedblock performance
+                machine yarn analytic lrucache
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.bucket.BucketCache.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.CacheTestUtils.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.bucket.TestBucketCache.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14555" opendate="2015-10-06 00:10:11" fixdate="2015-10-06 00:51:06" resolution="Fixed">
+        <buginformation>
+            <summary>Deadlock MVCC branch toString IT test
+            </summary>
+            <description>Deadlock MVCC branch toString IT test
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MultiVersionConcurrencyControl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14812" opendate="2015-11-14 00:05:33" fixdate="2015-11-17 22:51:18" resolution="Fixed">
+        <buginformation>
+            <summary>ResultBoundedCompletionService
+            </summary>
+            <description>ResultBoundedCompletionService
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.ResultBoundedCompletionService.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.ScannerCallableWithReplicas.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14926" opendate="2015-12-04 06:25:45" fixdate="2015-12-04 22:06:34" resolution="Fixed">
+        <buginformation>
+            <summary>server side hang recover log timeout daemon crash bufferedinputstream patch thrift readingthrift
+                lock client socket state worker prio hbase
+            </summary>
+            <description>server side hang recover log timeout daemon crash bufferedinputstream patch thrift
+                readingthrift lock client socket state worker prio hbase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.thrift.ThriftServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.thrift2.ThriftServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.thrift.ThriftServerRunner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15001" opendate="2015-12-17 21:27:57" fixdate="2015-12-22 06:48:24" resolution="Fixed">
+        <buginformation>
+            <summary>depend idea part division number shipping safety retry verification edit sink batch arraylist
+                hbaseinterclusterreplicationendpoint list int non empty size arithmeticexception replicationsource
+                walprovider success replicationsinkmanager operation
+            </summary>
+            <description>depend idea part division number shipping safety retry verification edit sink batch arraylist
+                hbaseinterclusterreplicationendpoint list int non empty size arithmeticexception replicationsource
+                walprovider success replicationsinkmanager operation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.HBaseInterClusterReplicationEndpoint.java
+            </file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.TestReplicationSinkManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.ReplicationSinkManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15030" opendate="2015-12-22 12:45:03" fixdate="2015-12-23 17:59:36" resolution="Fixed">
+        <buginformation>
+            <summary>parking cluster stack log reentrantreadwritelock deadlock integrationtestddlmasterfailover lock
+                info tablenamespacemanager procedureexecutor level integrationtestddlmasterfailoveri monitor
+                timed_waiting daemon jstack synchronizer information
+            </summary>
+            <description>parking cluster stack log reentrantreadwritelock deadlock integrationtestddlmasterfailover lock
+                info tablenamespacemanager procedureexecutor level integrationtestddlmasterfailoveri monitor
+                timed_waiting daemon jstack synchronizer information
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.master.TableNamespaceManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15093" opendate="2016-01-12 23:41:27" fixdate="2016-04-11 15:27:46" resolution="Fixed">
+        <buginformation>
+            <summary>setsizeoflogqueue replication happen sure log metricssource source incrementing multiwal world size
+                incrsizeoflogqueue report divide decrsizeoflogqueue operation queue
+            </summary>
+            <description>setsizeoflogqueue replication happen sure log metricssource source incrementing multiwal world
+                size incrsizeoflogqueue report divide decrsizeoflogqueue operation queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsSource.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.ReplicationSource.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsReplicationGlobalSourceSource.java
+            </file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsReplicationSourceSourceImpl.java
+            </file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.MetricsReplicationSourceSource.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15146" opendate="2016-01-21 01:39:35" fixdate="2016-01-28 13:16:01" resolution="Fixed">
+        <buginformation>
+            <summary>dispatch rpc reader epoll ack awful capacity scheduler lot queueblocking blocking limit block
+                everything queue
+            </summary>
+            <description>dispatch rpc reader epoll ack awful capacity scheduler lot queueblocking blocking limit block
+                everything queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.client.AsyncProcess.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.BalancedQueueRpcExecutor.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.TestAsyncProcess.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcScheduler.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.ConnectionImplementation.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.TestHCM.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.FifoRpcScheduler.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcExecutor.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.SimpleRpcScheduler.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RWQueueRpcExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15650" opendate="2016-04-14 04:54:20" fixdate="2016-04-16 03:13:49" resolution="Fixed">
+        <buginformation>
+            <summary>timerangetracker contention store storefile point hbase remove
+            </summary>
+            <description>timerangetracker contention store storefile point hbase remove
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.io.TimeRange.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StripeStoreFlusher.java</file>
+            <file type="M">org.apache.hadoop.hbase.HConstants.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestTimeRangeTracker.java</file>
+            <file type="M">org.apache.hadoop.hbase.mob.DefaultMobStoreFlusher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestQueryMatcher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFileReader.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFile.java</file>
+            <file type="M">org.apache.hadoop.hbase.KeyValueUtil.java</file>
+            <file type="M">org.apache.hadoop.hbase.client.Query.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreFileWriter.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.StoreScanner.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.DefaultStoreFlusher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.ExplicitColumnTracker.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TimeRangeTracker.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.ScanQueryMatcher.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Store.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.Segment.java</file>
+            <file type="M">org.apache.hadoop.hbase.io.hfile.HFilePrettyPrinter.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MemStoreSnapshot.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.ImmutableSegment.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MockStoreFile.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.DefaultMemStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.MutableSegment.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.AbstractMemStore.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.compactions.Compactor.java</file>
+            <file type="M">org.apache.hadoop.hbase.mapreduce.TestHFileOutputFormat2.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="15957" opendate="2016-06-03 18:51:23" fixdate="2016-06-07 18:46:47" resolution="Fixed">
+        <buginformation>
+            <summary>parent flag introduce work pool start check shouldcloseconnection remove result relate fix
+                circumstance calling connection handling end writer hbase
+            </summary>
+            <description>parent flag introduce work pool start check shouldcloseconnection remove result relate fix
+                circumstance calling connection handling end writer hbase
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.ipc.IntegrationTestRpcClient.java</file>
+            <file type="M">org.apache.hadoop.hbase.ipc.RpcClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16081" opendate="2016-06-22 01:47:30" fixdate="2016-07-12 01:16:05" resolution="Fixed">
+        <buginformation>
+            <summary>replication replicationsourcemanager wal remove_peer race completionservice
+                hbaseinterclusterreplicationendpoint rollingwe call take condition recordlog peer executor get able lock
+                try removepeer take situation
+            </summary>
+            <description>replication replicationsourcemanager wal remove_peer race completionservice
+                hbaseinterclusterreplicationendpoint rollingwe call take condition recordlog peer executor get able lock
+                try removepeer take situation
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.HBaseInterClusterReplicationEndpoint.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.regionserver.ReplicationSourceManager.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.ReplicationEndpoint.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16144" opendate="2016-06-29 06:55:38" fixdate="2016-07-18 02:02:34" resolution="Fixed">
+        <buginformation>
+            <summary>claimqueue replication add node die default usemulti lock operation queue crash
+            </summary>
+            <description>claimqueue replication add node die default usemulti lock operation queue crash
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.replication.ReplicationFactory.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.TestMultiSlaveReplication.java</file>
+            <file type="M">org.apache.hadoop.hbase.replication.ReplicationQueuesZKImpl.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.HMaster.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.cleaner.ReplicationZKLockCleanerChore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16304" opendate="2016-07-29 09:33:23" fixdate="2016-08-24 20:02:28" resolution="Fixed">
+        <buginformation>
+            <summary>waiting periodic reentrantreadwritelock cms deadlock hregion jvmpausemonitor leaserenewer
+                updateslockhere referencequeue lock abstractqueuedsynchronizer surrogate dispatcher signal
+                handlefilenotfoundexception rpcserver sweep finalizer gang jni timed_waiting util service mark
+            </summary>
+            <description>waiting periodic reentrantreadwritelock cms deadlock hregion jvmpausemonitor leaserenewer
+                updateslockhere referencequeue lock abstractqueuedsynchronizer surrogate dispatcher signal
+                handlefilenotfoundexception rpcserver sweep finalizer gang jni timed_waiting util service mark
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegion.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16367" opendate="2016-08-06 09:20:28" fixdate="2016-08-08 17:42:13" resolution="Fixed">
+        <buginformation>
+            <summary>Race between master region server initialization lead premature server abort
+            </summary>
+            <description>Race between master region server initialization lead premature server abort
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HRegionServer.java</file>
+            <file type="M">org.apache.hadoop.hbase.master.HMaster.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16429" opendate="2016-08-17 03:35:09" fixdate="2016-08-18 03:21:34" resolution="Fixed">
+        <buginformation>
+            <summary>safepointreleasedlatch parking handler waiting ring release deadlock safepointzigzaglatch
+                releasesafepoint logroller replacewriter ringbuffereventhandler buffer consumer jira issue sync
+                timed_waiting daemon rollwriter fshlog countdownlatch replacewriter append apos
+            </summary>
+            <description>safepointreleasedlatch parking handler waiting ring release deadlock safepointzigzaglatch
+                releasesafepoint logroller replacewriter ringbuffereventhandler buffer consumer jira issue sync
+                timed_waiting daemon rollwriter fshlog countdownlatch replacewriter append apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.TestHRegion.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.wal.FSHLog.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16699" opendate="2016-09-23 21:02:48" fixdate="2016-10-10 21:34:14" resolution="Fixed">
+        <buginformation>
+            <summary>issue line averageintervalratelimiter check bypass patch overflow getwaitinterval post place logic
+                behavior day ratelimiters case
+            </summary>
+            <description>issue line averageintervalratelimiter check bypass patch overflow getwaitinterval post place
+                logic behavior day ratelimiters case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.quotas.OperationQuota.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.RateLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.TimeBasedLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.QuotaLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.TestRateLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.AverageIntervalRateLimiter.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.DefaultOperationQuota.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.NoopOperationQuota.java</file>
+            <file type="M">org.apache.hadoop.hbase.quotas.NoopQuotaLimiter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16721" opendate="2016-09-28 00:33:17" fixdate="2016-10-17 21:32:06" resolution="Fixed">
+        <buginformation>
+            <summary>datum cluster hundred production log tracking split file logroller flush limit flusher logs case
+                requester wal max memstore concurrency maxlog regionserver schedule fshlog force region seqid
+            </summary>
+            <description>datum cluster hundred production log tracking split file logroller flush limit flusher logs
+                case requester wal max memstore concurrency maxlog regionserver schedule fshlog force region seqid
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.wal.WAL.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.wal.TestFSHLog.java</file>
+            <file type="M">org.apache.hadoop.hbase.regionserver.wal.AbstractTestFSWAL.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="16788" opendate="2016-10-06 23:14:38" fixdate="2016-10-10 23:15:48" resolution="Fixed">
+        <buginformation>
+            <summary>HStore close closeAndArchiveCompactedFiles
+            </summary>
+            <description>HStore close closeAndArchiveCompactedFiles
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.hadoop.hbase.regionserver.HStore.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

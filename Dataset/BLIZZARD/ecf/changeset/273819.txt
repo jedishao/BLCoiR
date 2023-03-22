@@ -1,0 +1,3 @@
+org.eclipse.ecf.internal.irc.ui.Activator.java
+org.eclipse.ecf.internal.irc.ui.wizards.IRCConnectWizard.java
+org.eclipse.ecf.internal.provider.xmpp.ui.wizards.XMPPConnectWizard.java

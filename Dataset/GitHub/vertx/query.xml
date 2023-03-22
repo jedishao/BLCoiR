@@ -1,0 +1,602 @@
+<bugrepository name="vertx">
+    <bug id="1247" opendate="2015-12-17 00:00:00" fixdate="2016-12-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>httpmethod channelhandlercontext invokechannelinactive contexttask lock multimap httpclient
+            </summary>
+            <description>httpmethod channelhandlercontext invokechannelinactive contexttask lock multimap httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1302" opendate="2016-02-09 00:00:00" fixdate="2018-09-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>clusteredvertx vertx run handle source checker vertxexception blockedthreadchecker warn eventloop
+                stacktrace startup limit block
+            </summary>
+            <description>clusteredvertx vertx run handle source checker vertxexception blockedthreadchecker warn
+                eventloop stacktrace startup limit block
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.eventbus.impl.clustered.ClusteredEventBus.java</file>
+            <file type="M">io.vertx.core.impl.HAManager.java</file>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1355" opendate="2016-03-29 00:00:00" fixdate="2017-01-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ClientConnection HttpClientRequestImpl
+            </summary>
+            <description>ClientConnection HttpClientRequestImpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1466" opendate="2016-06-13 00:00:00" fixdate="2016-12-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ServerConnection HttpClientRequestImpl
+            </summary>
+            <description>ServerConnection HttpClientRequestImpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpClientImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1469" opendate="2016-06-14 00:00:00" fixdate="2016-06-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>otherwise ConnectionManager instance resource createendpoint getconnqueue constructor closeendpoint
+                none httpclientmetrics spi connqueue lead call leak endpoint queuemanager http client map queue
+            </summary>
+            <description>otherwise ConnectionManager instance resource createendpoint getconnqueue constructor
+                closeendpoint none httpclientmetrics spi connqueue lead call leak endpoint queuemanager http client map
+                queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1573" opendate="2016-08-17 00:00:00" fixdate="2016-08-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>asyncfile
+            </summary>
+            <description>asyncfile
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.core.file.impl.FileSystemImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1598" opendate="2016-08-31 00:00:00" fixdate="2016-09-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>aaa read address issue vertx checker vertxexception blockedthreadchecker async warn eventloop limit
+                block write
+            </summary>
+            <description>aaa read address issue vertx checker vertxexception blockedthreadchecker async warn eventloop
+                limit block write
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.core.file.impl.FileSystemImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1633" opendate="2016-09-21 00:00:00" fixdate="2016-09-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>provide log context description executeblocking
+            </summary>
+            <description>provide log context description executeblocking
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.ContextImpl.java</file>
+            <file type="M">io.vertx.test.core.BlockedThreadCheckerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1742" opendate="2016-12-16 00:00:00" fixdate="2017-02-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum instance readfileblocking run caching file payload parallel copying action jar copy case
+                cache resource resolvefile sample filesystem async size verticle fileresolver
+            </summary>
+            <description>datum instance readfileblocking run caching file payload parallel copying action jar copy case
+                cache resource resolvefile sample filesystem async size verticle fileresolver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.FileResolver.java</file>
+            <file type="M">io.vertx.test.core.FileResolverTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1834" opendate="2017-02-21 00:00:00" fixdate="2018-01-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request handler httpserverrequest motivation change serverwebsocket sockjssocket deadlock tick call
+                reconnect loop websocket httpserver context lock create connection event netty
+            </summary>
+            <description>request handler httpserverrequest motivation change serverwebsocket sockjssocket deadlock tick
+                call reconnect loop websocket httpserver context lock create connection event netty
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.Http1xPool.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ConnectionBase.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.ServerConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.WebSocketImplBase.java</file>
+            <file type="M">io.vertx.core.net.impl.ConnectionBase.java</file>
+            <file type="M">io.vertx.test.core.Http2ClientTest.java</file>
+            <file type="M">io.vertx.test.core.Http2ServerTest.java</file>
+            <file type="M">io.vertx.test.core.HttpTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1892" opendate="2017-03-24 00:00:00" fixdate="2017-03-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>FutureImpl CompositeFutureImpl setHandler
+            </summary>
+            <description>FutureImpl CompositeFutureImpl setHandler
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.FailedFuture.java</file>
+            <file type="M">io.vertx.core.impl.FutureFactoryImpl.java</file>
+            <file type="M">io.vertx.core.impl.FutureImpl.java</file>
+            <file type="M">io.vertx.core.impl.SucceededFuture.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2012" opendate="2017-06-08 00:00:00" fixdate="2017-06-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>caller condition race atomiclong writesoutstanding context asyncfileimpl counter state write
+            </summary>
+            <description>caller condition race atomiclong writesoutstanding context asyncfileimpl counter state write
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.test.core.FileSystemTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2370" opendate="2018-04-07 00:00:00" fixdate="2018-04-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>jvm resolver dns pool connectionprovider failure get host callback connection assume httpclient
+                case
+            </summary>
+            <description>jvm resolver dns pool connectionprovider failure get host callback connection assume httpclient
+                case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpChannelConnector.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionListener.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionProvider.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.Pool.java</file>
+            <file type="M">io.vertx.test.core.Http1xTest.java</file>
+            <file type="M">io.vertx.test.core.HttpTest.java</file>
+            <file type="M">io.vertx.test.core.net.ConnectionPoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2418" opendate="2018-04-25 00:00:00" fixdate="2018-09-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hazelcastclustermanager vertxoption clusteredvertx messagestosend settimer setclustermanager acuire
+                deploymentoption test_address override default_lock_timeout deadlock reproduce supplier verticle lock
+                igniteclustermanager consumer deployverticle
+            </summary>
+            <description>hazelcastclustermanager vertxoption clusteredvertx messagestosend settimer setclustermanager
+                acuire deploymentoption test_address override default_lock_timeout deadlock reproduce supplier verticle
+                lock igniteclustermanager consumer deployverticle
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.test.core.AsynchronousLockTest.java</file>
+            <file type="M">io.vertx.test.core.ClusteredAsynchronousLockTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2670" opendate="2018-10-16 00:00:00" fixdate="2018-10-16 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>boostrap vertx bootstrap notify notification expect loop failure context client globaleventexecutor
+                connection event netty
+            </summary>
+            <description>boostrap vertx bootstrap notify notification expect loop failure context client
+                globaleventexecutor connection event netty
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpChannelConnector.java</file>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+            <file type="M">io.vertx.core.net.impl.ChannelProvider.java</file>
+            <file type="M">io.vertx.core.net.impl.NetClientImpl.java</file>
+            <file type="M">io.vertx.core.net.impl.ProxyChannelProvider.java</file>
+            <file type="M">io.vertx.core.net.impl.transport.Transport.java</file>
+            <file type="M">io.vertx.core.impl.GlobalEventExecutorNotificationTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2684" opendate="2018-10-23 00:00:00" fixdate="2018-10-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>executeBlocking callback run on wrong thread asynchronous future resolution
+            </summary>
+            <description>executeBlocking callback run on wrong thread asynchronous future resolution
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.ContextImpl.java</file>
+            <file type="M">io.vertx.core.ContextTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2773" opendate="2018-12-20 00:00:00" fixdate="2019-01-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>allow delivery request re check fact race pool multiple vertx deliver tick moment schedule
+                condition solution context client know connection avoid close situation httpclient
+            </summary>
+            <description>allow delivery request re check fact race pool multiple vertx deliver tick moment schedule
+                condition solution context client know connection avoid close situation httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+            <file type="M">io.vertx.core.http.impl.Http1xClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ConnectionBase.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpChannelConnector.java</file>
+            <file type="M">io.vertx.core.http.impl.VertxHttp2ConnectionHandler.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectResult.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionListener.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.ConnectionProvider.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.Pool.java</file>
+            <file type="M">io.vertx.core.http.impl.pool.Waiter.java</file>
+            <file type="M">io.vertx.core.net.impl.ConnectionBase.java</file>
+            <file type="M">io.vertx.core.net.impl.VertxHandler.java</file>
+            <file type="M">io.vertx.core.http.Http1xTest.java</file>
+            <file type="M">io.vertx.core.net.ConnectionPoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2916" opendate="2019-04-17 00:00:00" fixdate="2019-07-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>call handler lock http deadlock event remove
+            </summary>
+            <description>call handler lock http deadlock event remove
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.Http1xClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http1xServerConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ServerRequestImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpServerRequestImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.NettyFileUpload.java</file>
+            <file type="M">io.vertx.core.http.impl.VertxHttp2Stream.java</file>
+            <file type="M">io.vertx.core.net.impl.NetSocketImpl.java</file>
+            <file type="M">io.vertx.core.streams.impl.InboundBuffer.java</file>
+            <file type="M">io.vertx.core.http.Http1xTest.java</file>
+            <file type="M">io.vertx.core.http.HttpMetricsTestBase.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+            <file type="M">io.vertx.core.http.WebSocketTest.java</file>
+            <file type="M">io.vertx.core.spi.metrics.MetricsTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2982" opendate="2019-06-06 00:00:00" fixdate="2019-07-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>os_prio httpclientrequestimpl monitor deadlock entry appear eventloop threaddump http lock client
+                reproducer try state prio stuff
+            </summary>
+            <description>os_prio httpclientrequestimpl monitor deadlock entry appear eventloop threaddump http lock
+                client reproducer try state prio stuff
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.StreamResetException.java</file>
+            <file type="M">io.vertx.core.http.impl.ConnectionManager.java</file>
+            <file type="M">io.vertx.core.http.impl.Http1xClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2UpgradedClientConnection.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientRequestBase.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientRequestImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientRequestPushPromise.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpClientStream.java</file>
+            <file type="M">io.vertx.core.http.Http1xTest.java</file>
+            <file type="M">io.vertx.core.http.Http2ClientTest.java</file>
+            <file type="M">io.vertx.core.http.Http2Test.java</file>
+            <file type="M">io.vertx.test.core.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3064" opendate="2019-08-13 00:00:00" fixdate="2019-08-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>mistake improvement result fail stream response httpserverresponse behaviour operation user
+                programming case
+            </summary>
+            <description>mistake improvement result fail stream response httpserverresponse behaviour operation user
+                programming case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.FileStreamChannel.java</file>
+            <file type="M">io.vertx.core.http.impl.Http2ServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.impl.HttpServerResponseImpl.java</file>
+            <file type="M">io.vertx.core.http.Http2ServerTest.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+            <file type="M">io.vertx.test.core.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3140" opendate="2019-10-14 00:00:00" fixdate="2020-04-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>call handler file asyncfile lock synchronization block useful
+            </summary>
+            <description>call handler file asyncfile lock synchronization block useful
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.AsyncFileImpl.java</file>
+            <file type="M">io.vertx.core.file.FileSystemTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3142" opendate="2019-10-14 00:00:00" fixdate="2019-10-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server instance regression verticle deadlock
+            </summary>
+            <description>server instance regression verticle deadlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.http.impl.HttpServerImpl.java</file>
+            <file type="M">io.vertx.core.net.impl.AsyncResolveConnectHelper.java</file>
+            <file type="M">io.vertx.core.net.impl.NetServerImpl.java</file>
+            <file type="M">io.vertx.core.SharedServersConcurrencyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3232" opendate="2019-12-16 00:00:00" fixdate="2020-04-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>handler shut vertx promise test output vertxtest blocking executor close rejectedexecutionexception
+                event debug work pool future sethandler callback complete first
+            </summary>
+            <description>handler shut vertx promise test output vertxtest blocking executor close
+                rejectedexecutionexception event debug work pool future sethandler callback complete first
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+            <file type="M">io.vertx.core.VertxTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3335" opendate="2020-03-18 00:00:00" fixdate="2020-03-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>FileSystemImpl existsInternal
+            </summary>
+            <description>FileSystemImpl existsInternal
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.file.impl.FileSystemImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3468" opendate="2020-06-29 00:00:00" fixdate="2020-06-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server test ubuntu getconnection httpclientdoublefail runtime source sharing bit httpclientrequest
+                mode openjdk environment eventloop limit block
+            </summary>
+            <description>server test ubuntu getconnection httpclientdoublefail runtime source sharing bit
+                httpclientrequest mode openjdk environment eventloop limit block
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.clientconnection.Endpoint.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3469" opendate="2020-06-29 00:00:00" fixdate="2020-06-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>failure pool host http client self callback deadlock close
+            </summary>
+            <description>failure pool host http client self callback deadlock close
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.clientconnection.Endpoint.java</file>
+            <file type="M">io.vertx.core.http.HttpTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3658" opendate="2020-11-19 00:00:00" fixdate="2020-11-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>iscomplete promise mac result mode openjdk gap block class execution race test docomplete runtime
+                list tryfail environment unit condition future failure promise num_threads
+            </summary>
+            <description>iscomplete promise mac result mode openjdk gap block class execution race test docomplete
+                runtime list tryfail environment unit condition future failure promise num_threads
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.future.CompositeFutureImpl.java</file>
+            <file type="M">io.vertx.core.CompositeFutureTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4024" opendate="2021-07-20 00:00:00" fixdate="2021-11-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stumble addlistener listener put predictable get context debugging term issue race tcpserverbase
+                dobind say concurrency field port future listen effect verticle dependen
+            </summary>
+            <description>stumble addlistener listener put predictable get context debugging term issue race
+                tcpserverbase dobind say concurrency field port future listen effect verticle dependen
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.TCPServerBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4069" opendate="2021-08-18 00:00:00" fixdate="2021-08-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>workerexecutor instance backtrace vertx deadlock eventloop lock block copy vertximpl
+                createsharedworkerexecutor workerexecutorimpl issue level start monitor list closefuture callback
+                information
+            </summary>
+            <description>workerexecutor instance backtrace vertx deadlock eventloop lock block copy vertximpl
+                createsharedworkerexecutor workerexecutorimpl issue level start monitor list closefuture callback
+                information
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.VertxImpl.java</file>
+            <file type="M">io.vertx.core.impl.WorkerExecutorImpl.java</file>
+            <file type="M">io.vertx.core.VertxTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4104" opendate="2021-09-22 00:00:00" fixdate="2021-11-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>workerexecutor stack instance blockingcodehandler line intellij run deadlock ign asyncresulthandler
+                blocking contextscheduler lock block reproducer order workerexecutorimpl junit test timing requirement
+                breakpoint call executeblocking
+            </summary>
+            <description>workerexecutor stack instance blockingcodehandler line intellij run deadlock ign
+                asyncresulthandler blocking contextscheduler lock block reproducer order workerexecutorimpl junit test
+                timing requirement breakpoint call executeblocking
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.WorkerExecutorImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4221" opendate="2022-01-03 00:00:00" fixdate="2022-01-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>happen npe race pool deliver slot meantime lead post action create connection comment lease
+                httpclient
+            </summary>
+            <description>happen npe race pool deliver slot meantime lead post action create connection comment lease
+                httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.pool.SimpleConnectionPool.java</file>
+            <file type="M">io.vertx.core.net.impl.pool.ConnectionPoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4275" opendate="2022-02-10 00:00:00" fixdate="2022-02-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ConnectionBase handler called within synchronized block
+            </summary>
+            <description>ConnectionBase handler called within synchronized block
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.net.impl.ConnectionBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4278" opendate="2022-02-14 00:00:00" fixdate="2022-03-01 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>vertex error attempt thanks openjdk startup deploymentmanager class concurrentmodificationexception
+                arraylist collection analysis concurrency registerverticlefactory deploymentoptions name verticle
+                information option
+            </summary>
+            <description>vertex error attempt thanks openjdk startup deploymentmanager class
+                concurrentmodificationexception arraylist collection analysis concurrency registerverticlefactory
+                deploymentoptions name verticle information option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.vertx.core.impl.DeploymentManager.java</file>
+            <file type="M">io.vertx.core.VerticleFactoryTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

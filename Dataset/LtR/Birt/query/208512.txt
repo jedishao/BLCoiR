@@ -1,0 +1,1 @@
+odaconsumer package multithread issuesclass safe class

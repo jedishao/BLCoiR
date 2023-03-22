@@ -1,0 +1,134 @@
+<bugrepository name="WFCORE">
+    <bug id="132" opendate="2014-09-30 00:58:27" fixdate="2014-10-01 20:18:20" resolution="Fixed">
+        <buginformation>
+            <summary>add deal max runtime boundedqueuethreadpoolwriteattributehandler undefined core default define
+                attribute behavior value
+            </summary>
+            <description>add deal max runtime boundedqueuethreadpoolwriteattributehandler undefined core default define
+                attribute behavior value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.threads.BoundedQueueThreadPoolWriteAttributeHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="196" opendate="2014-10-23 21:01:44" fixdate="2014-11-01 02:06:10" resolution="Fixed">
+        <buginformation>
+            <summary>parking server usedit waiting ctrl channel mode unblock hostcontroller blocked lock
+                abstractqueuedsynchronizer block state managedserver controller monitor task management service domain
+            </summary>
+            <description>parking server usedit waiting ctrl channel mode unblock hostcontroller blocked lock
+                abstractqueuedsynchronizer block state managedserver controller monitor task management service domain
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.host.controller.ManagedServerProxy.java</file>
+            <file type="M">org.jboss.as.test.integration.domain.management.util.DomainTestConnection.java</file>
+            <file type="M">org.jboss.as.host.controller.mgmt.ServerToHostOperationHandlerFactoryService.java</file>
+            <file type="M">org.jboss.as.host.controller.ManagedServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="202" opendate="2014-10-24 09:33:34" fixdate="2014-11-17 12:38:29" resolution="Fixed">
+        <buginformation>
+            <summary>server stack deadlock eap protocolconnectionmanager lock client arraydeque resume cli debug break
+                bytebuffer monitor wfly remoting breakpoint management wildfly apos
+            </summary>
+            <description>server stack deadlock eap protocolconnectionmanager lock client arraydeque resume cli debug
+                break bytebuffer monitor wfly remoting breakpoint management wildfly apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.cli.handlers.ConnectionInfoHandler.java</file>
+            <file type="M">org.jboss.as.cli.impl.CLIModelControllerClient.java</file>
+            <file type="M">org.jboss.as.cli.impl.CommandContextImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="553" opendate="2015-02-18 23:23:50" fixdate="2015-03-06 12:29:58" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor request think modelcontrollerclientoperationhandler instance
+                modelcontrollerclientoperationhandlerfactoryservice clientrequestexecutor pool channel constructor
+                interface setting manage stop fix management service client create class addition
+            </summary>
+            <description>threadpoolexecutor request think modelcontrollerclientoperationhandler instance
+                modelcontrollerclientoperationhandlerfactoryservice clientrequestexecutor pool channel constructor
+                interface setting manage stop fix management service client create class addition
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.controller.remote.ModelControllerClientOperationHandler.java</file>
+            <file type="M">org.jboss.as.controller.ModelControllerClientTestCase.java</file>
+            <file type="M">org.jboss.as.controller.remote.AbstractModelControllerOperationHandlerFactoryService.java</file>
+            <file type="M">org.jboss.as.host.controller.mgmt.MasterDomainControllerOperationHandlerService.java</file>
+            <file type="M">org.jboss.as.controller.remote.ModelControllerClientOperationHandlerFactoryService.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="997" opendate="2015-09-22 03:53:31" fixdate="2015-10-08 12:06:14" resolution="Fixed">
+        <buginformation>
+            <summary>handshake server hang ldaploginmodule ssl timeout security default solution ldap eap block value
+                add testing kill failover response realm option
+            </summary>
+            <description>handshake server hang ldaploginmodule ssl timeout security default solution ldap eap block
+                value add testing kill failover response realm option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.domain.management.connections.ldap.ThreadLocalSSLSocketFactory.java</file>
+            <file type="M">org.jboss.as.domain.management.security.WrapperSSLContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1002" opendate="2015-09-22 21:22:02" fixdate="2015-10-23 17:04:01" resolution="Fixed">
+        <buginformation>
+            <summary>sendresponse server log line assertionerror error slave result erc assertion situation outcome
+                execute_tx_request npe process race abortoperationhandler stderr executionrequestcontext call fail
+                complete_tx_request task executerequestcontext management response
+            </summary>
+            <description>sendresponse server log line assertionerror error slave result erc assertion situation outcome
+                execute_tx_request npe process race abortoperationhandler stderr executionrequestcontext call fail
+                complete_tx_request task executerequestcontext management response
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.controller.remote.TransactionalProtocolOperationHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1025" opendate="2015-10-01 15:37:07" fixdate="2015-10-04 15:33:28" resolution="Fixed">
+        <buginformation>
+            <summary>parking waiting rejectedexecutionexceptionthe managementrequestcontext result trip lock
+                rejectedexecutionexception block prio case jira os_prio one transactionalprotocoloperationhandler sync
+                async caller task management failure response executeasync countdownlatch
+            </summary>
+            <description>parking waiting rejectedexecutionexceptionthe managementrequestcontext result trip lock
+                rejectedexecutionexception block prio case jira os_prio one transactionalprotocoloperationhandler sync
+                async caller task management failure response executeasync countdownlatch
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.jboss.as.controller.remote.ModelControllerClientOperationHandler.java</file>
+            <file type="M">org.jboss.as.protocol.mgmt.ManagementRequestContext.java</file>
+            <file type="M">org.jboss.as.protocol.mgmt.AbstractMessageHandler.java</file>
+            <file type="M">org.jboss.as.controller.remote.TransactionalProtocolOperationHandler.java</file>
+            <file type="M">org.jboss.as.controller.remote.ResponseAttachmentInputStreamSupportTestCase.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

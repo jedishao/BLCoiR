@@ -1,0 +1,180 @@
+<bugrepository name="trino">
+    <bug id="2962" opendate="2020-02-27 00:00:00" fixdate="2020-03-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>loadpartitionbyname couple waiting thead gettable deadlock executor prio metastore coordinator race
+                issue pool cpu settablefuture daemon call condition queue presto
+            </summary>
+            <description>loadpartitionbyname couple waiting thead gettable deadlock executor prio metastore coordinator
+                race issue pool cpu settablefuture daemon call condition queue presto
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.CachingHiveMetastoreModule.java</file>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.ReentrantBoundedExecutor.java</file>
+            <file type="M">io.prestosql.plugin.hive.metastore.cache.TestReentrantBoundedExecutor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6202" opendate="2020-12-04 00:00:00" fixdate="2021-06-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>threadpoolexecutor include hang test logtestdurationlistener pool monitor number stacktrace
+                synchronizer block information prio present frame
+            </summary>
+            <description>threadpoolexecutor include hang test logtestdurationlistener pool monitor number stacktrace
+                synchronizer block information prio present frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.tests.product.launcher.cli.SuiteRun.java</file>
+            <file type="M">io.trino.jvm.Threads.java</file>
+            <file type="M">io.trino.testng.services.LogTestDurationListener.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6389" opendate="2020-12-19 00:00:00" fixdate="2021-05-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>process argument sqlserverexception dbo,table_name query gettableproperty deadlock error finder
+                result partition_schemes resultsetexception partition testsqlserverintegrationsmoketest failure
+                schema_id name lock victim data_compression_desc transaction table
+            </summary>
+            <description>process argument sqlserverexception dbo,table_name query gettableproperty deadlock error finder
+                result partition_schemes resultsetexception partition testsqlserverintegrationsmoketest failure
+                schema_id name lock victim data_compression_desc transaction table
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.SqlServerClient.java</file>
+            <file type="M">io.trino.plugin.sqlserver.BaseSqlServerTransactionIsolationTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerWithoutSnapshotIsolation.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerWithoutSnapshotIsolationAndReadCommittedSnapshot.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7454" opendate="2021-03-30 00:00:00" fixdate="2021-04-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>spill spilledpartition call unspillingrequested disk condition spilledpartitions build
+                hashbuilderoperator setpartitionspilledlookupsourcehandle isblocked
+            </summary>
+            <description>spill spilledpartition call unspillingrequested disk condition spilledpartitions build
+                hashbuilderoperator setpartitionspilledlookupsourcehandle isblocked
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.operator.PartitionedLookupSourceFactory.java</file>
+            <file type="M">io.trino.sql.planner.LocalExecutionPlanner.java</file>
+            <file type="M">io.trino.operator.TestHashJoinOperator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7872" opendate="2021-05-10 00:00:00" fixdate="2021-05-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>process issue resource sqlserverexception read_committed_snapshot testsqlservertypemapping deadlock
+                error rerun elapse database failure statement lock runtimeexception victim transaction
+            </summary>
+            <description>process issue resource sqlserverexception read_committed_snapshot testsqlservertypemapping
+                deadlock error rerun elapse database failure statement lock runtimeexception victim transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9741" opendate="2021-10-22 00:00:00" fixdate="2022-02-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sqlserver TestSqlServerConnectorTest SqlServerConnectorTest testSelectInformationSchemaColumns
+                deadlock
+            </summary>
+            <description>sqlserver TestSqlServerConnectorTest SqlServerConnectorTest testSelectInformationSchemaColumns
+                deadlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.sqlserver.BaseSqlServerConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.SqlServerQueryRunner.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestSqlServerLatestConnectorSmokeTest.java</file>
+            <file type="M">io.trino.plugin.sqlserver.TestingSqlServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="11798" opendate="2022-04-05 00:00:00" fixdate="2022-06-08 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hive shared_read datum waiting sghildiyal release run workaround reproduce losipiuk spark lock
+                state value table timestamp coordinator acquired_at somenath query findepi trino null beherasa step
+            </summary>
+            <description>hive shared_read datum waiting sghildiyal release run workaround reproduce losipiuk spark lock
+                state value table timestamp coordinator acquired_at somenath query findepi trino null beherasa step
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.hive.metastore.SemiTransactionalHiveMetastore.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="13212" opendate="2022-07-18 00:00:00" fixdate="2022-07-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>likely pollpage addpages directexchangeclient lock section setbyte congestion
+            </summary>
+            <description>likely pollpage addpages directexchangeclient lock section setbyte congestion
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.operator.DirectExchangeClient.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14132" opendate="2022-09-14 00:00:00" fixdate="2022-10-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>hive metastore metadata release query format aquirelock hms releaselock path file iceberg
+                nosuchlockexception name runtimeexception lock block step location row hivemetastoretableoperations
+                table tbl snap
+            </summary>
+            <description>hive metastore metadata release query format aquirelock hms releaselock path file iceberg
+                nosuchlockexception name runtimeexception lock block step location row hivemetastoretableoperations
+                table tbl snap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.HiveMetastoreTableOperations.java</file>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.TestIcebergHiveMetastoreTableOperationsReleaseLockFailure.java</file>
+            <file type="M">io.trino.plugin.iceberg.catalog.hms.TestingIcebergHiveMetastoreCatalogModule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="14605" opendate="2022-10-12 00:00:00" fixdate="2022-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>execution stack chance test query pool fault run recovery failswithoutretry something path runnable
+                trace capability testexplainanalyze build failure get prio
+            </summary>
+            <description>execution stack chance test query pool fault run recovery failswithoutretry something path
+                runnable trace capability testexplainanalyze build failure get prio
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.trino.execution.scheduler.PipelinedStageExecution.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

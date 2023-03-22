@@ -1,0 +1,46 @@
+<bugrepository name="COMPRESS">
+    <bug id="302" opendate="2015-02-15 17:34:37" fixdate="2015-02-15 23:11:42" resolution="Fixed">
+        <buginformation>
+            <summary>immutability archivestreamfactorycompress synch add factory deprecate setentryencoding encoding way
+                setting retore patch field constuctor safety safe ctor consider support
+            </summary>
+            <description>immutability archivestreamfactorycompress synch add factory deprecate setentryencoding encoding
+                way setting retore patch field constuctor safety safe ctor consider support
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="303" opendate="2015-02-15 18:00:00" fixdate="2015-02-15 22:50:25" resolution="Fixed">
+        <buginformation>
+            <summary>CompressorStreamFactory decompressConcatenated
+            </summary>
+            <description>CompressorStreamFactory decompressConcatenated
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="357" opendate="2016-05-25 17:50:50" fixdate="2016-06-15 04:19:37" resolution="Fixed">
+        <buginformation>
+            <summary>BZip2CompressorOutputStream
+            </summary>
+            <description>BZip2CompressorOutputStream
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

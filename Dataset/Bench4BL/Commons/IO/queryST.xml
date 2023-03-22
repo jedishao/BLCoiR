@@ -1,0 +1,80 @@
+<bugrepository name="IO">
+    <bug id="99" opendate="2006-11-16 18:11:09" fixdate="2006-12-29 13:12:17" resolution="Fixed">
+        <buginformation>
+            <summary>webapp outofmemoryerror theno server think memory classloader way asfilecleaner leak common
+                solution provide undeployed end everything user class filecleaner
+            </summary>
+            <description>webapp outofmemoryerror theno server think memory classloader way asfilecleaner leak common
+                solution provide undeployed end everything user class filecleaner
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.io.FileCleanerTestCase.java</file>
+            <file type="M">org.apache.commons.io.FileCleaner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="136" opendate="2007-11-20 12:08:09" fixdate="2007-11-20 12:36:43" resolution="Fixed">
+        <buginformation>
+            <summary>datum stringbuffer static instance hexdump byte stringbuffers int call modify outputstream char
+                safe
+            </summary>
+            <description>datum stringbuffer static instance hexdump byte stringbuffers int call modify outputstream char
+                safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.io.HexDump.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="201" opendate="2009-03-26 13:59:51" fixdate="2010-10-04 01:12:33" resolution="Fixed">
+        <buginformation>
+            <summary>allow countingoutputstream count sense countinginputstream functionality remove loss field stream
+                synchronization operation synchronize
+            </summary>
+            <description>allow countingoutputstream count sense countinginputstream functionality remove loss field
+                stream synchronization operation synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.io.input.CountingInputStream.java</file>
+            <file type="M">org.apache.commons.io.output.CountingOutputStream.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="207" opendate="2009-05-18 23:24:47" fixdate="2010-03-05 01:28:02" resolution="Fixed">
+        <buginformation>
+            <summary>forceMkdir
+            </summary>
+            <description>forceMkdir
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.io.FileUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="216" opendate="2009-08-19 17:54:51" fixdate="2010-09-28 15:30:33" resolution="Fixed">
+        <buginformation>
+            <summary>delete file lockablefilewriter fix deletion failure lock initialization account
+            </summary>
+            <description>delete file lockablefilewriter fix deletion failure lock initialization account
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.io.output.LockableFileWriter.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

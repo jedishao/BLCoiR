@@ -1,0 +1,1 @@
+createtable give writetype determine locking contention suggest ddl example output database writeentity dummytxnmanager lockmode lock operation table

@@ -1,0 +1,1 @@
+Lock TimeoutException CacheRegistry close  Just happened node shutdown testing locally

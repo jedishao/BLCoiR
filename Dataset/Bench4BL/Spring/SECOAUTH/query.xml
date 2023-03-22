@@ -1,0 +1,21 @@
+<bugrepository name="SECOAUTH">
+    <bug id="311" opendate="2012-08-02 04:41:12" fixdate="2012-08-14 09:08:10" resolution="Fixed">
+        <buginformation>
+            <summary>other cache abstractjaxbmessageconverter arrayindexoutofboundsexceptions unmarshaller marshaller
+                class
+            </summary>
+            <description>other cache abstractjaxbmessageconverter arrayindexoutofboundsexceptions unmarshaller
+                marshaller class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.security.oauth2.http.converter.jaxb.AbstractJaxbMessageConverter.java</file>
+            <file type="M">org.springframework.security.oauth2.http.converter.jaxb.TestJaxbOAuth2AccessTokenMessageConverter.java</file>
+            <file type="M">org.springframework.security.oauth2.http.converter.jaxb.TestJaxbOAuth2ExceptionMessageConverter.java</file>
+            <file type="M">org.springframework.security.oauth2.http.converter.jaxb.BaseJaxbMessageConverterTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

@@ -1,0 +1,307 @@
+<bugrepository name="AMQP">
+    <bug id="125" opendate="2011-03-23 07:51:21" fixdate="2011-03-23 08:10:07" resolution="Fixed">
+        <buginformation>
+            <summary>container stop listener lock simplemessagelistenercontainer lead algorithm
+            </summary>
+            <description>container stop listener lock simplemessagelistenercontainer lead algorithm
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitBindingIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.MessageListenerRecoveryCachingConnectionIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.MessageListenerContainerLifecycleIntegrationTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="190" opendate="2011-09-10 20:24:17" fixdate="2012-07-18 08:51:03" resolution="Fixed">
+        <buginformation>
+            <summary>rabbittemplate channeltransacted channel supply observe reference messagelistenercontainer spring
+                leak rabbit context tag publishing consumer info side pool message forum transactionmanager
+                convertandsend integration exchange transaction
+            </summary>
+            <description>rabbittemplate channeltransacted channel supply observe reference messagelistenercontainer
+                spring leak rabbit context tag publishing consumer info side pool message forum transactionmanager
+                convertandsend integration exchange transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.connection.RabbitResourceHolder.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplateTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplatePerformanceIntegrationTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="223" opendate="2012-04-06 08:08:36" fixdate="2012-04-09 10:47:10" resolution="Fixed">
+        <buginformation>
+            <summary>Threads Running SimpleListenerContainerIf doStart called twice end up two threads running each
+                consumer
+            </summary>
+            <description>Threads Running SimpleListenerContainerIf doStart called twice end up two threads running each
+                consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="243" opendate="2012-06-11 02:23:38" fixdate="2012-07-17 12:50:16" resolution="Fixed">
+        <buginformation>
+            <summary>patternlayout consequence issue subject line pattern amqpappender message enhancedpatternlayoutlike
+                javadoc routing synchronization lossthe
+            </summary>
+            <description>patternlayout consequence issue subject line pattern amqpappender message
+                enhancedpatternlayoutlike javadoc routing synchronization lossthe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.log4j.AmqpAppender.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="249" opendate="2012-07-12 11:46:31" fixdate="2012-07-19 11:04:18" resolution="Fixed">
+        <buginformation>
+            <summary>autoack temporary rabbittemplate channel admin accounting timeout put rabbit synchronizedqueue
+                reply nobody consumer case race issue replyhandoff count configure queuestemporary take condition queue
+            </summary>
+            <description>autoack temporary rabbittemplate channel admin accounting timeout put rabbit synchronizedqueue
+                reply nobody consumer case race issue replyhandoff count configure queuestemporary take condition queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplate.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplateTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="260" opendate="2012-07-24 07:50:58" fixdate="2012-08-22 10:18:57" resolution="Fixed">
+        <buginformation>
+            <summary>RabbitTransactionManager
+            </summary>
+            <description>RabbitTransactionManager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="262" opendate="2012-08-06 09:51:41" fixdate="2012-08-22 10:34:57" resolution="Fixed">
+        <buginformation>
+            <summary>template access concurrentmodificationexceptions addpendingconfirm message processack confirm fix
+                rabbit get pendingconfirm concurrentmodificationexception synchronize
+            </summary>
+            <description>template access concurrentmodificationexceptions addpendingconfirm message processack confirm
+                fix rabbit get pendingconfirm concurrentmodificationexception synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.support.PublisherCallbackChannelImpl.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplatePublisherCallbacksIntegrationTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="274" opendate="2012-10-25 13:00:10" fixdate="2012-11-06 06:56:01" resolution="Fixed">
+        <buginformation>
+            <summary>container manager resource rabbittemplate listener channel exposelistenerchannel
+                synchronizedwithtransaction default property transaction
+            </summary>
+            <description>container manager resource rabbittemplate listener channel exposelistenerchannel
+                synchronizedwithtransaction default property transaction
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.connection.RabbitResourceHolder.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.LocallyTransactedTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.ConnectionFactoryUtils.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.ExternalTxManagerTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="275" opendate="2012-10-30 06:18:40" fixdate="2012-11-05 13:56:33" resolution="Fixed">
+        <buginformation>
+            <summary>container cancel race listener requeued message redeliver drain requeue condition stop blocking
+                containerrace queue consumer
+            </summary>
+            <description>container cancel race listener requeued message redeliver drain requeue condition stop blocking
+                containerrace queue consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.connection.RabbitUtils.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.StopStartIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.CachingConnectionFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="331" opendate="2013-09-05 18:26:55" fixdate="2013-09-06 08:46:08" resolution="Fixed">
+        <buginformation>
+            <summary>Error OutOfMemory occurs threads abort
+            </summary>
+            <description>Error OutOfMemory occurs threads abort
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="355" opendate="2014-01-04 06:39:59" fixdate="2014-01-05 07:32:50S" resolution="Fixed">
+        <buginformation>
+            <summary>onmessage container exit stop message errorhandler possibility apos
+            </summary>
+            <description>onmessage container exit stop message errorhandler possibility apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.listener.MessageListenerContainerErrorHandlerIntegrationTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="365" opendate="2014-01-24 13:38:23" fixdate="2014-01-27 08:42:00" resolution="Fixed">
+        <buginformation>
+            <summary>casesanalysis add flag test race listener channel countdown ack count recovery message broker
+                redelivery result condition fix solution closed send consumer case
+            </summary>
+            <description>casesanalysis add flag test race listener channel countdown ack count recovery message broker
+                redelivery result condition fix solution closed send consumer case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.connection.RabbitUtils.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.MessageListenerContainerLifecycleIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.MessageListenerRecoveryCachingConnectionIntegrationTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="469" opendate="2015-01-21 02:59:57" fixdate="2015-05-08 03:47:08" resolution="Fixed">
+        <buginformation>
+            <summary>request documentation understand believe singleconnectionfactory erlangtemplate call result safety
+                mean raise end connection receiverpc simpleconnectionfactory threadsafe executeerlangrpc sendrpc
+            </summary>
+            <description>request documentation understand believe singleconnectionfactory erlangtemplate call result
+                safety mean raise end connection receiverpc simpleconnectionfactory threadsafe executeerlangrpc sendrpc
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.admin.JInterfaceIntegrationTests.java</file>
+            <file type="M">org.springframework.erlang.core.ErlangTemplate.java</file>
+            <file type="M">org.springframework.erlang.connection.Connection.java</file>
+            <file type="M">org.springframework.erlang.connection.DefaultConnection.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="506" opendate="2015-06-26 13:51:22" fixdate="2015-06-29 09:34:58" resolution="Fixed">
+        <buginformation>
+            <summary>getunconfirmed pendingconfirm value map concurrentmodificationexception
+            </summary>
+            <description>getunconfirmed pendingconfirm value map concurrentmodificationexception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.support.PublisherCallbackChannelImpl.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplate.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplatePublisherCallbacksIntegrationTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="532" opendate="2015-09-03 20:40:54" fixdate="2015-09-13 17:31:37" resolution="Fixed">
+        <buginformation>
+            <summary>line guard pendingconfirms source rabbitmq publishercallbackchannelimpl network node number
+                partition stacktrace indicate place map publishing concurrentmodificationexception traffic
+            </summary>
+            <description>line guard pendingconfirms source rabbitmq publishercallbackchannelimpl network node number
+                partition stacktrace indicate place map publishing concurrentmodificationexception traffic
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.support.PublisherCallbackChannelImpl.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplatePublisherCallbacksIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplate.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.CachingConnectionFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="551" opendate="2015-11-30 11:21:31" fixdate="2015-12-03 21:55:01" resolution="Fixed">
+        <buginformation>
+            <summary>container limitation wrongtypeofreturnvalue testfailover usage listener mockito error javadoc faq
+                stub test nature testing mockitolocalizedqueueconnection doreturn concurrency boolean build failure
+                syntax family spy apos
+            </summary>
+            <description>container limitation wrongtypeofreturnvalue testfailover usage listener mockito error javadoc
+                faq stub test nature testing mockitolocalizedqueueconnection doreturn concurrency boolean build failure
+                syntax family spy apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitAdminTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.AbstractConnectionFactoryTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.RabbitTemplateIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainerIntegration2Tests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainerTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.core.BatchingRabbitTemplateTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.MessageListenerContainerErrorHandlerIntegrationTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.connection.LocalizedQueueConnectionFactoryTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="648" opendate="2016-09-28 12:43:57" fixdate="2016-09-28 16:05:29" resolution="Fixed">
+        <buginformation>
+            <summary>container issue start vesc handlecancel broker delete handlecancelok call recovercontainer
+                basiccacncel fail stop failure consumer queue
+            </summary>
+            <description>container issue start vesc handlecancel broker delete handlecancelok call recovercontainer
+                basiccacncel fail stop failure consumer queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.amqp.rabbit.listener.BlockingQueueConsumerTests.java</file>
+            <file type="M">org.springframework.amqp.rabbit.listener.BlockingQueueConsumer.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

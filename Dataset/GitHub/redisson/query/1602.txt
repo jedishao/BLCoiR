@@ -1,0 +1,1 @@
+configuration redisson recovery redis timeout network database password client connectionpoolsize behavior case connecttimeout unlock address expirationrenewal execute connectionminimumidlesize fail throw service success

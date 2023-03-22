@@ -1,0 +1,8 @@
+org.eclipse.ecf.provider.riena.container.RienaContainer.java
+org.eclipse.ecf.remoteservice.IRemoteServiceContainerAdapter.java
+org.eclipse.ecf.provider.remoteservice.generic.RemoteServiceContainer.java
+org.eclipse.ecf.remoteservice.client.AbstractClientContainer.java
+org.eclipse.ecf.remoteservice.client.RemoteServiceClientRegistry.java
+org.eclipse.ecf.internal.provider.local.container.LocalRemoteServiceContainer.java
+org.eclipse.ecf.provider.remoteservice.generic.RegistrySharedObject.java
+org.eclipse.ecf.internal.provider.r_osgi.R_OSGiRemoteServiceContainer.java

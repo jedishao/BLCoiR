@@ -1,0 +1,1 @@
+sqlserver TestSqlServerConnectorTest SqlServerConnectorTest testSelectInformationSchemaColumns deadlock

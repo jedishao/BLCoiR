@@ -1,0 +1,5 @@
+org.eclipse.ecf.presence.ui.MultiRosterAccount.java
+org.eclipse.ecf.internal.docshare.ECFStart.java
+org.eclipse.ecf.presence.ui.MultiRosterView.java
+org.eclipse.ecf.datashare.AbstractShare.java
+org.eclipse.ecf.internal.presence.collab.ui.ShareReceiversECFStart.java

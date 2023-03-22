@@ -1,0 +1,1 @@
+allow delivery request re check fact race pool multiple vertx deliver tick moment schedule condition solution context client know connection avoid close situation httpclient

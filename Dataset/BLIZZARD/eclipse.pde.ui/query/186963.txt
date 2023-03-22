@@ -1,0 +1,1 @@
+schema workspace ctrl affect shift run type switch dialog file perspective concurrentmodificationexception synchronize addition editor question diff exsd tool eclipse pde cdt background sdk emf

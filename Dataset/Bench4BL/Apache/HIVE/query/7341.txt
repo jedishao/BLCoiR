@@ -1,0 +1,1 @@
+hcattable hive schema serializetable instance falcon source patch partition hcataddpartitiondesc builder deserializetable definition table add metastore serde storagedescriptor hcatcreatetabledesc addpartition change hcatalog hcatpartition diff right trunk caveat

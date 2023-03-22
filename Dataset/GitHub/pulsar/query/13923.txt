@@ -1,0 +1,1 @@
+unsupportedoperationexceptions handler cluster role log hasproxytobrokerurl geo partition connection info replication new init race issue defaultchannelpipeline pipeline proxy warn condition exceptioncaught namespace topic superuser pulsar

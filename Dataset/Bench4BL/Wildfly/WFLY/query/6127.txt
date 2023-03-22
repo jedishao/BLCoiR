@@ -1,0 +1,1 @@
+container synchronized contextspec session specify type illegalstateexception target call unsynchronized component throw jta context persistence propagate transaction bean

@@ -1,0 +1,1 @@
+getstring datum init getinteger read getfloatingpoint race lazy line astfloatingpoint aststring number astinteger synchronization initialization consider write

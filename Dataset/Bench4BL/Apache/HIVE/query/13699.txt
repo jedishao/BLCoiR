@@ -1,0 +1,1 @@
+static issue javadatamodel compilation  get query class

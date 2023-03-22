@@ -1,0 +1,1 @@
+ScanFilterAndProjectOperator fail condition size array array_concat map presto

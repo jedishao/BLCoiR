@@ -1,0 +1,2 @@
+org.eclipse.ecf.internal.osgi.services.distribution.DiscoveredServiceTrackerImpl.java
+org.eclipse.ecf.internal.osgi.services.distribution.Activator.java

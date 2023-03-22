@@ -1,0 +1,1 @@
+session putkeyvaluecommand trace timeoutexception web defaultlockmanager onephasecommit yyy lock embeddedexpirablemetadata value key valuematcher force_synchronous maxidle cache locking topologyid preparecommand ignore_return_values immutable xxx wildfly zzz secondsour putifabsent globaltransaction

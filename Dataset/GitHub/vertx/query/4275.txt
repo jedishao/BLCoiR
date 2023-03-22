@@ -1,0 +1,1 @@
+ConnectionBase handler called within synchronized block

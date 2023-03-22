@@ -1,0 +1,1 @@
+kafkapartition finiteappenderatordriver metadata updatedatasourcemetadatawithhandle generating our partition segment worker appenderatorimpl info partitionoffsetmap indexersqlmetadatastoragecoordinator taskqueue channelresourcefactory task tasklocation kafkadatasourcemetadata datasource kafka remotetaskrunner transaction status

@@ -1,0 +1,1 @@
+container manager resource rabbittemplate listener channel exposelistenerchannel synchronizedwithtransaction default property transaction

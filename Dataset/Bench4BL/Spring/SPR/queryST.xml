@@ -1,0 +1,16 @@
+<bugrepository name="SPR">
+    <bug id="7688" opendate="2010-10-26 13:43:02" fixdate="2010-12-16 12:20:44" resolution="Fixed">
+        <buginformation>
+            <summary>InjectionMetadata checkPropertySkippingIBM
+            </summary>
+            <description>InjectionMetadata checkPropertySkippingIBM
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.beans.factory.annotation.InjectionMetadata.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

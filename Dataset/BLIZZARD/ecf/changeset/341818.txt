@@ -1,0 +1,2 @@
+org.eclipse.ecf.internal.provider.r_osgi.Activator.java
+org.eclipse.ecf.internal.provider.r_osgi.RemoteServiceImpl.java

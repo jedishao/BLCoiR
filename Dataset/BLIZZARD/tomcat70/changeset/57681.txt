@@ -1,0 +1,3 @@
+org.apache.catalina.loader.ParallelWebappClassLoader.java
+org.apache.catalina.loader.TestParallelWebappClassLoader.java
+org.apache.tomcat.util.compat.JreCompat.java

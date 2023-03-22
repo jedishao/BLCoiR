@@ -1,0 +1,2 @@
+org.apache.juli.TestClassLoaderLogManager.java
+org.apache.juli.ClassLoaderLogManager.java

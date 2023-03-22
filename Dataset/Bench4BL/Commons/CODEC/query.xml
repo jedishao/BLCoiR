@@ -1,0 +1,24 @@
+<bugrepository name="CODEC">
+    <bug id="96" opendate="2010-02-26 04:59:01" fixdate="2012-04-03 17:25:22" resolution="Fixed">
+        <buginformation>
+            <summary>encode instance usage happy binaryencoder interface attempt commons example patch javadoc common
+                client worried class kind nullpointerexception codec regression variable user support
+            </summary>
+            <description>encode instance usage happy binaryencoder interface attempt commons example patch javadoc
+                common client worried class kind nullpointerexception codec regression variable user support
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.commons.codec.binary.BaseNCodecOutputStream.java</file>
+            <file type="M">org.apache.commons.codec.binary.BaseNCodecInputStream.java</file>
+            <file type="M">org.apache.commons.codec.binary.BaseNCodecTest.java</file>
+            <file type="M">org.apache.commons.codec.binary.Base32.java</file>
+            <file type="M">org.apache.commons.codec.binary.BaseNCodec.java</file>
+            <file type="M">org.apache.commons.codec.binary.Base64.java</file>
+            <file type="M">org.apache.commons.codec.binary.Base32Test.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

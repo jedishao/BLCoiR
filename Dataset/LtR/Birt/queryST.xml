@@ -1,0 +1,95 @@
+<bugrepository name="BIRT">
+    <bug id="123840" opendate="2006-01-13 17:17:07" fixdate="2006-01-17 02:26:39" resolution="Fixed">
+        <buginformation>
+            <summary>jvm datum request process instance static filterpasscontrollerdata bottom occur query filter field
+                engine dataengine keep report safe filterpasscontroller class corruption nevaluator
+            </summary>
+            <description>jvm datum request process instance static filterpasscontrollerdata bottom occur query filter
+                field engine dataengine keep report safe filterpasscontroller class corruption nevaluator
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.birt.data.engine.script.FilterPassController.java</file>
+            <file type="M">org.eclipse.birt.data.engine.script.NEvaluator.java</file>
+            <file type="M">org.eclipse.birt.data.engine.script.ScriptEvalUtil.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="195335" opendate="2007-07-04 01:49:49" fixdate="2007-07-11 01:24:24" resolution="Fixed">
+        <buginformation>
+            <summary>HTMLServerImageHandler synchronized
+            </summary>
+            <description>HTMLServerImageHandler synchronized
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.birt.report.engine.api.HTMLServerImageHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="208512" opendate="2007-11-02 04:07:22" fixdate="2007-11-09 22:31:16" resolution="Fixed">
+        <buginformation>
+            <summary>odaconsumer package multithread issuesclass safe class
+            </summary>
+            <description>odaconsumer package multithread issuesclass safe class
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.ConnectionManager.java</file>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.DriverManager.java</file>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.LogHelper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="284367" opendate="2009-07-23 02:52:53" fixdate="2009-08-27 03:02:39" resolution="Fixed">
+        <buginformation>
+            <summary>datasourcefactory
+            </summary>
+            <description>datasourcefactory
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.birt.data.engine.executor.DataSourceFactory.java</file>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.ConnectionManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="287102" opendate="2009-08-19 13:13:19" fixdate="2012-10-31 10:02:38" resolution="Fixed">
+        <buginformation>
+            <summary>OSGILauncher ChildFirstURLClassLoader
+            </summary>
+            <description>OSGILauncher ChildFirstURLClassLoader
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.birt.core.framework.osgi.OSGILauncher.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="314645" opendate="2010-05-27 08:56:40" fixdate="2010-08-06 05:15:49" resolution="Fixed">
+        <buginformation>
+            <summary>XML Datasource is not Thread Safe when passing data as InputStream
+            </summary>
+            <description>XML Datasource is not Thread Safe when passing data as InputStream
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.ConnectionManager.java</file>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.Driver.java</file>
+            <file type="M">org.eclipse.birt.data.engine.odaconsumer.DriverManager.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

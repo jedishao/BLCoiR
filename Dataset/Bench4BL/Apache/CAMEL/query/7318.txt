@@ -1,0 +1,1 @@
+happen process hdfsinputstream work nothing hdf team concurrency transfer file rename parallel hdfsconsumer hdfs try catch ioexception everything ioe consumer order

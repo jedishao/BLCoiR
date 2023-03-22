@@ -1,0 +1,1 @@
+defaultpasswordprovider advertiser_account_manager_id log connecturi aprox source pollperiod chainedexecutionqueryrunner valuecolumn table createtable lookup factory realtime jdbcextractionnamespacecachefactory tscolumn loading sequence node dbconnectorconfig task keycolumn druid namespace connectorconfig

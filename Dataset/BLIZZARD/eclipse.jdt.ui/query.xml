@@ -1,0 +1,343 @@
+<bugrepository name="eclipse.jdt.ui">
+    <bug id="12996" opendate="2002-04-08 10:49:21" fixdate="2002-10-23 10:06:36" resolution="Fixed">
+        <buginformation>
+            <summary>access select project error type mulitpage example file leave get create jar finish export creation
+                editor happen mpe fill eclipse fail build install
+            </summary>
+            <description>access select project error type mulitpage example file leave get create jar finish export
+                creation editor happen mpe fill eclipse fail build install
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.JavaPlugin.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.jarpackager.JarFileExportOperation.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="29531" opendate="2003-01-15 09:00:03" fixdate="2003-02-20 14:10:03" resolution="Fixed">
+        <buginformation>
+            <summary>preview editor move select package nullpointerexception javacolormanager refactoring build activate
+                initialize press
+            </summary>
+            <description>preview editor move select package nullpointerexception javacolormanager refactoring build
+                activate initialize press
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.text.AbstractJavaScanner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="75843" opendate="2004-10-07 16:21:54" fixdate="2004-11-02 15:23:30" resolution="Fixed">
+        <buginformation>
+            <summary>createmethodentrybreakpoint iresource deadlock dialog ischedulingrule event dispatcher creation
+                situation chain reaction team jdi int iworkspacerunnable breakpoint javabreakpoint entry component delay
+                gui jdt syncexec snapshot
+            </summary>
+            <description>createmethodentrybreakpoint iresource deadlock dialog ischedulingrule event dispatcher creation
+                situation chain reaction team jdi int iworkspacerunnable breakpoint javabreakpoint entry component delay
+                gui jdt syncexec snapshot
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="79793" opendate="2004-11-30 12:22:45" fixdate="2004-12-17 09:35:08" resolution="Fixed">
+        <buginformation>
+            <summary>deadlock javaworkingsetupdater
+            </summary>
+            <description>deadlock javaworkingsetupdater
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.workingsets.JavaWorkingSetUpdater.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="103450" opendate="2005-07-12 02:13:14" fixdate="2010-06-11 10:39:08" resolution="Fixed">
+        <buginformation>
+            <summary>fix statement block remove option
+            </summary>
+            <description>fix statement block remove option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.text.correction.CorrectionMessages.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.text.correction.CorrectionMessages.properties</file>
+            <file type="M">org.eclipse.jdt.internal.ui.text.correction.QuickAssistProcessor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="125013" opendate="2006-01-24 10:50:34" fixdate="2006-02-14 11:29:43" resolution="Fixed">
+        <buginformation>
+            <summary>preferenceforwarder firepropertychangeevent javamodelmanager PreferencesAdapter
+            </summary>
+            <description>preferenceforwarder firepropertychangeevent javamodelmanager PreferencesAdapter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.ui.org.eclipse.jdt.internal.ui.text.PreferencesAdapter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="179109" opendate="2007-03-23 15:46:13" fixdate="2007-03-26 12:39:07" resolution="Fixed">
+        <buginformation>
+            <summary>Editor computing AST twice concurrently
+            </summary>
+            <description>Editor computing AST twice concurrently
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.ClassFileEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingManager.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.JavaEditor.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.javaeditor.SemanticHighlightingReconciler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="261198" opendate="2009-01-15 09:21:52" fixdate="2009-07-16 09:12:39" resolution="Fixed">
+        <buginformation>
+            <summary>javasynchronizationcontentprovider business src change project team source repository structure
+                eclipse node view trace folder somebusiness spot model synchronize
+            </summary>
+            <description>javasynchronizationcontentprovider business src change project team source repository structure
+                eclipse node view trace folder somebusiness spot model synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="272742" opendate="2009-04-17 14:23:52" fixdate="2009-04-20 05:23:41" resolution="Fixed">
+        <buginformation>
+            <summary>imagesonfilesystemregistry error type swtexception javadoc path view computer get concurrently
+                getnewfile info editor save png filenotfoundexception imageloader fimagecount input system step
+            </summary>
+            <description>imagesonfilesystemregistry error type swtexception javadoc path view computer get concurrently
+                getnewfile info editor save png filenotfoundexception imageloader fimagecount input system step
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ImagesOnFileSystemRegistry.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="291996" opendate="2009-10-11 10:35:40" fixdate="2009-10-14 04:41:20" resolution="Fixed">
+        <buginformation>
+            <summary>javamergeviewer
+            </summary>
+            <description>javamergeviewer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.compare.JavaMergeViewer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="296794" opendate="2009-12-03 07:32:06" fixdate="2011-01-20 08:53:18" resolution="Fixed">
+        <buginformation>
+            <summary>DocumentChange fails if document is not thread safe
+            </summary>
+            <description>DocumentChange fails if document is not thread safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.ltk.internal.core.refactoring.UndoDocumentChange.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.AllChangeTests.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.AllChangeTests.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.ltk.internal.core.refactoring.UndoDocumentChange.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.refactoring.DocumentChangeTest.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.DocumentChange.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="297709" opendate="2009-12-13 23:39:05" fixdate="2010-01-07 19:24:09" resolution="Fixed">
+        <buginformation>
+            <summary>editor agent item package resource autocomplete firefox change tree link mozilla control windows
+                opening result swt composite action jdt class option
+            </summary>
+            <description>editor agent item package resource autocomplete firefox change tree link mozilla control
+                windows opening result swt composite action jdt class option
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="300536" opendate="2010-01-22 14:01:04" fixdate="2010-01-26 04:45:55" resolution="Fixed">
+        <buginformation>
+            <summary>access fix get state error swtexception
+            </summary>
+            <description>access fix get state error swtexception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ltk.core.refactoring.UndoTextFileChange.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="301242" opendate="2010-01-29 08:34:46" fixdate="2010-01-29 19:13:09" resolution="Fixed">
+        <buginformation>
+            <summary>save space dialog undo attachment lock action press workbench add editor test format check
+                searchpattern validatematchrule stacktrace user
+            </summary>
+            <description>save space dialog undo attachment lock action press workbench add editor test format check
+                searchpattern validatematchrule stacktrace user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.ltk.internal.core.refactoring.UndoableOperation2ChangeAdapter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="319689" opendate="2010-07-13 07:51:35" fixdate="2010-07-28 08:11:46" resolution="Fixed">
+        <buginformation>
+            <summary>problemmarkermanager
+            </summary>
+            <description>problemmarkermanager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.util.SWTUtil.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ImageDescriptorRegistry.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ProblemMarkerManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="336841" opendate="2011-02-10 11:42:09" fixdate="2011-02-21 13:02:25" resolution="Fixed">
+        <buginformation>
+            <summary>package test classpath work show head view file attachment fix explorer detail synchronize
+            </summary>
+            <description>package test classpath work show head view file attachment fix explorer detail synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.tests.packageview.PackageExplorerShowInTests.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.java</file>
+            <file type="M">org.eclipse.jdt.ui.tests.packageview.PackageExplorerShowInTests.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="347599" opendate="2011-05-30 01:27:55" fixdate="2011-10-24 15:16:16" resolution="Fixed">
+        <buginformation>
+            <summary>release createchange none uncertainty cycle life patch performrefactoringhistoryoperation
+                refactoring attachment lock place possibility situation c checkfinalcondition resource
+                refactoringhistorywizard index rafactoring check way eclipse cdt dispose checkinitialcondition
+                conditions
+            </summary>
+            <description>release createchange none uncertainty cycle life patch performrefactoringhistoryoperation
+                refactoring attachment lock place possibility situation c checkfinalcondition resource
+                refactoringhistorywizard index rafactoring check way eclipse cdt dispose checkinitialcondition
+                conditions
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.examples.TestMoveDescriptorAction.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.refactoring.binary.BinaryRefactoringHistoryWizard.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.AllTests.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.RefactoringContextTest.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.resource.ResourceRefactoringTests.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.tests.resource.ResourceRefactoringUndoTests.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.PerformRefactoringHistoryOperation.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.PerformRefactoringOperation.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.Refactoring.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.RefactoringContext.java</file>
+            <file type="M">org.eclipse.ltk.core.refactoring.RefactoringDescriptor.java</file>
+            <file type="M">org.eclipse.ltk.ui.refactoring.RefactoringWizard.java</file>
+            <file type="M">org.eclipse.ltk.ui.refactoring.RefactoringWizardOpenOperation.java</file>
+            <file type="M">org.eclipse.ltk.ui.refactoring.history.RefactoringHistoryWizard.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="411636" opendate="2013-06-25 14:51:15" fixdate="2013-08-22 05:01:30" resolution="Fixed">
+        <buginformation>
+            <summary>editor burn stack package large link save project cycle trace file delay attachment build explorer
+                action indigo
+            </summary>
+            <description>editor burn stack package large link save project cycle trace file delay attachment build
+                explorer action indigo
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.ui.tests.packageview.ContentProviderTests6.java</file>
+            <file type="M">org.eclipse.jdt.internal.ui.packageview.PackageExplorerContentProvider.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="411841" opendate="2013-06-27 19:03:40" fixdate="2013-07-02 13:55:03" resolution="Fixed">
+        <buginformation>
+            <summary>junit stack process test work project capture launch menu sample rerun eclipse result patch view
+                trace freeze build enable context config
+            </summary>
+            <description>junit stack process test work project capture launch menu sample rerun eclipse result patch
+                view trace freeze build enable context config
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.junit.model.TestRunSession.java</file>
+            <file type="M">org.eclipse.jdt.internal.junit.ui.TestRunnerViewPart.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="417765" opendate="2013-09-21 16:17:41" fixdate="2014-03-06 16:03:01" resolution="Fixed">
+        <buginformation>
+            <summary>newjavaprojectwizardpagetwo mageDescriptorRegistry hookDisplay Bndtool OSGi
+            </summary>
+            <description>newjavaprojectwizardpagetwo mageDescriptorRegistry hookDisplay Bndtool OSGi
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.jdt.internal.ui.viewsupport.ImageDescriptorRegistry.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

@@ -1,0 +1,2 @@
+org.apache.catalina.ha.session.DeltaManager.java
+org.apache.catalina.session.ManagerBase.java

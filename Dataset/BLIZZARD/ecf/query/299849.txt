@@ -1,0 +1,1 @@
+container xmppremoteserviceadapterfactory invoke  handleaddregistrationcan  xmppregistrysharedobject get remoteserverid getlocalcontainerid connection  handleaddregistration situation receive npe occur packet message throw registrysharedobject  getlocalcontainerid

@@ -1,0 +1,99 @@
+<bugrepository name="eclipse.pde.ui">
+    <bug id="149900" opendate="2006-07-06 17:03:00" fixdate="2006-08-02 16:19:32" resolution="Fixed">
+        <buginformation>
+            <summary>add process girl dep responsiveness pde expect ton current plugin watch lock
+            </summary>
+            <description>add process girl dep responsiveness pde expect ton current plugin watch lock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.pde.internal.core.bundle.BundlePluginBase.java</file>
+            <file type="M">org.eclipse.pde.internal.core.bundle.BundlePluginModelBase.java</file>
+            <file type="M">org.eclipse.pde.internal.core.plugin.AbstractPluginModelBase.java</file>
+            <file type="M">org.eclipse.pde.internal.core.plugin.PluginBase.java</file>
+            <file type="M">org.eclipse.pde.internal.core.plugin.PluginImport.java</file>
+            <file type="M">org.eclipse.pde.internal.core.plugin.PluginObject.java</file>
+            <file type="M">org.eclipse.pde.internal.core.text.plugin.PluginBaseNode.java</file>
+            <file type="M">org.eclipse.pde.internal.core.text.plugin.PluginDocumentNodeFactory.java</file>
+            <file type="M">org.eclipse.pde.internal.core.text.plugin.PluginImportNode.java</file>
+            <file type="M">org.eclipse.pde.internal.core.text.plugin.PluginObjectNode.java</file>
+            <file type="M">org.eclipse.pde.internal.ui.editor.plugin.RequiresSection.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="158326" opendate="2006-09-22 11:10:19" fixdate="2007-04-04 05:49:33" resolution="Fixed">
+        <buginformation>
+            <summary>cursor runnablelock take trace build property lock checkboxtreeviewer plug page beween prio flash
+                child
+            </summary>
+            <description>cursor runnablelock take trace build property lock checkboxtreeviewer plug page beween prio
+                flash child
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.pde.internal.ui.editor.build.BuildContentsSection.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="186963" opendate="2007-05-15 05:24:29" fixdate="2008-03-30 16:18:52" resolution="Fixed">
+        <buginformation>
+            <summary>schema workspace ctrl affect shift run type switch dialog file perspective
+                concurrentmodificationexception synchronize addition editor question diff exsd tool eclipse pde cdt
+                background sdk emf
+            </summary>
+            <description>schema workspace ctrl affect shift run type switch dialog file perspective
+                concurrentmodificationexception synchronize addition editor question diff exsd tool eclipse pde cdt
+                background sdk emf
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.pde.internal.core.schema.Schema.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="281923" opendate="2009-06-29 17:51:50" fixdate="2010-05-06 16:17:11" resolution="Fixed">
+        <buginformation>
+            <summary>line run box platform mode testapplication parameter end workbench junit test sense launch come ide
+                check command target headless nonuithreadtestapplication plug coretestapplication
+            </summary>
+            <description>line run box platform mode testapplication parameter end workbench junit test sense launch come
+                ide check command target headless nonuithreadtestapplication plug coretestapplication
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.pde.launching.JUnitLaunchConfigurationDelegate.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="291528" opendate="2009-10-06 15:24:38" fixdate="2012-08-24 18:07:07" resolution="Fixed">
+        <buginformation>
+            <summary>Synchronize JDT added ability batch compiler specify instead PDE Build add build properties support
+                exists project specific settings warning error levels msynchronize build properties file
+            </summary>
+            <description>Synchronize JDT added ability batch compiler specify instead PDE Build add build properties
+                support exists project specific settings warning error levels msynchronize build properties file
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.eclipse.pde.ui.tests.build.properties.AbstractBuildValidationTest.java</file>
+            <file type="M">org.eclipse.pde.internal.core.builders.CompilerFlags.java</file>
+            <file type="M">org.eclipse.pde.internal.ui.preferences.PDECompilersConfigurationBlock.java</file>
+            <file type="M">org.eclipse.pde.internal.ui.pderesources.properties</file>
+            <file type="M">org.eclipse.pde.internal.core.PDECoreMessages.java</file>
+            <file type="M">org.eclipse.pde.internal.core.PreferenceInitializer.java</file>
+            <file type="M">org.eclipse.pde.internal.core.builders.BuildErrorReporter.java</file>
+            <file type="M">org.eclipse.pde.internal.core.pderesources.properties</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

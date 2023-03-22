@@ -1,0 +1,3 @@
+org.eclipse.ecf.protocol.msn.ChatSession.java
+org.eclipse.ecf.protocol.msn.DispatchSession.java
+org.eclipse.ecf.protocol.msn.Session.java

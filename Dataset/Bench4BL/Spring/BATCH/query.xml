@@ -1,0 +1,361 @@
+<bugrepository name="BATCH">
+    <bug id="170" opendate="2007-10-15 09:14:22" fixdate="2007-12-19 00:01:56" resolution="Fixed">
+        <buginformation>
+            <summary>hibernatejobdao staleobjectstateexception stepexecution operationuse step operation modification
+            </summary>
+            <description>hibernatejobdao staleobjectstateexception stepexecution operationuse step operation
+                modification
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.domain.StepContribution.java</file>
+            <file type="M">org.springframework.batch.execution.repository.dao.SqlStepDao.java</file>
+            <file type="M">org.springframework.batch.execution.repository.dao.MockJdbcTemplate.java</file>
+            <file type="M">org.springframework.batch.execution.repository.dao.SqlStepDaoPrefixTests.java</file>
+            <file type="M">org.springframework.batch.core.domain.EntityTests.java</file>
+            <file type="M">org.springframework.batch.core.domain.Entity.java</file>
+            <file type="M">org.springframework.batch.execution.repository.dao.AbstractStepDaoTests.java</file>
+            <file type="M">org.springframework.batch.execution.step.simple.SimpleStepExecutor.java</file>
+            <file type="M">org.springframework.batch.execution.repository.SimpleJobRepository.java</file>
+            <file type="M">org.springframework.batch.execution.repository.dao.SqlStepDaoTests.java</file>
+            <file type="M">org.springframework.batch.core.domain.StepExecution.java</file>
+            <file type="M">org.springframework.batch.sample.item.provider.StagingItemReader.java</file>
+            <file type="M">org.springframework.batch.core.domain.StepExecutionTests.java</file>
+            <file type="M">org.springframework.batch.execution.repository.SimpleJobRepositoryTests.java</file>
+            <file type="M">org.springframework.batch.core.domain.JobInstance.java</file>
+            <file type="M">org.springframework.batch.execution.repository.dao.SqlJobDaoQueryTests.java</file>
+            <file type="M">org.springframework.batch.execution.step.simple.DefaultStepExecutorTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="449" opendate="2008-03-12 20:55:06" fixdate="2008-03-12 22:22:22" resolution="Fixed">
+        <buginformation>
+            <summary>call itemskippolicyitemhandler item reader synchronization skip writer error
+            </summary>
+            <description>call itemskippolicyitemhandler item reader synchronization skip writer error
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.step.SkipLimitStepFactoryBeanTests.java</file>
+            <file type="M">org.springframework.batch.core.step.SimpleItemHandler.java</file>
+            <file type="M">org.springframework.batch.core.step.ItemSkipPolicyItemHandler.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="603" opendate="2008-04-25 01:22:56" fixdate="2008-05-09 08:25:41" resolution="Fixed">
+        <buginformation>
+            <summary>JobExecution fields modified another volatile
+            </summary>
+            <description>JobExecution fields modified another volatile
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.StepExecution.java</file>
+            <file type="M">org.springframework.batch.core.JobExecutionTests.java</file>
+            <file type="M">org.springframework.batch.core.StepExecutionTests.java</file>
+            <file type="M">org.springframework.batch.core.JobExecution.java</file>
+            <file type="M">org.springframework.batch.core.JobInstance.java</file>
+            <file type="M">org.springframework.batch.core.StepContributionTests.java</file>
+            <file type="M">org.springframework.batch.core.StepContribution.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="782" opendate="2008-08-13 21:48:54" fixdate="2008-08-14 01:33:49" resolution="Fixed">
+        <buginformation>
+            <summary>interruptedexception release abstractstep chunk acquirer error context lock block share
+                processchunk execution peresistence locking itemorientedstep jdk simpleasynctaskexecutor synchronizer
+                semaphore persistence interruption step writer optimisticlockingfailureexception
+            </summary>
+            <description>interruptedexception release abstractstep chunk acquirer error context lock block share
+                processchunk execution peresistence locking itemorientedstep jdk simpleasynctaskexecutor synchronizer
+                semaphore persistence interruption step writer optimisticlockingfailureexception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.step.item.StepExecutorInterruptionTests.java</file>
+            <file type="M">org.springframework.batch.core.step.item.StepHandlerStep.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="912" opendate="2008-11-08 02:25:39" fixdate="2008-11-08 04:09:09" resolution="Fixed">
+        <buginformation>
+            <summary>replace error hit safety implication context initialization hard case think sure issue visibility
+                arraylist collection list way with performance synchronization jobregistrybackgroundjobrunner theory
+            </summary>
+            <description>replace error hit safety implication context initialization hard case think sure issue
+                visibility arraylist collection list way with performance synchronization jobregistrybackgroundjobrunner
+                theory
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.launch.support.JobRegistryBackgroundJobRunner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1272" opendate="2009-06-03 02:49:35" fixdate="2009-06-04 18:03:27" resolution="Fixed">
+        <buginformation>
+            <summary>work faulttolerantchunkprocessor step strange
+            </summary>
+            <description>work faulttolerantchunkprocessor step strange
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.scope.context.StepContextRepeatCallback.java</file>
+            <file type="M">org.springframework.batch.core.scope.context.StepContextRepeatCallbackTests.java</file>
+            <file type="M">org.springframework.batch.core.step.item.FaultTolerantStepFactoryBeanRollbackTests.java</file>
+            <file type="M">org.springframework.batch.core.step.item.FaultTolerantChunkProcessor.java</file>
+            <file type="M">org.springframework.batch.repeat.support.RepeatTemplate.java</file>
+            <file type="M">org.springframework.batch.repeat.support.TaskExecutorRepeatTemplate.java</file>
+            <file type="M">org.springframework.batch.repeat.support.SimpleRepeatTemplateTests.java</file>
+            <file type="M">org.springframework.batch.item.database.JdbcCursorItemReaderConfigTests.java</file>
+            <file type="M">org.springframework.batch.repeat.support.AsynchronousRepeatTests.java</file>
+            <file type="M">org.springframework.batch.core.step.AbstractStep.java</file>
+            <file type="M">org.springframework.batch.core.step.item.FaultTolerantStepFactoryBeanRetryTests.java</file>
+            <file type="M">org.springframework.batch.retry.support.RetryTemplate.java</file>
+            <file type="M">org.springframework.batch.core.step.item.SimpleRetryExceptionHandler.java</file>
+            <file type="M">org.springframework.batch.core.step.item.ExceptionThrowingItemHandlerStub.java</file>
+            <file type="M">org.springframework.batch.core.step.item.ChunkOrientedTasklet.java</file>
+            <file type="M">org.springframework.batch.core.step.tasklet.TaskletStep.java</file>
+            <file type="M">org.springframework.batch.core.step.item.SkipWriterStub.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1278" opendate="2009-06-03 21:32:31" fixdate="2009-06-03 21:45:43" resolution="Fixed">
+        <buginformation>
+            <summary>abort batch exceptionsrepeattemplate repeattemplate
+            </summary>
+            <description>abort batch exceptionsrepeattemplate repeattemplate
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.repeat.support.TaskExecutorRepeatTemplate.java</file>
+            <file type="M">org.springframework.batch.repeat.support.TaskExecutorRepeatTemplateAsynchronousTests.java</file>
+            <file type="M">org.springframework.batch.repeat.callback.NestedRepeatCallback.java</file>
+            <file type="M">org.springframework.batch.repeat.support.RepeatTemplate.java</file>
+            <file type="M">org.springframework.batch.repeat.support.SimpleRepeatTemplateTests.java</file>
+            <file type="M">org.springframework.batch.item.database.JdbcCursorItemReaderConfigTests.java</file>
+            <file type="M">org.springframework.batch.repeat.support.AsynchronousRepeatTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1362" opendate="2009-08-07 19:02:48" fixdate="2009-08-09 21:46:18" resolution="Fixed">
+        <buginformation>
+            <summary>jvm work stepthread nothing count chunk priority scheduler disparity loop effect report step end
+                worker user
+            </summary>
+            <description>jvm work stepthread nothing count chunk priority scheduler disparity loop effect report step
+                end worker user
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.repeat.support.TaskExecutorRepeatTemplate.java</file>
+            <file type="M">org.springframework.batch.repeat.support.TaskExecutorRepeatTemplateSimpleAsynchronousTests.java</file>
+            <file type="M">org.springframework.batch.core.step.tasklet.AsyncTaskletStepTests.java</file>
+            <file type="M">org.springframework.batch.core.scope.context.StepContextRepeatCallback.java</file>
+            <file type="M">org.springframework.batch.core.scope.context.StepContextRepeatCallbackTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1526" opendate="2010-03-04 00:38:03" fixdate="2010-03-04 00:57:32" resolution="Fixed">
+        <buginformation>
+            <summary>chunkmonitorthe deal detection memory tomcat one threadlocal chunkmonitor leak re deployment null
+                fix web user apos deployment
+            </summary>
+            <description>chunkmonitorthe deal detection memory tomcat one threadlocal chunkmonitor leak re deployment
+                null fix web user apos deployment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.step.item.ChunkMonitor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1542" opendate="2010-03-27 19:22:32" fixdate="2010-03-27 19:23:05" resolution="Fixed">
+        <buginformation>
+            <summary>execution likely stepexecution batch mapjobrepository protection collectionsthe collection
+                concurrency jobexecution safety effect step copy place job write
+            </summary>
+            <description>execution likely stepexecution batch mapjobrepository protection collectionsthe collection
+                concurrency jobexecution safety effect step copy place job write
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.StepExecution.java</file>
+            <file type="M">org.springframework.batch.core.repository.dao.MapJobExecutionDao.java</file>
+            <file type="M">org.springframework.batch.core.repository.dao.MapExecutionContextDaoTests.java</file>
+            <file type="M">org.springframework.batch.core.repository.support.SimpleJobRepository.java</file>
+            <file type="M">org.springframework.batch.core.job.flow.FlowJobTests.java</file>
+            <file type="M">org.springframework.batch.core.job.flow.StateSupport.java</file>
+            <file type="M">org.springframework.batch.core.JobExecution.java</file>
+            <file type="M">org.springframework.batch.support.SerializationUtils.java</file>
+            <file type="M">org.springframework.batch.core.test.step.FaultTolerantStepFactoryBeanRollbackTests.java</file>
+            <file type="M">org.springframework.batch.core.repository.dao.MapJobInstanceDao.java</file>
+            <file type="M">org.springframework.batch.core.partition.support.SimpleStepExecutionSplitterTests.java</file>
+            <file type="M">org.springframework.batch.support.transaction.TransactionAwareProxyFactory.java</file>
+            <file type="M">org.springframework.batch.core.repository.dao.MapStepExecutionDao.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1572" opendate="2010-05-20 02:20:50" fixdate="2010-09-27 01:17:31" resolution="Fixed">
+        <buginformation>
+            <summary>failing springframework transaction transaction timing out read reader step due lock
+            </summary>
+            <description>failing springframework transaction transaction timing out read reader step due lock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.step.item.TaskletStepExceptionTests.java</file>
+            <file type="M">org.springframework.batch.core.step.tasklet.TaskletStep.java</file>
+            <file type="M">org.springframework.batch.core.step.item.FaultTolerantStepFactoryBean.java</file>
+            <file type="M">org.springframework.batch.core.Entity.java</file>
+            <file type="M">org.springframework.batch.core.repository.dao.MapStepExecutionDao.java</file>
+            <file type="M">org.springframework.batch.core.step.item.FaultTolerantStepFactoryBeanRollbackTests.java</file>
+            <file type="M">org.springframework.batch.core.step.AbstractStep.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1709" opendate="2011-03-11 07:09:11" fixdate="2011-03-11 07:47:56" resolution="Fixed">
+        <buginformation>
+            <summary>beanwrapperfieldsetmapper cache distance race column message caching concurrency setting fail
+                condition limit property name
+            </summary>
+            <description>beanwrapperfieldsetmapper cache distance race column message caching concurrency setting fail
+                condition limit property name
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapperTests.java</file>
+            <file type="M">org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1724" opendate="2011-04-05 02:19:47" fixdate="2011-04-05 04:02:43" resolution="Fixed">
+        <buginformation>
+            <summary>limiti chunk doubt sort check way fail failure background processing step outcome case queue
+            </summary>
+            <description>limiti chunk doubt sort check way fail failure background processing step outcome case queue
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.step.tasklet.AsyncTaskletStepTests.java</file>
+            <file type="M">org.springframework.batch.core.step.item.ChunkOrientedTasklet.java</file>
+            <file type="M">org.springframework.batch.repeat.support.TaskExecutorRepeatTemplate.java</file>
+            <file type="M">org.springframework.batch.core.step.tasklet.TestingChunkOrientedTasklet.java</file>
+            <file type="M">org.springframework.batch.core.step.item.SimpleChunkProcessor.java</file>
+            <file type="M">org.springframework.batch.core.step.item.TaskletStepExceptionTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1725" opendate="2011-04-05 03:52:59" fixdate="2011-04-05 03:54:15" resolution="Fixed">
+        <buginformation>
+            <summary>concurrenthashmap concurrenthashmapsubclassclassifier subclassclassifier modification
+            </summary>
+            <description>concurrenthashmap concurrenthashmapsubclassclassifier subclassclassifier modification
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.classify.SubclassClassifier.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2126" opendate="2013-10-23 03:19:04" fixdate="2014-02-20 14:03:33" resolution="Fixed">
+        <buginformation>
+            <summary>instance usage numberformat fix simplejoboperator mean simpleasynctaskexecutor variable safe
+                jobparametersconverter setup taskexecutor longnumberformat defaultjobparametersconverter dateformat
+            </summary>
+            <description>instance usage numberformat fix simplejoboperator mean simpleasynctaskexecutor variable safe
+                jobparametersconverter setup taskexecutor longnumberformat defaultjobparametersconverter dateformat
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.converter.DefaultJobParametersConverter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2153" opendate="2013-11-28 05:35:33" fixdate="2014-02-21 12:05:13" resolution="Fixed">
+        <buginformation>
+            <summary>static stepsynchronizationmanager maven increment project nullpointerexception hashtable fix
+                solution decrement variable threadsafe teststepsynchronizationmanagermain hashmap
+            </summary>
+            <description>static stepsynchronizationmanager maven increment project nullpointerexception hashtable fix
+                solution decrement variable threadsafe teststepsynchronizationmanagermain hashmap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.scope.context.SynchronizationManagerSupport.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2156" opendate="2013-12-16 11:53:42" fixdate="2014-03-26 15:33:23" resolution="Fixed">
+        <buginformation>
+            <summary>short_context concurrencyfailureexception update deadlock error updatestepexecution database
+                serialized_context jdbcexecutioncontextdao context jdbcexception jobrepository sqlstate
+                preparedstatementcallback tableneed execution stepexecution teradata step_execution_id tasklet
+                concurrency exit terajdbc failure updateexecutioncontext step batch_step_execution_context transaction
+                status
+            </summary>
+            <description>short_context concurrencyfailureexception update deadlock error updatestepexecution database
+                serialized_context jdbcexecutioncontextdao context jdbcexception jobrepository sqlstate
+                preparedstatementcallback tableneed execution stepexecution teradata step_execution_id tasklet
+                concurrency exit terajdbc failure updateexecutioncontext step batch_step_execution_context transaction
+                status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.repository.dao.JdbcExecutionContextDao.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2313" opendate="2014-10-15 20:35:58" fixdate="2015-10-15 21:03:23" resolution="Fixed">
+        <buginformation>
+            <summary>flowexecutionexception datum gridsize release line synchronizationmanagersupport error spring
+                loadxmlmaster abstractjob multithreading flow execution npe race batch count nullpointerexception ecijob
+                condition re run decrement step job apos
+            </summary>
+            <description>flowexecutionexception datum gridsize release line synchronizationmanagersupport error spring
+                loadxmlmaster abstractjob multithreading flow execution npe race batch count nullpointerexception ecijob
+                condition re run decrement step job apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.batch.core.scope.context.SynchronizationManagerSupport.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

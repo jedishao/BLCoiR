@@ -1,0 +1,1 @@
+cluster concept deadlock slot type interface parallelindexsupervisortask capacity delegate impl middlemanager property staging test subtasks subtask task druid supervisorcapacity restriction http remotetaskrunner comment style issupervisor config user supervisor

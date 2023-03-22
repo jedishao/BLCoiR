@@ -1,0 +1,1 @@
+parking waiting limitlatch connectiontimeout minsparethread socketstatus  socket  jio maxconnection nio executor tomcatthreadpool rejectedexecutionexception nameprefix state case jioendpoint maxkeepaliverequest acceptor redirectport socketwrapper acceptcount maxthread sync connector maxqueuesize http

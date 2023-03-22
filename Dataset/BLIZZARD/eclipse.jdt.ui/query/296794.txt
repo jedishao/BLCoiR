@@ -1,0 +1,1 @@
+DocumentChange fails if document is not thread safe

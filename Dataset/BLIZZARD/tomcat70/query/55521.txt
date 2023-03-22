@@ -1,0 +1,1 @@
+sessionfixationprotectionstrategy HttpSession invalidate HttpServletRequest getSession

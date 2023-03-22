@@ -1,0 +1,1 @@
+cxf getandset getcxfbinding camel webserive initialization sense cxfbinding headerfilterstrategyaware case

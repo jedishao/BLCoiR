@@ -1,0 +1,19 @@
+<bugrepository name="DATAGRAPH">
+    <bug id="876" opendate="2016-06-09 04:16:23" fixdate="2016-06-09 07:58:53" resolution="Fixed">
+        <buginformation>
+            <summary>CypherFinderQuery
+            </summary>
+            <description>CypherFinderQuery
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.neo4j.repository.query.derived.DerivedQueryDefinition.java</file>
+            <file type="M">org.springframework.data.neo4j.queries.DerivedQueryTest.java</file>
+            <file type="M">org.springframework.data.neo4j.repository.query.derived.DerivedGraphRepositoryQuery.java</file>
+            <file type="M">org.springframework.data.neo4j.repository.query.derived.CypherFinderQuery.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

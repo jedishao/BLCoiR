@@ -1,0 +1,2 @@
+org.eclipse.jdt.internal.debug.ui.DebugUIMessages.properties
+org.eclipse.jdt.internal.debug.ui.JavaDebugOptionsManager.java

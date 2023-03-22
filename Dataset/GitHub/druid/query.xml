@@ -1,0 +1,666 @@
+<bugrepository name="druid">
+    <bug id="582" opendate="2014-06-05 00:00:00" fixdate="2018-07-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster indexing race upload locking one mtime directory something path file druid solution jar
+                hadoop job jobhelper
+            </summary>
+            <description>cluster indexing race upload locking one mtime directory something path file druid solution jar
+                hadoop job jobhelper
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexer.DetermineHashedPartitionsJob.java</file>
+            <file type="M">org.apache.druid.indexer.DeterminePartitionsJob.java</file>
+            <file type="M">org.apache.druid.indexer.IndexGeneratorJob.java</file>
+            <file type="M">org.apache.druid.indexer.JobHelper.java</file>
+            <file type="M">org.apache.druid.indexer.updater.HadoopConverterJob.java</file>
+            <file type="M">org.apache.druid.indexer.HdfsClasspathSetupTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="812" opendate="2014-10-27 00:00:00" fixdate="2014-11-15 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>realtimeplumber abandonSegment
+            </summary>
+            <description>realtimeplumber abandonSegment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.segment.realtime.plumber.RealtimePlumber.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1014" opendate="2015-01-06 00:00:00" fixdate="2022-02-24 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request regexp race query show error message lead speed result filter node regex default condition
+                druid kafka dimension value
+            </summary>
+            <description>request regexp race query show error message lead speed result filter node regex default
+                condition druid kafka dimension value
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.timeline.VersionedIntervalTimeline.java</file>
+            <file type="M">org.apache.druid.query.extraction.DimExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.extraction.JavascriptDimExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.extraction.MatchingDimExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.filter.BitmapIndexSelector.java</file>
+            <file type="M">org.apache.druid.query.timeseries.TimeseriesQuery.java</file>
+            <file type="M">org.apache.druid.query.timeseries.TimeseriesQueryEngine.java</file>
+            <file type="M">org.apache.druid.query.topn.DimExtractionTopNAlgorithm.java</file>
+            <file type="M">org.apache.druid.query.topn.TopNQueryQueryToolChest.java</file>
+            <file type="M">org.apache.druid.query.topn.TopNQueryRunnerFactory.java</file>
+            <file type="M">org.apache.druid.segment.ColumnSelectorBitmapIndexSelector.java</file>
+            <file type="M">org.apache.druid.segment.NullDimensionSelector.java</file>
+            <file type="M">org.apache.druid.segment.QueryableIndexStorageAdapter.java</file>
+            <file type="M">org.apache.druid.segment.filter.SelectorFilter.java</file>
+            <file type="M">org.apache.druid.segment.incremental.IncrementalIndex.java</file>
+            <file type="M">org.apache.druid.segment.incremental.IncrementalIndexStorageAdapter.java</file>
+            <file type="M">org.apache.druid.query.extraction.extraction.MatchingDimExtractionFnTest.java</file>
+            <file type="M">org.apache.druid.query.groupby.GroupByQueryRunnerTest.java</file>
+            <file type="M">org.apache.druid.query.timeseries.TimeseriesQueryRunnerTest.java</file>
+            <file type="M">org.apache.druid.query.topn.TopNQueryRunnerTest.java</file>
+            <file type="M">org.apache.druid.segment.NullDimensionSelectorTest.java</file>
+            <file type="M">org.apache.druid.segment.SchemalessTestFull.java</file>
+            <file type="M">org.apache.druid.server.initialization.ServerConfig.java</file>
+            <file type="M">org.apache.druid.server.metrics.NoopServiceEmitter.java</file>
+            <file type="M">services.src.main.java.org.apache.druid.guice.RealtimeModule.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1210" opendate="2015-03-17 00:00:00" fixdate="2015-04-07 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sennectionstatemanager LoadQueuePeon curatorserviceannouncer coordinator race peonexec
+                druidcoordinator condition service crazy socket loggingemitter
+            </summary>
+            <description>sennectionstatemanager LoadQueuePeon curatorserviceannouncer coordinator race peonexec
+                druidcoordinator condition service crazy socket loggingemitter
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.coordinator.LoadQueuePeon.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1360" opendate="2015-05-13 00:00:00" fixdate="2020-01-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Race condition autoscaling terminates nodes just assigned tasks
+            </summary>
+            <description>Race condition autoscaling terminates nodes just assigned tasks
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.dimension.ExpressionDimensionSpec.java</file>
+            <file type="M">org.apache.druid.query.groupby.GroupByQueryRunnerGenericTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunner.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.ResourceManagementScheduler.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.ResourceManagementStrategy.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.SimpleResourceManagementStrategy.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.autoscaling.SimpleResourceManagementStrategyTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1715" opendate="2015-09-09 00:00:00" fixdate="2018-07-06 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>execution request issue redacted tasklock index_realtime_redacted suffice taskqueue acquire task
+                cleanup failure zombie failing lock course remotetaskrunner tasklockbox worker qtpredacted overlord
+                status
+            </summary>
+            <description>execution request issue redacted tasklock index_realtime_redacted suffice taskqueue acquire
+                task cleanup failure zombie failing lock course remotetaskrunner tasklockbox worker qtpredacted overlord
+                status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.TaskLockbox.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.TaskQueue.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.TaskLockboxTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.http.OverlordResourceTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2793" opendate="2016-04-05 00:00:00" fixdate="2020-01-10 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>mysqlintegrityconstraintviolationexception argument redacted taskqueue status_payload error
+                retryutils attempt way entry diff payload datasource lock created_date ms
+                unabletoexecutestatementexception callbackfailedexception thing value primary
+            </summary>
+            <description>mysqlintegrityconstraintviolationexception argument redacted taskqueue status_payload error
+                retryutils attempt way entry diff payload datasource lock created_date ms
+                unabletoexecutestatementexception callbackfailedexception thing value primary
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.SQLMetadataConnector.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataStorageActionHandler.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataStorageActionHandlerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2842" opendate="2016-04-15 00:00:00" fixdate="2016-04-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>remotetaskrun npe assignment error nullpointerexception rtr task remotetask taskrunnerworkitem
+                remotetaskrunner runner
+            </summary>
+            <description>remotetaskrun npe assignment error nullpointerexception rtr task remotetask taskrunnerworkitem
+                remotetaskrunner runner
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunner.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerRunPendingTasksConcurrencyTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerTest.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.RemoteTaskRunnerTestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2991" opendate="2016-05-19 00:00:00" fixdate="2016-05-26 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>OnheapIncrementalIndex addToFacts
+            </summary>
+            <description>OnheapIncrementalIndex addToFacts
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.segment.incremental.OnheapIncrementalIndex.java</file>
+            <file type="M">org.apache.druid.segment.incremental.OnheapIncrementalIndexTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3063" opendate="2016-06-02 00:00:00" fixdate="2016-06-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>request flight reasonable listen number tie load post solution limit lock block jetty lookup
+                coordinator work forward query one druid queue stuff
+            </summary>
+            <description>request flight reasonable listen number tie load post solution limit lock block jetty lookup
+                coordinator work forward query one druid queue stuff
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManagerTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManager.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupModule.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManagerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3393" opendate="2016-08-24 00:00:00" fixdate="2022-02-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster server executionexception hundred instance channel run source channelexception
+                nettyhttpclient side chance race shape byte query pool broker condition druid future directdruidclient
+                callback thing httpclient
+            </summary>
+            <description>cluster server executionexception hundred instance channel run source channelexception
+                nettyhttpclient side chance race shape byte query pool broker condition druid future directdruidclient
+                callback thing httpclient
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">com.metamx.http.client.HttpClientConfig.java</file>
+            <file type="M">com.metamx.http.client.HttpClientInit.java</file>
+            <file type="M">com.metamx.http.client.pool.ResourcePool.java</file>
+            <file type="M">com.metamx.http.client.pool.ResourcePoolConfig.java</file>
+            <file type="M">com.metamx.http.client.pool.ResourcePoolTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3459" opendate="2016-09-14 00:00:00" fixdate="2022-02-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking lookup cache stack issue level query namespaceextractioncachemanager atomicboolean deadlock
+                topn_redacted kill hold node synchronizer lock information case reentrantlock
+            </summary>
+            <description>parking lookup cache stack issue level query namespaceextractioncachemanager atomicboolean
+                deadlock topn_redacted kill hold node synchronizer lock information case reentrantlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupIntrospectHandler.java</file>
+            <file type="M">org.apache.druid.query.lookup.namespace.ExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.JDBCExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespaceExtractionModule.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.URIExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheHandler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheProxy.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheScheduler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OnHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.UpdateCounter.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespacedExtractorModuleTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.URIExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.JDBCExtractionNamespaceTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagerExecutorsTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagersTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManagerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3593" opendate="2016-10-19 00:00:00" fixdate="2022-02-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>parking cache stack namespaceextractioncachemanager qtl atomicboolean monitor deadlock offheap list
+                hold synchronizer lock information reentrantlock
+            </summary>
+            <description>parking cache stack namespaceextractioncachemanager qtl atomicboolean monitor deadlock offheap
+                list hold synchronizer lock information reentrantlock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OnHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagerExecutorsTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactory.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupIntrospectHandler.java</file>
+            <file type="M">org.apache.druid.query.lookup.namespace.ExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.JDBCExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespaceExtractionModule.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactory.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheHandler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheProxy.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.CacheScheduler.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OnHeapNamespaceExtractionCacheManager.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.UpdateCounter.java</file>
+            <file type="M">org.apache.druid.query.lookup.NamespaceLookupExtractorFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.NamespacedExtractorModuleTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.StaticMapExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.URIExtractionNamespaceCacheFactoryTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.JDBCExtractionNamespaceTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagerExecutorsTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.NamespaceExtractionCacheManagersTest.java</file>
+            <file type="M">org.apache.druid.server.lookup.namespace.cache.OffHeapNamespaceExtractionCacheManagerTest.javaå</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3600" opendate="2016-10-20 00:00:00" fixdate="2017-07-30 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>kafkapartition finiteappenderatordriver metadata updatedatasourcemetadatawithhandle generating our
+                partition segment worker appenderatorimpl info partitionoffsetmap indexersqlmetadatastoragecoordinator
+                taskqueue channelresourcefactory task tasklocation kafkadatasourcemetadata datasource kafka
+                remotetaskrunner transaction status
+            </summary>
+            <description>kafkapartition finiteappenderatordriver metadata updatedatasourcemetadatawithhandle generating
+                our partition segment worker appenderatorimpl info partitionoffsetmap
+                indexersqlmetadatastoragecoordinator taskqueue channelresourcefactory task tasklocation
+                kafkadatasourcemetadata datasource kafka remotetaskrunner transaction status
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.IndexerSQLMetadataStorageCoordinator.java</file>
+            <file type="M">org.apache.druid.metadata.RetryTransactionException.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataConnector.java</file>
+            <file type="M">org.apache.druid.metadata.IndexerSQLMetadataStorageCoordinatorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3608" opendate="2016-10-25 00:00:00" fixdate="2017-03-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>IngestSegmentFirehoseFactory race between tasks
+            </summary>
+            <description>IngestSegmentFirehoseFactory race between tasks
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.common.task.IndexTask.java</file>
+            <file type="M">org.apache.druid.indexing.firehose.IngestSegmentFirehoseFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3772" opendate="2016-12-12 00:00:00" fixdate="2021-09-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>condition race issue gvsmirnov comment kafkalookupextractorfactory order
+            </summary>
+            <description>condition race issue gvsmirnov comment kafkalookupextractorfactory order
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.lookup.KafkaLookupExtractorFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4226" opendate="2017-04-28 00:00:00" fixdate="2017-10-13 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>defaultpasswordprovider advertiser_account_manager_id log connecturi aprox source pollperiod
+                chainedexecutionqueryrunner valuecolumn table createtable lookup factory realtime
+                jdbcextractionnamespacecachefactory tscolumn loading sequence node dbconnectorconfig task keycolumn
+                druid namespace connectorconfig
+            </summary>
+            <description>defaultpasswordprovider advertiser_account_manager_id log connecturi aprox source pollperiod
+                chainedexecutionqueryrunner valuecolumn table createtable lookup factory realtime
+                jdbcextractionnamespacecachefactory tscolumn loading sequence node dbconnectorconfig task keycolumn
+                druid namespace connectorconfig
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.common.TestUtils.java</file>
+            <file type="M">org.apache.druid.query.dimension.DimensionSpec.java</file>
+            <file type="M">org.apache.druid.query.extraction.ExtractionFn.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupConfig.java</file>
+            <file type="M">org.apache.druid.query.expression.TestExprMacroTable.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupConfigTest.java</file>
+            <file type="M">org.apache.druid.query.dimension.LookupDimensionSpec.java</file>
+            <file type="M">org.apache.druid.query.expression.LookupExprMacro.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupModule.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManager.java</file>
+            <file type="M">org.apache.druid.query.lookup.RegisteredLookupExtractionFn.java</file>
+            <file type="M">org.apache.druid.server.http.LookupCoordinatorResource.java</file>
+            <file type="M">org.apache.druid.query.dimension.LookupDimensionSpecTest.java</file>
+            <file type="M">org.apache.druid.query.expression.ExprMacroTest.java</file>
+            <file type="M">org.apache.druid.query.expression.TestExpressionMacroTable.java</file>
+            <file type="M">org.apache.druid.query.lookup.LookupReferencesManagerTest.java</file>
+            <file type="M">org.apache.druid.query.lookup.RegisteredLookupExtractionFnTest.java</file>
+            <file type="M">org.apache.druid.server.http.LookupCoordinatorResourceTest.java</file>
+            <file type="M">org.apache.druid.sql.calcite.util.CalciteTests.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4296" opendate="2017-05-18 00:00:00" fixdate="2017-05-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>maxgcpausemillis fieldaccesspostaggregator fieldaccess sizebyte doublesumaggregatorfactory
+                middlemanager timeseriesquery javaopt chainedexecutionqueryrunner constantvalue arithmeticpostaggregator
+                aggregatorspec hyperuniquecardinality fnname basetaskdir postaggregatorspec numthread hll doublesum
+                multiplespecificsegmentspec hyperuniquesaggregatorfactory hyperunique constantpostaggregator queryid
+                fieldname middlemanger restoretasksonrestart datasource bufferunderflowexception segmentdescriptor
+            </summary>
+            <description>maxgcpausemillis fieldaccesspostaggregator fieldaccess sizebyte doublesumaggregatorfactory
+                middlemanager timeseriesquery javaopt chainedexecutionqueryrunner constantvalue arithmeticpostaggregator
+                aggregatorspec hyperuniquecardinality fnname basetaskdir postaggregatorspec numthread hll doublesum
+                multiplespecificsegmentspec hyperuniquesaggregatorfactory hyperunique constantpostaggregator queryid
+                fieldname middlemanger restoretasksonrestart datasource bufferunderflowexception segmentdescriptor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.query.aggregation.cardinality.CardinalityAggregator.java</file>
+            <file type="M">org.apache.druid.query.aggregation.hyperloglog.HyperUniquesAggregator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4984" opendate="2017-10-20 00:00:00" fixdate="2017-10-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster discover dgolitsyn race start constructor inventory serverinventoryview
+                balancerstrategyfactory number view balancer leventov segment initialization callback
+                cachingcostbalancerstrategyfactory cachingcost register
+            </summary>
+            <description>cluster discover dgolitsyn race start constructor inventory serverinventoryview
+                balancerstrategyfactory number view balancer leventov segment initialization callback
+                cachingcostbalancerstrategyfactory cachingcost register
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.coordinator.CachingCostBalancerStrategyFactory.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5338" opendate="2018-02-02 00:00:00" fixdate="2018-02-14 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>line usage while anything reference loop executor state event class deployment concurrentbatch
+                issue batch cpu druidcoordinator concurrency in_java tryaddevents bci information httppostemitter
+                emitter frame
+            </summary>
+            <description>line usage while anything reference loop executor state event class deployment concurrentbatch
+                issue batch cpu druidcoordinator concurrency in_java tryaddevents bci information httppostemitter
+                emitter frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.java.util.emitter.core.Batch.java</file>
+            <file type="M">org.apache.druid.java.util.emitter.core.HttpPostEmitter.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6020" opendate="2018-07-18 00:00:00" fixdate="2018-09-27 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>leader stack npe taskmaster race this optional taskqueue follow nullpointerexception taskrunner
+                trace variable gettaskrunner initialize becomeleader overlord
+            </summary>
+            <description>leader stack npe taskmaster race this optional taskqueue follow nullpointerexception taskrunner
+                trace variable gettaskrunner initialize becomeleader overlord
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.TaskMaster.java</file>
+            <file type="M">org.apache.druid.server.coordinator.DruidCoordinator.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6028" opendate="2018-07-20 00:00:00" fixdate="2018-08-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>drop argument deadlock error cycle sec sqltransactionrollbackexception payload lock victim row
+                standardexception table group sqlmetadatarulemanagertest test max syscolumns finder datasource failure
+                waiter unabletoexecutestatementexception tablelock
+            </summary>
+            <description>drop argument deadlock error cycle sec sqltransactionrollbackexception payload lock victim row
+                standardexception table group sqlmetadatarulemanagertest test max syscolumns finder datasource failure
+                waiter unabletoexecutestatementexception tablelock
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.SQLMetadataRuleManager.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataSegmentManager.java</file>
+            <file type="M">org.apache.druid.metadata.SQLMetadataSegmentManagerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6139" opendate="2018-08-09 00:00:00" fixdate="2018-08-11 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>testCheckpointForUnknownTaskGroup KafkaSupervisorTest
+            </summary>
+            <description>testCheckpointForUnknownTaskGroup KafkaSupervisorTest
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.kafka.supervisor.KafkaSupervisorTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6201" opendate="2018-08-21 00:00:00" fixdate="2018-08-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster lifecyclelock httpremotetaskrunner os_prio test monitor deadlock sync daemon entry task
+                concurrenthashmap lock hrtr state worker prio runner overlord
+            </summary>
+            <description>cluster lifecyclelock httpremotetaskrunner os_prio test monitor deadlock sync daemon entry task
+                concurrenthashmap lock hrtr state worker prio runner overlord
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6287" opendate="2018-09-01 00:00:00" fixdate="2018-09-19 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>result condition indexing race issue verifyandmergecheckpoint firstkey service kafka sort
+                kafkasupervisor
+            </summary>
+            <description>result condition indexing race issue verifyandmergecheckpoint firstkey service kafka sort
+                kafkasupervisor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.indexing.kafka.supervisor.KafkaSupervisor.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6826" opendate="2019-01-09 00:00:00" fixdate="2019-04-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>DruidSchema refreshSegmentsForDataSource
+            </summary>
+            <description>DruidSchema refreshSegmentsForDataSource
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.sql.calcite.schema.DruidSchema.java</file>
+            <file type="M">org.apache.druid.sql.calcite.schema.DruidSchemaTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6867" opendate="2019-01-16 00:00:00" fixdate="2019-01-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>stack level exhaust monitor deadlock druidstatement hold druidconnection lock information
+                connection hashmap
+            </summary>
+            <description>stack level exhaust monitor deadlock druidstatement hold druidconnection lock information
+                connection hashmap
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.sql.avatica.DruidConnection.java</file>
+            <file type="M">org.apache.druid.sql.avatica.DruidStatement.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="7400" opendate="2019-04-02 00:00:00" fixdate="2020-04-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>allow metadata credentials motivation description passwordprovider password database provider
+                property case race store way condition druid field build name passwordproviders user operation username
+            </summary>
+            <description>allow metadata credentials motivation description passwordprovider password database provider
+                property case race store way condition druid field build name passwordproviders user operation username
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.metadata.DynamicConfigProvider.java</file>
+            <file type="M">org.apache.druid.metadata.MapStringDynamicConfigProvider.java</file>
+            <file type="M">org.apache.druid.metadata.PasswordProvider.java</file>
+            <file type="M">org.apache.druid.metadata.MapStringDynamicConfigProviderTest.java</file>
+            <file type="M">org.apache.druid.indexing.kafka.KafkaRecordSupplier.java</file>
+            <file type="M">org.apache.druid.indexing.kafka.supervisor.KafkaSupervisorIOConfig.java</file>
+            <file type="M">org.apache.druid.indexing.kafka.KafkaRecordSupplierTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8622" opendate="2019-10-02 00:00:00" fixdate="2019-10-18 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cluster concept deadlock slot type interface parallelindexsupervisortask capacity delegate impl
+                middlemanager property staging test subtasks subtask task druid supervisorcapacity restriction http
+                remotetaskrunner comment style issupervisor config user supervisor
+            </summary>
+            <description>cluster concept deadlock slot type interface parallelindexsupervisortask capacity delegate impl
+                middlemanager property staging test subtasks subtask task druid supervisorcapacity restriction http
+                remotetaskrunner comment style issupervisor config user supervisor
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.java.util.emitter.EmittingLogger.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.TaskRunnerWorkItem.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.config.HttpRemoteTaskRunnerConfig.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunner.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunnerResource.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.WorkerHolder.java</file>
+            <file type="M">org.apache.druid.indexing.overlord.hrtr.HttpRemoteTaskRunnerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="9292" opendate="2020-01-30 00:00:00" fixdate="2020-02-05 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>CoordinatorRuleManager rules
+            </summary>
+            <description>CoordinatorRuleManager rules
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.server.router.CoordinatorRuleManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="10005" opendate="2020-06-08 00:00:00" fixdate="2020-06-17 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum metadata week memory update sqlsegmentsmetadatamanager queryparam segment
+                forcemetadatarefresh end cache coordinator past query start datasourcename loadstatus task datasource
+                response interval nullabl pathparam ingestion
+            </summary>
+            <description>datum metadata week memory update sqlsegmentsmetadatamanager queryparam segment
+                forcemetadatarefresh end cache coordinator past query start datasourcename loadstatus task datasource
+                response interval nullabl pathparam ingestion
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.druid.client.CoordinatorServerView.java</file>
+            <file type="M">org.apache.druid.metadata.SegmentsMetadataManager.java</file>
+            <file type="M">org.apache.druid.metadata.SqlSegmentsMetadataManager.java</file>
+            <file type="M">org.apache.druid.server.coordinator.DruidCoordinator.java</file>
+            <file type="M">org.apache.druid.server.http.DataSourcesResource.java</file>
+            <file type="M">org.apache.druid.metadata.SqlSegmentsMetadataManagerTest.java</file>
+            <file type="M">org.apache.druid.server.http.DataSourcesResourceTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

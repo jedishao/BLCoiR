@@ -1,0 +1,1 @@
+producera instance configuration point endpoint file scenario camel lazysessioncreation parameter from consumer tcp localhost contain acceptor kind pool sync sample route connector true safe producer mina

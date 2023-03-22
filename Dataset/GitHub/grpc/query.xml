@@ -1,0 +1,677 @@
+<bugrepository name="grpc">
+    <bug id="17" opendate="2015-01-20 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>cancel expectation abstractclientstream rst_stream stream optimization okhttp case destruction
+                creation netty happen allocation race issue sendcancel transport max_concurrent_streams wire delay
+                header doc synchronization comment
+            </summary>
+            <description>cancel expectation abstractclientstream rst_stream stream optimization okhttp case destruction
+                creation netty happen allocation race issue sendcancel transport max_concurrent_streams wire delay
+                header doc synchronization comment
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.AbstractClientStream.java</file>
+            <file type="M">io.grpc.transport.ClientStream.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientTransport.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandlerTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientStreamTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="120" opendate="2015-02-24 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>depend newstream part nettyclienttransport deadlock oom eventloop blocking directexecutor client
+                block behavior case netty issue byte call wire task performance qps person newstream header queue frame
+            </summary>
+            <description>depend newstream part nettyclienttransport deadlock oom eventloop blocking directexecutor
+                client block behavior case netty issue byte call wire task performance qps person newstream header queue
+                frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.testing.integration.Util.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoder.java</file>
+            <file type="M">io.grpc.transport.netty.GoAwayClosedStreamException.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientTransport.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoderTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandlerTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientStreamTest.java</file>
+            <file type="M">io.grpc.transport.netty.NettyHandlerTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="238" opendate="2015-03-23 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>Race Server handler initialization
+            </summary>
+            <description>Race Server handler initialization
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.netty.NettyServer.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="330" opendate="2015-04-23 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>phase transportreportstatus failpendingstreams race ongoaway list look call cleanup stream
+                startpendingstream lock goaway thing collect pendingstream
+            </summary>
+            <description>phase transportreportstatus failpendingstreams race ongoaway list look call cleanup stream
+                startpendingstream lock goaway thing collect pendingstream
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientTransport.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="583" opendate="2015-06-30 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum transportreportstatus data usage finishstream sendcancel transport benefit rst_stream
+                cancellation stream lock synchronization okhttp frame synchronize
+            </summary>
+            <description>datum transportreportstatus data usage finishstream sendcancel transport benefit rst_stream
+                cancellation stream lock synchronization okhttp frame synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.transport.okhttp.AsyncFrameWriter.java</file>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientStream.java</file>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientTransport.java</file>
+            <file type="M">io.grpc.transport.okhttp.OutboundFlowController.java</file>
+            <file type="M">io.grpc.transport.okhttp.OkHttpClientTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="605" opendate="2015-07-08 00:00:00" fixdate="2018-09-23 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>bufferedstreamsshouldbeclosedwhentransportterminate isactive channel reorder bit reproduce
+                nettyclienthandler fix stream closure teardown close side race channelinactive check list encoder grpc
+                call condition inactivation effect report handling
+            </summary>
+            <description>bufferedstreamsshouldbeclosedwhentransportterminate isactive channel reorder bit reproduce
+                nettyclienthandler fix stream closure teardown close side race channelinactive check list encoder grpc
+                call condition inactivation effect report handling
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.netty.handler.codec.http2.Http2ConnectionHandler.java</file>
+            <file type="M">io.netty.handler.codec.http2.StreamBufferingEncoder.java</file>
+            <file type="M">io.netty.handler.codec.http2.StreamBufferingEncoderTest.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoder.java</file>
+            <file type="M">io.grpc.transport.netty.GoAwayClosedStreamException.java</file>
+            <file type="M">io.grpc.transport.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.transport.netty.BufferingHttp2ConnectionEncoderTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="696" opendate="2015-08-03 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server stack channelimpl transportshutdown channel listener main deadlock while accountserver
+                serverimpl lock client process level monitor transport inprocessserver shutdownnow information
+                inprocesstransport
+            </summary>
+            <description>server stack channelimpl transportshutdown channel listener main deadlock while accountserver
+                serverimpl lock client process level monitor transport inprocessserver shutdownnow information
+                inprocesstransport
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.ChannelImpl.java</file>
+            <file type="M">io.grpc.ServerImpl.java</file>
+            <file type="M">io.grpc.ChannelImplTest.java</file>
+            <file type="M">io.grpc.ServerImplTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="887" opendate="2015-08-27 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>npe race stream sendcancel okhttp sendframe nullpointerexception timeout example
+            </summary>
+            <description>npe race stream sendcancel okhttp sendframe nullpointerexception timeout example
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.okhttp.OkHttpClientStream.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpClientTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="999" opendate="2015-09-10 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>ServerImpl
+            </summary>
+            <description>ServerImpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1253" opendate="2015-12-04 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>sendmessage halfclose request cancellation race stream context create clientcallimpl operation send
+                illegalstateexception
+            </summary>
+            <description>sendmessage halfclose request cancellation race stream context create clientcallimpl operation
+                send illegalstateexception
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.inprocess.InProcessTransport.java</file>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.DelayedStream.java</file>
+            <file type="M">io.grpc.internal.NoopClientStream.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1343" opendate="2016-01-23 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>log android listener carl timeout result stream fire okhttp deadline discover test race start
+                nullpointerexception look mastrangelo awaitcompletion schedule fail cancellation
+                timeout_on_sleeping_server throw clientcallimpl
+            </summary>
+            <description>log android listener carl timeout result stream fire okhttp deadline discover test race start
+                nullpointerexception look mastrangelo awaitcompletion schedule fail cancellation
+                timeout_on_sleeping_server throw clientcallimpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.testing.integration.AbstractTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1408" opendate="2016-02-11 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>reason servertransportlistener ordering listener channel rule guarantee deadlock turn layer
+                solution executor today lock track order hand unlikely cost issue locking transport requirement possible
+                call base
+            </summary>
+            <description>reason servertransportlistener ordering listener channel rule guarantee deadlock turn layer
+                solution executor today lock track order hand unlikely cost issue locking transport requirement possible
+                call base
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.inprocess.InProcessChannelBuilder.java</file>
+            <file type="M">io.grpc.inprocess.InProcessTransport.java</file>
+            <file type="M">io.grpc.internal.AbstractManagedChannelImplBuilder.java</file>
+            <file type="M">io.grpc.internal.ClientTransport.java</file>
+            <file type="M">io.grpc.internal.ClientTransportFactory.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport.java</file>
+            <file type="M">io.grpc.internal.DelayedStream.java</file>
+            <file type="M">io.grpc.internal.ManagedClientTransport.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransportTest.java</file>
+            <file type="M">io.grpc.internal.DelayedStreamTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTransportManagerTest.java</file>
+            <file type="M">io.grpc.internal.TestUtils.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+            <file type="M">io.grpc.netty.NettyChannelBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyClientHandler.java</file>
+            <file type="M">io.grpc.netty.NettyClientTransport.java</file>
+            <file type="M">io.grpc.netty.NettyClientTransportTest.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpChannelBuilder.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpClientTransport.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpClientTransportTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1510" opendate="2016-03-03 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>DelayedClientTransport InProcessTransport
+            </summary>
+            <description>DelayedClientTransport InProcessTransport
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.DelayedClientTransport.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTransportManagerTest.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+            <file type="M">io.grpc.internal.FakeClock.java</file>
+            <file type="M">io.grpc.internal.TestUtils.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="1981" opendate="2016-06-25 00:00:00" fixdate="2021-04-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>maybeterminatechannel release channel listener reference timer solution executor managedchannelimpl
+                rejectedexecutionexception state deadline behavior case termination npe test race issue start pool
+                failingclienttransport scheduledexecutor call destroy_delay_seconds person clientcallimpl newcall
+            </summary>
+            <description>maybeterminatechannel release channel listener reference timer solution executor
+                managedchannelimpl rejectedexecutionexception state deadline behavior case termination npe test race
+                issue start pool failingclienttransport scheduledexecutor call destroy_delay_seconds person
+                clientcallimpl newcall
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2.java</file>
+            <file type="M">io.grpc.internal.ObjectPool.java</file>
+            <file type="M">io.grpc.internal.OobChannel.java</file>
+            <file type="M">io.grpc.internal.SingleTransportChannel.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport2Test.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2IdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2Test.java</file>
+            <file type="M">io.grpc.inprocess.InProcessChannelBuilder.java</file>
+            <file type="M">io.grpc.internal.AbstractManagedChannelImplBuilder.java</file>
+            <file type="M">io.grpc.internal.CallCredentialsApplyingTransportFactory.java</file>
+            <file type="M">io.grpc.internal.ClientTransportFactory.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplIdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpChannelBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyChannelBuilder.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2152" opendate="2016-08-10 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TransportSet DelayedClientTransport
+            </summary>
+            <description>TransportSet DelayedClientTransport
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransportTest.java</file>
+            <file type="M">io.grpc.internal.TransportSetTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2246" opendate="2016-09-09 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>side transportset issue test level custom monitor main deadlock roundrobinlb grpc hold timer
+                nameresolver lock know hello
+            </summary>
+            <description>side transportset issue test level custom monitor main deadlock roundrobinlb grpc hold timer
+                nameresolver lock know hello
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2388" opendate="2016-10-28 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>new cherry stack transportset level monitor run deadlock grpctimer encounter grpc hold timer lock
+                information consumer
+            </summary>
+            <description>new cherry stack transportset level monitor run deadlock grpctimer encounter grpc hold timer
+                lock information consumer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2453" opendate="2016-11-28 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>StatsTraceContext
+            </summary>
+            <description>StatsTraceContext
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.StatsTraceContext.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2562" opendate="2017-01-03 00:00:00" fixdate="2021-04-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>subchannel select channel mode loadbalancer solution pick stream managedchannelimpl
+                clienttransportprovider state case retry happen ideal race timing work transport call fail delay
+                selection response newstream step clientcallimpl
+            </summary>
+            <description>subchannel select channel mode loadbalancer solution pick stream managedchannelimpl
+                clienttransportprovider state case retry happen ideal race timing work transport call fail delay
+                selection response newstream step clientcallimpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2.java</file>
+            <file type="M">io.grpc.internal.ObjectPool.java</file>
+            <file type="M">io.grpc.internal.OobChannel.java</file>
+            <file type="M">io.grpc.internal.SingleTransportChannel.java</file>
+            <file type="M">io.grpc.internal.TransportSet.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+            <file type="M">io.grpc.internal.DelayedClientTransport2Test.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2IdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl2Test.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="2865" opendate="2017-03-30 00:00:00" fixdate="2018-09-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum server prominent data channel interceptor network stream executor root client okhttp
+                decompression rpc race onheader transport message something clientinterceptors delayedclienttransport
+                header callback clientcallimpl compression frame
+            </summary>
+            <description>datum server prominent data channel interceptor network stream executor root client okhttp
+                decompression rpc race onheader transport message something clientinterceptors delayedclienttransport
+                header callback clientcallimpl compression frame
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ServerCallImpl.java</file>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+            <file type="M">io.grpc.internal.ServerImplTest.java</file>
+            <file type="M">io.grpc.inprocess.InProcessTransport.java</file>
+            <file type="M">io.grpc.internal.AbstractClientStream.java</file>
+            <file type="M">io.grpc.internal.AbstractServerStream.java</file>
+            <file type="M">io.grpc.internal.AbstractStream.java</file>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ClientStream.java</file>
+            <file type="M">io.grpc.internal.DelayedStream.java</file>
+            <file type="M">io.grpc.internal.NoopClientStream.java</file>
+            <file type="M">io.grpc.internal.ServerStream.java</file>
+            <file type="M">io.grpc.internal.Stream.java</file>
+            <file type="M">io.grpc.internal.DelayedStreamTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3084" opendate="2017-06-09 00:00:00" fixdate="2022-10-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>reach channelexecutor deadlock serverstreamlistener inprocessserverstream example servercall
+                clientcall safety executor lock okhttp serverrequested close order synchronize issue
+                transportdatareceived locking inprocessclientstream callback care
+            </summary>
+            <description>reach channelexecutor deadlock serverstreamlistener inprocessserverstream example servercall
+                clientcall safety executor lock okhttp serverrequested close order synchronize issue
+                transportdatareceived locking inprocessclientstream callback care
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+            <file type="M">io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.java</file>
+            <file type="M">io.grpc.internal.ServerImplTest.java</file>
+            <file type="M">io.grpc.util.UtilServerInterceptorsTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="3207" opendate="2017-07-08 00:00:00" fixdate="2018-09-28 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>TestServiceImpl ThreadSanitizer
+            </summary>
+            <description>TestServiceImpl ThreadSanitizer
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.testing.integration.TestServiceImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5015" opendate="2018-10-29 00:00:00" fixdate="2021-07-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>subchannel fact guarantee interface routing loadbalancer helper synchronizationcontext client model
+                healthcheckingloadbalancerfactory implementor case requestconnection subchannelpicker health google grpc
+                caller synchronization threading logic handlesubchannelstate party createsubchannel
+            </summary>
+            <description>subchannel fact guarantee interface routing loadbalancer helper synchronizationcontext client
+                model healthcheckingloadbalancerfactory implementor case requestconnection subchannelpicker health
+                google grpc caller synchronization threading logic handlesubchannelstate party createsubchannel
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.LoadBalancer.java</file>
+            <file type="M">io.grpc.SynchronizationContext.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+            <file type="M">io.grpc.SynchronizationContextTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplIdlenessTest.java</file>
+            <file type="M">io.grpc.internal.ManagedChannelImplTest.java</file>
+            <file type="M">io.grpc.internal.AutoConfiguredLoadBalancerFactory.java</file>
+            <file type="M">io.grpc.internal.ServiceConfigUtil.java</file>
+            <file type="M">io.grpc.util.ForwardingLoadBalancer.java</file>
+            <file type="M">io.grpc.util.ForwardingLoadBalancerTest.java</file>
+            <file type="M">io.grpc.services.HealthCheckingLoadBalancerFactory.java</file>
+            <file type="M">io.grpc.services.HealthCheckingLoadBalancerFactoryTest.java</file>
+            <file type="M">io.grpc.internal.PickFirstLoadBalancerTest.java</file>
+            <file type="M">io.grpc.util.RoundRobinLoadBalancerTest.java</file>
+            <file type="M">io.grpc.grpclb.CachedSubchannelPool.java</file>
+            <file type="M">io.grpc.grpclb.GrpclbLoadBalancer.java</file>
+            <file type="M">io.grpc.grpclb.GrpclbState.java</file>
+            <file type="M">io.grpc.grpclb.SubchannelPool.java</file>
+            <file type="M">io.grpc.grpclb.CachedSubchannelPoolTest.java</file>
+            <file type="M">io.grpc.grpclb.GrpclbLoadBalancerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5450" opendate="2019-03-08 00:00:00" fixdate="2019-06-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>datum call impl onerror race
+            </summary>
+            <description>datum call impl onerror race
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.ManagedChannelImpl.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6601" opendate="2020-01-14 00:00:00" fixdate="2020-04-25 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server waiting vertx deadlock openjdk ggpr serverimpl await lock client block connection
+                promisetask jvm start runtime monitor icedtea grpc initchannel alpine transportcreated nettyserver
+            </summary>
+            <description>server waiting vertx deadlock openjdk ggpr serverimpl await lock client block connection
+                promisetask jvm start runtime monitor icedtea grpc initchannel alpine transportcreated nettyserver
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.netty.NettyServer.java</file>
+            <file type="M">io.grpc.netty.NettyServerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="6641" opendate="2020-01-24 00:00:00" fixdate="2021-06-03 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server runnable usecase task eventloop port start lock deadlock transport mechanism execute
+            </summary>
+            <description>server runnable usecase task eventloop port start lock deadlock transport mechanism execute
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.inprocess.InProcessServer.java</file>
+            <file type="M">io.grpc.inprocess.InProcessServerBuilder.java</file>
+            <file type="M">io.grpc.internal.InternalServer.java</file>
+            <file type="M">io.grpc.internal.ServerImpl.java</file>
+            <file type="M">io.grpc.internal.ServerImplBuilder.java</file>
+            <file type="M">io.grpc.inprocess.InProcessServerBuilderTest.java</file>
+            <file type="M">io.grpc.inprocess.InProcessTransportTest.java</file>
+            <file type="M">io.grpc.inprocess.StandaloneInProcessTransportTest.java</file>
+            <file type="M">io.grpc.internal.AbstractTransportTest.java</file>
+            <file type="M">io.grpc.internal.ServerImplBuilderTest.java</file>
+            <file type="M">io.grpc.internal.ServerImplTest.java</file>
+            <file type="M">io.grpc.netty.InternalNettyServerBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyServer.java</file>
+            <file type="M">io.grpc.netty.NettyServerBuilder.java</file>
+            <file type="M">io.grpc.netty.NettyClientTransportTest.java</file>
+            <file type="M">io.grpc.netty.NettyServerBuilderTest.java</file>
+            <file type="M">io.grpc.netty.NettyServerTest.java</file>
+            <file type="M">io.grpc.netty.NettyTransportTest.java</file>
+            <file type="M">io.grpc.okhttp.OkHttpTransportTest.java</file>
+            <file type="M">io.grpc.internal.testing.TestUtils.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8190" opendate="2021-05-19 00:00:00" fixdate="2021-11-09 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>grpc hang due to the ELG thread placement of NameResolver refresh method
+            </summary>
+            <description>grpc hang due to the ELG thread placement of NameResolver refresh method
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">api.src.main.java.io.grpc.NameResolver.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8536" opendate="2021-09-20 00:00:00" fixdate="2021-12-22 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server transmitwindowfull android update gettile numoutgoingbyte binderchannel linux client binder
+                flow process transaction_bytes_window read bindertransport byte sendtransaction handleacknowledgedbytes
+                control grpc transmitwindowfull environment response interaction telemetry acknowledgedoutgoingbyte
+            </summary>
+            <description>server transmitwindowfull android update gettile numoutgoingbyte binderchannel linux client
+                binder flow process transaction_bytes_window read bindertransport byte sendtransaction
+                handleacknowledgedbytes control grpc transmitwindowfull environment response interaction telemetry
+                acknowledgedoutgoingbyte
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.binder.internal.BinderTransport.java</file>
+            <file type="M">io.grpc.binder.internal.FlowController.java</file>
+            <file type="M">io.grpc.binder.internal.FlowControllerTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8565" opendate="2021-09-29 00:00:00" fixdate="2021-12-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>devtools_java_launcher producerwrapper javamain jnienv vmthreadroutine isclosed producerrunner
+                runjavamaininjvmthread threadsanitizer argumentencoding launchermainimpl launchermain isready stub
+                onready frontbinder tsan futureobjectinternal std threadtype call compressedtuple userrequest
+                pthread_create launcherimpl
+            </summary>
+            <description>devtools_java_launcher producerwrapper javamain jnienv vmthreadroutine isclosed producerrunner
+                runjavamaininjvmthread threadsanitizer argumentencoding launchermainimpl launchermain isready stub
+                onready frontbinder tsan futureobjectinternal std threadtype call compressedtuple userrequest
+                pthread_create launcherimpl
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.internal.AbstractStream.java</file>
+            <file type="M">io.grpc.internal.ClientCallImpl.java</file>
+            <file type="M">io.grpc.internal.ServerCallImpl.java</file>
+            <file type="M">io.grpc.internal.ClientCallImplTest.java</file>
+            <file type="M">io.grpc.internal.ServerCallImplTest.java</file>
+            <file type="M">io.grpc.netty.NettyStreamTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8642" opendate="2021-11-01 00:00:00" fixdate="2022-10-21 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>getsubscribedresourcesmetadata csdsservice issue bad resource line dumpldsconfig
+                listenersconfigdump insufficient call csds synchronization lds xdsclient consider getcurrentversion
+                ldsconfig synchronize
+            </summary>
+            <description>getsubscribedresourcesmetadata csdsservice issue bad resource line dumpldsconfig
+                listenersconfigdump insufficient call csds synchronization lds xdsclient consider getcurrentversion
+                ldsconfig synchronize
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.xds.AbstractXdsClient.java</file>
+            <file type="M">io.grpc.xds.ClientXdsClient.java</file>
+            <file type="M">io.grpc.xds.CsdsService.java</file>
+            <file type="M">io.grpc.xds.XdsClient.java</file>
+            <file type="M">io.grpc.xds.CsdsServiceTest.java</file>
+            <file type="M">io.grpc.xds.ClientXdsClientTestBase.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="8914" opendate="2022-02-11 00:00:00" fixdate="2022-06-29 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>server instance binderservertransport outgoingbinder android channel deadlock ontransact outbound
+                peer lock handletransaction block binder prio ucscount sendacknowledgebyte parcel process
+                binderchannelbuilder bindertransport locking transact core ibinder binderclienttransport
+                handletransaction systid
+            </summary>
+            <description>server instance binderservertransport outgoingbinder android channel deadlock ontransact
+                outbound peer lock handletransaction block binder prio ucscount sendacknowledgebyte parcel process
+                binderchannelbuilder bindertransport locking transact core ibinder binderclienttransport
+                handletransaction systid
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">io.grpc.binder.internal.BinderTransportTest.java</file>
+            <file type="M">io.grpc.binder.internal.BinderTransport.java</file>
+            <file type="M">io.grpc.binder.internal.OneWayBinderProxy.java</file>
+            <file type="M">io.grpc.binder.internal.Outbound.java</file>
+            <file type="M">io.grpc.binder.internal.ParcelHolder.java</file>
+            <file type="M">io.grpc.binder.internal.OneWayBinderProxyTest.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

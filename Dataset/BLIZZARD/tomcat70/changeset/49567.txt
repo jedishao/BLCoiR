@@ -1,0 +1,5 @@
+org.apache.catalina.connector.CoyoteAdapter.java
+org.apache.catalina.connector.Request.java
+org.apache.catalina.core.AsyncContextImpl.java
+org.apache.coyote.http11.Http11Processor.java
+org.apache.catalina.core.TestAsyncContextImpl.java

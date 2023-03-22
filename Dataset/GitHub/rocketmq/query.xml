@@ -1,0 +1,75 @@
+<bugrepository name="rockermq">
+    <bug id="1986" opendate="2020-05-13 00:00:00" fixdate="2022-10-02 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>indexnum indexservice sub request blocker hashslotnum description readwritelock mailing feature fix
+                raise lock communication issue getandcreatelastindexfile getandcreatelastindexfile indexfile
+                lastupdateendphyoffset improvement separator environment filename report information step threadsafe
+                reputmessageservice
+            </summary>
+            <description>indexnum indexservice sub request blocker hashslotnum description readwritelock mailing feature
+                fix raise lock communication issue getandcreatelastindexfile getandcreatelastindexfile indexfile
+                lastupdateendphyoffset improvement separator environment filename report information step threadsafe
+                reputmessageservice
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.broker.filter.ConsumerFilterManager.java</file>
+            <file type="M">org.apache.rocketmq.common.message.MessageExt.java</file>
+            <file type="M">org.apache.rocketmq.store.StoreStatsService.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexService.java</file>
+            <file type="M">org.apache.rocketmq.store.StoreStatsServiceTest.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexServiceTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4143" opendate="2022-04-10 00:00:00" fixdate="2022-08-12 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>indexservice file filelock indexfile lock unnecessary
+            </summary>
+            <description>indexservice file filelock indexfile lock unnecessary
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.store.index.IndexFile.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexService.java</file>
+            <file type="M">org.apache.rocketmq.store.index.IndexFileTest.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="4686" opendate="2022-07-25 00:00:00" fixdate="2022-07-26 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>log release tell update explanation layer putkvconfig lock state value key case info putkvconfig
+                item issue suggestion environment namespace information step position config kvconfigmanager
+            </summary>
+            <description>log release tell update explanation layer putkvconfig lock state value key case info
+                putkvconfig item issue suggestion environment namespace information step position config kvconfigmanager
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.namesrv.kvconfig.KVConfigManager.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="5039" opendate="2022-09-09 00:00:00" fixdate="2022-09-20 00:00:00" resolution="Fixed">
+        <buginformation>
+            <summary>os_prio instance idea construct localhostname brokeridentity brokercontroller lock inetaddress
+                state prio case
+            </summary>
+            <description>os_prio instance idea construct localhostname brokeridentity brokercontroller lock inetaddress
+                state prio case
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.apache.rocketmq.common.BrokerIdentity.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

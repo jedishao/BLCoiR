@@ -1,0 +1,1 @@
+metastore temp internally manager session ctc_txnid query ctc_partition insert functionality store acid into hour tmp today statement lock ignore definition value table

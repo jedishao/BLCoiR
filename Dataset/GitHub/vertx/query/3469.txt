@@ -1,0 +1,1 @@
+failure pool host http client self callback deadlock close

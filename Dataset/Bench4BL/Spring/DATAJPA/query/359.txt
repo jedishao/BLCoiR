@@ -1,0 +1,1 @@
+annotation datum maven documentation query findone update dataobject methodif suffix findall sample crud output findoneandlock derby lock operation class  lock apos

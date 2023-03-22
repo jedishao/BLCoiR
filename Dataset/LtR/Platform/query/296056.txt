@@ -1,0 +1,1 @@
+beginrulethe scheduling rule deadlock syncexec attempt produce case

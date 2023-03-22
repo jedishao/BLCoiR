@@ -1,0 +1,1 @@
+process argument sqlserverexception dbo,table_name query gettableproperty deadlock error finder result partition_schemes resultsetexception partition testsqlserverintegrationsmoketest failure schema_id name lock victim data_compression_desc transaction table

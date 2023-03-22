@@ -1,0 +1,43 @@
+<bugrepository name="SGF">
+    <bug id="231" opendate="2013-11-15 10:23:09" fixdate="2014-01-21 18:44:02" resolution="Fixed">
+        <buginformation>
+            <summary>illegalargumentexception configuration ordering update error parallel alert attribute event
+                dispatcher policy order init wan batch requirement system sender maximum queue gateway apos
+            </summary>
+            <description>illegalargumentexception configuration ordering update error parallel alert attribute event
+                dispatcher policy order init wan batch requirement system sender maximum queue gateway apos
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.gemfire.config.GemfireV7GatewayNamespaceTest.java</file>
+            <file type="M">org.springframework.data.gemfire.wan.GatewaySenderFactoryBean.java</file>
+            <file type="M">org.springframework.data.gemfire.wan.AsyncEventQueueFactoryBeanTest.java</file>
+            <file type="M">org.springframework.data.gemfire.wan.GatewaySenderFactoryBeanTest.java</file>
+            <file type="M">org.springframework.data.gemfire.wan.AbstractWANComponentFactoryBean.java</file>
+            <file type="M">org.springframework.data.gemfire.wan.AsyncEventQueueFactoryBean.java</file>
+        </fixedFiles>
+    </bug>
+    <bug id="280" opendate="2014-04-18 22:52:57" fixdate="2014-04-18 23:24:13" resolution="Fixed">
+        <buginformation>
+            <summary>ContinuousQueryListenerContainer class safe
+            </summary>
+            <description>ContinuousQueryListenerContainer class safe
+            </description>
+            <version>1.1.0</version>
+            <fixedVersion>1.1.0</fixedVersion>
+            <type>Bug</type>
+        </buginformation>
+        <fixedFiles>
+            <file type="M">org.springframework.data.gemfire.fork.CacheServerProcess.java</file>
+            <file type="M">org.springframework.data.gemfire.listener.adapter.ContainerXmlSetupTest.java</file>
+            <file type="M">org.springframework.data.gemfire.listener.ContinuousQueryListener.java</file>
+            <file type="M">org.springframework.data.gemfire.listener.adapter.ContinuousQueryListenerAdapter.java</file>
+            <file type="M">org.springframework.data.gemfire.config.GemfireListenerContainerParser.java</file>
+            <file type="M">org.springframework.data.gemfire.listener.ContinuousQueryListenerContainer.java</file>
+            <file type="M">org.springframework.data.gemfire.listener.ContinuousQueryDefinition.java</file>
+        </fixedFiles>
+    </bug>
+</bugrepository>

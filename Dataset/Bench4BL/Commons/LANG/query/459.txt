@@ -1,0 +1,1 @@
+HashCodeBuilder isRegistered identityHashCode
