@@ -1,6 +1,1 @@
 Hanging thread when using RabbitTransactionManager with a listener container where channelTransacted=true.
-When using the following configuration, the message will never be acknowledged:
-
-Attached is a zip file with a sample demo project that reproduces the issue.
-PS: The test was done with both 1.1.1.RELEASE and 1.1.2.BUID-SNAPSHOT.
-This may be related to AMQP-190.
