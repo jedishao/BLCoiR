@@ -1,4 +1,1 @@
 Transaction Synchronization registration issue with injected JMSContext.
-The JMSContextProducer registers a tx Synchronization object directly on the Transaction. 
-That leads to issue when other parts register other Synchronization objects later on.
-The JSMContextProducer must switch to using TransactionSynchronizationRegistry instead to register syncs.

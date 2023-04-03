@@ -1,4 +1,5 @@
 Deadlock found in TransportSet
 When running benchmarks where the client started up faster than the server.
-The first few calls failed as unavailable.  Our internal deadlock detector seems to think there is a deadlock around here:
+The first few calls failed as unavailable.
+Our internal deadlock detector seems to think there is a deadlock around here:
 Deadlock(s) found:

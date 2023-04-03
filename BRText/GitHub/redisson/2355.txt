@@ -1,18 +1,1 @@
 RedissonLock.unlock() hangs infinitely waiting for RedissonPromise
-Expected behavior
-Calls to RedissonLock.unlock() are expected to finish after the lock has been deleted from Redis.
-
-Actual behavior
-We have experienced several threads locked forever waiting inside calls to RedissonLock.unlock() in our production system within a few hours after upgrading to Redisson 3.11.4 from Redisson 3.8.0.
-
-Steps to reproduce or test case
-Unfortunately I am unable to reproduce the problem on my own computer. We have however experienced it on several of our production servers within just a few hours after starting our newer version of the application with updated Redisson version. We upgraded from 3.8.0 in order to receive fixes for bug #1966 - Deadlock after Redis timeout, which we also experienced a couple of times. However right after start we have found some (29) exceptions in our logs coming from internal redisson threads:
-
-After that we were investigating issues with blocked threads by analyzing thread dumps. All stuck threads had exactly the same stack trace as below:
-
-After examining the source code of RedissonLock.java we have found that the NullPointerException occurs probably due to missing timeout object inside task:
-
-I'm not sure if it would solve the root cause why task.getTimeout() returns null, but calls to cancelExpirationRenewal method should not fail with an exception, otherwise, e.g. in RedissonLock.unlockAsync method the future will never receive a result (or a failure):
-Please add null check for timeout inside the ExpirationEntry object.
-
-We had to return to 3.8.0 version because of this problem. I think it is quire severe.
