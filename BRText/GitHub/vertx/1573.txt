@@ -1,4 +1,4 @@
-Blocked thread warning when opening or closing an AsyncFile 
+Blocked thread warning when opening or closing an AsyncFile
 Users have reported blocked thread warning when opening or closing an AsyncFile.
 Here are example stack traces:
 
