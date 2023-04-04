@@ -1,6 +1,7 @@
 Deadlock in global lookup cache.
 Had an issue with a query node which ended up reporting a deadlock on kill -3 I'm still investigating and intend to make sure #3071 avoids this case.
 Found one Java-level deadlock:
+NamespaceExtractionCacheManager
 waiting for ownable synchronizer 0x00000004c42eaba8, (a java.util.concurrent.locks.ReentrantLock$NonfairSync), which is held by "topN_REDACTED_[2016-09-01T15:00:00.000Z/2016-09-01T16:00:00.000Z]"
 waiting for ownable synchronizer 0x00000004c42eacc8, (a java.util.concurrent.locks.ReentrantLock$NonfairSync), which is held by "topN_REDACTED_[2016-09-01T15:00:00.000Z/2016-09-01T16:00:00.000Z]"
 waiting for ownable synchronizer 0x00000004c42eaba8, (a java.util.concurrent.locks.ReentrantLock$NonfairSync), which is held by "topN_REDACTED_[2016-09-01T15:00:00.000Z/2016-09-01T16:00:00.000Z]"
