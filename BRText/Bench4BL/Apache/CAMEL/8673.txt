@@ -1,6 +1,6 @@
 ConcurrentModificationException when creating dynamic routesThis ticket refers to CAMEL-7836.
 The fix seems to be slightly wrong. (We still get the ConcurrentModificationException)
-The cause seems to be in removeRouteCollection and addRouteCollection. See here:
+The cause seems to be in removeRouteCollection and addRouteCollection.
 
 Here the code synchronizes on the routes parameter, but should be on this.routes (as it getRoutes() does).
 The same in addRouteCollection().

@@ -1,15 +1,1 @@
 grpc hang due to the ELG thread placement of NameResolver refresh method
-What version of gRPC are you using?
-What operating system (Linux, Windows, …) and version?
-Both Linux and Windows
-What did you do?
-Implement a customized NameResolver which extends NameResolver, let's call it "CustomizedNameResolver".  In the override refresh() method, it makes a grpc call to service discovery agent to retrieve a list of service instances and then resolve them.
-What did you expect to see?
-Expect the customized namer resolver works whenever being called and not hang in the existing grpc call.
-What did you see instead?
-grpc calls hang in the customized name resolver, particularly on the grpc calling inside overridden refresh() method.
-We did a thread dump analysis, the problem is the grpc call inside overridden refresh() method is placed in gRPC ELG thread instead of worker thread, which in turns blocks all gRPC traffic causing grpc call hang indefinitely.
-According to comment on refresh() method, the document does not clearly states that you must delegate a grpc call to a worker/background thread to not block other grpc calls.
-First, is the placement of grpc call inside overridden refresh() method on the grpc ELG thread an expected behavior? Why cannot we delegate it to worker thread by default?
-Second, some guides and explanations could be added to the document on NameResolver to further clarify.
-Attach a thread dump on ELG for your reference. Thank you.
