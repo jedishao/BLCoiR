@@ -1,12 +1,1 @@
-Performance: WeldDeployment.getBeanDeploymentArchive method is synchronized(Wildfly 10.0.0.FINAL).
-During the performance test of my app (50 concurrent users with jmeter). 
-I am running into the following issue:
-There are locked threads in the method WeldDeployment.getBeanDeploymentArchive(). 
-Looking the code, this method is synchronized, so it makes sense. 
-The question is, is this the expected behavior or this is a bug. 
-In both cases is there any workaround to overcome this limitation?
-STACK TRACE:
-....
-org.jboss.as.weld.WeldProvider$CdiImpl.getBeanManager():73
-org.jboss.as.weld.WeldProvider$CdiImpl.getBeanManager():93
-org.jboss.as.weld.deployment.WeldDeployment.getBeanDeploymentArchive():226 
+Performance WeldDeployment.getBeanDeploymentArchive method is synchronized.
