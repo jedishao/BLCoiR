@@ -1,4 +1,1 @@
 Deadlock in NavigatorContentServiceContentProvider.
-We are using an adopting product and one of our users encountered this deadlock when starting up their workspace:
-
-I will attach the stack trace.

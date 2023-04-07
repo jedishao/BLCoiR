@@ -1,10 +1,5 @@
 XML Datasource is not Thread-Safe when passing data as InputStream.
 
-When passing XML-data to the IRunTask in a multi-threaded application, some of the resulting .rptdocument files will be corrupted.
-
-The error only occures when passing an InputStream using the setAppContext method:
-
-
 Reproducible: Sometimes
 
 Steps to Reproduce:

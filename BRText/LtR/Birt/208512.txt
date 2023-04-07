@@ -1,1 +1,2 @@
-Classes in package org.eclipse.birt.data.engine.odaconsumer have multithreads issuesClasses in package org.eclipse.birt.data.engine.odaconsumer are not thread-safe.
+Classes in package org.eclipse.birt.data.engine.odaconsumer have multithreads issues.
+Classes in package org.eclipse.birt.data.engine.odaconsumer are not thread-safe.

@@ -1,6 +1,2 @@
 org.eclipse.swt.internal.ole.win32.ComObject misbehavior in multithreaded application.
 org.eclipse.swt.internal.ole.win32.ComObject constructor accesses to Callbacks and ObjectMap static fields.
-In multithreaded applications this sometimes leads to org.eclipse.swt.SWTError exceptions with message "No more callbacks".
-
-Solution
-Enclose constructor code in synchronized block

@@ -1,1 +1,1 @@
-Classloader deadlock related to org.eclipse.birt.core.framework.osgi.OSGILauncher$ChildFirstURLClassLoader.
+Classloader deadlock related to org.eclipse.birt.core.framework.osgi.OSGILauncher.ChildFirstURLClassLoader.

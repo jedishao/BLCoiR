@@ -1,4 +1,3 @@
 selection is lost in launch view after stepping into sync block.
 using the following code, selection in the launch view is lost after stepping into the sync block with show monitors turned on.
-
 will attach a screenshot.

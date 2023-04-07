@@ -1,11 +1,2 @@
 ModifiersPattern.getModifierFlag() is not thread safe.
-Build Identifier: org.aspectj.weaver_1.6.0.20080423100000.jar
 ModifiersPattern.getModifierFlag() is a non-synchronized static method using the static Map modifierFlags.
-This can lead to a ConcurrentModificationException when this code is executed in a multi-threaded environment.
-A stack trace showing the erroneous behavior is appended at the end of this bug report.
-In our case multithreading is introduced by using Spring DM.
-This leads to many application contexts being initialized in parallel.
-Each of them can contain pointcut expression, which are processed in independent threads.
-Spring AOP enters the "AspectJ world" calling PointcutParser.parsePointcutExpression().
-
-Since there is no guarantee that a ConcurrentModificationException is thrown it is also possible that concurrent read/write accesses to the modifierFlags map are not recognized and incorrect values are used.

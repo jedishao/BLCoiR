@@ -1,4 +1,4 @@
-RegistrySharedObject#handleAddRegistrationcan throw NPE.
+RegistrySharedObject#handleAddRegistration can throw NPE.
 In this code:
 XMPPRemoteServiceAdapterFactory#XMPPRegistrySharedObject#getLocalContainerID()
 returns container ID as connected ID:

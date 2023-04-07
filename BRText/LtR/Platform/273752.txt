@@ -1,6 +1,1 @@
 syncExec in org.eclipse.ui.internal.navigator.NavigatorContentService.getSourceOfContribution(Object) causes deadlock in test suite.
-The Platform UI test suite does not complete anymore - it hangs in the org.eclipse.ui.tests.dynamicplugins.EditorTests.testEditorClosure() test case.
-The hang is in the following code:
-
-
-The flag[0] is never set to true, which probably means that the PACKAGES_REFRESHED event is not fired.
