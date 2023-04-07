@@ -1,2 +1,2 @@
 Backport "Handle race in QueryStateTimer".
-backport trinodb/trino#841.  This should fix failures like
+backport trinodb/trino.  This should fix failures like

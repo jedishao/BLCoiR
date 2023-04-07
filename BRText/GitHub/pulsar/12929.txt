@@ -1,12 +1,1 @@
-Deadlock in internalDeleteSubscription  in metadata-store callback thread.
-Describe the bug
-When doing certain topic operations (for e.g., delete-subscription), it can result in a deadlock metadata-store callback thread.
-Please see the stack trace below.
-parking to wait for  <0x00000000ffe95e98> (a java.util.concurrent.CompletableFuture$Signaller)
-The issue is similar to: #12726
-To Reproduce
-This is a race condition, I have not been able to come up with a reliable way to reproduce this.
-But it is easily reproducible in a 3-node broker setup, creating and deleting topic consumers.
-Expected behavior
-The metadata-store callback thread should not deadlock.
-If applicable, add screenshots to help explain your problem.
+Deadlock in internalDeleteSubscription in metadata-store callback thread.
