@@ -1,5 +1,3 @@
 javax.el.CompositeELResolver synchronization issue.
 Synchronize change in CompositeELResolver.add.
-The javax.el.CompositeELResolver.add method needs to synchronize around the update to the resolvers.
-Also, it makes sense to increase the default size of the ELResolver array since even the jasper EL adds 5 ELResolvers.
 I propose a default of 8.
