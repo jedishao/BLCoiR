@@ -1,17 +1,5 @@
 Deployment of an application with 'ROOT' context hangs forever.
-Hi,
-The scenario is the following:
-- I have running Tomcat 7.0.28
-- I deploy an application with 'ROOT' context
-- The deployment hangs forever.
-When taking a tread dump, the following is suspicious:
 - parking to wait for  <0x00000007d80f0108> (a java.util.concurrent.locks.ReentrantReadWriteLock$NonfairSync)
-As you can see
 - A read lock is acquired at org.apache.catalina.core.ContainerBase.fireContainerEvent(ContainerBase.java:1425)
-- Then every listener is invoked to process the container event
 - Then AccessLogListener is invoked org.apache.catalina.core.StandardEngine$AccessLogListener.uninstall(StandardEngine.java:463)
 - The latter causes a call for a write lock org.apache.catalina.core.ContainerBase.removeContainerListener(ContainerBase.java:1071)
-- Unfortunately in the ReentrantReadWriteLock it is stated that upgrade from read to write lock is not possible
-"Reentrancy also allows downgrading from the write lock to a read lock, by acquiring the write lock, then the read lock and then releasing the write lock.
-However, upgrading from a read lock to the write lock is not possible."
-Regards
