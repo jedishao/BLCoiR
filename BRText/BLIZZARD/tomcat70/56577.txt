@@ -4,7 +4,4 @@ Thus, no more than corePoolSize threads will ever be created.
 (And the value of the maximumPoolSize therefore doesn't have any effect).
 The corePoolSize has a default value to be 1, though it could be changed by context parameter, it's still hard to find an optimized value.
 This will create an issue if using the SendHandler to close the session after sending the last message.
-An example stack trace is like the following:
-parking to wait for  <0x000000075d52f018> (a java.util.concurrent.CountDownLatch$Sync)
-locked <0x000000075d7dc388> (a java.lang.Object)
 If all the threads are in this state, there will be no available threads to clear any SendHandler and all Remote.send methods would throw TimeoutException though actually the clients could receive the messages.

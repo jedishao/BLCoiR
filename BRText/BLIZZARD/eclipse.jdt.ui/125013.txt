@@ -1,15 +1,5 @@
 deadlock in PreferencesAdapter.firePropertyChangeEvent.
-- started target workbench, but it never came up
-- selected threads from the vm dump below.
 - the trace shows that the syncExec call from PreferenceForwarder waits forever while holding the JavaModelManager waited for by the main thread
 -> the main thread waits for the lock
 -> the reconciler waits forever and is never woken up by the main thread
 -> Not exactly a deadlock, but similar in result.
-org.eclipse.core.launcher.Main at localhost:32917 (Suspended)
-Thread [main] (Suspended)
-waiting for: JavaModelManager  (id=80)
-owns: HashMap<K,V>  (id=163)
-waiting for: RunnableLock  (id=162)
-owns: JavaModelManager  (id=80)
-owns: Object  (id=132)
-waiting for: RunnableLock  (id=131)

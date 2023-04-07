@@ -1,5 +1,4 @@
 Illegal thread state when debugging to conditional BP on startup.
-Further strangeness to bug 64951
 * condition is i == 57
 * change to Java perspective
 * shutdown workspace

@@ -1,5 +1,4 @@
 Race Condition in HttpSession#invalidate() / HttpServletRequest#getSession(boolean).
-Created attachment 30798 [details]
 code flow that exhibits the race condition
 For session fixation protection, we have to discard a user's session and create a new one whenever the user's login state changes.
 For this we rely on Spring Security's SessionFixationProtectionStrategy that, at its core, uses the following commands:
@@ -12,7 +11,6 @@ When I investigated this issue, I found there is in fact a race condition if two
 I attached a TXT file that illustrates the code flow that leads to the race condition: When thread B calls session.invalidate(), the call returns immediately becuase the session is already in the "expiring" state.
 Since the session is not invalid yet, the call to request.getSession(true) won't create a new session, though.
 So in effect, thread B cannot obtain a new session.
-The documentation at http://tomcat.apache.org/tomcat-7.0-doc/servletapi/ has no indication that a session may not yet be invalid when session.invalidate() returns.
 The session interface neither provides a way to detect "expiring" session.
 The error message appears only once in the production log files that go some weeks back, so it seems to be an infrequent event.
 Nevertheless, it should be possible to implement session fixation without a race condition.

@@ -1,5 +1,4 @@
 Make ASTs thread-safe for multiple readers.
-20040413
 Found this exception in the console.
 My guess is that came from visiting the AST from multiple threads.
 The cursor managment doesn't seem to be thread save.
