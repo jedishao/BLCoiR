@@ -1,0 +1,18 @@
+125572	ECF Generic provider thread interlock version 0 5 version 0 6 ECF generic provider client app interlocked on two mutexes SyncSOClientContainer connect line 162 TimeSyncTask initSyncService line 48 Client isConnected line 213 SyncSOClientContainer killConnection line 742 TimeSyncTask sendTimeSyncMessage line 67
+223484	disconnect XMPP server threads not disposing org eclipse ecf daemon thread
+229237	XMPPS accounts contacts list view MultiRosterView addContainer asyncExec retrieveServices bug fix
+232530	ECF 2 0 0 v20080514 ChatSession read method whitespace exception bug localization
+265413	JMDNSDiscoveryContainer org eclipse ecf provider jmdns container JMDNSDiscoveryContainer dead-lock issues javax jmdns JmDNS lock objects threads
+265415	dead-lock javax jmdns impl JmDNSImpl unregisterService(ServiceInfo) JMDNS 2 1 javax jmdns impl tasks Canceler synchronization object
+267035	ReplicaSharedObjectDescription toString not thread safe Steps to reproduce synchronize toString method
+273357	Datashare APIs implementation Java 1 4 NIO abstract attachment 132859 details known issues room for improvement
+273819	containers instantiated every time wizard opens container not disposed  wizard closes  thread started  bug 266817
+299849	RegistrySharedObject handleAddRegistration NPE XMPPRemoteServiceAdapterFactory XMPPRegistrySharedObject getLocalContainerID XMPPContainer remoteServerID disconnect packet thread A main thread
+321468	RegistrySharedObject synchronous dispatch of remote service listener events leading to deadlock
+321469	DiscoveredServiceTracker ListenerQueue Thread ThreadGroup services distribution bundle stopped cleanup clean up explicitly stopped bug localization
+323208	Distribution Provider exceeds startup time limit Eclipse ECF jmdns Zookeeper exception multiple hosts
+326949	getRemoteServiceReferences method in remote service container adapter api
+337973	zoodiscovery Remote service undiscovered concurrency bug ReadRoot this readKeeper is null line 70 ReadRoot java race condition process method synchronized thread safe WatchedEvent state Disconnected state Expired state SyncConnected connect method removeZooKeeper watchManager Severity Major reproducible sometimes
+341818	System out of thread resources unable to create new native thread bug localization org eclipse ecf examples remoteservices hello consumer rs org eclipse ecf examples remoteservices hello host rs internal error has occurred reproducible close loop
+348487	slow JMDNS Discovery Thread Java process exit delay  daemon threads  waiting on reference queues  debug thread dump
+432662	ECFRuntimeException Unable to instantiate schemes for HttpClient multi-threaded application org eclipse ecf internal provider filetransfer httpclient4 Activator synchronized modifier org eclipse ecf provider filetransfer httpclient4_1 0 300 v20140228-1838

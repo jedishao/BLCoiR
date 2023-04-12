@@ -1,0 +1,2 @@
+976	SimpleELContext thread-safe javax.el.Context ELContext object thread-safe ELDelegatingPropertyResolver ELDelegatingVariableResolver NullPointerException getItemLabel patch
+1437	concurrent threads override evaluation context NullPointerException org.springframework.expression.spel.ast org.springframework.binding.expression.spel.SpringELExpression update evaluation context with root object thread safety

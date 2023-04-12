@@ -1,0 +1,42 @@
+545	ArrayList Vector single-threaded Hive code inefficient unsynchronized
+3057	metastore.HiveMetaStore HMSHandler shutdown RawStore null set thread local
+3408	Hive race condition HashSet QueryPlan
+4000	Hive client infinite loop static HashMaps race conditions
+7011	split generation inputformat cache HiveInputFormat Tez thread safe concurrent access
+7341	supporting table replication across HCatalog instances in IR-based systems.
+8440	Hiveserver block handling concurrent requests in HiveServer: org.apache.hadoop.hive.ql cause Hiveserver heap large number of ETL tasks in queue Hadoop cluster slots free.
+9199	excessive exclusive lock in DummyTxnManager for DDLs with unnecessary locking contention caused by complete writeEntity in createTable operation
+9598	java.lang.IllegalMonitorStateException java.util.concurrent.locks.ReentrantLock$Sync.tryRelease ResultSet.closed called Statement.close called
+10483	insert overwrite partition deadlocks with DbTxnManager S X locks on select statement
+11036	DataNucleus race condition Metastore hang concurrent query workload deadlock
+11616	DelegationTokenSecretManager objectstore concurrency issues metastore log exception hivemetastore saslServer.startDelegationTokenSecretManager baseHandler.getMS ServerMode.METASTORE concurrent issue
+12238	Thread-safety errors VectorUDFDate IR-based
+12248	DBTokenStore RawStore ObjectStore thread-safe race condition DN PersistenceManager ThreadLocal org.apache.hadoop.hive.metastore.model.MDelegationToken detached
+12266	ACID locks locks locking enabled client Hive CLI Beeline command shell release timeout hooks dies
+12409	SessionState.initTxnMgr thread safety synchronized HS2 multiple threads HIVE-11402
+12529	HiveTxnManager.acquireLocks method with max-wait-time timeout exception
+12620	Acid module improvements: DBLockManager unlock failure due to timeout Logic to detect interleaved transactions locks in read-only auto-commit mode TxnHandler checkLock using 1 connection TxnHandler timeOutLocks refactoring for lock expiration logging TxnHandler getTxnIdFromLockId inclusion if lock id not found TxnHandler checkRetryable exception logging TxnHandler lock with MetaException including lockid
+12768	thread safety binary sortable serde decimal deserialization static decimal buffer issues
+12797	Synchronization issues tez llap session pool hs2 HIVE-12674 shutting down session pools issues
+12904	LLAP deadlock in task scheduling in Hadoop Hive involving synchronized blocks in TaskWrapper FinishableStateTracker classes.
+12926	synchronization issue tez llap session pool hs2 HIVE-12674 shut down issues
+12927	HBase metastore getNextSequence concurrency issues with multiple sequences in one row HBase increment API usage recommended
+12996	temp table locking
+13013	TxnHandler concurrency Serializable isolation READ_COMMITTED SELECT FOR UPDATE deadlocks DBs
+13213	DbLockManager not acquiring Exclusive lock for non-ACID resource in insert into statement
+13395	Lost Update problem ACID users concurrent update T set x  x  1 Hive 1.2 Driver.recordValidTxns Driver.compile locks MVCC architecture start commit time write-set tracking multi-statement txns R W lock manager Hives semi-shared
+13458	heartbeat fail query heartbeat fails to locate lock stopHeartbeat bug query fails assumption cause query to fail
+13512	Initializing dag ids TezWork thread safe parallel compilation concurrent running threads same dag id counter not thread safe AtomicInteger.
+13599	preemption queue handling finishable state updates testing preemption exception race condition removing items from preemption queue
+13699	thread safe JavaDataModel get parallel compilation
+13725	ACID Streaming API synchronization multiple threads endpoint metastore client RPC thread safety API methods different threads sample use case out of sequence response.
+13753	Metastore client thread safety in DbTxnManager multiple threads RPC to Thrift out of sequence response race condition synchronize methods.
+13833	Initial delay  starting heartbeat  scheduling of heartbeat  lock acquisition  unnecessary to send heartbeat  acquired locks  skip
+13858	LLAP preempted task completeInitialization interrupt HDFS IO blocking
+14357	TestDbTxnManager2 testLocksInSubquery failing in branch-2.1 checkCmdOnDriver
+14400	search handling concurrent insert with dynamic partition
+14463	hcatalog server extensions  test cases getting stuck  TestMsgBusConnection  thread dump after it got stuck
+14739	deadlock hive cli hadoop runtime shutdown hooks ShutdownHookManager
+14778	documentation for the IR-based threading model of Streaming API which includes information on the use of MetaStoreClient objects TransactionBatch creation concurrency of threads accessing TransactionBatch including one thread dedicated to calling TransactionBatch.heartbeat.
+14924	MSCK REPAIR TABLE null pointer exception single threaded mode
+15090	ExpiredTokenRemover thread Temporary DB failure HIVE-13090 close metastore unexpected exception running metastore running loop recover

@@ -1,13 +1,13 @@
 package uc.eecs.core;
 
 import org.apache.lucene.queryparser.classic.ParseException;
-import uc.eecs.Lucene.LuceneSearch;
-import uc.eecs.nlp.DepManager;
+import uc.eecs.irmodel.blizzard.LuceneSearch;
+import utils.config.BugReportsID;
+import utils.config.ClassificationID;
 import utils.config.DatasetConfig;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class FaultLocalizationRunner {
 
@@ -55,16 +55,19 @@ public class FaultLocalizationRunner {
   }
 
   public static void main(String[] args) throws IOException, ParseException {
-    int bugID = 4278;
-    String repository = DatasetConfig.VERTX;
-    String bench = DatasetConfig.GITHUB;
-    String searchQuery =
-        "attempt openjdk startup deploymentmanager deploymentoptions information DeploymentManager VertxImpl^0.33333334";
-    FaultLocalizationRunner faultLocalizationRunner =
-        new FaultLocalizationRunner(bench, repository, bugID, searchQuery);
-    //    FaultLocalizationRunner faultLocalizationRunner1 =
-    //        new FaultLocalizationRunner(bench, repository, bugID, searchQuery1);
-    System.out.println("First found index:" + faultLocalizationRunner.getGoldFileIndicesClass());
+    //    int bugID = 39769;
+    //    String repository = DatasetConfig.TOMCAT;
+    //    String bench = DatasetConfig.BLIZZARD;
+    //    String searchQuery =
+    //        "class loader myServlet T5 shared directory Thread.currentThread getContextClassLoader
+    // " +
+    //                "StandardClassLoader StandardContext getLoader StandardWrapper unload servlet
+    // destroy";
+    //    FaultLocalizationRunner faultLocalizationRunner =
+    //        new FaultLocalizationRunner(bench, repository, bugID, searchQuery);
+    //    System.out.println("First found index:" + faultLocalizationRunner.getFirstRank());
     //    System.out.println("First found index:" + faultLocalizationRunner1.getFirstRank());
+    System.out.println(ClassificationID.VERTX_NL.size());
+    System.out.println(ClassificationID.VERTX_STN.size());
   }
 }

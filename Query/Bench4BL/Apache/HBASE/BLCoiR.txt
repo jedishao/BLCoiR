@@ -1,0 +1,38 @@
+543	class region state change race provide condition validate encapsulate hmaster hbase possibility regionmanager require collection open kind hold structure place map unassignedregion hole pendingregion regionstodelete closingregion regionstoclose lot solution trunk patch create apply exist
+659	splitting cache compactor enwiki integer hlog daemon call regionserver condition closing size scanner lock memcache row batchupdate region ipc retiringregion cacheflushlock
+663	number flush lock cache updateslock hregion sequence assumption write update startup flushan read acquire hstore take snapshot log obtain reconstruction guarantee skip ask
+699	hang hudson hbase add take relocateregion scan verify vanish unix process testmigrate hudsonits waiting good fix try catch
+818	deadlock stack level region regionserver information uploading play hose flushsomeregion
+950	lock hang row get exist proceed rowlock update htable commit hbase expire pass work apiintroduced rowlocks ignore
+1569	import race load regionserver cluster condition hour take happen
+1740	issue race icv snapshot keyvalue production fix condition load memstore timestamp attempt fail value happen correct start put know demonstrate
+1840	include fix unit test rowlock follow load line stacktrace update indextable indexedtable row info number hack sense note fail throw
+1869	rowlock packaging delete conjunction svn test follow testindexedtable testing indexedtable look patch fail create
+2023	block its request cache process lock issue region client rid locate get table locateregioninmeta server thrift other follow sync prevent solution stick encounter take
+6565	coprocessor result repeat test exec map htable happen treemap environment program read develop appear
+8923	cluster chaosmonkey recovery teardown test start exitcodeexception try race process restart get status happen moment boom fail
+13606	server bulkassignthresholdregion void invokeassign sync bulkassign robin async path pathfrom comment region behavior waituntildone assign
+13662	date request stack outoforderscannernextexception thought heartbeat scan discussion error hasnextcallseq patch outoforder failurewhile scanner client end hbase nextcallseq question outoforderscannernext callseq throw failure
+13959	part threadpool reference number split file fix client ten write table retry case splitting notservingregionexception column exhaust workload store concurrency environment size setup region storefile family operation
+13988	add handler server cluster prod debug log hbaseserver exit logroller stop future root lease region info hregionserver memstoreflusher
+14178	block offsetlock regionserver below infomation table cache lot jstack print
+14241	deadlock lock stack connection level metaservershutdownhandler test obtain cluster rpcclientimpl attempt output root lead testmastermetricswrapper setupiostreams try shut closecaught fix close call markclose
+14359	asyncprocess error hang dectaskcounter task close htable product invoke table client throw observe datum recommendation sendmultiactioncurrently outofmemoryerror tasksent taskdone hour waituntildone clause call rpctimeout sendmultiaction rejectedexecutionexception let lang create
+14463	bucketcache lrucache idreadwritelock hbase call read performance rowkey item feature bucket search array machine idlock class implement resolve observe try issue downgrade root lock worker hundred yarn drop key analytic output ioenging learning engine
+14555	test mvcc tostring port deadlock priorityrpcserver handler queue
+14812	resultboundedcompletionservice deadlock fix
+14926	client readingthrift side server thrift get hang worker change hung timeout connect patch hbase log read socket crash apply thriftserver recover
+15001	batch sink edit hbaseinterclusterreplicationendpoint size issue process shipping replicate reach verification replicationsinkmanager safety follow part retry replicationsource number lead report walprovider success arraylist idea assume operation depend non empty benign
+15030	parking cluster stack log reentrantreadwritelock deadlock integrationtestddlmasterfailover lock info tablenamespacemanager procedureexecutor level integrationtestddlmasterfailoveri monitor timed_waiting daemon jstack synchronizer information
+15093	metricssource log enable queue multiwal perform decrsizeoflogqueue setsizeoflogqueue world operation incrsizeoflogqueue replication source size happen sure report divide
+15146	dispatch rpc reader epoll ack awful capacity scheduler lot queueblocking blocking limit block everything queue
+15650	contention store storefile timerangetracker read write point hbase remove
+15957	connection parent result shouldcloseconnection hbase writer markclose rpcclientimpl close flag interrupt handling remove fix introduce calling circumstance pool check call relate end finish work start
+16081	block replication race lock remove_peer wal hbaseinterclusterreplicationendpoint replicationsourcemanager completionservice call finish recordlog peer take underlie mean removepeer rollingwe situation shut remove roll end executor condition get able try
+16144	claimqueue replication add node die default usemulti lock operation queue crash
+16304	lock deadlock stack write hregion regionscannerimpl parking concurrent locks reentrantreadwritelock abstractqueuedsynchronizer synchronousqueue try updateslock obtain handlefilenotfoundexception lead
+16367	server abort region race hregionserver cluster log initialization initializezookeeper hmaster preregistrationinitialization extend reach declare line execution turn troubleshoot lead
+16429	safepointreleasedlatch rollwriter deadlock issue buffer safepointzigzaglatch call stick add ring handler fshlog cover releasesafepoint ringbuffer next jstack case ringbuffereventhandler form count append fill get publish replacewriter resolve jira experience consumer waiting check sync try release
+16699	case follow add bypass getwaitinterval issue line averageintervalratelimiter overflow refill place figure check patch logic day ratelimiters post
+16721	region production max flush split cluster memstore wal datum force end restart flusher hundred file seqid accumulate regionserver explain tracking concurrency limit log case mask work fshlog continue happen think issue
+16788	call closeandarchivecompactedfile modify compactedfile hstore removecompactedfiles removecompactedfile lock race archive block file hfile compactedhfilesdischarger compaction condition region remove compact read move copy follow chore readlock writelock abort archiving deletion release regionserver

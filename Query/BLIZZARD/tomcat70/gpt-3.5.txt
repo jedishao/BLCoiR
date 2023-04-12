@@ -1,0 +1,81 @@
+39769	class loader myServlet T5 shared directory Thread currentThread getContextClassLoader StandardClassLoader StandardContext getLoader StandardWrapper unload servlet destroy
+40380	Syncro problem StandardSession expire expiring IR-based bug localization
+42530	NullPointerException in ManagerBase backgroundProcess caused by concurrency issue with session manipulation in Tomcat6
+45453	JDBCRealm getRoles bad synchronization causes hangs DIGEST authentication caches PreparedStatement preparedRoles missing synchronization two threads call getRoles simultaneously stmt executeQuery stmt setString 1 userName  executeQuery same PreparedStatement object worst case JDBC driver gets confused blocks forever waiting for server response all other threads try to access DB hang
+47158	AccessLogValve race condition Double-Checked Locking volatile variables currentMillis currentDate
+47524	McastServiceImpl executor dispatching events bug fix proposal code refactor ReceiverBase queue Trunk branch bug reporting procedure
+48172	JspRuntimeContext synch  problems JspRuntimeContext jspReloadCount getJspReloadCount multiple threads stale value Javadoc getter synch  field volatile AtomicInteger fields not synchronized classpath codeSource final fields constructor IR-based bug localization
+48234	org apache catalina core ContainerBase getLogger not thread-safe
+48248	volatile tribes group interceptors MessageDispatchInterceptor run org apache catalina tribes group interceptors MessageDispatchInterceptor run communication between running threads bug
+48249	org apache tomcat util net NioBlockingSelector BlockPoller run volatile
+48399	lock fields that should be final patching mutable org apache catalina ha session DeltaSession diffLock
+48790	org apache catalina session ManagerBase race condition maxActive tomcat 6 0 18 synchronized block
+48843	Tomcat race condition acceptor thread non-responsive non-responsiveness bug localization
+48895	WebAppClassLoader clearThreadLocalMap concurrency memory leak ThreadLocalMap remove expungeStaleEntries undeploying ThreadLocalMap instance worker threads safe clearing
+49129	IR DigestAuthenticator md5Helper unsynchronized lazy initialization non-volatile static field compiler processor reorder instructions multiple threads field volatile
+49144	incorrect lazy initialization update of static fields in org apache catalina startup Bootstrap daemon org apache catalina startup ContextConfig contextDigester using Findbugs
+49567	startAsync Runnable infinite doPosts GET 500 Internal Server Error tomcat
+49730	Race condition StandardThreadExecutor org apache catalina core in Tomcat 6 with minSpareThreads=0 resource loading issue with Safari Chrome Firefox StandardThreadExecutor TaskQueue offer Runnable  ThreadPoolExecutor activeCount poolSize Keep-Alive keepAliveTimeOut TCP connections tomcat 7 impact
+49905	DeltaManager memory leak in Apache Tomcat with contextClassLoader set to WebAppClassLoader ThreadFactory implementation in MessageDispatch15Interceptor
+49985	lazy initialization without synchronization data race AstInteger AstFloatingPoint AstString Tomcat getInteger getFloatingPoint getString variable number concurrent read concurrent write
+49987	ApplicationContext java data race variable method
+50138	SecurityUtil lack of synchronization ConcurrentHashMap
+50293	CompositeELResolver synchronization issue  synchronize change in CompositeELResolver add  need to synchronize around the update to the resolvers  possible for both threads get past the size check  two threads call add  fails with an ArrayIndexOutOfBoundsException  increase the default size of the ELResolver array  proposing a default size of
+50352	AsyncListener onComplete method not called after AsyncContext complete in servlet 3 async feature
+50353	Searching for bugs in asynchronous servlets related to calling asyncContext getResponse after a timeout receiving a null reference NPE questioning whether the behavior should be an IllegalStateException
+50459	Bug in StandardContext bindThread unbindThread methods in tomcat 6 7: lack of symmetry thread limitation
+50547	CHANGE_SESSION_ID SESSION_EXPIRED cluster session synchronization timestamp DeltaManager startup patch
+50554	using Keshmesh Eclipse plugin for Java programs analyzing getClass lock bug pattern in org apache naming java javaURLContextFactory getInitialContext method
+50629	Tomcat bindThread unbindThread private to protected for initialization purposes in Latest codes
+51185	DataSourceProxy createPool fine grained synchronization Tomcat JDBC POOL synchronized private method needed
+51197	sendError sendRedirect AsyncContext response Tomcat timeout headers content thread dumps setStatus setHeader bug localization
+51212	QueryStats synchronization issues Atomic approach performance
+51467	method run instead of start to start a thread usage in StandardContext
+51545	ExtendedAccessLogValve Threadname Tomcat-users mailinglist request served
+51688	JreMemoryLeakPreventionListener AWT thread creation webapp java awt Toolkit getDefaultToolkit new thread AWT-Windows AWT-XAWT ContextClassLoader memory undeploy redeploy addition alleviate condition
+52055	ChunkedInputFilter not recycled servlet 3 0 asynchronous request Tomcat 7 0 22 InputStream returns 0 bytes HTTP post
+52091	TagHandlerPool being slow with high concurrency in Tomcat7 stress test occurred in version 7 0 19 caused by lock of log instance parameters field resolved by attached patch making changes to log field lock policy in StandardWrapper to improve performance
+52213	org apache catalina tribes transport bio util FastQueue enabled volatile multiple threads synchronization Keshmesh Eclipse plugin
+52259	Tomcat 7 0 23 startup freeze no errors in logs tomcat process cannot be shut down http request on port 80 wait forever multi host configuration previous builds including 7 0 22 are working jar files replacement fix the issue  synchronization issues deadlock   realm not presented in configuration configuration error
+52356	The potential data race issue on org apache catalina tribes transport bio util FastQueue size its unsafe read access in org apache catalina tribes transport bio util FastQueue getSize in Tomcat FastQueue java
+52777	automatic shutdown old versions parallel deployment tomcat session count zero
+52999	ContainerBase fireContainerEvent performance issue locking issue  tomcat  CopyOnWriteArrayList  StandardSession  reported problem  request attributes  ReadWriteLock  helper class  enhancement request
+53173	maxConnections feature hangs system fix missing count down for maxConnections latch JIO Acceptor thread hangs connections not counted down properly Thread dump yields state machine not considering rejected connections introducing maxConnections configuration Reproduced error with NIO connector handling of RejectedExecutionException in JioEndpoint
+53450	Tomcat deployment with ROOT context hanging due to ReentrantReadWriteLock NonfairSync acquiring read lock but unable to upgrade to write lock causing AccessLogListener to call for write lock resulting in deployment hanging forever
+53498	Java concurrent collection misusage atomicity violation bugs ConcurrentHashMap Tomcat 7 0 28 ApplicationContext java ReplicatedContext java HostConfig java
+53624	sendRedirect doesnt work after AsyncContext dispatch in tomcat-issue-repro
+53843	isAsyncStarted returning false in thread that started async processing then returning false after dispatch in Java application
+54045	how to localize bugs in ReplicatedMap when using TcpFailureDetector in static configuration Tribes stack with TcpPingInterceptor TcpFailureDetector MessageDispatchInterceptor StaticMembershipInterceptor non-working static clusters? Possible issues include missing members in membership list wrong values returned by TcpFailureDetector getMembers message failures due to missing nodes when using Channel SEND_OPTIONS_USE_ACK  Possible fixes include overriding TcpFailureDetector heartbeat to call performForcedCheck instead of performBasicCheck adding a new method memberAlive MemberImpl  to Membership without side effects
+54086	ConcurrentModificationException in NioReceiver on shutdown with tomcat clustering for session replication SelectionKey Iterator usage - potentially relevant text in Selector javadocs regarding thread safety fail-fast iterators
+54521	DigestAuthenticator nonceCountValid failed with simultaneous asynchronous requests org apache catalina authenticator DigestAuthenticator
+55267	load test stuck thread dump NIO
+55309	TagPluginManager concurrent issue Patch ServletContext PageInfo parallel compile concurrent restart
+55521	HttpSession invalidate race condition HttpServletRequest getSession true  thread parallel session fixation protection Spring Security SessionFixationProtectionStrategy session ID not changed session-expiring state detection
+55524	deadlock Websocket write operation org apache catalina websocket WsOutbound Tomcat Atmosphere framework thread dump
+55582	Concurrent issue TagFileProcessor Unsynchronized getting wrapper from RuntimeContext JspRuntimeContext JspServletWrapper synchronized duplicated JspServletWrapper A jsp B jsp two threads null from JspRuntimeContext two instances of JspServletWrapper
+55684	WebappClassLoader getThread trying to access root ThreadGroup while starting Tomcat managing SecurityException
+55799	debugging error diagnosis code analysis RemoteEndpoint Basic synchronization WebSocket thread Tomcat 8 stability sendText large messages
+55996	async context timeout with HTTP NIO connector in Java Servlet using Java based client
+56042	java lang IllegalStateException Calling asyncComplete request with Async state MUST_DISPATCH response setStatus HttpServletResponse SC_BAD_REQUEST AsyncContext asyncContext request startAsync request response  asyncContext dispatch Servlet spec startAsync not be allowed to proceed Jetty bug localization
+56082	ConcurrentModificationException org apache juli ClassLoaderLogManager Tomcat getLoggerNames reproduction Maven Tomcat 7 0 42 JDK 1 7
+56518	NIO async servlet limit latch leak bug in Tomcat 7 0 53 with org apache coyote http11 Http11NioProtocol connector; problem with LimitLatch countDown not being called sometimes after user thread interruption resp flushBuffer call; leads to connection limit latch leak; reproducible with sample webapp in clean installation of Tomcat; solution: switch to stable BIO connector avoid resp flushBuffer call in user thread
+56577	WsServerContainer executor service SendHandler unbounded queue corePoolSize maximumPoolSize context parameter session closing stack trace CountDownLatch Sync TimeoutException Remote send method
+56653	Mapper in Tomcat 6 7 concurrency issue with Mapper$ContextList delay between contextList update context mapping problem
+56724	ContainerBackgroundProcessor compounding OOME Background thread died no errors in log invoking backgroundProcess via JMX new background thread clean stack StackOverflowError OutOfMemoryError -XX:OnOutOfMemoryError flag script shuts down restarts Tomcat
+56746	secure websocket client threads cannot access webapp resources AsyncChannelWrapperSecure SecureIOThreadFactory context class loader standard class loader restore access calling thread
+56857	thread safety issue ApplicationContextFacade invokeMethod HashMap get Thread dumps threads hanging RUNNABLE status CPU high indicator non-threadsafe Maps stacks ApplicationContextFacade ServletContext singletons webapp private member objectCache accessed modified without synchronization suggested remedy change ConcurrentHashMap thread-safe performs better than synchronizing on every access
+56907	WebSocket implementation threads leak AsyncChannelWrapperSecure Executors newFixedThreadPool 404 Not Found
+57265	Tomcat 8 NGINX file sending NIO connector bug irregular occurrence useSendfile=false slow logging race condition problem
+57338	ClusterSingleSignOn valve synchronized Tomcat startup bug localization
+57340	NioConnector corruption caused by concurrent comet close in Tomcat 7 0 47 with nginx 1 6 2 atmosphere 2 2 3  Possible cause: SocketChannel becoming ready for read upon simultaneous closing by nginx atmosphere  Solution: check for invalidated SelectionKey in Thread D  before putting NioChannel AttachmentKey into caches  Consequence of bug: corrupt caches with duplicate object references leading to mixed up responses in subsequent requests
+57420	DirContextURLConnection list error class name garbage URL_ENCODER thread safety concurrency issues DirContextURLConnection WEB-INF classes failure
+57681	parallel class loading web application class loader synchronize class specific object parallel classloading port Tc8 0 Tc7 0 fix Tomcat8 0 web application class loader parallel loading web application classes source file patch
+57683	Crash stockticker async example aborted client request error handling bug reproducible Tomcat 7 0 59
+57779	Deadlock ServletOutputStream separate thread io-error socket-object Tomcat
+57943	NioEndpoint Tomcat poller thread death with error log connection acceptance but no processing thread available
+57959	deadlock in FileHandler java during log rotation in Tomcat 7 fixed in Tomcat 6 & 8 but not in Tomcat 7 code location in apache-tomcat-7 0 FileHandler java recommended solution in tomcat 6 8 is to acquire a read lock then release write lock to prevent race condition
+57977	PersistentValve invoke original class loader re-bound thread patch trunk Webapp class loader
+58179	atomicity violation bug 53498 java org apache catalina core ApplicationContext java code snippet threads T1 T2 name attributes oldValue line 791 line 794 line 817 line 823 value beforeContextAttributeAdded beforeContextAttributeReplaced Bai Guangdong National University of Singapore
+58522	Tomcat WARDirContext concurrency ServletContext getResourcePaths Arrays sort thread-safe lost entries duplicate entries resource loading CentOS 6 5 Tomcat 7 0 52 Java 1 7 0_51 Test case project stack trace patch file
+58946	immutability ApplicationHttpRequest ServletRequest getParameterMap org apache catalina core ApplicationHttpRequest org apache catalina util ParameterMap Tomcat 8 0-dev JSPs ROOT web application code review users mailing list
+59138	checkThreadLocalMapForLeaks false positives ThreadLocal$ThreadLocalMap keys weakly referenced values strongly referenced but check reports false positives subclass anonymous class value does not strongly reference class loader Integer int List SimpleDateFormatter etc  memory leak web applications third party libraries not adjusting use of ThreadLocal bug 50175 comment 6 heuristic compromise configuration per key class name basis suppress per-instance message single overall suppressing N ThreadLocal warnings based on config info warning message

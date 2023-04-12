@@ -1,0 +1,3 @@
+302	setentryencoding immutability encode add archivestreamfactorycompress drop safety support synch factory field deprecate retore safe consider
+303	immutability break setdecompressconcatenate decompressconcatenate compressorstreamfactory decompressConcatenated release technique remove compress field
+357	bzip2compressoroutputstream finalize stream affect

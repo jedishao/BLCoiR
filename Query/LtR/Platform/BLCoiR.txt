@@ -1,0 +1,31 @@
+6623	plugin abstractuiplugin refreshpluginactions fail startup call
+15379	resource workingsetmanager change call install occur
+33942	idecoratormanager update thread requirement
+46562	cvs sync view resource lock deadlock dialog update overwrite
+48382	deadlock automate stack ilock involve join job marker release attempt build trace test view pattern worker try recommend work fail
+54450	job requestinui race observation call response info debugger let dialog way logic user work message fun error request query jobs open throw influence purpose inui choice step fail
+59782	window runbuild perspective dialog preference packager pref progress get page select workbench choose believe explorer show start deadlock
+67053	lock case location try show ioexception failure happen something error log nature message fail throw user follow
+74185	concurrency volatile while boolean join uijobtest assertion test create prevent flag loop complete copy processor failure fix keep testjob break testjobran remove delayjob check
+76378	lock deadlock background allow hold interaction patch notifyjob uithread junit timing internal uilocklistener contain obtain operation notification modalcontext test service get syncexec nest involve solve request trigger change begin reproduce include
+84141	decorationscheduler lock
+108162	manage participant move resource plug movefilesandfoldersoperation refactoring line deadlock class package provide
+113582	job involve marker deadlock jobs save editor party jface text reconciler dirtyregionqueue build update lock john view copy framework occur stacktrace tod appear obvious assign
+114527	startup race workbench condition crash lead
+114813	synchronization listener call registry removebundle junit getbundle chain assume add dynamictestcase objectcontributiontest testviewercontributions remove fall event bundle tests dynamicplugins dynamicpluginstestsuite solution mechanism failure ensure instance dosetup addition begining process work lead fail provide
+118414	abstractworkingsetmanager
+136855	deadlock heapstatus runfinalization call ideidlehelper
+164361	user handler label messagelabel isvisible task job progressmonitordialog check setmessage swt show configureshell name progress get message iprogressmonitor begintask dialog try condition optimization race avoid pass trimming happy address suggest appear true
+168806	start realm ensureworkerthreadisrunning
+171452	startup handler splash syncexec deadlock couple appear get
+230472	expression enable control reload activity persist
+248908	busyindicator
+258352	progressmanager synchronized
+262032	deadlock deadlockdetector create
+273752	navigatorcontentservice getsourceofcontribution syncExec
+296056	scheduling ijobmanager beginrulethe rule deadlock syncexec attempt perform follow begin case produce
+296822	iscancele expect work synchronization poll cancel usage nullprogressmonitor monitor progress field call setcanceled check
+302536	markersupportregistry check locking
+306738	item define type mtoolbar toolitem tool radio toolbar selection state result renderer mtoolitem upon
+307405	navigatorcontentservicecontentprovider
+312063	event listenerlist hashsethashsets selectionserviceimpl order guarantee safe

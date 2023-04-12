@@ -1,0 +1,32 @@
+1810	SFSB tx lock not released exception thrown Synchronization callback owning tx never pushed into OwnableReentrantLock ownership stack org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor.handleThrowableInTxSync causing subsequent Lock.tryAcquire.. to fail for different tx
+2016	security context ejb asynchronous invocation corruption caller thread servlet role propagation
+2065	jboss-transaction-spi  Update interface method test suite TM transaction reaper thread afterCompletion synchronization callback hard coding reaper thread name brittle
+2458	redeployment clustered application race-condition infinispan
+2467	search query for Deadlock on startup if configured with 8 transactional Infinispan caches installation of CacheConfigurationService using AsynchronousService wrapper
+2954	Transaction synchronization registration issue with injected JMSContext using TransactionSynchronizationRegistry
+3259	Race condition ServletContextListeners WeldComponentIntegrationProcessor WeldStartService built-in components Mojarra CDI deployment timing UndertowDeploymentService
+3280	thread locking app server shutdown remoting thread MSC service thread deadlocked integration arquillian tests EAP 6.3.0 engineering releases jar file jdbc driver deployments folder server log file thread dump lock occurs remoting queue DeploymentRepository object synchronized keyword methods remove listeners quick fix jboss-eap 6.x ejb3 Trouble in remoting MSC component jira type
+3338	JMSContext thread safety in WildFly its impact on concurrent use of session transactions Any workaround available
+3381	remote process cancellation request race managed domain operation request cancellation fail ActiveOperation tx commit rollback hang
+3396	NPE TimerResourceDefinition race conditions Arquillian Wildfly 8.1.0.CR2 scheduled EJB Stacktrace FileDeploymentScanner configuration closed source error
+3517	DeploymentMountProvider leaks thread pools start Executors.newScheduledThreadPool stop shutdown the pool slow thread leak OOM
+3548	JTA synchronization incorrect TCCL resulting in NameNotFoundException for UserTransaction JNDI lookup ISE with org.jboss.weld.Container org.jboss.as.weld.services.ModuleGroupSingletonProvider.TCCLSingleton.
+3695	Distributed web session expiration ScheduledExecutorService thread leak undeploy SessionExpirationScheduler shutdown setExecuteExistingDelayedTasksAfterShutdownPolicyfalse
+3715	Async servlets  lock timeouts  distributable sessions  Infinispan  BatchContainer  thread locals  Batcher  ejb clustering  web clustering  refactoring
+3727	race condition channel NPE WildFly thread Protocol.up_prot GlobalComponentRegistryService.start Channel.connect volatile
+3731	org.jboss.as.ejb3.component.stateful.StatefulSessionSynchronizationInterceptor transaction rolled back scottmarlow transactiontimeout_clientut
+3942	race condition clean shutdown mod_cluster session draining WF validate logic bug
+4133	Hanging EJB threads persistent timer failed deployment time service pending timeouts bad redeploy worker threads server
+4310	race condition registering resource adapters startup Upstream Jira
+4511	stale code CMTTxInterceptor.invokeInOurTx ApplicationDeadlockException retry failure CMTTxInterceptor
+4844	Wildfly EJB timer not fully committing transaction Singleton EJB timer not seeing changes committed by current run Transaction not fully committed when EJB timer finishes EJB timer causing premature transaction start CMTTxInterceptor applied before ContainerManagedConcurrencyInterceptor causing transaction start too early.
+5186	TimeoutException Unable to acquire lock after 15 seconds ejb-ejbservlet-shutdown-repl-async ejb-ejbservlet-jvmkill-repl-async http-session-shutdown-repl-async-tcpStack http-session-undeploy-dist-sync failover NOT nodes warning logged 505 times
+5449	How to set custom socket factory correctly in Wildfly's JGroups subsystem JChannel to avoid race condition where the factory gets overwritten during channel start
+5596	 MessageDrivenComponent thread safe MDB activation WFLY-4470 flag protection XA resources recovery manager wrong order AtomicBoolean synchronized block exclusive lock deadlock risk
+5770	Lock TimeoutException CacheRegistry close test node shutdown
+6127	JTA transaction unsynchronized persistence context IllegalStateException synchronized persistence context
+6215	SessionSynchronization callbacks concurrent access SFSB EAP5 JBPAPP-11239 local container managed transactions calling bean managed transactions timeout abort transaction reaper thread afterCompletion execute concurrently
+6405	Bug in WeldDeployment.getBeanDeploymentArchive method synchronization during performance test with JMeter on Wildfly 10.0.0.FINAL
+6776	multiple thread pools same type work manager unclear error message long-running thread pool creation failure configuration change java.lang.IllegalArgumentException
+6877	Wildfly locking timeout exception caused by Fine session attributes on Infinispan cache due to multiple PutKeyValueCommand calls on same session key
+7282	Deadlock in BasicAction jboss remoting JTA EJBRemoteTransactionPropagatingInterceptor double diamond problem jboss-support-transactions list double diamond transaction propagation problem remote calls 2PC timed-out recovery process IIOP JTS

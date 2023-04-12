@@ -3,6 +3,7 @@ package utils.config;
 public class DatasetConfig {
 
   public static final String DATASET_DIR = "dataset/";
+  public static final String BRTEXT_DIR = "BRText/";
   public static final String QUERY_DIR = "query/";
   public static final String INDEX_DIR = "Lucene/Lucene_Index";
 
@@ -76,6 +77,8 @@ public class DatasetConfig {
   public static String BUGLOCATOR = "BugLocator";
   public static String BRTRACER = "BRTracer";
   public static String LOCUS = "Locus";
+  public static String BLCOIR = "BLCoiR";
+  public static String BLCOIR_PLUS = "BLCoiR+";
   public static int MAX_ST_ENTRY_LEN = 10;
   public static int TOKEN_LEN_THRESHOLD = 3;
   public static int MAX_ST_SUGGESTED_QUERY_LEN = 11;

@@ -1,0 +1,6 @@
+367	FastDateFormat thread safety HashMaps not final patch SimpleDateFormat instances shared between threads not documented thread-safe assumption validity unclear
+459	HashCodeBuilder multi-threaded high load problem test case isRegistered HashSet ArrayList identityHashCode unique values List Set fix verification Andrew
+481	race-conditions suspicious hashCode methods incomplete hash unlucky timing affected classes DoubleRange FloatRange IntRange LongRange NumberRange Range possible fix temporary variable assignment
+584	ExceptionUtils mutable lock target removeCauseMethodName addCauseMethodName CAUSE_METHOD_NAMES modify immutable
+1230	Registry lookup synchronization in EqualsBuilder and HashCodeBuilder causing contention issues and identified as unnecessary due to thread safety of ThreadLocals and IDKey's object identity. Issue may have been introduced in LANG-586 and affects versions 2.5 and newer
+1251	SerializationUtils.ClassLoaderAwareObjectInputStream static initializer primitiveTypes map thread safety java.util.HashMap

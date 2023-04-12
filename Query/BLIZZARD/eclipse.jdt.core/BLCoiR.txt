@@ -1,0 +1,7 @@
+29585	resource tree modification core lock model
+58314	ast cursor managment save reader
+291322	file windows delete lock issue tear call free fail get know test pattern error core retry
+327143	job index processing manager call number await consequence simulateexit simulaterestart loop add accept case touch indexmanager file end fail
+421473	annotation block type client race detach holder local source enclose declare manufacture condition side lvb declaringscope retrieve circumvent array patch parameter argument scope happen transfer effect binding setting creation assignment
+431275	stack deadlock lock internal core javamodelmanager bugzilla deltaprocessingstate perprojectinfo http collect mode happen deltaprocessor addpackagefragmentroot trace monitor addtoparentinfo patch product appear adopter ibm hit involve stream
+464570	multi stack race reproduce case fix aioobe field share static conflict class avoid codestream init figure bytecode jsp arrayindexoutofboundsexception translate showing condition repackage follow internal compiler codegen novisiblelocals source file occur compile

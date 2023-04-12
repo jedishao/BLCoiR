@@ -1,0 +1,5 @@
+149900	girl pde ton require dep plugin add process cry responsiveness lock expect current watch
+158326	cursor runnablelock take trace build property lock checkboxtreeviewer plug page beween prio flash child
+186963	pde emf concurrentmodificationexception dialog file perspective diff schema releng tools cdt addition editor sdk ctrl shift bring type affect switch subsystemconfiguration look install open
+281923	pde junit runtime nonuithreadtestapplication headless testapplication mode ide workbench command parameter check test line target plug box work workaround override build throw platform uncheck break sense reproduce end launch
+291528	error batch build properties compiler warning ability specify pde setting level support add file exist

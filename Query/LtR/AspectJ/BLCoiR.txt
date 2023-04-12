@@ -1,0 +1,8 @@
+59599	test compilation race tweak complete environment candidate pointer suite condition andy home linux desktop fix give fail ajctests xml directory check contents appear machine
+59909	memory cflowstack lot table production running grap store error remove size case getthreadstack hashtable varaibles lateproblem grow check call sum result free removesthreads provide much
+155148	deadlock lock stack system monitor identity oracle trace class hashcode classloader policyclassloader workexecutorworkerthread ctrl level information name server argument reason loader hold try launcher prefer tostring break
+269867	clazz weakhashmap system static ajtypesystem getajtype instance line get stick start loop show
+318878	aspect give target sun compile print way ajc instance finish pertarget get build class check call advice instantiate value something size mean instantiation trigger investigate
+320468	static map modifierflag modifierspattern getmodifierflag
+340806	javalangtypetoresolvedtypeconverter race
+408721	state initialize aspectj believe follow relate enter weaver concurrentmodificationexception

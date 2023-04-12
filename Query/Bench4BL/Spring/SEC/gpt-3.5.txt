@@ -1,0 +1,15 @@
+188	JavaDoc error SecurityContextHolder InheritableThreadLocal org.acegisecurity.context.SecurityContextHolder
+192	concurrent login issue with CAS authentication provider calling setDetails on newly created CASAuthenticationToken AbstractAuthenticationProvider.authenticate common for all providers.
+197	ConcurrentSessionController count non-expired Sessions enable ConcurrentSession support close browser without logging out logout active user SessionInformation.expireNow getAllSessions count non-expired sessions allow user to log back in abandoned HttpSession bug localization.
+328	AbstractUserDetailsAuthenticationProvider cache failure retrieveUser double check
+356	HttpSessionContextIntegrationFilter SecurityContextHolder#setContext simultaneous requests same SecurityContext object authentication changes leak into synchronous requests
+398	HttpSessionContextIntegrationFilter AuthenticationProcessingFilter thread concurrency issue redirecting to login page rather than protected resource after successful authentication delay redirects until HttpSessionContextIntegrationFilter updates SecurityContext.
+423	CLONE -SEC 356 authentication leak HttpSessionContextIntegrationFilter SecurityContextHolder setContext simultaneous requests same SecurityContext object authentication change org.acegisecurity.intercept.AbstractSecurityInterceptor access gain
+444	Race condition unsynchronized sequence SessionAlreadyUsedException ConcurrentSessionControllerImpl registerSuccessfulAuthentication
+618	 What is the issue with the authentication details object concurrent session control in ProviderManager How can the copyDetails method be implemented to ensure that the authentication details object is available Is an AbstractAuthenticationManager necessary for this process
+670	 deadlocks ACL_OBJECT_IDENTITY load testing concurrent deletes JdbcMutableAclService MS SQL server 2000 database selects deletes interleaving foreign key synchronized hierarchical ACLs primary key
+809	Concurrent Session Control OpenID Incompatibility OpenIDAuthenticationProcessingFilter authenticationManager stack trace.
+1396	HttpSessionContextIntegrationFilter SessionFixationProtectionFilter race condition
+2067	asynchronous servlet security context removed from session Spring Security flush SaveContextOnUpdateOrErrorResponseWrapper SaveContextServletOutputStream SaveToSessionResponseWrapper saveContext thread local holder Atmosphere Comet library SEC-776 SEC-1587 SEC-1735
+3108	DigestAuthenticationFilter using SecurityContextHolder.createEmptyContext SessionContextHolder.getContext.getAuthentication with incorrect authorities HttpServletRequest.isUserInRole returning falsely with incomplete Authentication object due to two-step construction in Digest authentication process createAuthenticatedToken true not checking user flags
+3109	Concurrent ThreadPoolTaskScheduler DelegatingSecurityContextExecutor not working issue in Spring Boot setup using a ReschedulingRunnable with cron triggers

@@ -1,0 +1,5 @@
+176792	objectmap static field callbacks misbehavior
+183830	int glx glxmakecurrent deadlock xlib reply async
+188320	finish block deadlock display sleep jface class swt argument modalcontext linux asyncexec task continueeventdispatching look wake modalcontextthread generate execute event gtk readanddispatch lead execution syncexec while happen work
+264399	linux gtk swt automate testing deadlock occur
+338965	hang deadlock

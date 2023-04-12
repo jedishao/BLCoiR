@@ -14,25 +14,27 @@ import java.util.List;
 
 public class QueryEvaluation {
   public void queryResults() throws IOException {
-    String bench = DatasetConfig.LTR;
-    String repository = DatasetConfig.SWT;
-    List<Integer> idList = BugReportsID.SWT;
-    String path = "Query-Evaluation/" + bench + "/" + repository + "/baseline_graph.txt";
-    FileWriter fileWriter = new FileWriter(path, true);
-    List<String> our_ =
-        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/baseline_graph.txt");
+    String bench = DatasetConfig.BLIZZARD;
+    String repository = DatasetConfig.TOMCAT;
+    List<Integer> idList = BugReportsID.TOMCAT70;
+    String path = "Query-Evaluation/" + bench + "/" + repository + "/gpt-3.5.txt";
+    FileWriter fileWriter = new FileWriter(path, false);
+    List<String> query =
+        ContentLoader.getAllLinesList("query/" + bench + "/" + repository + "/gpt-3.5.txt");
     int index = 0;
     for (int id : idList) {
       FaultLocalizationRunner fr1 =
-          new FaultLocalizationRunner(bench, repository, id, our_.get(index).split("\t")[1]);
+          new FaultLocalizationRunner(bench, repository, id, query.get(index).split("\t")[1]);
       for (int r : fr1.getGoldFileIndicesClass()) {
         System.out.println(id + "\t" + r);
         fileWriter.write(id + "\t" + r + "\n");
       }
       index++;
-      fileWriter.flush();
     }
     fileWriter.close();
+    //      fileWriter.flush();
+    //    }
+    //    fileWriter.close();
     //    index = 0;
     //    System.out.println("acer_st");
     //    for (int id : BugReportsID.JDT_UI) {
@@ -91,6 +93,5 @@ public class QueryEvaluation {
 
   public static void main(String[] args) throws IOException {
     new QueryEvaluation().queryResults();
-    //
   }
 }

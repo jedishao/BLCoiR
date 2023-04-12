@@ -1,0 +1,3 @@
+302	ArchiveStreamFactory immutability thread-safety encoding COMPRESS-180 constructor setEntryEncoding patch
+303	CompressorStreamFactory immutability thread-safety restoration r1453945 volatile field decompressConcatenated conditional immutable COMPRESS-302 setDecompressConcatenated API-break release
+357	BZip2CompressorOutputStream unsynchronized finished method finalize method output stream garbage collector bad data fix synchronize finish call finish from finalize workaround override finalize method

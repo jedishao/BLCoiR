@@ -1,0 +1,33 @@
+1117	boundary think cache illegalargumentexception prod race issue range netflix error result condition split web namespace report place bundle pulsar
+2141	sequenceidwitherrortest test fencing consumer manage failure fence broker reconnect error producer condition ledger topic inject case race reconnection involve check fail
+3768	deadlock function issue worker failure pulsar test error enable fix functions pulsarworkerassignmenttest finish out message disable
+4447	cluster broker execute get stats partition internalgetpartitionedstat pulsar src main admin persistenttopicsbase reproduce stick describe
+4635	deadlock broker hardware connect bookie cluster pulsar server failure shut log message broker_threaddump txt output fix think similar
+4707	client kafka pulsar modify nullpointerexception change pulsarkafkaproducer topic send kafkaproducer javadoc think message replace reproduce relate state occur want describe
+5585	sendasync producerimpl deadlock log pulsar topic block ackreceived nonpersistentreplicator batching put pendingmessage replication effect semaphore broker acquire disable
+8050	pulsarclientimpl replace list good reference performance pursue concurrenthashmap producer newsetfrommap identityhashmap map value consumer pulsar
+8293	update issue synchronization lock race concurrency readposition managedcursorimpl opreadentry conflict resolution share setacknowledgeposition condition change setreadposition way get field add create jump value reproduce state slack take link discussion modify
+9109	parking milliseconds stack waiting reentrantreadwritelock timer seconds broker block consumer redeliverunacknowledgedmessage subscriptionname pulsarclient unackedmessagetracker broker sample rateout writelock deadletterpolicy topic step pulsar
+10170	pulsar client auth authenticationathenz lock synchronization roletoken follow screenshot medium information explain log desktop efficiency help line description error reproduce optimize context behavior reduce add describe complete
+10235	deadlock monitoring leaderservice isleader
+10767	parking test issue level reentrantreadwritelock monitor deadlock consumerbatchreceivetest fastthreadlocalthread timed_waiting timer synchronizer client lock information consumerimpl pulsar
+11379	face narunpacker race directory condition
+11605	race topic correspond ledger condition broker partition trigger schema delete bookkeeper happen deletion schemaregistryservice scenario throw note read service phenomenon start schemas nonode for exist bookie cluster execute deleteschemastorage getschema
+11689	race block issue queue poll peek pendingbatchreceive remove consumer batchreceive error sleep condition trigger call completablefuture complete peeknextbatchreceive consumerbase occur message entry expect exist reproduce create behavior add describe
+11690	lockmanagertest revalidatelockondifferentsession test fail flaky failure
+11966	hang issue block jetty configuration super settimeout value re lock state arraydeque paste observation get servletconfig proxied proxy admin endpoint connection prevent place copy request timeout investigate adminproxyhandler call overridden miss
+12723	cursor addreplicationcluster localcluster concurrentopenhashmap persistenttopic thead persistentreplicator screenshot delete mac remove nop condiftion desktop class race condition measure field replicator non null information addreplicationcluster
+12885	race message persistentdispatchermultipleconsumers consumer addmessagetoreplay condition close havependingreplayread readmoreentry replay read async pulsar client keysharedsubscriptiontest get getmessagestoreplaynow type action complete readentriescomplete happen dispatch testremovefirstconsumer change
+12929	internaldeletesubscription
+13004	race stack condition revalidate resourcelockimpl delayinjectionmetadatastore pulsar metadata coordination lock updatevalue fail metadatastore add call test follow lockmanagerimpl case chance get delay lockmanagertest unit reproduce updatevaluewhenkeydisappears digging lockbusyexception acquirewithnorevalidation node delete lockwasinvalidated
+13923	unsupportedoperationexceptions handler cluster role log hasproxytobrokerurl geo partition connection info replication new init race issue defaultchannelpipeline pipeline proxy warn condition exceptioncaught namespace topic superuser pulsar
+13964	hang deadlock pulsarclientimpl close clientdeduplicationfailuretest test failure
+13986	request transactionbufferhandler run enhancement sync timeout transactiion performance relate solution bottleneck lock synchronization processing describe
+14362	stack race lock issue block endpoint health npe step call trace broker chance expose healthcheck check result condition subscription pulsar focus rerun line work observer give reason behavior custom address fix start number
+14413	metadata signature part project deadlock result fix blocking block behavior netty consumerbuilderimpl enableretry breaking lookup chain custom pool dlq check getpartitionedtopicmetadata subscribeasync naming deadletterpolicy compatibility pulsar
+14438	block deletetopicforcefully scene
+14633	setuptopicpublishratelimitermonitor metadata production line deadlock reproduce brokerservice block state prio deployment cpu monitor store way entry operation
+17446	reason line willing sendasync chunk deadlock acquire anything reproduce number search chunking block maxpendingmessages chunkmaxmessagesize blockifqueuefull issue nothing message way enablechunking producer semaphore risk
+17913	block issue deadlock end fact broker bookkeeper metadatacache client read schema nothing registration combination value call driver load pulsarregistrationclient stick chance pulsar metadata search consequence perform n discover zkregistrationclient ask step
+18196	issue nothing ownershipcache locallyacquiredlocks remove leak search locallyacquiredlock ask bundle
+18988	issue deadlock metadata store transaction nothing enable pulsar exist reproduce believe search able ask step

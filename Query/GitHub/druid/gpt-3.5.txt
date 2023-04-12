@@ -1,0 +1,31 @@
+582	hadoop indexing race condition jar upload fs.create classpath same cluster AM failure better locking separate directory
+812	realtime task redundancy in server view callback causing merge push thread errors abandonment of segment release of locks in indexing service
+1014	real time node kafka message regex filter thread race condition Druid query result null value dimension empty result
+1210	race condition coordinator stopped responding
+1360	autoscaling terminates nodes assigned tasks race condition indexing service task status running tasks middle-managers killed nodes.
+1715	zombie task acquiring locks after failure overlord issue disconnect task still running for 45 mins failed lock acquire request submitted but not cleaned up
+2793	duplicate primary key error TaskQueue big lock retry backlog
+2842	NPE RTR multiple threads task assignment  2521
+2991	IncrementalIndex OnheapIncrementalIndex addToFacts race condition unaggregated metrics weird situations LongMax LongSum initial value multi-thread adds
+3063	threads coordinator post  druid listen v1 lookup load lock held jetty threads nonblocking requests insert into queue concurrent requests
+3393	handling channel disconnected in NettyHttpClient or Druid race condition DirectDruidClient NettyHttpClient.go method channelDisconnected callback query failure retry internally channel.write httpRequest .addListener historical server pool channel closed retry trace
+3459	deadlock global lookup cache java-level deadlock query node Java stack information
+3593	Deadlock in offheap cache java.util.concurrent.locks.ReentrantLock NonfairSync qtp1930842682-69 NamespaceExtractionCacheManager-0 java.util.concurrent.atomic.AtomicBoolean
+3600	race condition updating DataSource Metadata Kafka Indexing Service Metamx common ISE Transaction failure publishing segments overlord log qtp370356001-171 qtp370356001-152 commit_metadata_payload DB updateDataSourceMetadataWithHandle method retryTransaction RuntimeExceptionthrown.
+3608	race condition IngestSegmentFirehoseFactory task id reindex segment download clobbered fail datasource cross locking real task id task work directories
+3772	race condition KafkaLookupExtractorFactory
+4226	druid-lookups-cached-global race condition realtime node starts Tranquility storm segment publication lookup failure realtime task log 36 seconds delay
+4296	BufferUnderflowException in HLL segment of realtime indexing tasks in Druid related to issue  3560 fix  3578. Querying timeseries data results in BufferUnderflowException errors eventually from peon nodes. MiddleManager configuration includes indexing realtime tasks events pushed from applications using tranquility Setting druid.indexer.fork.property.druid.processing.numThreads resolves the issue but not ideal for efficiency Upgraded to 0.10.0 with no resolution
+4984	Callback race start cachingCost balancer
+5338	HttpPostEmitter high CPU usage upgrade to 0.11.0 emitter thread DruidCoordinator while true  loop batch.tryAddEvents method return false concurrentBatch concurrency issue
+6020	TaskMaster  overlord becomes leader OR DruidLeaderSelector.Listener.becomeLeader OR taskRunner initialization OR Optional.of throws NPE
+6028	SqlMetadataRuleManagerTest deadlock error
+6139	Kafka Supervisor Test race in testCheckpointForUnknownTaskGroup Assert.assertNotNull serviceEmitter.getStackTrace
+6201	deadlock overlord HttpRemoteTaskRunner java.lang.Object io.druid.concurrent.LifecycleLock
+6287	Race condition Kafka Indexing Service verifyAndMergeCheckpoints KafkaSupervisor Futures.addCallback taskSequences.sort o1.rhs.firstKey o2.rhs.firstKey
+6826	Concurrency bug DruidSchema.refreshSegmentsForDataSource segmentMap created outside of lock SegmentMetadataHolder holder dataSourceSegments.get segment  segment could be already removed NPE
+6867	DruidStatement deadlock
+7400	provider  metadata username  PasswordProvider  hardcode  restart Druid  change user Druid  change druid.metadata.storage.connector.user property  change while running  single provider  avoid race condition  PasswordProvider for username password.
+8622	What is the proposal for IR-based involving the concept of supervisor type task slots for resolving parallel task deadlocks
+9292	CoordinatorRuleManager.rules ConcurrentHashMap HashMap race condition  6898
+10005	API to verify availability of published segments for a datasource with optional time interval API to verify published segments availability for datasource with time interval  optional  forceMetadataRefresh  optional

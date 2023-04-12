@@ -1,0 +1,4 @@
+199	performance tests synchronization blocked threads jmeter read-only queries
+532	Multithreading authentication issue MongoDbUtils doGetDB synchronized block java mongo driver spring-mongo upgrade
+622	MongoTemplate.doSaveVersioned insert vs save usage for unversioned object to avoid race conditions on concurrent inserts
+737	MongoSynchronization IllegalStateException multiple Mongo databases transactional test case DATAMONGO-546 MongoDbUtils TransactionSynchronizationManager working theory cause MongoDbUtils doGetDB register one MongoSynchronization per Mongo submitting patch

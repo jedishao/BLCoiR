@@ -1,0 +1,20 @@
+12996	Invalid thread access error when exporting jar in Eclipse multipage editor
+29531	bug localization Java ColorManager non-UI thread Workspace open CU selection without editor Move refactoring activation different package selection Preview button press
+75843	Bug localization JDIDebugModel createMethodEntryBreakpoint deadlock UI thread
+79793	Java deadlock in WorkingSetUpdater while using CTRL-Shift-T to open type progress dialog appeared; canceled retried; Workspace deadlocked resulting in thread dump
+103450	Quick fix to remove synchronized block remove surrounding synchronized statement Quick Fix option for synchronized statement bug localization
+125013	PreferencesAdapter firePropertyChangeEvent deadlock target workbench never came up selected threads from vm dump syncExec call from PreferenceForwarder waits forever JavaModelManager waited for by main thread main thread waits for lock reconciler waits forever not exactly a deadlock but similar in result org eclipse core launcher Main
+179109	 of Editor computing AST twice concurrently leading to slow Open Type multiple creation of same AST
+261198	Java Model Synchronize view missing nodes Eclipse
+272742	ImagesOnFileSystemRegistry not thread safe bug 223686 exception Javadoc view getNewFile concurrently ImageLoader save
+291996	Invalid thread access JavaMergeViewer extracting method compilation error error dialog disappeared shell closed
+296794	Invalid thread access document is not thread safe DocumentChange fails refactoring changes in non ui thread Eclipse 3 5 org eclipse swt SWTException reproducible always final Point position
+297709	JDT error behavior link with editor synchronize package tree reproducible steps to reproduce new java class wizard autocomplete result
+300536	Invalid thread access undoing quick fix dead code error bug localization
+301242	Java editor Undo repeated UI locked 2 dialogs Format all Save Action Eclipse org eclipse ui workbench SearchPattern validateMatchRule stacktrace attachment 157616
+319689	Invalid thread access ProblemMarkerManager exception 4 0 SDK stacktrace bug localization
+336841	bug localization IR Show In Synchronize view open  java file outside of classpath Package Explorer
+347599	Refactoring dispose method implementation C index lock release CDT refactorings dispose calls Eclipse 3 8
+411636	slow save UI unresponsive stack trace hung up project explorer Link With Editor workspace size Eclipse version Juno
+411841	JUnit test UI thread build before launch Eclipse freeze patch stack trace
+417765	ImageDescriptorRegistry hookDisplay SWT Invalid thread access NewJavaProjectWizardPageTwo Bndtools OSGi project stack trace

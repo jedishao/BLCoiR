@@ -1,0 +1,5 @@
+176792	org.eclipse.swt.internal.ole.win32.ComObject misbehavior in multithreaded application Enclosing constructor code in synchronized block related issue of constructor accessing Callbacks ObjectMap static fields leading to SWTError exceptions with message No more callbacks
+183830	Xlib unexpected async reply deadlock GLX.glXMakeCurrent int OpenGL program Linux
+188320	JFace ModalContext deadlock Linux GTK block method asyncExec sleep not return
+264399	Deadlock automated testing SWT application
+338965	Deadlock Hang UI Thread bug localization

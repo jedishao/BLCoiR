@@ -1,0 +1,18 @@
+170	step staleobjectstateexception hibernatejobdao stepexecution result operationuse operation modification
+449	writer reader itemskippolicyitemhandler skip synchronization call item
+603	jobexecution fields modified another volatile
+782	interruptedexception release abstractstep chunk acquirer error context lock block share processchunk execution peresistence locking itemorientedstep jdk simpleasynctaskexecutor synchronizer semaphore persistence interruption step writer optimisticlockingfailureexception
+912	error issue static synchronization context arraylist jobregistrybackgroundjobrunner theory safety visibility occur arraylistexception check collections synchronizedcollection implication initialization modify prove believe collection replace hit hard think work with
+1272	work faulttolerantchunkprocessor step strange
+1278	throw repeattemplate underlie batch abort
+1362	want spin step ask chunk finish worker work nothing end priority process jvm give scheduler loop user disparity report
+1526	web leak exist deal user re deployment detection one memory null threadlocal chunkmonitor result fix catch
+1542	concurrency stepexecution write job mapjobrepository effect jobexecution copy protection collection safety execution batch step place likely
+1572	failing springframework transaction transaction timing out read reader step due lock
+1709	distance race limit concurrency column message property caching beanwrapperfieldsetmapper cache setting name fail condition
+1724	case fail failure background way fix chunk processing check step queue understand doubt
+1725	concurrenthashmap subclassclassifier modification
+2126	taskexecutor evaluate work setup longnumberformat dateformat instance explain variable simplejoboperator numberformat simpleasynctaskexecutor jobparametersconverter usage defaultjobparametersconverter fix mean safe
+2153	static stepsynchronizationmanager maven increment project nullpointerexception hashtable fix solution decrement variable threadsafe teststepsynchronizationmanagermain hashmap
+2156	concurrency stepexecution execution update context step failure try step_execution_context line jdbcstepexecutiondao updatestepexecution prevent order springframework batch core repository dao jdbcexecutioncontextdao updateexecutioncontext tableneed record multithread tasklet concurrencyfailureexception get appear
+2313	race synchronization spring batch re synchronizationmanagersupport condition datum nullpointerexception multithreading operate lead count release npe decrement kind system increment field gridsize year production month line look number bit context running partition

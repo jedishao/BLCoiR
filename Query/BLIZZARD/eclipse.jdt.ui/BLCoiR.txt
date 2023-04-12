@@ -1,0 +1,20 @@
+12996	file export multipage editor project error creation build follow select leave get create happen mpe fill fail install open
+29531	editor move open preview refactoring javacolormanager select package activate initialize press
+75843	deadlock freeze issue call component jdidebugmodel createmethodentrybreakpoint breakpoint team workbenchcontentprovider resourcechanged reaction entry occur display iresourcechangeevent debugger point create chain syncexec gui trigger information try require pend result reemphasize discuss folk case processing rest creation
+79793	javaworkingsetupdater deadlock
+103450	statement fix option remove block surround
+125013	deadlock lock reconciler preferencesadapter firepropertychangeevent preferenceforwarder syncexec trace javamodelmanager hold call wake show
+179109	editor computing ast twice concurrently
+261198	change team repository miss view model internal javasynchronizationcontentprovider appear node trace spot
+272742	concurrently type imagesonfilesystemregistry imageloader javadoc editor step call hover save click link view reproduce getnewfile happen fimagecount get report
+291996	javamergeviewer
+296794	change try refactoring document point swt swtexception documentchange throw reproducible work reproduce fail position
+297709	composite editor opening swt control package option result action autocomplete link class error tree moment reproduce where behavior reproducible open
+300536	undo fix
+301242	save line validatematchrule hold ctrl press editor enable action format repeat undo beginning space class user dialog perform lock case add check searchpattern stacktrace
+319689	problemmarkermanager
+336841	package show work explorer view file
+347599	refactoring c place call refactoringhistorywizard release add dispose life ltk core index depend cdt override propose checkinitialcondition cycle createchange performrefactoringhistoryoperation none way solution class rafactoring patch lock conditions scope check deal
+411636	hang file stack explorer indigo editor burn delay trace action save link cycle package large slow try
+411841	junit stack process test work project capture launch menu sample rerun eclipse result patch view trace freeze build enable context config
+417765	stack bndtools perspective switch newjavaprojectwizardpagetwo swt invalid case other reproduce create believe delete trace get kepler appear imagedescriptorregistry hookdisplay

@@ -1,0 +1,18 @@
+170	Concurrent modification of StepExecution OR Use of hibernateJobDao StaleObjectStateException asynchronous step operation
+449	skip synchronization reader writer skip call
+603	JobExecution fields  modified  Thread  not volatile
+782	synchronization issue in ItemOrientedStep due to exception in chunk processing causing concurrent access persistence of step execution
+912	JobRegistryBackgroundJobRunner thread safety issue without synchronization between threads modifying accessing errors variable may cause visibility issues requires a fix Possible solution is to replace private static List.Exception errors new ArrayList with private static List errors Collections.synchronizedCollectionnew ArrayListException obRegistryBackgroundJobRunner thread safety issue with errors variable without synchronization.
+1272	multi-threaded step write skips FaultTolerantChunkProcessor not fault tolerant
+1278	RepeatTemplate aborts early multiple threads ignorable exceptions underlying cause BATCH-1272
+1362	multi-threaded step threads spinning finished
+1526	Tomcat memory leak ChunkMonitor ThreadLocal null fix 6.0.24 web deployment caught by leak detection
+1542	JobExecution StepExecution collections thread safety copy-on-write concurrency protection MapJobRepository BATCH-1541 fast step job executions
+1572	unexpected rollback exception  transaction timeout  batch processing  losing records in chunk.
+1709	BeanWrapperFieldSetMapper race condition cache concurrency bug
+1724	multithreaded step re-processing chunk failure
+1725	SubclassClassifier using ConcurrentHashMap
+2126	DefaultJobParametersConverter SimpleJobOperator thread-safe SimpleJobOperator JobParametersConverter instance variable thread-safe SimpleJobOperator TaskExecutor asynchronous thread-safe Fixing thread safety issue in SimpleJobOperator for asynchronous TaskExecutor Evaluation of setup for SimpleJobOperator to work with asynchronous TaskExecutor
+2153	StepSynchronizationManager NullPointerException java.util.HashMap thread safety solution
+2156	ConcurrencyFailureException in org.springframework.batch.core.repository.dao.JdbcExecutionContextDao during update of PREFIX STEP_EXECUTION_CONTEXT table Synchronization needed to prevent concurrency failures during updateExecutionContext method Already implemented in JdbcStepExecutionDao.updateStepExecution method at line 162 Error occurs during processing of multithreaded tasklet
+2313	Possible race condition NullPointerException SynchronizationManagerSupport Spring Batch 3.x migration multithreading inconsistency synchronization bug

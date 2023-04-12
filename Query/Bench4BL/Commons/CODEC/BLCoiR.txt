@@ -1,0 +1,1 @@
+96	mean class share binaryencoder instance common usage stream nullpointerexception interface commons user codec variable look break introduce javadoc regression think kind support client indicate throw encode happy attempt worried

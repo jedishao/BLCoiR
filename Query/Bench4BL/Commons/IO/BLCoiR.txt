@@ -1,0 +1,5 @@
+99	common filecleaner clean class leak everything extend end memory classloader solution user outofmemoryerror asfilecleaner webapp result way give open server undeployed think provide
+136	stringbuffer static hexdump call outputstream mix instance alter int byte char result stringbuffers datum contain modify safe
+201	synchronization count read stream countinginputstream functionality underlie sense publish guarantee operation loss countingoutputstream update field share allow remove
+207	race throw directory create ioexception chance process forcemkdir call condition
+216	delete file lockablefilewriter fix deletion failure lock initialization account

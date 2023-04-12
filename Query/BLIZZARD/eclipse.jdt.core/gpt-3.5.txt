@@ -1,0 +1,7 @@
+29585	Core Exception resource tree is locked Java Model Exception Initializing classpath container
+58314	thread-safe AST multiple readers exception console cursor management not thread safe
+291322	JDT Core test errors Windows 7 exception tear down known issue lock file retry
+327143	IndexManager new jobs processing thread simulateExit touch simulateRestart jar file waiting jobs infinite loop number of awaiting jobs never run stop loop awaits job thread is null
+421473	race condition in LocalVariableBinding getAnnotations due to delayed assignment of declaring scope for arguments in BETA_JAVA8
+431275	Deadlock JavaModelManager PerProjectInfo DeltaProcessingState IBM headless JDT 3 6 50 v_B79_R36x_J7 3 6 4 v_A79_R36x bugzilla 338006 DeltaProcessor addPackageFragmentRoot stack traces
+464570	race condition static field CodeStream noVisibleLocals method CodeStream init weblogic JDT compile java source jsp files java bytecode multi-threads ArrayIndexOutOfBoundsException org eclipse jdt internal compiler codegen CodeStream noVisibleLocals reproduce fixes

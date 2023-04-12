@@ -1,0 +1,6 @@
+367	fastdateformat simpledateformat class static patch instance share guarantee hashmaps provide attribute document assume clear also follow safety final
+459	hashcodebuilder system identityhashcode issue load multi suspicion show change line usage hashcode toidentityhashcodeinteger fix convince value assume hashset add arraylist replace result narrow regards andrew
+481	range class look race hashcode condition initialize
+584	cause_method_names lock modify addcausemethodname take removecausemethodname exceptionutils target targetexceptionutil work
+1230	hashcodebuilder threadlocals synchronization issue lookup get threadlocal value contention identity call equalsbuilder consequence registry select change lang unregister register idkey hashcode believe remove read introduce mean
+1251	map initialize classloaderawareobjectinputstream primitivetype break constructor hashmap safety initializer serializationutils

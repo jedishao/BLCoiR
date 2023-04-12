@@ -1,0 +1,32 @@
+7392	JDIThreads not responding at startup suspended incompatible thread state exception
+8683	NPE in SignalDispatcher thread after suspending VM stepping over top stack frame assumption
+12695	Java thread breakpoints hit suspend event temporary breakpoints super adapters Java debug adapter hidden list user breakpoint
+16930	incompatible thread state InvalidThreadStateException better error message toString suspended after a step breakpoint bug localization
+21801	ThreadGroupReference cached JDI client thread group name parent API java library reduce number of jdwp command
+22005	review UI runnables Display asynchExec Display synchExec UI performance
+24579	deadlock java project build 20021008 eclipse plugin development java build path control cvs perspective checkout org eclipse core resources ModalContext thread UI blocked on ModalContext 2
+33297	detail formatter manager unnecessary error logging resolveFormatter EvaluationListener evaluationComplete
+33712	Resource tree locked for modifications JavaDebugOptionsManager
+43197	race condition console line tracker debug terminate event process termination event job worker thread main thread last line IConsoleLineTracker dispose method launch removed know if last line changed termination event wait IConsoleLineTracker lineAppended method return mirror init method what to do after termination logic
+52474	UI blocked Java Perspective CVS check out Eclipse I20040218 Platform UI module workbench lock
+57467	invalid stack frame race condition JDIThread computeStackFrames method preserving stack frames fLastMethod transient exception retrieving underlying method thread accessing stack frames background UI test methods comparing frames fix
+64951	suspended thread evaluating condition no labels RC1 IBM1 4 2 for loop line breakpoint i 53 selected thread debugging paused labels appear update variables stack frame toString details not work screenshot
+65107	ClassCastException processing async thread queue, DebugView stack frame switching between T1 T2 with watches on total i
+65149	Resource exception Java DebugOptionsManager initializeProblemHandling org eclipse core internal resources ResourceException modifications CVS
+66413	Illegal thread state debugging conditional breakpoint startup bug 64951 condition i 57 change Java perspective shutdown workspace restart workspace re-launch last debug mode Error dialog runtime exception occurred condition error dialog appears stacked 4-6 times log Terminating restarting target problem evaluating condition startup
+78534	ConcurrentModificationException ThreadMonitorManager HashMap clone not thread safe
+88923	evaluate method IEvaluationEngine compiled expression UI thread asynchronous evaluation
+101118	eclipse rc3 win32 multithreaded application debug problem
+125868	Invalid Thread Access launching Running HEAD restart eclipse jdt debug session exception first launch
+148006	deadlock ConsoleDocument ant execution autobuild
+161781	Eclipse remote debug connection thread status suspension
+165174	selection lost in launch view after stepping into sync block with show monitors turned on screenshot attachment
+169542	debug view not displaying threadgroup threads, workaround found Debug View not showing ThreadGroup workaround to display thread group in debug view Build ID: M20060629-1905 Steps to reproduce creating nested threadgroups threads under them in IR
+178912	Query: IVMInstallType AbstractVMInstallType thread safety problem race condition synchronization
+182237	Invalid thread access exceptions Java Variables view updating to M6 exceptions when I first open the variables view bug localization
+187000	debugger focus selection loss in thread stack during Java 6 debugging on Windows XP Linux machines
+229394	NPE JFace cell editor variables view null check  dispose  race condition array of chars  breakpoint  var view  delete value  click outside of cell Invalid Type  org eclipse jface
+312038	JREContainer hasChildren backtrace recursive stat Manifest MF lockup JDT source directory TreeViewer isExpandable NFS automount UI thread slow
+343039	jdt debugger show monitors by default
+446040	Invalid thread access RuntimeClasspathViewer 1 preferenceChange Eclipse bug error version: 4 4 1 M20140925-0400
+506865	Race condition AbstractVMInstallType createVMInstall two VMs with the same id checking for existence synchronized block bug localization

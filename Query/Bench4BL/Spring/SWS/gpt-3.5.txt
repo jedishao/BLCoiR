@@ -1,0 +1,3 @@
+334	AbstractStandaloneMessageReceiver lifecycleMonitor.notifyAll superfluous no threads call wait
+613	Jaxp13XPathTemplate XPathFactory thread-unsafety concurrency issues with respect to XPathFactory.newInstance method instance methods
+947	race-condition breaks dynamic WSDL Spring Webservices Tomcat Docker container stacktrace

@@ -1,0 +1,17 @@
+125	SimpleMessageListenerContainer unreliable lock algorithm leads to container not waiting for stop if listeners fail
+190	CachingConnectionFactory leaks channels TransactionManager RabbitTemplate convertAndSend channelTransacted channel leak spring-integration
+223	Too Many Threads Running SimpleListenerContainer doStart spring-integration-amqp adapter externally defined listener container acks run consumers multiple times
+243	AmqpAppender log4j synchronization issues messages loss routing key badly generated
+249	RabbitTemplate Temporary Reply Queues autoAck=false unacked count Rabbit admin race condition timeout exceeded consumer thread hang put take issue
+260	RabbitTransactionManager listener container channelTransacted hanging thread message not acknowledged AMQP-190 sample demo project zip file 1.1.1.RELEASE 1.1.2.BUILD-SNAPSHOT
+262	ConcurrentModificationException in publish confirm code when sending messages from multiple threads Thread-safety issue in PublisherCallbackChannelImpl.addPendingConfirm Synchronize access to this.pendingConfirms in PublisherCallbackChannelImpl.addPendingConfirm Fix ConcurrentModificationException in PublisherCallbackChannelImpl.addPendingConfirm
+274	Listener Container local transactions not properly set up local transactions external tx manager exposeListenerChannel synchronized resource synchronizedWithTransaction property RabbitTemplate channel close
+275	race condition stopping listener container cancel consumer first drain queue reject requeue
+331	java.lang.Error OutOfMemory threads abort expected
+355	Race Condition Test Case ErrorHandler not called when container inactive stopped 3rd message received verify fails called twice
+365	Fixing Race Condition in Consumer Recovery Test Cases Search for analysis of test cases sending multiple messages with manual ack double ack causing channel closure race between broker listener solution involving counting down latch only for non-redelivered messages adding messages to a set to prevent duplicate countdowns.
+469	Erlang Thread safety safety of ErlangTemplate ErlangTemplate.executeErlangRpc ErlangRpc SingleConnectionFactory SimpleConnectionFactory connection.sendRPC connection.receiveRPC interleaved thread bug issue problem
+506	ConcurrentModificationException RabbitTemplate.getUnconfirmed synchronized on pendingConfirms maps fail to synchronize iterating removing
+532	ConcurrentModificationException in PublisherCallbackChannelImpl testing continuous publishing to a RabbitMQ node network partition pendingConfirms map synchronizing on the map accessed are synchronized on the PublisherCallbackChannelImpl Stacktrace
+551	intermittent build failure non-thread-safe Mockito multi-threaded usage test failures limitations of concurrency testing WrongTypeOfReturnValue spy is stubbed doReturn|Throw family of methods javadocs for Mockito.spy method
+648	VESC-715 Container Fails to Recover  Container configured to listen on multiple queues  Delete a queue suspend the consumer thread in handleCancel Stop start the broker  issue with detecting other queues attempting to cancel consumers  failure to cancel properly

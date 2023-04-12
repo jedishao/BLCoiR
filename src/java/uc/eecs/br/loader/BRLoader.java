@@ -37,7 +37,7 @@ public class BRLoader {
 
   public static ArrayList<String> loadBugContentList(String brFile) {
     ArrayList<String> lines = ContentLoader.getAllLinesOptList(brFile);
-    lines.remove(0);
+//    lines.remove(0);
     return lines;
   }
   public static String loadBugContent(ArrayList<String> lines) {

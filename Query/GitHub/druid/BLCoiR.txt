@@ -1,0 +1,31 @@
+582	upload hadoop cluster job file druid indexer jobhelper one directory indexing something locking path overwrite start exist mtime fail solution workingpath jarname race fs exists
+812	task realtime race load lock segment push callback indexing try server merge node file service view perform merging abandonsegment havoc release delete case call realtimeplumber unannounce
+1014	race lead error condition disappear increase result system send
+1210	coordinator condition log race crazy say
+1360	task give worker know account indexing service manager anything update autoscale middle status assign node auto race spawn replica situation scaling condition kill take provide terminate get check announce possible help rely
+1715	task acquire issue lock execution zombie fail say clean failure course occur disconnect log request overlord submit grant suffice min
+2793	mysqlintegrityconstraintviolationexception argument redacted taskqueue status_payload error retryutils attempt way entry diff payload datasource lock created_date ms unabletoexecutestatementexception callbackfailedexception thing value primary
+2842	task assignment rtr npe
+2991	multi race incrementalindex fact aggregate get add addtofact incremetalindex mapping index onheapincrementalindex condition
+3063	flight load block request lookup listen lock issue query hold acquire relate druid insert fail queue coordinator work jetty try stuff one post involve number forward reasonable
+3393	druid future nettyhttpclient disconnect channel get httprequest race cluster fail hundred instance httpclient go finish byte write condition thing directdruidclient query broker call connect retry think chance addlistener trace close happen occur
+3459	parking lookup cache stack issue level query namespaceextractioncachemanager atomicboolean deadlock topn_redacted kill hold node synchronizer lock information case reentrantlock
+3593	deadlock stack lock hold offheap monitor synchronizer namespaceextractioncachemanager concurrent atomic atomicboolean cache information parking locks reentrantlock qtl
+3600	issue race task partition metadata indexersqlmetadatastoragecoordinator number count service update updatedatasourcemetadatawithhandle class solve segment case read equivalent commit replication kafka indexing fail failure datasource want log publishing aborting transaction way commit_metadata_payload retry
+3608	input datasource fix cross reindex grain factory task locking level toolbox segment get directory ingestsegmentfirehosefactory fail reduce happen download clobber condition race create situation proceed
+3772	issue race forget create order kafkalookupextractorfactory condition gvsmirnov
+4226	lookup node aprox druid query realtime storm tranquility bit fail cache race start segment spawn load publish take condition
+4296	issue stack hll race middlemanger indexing query configuration task think bufferunderflowexception tranquility push segment peon release druid middlemanager index timesery relate link end lead efficiency processing node corrupt indexer fork property numthreads describe condition fix download
+4984	start balancerstrategyfactory cachingcost segment cluster balancer number inventory callback serverinventoryview create try happen miss view initialization test refuse cachingcostbalancerstrategyfactory constructor discover race register
+5338	issue concurrency cpu try batch loop happen druidcoordinator usage concurrentbatch emitter emit tryaddevents deployment datasource servicemetricevent builder keep create httppostemitter class while executor anything reference take verify send event spin upgrade change
+6020	race npe stack taskqueue throw variable taskrunner taskmaster leader overlord initialize optional of call trace druidleaderselector listener becomeleader interface this follow
+6028	lock waiter deadlock cycle obtain sqlmetadatarulemanagertest error
+6139	kafkasupervisortest testcheckpointforunknowntaskgroup
+6201	cluster lifecyclelock httpremotetaskrunner os_prio test monitor deadlock sync daemon entry task concurrenthashmap lock hrtr state worker prio runner overlord
+6287	issue race complete kafkasupervisor indexing kafka futures addcallback tasksequences sort result verifyandmergecheckpoint service compareto condition
+6826	druidschema refreshsegmentsfordatasource
+6867	deadlock stack druidconnection exhaust connection druidstatement information level
+7400	metadata username password yoke passwordprovider user druid passwordproviders provide connect condition avoid change hardcode storage connector store race want credentials field introduce name interact furnish database property way operation restart case allow
+8622	task supervisor spawn deadlock parallelindexsupervisortask subtasks designate slot subtask middlemanager work delegate possibility resolve property type interface style get druid worker supervisorcapacity capacity user issupervisor test concept http remotetaskrunner start consume fail
+9292	concurrenthashmap atomicreference race coordinatorrulemanager rules action hashmap replace fix assign store modify condition
+10005	segment load interval number coordinator leave update ingestion datasource week give want query this cache past publish sqlsegmentsmetadatamanager memory forcemetadatarefresh verify user mention datum refer ingest iterate exist loadstatus cluster percentage tier

@@ -12,7 +12,7 @@ public class ResultRankManager {
   String repoName;
   ArrayList<String> results;
   ArrayList<String> goldset;
-  public static HashMap<String, String> keyMap = new HashMap<>();
+  HashMap<String, String> keyMap = new HashMap<>();
   String keyfile;
 
   public ResultRankManager(
@@ -23,11 +23,11 @@ public class ResultRankManager {
     this.goldset = goldset;
     this.keyfile =
         "Lucene/Lucene-Index2File-Mapping" + "/" + this.bench + "/" + this.repoName + ".txt";
-    if (keyMap.isEmpty()) {
+//    if (keyMap.isEmpty()) {
       // load only the HashMap is empty
       loadKeys();
       // System.out.println("Keys loaded." + repoName);
-    }
+//    }
   }
 
   public void loadKeys() {

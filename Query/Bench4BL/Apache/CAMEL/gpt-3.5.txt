@@ -1,0 +1,64 @@
+140	XsltBuilder thread unsafe resultHandler
+510	Intermittent test failure MultiCastAggregatorTest race condition InAggregator copy exchange unused method patch
+574	inadequate thread creation during parallel processing in Multicast default executor loan broker example CAMEL-556 for Camel framework
+715	ConcurrentModificationException ThreadProcessor routing multicore systems
+803	ValidatingProcessor thread-safe org.apache.camel.processor.validation.ValidatingProcessor.process concurrent execution shared errorHandler error handling synchronized block serialization locally created error handler
+1199	Throttler throttle per thread multiple threads
+1270	hanging thread Camel run using Main class Countdown latch not completed in MainSupport
+1401	JaxbDataFormat thread-safe Marshaller Unmarshaller exceptions lazy-creating instances JAXBContext bug localization
+1510	BatchProcessor interrupt side effects Thread class enqueueExchange JMS connection SSL queuing asynchronous processor exceptions performance testing concurrency controls linked list mutexed queuing exchanges batch sender
+1565	camel-validation thread-safe XSD schemas not loaded camel-validation endpoint first hit SchemaFactory not thread-safe exception backport fix 1.4
+1583	LDAP component thread-safety connection issues
+1604	UnitOfWork synchronization callbacks DSL for easy registering custom processor
+1641	camel-ftp thread safe FTPClient new instance producer consumer http component
+1650	IdempotentConsumer race condition MessageIdRepository locking database
+1670	file components overlapping lock exception route multithreaded thread 10  multithread file components OverlappingFileLockException
+1795	camel-jms-wrong defaults JmsConfiguration bad default message listener DefaultMessageListenerContainer new thread maxMessagesPerTask
+1930	synchronized access to XPathExpression contention for multiple consumers Camel JMS message routing choice XPathBuilder thread safe ThreadLocal
+1966	CamelNamespaceHandler not thread safe mail thread discusses
+2049	improper configuration of MINA acceptor connector instances causing producer to fail limit incoming threads to 15 standard Camel-MINA producer not being thread-safe using configuration rules thread pool-based reentrant version for TCP endpoints with lazySessionCreation sync set to true
+2175	camel-cxf initialization thread safety getCxfBinding multiple threads false sense getAndSet
+2496	StreamCache Splitter race condition with seda queue multiple threads passing through Test patch showing symptoms logging for investigation.
+2824	Deadlock org.apache.camel.util.DefaultTimeoutMap camel Aggregator processdump
+2935	Camel failure reporting DefaultProducerTemplate.asyncCallback Synchronization.onFailure ProducerCache.send.ProducerCache.java CamelExecutionException DefaultProducerTemplateAsyncTest bug fix
+2986	camel IllegalStateException under heavy load race between continuation.suspend continuation.resume async completion callback faster than if block fix according to Jetty recommendations
+2994	camel-cxf CXFClientCallback invoked twice race condition with 2 threads CXF should only invoke ClientCallback once
+3216	if there are any bugs related to ScheduledPollConsumer causing threads to die stop polling due to uncaught exceptions.
+3277	threading issue type converter loading not threadsafe fail conversion error load method synchronized patch
+3349	Race condition CxfRsEndpoint getBinding method thread-safe bug localization.
+3493	ConcurrentModificationException DefaultCamelContext.removeRouteDefinitions removing route definitions multiple threads synchronization
+3528	HybridSourceDataBinding thread safety Camel CXF
+7116	JettyHttpProducer.doStop CamelContext not stopping client thread pool
+7161	camel-dozer spring deadlock init getBean defer loader service start|stop methods bug localization
+7239	SchemaFactory thread safe issue ValidatorProcessor thread issue avoidance
+7318	for HDFS Consumer concurrency issue
+7321	JcrConsumer freezes JcrConsumerTest fails environment fix to the pom.xml multi-threading issues synchronization issue bug localization
+7364	JpaMessageIdRepository thread-safety issue causing strange behavior after version upgrade from 2.9.2 to 2.12.3 EntityManager assignment in constructor causing the issue. Solution may require assigning EntityManager in each method separately.
+7556	camel-rabbitmq Multiple concurrent consumer threads Allow multiple concurrent threads listening to a single queue JMS endpoint
+7715	SjmsConsumer SjmsProducer How to remove thread pool when stopping  removing the consumer producer endpoint in Camel context ExecutorServiceManager
+7795	MDC may lose values when async routing engine is used introduced regression CAMEL-6377 need MDCCallback to reset ALL MDC values underlying MDC implementations use InheritableThreadLocal odd behavior no MDC in async endpoint responses.
+7968	undefined concurrency behaviour ThreadSafe implementation of Container ContainerRegistry that can handle multiple Containers
+7973	CircuitBreakerLoadBalancer async processor misbehavior AsyncProcessorConverterHelper Exchange RejectedExecutionException solution patch.
+7988	file consumer  call abort  read lock cannot be acquired  exception was thrown  nabble  a.camelLock  phaned file  file not eligible for consuming on next poll
+8088	using IR  FTP  connection timeout  socket connection  ftpClient.defaultTimeout
+8134	synchronization CachedOutputStream  closedOnCompletion OOM error HttpProducer endpoint redelivery 
+8146	starting routes stopping routes leak threads  identical consequence previous issue CAMEL-5677 file based route SFTP based route orphan threads suspend resume start stop issue 
+8200	JmsProducer race condition setting body to null ActiveMQ VM transport caused by invoking setMessageId after doSend
+8241	exec command failures Java 8 Unix race condition stream closed prematurely DefaultExecutor DefaultExecCommandExecutor commons-exec test case
+8268	scan method thread safety issue with filter list in camel-hbase its resolution using filter list cloning
+8353	FileLockExclusiveReadLockStrategy issue with closing channel before release lock
+8673	ConcurrentModificationException creating dynamic routes CAMEL-7836 fix wrong removeRouteCollection addRouteCollection synchronize routes getRoutes
+8713	parallel mode parallel aggregate thread pool worker threads CAMEL-7521
+8885	ConsumeLockEntity condition lock function consumeDelete false select update entity locked
+8954	Exchange file lock information lost during on-completion synchronizations
+9199	RabbitMQ Consumer thread crash partially serializable objects object implements Serializable non Serializable objects PR tests IR-based bug localization
+9311	concurrency issue dynamic router HTTP context endpoint dynamic router bean shared state sequential calls concurrent re-routing unit test case
+9319	ProducerTemplate SshClient resource leak not killed threads IR-based
+9331	Http4Endpoint thread leak doStop method httpClient close not working
+9738	camel-mina2 consumer thread leak IoAcceptor dispose not called in doStop method.
+9951	Default values for thread-connected properties in WebSocket component causing RuntimeCamelException websocket consumer not created
+9970	CamelFileLength header in slowfile.dat: exclusive read lock fails parameters  length lastModified  are wrong Solution involves checking parameters upon read lock grant Patch available
+10024	Mina2Producer Mina2Consumer race condition close connections disconnect true await CloseFuture CamelMina2CloseSessionWhenComplete ExchangeTimedOutException IllegalStateException unit testing
+10215	thread safety issue EventDrivenPollingConsumer ConsumerCache race condition beforePoll poll afterPoll synchronization
+10229	camel-rabbitmq race condition stopping context autoack=false exception unacked state RabbitMQ console main thread channel.close channel basicCancel tag  channel.basicAck deliveryTag false  handleDelivery message duplicate destinationQueue sourceQueue consumer wait acks close channel bug localization
+10273	Jetty missing jmx object custom thread pool enableJmx method setThread method Endpoint level bug localization

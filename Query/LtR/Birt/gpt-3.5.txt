@@ -1,0 +1,6 @@
+123840	How to fix Data Engine classes in org.eclipse.birt.data.engine.script.NEvaluator FilterPassController that use static class fields leading to data corruption in the presence of concurrent requests in the same JVM
+195335	HTMLServerImageHandler static hashmap not synchronized multiple times IR-based multithreading
+208512	org.eclipse.birt.data.engine.odaconsumer classes packages multithread thread issues thread-safety debugging error identification
+284367	org.eclipse.birt.data.engine.executor.DataSourceFactory thread safety
+287102	Classloader deadlock org.eclipse.birt.core.framework.osgi.OSGILauncher ChildFirstURLClassLoader
+314645	XML Datasource Thread-Safe IRunTask multi-threaded application corrupted setAppContext Reproducible xml parsing rptdocument files corrupted files

@@ -1,0 +1,33 @@
+1117	Exception namespace bundle split automatic initiation race condition bundle cache update invalid bundle range
+2141	race condition in reconnection after managed ledger is fenced in SequenceIdWithErrorTest
+3768	pulsar-function intermittent test failure deadlock org.apache.pulsar.functions.worker.PulsarWorkerAssignmentTest.shutdown function-worker time-out 60000
+4447	Broker gets stuck when getting partitioned stats Brokers in cluster get stuck executing internalGetPartitionedStats Pulsar broker PersistentTopicsBase.java thread dump unable to reproduce bug
+4635	Bookie down deadlock broker server ZK log thread dump Pulsar bug
+4707	bug related to PulsarKafkaProducer not being thread safe in sending messages to multiple topics causing NullPointerException in version 2.3.2 later which may be caused by a change made in a certain PR The bug can be found in the PulsarKafkaProducer class located in the pulsar-client-kafka module
+5585	non-persistent topic replication deadlock non-persistent replicator disable batching batch message producer acquire release num meta ackreceived sendasync pulsar-io-22-8 pulsar-io-22-12 jstack log broker
+8050	PulsarClientImpl using thread safe set instead of IdentityHashMap for storing reference of producers consumers for better performance
+8293	race condition updating ManagedCursorImpl.readPosition
+9109	pulsar-timer-4-1 blocked at redeliver UnacknowledgedMessages broker crash restart consumer rateOut decrease to 0 auto recover without restart consumer process thread pulsar-timer-4-1 stack blocked UnAckedMessageTracker add method writeLock consumer thread blocked in production
+10170	AuthenticationAthenz lock optimization bug Inconsistent synchronization of AuthenticationAthenz roleToken bug
+10235	deadlock monitoring thread leaderService.isLeader metrics query Gateway timeout heap dumps stack traces prometheus-stats thread hung waiting lock pulsar-external-listener deadlock condition becomeInactive
+10767	Java client deadlock Pulsar Client ConsumerBatchReceiveTest
+11379	Directory race condition  NarUnpacker Pulsar function parallelism unable to delete TMP directory
+11605	race condition concurrent  schema deletion apache pulsar broker service  deleteSchema getSchema deleteSchemaStorage  ledgers  bookkeeper
+11689	Java Consumer batchReceive bug race condition peekNextBatchReceive poll forever
+11690	LockManagerTest revalidateLockOnDifferentSession flaky fails sporadically bug localization IR-based
+11966	Proxied admin endpoint connections timeout missing
+12723	PersistentTopic addReplicationCluster race condition ConcurrentOpenHashMap method thread safe
+12885	race condition KeySharedSubscriptionTest PersistentDispatcherMultipleConsumers consume client
+12929	deadlock in internalDeleteSubscription in metadata-store callback thread
+13004	race condition ResourceLockImpl#revalidate LockManagerTest updateValueWhenKeyDisappears exception MetadataStore get DelayInjectionMetadataStore lock.updateValue
+13923	Pulsar Proxy race condition UnsupportedOperationException geo-replication logs bug localization
+13964	PulsarClientImpl.close hang forever deadlock Flaky test PulsarClientImpl.close in ClientDeduplicationFailureTest with deadlock issue
+13986	performance bottleneck TransactionBufferHandler synchronization timeout run method sync locks
+14362	race conditions in brokers health endpoint issues exposed by behavior NPE blocking a pulsar thread fixing endpoint for concurrent calls reproduce behavior resulting stack trace expected behavior for health check endpoint
+14413	ConsumerBuilderImpl.subscribeAsync blocking thread DLQ Retry topics backwards-compatibility check getPartitionedTopicMetadata blocking calling thread subscribeAsync non-blocking pool deadlock subscribeAsync blocking even when retry DLQ names specified proposal to restructure subscribeAsync to chain getPartitionedTopicMetadata calls flag to disable compatibility check in ConsumerBuilderImpl.
+14438	DeleteTopicForcefully block forever dump thread wait forever
+14633	setupTopicPublishRateLimiterMonitor deadlock metadata operations block forever
+17446	Permanent block issue in Producer due to chunking messages with blockIfQueueFull enabled
+17913	deadlock Schema BookKeeper PulsarRegistrationClient MetadataCache ZK Datastax BookKeeper Zk Registration Driver blocking call discover ZKRegistrationClient.
+18196	Bug locallyAcquiredLocks leak OwnershipCache search issues locallyAcquiredLocks.remove bundle
+18988	 Deadlock pulsar-io  metadata-store  transactions enabled search issues no similar results 2.10 version current master not able to reproduce  minimal reproduce step  not able to reproduce programatically

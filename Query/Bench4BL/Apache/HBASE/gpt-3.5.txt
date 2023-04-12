@@ -1,0 +1,38 @@
+543	Race conditions in region state in HBASE-534 found in multiple maps in RegionManager proposed solution is to create synchronized class encapsulating region state use synchronized collection for transitional states
+659	HLog cacheFlushLock not cleared region hang code path not released
+663	incorrect sequence number cache flush HRegion HStore updatesLock sequence number startup reconstruction updates skipped write lock read lock updates written updates not written flushed cache
+699	Hudson hanging threaddump relocateRegion verify table second region old address.
+818	deadlock regionserver
+950	HTable.commit RowLocks API update hang HBASE-748
+1569	race condition regionserver import load shutdown
+1740	ICV race condition under high load KeyValue duplicate timestamp memcache hfile get scan code arbitrary pick correct   incorrect snapshot deep permanently fix
+1840	RowLock IndexTable exception error update modify edit stacktrace debug info unit tests
+1869	IndexedTable delete fails RowLock TestIndexedTable exception Patch coded latest version SVN 0.21.0 final testing packaging attach shortly.
+2023	for blocking threads in sync block causing access issues in highly multithreaded clients potential solution to narrow remove lock
+6565	Coprocessor exec result Map not thread safe repeated tests result size HTable.java TreeMap multithreading environment bug happened
+8923	ChaosMonkey test teardown fail race restart last moment cluster recovery exitcodeexception
+13606	AssignmentManager.assign not sync TestCreateTableProcedure flaky async behavior
+13662	RSRpcService.scan OutOfOrderScannerNext while fixing HBASE-13651 with hasNextCallSeq nextCallSeq incremented not rolledback causing OutOfOrderScannerNextException. Recovery with scanner heartbeat patches HBASE-13090 Discussed with Stack proposing to decrement callSeq on exception questioning atomicity of nextCallSeq for preventing concurrent requests with same id Thoughts
+13959	region splitting single thread storefiles region split threadpool column family write heavy workload storefile count reference file offline time fail fast concurrency NotServingRegionException.
+13988	lease thread exception handler region server prod cluster thread not alive root cause log exclusion debug future
+14178	regionserver blocks waiting for offsetLock client rpc timeout regionserver jstack blocked for waiting offsetLock table block cache off.
+14241	Java-level deadlock during cluster shutdown due to concurrent connection close RpcClientImpl Root cause RpcClientImpl close obtaining lock on connections first followed by markClosed attempting to obtain lock on connection object leading to deadlock
+14359	query for HTable close hanging forever with unchecked error exception in AsyncProcess sendMultiAction recommendations issues observed errors.
+14463	Severe performance downgrade when parallel reading a single key from BucketCache in HBase due to the lock in BucketCache getBlock. Proposed solution is to use ReentrantReadWriteLock in BucketCache introduce a new class called IdReadWriteLock.
+14555	deadlock MVCC branch-1.2 toString Thread 75 PriorityRpcServer.handler queue port 16020
+14812	Fix ResultBoundedCompletionService deadlock
+14926	ThriftServer hung no timeout on client read worker thread stuck on read after client crashes potential relation to HBASE-4967 patch issue missing client side logs.
+15001	thread safety issues in ReplicationSinkManager HBaseInterClusterReplicationEndpoint caused by non-thread-safe ArrayList incorrect assumption on sink size leading to retries
+15030	Deadlock in master TableNamespaceManager while running IntegrationTestDDLMasterFailover  jstack ProcedureExecutor-3 waiting for ownable synchronizer  jstack ProcedureExecutor-1 waiting to lock monitor  Java stack information for the threads listed above  distributed cluster  logs not showing much
+15093	MetricsSource setSizeofLogQueue multiwal replication incorrect size bug
+15146	dispatch blocking queue reader tcp ack delay slow new rpc scheduler different queue capacity limit.
+15650	Remove TimeRangeTracker point of contention many threads reading HBASE-12148
+15957	RpcClientImpl.close never ending related to HBASE-14241 HBASE-13851 fixed by checking non alive connections issue with interrupt handling causing markClosed to set shouldCloseConnection flag preventing close connections pool removal.
+16081	blocking take CompletionService HBase intercluster replication endpoint remove peer stuck blocks WAL rolling race condition ReplicationSourceManager not able to roll WALs
+16144	RS lock crash claimQueues ZK queue replication bug
+16304	HRegion RegionScannerImpl handleFileNotFoundException deadlock write lock SynchronousQueue TransferStack AbstractQueuedSynchronizer ConditionObject ReentrantReadWriteLock$NonfairSync
+16367	for premature server abort in HBase initialization HRegionServer preRegistrationInitialization race with HMaster with cluster Id being null
+16429	FSHLog deadlock rollWriter RingBuffer SafePointZigZagLatch handler threads JIRA bug localization
+16699	AverageIntervalRateLimiter refill getWaitInterval overflow concurrent issue wrong behavior unconfigured RateLimiters
+16721	concurrency issue  WAL  unflushed seqId tracking  accumulating WAL files  force flushes  max logs  periodic memstore flusher  not working  masked problem  RS restarted  region split  FSHLog unflushed data for region
+16788	race in compacted file deletion HStore close closeAndArchiveCompactedFiles introduced by HBASE-13082

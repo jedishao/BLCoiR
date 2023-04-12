@@ -1,0 +1,5 @@
+99	FileCleaner thread never ending and memory leak in AS solution not provided to end thread undeployed app leaves thread alive and causes classloader leak leading to OutOfMemoryError API extension suggested commons IO cleanup class needed
+136	HexDump static StringBuffers thread-safe private static dump method alter static instances of StringBuffer dump modifies static StringBuffer variable lbuffer returning lbuffer dump modifies static StringBuffer variable cbuffer returning cbuffer public static dump multiple threads calling the public dump method mixed up data result in a bug
+201	CountingInputStream CountingOutputStream partially synchronized synchronization removed functionality shared stream thread-safe volatile read count field
+207	race condition in forceMkdir when multiple processes or threads call the function with the same directory resulting in IOException
+216	delete files exception thrown initialization LockableFileWriter report lock file deletion failure lockFile.delete return code file.delete returns false fix needs to take this into account

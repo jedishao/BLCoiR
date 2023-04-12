@@ -1,0 +1,33 @@
+1247	lock deadlock clientconnection close httpclientimpl vert x httpclient connection acquire hold checkclosed try handleclosed happen
+1302	startup call vertx clusteredvertx eventloop block
+1355	httpclientrequestimpl clientconnection deadlock
+1466	serverconnection httpclientrequestimpl deadlock
+1469	otherwise ConnectionManager instance resource createendpoint getconnqueue constructor closeendpoint none httpclientmetrics spi connqueue lead call leak endpoint queuemanager http client map queue
+1573	issue stack block opening nbd close map asyncfile share windows filesystem drive user network twickle reproduce report warning trace provide able
+1598	block issue read write async address
+1633	block context executeblocking provide log
+1742	datum instance readfileblocking run caching file payload parallel copying action jar copy case cache resource resolvefile sample filesystem async size verticle fileresolver
+1834	netty httpserverrequest context event httpserver request lock handler sockjssocket serverwebsocket schedule deadlock loop hold connection reconnect websocket process tick motivation create change call
+1892	sethandler call race compositefutureimpl futureimpl verticle case intention compositefuture completion handler composition future result encounter condition atomic
+2012	race get caller context asyncfileimpl counter writesoutstanding update write create state fix atomiclong condition
+2370	case httpclient underlie connection callback pool jvm dns host connectionprovider resolver resolve failure get assume
+2418	lock deadlock get try igniteclustermanager consumer verticle hazelcastclustermanager acuire reproduce
+2670	boostrap vertx bootstrap notify notification expect loop failure context client globaleventexecutor connection event netty
+2684	stack race handler future complete worker asyncresult happen executeblock mongo trace callback fail client hand execution runoncontext resolution lose executeblocking execute
+2773	allow delivery request re check fact race pool multiple vertx deliver tick moment schedule condition solution context client know connection avoid close situation httpclient
+2916	lock deadlock lead http handler call event hold remove
+2982	os_prio httpclientrequestimpl monitor deadlock entry appear eventloop threaddump http lock client reproducer try state prio stuff
+3064	mistake improvement result fail stream response httpserverresponse behaviour operation user programming case
+3140	block lock synchronization asyncfile file call handler read useful
+3142	start server verticle instance deploy regression deadlock
+3232	complete sethandler future vertx close shut pool sync await blocking handler work callback first
+3335	filesystemimpl existsinternal
+3468	server test ubuntu getconnection httpclientdoublefail runtime source sharing bit httpclientrequest mode openjdk environment eventloop limit block
+3469	callback http pool perform failure host client self close retry deadlock
+3658	block race condition future docomplete tryfail situation throw unhandle fail treat test runwith unit vertxunitrunner class failure result compositefuture all depend execution gap number execute composite iscomplete reach and context create
+4024	race issue concurrency tcpserverbase listener verticle context get debugging bindfuture addlistener future specify listen dobind sharednetservers put happen register port term notify dependen stumble pick predictable say effect
+4069	lock instance deadlock block issue stack workerexecutorimpl vertx vertximpl closefuture close look callback monitor workerexecutor start copy invoke happen core take eventloop information level release hold acquire
+4104	workerexecutor stack instance blockingcodehandler line intellij run deadlock ign asyncresulthandler blocking contextscheduler lock block reproducer order workerexecutorimpl junit test timing requirement breakpoint call executeblocking
+4221	slot execute connection npe pool action get httpclient lease meantime post race deliver read happen lead create
+4275	connectionbase handler block called synchronized
+4278	name registerverticlefactory deploymentmanager deploymentoptions verticle startup class option invoke arraylist error throw attempt occur collection sort deploy concurrency trigger analysis reproduce iterate thanks let modify rxdeployverticle piece

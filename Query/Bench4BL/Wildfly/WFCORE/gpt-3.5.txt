@@ -1,0 +1,7 @@
+132	BoundedQueueThreadPoolWriteAttributeHandler undefined core-threads behavior handling undefined values matching max-threads default value for attribute in add method.
+196	org.jboss.as.host.controller.ManagedServer CTRL-C hang thread dump blocking closed channel process shutdown 
+202	deadlock Wildfly server CLI client connection upstream issue BZ1142538
+553	ModelControllerClientOperationHandler not managing clientRequestExecutor properly creating ThreadPoolExecutor without cleaning it up per channel suggested fix creating per ModelControllerClientOperationHandlerFactoryService cleaning up in stop but pool settings may not be appropriate
+997	Security realm ldaps SSL handshake stuck thread EAP ldap server killed LdapLoginModule connect timeout solution
+1002	What is causing an NPE in sendResponse when assertions are disabled COMPLETE_TX_REQUEST EXECUTE_TX_REQUEST are processed by TransactionalProtocolOperationHandler.AbortOperationHandler in a particular order that causes the ExecuteRequestContext to not be initialized How can this issue be resolved
+1025	ManagementRequestContext executeAsync hides RejectedExecutionException  caller thread waits for a latch to be tripped  testsuite hang  server not stopping due to locked org.jboss.as.controller.remote.TransactionalProtocolOperationHandler$ExecuteRequestContext  RejectedExecutionException indicating thread pool shutdown  JIRA filed for prevention  executeAsync return boolean

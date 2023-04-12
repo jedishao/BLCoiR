@@ -1,0 +1,4 @@
+1986	IndexService getAndCreateLastIndexFile threadsafe issue bug report environment logs related issues feature request getAndCreateLastIndexFile execute in thread ReputMessageService readWriteLock IndexFile proposed use case importance workarounds subtask
+4143	Unnecessary file lock IndexFile IndexService remove
+4686	lock released wrong position org.apache.rocketmq.namesrv.kvconfig.KVConfigManager putKVConfig lock not released exception acquired environment thread interrupted state
+5039	stuck localHostName when constructing BrokerIdentity object frequent initialization of InetAddress instance

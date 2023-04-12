@@ -1,0 +1,4 @@
+505	TestUtils thread-hostile mutable static fields not synchronized not volatile partially updated object mutable object single thread usage unpredictable results
+899	MersenneTwister random crash java.lang.ArrayIndexOutOfBoundsException 624 MersenneTwister.java line 253 multi-thread mode
+1134	unsafe initialization BicubicSplineInterpolatingFunction thread safe partialDerivatives constructor computePartialDerivatives partialDerivative
+1294	Data race PolynomialUtils buildPolynomial Concurrency issue in PolynomialUtilsTest due to incorrect coefficient list building Synchronized block missing in PolynomialsUtils.java

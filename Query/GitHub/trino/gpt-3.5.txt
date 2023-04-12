@@ -1,0 +1,10 @@
+2962	Deadlock Thead starvation in Hive loadPartitionByName getTable causing Presto coordinator to queue queries but not execute possible race condition traced back to loadTable call not being executed due to all executors being used introduced by 1921
+6202	LogTestDurationListener full stacktrace  test hang  TestClass@2a78dd6a  limited to 8 frames
+6389	deadlock SqlServerClient getTableProperties failure
+7454	Join spill bug localization with IR Join spill race condition causing dispose not called on spilled partition join spill race condition Bug localization in io.trino.operator.HashBuilderOperator io.trino.operator.PartitionedLookupSourceFactory
+7872	Flaky Test SqlServerTypeMapping Transaction deadlocked Deadlock victim
+9741	TestSqlServerConnectorTest.testSelectInformationSchemaColumns failing in 2019-CU13-ubuntu-20.04 due to deadlock
+11798	Hive lock waiting state indefinitely timestamp NULL exclusive table lock Trino shared_read lock cancelled release workaround script
+13212	DirectExchangeClient lock congestion caused by setBytes move in 5832a59 in Trino
+14132	Hive metastore missing manifest file release lock failure NoSuchLockException metastore timeout HiveMetastoreTableOperations Iceberg commit handling
+14605	occasional search queries getting stuck in pipelined execution of query failure path involving io.trino.faulttolerant.iceberg.TestIcebergTaskFailureRecoveryTest.testExplainAnalyze

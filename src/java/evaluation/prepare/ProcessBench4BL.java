@@ -5,6 +5,7 @@ import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import utils.XMLParser;
+import utils.config.DatasetConfig;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -207,15 +208,49 @@ public class ProcessBench4BL implements Prepare {
     }
   }
 
+  public void getDate(String path, String opPath, String fixPath, List<Integer> list) throws IOException {
+    XMLParser xp = new XMLParser();
+    Document dc = xp.readXml(path);
+    Element e = dc.getRootElement();
+    Iterator<Element> it = e.elementIterator();
+    while (it.hasNext()) {
+      Element book = it.next();
+      Attribute attribute = book.attribute(0);
+      Attribute attribute1 = book.attribute(1);
+      Attribute attribute2 = book.attribute(2);
+      if (list.contains(Integer.parseInt(attribute.getText().trim()))) {
+        File file = new File(opPath + attribute.getText() + ".txt");
+        File file1 = new File(fixPath + attribute.getText() + ".txt");
+        if (!file.exists()) {
+          file.createNewFile();
+        }
+        if (!file1.exists()) {
+          file1.createNewFile();
+        }
+        FileWriter fileWriter = new FileWriter(file.getPath(), true);
+        FileWriter fileWriter1 = new FileWriter(file1.getPath(), true);
+        fileWriter.write(attribute1.getText());
+        fileWriter1.write(attribute2.getText());
+        fileWriter.flush();
+        fileWriter1.flush();
+        fileWriter.close();
+        fileWriter1.close();
+      }
+    }
+  }
+
   public static void main(String[] args) throws IOException {
     ProcessBench4BL pb = new ProcessBench4BL();
-    String r = "druid";
-    String path = "dataset/GitHub/" + r + "/changeset.xml";
-    String brPath = "dataset/GitHub/" + r + "/changeset/";
+    String r = DatasetConfig.TOMCAT;
+    String path = "dataset/BLIZZARD/" + r + "/repository.xml";
+    String cpath = "dataset/BLIZZARD/" + r + "/changeset/";
+    String opPath = "dataset/LtR/" + r + "/opendate/";
+    String fixPath = "dataset/LtR/" + r + "/fixdate/";
+//    pb.getDate(path, opPath, fixPath, BugReportsID.SWT);
     //    List<Integer> con = ResUtils.getId("Bench4BL", "Apache", "CAMEL");
     // System.out.println(con);
     //    pb.getChanges1(path, brPath);
-    pb.getChanges2(path);
+        pb.getChanges(path, cpath, BugReportsID.TOMCAT70);
     //    pb.getChanges(path, brPath, BugReportsID.WFLY);
     //    pb.collectBRbyID(path, brPath, id);
   }

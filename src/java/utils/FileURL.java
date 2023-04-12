@@ -11,7 +11,7 @@ public class FileURL {
     return DatasetConfig.DATASET_DIR + benchName + "/" + repoName + "/BR/";
   }
 
-  public static String queryPath(String benchName, String repoName) {
-    return DatasetConfig.DATASET_DIR + benchName + "/" + repoName + "/query.txt";
+  public static String queryPath(String benchName, String repoName, String tech) {
+    return DatasetConfig.QUERY_DIR + benchName + "/" + repoName + "/" + tech + ".txt";
   }
 }

@@ -1,0 +1,1 @@
+96	Base64 encode method thread-safe issue commons-codec 1.4 BinaryEncoder instance variables streaming support CODEC-69 not shared Javadoc regression

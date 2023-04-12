@@ -11,7 +11,7 @@ import utils.config.DatasetConfig;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.regex.Matcher;
+import java.util.List;import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ConBugLocResults {
@@ -27,9 +27,9 @@ public class ConBugLocResults {
     }
 
 
-    public ArrayList<Integer> rankCollection(ArrayList<Integer> bugId) {
+    public List<Integer> rankCollection(List<Integer> bugId, String tech) {
         ArrayList<Integer> rankList = new ArrayList<>();
-        String queryFile = FileURL.queryPath(benchName, repository);
+        String queryFile = FileURL.queryPath(benchName, repository, tech);
         ArrayList<String> queryList = ContentLoader.getAllLinesOptList(queryFile);
         int index = 0;
         for (String query : queryList) {
@@ -109,8 +109,8 @@ public class ConBugLocResults {
 //    }
 //    System.out.println(list1);
         //System.out.println(list);
-    ArrayList<Integer> rankList = results.rankCollection(list);
-    System.out.println(rankList.toString());
+//    List<Integer> rankList = results.rankCollection(list);
+//    System.out.println(rankList.toString());
 
 //    int i = 0;
 //    for (String id:list){

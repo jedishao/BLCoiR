@@ -95,34 +95,35 @@ public class DepManager {
     DepManager dem = new DepManager();
     CoreDocument document =
         new CoreDocument(
-            "The servlet have deadlock.");
+            "Editor computing AST twice concurrently.");
     dem.getPipeline().annotate(document);
     List<CoreSentence> sentences = document.sentences();
     for (CoreSentence s : sentences) {
       SemanticGraph sg = dem.getDependency(s);
       Set<IndexedWord> iw = sg.vertexSet();
       System.out.println(sg);
-      for (IndexedWord i : iw){
-        System.out.println(i.word());
+      for (IndexedWord i : iw) {
+        System.out.println(i.lemma());
       }
-//      for (SemanticGraphEdge se : sg.edgeListSorted()){
-//        System.out.println(se);
-//      }
-      //      for (IndexedWord id :sg.getRoots()){
-      //        System.out.println(id);
-      //        for (IndexedWord j :sg.getChildList(id)){
-      //          System.out.println(j);
-      //          System.out.println(sg.getChildList(j));
-      //        }
-      //      }
-      //      for (Iterator<SemanticGraphEdge> it = sg.edgeIterable().iterator(); it.hasNext(); ) {
-      //        SemanticGraphEdge s1 = it.next();
-      //        System.out.println(s1+"----->"+s1);
-      //      }
-      //      for (IndexedWord i : iw){
-      //        System.out.println(i+"----->"+i.tag());
-      //      }
-      //      System.out.println(sg.toDotFormat());
     }
+    //      for (SemanticGraphEdge se : sg.edgeListSorted()){
+    //        System.out.println(se);
+    //      }
+    //      for (IndexedWord id :sg.getRoots()){
+    //        System.out.println(id);
+    //        for (IndexedWord j :sg.getChildList(id)){
+    //          System.out.println(j);
+    //          System.out.println(sg.getChildList(j));
+    //        }
+    //      }
+    //      for (Iterator<SemanticGraphEdge> it = sg.edgeIterable().iterator(); it.hasNext(); ) {
+    //        SemanticGraphEdge s1 = it.next();
+    //        System.out.println(s1+"----->"+s1);
+    //      }
+    //      for (IndexedWord i : iw){
+    //        System.out.println(i+"----->"+i.tag());
+    //      }
+    //      System.out.println(sg.toDotFormat());
+
   }
 }

@@ -1,0 +1,8 @@
+59599	race condition test suite incremental ajcTests.xml failing tests directory contents compilation candidate fixes
+59909	CFlowStack hashtable threads remove late problem memory out of memory error patch free scheme
+155148	jdk14 trace deadlock OC4J Oracle Aj class threads loader toString method Oracle ClassLoader thread dump Java-level deadlock Oracle OC4J server PolicyClassLoader WorkExecutorWorkerThread-1
+269867	WeakHashMap infinite loop non synchronized access AjTypeSystem.getAjType clazz  static instance thread dump stuck line 355
+318878	pertarget aspect thread safe ajc compiler
+320468	thread safety issue in ModifiersPattern.getModifierFlag in org.aspectj.weaver_1.6.0.20080423100000.jar causing ConcurrentModificationException in multi-threaded environment with Spring DM PointcutParser.parsePointcutExpression potentially leading to incorrect values being used
+340806	JavaLangTypeToResolvedTypeConverter race condition bug Spring AOP
+408721	java.util.ConcurrentModificationException multiple threads weaver AspectJ 1.7.1 internal state initializing

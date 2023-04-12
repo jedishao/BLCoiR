@@ -1,0 +1,1 @@
+876	thread safety issue in filter values of Derived Finder CypherFinderQuery causing unpredictable query execution

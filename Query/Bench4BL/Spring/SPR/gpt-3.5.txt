@@ -1,0 +1,1 @@
+7688	NullPointerException synchronized pvs InjectionMetadata.checkPropertySkipping IBM JVM does not allow null

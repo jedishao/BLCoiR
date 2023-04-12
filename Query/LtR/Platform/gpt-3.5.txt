@@ -1,0 +1,31 @@
+6623	Threading problems on plugin startup caused by UI-thread call of AbstractUIPlugin.refreshPluginActions.
+15379	WorkingSetManager resource change listener thread safe Resource changes any thread resource change listener installed WorkingSetManager UI thread ResourceNavigator working set changes update its viewer illegal thread access exception SWT reproduce java project working set navigator packages view show only delete project log
+33942	IDecoratorManager update thread restriction SWTException Javadoc
+46562	Deadlock in modal CVS dialog Update Overwrite conflicting resource sync view I20031111
+48382	Deadlock  automated tests  I20031209
+54450	request job API race condition with requestInUI call null return value, caused by deep logic async job execution. General purpose error dialog not helpful. NullPointerException due to null choice var after requestInUI call. Prompt technique for user request still under development? Code running on M7 I20040310.
+59782	Deadlock reentrant workspace.runbuild eclipse Java perspective project packager explorer Window > Preferences Workbench page progress dialog waiting user operation waiting workspace build
+67053	locking fails exception wrong message Location lock false IOException 3.0 RC2
+74185	UIJobTest potential concurrency failure volatile boolean
+76378	bug localization deadlock ModalContext UIThread NotifyJob UILockListener eclipse.ui JUnit test patch
+84141	DecorationScheduler UI Thread lock scheduling rule
+108162	deadlock MoveFilesAndFoldersOperation refactoring participant org.eclipse.ui.actions
+113582	deadlock Eclipse update marker list during builds
+114527	Race condition intermittent crashes Workbench org.eclipse.ui.startup
+114813	synchronization registry listener failure JUnit DynamicPluginsTestSuite org.eclipse.ui.tests.dynamicplugins bundle addition removal
+118414	Deadlock AbstractWorkingSetManager I20051129-0800 startup AbstractWorkingSetManager deadlock I20051129-0800 startup Deadlock caused by AbstractWorkingSetManager on startup I20051129-0800 Workspace deadlock caused by AbstractWorkingSetManager I20051129-0800
+136855	deadlock caused by IDEIdleHelper HeapStatus calls to System.runFinalization from UI thread in Eclipse 3.2 with multi-threaded access to a COM server dll with ThreadingModel Apartment IUnknown Release calls from MTA to STA objects owned by Eclipse's main thread's dispatch loop.
+164361	Task name not shown user job progress dialog race condition optimization ProgressMonitorDialog SWT.Show handler isVisible set message configureShell next milestone help
+168806	Realm.ensureWorkerThreadIsRunning does not start new thread
+171452	deadlock on startup I20070123-1030 syncExec Splash handler trace
+230472	Expression controlled Activities synchronization issue when persisted reloaded with internal enabled list
+248908	BusyIndicator deadlock UI thread Build ID 3.4.0 PROP_DIRTY events Form editor setBusy method synchronized setBusy
+258352	synchronization ProgressManager expensive
+262032	DeadlockDetector create deadlock
+273752	org.eclipse.ui.internal.navigator.NavigatorContentService.getSourceOfContribution Object   deadlock in test suite  Platform UI test suite  org.eclipse.ui.tests.dynamicplugins.EditorTests.testEditorClosure  PACKAGES_REFRESHED event not fired
+296056	deadlock between syncExec IJobManager.beginRule. Search for case producing deadlock since N20091120-2000 where UI is waiting to begin scheduling rule thread owning scheduling rule attempts syncExec.
+296822	null progress monitor thread safety synchronization volatile
+302536	Broken double checked locking MarkerSupportRegistry
+306738	synchronization issue of ToolItem selection state with MToolItem in an app with MToolBar radio tool items not reflecting changes upon quitting
+307405	NavigatorContentServiceContentProvider deadlock stack trace
+312063	SelectionServiceImpl ListenerList HashSet thread-safe event order

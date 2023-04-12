@@ -1,0 +1,5 @@
+149900	UI responsiveness PDE UI locking required plugins ton of deps UI locking when adding plugins bug localization for PDE UI performance issues with PDE UI PDE UI unresponsive when adding dependencies PDE UI freezes when adding dependencies
+158326	build properties big plug-in org eclipse jdt ui tests refactoring UI cursor locked CheckboxTreeViewer children eagerly
+186963	ConcurrentModificationException Eclipse-SDK CDT-4 0RC0 EMF-2 3 0M7 Releng Tools workspace synchronize PDE Perspective subsystemconfigurations exsd PDE Schema Editor
+281923	Run in UI thread unchecked Headless Mode application Build ID 3 5 GA Steps To Reproduce JUnit Plug-in test IDE still comes up exception is thrown command line parameters org eclipse pde junit runtime coretestapplication unchecking the box should not break the tests
+291528	synchronize project warning error settings batch compiler bug 280784 PDE build build properties synchronize project specific settings

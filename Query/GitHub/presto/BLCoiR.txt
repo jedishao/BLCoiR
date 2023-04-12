@@ -1,0 +1,19 @@
+1614	race hang lock driverlockresult close tasksource nomoresplit update unlock add driver message task processnewsource newsources query source miss call stick hold get newsource believe leave flawed queue
+1689	issue stack race test fail condition query happen trace 
+3629	race kind travis happen teststatemachine testsetif 
+3647	concurrenthashmap race blackholemetadata write
+4869	phase broadcast scheduler deadlock join miss
+5005	cancel handler flag thought interruptedioexception advance hook loop client case synch cli race issue query one change call async electrum http presto status
+5110	presto race array_concat type fail map query condition array
+5116	testtaskexecutor testtaskhandle fail race lang assertionerror easy
+5735	cberner memory delta example transfermemorytotaskcontext operatorcontext class void newmemoryreservation work query impact setmemoryreservation trysetmemoryreservation caller performance driver atomiclong memoryreservation threadsafe thing
+6196	stack production prestodb deadlock resourcegroupmanager continuoustaskstatusfetcher lock client worker info sqlstageexecution github resourcegroup issue level query one monitor task httpremotetask http information presto
+6319	indexlookup accumuloclient synchronization call gettabletsplit accumuloconfig path setauth instance hashmap class store safety contain involve columncardinalitycache fix singleton
+6755	lock deadlock root group setsoftmemorylimit memory_change_listener_lambda manager situation dbresourcegroupconfigurationmanager generalpoolmemoryfraction pool clustermemorymanager think abstractresourceconfigurationmanager internalresourcegroup apply miss something file back resource config work assume configuregroup hit cberner configurechangedgroup
+6923	partitionedlookupsource synchronization utilize appendto regression outer performance profiling core cpu query locking prevent outerlookupsource array visitedposition task_concurrency outerpositiontracker spend call factor require look cluster usage node complete join
+7667	testqueues testbasicc
+7689	issue counter race change rely listener test sleep state query execution condition update async variable abstracttestdistributedqueries testqueryloggingcount assertion reproduce case callback assert add
+8716	sdk setfuture abstracttransfer call hang aws waitforcompletion load race loop copymonitor uploadmonitor upload condition occur proposal affect update
+9881	race stack reference fetch count position outerpositiontracker iterator error think condition
+11253	splits addexchangelocation queueddrivers scan queueddriver deadlock nomoresplit driversplitrunner scheduletask getpipelinestatus split scheduling client finish term worker order schedulingcomplete sqlstageexecution completesource assignment drivercontexts schedulepartitionedsource node fragment pendingsplitsbyplannode selectdistributionnode stage driver
+13142	querystatetimer trinodb

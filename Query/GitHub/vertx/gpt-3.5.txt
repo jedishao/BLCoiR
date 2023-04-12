@@ -1,0 +1,33 @@
+1247	deadlock HttpClient Vert.x 3.2 lock 1 lock 2 ClientConnection HttpClientImpl
+1302	EventLoop thread blocked on Vertx.clusteredVertx Vertx 3.2.1 Vertx.clusteredVertx called on main java thread on application startup
+1355	Deadlock between ClientConnection HttpClientRequestImpl Exception handling request response reset connection load balancer ACE module 3.2.0 code JVM 1.8_74 RHEL 6.5 jstack information vert.x-eventloop-thread-0 vert.x-eventloop-thread-7
+1466	Deadlock in ServerConnection HttpClientRequestImpl Java-level
+1469	HttpClientMetrics createEndpoint multiple times ConnQueue constructor leaked resources closeEndpoint not called
+1573	blocked thread warning AsyncFile opening closing Windows shared drive slow network filesystem.
+1598	asynchronous read write wrong thread open close address 1573 blocking.
+1633	Context executeBlocking does not log blocked threads
+1742	File caching implementation not thread safe in Vert.x framework.
+1834	HttpServerRequest ServerWebSocket deadlock SockJSSocket synchronized lock Netty close event
+1892	compositefuture all race condition thread futureimpl
+2012	Race condition AsyncFileImpl writesOutstanding invalid state different thread fix AtomicLong
+2370	HttpClient pool inconsistent synchronous connection failure underlying ConnectionProvider asynchronous DNS resolver JVM synchronous resolver host cannot be resolved
+2418	Possible deadlock when trying to get multiple locks Consumer verticle HazelcastClusterManager IgniteClusterManager
+2670	client connections on GlobalEventExecutor thread not propagated to application in Netty bootstrap leading to Event loop context executing with wrong thread failure on Vertx
+2684	executeBlocking callback run on wrong thread asynchronous future resolution Mongo client stack trace.
+2773	HttpClient race condition connection pool closed
+2916	HTTP event handler lock deadlocks remove
+2982	deadlock http client eventloops blocked Vert.x 3.7.0 io.vertx.core.http.impl.HttpClientRequestImpl Http1xClientConnection threaddump
+3064	HttpServerResponse failure when stream is closed ended improvements in related response methods in Vert.x 4 using synchronous operation Future result
+3140	AsyncFile handler calls lock synchronized block
+3142	deadlock regression on 3.8.2 due to 3117 in deployment of multiple verticle instances starting net server.
+3232	Vertx close Future never completes thread pool shut down Sync.await blocking method setHandler output never completes.
+3335	FileSystemImpl.existsInternal vertx.filesystem.exists resolveFile event loop thread worker thread blocking BlockedThreadChecker
+3468	Vert.x 4.0.0 milestone 5 HttpClient thread blocked getConnection okapi
+3469	HTTP client retry same host self deadlock
+3658	CompositeFuture.all race condition unhandled exception version 3.9.2 newer
+4024	concurrency issue in TCPServerBase listen with race condition in bindFuture.addListener method sharedNetServers.put using id field without volatile synchronized
+4069	Vertx deadlock when closing Vertx WorkerExecutor concurrently
+4104	WorkerExecutor.executeBlocking deadlock caused by multiple threads running on the same WorkerExecutor instances in different orders
+4221	HttpClient NPE due to null connection from pool lease delivery race
+4275	ConnectionBase exception handler should not be called within the synchronized block
+4278	ArrayList concurrency error deployment verticles

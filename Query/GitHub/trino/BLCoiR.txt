@@ -1,0 +1,10 @@
+2962	deadlock issue race starvation call loadpartitionbyname hive gettable fulfill pool executor presto believe metastore refresh queue condition coordinator thead execute complete leave none trace get behaviour query couple continue introduce switch
+6202	logtestdurationlistener test hang information stacktrace monitor frame limit include present
+6389	sqlserverclient gettableproperties deadlock
+7454	hashbuilderoperator unblock spill finish join disposerequested partition trino operator partitionedlookupsourcefactory call race isblocked release spilledlookupsourcehandle setpartitionspilledlookupsourcehandle block disk dispose spilledpartitions condition register new partitionedconsumption get order instance finishprobeoperator startmemoryrevoke spilledpartition revoke
+7872	deadlock transaction choose victim testsqlservertypemapping
+9741	deadlock testsqlserverconnectortest testselectinformationschemacolumns ubuntu fail succeed
+11798	hive trino lock state query timestamp hold datum table step spark write waiting acquire acquired_at shared_read cancel delete workaround value release reproduce script stay
+13212	trino operator directexchangeclient pollpage move section lock setbyte congestion addpages likely
+14132	metastore lock runtimeexception hive table block commit iceberg miss releaselock exist hms hivemetastoretableoperations file fail side reason case release line aquirelock throw step level nosuchlockexception result timeout execute hivemetastoretableoperation happen look
+14605	stack fault get failure query recovery test trace failurerecoveryassert failswithoutretries capability execution validate trino faulttolerant iceberg testicebergtaskfailurerecoverytest testexplainanalyze build

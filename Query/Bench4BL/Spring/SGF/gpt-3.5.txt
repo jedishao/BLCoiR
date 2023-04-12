@@ -1,0 +1,2 @@
+231	Serial GW Sender ordering policy error GemFire gateway sender configuration multiple dispatcher threads ordering policy java.lang.IllegalArgumentException
+280	ContinuousQueryListenerContainer class Thread-safety synchronization issues start stop methods running instance variable

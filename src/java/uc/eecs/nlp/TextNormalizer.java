@@ -1,6 +1,5 @@
 package uc.eecs.nlp;
 
-import utils.Corpus;
 import utils.MiscUtility;
 import utils.config.QueryConfig;
 

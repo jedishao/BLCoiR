@@ -18,12 +18,10 @@ public class XMLParser {
     try {
       SAXReader reader = new SAXReader();
       Document dc = reader.read(new File(""));
-     // 获取根节点
       Element e = dc.getRootElement();
-      // 获取迭代器
+
       Iterator<Element> it = e.elementIterator();
       System.out.println(it.hasNext());
-      // 遍历迭代器，获取根节点信息
       String fileName = "C:/Users/Shao/Desktop/index/BugLocator/data/zxing/";
       while (it.hasNext()) {
         Element book = (Element) it.next();
@@ -31,12 +29,10 @@ public class XMLParser {
         String title = "";
         String content = "";
         List<Attribute> atts = book.attributes();
-        // 获取book属性名和属性值
         for (Attribute att : atts) {
           if (Objects.equals(att.getName(), "id")){
             bugId = att.getValue();
           }
-          //System.out.println("节点名：" + att.getName() + "节点值：" + att.getValue());
         }
         Iterator<Element> itt = book.elementIterator();
         while (itt.hasNext()) {

@@ -1,0 +1,31 @@
+17	Netty cancel stream creation race bug OkHttp transport AbstractClientStream
+120	NettyClientTransport blocking HEADERS frame write causing QPS Client performance issue EventLoop deadlock
+238	race in server handler initialization OR startAsync transport handler registration race OR Discarded inbound message during channel pipeline with SimpleLeakAwareByteBuf awaitRunning initChannel fix
+330	OkHttpClientTransport.onGoAway startPendingStreams race issue failPendingStreams integration
+583	OkHttp cancellation synchronization issue with finishStream transportReportStatus
+605	NettyClientHandler channelInactive Http2ConnectionHandler BaseDecoder BufferingHttp2ConnectionEncoder shutdown improperly race condition active stream closure GRPC reproduce potential fixes
+696	In-process transport deadlock during shutdown Java-level deadlock io.grpc.ChannelImpl io.grpc.transport.inprocess.InProcessTransport deadlock
+887	OkHttp sendCancel sendFrame race NPE caused by sendFrame after sendCancel called before stream start.
+999	race condition ServerImpl start stop concurrent shared executor release ThreadSafe annotation
+1253	ClientCallImpl  race  Context cancellation be60086 stream  request sendMessage  halfClose IllegalStateException louiscryan  PR  fix
+1343	OkHttp deadline scheduling potential NullPointerException in stream listener notification
+1408	Risk of deadlock in calling listeners under locks solution with serialized executor
+1510	DelayedClientTransport InProcessTransport deadlock pull 1503
+1981	ClientCallImpl related to executor channel shutdown in gRPC library
+2152	deadlock TransportSet benchmark client server calls failed unavailable detector
+2246	deadlock TransportSet Grpc RoundRobinLB custom NameResolver bug localization
+2388	TransportSet deadlock v1.0 2258 cherry-pick GrpcTimer
+2453	Threading of StatsTraceContext in RPC application with potential synchronization errors data race
+2562	transport shutdown newStream delay solution clientTransportProvider retry newStream channel shutdown.
+2865	race condition in Client occurring with or without compression in RPC transport to server using DelayedClientTransport resulting in stream callbacks failing on channel executor threads causing data frame decompression to fail leading to failure in stream queued callback execution. Possible solution suggested involves using AbstractClientStream2 moving decompression to stream.
+3084	deadlock potential callbacks lock thread-safety OkHttp ChannelExecutor
+3207	Data race TestServiceImpl bug localization
+5015	LoadBalancer API threading model thread-safety SubchannelPicker thread-safety Helper thread-safety Subchannel thread-safety LoadBalancer wrapping LoadBalancer delegate LoadBalancer always call createSubchannel from SynchronizationContext Helper Subchannel non-thread-safe implementor burden Subchannel.requestConnection critical path SynchronizationContext
+5450	Data race NameResolve.Listener.onError
+6601	deadlock on start gRPC server race condition synchronization ServerImpl NetServer.start vertx nettty event loops thread dumps ServerListenerImpl.transportCreated channelzFuture.await
+6641	deadlock in server transport with multiple ports
+8190	grpc hang ELG thread placement NameResolver refresh method version of gRPC operating system CustomizedNameResolver override refresh method grpc call hang indefinitely thread dump analysis placement of grpc call worker thread NameResolver document
+8536	IR-based BinderChannel flow control gRPC-Java Android processes DEADLINE_EXCEEDED errors TRANSACTION_BYTES_WINDOW transmitWindowFull acknowledgedOutgoingBytes
+8565	RetriableStream.onReady data race MessageFramer.java
+8642	CsdsService bug getSubscribedResourcesMetadata getCurrentVersion synchronization issue with XdsClient atomicity needed
+8914	android binder deadlock due to unexpected re-entrancy of transactions in process-local binder unique object identity of IBinder instances within process causing BinderTransport locking issues multiple instances of BinderClientTransport BinderServerTransport running handleTransaction on different threads leading to deadlock steps to reproduce including creating a Channel to android.app.Service hosted by same process repeatedly sending messages from different threads
