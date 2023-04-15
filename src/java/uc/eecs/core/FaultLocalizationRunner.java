@@ -67,7 +67,7 @@ public class FaultLocalizationRunner {
     //        new FaultLocalizationRunner(bench, repository, bugID, searchQuery);
     //    System.out.println("First found index:" + faultLocalizationRunner.getFirstRank());
     //    System.out.println("First found index:" + faultLocalizationRunner1.getFirstRank());
-    System.out.println(ClassificationID.VERTX_NL.size());
+//    System.out.println(ClassificationID.VERTX_NL.size());
     System.out.println(ClassificationID.VERTX_STN.size());
   }
 }
