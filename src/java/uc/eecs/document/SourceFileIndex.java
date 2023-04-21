@@ -64,12 +64,12 @@ public class SourceFileIndex {
 
   public static void main(String[] args) throws IOException {
     SourceFileIndex sf = new SourceFileIndex();
-    String p = "/Users/shuai/Java-projects/trino/";
+    String p = "/Users/shuai/Java-projects/h/";
     File f = new File(p);
     if (!f.isDirectory()){
       f.mkdirs();
     }
-    sf.getSource("/Users/shuai/Java-projects/h/", p);
+    sf.getSource("/Users/shuai/Java-projects/vertx/", p);
     //    String sp = "/Users/shuai/Java-projects/camel/camel-1.3.0/";
     //    String[] s = sp.split("/");
     //    for (String ss : s){
