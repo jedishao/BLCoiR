@@ -33,9 +33,9 @@ public class G1 {
   }
 
   protected DefaultDirectedGraph<String, DefaultEdge> getItems2(
-      ArrayList<SemanticGraph> dependences, List<String> con) {
+      ArrayList<SemanticGraph> dependencies, List<String> con) {
     DefaultDirectedGraph<String, DefaultEdge> graph = new DefaultDirectedGraph<>(DefaultEdge.class);
-    for (SemanticGraph semanticGraph : dependences) {
+    for (SemanticGraph semanticGraph : dependencies) {
       String sents = semanticGraph.toRecoveredSentenceString();
       //      System.out.println(sents);
       Pattern p =
