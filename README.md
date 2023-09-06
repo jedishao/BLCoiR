@@ -1,2 +1,1 @@
-# BLCoiR
-An IR-based Concurrency Bug Localization approach.
+# Information Retrieval-based Fault Localization for Concurrent Programs
