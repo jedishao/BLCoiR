@@ -6,6 +6,7 @@ import org.jgrapht.graph.DefaultDirectedGraph;
 import uc.eecs.br.BRClassification;
 import uc.eecs.br.loader.BRLoader;
 import uc.eecs.br.loader.StackTraceLoader;
+import uc.eecs.core.graph.KG4;
 import uc.eecs.core.query.GraphParser;
 import uc.eecs.nlp.DepManager;
 import uc.eecs.nlp.TextNormalizer;
@@ -122,7 +123,7 @@ public class TextProTest {
             8713, 8885, 8954, 9199, 9311, 9319, 9331, 9738, 9951, 9970, 10024, 10215, 10229, 10273
     };
     DepManager depManager = new DepManager();
-    Que que = new Que();
+    KG4 que = new KG4();
     for (int id : camel) {
       String brPath =
           DatasetConfig.DATASET_DIR

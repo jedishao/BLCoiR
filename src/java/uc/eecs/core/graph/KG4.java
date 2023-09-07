@@ -1,4 +1,4 @@
-package uc.eecs.core.process;
+package uc.eecs.core.graph;
 
 import edu.stanford.nlp.ling.IndexedWord;
 import edu.stanford.nlp.semgraph.SemanticGraph;
@@ -17,7 +17,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Que {
+public class KG4 {
   public List<String> getItems(List<String> list, DepManager depManager) {
     TextNormalizer tn = new TextNormalizer(list);
     ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
@@ -32,7 +32,7 @@ public class Que {
         System.out.println(i.lemma());
         System.out.println(semanticGraph.getChildList(i));
         for (IndexedWord j : semanticGraph.getChildList(i)) {
-          if (semanticGraph.getChildList(j).size() > 0) {
+          if (!semanticGraph.getChildList(j).isEmpty()) {
             System.out.println(j);
             System.out.println("--->" + semanticGraph.getChildList(j));
           }
@@ -41,7 +41,7 @@ public class Que {
     }
   }
 
-  protected DefaultDirectedGraph<String, DefaultEdge> getItems(
+  public DefaultDirectedGraph<String, DefaultEdge> getItems(
       ArrayList<SemanticGraph> dependences) {
     DefaultDirectedGraph<String, DefaultEdge> graph = new DefaultDirectedGraph<>(DefaultEdge.class);
     List<String> root = new ArrayList<>();
@@ -275,7 +275,7 @@ public class Que {
   }
 
   public static void main(String[] args) {
-    Que que = new Que();
+    KG4 que = new KG4();
     DepManager depManager = new DepManager();
     for (int id : BugReportsID.ECF) {
       String brPath =

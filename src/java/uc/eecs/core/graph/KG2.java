@@ -3,6 +3,11 @@ package uc.eecs.core.graph;
 import edu.stanford.nlp.ling.IndexedWord;
 import edu.stanford.nlp.semgraph.SemanticGraph;
 import edu.stanford.nlp.semgraph.SemanticGraphEdge;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.jgraph.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import uc.eecs.br.loader.BRLoader;
@@ -12,13 +17,8 @@ import uc.eecs.nlp.DepManager;
 import utils.ConCorpus;
 import utils.config.BugReportsID;
 import utils.config.DatasetConfig;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class G {
+public class KG2 {
   protected void checkVer(DefaultDirectedGraph<String, DefaultEdge> graph, String j) {
     if (!graph.containsVertex(j)) {
       graph.addVertex(j);
@@ -33,9 +33,9 @@ public class G {
   }
 
   protected DefaultDirectedGraph<String, DefaultEdge> getItems2(
-      ArrayList<SemanticGraph> dependences, List<String> con) {
+      ArrayList<SemanticGraph> dependencies, List<String> con) {
     DefaultDirectedGraph<String, DefaultEdge> graph = new DefaultDirectedGraph<>(DefaultEdge.class);
-    for (SemanticGraph semanticGraph : dependences) {
+    for (SemanticGraph semanticGraph : dependencies) {
       String sents = semanticGraph.toRecoveredSentenceString();
       //      System.out.println(sents);
       Pattern p =
@@ -80,29 +80,51 @@ public class G {
       ArrayList<SemanticGraph> dependencies) {
     DefaultDirectedGraph<String, DefaultEdge> graph = new DefaultDirectedGraph<>(DefaultEdge.class);
     for (SemanticGraph semanticGraph : dependencies) {
+      boolean flag = false;
       List<String> rootList = new ArrayList<>();
       for (IndexedWord root : semanticGraph.getRoots()) {
         rootList.add(root.lemma().toLowerCase());
         checkVer(graph, root.lemma().toLowerCase());
       }
       for (SemanticGraphEdge s : semanticGraph.edgeListSorted()) {
-
-        if (s.getDependent().tag().startsWith("NN") || s.getDependent().tag().startsWith("VB")) {
-          //
-          // System.out.println(s.getDependent().word()+"--------->"+s.getDependent().tag());
-          if (s.getGovernor().tag().startsWith("NN")
-              || s.getGovernor().tag().startsWith("VB")
-              || rootList.contains(s.getGovernor().lemma().toLowerCase())) {
-            checkVer(graph, s.getGovernor().lemma().toLowerCase());
-            checkVer(graph, s.getDependent().lemma().toLowerCase());
-            checkEdge(
-                graph,
-                s.getGovernor().lemma().toLowerCase(),
-                s.getDependent().lemma().toLowerCase());
-          } else {
-            checkVer(graph, s.getDependent().lemma().toLowerCase());
-            checkEdge(graph, rootList.get(0), s.getDependent().lemma().toLowerCase());
+        if (s.getDependent().tag().startsWith("NN")) {
+          if (s.getDependent().tag().length() > 2) {
+            flag = true;
+            break;
+          } else if (ConCorpus.CONCURRENCY.contains(s.getDependent().lemma().toLowerCase())) {
+            flag = true;
+            break;
+          } else if (s.getDependent().word().matches("(.*)[A-Z](.*)")) {
+            flag = true;
+            break;
           }
+        }
+      }
+      if (flag) {
+        //        System.out.println(semanticGraph.toRecoveredSentenceString());
+        for (SemanticGraphEdge s : semanticGraph.edgeListSorted()) {
+          if (s.getDependent().tag().startsWith("NN") || s.getDependent().tag().startsWith("VB")) {
+            //
+            // System.out.println(s.getDependent().word()+"--------->"+s.getDependent().tag());
+            if (s.getGovernor().tag().startsWith("NN")
+                || s.getGovernor().tag().startsWith("VB")
+                || rootList.contains(s.getGovernor().lemma().toLowerCase())) {
+              checkVer(graph, s.getGovernor().lemma().toLowerCase());
+              checkVer(graph, s.getDependent().lemma().toLowerCase());
+              checkEdge(
+                  graph,
+                  s.getGovernor().lemma().toLowerCase(),
+                  s.getDependent().lemma().toLowerCase());
+            } else {
+              checkVer(graph, s.getDependent().lemma().toLowerCase());
+              checkEdge(graph, rootList.get(0), s.getDependent().lemma().toLowerCase());
+            }
+          }
+          //          } else if
+          // (ConCorpus.CONCURRENCY.contains(s.getDependent().lemma().toLowerCase())){
+          //            checkVer(graph, s.getDependent().lemma().toLowerCase());
+          //            checkEdge(graph, rootList.get(0), s.getDependent().lemma().toLowerCase());
+          //          }
         }
       }
     }
@@ -144,18 +166,16 @@ public class G {
           api.add(word.lemma().toLowerCase());
         } else if (Objects.equals(word.tag(), "NNP")) {
           api.add(word.lemma().toLowerCase());
-        } else if(ConCorpus.CONCURRENCY.contains(word.lemma().toLowerCase())){
+        } else if (ConCorpus.CONCURRENCY.contains(word.lemma().toLowerCase())) {
           con.add(word.lemma().toLowerCase());
         }
       }
-      if (con.size()>0){
-        for (String s1 : con){
-          if (!relations.contains(s1))
-            relations.add(s1);
+      if (con.size() > 0) {
+        for (String s1 : con) {
+          if (!relations.contains(s1)) relations.add(s1);
         }
-        for (String s2 : con){
-          if (!relations.contains(s2))
-            relations.add(s2);
+        for (String s2 : con) {
+          if (!relations.contains(s2)) relations.add(s2);
         }
       }
     }
@@ -171,14 +191,14 @@ public class G {
   }
 
   public void one(int id) {
-    G g = new G();
+    KG2 g = new KG2();
     DepManager depManager = new DepManager();
     CorefManager corefManager = new CorefManager();
     String brPath =
         DatasetConfig.BRTEXT_DIR
-            + DatasetConfig.BLIZZARD
+            + DatasetConfig.BENCH4BL
             + "/"
-            + DatasetConfig.ECF
+            + DatasetConfig.A_CAMEL
             + "/"
             + id
             + ".txt";
@@ -194,18 +214,16 @@ public class G {
     System.out.println(id + "\t" + gp.getQuery());
   }
 
-  public static void main(String[] args) {
-//        G g = new G();
-//        g.one(229237);
-    G g = new G();
+  public void all() {
+    KG2 g = new KG2();
     DepManager depManager = new DepManager();
     CorefManager corefManager = new CorefManager();
-    for (int id : BugReportsID.ECF) {
+    for (int id : BugReportsID.SWT) {
       String brPath =
           DatasetConfig.BRTEXT_DIR
-              + DatasetConfig.BLIZZARD
+              + DatasetConfig.LTR
               + "/"
-              + DatasetConfig.ECF
+              + DatasetConfig.SWT
               + "/"
               + id
               + ".txt";
@@ -220,5 +238,11 @@ public class G {
       GraphParser gp = new GraphParser(knowledgeGraph);
       System.out.println(id + "\t" + gp.getQuery());
     }
+  }
+
+  public static void main(String[] args) {
+    KG2 g = new KG2();
+    g.one(803);
+//    g.all();
   }
 }

@@ -1,16 +1,17 @@
-package uc.eecs.core.process;
+package uc.eecs.core.graph;
 
 import edu.stanford.nlp.ling.IndexedWord;
 import edu.stanford.nlp.semgraph.SemanticGraph;
 import edu.stanford.nlp.semgraph.SemanticGraphEdge;
-import utils.config.BugReportsID;
 import org.jgraph.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import uc.eecs.br.loader.BRLoader;
+import uc.eecs.core.FaultLocalizationRunner;
 import uc.eecs.core.query.GraphParser;
 import uc.eecs.nlp.DepManager;
 import uc.eecs.nlp.TextNormalizer;
 import utils.ConCorpus;
+import utils.MiscUtility;
 import utils.config.DatasetConfig;
 import utils.config.QueryConfig;
 import utils.config.ResConfig;
@@ -19,7 +20,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Conc {
+public class KG1 {
   protected void checkVer(DefaultDirectedGraph<String, DefaultEdge> graph, String j) {
     if (!graph.containsVertex(j)) {
       graph.addVertex(j);
@@ -188,14 +189,14 @@ public class Conc {
   }
 
   protected DefaultDirectedGraph<String, DefaultEdge> getItems2(
-          ArrayList<SemanticGraph> dependences, List<String> con) {
+      ArrayList<SemanticGraph> dependences, List<String> con) {
     DefaultDirectedGraph<String, DefaultEdge> graph = new DefaultDirectedGraph<>(DefaultEdge.class);
     for (SemanticGraph semanticGraph : dependences) {
       String sents = semanticGraph.toRecoveredSentenceString();
       //      System.out.println(sents);
       Pattern p =
-              Pattern.compile(
-                      "(.*)\\[(.*)((.+).)+(.+):(.*)run(.*)](.*)(Running)(.*)|(.*)\\[(.*)((.+).)+(.+):(.*)run(.*)]");
+          Pattern.compile(
+              "(.*)\\[(.*)((.+).)+(.+):(.*)run(.*)](.*)(Running)(.*)|(.*)\\[(.*)((.+).)+(.+):(.*)run(.*)]");
       Matcher m = p.matcher(sents.trim());
       if (m.matches()) {
         con.add(processPackage(sents));
@@ -209,18 +210,18 @@ public class Conc {
       for (SemanticGraphEdge s : semanticGraph.edgeListSorted()) {
         if (s.getDependent().tag().startsWith("NN")) {
           Matcher m1 = p1.matcher(s.getDependent().word());
-//          System.out.println(s.getDependent());
+          System.out.println(s.getDependent());
           if (s.getDependent().tag().equals("NNP") || m1.matches()) {
             con.add(s.getDependent().lemma().toLowerCase());
           }
           if (s.getGovernor().tag().startsWith("NN")
-                  || rootList.contains(s.getGovernor().lemma().toLowerCase())) {
+              || rootList.contains(s.getGovernor().lemma().toLowerCase())) {
             checkVer(graph, s.getGovernor().lemma().toLowerCase());
             checkVer(graph, s.getDependent().lemma().toLowerCase());
             checkEdge(
-                    graph,
-                    s.getGovernor().lemma().toLowerCase(),
-                    s.getDependent().lemma().toLowerCase());
+                graph,
+                s.getGovernor().lemma().toLowerCase(),
+                s.getDependent().lemma().toLowerCase());
           } else {
             checkVer(graph, s.getDependent().lemma().toLowerCase());
             checkEdge(graph, rootList.get(0), s.getDependent().lemma().toLowerCase());
@@ -231,11 +232,11 @@ public class Conc {
     return graph;
   }
 
-  protected String processPackage(String s){
+  protected String processPackage(String s) {
     String s1 = s.replace("[", "");
     String s2 = s1.replace("]", "");
     String s3 = s2.trim().split(":")[0].trim();
-    String s4 = s3.split("\\.")[s3.split("\\.").length-1];
+    String s4 = s3.split("\\.")[s3.split("\\.").length - 1];
     return s4;
   }
 
@@ -256,7 +257,6 @@ public class Conc {
         Matcher m = p.matcher(indexedWord1.word());
         if (m.matches() && indexedWord1.tag().startsWith("NN")) {
           if (!ResConfig.CON_KW1.contains(indexedWord1.lemma().toLowerCase())) {
-            System.out.println(indexedWord1.word());
             re.add(indexedWord1.word());
           }
         }
@@ -266,83 +266,52 @@ public class Conc {
   }
 
   public static void main(String[] args) {
-    Conc conc = new Conc();
+    KG1 conc = new KG1();
     DepManager depManager = new DepManager();
-    for (int id : BugReportsID.WFLY) {
-      String brPath =
-          DatasetConfig.DATASET_DIR
-              + DatasetConfig.BENCH4BL
-              + "/"
-              + DatasetConfig.W_WFLY
-              + "/BR/"
-              + id
-              + ".txt";
-      List<String> con = BRLoader.loadBugReportList(brPath);
-      List<String> conList = new ArrayList<>();
-      TextNormalizer tn = new TextNormalizer(con);
-      ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
-      DefaultDirectedGraph<String, DefaultEdge> graph = conc.getItems2(dependencies, conList);
-
-      for (String s : graph.vertexSet()) {
-        for (String s1 : ConCorpus.CONCURRENCY) {
-          if (s.toLowerCase().matches("(.*)" + s1 + "(.*)")) {
-            conList.add(s);
-          }
+    String repository = DatasetConfig.TOMCAT;
+    String bench = DatasetConfig.BLIZZARD;
+    int id = 53624;
+    String brPath = DatasetConfig.DATASET_DIR + bench + "/" + repository + "/BR/" + id + ".txt";
+    List<String> con = BRLoader.loadBugReportList(brPath);
+    List<String> conList = new ArrayList<>();
+    TextNormalizer tn = new TextNormalizer(con);
+    ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
+    DefaultDirectedGraph<String, DefaultEdge> graph = conc.getItems2(dependencies, conList);
+    for (String s : graph.vertexSet()) {
+      for (String s1 : ConCorpus.CONCURRENCY) {
+        if (s.toLowerCase().matches("(.*)" + s1 + "(.*)")) {
+          conList.add(s);
         }
       }
-      for (String s2 : conList) {
-        if (!graph.containsVertex(s2)){
-          conc.checkVer(graph, s2);
-        }
-        for (String s3 : conList) {
-          if (!graph.containsVertex(s3)){
-            conc.checkVer(graph, s3);
-          }
-          if (!Objects.equals(s2, s3)) conc.checkEdge(graph, s2, s3);
-        }
-      }
-//      System.out.println(conList);
-//      GraphParser gp = new GraphParser(graph);
-//      if (conList.size()>4){
-//        System.out.println(id + "\t" + gp.getQuery1(10));
-//      }else {
-//        System.out.println(id + "\t" + gp.getQuery1(30));
-//      }
-      GraphParser gp = new GraphParser(graph);
-      System.out.println(id + "\t" + gp.getQuery());
     }
-//    String repository = DatasetConfig.ECF;
-//    String bench = DatasetConfig.BLIZZARD;
-//    int id = 348487;
-//    String brPath = DatasetConfig.DATASET_DIR + bench + "/" + repository + "/BR/" + id + ".txt";
-//    List<String> con = BRLoader.loadBugReportList(brPath);
-//    List<String> conList = new ArrayList<>();
-//    TextNormalizer tn = new TextNormalizer(con);
-//    ArrayList<SemanticGraph> dependencies = depManager.getDependencies(tn.removeHttp());
-//    DefaultDirectedGraph<String, DefaultEdge> graph = conc.getItems2(dependencies, conList);
-//    for (String s : graph.vertexSet()) {
-//      for (String s1 : Corpus.CONCURRENCY) {
-//        if (s.toLowerCase().matches("(.*)" + s1 + "(.*)")) {
-//          conList.add(s);
-//        }
-//      }
-//    }
-//    for (String s2 : conList) {
-//      for (String s3 : conList) {
-//        if (!Objects.equals(s2, s3)) conc.checkEdge(graph, s2, s3);
-//      }
-//    }
-//    List<String> graph1 = conc.getItems3(dependencies, conList);
-//    GraphParser gp = new GraphParser(graph);
-//    String searchQuery = gp.getQuery();
-//    String searchQuery1 = MiscUtility.list2Str(graph1);
-//    System.out.println(id + "\t" + searchQuery);
-//    System.out.println(id + "\t" + searchQuery1);
-//    FaultLocalizationRunner faultLocalizationRunner =
-//        new FaultLocalizationRunner(bench, repository, id, searchQuery);
-//    FaultLocalizationRunner faultLocalizationRunner1 =
-//        new FaultLocalizationRunner(bench, repository, id, searchQuery1);
-//    System.out.println("First found index:" + faultLocalizationRunner.getFirstRank());
-//    System.out.println("First found index:" + faultLocalizationRunner1.getFirstRank());
+    for (String s2 : conList) {
+      if (!graph.containsVertex(s2)) {
+        conc.checkVer(graph, s2);
+      }
+      for (String s3 : conList) {
+        if (!graph.containsVertex(s3)) {
+          conc.checkVer(graph, s3);
+        }
+        if (!Objects.equals(s2, s3)) conc.checkEdge(graph, s2, s3);
+      }
+    }
+    System.out.println(conList);
+    List<String> graph1 = conc.getItems3(dependencies, conList);
+    GraphParser gp = new GraphParser(graph);
+    String searchQuery = "";
+    if (conList.size()>2){
+      searchQuery = gp.getQuery1(10);
+    }else {
+      searchQuery = gp.getQuery1(30);
+    }
+    String searchQuery1 = MiscUtility.list2Str(graph1);
+    System.out.println(id + "\t" + searchQuery);
+    System.out.println(id + "\t" + searchQuery1);
+    FaultLocalizationRunner faultLocalizationRunner =
+        new FaultLocalizationRunner(bench, repository, id, searchQuery);
+    FaultLocalizationRunner faultLocalizationRunner1 =
+        new FaultLocalizationRunner(bench, repository, id, searchQuery1);
+    System.out.println("First found index:" + faultLocalizationRunner.getFirstRank());
+    System.out.println("First found index:" + faultLocalizationRunner1.getFirstRank());
   }
 }
