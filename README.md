@@ -1,6 +1,6 @@
 # Information Retrieval-based Fault Localization for Concurrent Programs
 
-## Accepted Papers at [ASE 2023](https://www.computer.org/csdl/proceedings-article/ase/2023/299600b467/1SBGqEkNgeA)https://www.computer.org/csdl/proceedings-article/ase/2023/299600b467/1SBGqEkNgeA)
+## Accepted Papers at [ASE 2023](https://www.computer.org/csdl/proceedings-article/ase/2023/299600b467/1SBGqEkNgeA)
 
 ```latex
 @inproceedings{BLCoiR,
